@@ -24,5 +24,5 @@ export const {
   fetchStart,
   fetchFail,
   
-} = authSlice.actions;
+} = authSlice.actions; 
 export default authSlice.reducer;
