@@ -22,18 +22,23 @@ export default {
         },
         seaGreen: {
           DEFAULT: "#4DA1A9", // Sea Green (Main color)
-          light: "#86dbbf", // Light Sea Green
+          light: "#5FAAB2", // Light Sea Green
           dark: "#459198", // Dark Sea Green
         },
         pastelGreen: {
-          DEFAULT: "#79D7BE", // Pastel Green (Main color)
-          light: "#6dcc2a6", // Light Pastel Green
-          dark: "#2f312", // Dark Pastel Green
+          DEFAULT: "#79D7B8", // Pastel Green (Main color)
+          light: "#86dcc2a6", // Light Pastel Green
+          dark: "#6DC2A6", // Dark Pastel Green
         },
         offWhite: {
           DEFAULT: "#F6F4F0", // Off-White (Main color)
           light: "#f7f5f2", // Lighter Off-White
           dark: "#dddcd8", // Darker Off-White
+        },
+        customBlack: {
+          DEFAULT: "#181a1b", // Custom Black (Main color)
+          light: "#161718", // Light Custom Black
+          dark: "#2f3132", // Darker Custom Black
         },
       },
     },
