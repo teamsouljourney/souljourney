@@ -1,11 +1,18 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import PrivateRouter from "./PrivateRouter";
+import Contact from "../pages/Contact";
 
 const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<PrivateRouter />} />
+        {/* Public Area */}
+        <Route path="/contact" element={<Contact />} />
+
+        {/* Private Area */}
+        <Route path="/" element={<PrivateRouter />}>
+          {/* Privates Routes */}
+        </Route>
       </Routes>
     </Router>
   );
