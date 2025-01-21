@@ -26,6 +26,14 @@
       "description": "Find out how marriage and family therapy can help resolve conflicts and build stronger relationships.",
       "image": "../src/assets/bloogsImage/therapyroom2.jpg",
       "category": "Marriage and Family Therapy"
+    },
+
+    {
+      "id": 5,
+      "title": "Marriage and Family Therapy: Strengthening Relationships",
+      "description": "Find out how marriage and family therapy can help resolve conflicts and build stronger relationships.",
+      "image": "../src/assets/bloogsImage/therapyroom2.jpg",
+      "category": "Marriage and Family Therapy"
     }
   ]
   
