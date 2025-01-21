@@ -1,13 +1,13 @@
 import {
-  UserIcon,
+  UsersIcon,
   EnvelopeIcon,
   MapPinIcon,
 } from "@heroicons/react/24/outline";
 
 const info = [
   {
-    icon: <UserIcon className="w-6 h-6" />,
-    title: "Contact Person",
+    icon: <UsersIcon className="w-6 h-6" />,
+    title: "Contact Persons",
     description: "Soul Journey Developer Team",
   },
   {
@@ -31,7 +31,7 @@ const ContactInfo = () => {
             {item.icon}
           </div>
           <div className="ml-4">
-            <h6 className="text-lg text-offWhite md:text-primary">
+            <h6 className="text-lg tracking-wide text-offWhite md:text-primary">
               {item.title}
             </h6>
             <p className="text-sm text-offWhite md:text-secondary">
