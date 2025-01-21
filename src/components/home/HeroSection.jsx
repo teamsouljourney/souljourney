@@ -1,5 +1,5 @@
 
-import Video from '../../assets/6889585-hd_1920_1080_25fps.mp4';
+import Video from '../../assets/images/4919748-uhd_4096_2160_25fps.mp4';
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white">
@@ -11,11 +11,12 @@ const HeroSection = () => {
           autoPlay
           muted
           loop
+          // style={{ height: '20vh' }}
         ></video>
       </div>
       <div className="video-content space-y-2 z-10">
-        <h1 className="font-light text-6xl mb-8">Soul Journey & Online Therapy</h1>
-        <a href="#" className="bg-yellow-400 text-gray-900 hover:bg-yellow-300 py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Get Started</a>
+        <h1 className="font-light font-urbanist text-6xl mb-8">Soul Journey & Online Therapy</h1>
+        <a href="#" className="bg-pastelGreen text-gray-900 hover:bg-pastelGreen-light py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Get Started</a>
       </div>
       <style>{`
         .video-docker video {
