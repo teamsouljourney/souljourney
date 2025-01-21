@@ -6,6 +6,7 @@ import store from "./app/store";
 import { ToastContainer } from "react-toastify";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor } from "./app/store";
+import BlogList from "./components/BlogList";
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             <AppRouter />
+            <BlogList />
           </PersistGate>
         </Provider>
         <ToastContainer />

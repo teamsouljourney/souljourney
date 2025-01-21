@@ -3,28 +3,28 @@
       "id": 1,
       "title": "Health Psychology: Understanding Mental Well-being",
       "description": "Explore how health psychology can help individuals lead healthier lives by addressing mental and physical health challenges.",
-      "image": "../src/assets/therapy.jpg",
+      "image": "../src/assets/bloogsImage/therapy.jpg",
       "category": "Health Psychology"
     },
     {
       "id": 2,
       "title": "Educational Psychology: Enhancing Learning Techniques",
       "description": "Learn about the role of educational psychology in improving learning methods and addressing academic challenges.",
-      "image": "../src/assets/therapy2.jpg",
+      "image": "../src/assets/bloogsImage/therapy2.jpg",
       "category": "Educational Psychology"
     },
     {
       "id": 3,
       "title": "Neuropsychology: The Science of Brain Health",
       "description": "Discover the importance of neuropsychology in understanding and maintaining brain health.",
-      "image": "../src/assets/therapyroom.jpg",
+      "image": "../src/assets/bloogsImage/therapyroom.jpg",
       "category": "Neuropsychology"
     },
     {
       "id": 4,
       "title": "Marriage and Family Therapy: Strengthening Relationships",
       "description": "Find out how marriage and family therapy can help resolve conflicts and build stronger relationships.",
-      "image": "../src/assets/therapyroom2.jpg",
+      "image": "../src/assets/bloogsImage/therapyroom2.jpg",
       "category": "Marriage and Family Therapy"
     }
   ]
