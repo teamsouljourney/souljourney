@@ -1,6 +1,14 @@
 const ContactForm = () => {
   return (
     <form id="contactForm">
+      <div className="mb-6 text-center">
+        <h2 className="mb-2 text-2xl font-bold text-mauve-dark">Get Started</h2>
+        <p className="text-sm font-semibold text-customBlack-dark dark:text-gray-300">
+          Fill out the form below, and we&apos;ll get back to you as soon as
+          possible.
+        </p>
+      </div>
+
       <div className="mb-6">
         <div className="mx-0 mb-1 sm:mb-4">
           <div className="mx-0 mb-1 sm:mb-4">
@@ -13,7 +21,7 @@ const ContactForm = () => {
               id="name"
               autoComplete="given-name"
               placeholder="Your name"
-              className="w-full py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0"
+              className="w-full py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0 focus:outline-none focus:ring focus:ring-mauve-light "
               name="name"
             />
           </div>
@@ -27,7 +35,7 @@ const ContactForm = () => {
               id="email"
               autoComplete="email"
               placeholder="Your email address"
-              className="w-full py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0"
+              className="w-full py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0 focus:outline-none focus:ring focus:ring-mauve-light"
               name="email"
             />
           </div>
@@ -43,7 +51,7 @@ const ContactForm = () => {
             cols="30"
             rows="5"
             placeholder="Write your message..."
-            className="w-full py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0"
+            className="w-full h-[8rem] py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0  focus:outline-none focus:ring focus:ring-mauve-light"
           ></textarea>
         </div>
       </div>
@@ -58,4 +66,5 @@ const ContactForm = () => {
     </form>
   );
 };
+
 export default ContactForm;
