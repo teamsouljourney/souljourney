@@ -8,6 +8,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistor } from "./app/store";
 import 'flowbite';
 
+
 function App() {
   const theme = createTheme({
     palette: {
