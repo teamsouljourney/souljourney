@@ -10,6 +10,7 @@ import { persistStore, persistReducer, FLUSH,
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 
 
+
 //*redux-persist
 const persistConfig = {
   key: 'root',
@@ -21,7 +22,6 @@ const persistedReducer = persistReducer(persistConfig,authReducer)
 //! reduxtoolkit store
 const store = configureStore({
   reducer: {
-   
     auth: persistedReducer,
   },
   middleware: (getDefaultMiddleware) =>
