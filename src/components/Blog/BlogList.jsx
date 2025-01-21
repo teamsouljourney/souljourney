@@ -1,5 +1,5 @@
 import  { useState } from "react";
-import blogs from "../helper/blogs.json";
+import blogs from "../../helper/blogs.json";
 
 function BlogList() {
   const [category, setCategory] = useState("All");
