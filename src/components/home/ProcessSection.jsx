@@ -1,4 +1,4 @@
-import 'flowbite';
+
 
 
 const ProcessSection = () => {
@@ -15,7 +15,7 @@ const ProcessSection = () => {
 </div>
 
 <div className="mt-20">
-    <ul className="md:grid md:grid-cols-3 md:col-gap-10 md:row-gap-10">
+    <ul className="md:grid md:grid-cols-4 md:col-gap-10 md:row-gap-10">
 
         <li className=" bg-gray-100 p-5 pb-10 text-center">
             <div className="flex flex-col items-center">
