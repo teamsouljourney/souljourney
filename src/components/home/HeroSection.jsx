@@ -1,5 +1,5 @@
 
-import Video from '../../assets/6690024-hd_1920_1080_25fps.mp4';
+import Video from '../../assets/6889585-hd_1920_1080_25fps.mp4';
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white">
