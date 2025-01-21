@@ -1,4 +1,4 @@
-import BlogList from "./components/BlogList";
+import BlogList from "../components/Blog/BlogList";
 
 function Blog() {
   return (
@@ -10,7 +10,7 @@ function Blog() {
         </p>
       </header>
       <main className="container mx-auto p-6">
-        <BlogList />
+        <BlogList/>
       </main>
     </div>
   );
