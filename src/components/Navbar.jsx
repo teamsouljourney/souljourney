@@ -1,9 +1,8 @@
 
+
 const Navbar = () => {
   return (
-    <div>
-      
-    </div>
+    <div>Navbar</div>
   )
 }
 
