@@ -3,21 +3,31 @@
 @tailwind utilities;
 
 @layer utilities {
-    .after-line {
-      position: relative;
-    }
-    .after-line::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      height: 1px;
-      width: 0;
-      background-color: #fff;
-      transition: width 0.3s ease, left 0.3s ease;
-    }
-    .after-line:hover::after {
-      width: 100%;
-      left: 0;
-    }
+  .after-line {
+    position: relative;
   }
+  .after-line::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 1px;
+    width: 0;
+    background-color: #fff;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+  .after-line:hover::after {
+    width: 100%;
+    left: 0;
+  }
+}
+
+/* CONTACT  */
+
+.contact-background {
+  background-image: url("../src/assets/images/contactPage.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
