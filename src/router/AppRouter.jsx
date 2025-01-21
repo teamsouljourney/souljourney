@@ -3,6 +3,7 @@ import PrivateRouter from "./PrivateRouter";
 import Contact from "../pages/Contact";
 import Navbar from "../components/Navbar";
 import Blog from "../pages/Blog";
+import Footer from "../components/Footer";
 
 const AppRouter = () => {
   return (
@@ -17,6 +18,7 @@ const AppRouter = () => {
           {/* Privates Routes */}
         </Route>
       </Routes>
+      <Footer />
     </Router>
   );
 };
