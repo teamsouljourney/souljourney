@@ -9,7 +9,6 @@ import { persistor } from "./app/store";
 
 
 
-
 function App() {
   const theme = createTheme({
     palette: {

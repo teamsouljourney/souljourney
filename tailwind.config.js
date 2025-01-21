@@ -40,6 +40,10 @@ export default {
           light: "#161718", // Light Custom Black
           dark: "#2f3132", // Darker Custom Black
         },
+        
+      },
+      fontFamily: {
+        urbanist: ['Urbanist', 'sans-serif'], // Urbanist fontunu ekliyoruz
       },
     },
   },
