@@ -25,7 +25,7 @@ const Login = () => {
           p:2
         }}
       >
-        Register
+        Login
       </Grid>
     </Container>
   )
