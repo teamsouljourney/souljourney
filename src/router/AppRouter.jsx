@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Navbar from "../components/Navbar";
 import Blog from "../pages/Blog";
+import Team from "../pages/Team";
 
 const AppRouter = () => {
   return (
@@ -16,8 +17,9 @@ const AppRouter = () => {
         {/* Private Area */}
         <Route path="/" element={<Home />} />
         <Route path="/private" element={<PrivateRouter />}>
-          {/* Privates Routes */}
+          {/* Privates Routes */}   
         </Route>
+        <Route path="/team" element={<Team/>} />
       </Routes>
     </Router>
   );
