@@ -32,10 +32,7 @@ export default function Navbar() {
 
   // referrerPolicy = "no-referrer";
   return (
-    <Disclosure
-      as="nav"
-      className="bg-transparent w-full my-4 fixed top-0 z-20"
-    >
+    <Disclosure as="nav" className="bg-transparent w-full my-4 top-0 z-20">
       <div className=" max-w-full sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-evenly">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
