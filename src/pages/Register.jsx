@@ -1,6 +1,7 @@
 import { Container } from '@mui/material'
 import Grid from '@mui/material/Grid2'
 import bgImage from '../assets/images/weSupport.jpg'
+import RegisterHeader from '../components/auth/RegisterHeader'
 
 const Register = () => {
   return (
@@ -25,7 +26,7 @@ const Register = () => {
           p:2
         }}
       >
-        Register
+        <RegisterHeader/>
       </Grid>
     </Container>
   )
