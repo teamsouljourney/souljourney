@@ -1,14 +1,17 @@
 import faqData from "../../helper/faqData.json"; // Assuming the JSON data is stored in faqData.json
 import image from "../../assets/images/pexels-yankrukov-4458403.jpg"; // Importing the background image
 import { useState } from "react";
+import "../../index.css";
 
 const FAQ = () => {
     const [visibleQuestions, setVisibleQuestions] = useState(5);
 
-  const showMoreQuestions = () => {
-    setVisibleQuestions((prev) => Math.min(prev + 5, faqData.length));
-  };
-
+    const showMoreQuestions = () => {
+      setVisibleQuestions((prev) => Math.min(prev + 5, faqData.length));
+    };
+    const showLessQuestions = () => {
+      setVisibleQuestions(5)};
+    
   return (
     <>
       <div className="relative isolate overflow-hidden bg-custom">
@@ -28,7 +31,7 @@ const FAQ = () => {
           <ul>
               {faqData.slice(0, visibleQuestions).map((faq, index) => (
                 <li
-                  className={`group bg-${index % 3 === 0 ? "blue-50" : "green-50"} border border-${index % 3 === 0 ? "blue-200" : "green-200"} p-0 rounded-lg mb-0`}
+                  className={`group bg-${index % 3 === 0 ? "blue-50" : "green-50" } border border-${index % 3 === 0 ? "blue-200" : "green-200"} p-0 rounded-lg mb-0`}
                   key={index}
                 >
                   <button
@@ -68,16 +71,16 @@ const FAQ = () => {
                 </li>
               ))}
             </ul>
-            {visibleQuestions < faqData.length && (
+            {/* {visibleQuestions < faqData.length && ( */}
               <div className="text-center mt-4">
                 <button
-                  onClick={showMoreQuestions}
+                  onClick={visibleQuestions < faqData.length ? showMoreQuestions : showLessQuestions}
                   className="px-4 py-2 bg-orange-500 text-white font-bold rounded-md hover:bg-orange-600"
                 >
-                  See More →
+                   {visibleQuestions < faqData.length ? "See More  →" : "See Less  →"}
                 </button>
               </div>
-            )}
+            {/* )} */}
           </div>
         </div>
       </div>
