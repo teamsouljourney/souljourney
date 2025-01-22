@@ -2,7 +2,13 @@ import React from 'react'
 
 const RegisterHeader = () => {
   return (
-    <div>RegisterHeader</div>
+    <Grid item xs={12} mb={3}>
+      <Typography variant="h3" color="primary" align="center">
+        {/* Join Us on a Transformative Journey
+        Create Your Account and Start Healing */}
+        Sign Up and Begin Your Soul Journey
+      </Typography>
+    </Grid>
   )
 }
 
