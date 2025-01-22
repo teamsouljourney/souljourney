@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import Blog from "../pages/Blog";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Footer from "../components/Footer";
 
 const AppRouter = () => {
   return (
@@ -23,6 +24,7 @@ const AppRouter = () => {
           {/* Privates Routes */}
         </Route>
       </Routes>
+      <Footer />
     </Router>
   );
 };
