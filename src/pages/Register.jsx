@@ -28,6 +28,7 @@ const Register = () => {
         sx={{
           height: "100%",
           p: 2,
+          border: "1px solid red"
         }}
       >
         <Grid
@@ -83,7 +84,7 @@ const Register = () => {
 
           </Formik>
           <Box sx={{ textAlign: "center", mt: 2, color: "customColor.darkblue" }}>
-            <Link to="/login">Already have an account? Sign in</Link>
+            <Link to="/login">Already have an account? <b>Sign in</b> </Link>
           </Box>
         </Grid>
       </Grid>
