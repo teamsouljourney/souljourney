@@ -1,9 +1,11 @@
-import { Avatar, Container, Typography } from '@mui/material'
+import { Avatar, Box, Container, Typography } from '@mui/material'
 import Grid from '@mui/material/Grid2'
 import bgImage from '../assets/images/weSupport.jpg'
 import RegisterHeader from '../components/auth/RegisterHeader'
 import LockIcon from "@mui/icons-material/Lock";
 import { Formik } from 'formik';
+import { SignupSchema } from '../components/auth/RegisterForm';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   return (
@@ -55,7 +57,14 @@ const Register = () => {
           >
             <LockIcon size="30" />
           </Avatar>
-          <Typography textAlign="center">Sign Up</Typography>
+          <Typography
+            variant="h5"
+            align="center"
+            mb={2}
+            color="secondary"
+          >
+            Sign Up
+          </Typography>
           <Formik
             initialValues={{
               userName: "",
@@ -72,6 +81,9 @@ const Register = () => {
           >
 
           </Formik>
+          <Box sx={{ textAlign: "center", mt: 2, color: "customColor.darkblue" }}>
+            <Link to="/login">Already have an account? Sign in</Link>
+          </Box>
         </Grid>
       </Grid>
     </Container>
