@@ -13,12 +13,18 @@ function App() {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#454F5B",
+        main: "#F6F4F0",
       },
       secondary: {
-        main: "#454F4B",
-        second: "#161C24",
+        pink: "#D798B0",
+        purple: "#8F5B8A",
+        darkblue: "#2E5077",
+        lightgreen: "#4DA1A9",
+        green: "#79D7BE",
       },
+    },
+    typography: {
+      fontFamily: '"Urbanist", serif',
     },
   });
   return (
