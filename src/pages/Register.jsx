@@ -14,32 +14,37 @@ const Register = () => {
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
       }}
     >
       <Grid
         container
-        justifyContent="center"
-        direction="row-reverse"
-        rowSpacing={{sm: 3}}
+        justifyContent="flex-end" // Sağ tarafa hizalama
+        alignItems="center" // Dikey ortalama
+        rowSpacing={{ sm: 3 }}
         sx={{
           height: "100%",
-          p:2
+          p: 2,
         }}
       >
-        <Grid item xs={12} sm={6} md={4} lg={3}
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={4}
+          lg={3}
           sx={{
             backgroundColor: "white",
             p: 2,
             borderRadius: "30px",
             height: "700px",
             width: "700px",
-            opacity: 0.5,
-            mt: 5
+            opacity: 0.8,
+            mt: 5,
+            ml: "auto",
           }}
         >
-
-          <RegisterHeader/>
+          <RegisterHeader />
           <Avatar
             sx={{
               m: "auto",
@@ -47,15 +52,13 @@ const Register = () => {
               height: 40,
             }}
           >
-            <LockIcon size="30"/>
+            <LockIcon size="30" />
           </Avatar>
           <Typography textAlign="center">Sign Up</Typography>
-
-          
         </Grid>
       </Grid>
     </Container>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
