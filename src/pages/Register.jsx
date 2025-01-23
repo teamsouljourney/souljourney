@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid2'
 import bgImage from '../assets/images/weSupport.jpg'
 import RegisterHeader from '../components/auth/RegisterHeader'
 import LockIcon from "@mui/icons-material/Lock";
+import { Formik } from 'formik';
 
 const Register = () => {
   return (
@@ -55,6 +56,22 @@ const Register = () => {
             <LockIcon size="30" />
           </Avatar>
           <Typography textAlign="center">Sign Up</Typography>
+          <Formik
+            initialValues={{
+              userName: "",
+              firstName: "",
+              lastName: "",
+              email: "",
+              password: "",
+            }}
+            validationSchema={SignupSchema}
+            onSubmit={values => {
+         
+              console.log(values);
+            }}
+          >
+
+          </Formik>
         </Grid>
       </Grid>
     </Container>
