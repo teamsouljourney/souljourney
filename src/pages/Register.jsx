@@ -4,7 +4,7 @@ import bgImage from '../assets/images/weSupport.jpg'
 import RegisterHeader from '../components/auth/RegisterHeader'
 import LockIcon from "@mui/icons-material/Lock";
 import { Formik } from 'formik';
-import { SignupSchema } from '../components/auth/RegisterForm';
+import RegisterForm, { SignupSchema } from '../components/auth/RegisterForm';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
@@ -78,6 +78,7 @@ const Register = () => {
          
               console.log(values);
             }}
+            component={(props)=><RegisterForm {...props}/>}
           >
 
           </Formik>
