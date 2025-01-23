@@ -1,6 +1,8 @@
-import { Container } from "@mui/material"
+import { Avatar, Container, Typography } from "@mui/material"
 import Grid from '@mui/material/Grid2'
 import bgImage from '../assets/images/computer-4484282_1280.jpg'
+import LoginHeader from "../components/auth/LoginHeader"
+import LockIcon from "@mui/icons-material/Lock";
 
 const Login = () => {
   return (
@@ -42,7 +44,7 @@ const Login = () => {
             ml: "auto",
           }}
         >
-          <RegisterHeader />
+          <LoginHeader />
           <Avatar
             sx={{
               m: "auto",
