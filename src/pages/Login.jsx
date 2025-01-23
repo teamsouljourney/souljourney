@@ -5,27 +5,55 @@ import bgImage from '../assets/images/computer-4484282_1280.jpg'
 const Login = () => {
   return (
     <Container
-      maxWidth="xl"
+      maxWidth="xxl"
       sx={{
         height: "100vh",
         p: 0,
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
       }}
     >
       <Grid
         container
-        justifyContent="center"
-        direction="row-reverse"
-        rowSpacing={{sm: 3}}
+        justifyContent="flex-end" // Sağ tarafa hizalama
+        alignItems="center" // Dikey ortalama
+        rowSpacing={{ sm: 3 }}
         sx={{
           height: "100%",
-          p:2
+          p: 2,
         }}
       >
-        Login
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={4}
+          lg={3}
+          sx={{
+            backgroundColor: "white",
+            p: 2,
+            borderRadius: "30px",
+            height: "700px",
+            width: "700px",
+            opacity: 0.8,
+            mt: 5,
+            ml: "auto",
+          }}
+        >
+          <RegisterHeader />
+          <Avatar
+            sx={{
+              m: "auto",
+              width: 40,
+              height: 40,
+            }}
+          >
+            <LockIcon size="30" />
+          </Avatar>
+          <Typography textAlign="center">Sign In</Typography>
+        </Grid>
       </Grid>
     </Container>
   )
