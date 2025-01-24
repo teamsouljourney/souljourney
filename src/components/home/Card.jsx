@@ -3,21 +3,21 @@ import blogs from "../../helper/blogs.json"
 const Card = () => {
   return (
     <>
-      {blogs.slice(0, 4).map((blog) => (
+      {blogs.map((blog) => (
           <div
             key={blog.id}
-            className="relative w-80 bg-offWhite bg-opacity-80 rounded-2xl shadow-lg  mr-8"
+            className="relative w-80  min-h-[850px] bg-offWhite bg-opacity-80 rounded-2xl shadow-lg  mr-8"
           >
             <img
               src={blog.image}
               alt="Project Cover"
-              className="w-full h-50 object-cover rounded-t-2xl transition-all duration-500 ease-in-out hover:scale-95 hover:brightness-110 hover:contrast-110"
+              className="w-full h-[400px] object-cover rounded-t-2xl transition-all duration-500 ease-in-out hover:scale-95 hover:brightness-110 hover:contrast-110"
             />
-            <div className="p-6">
+            <div className="p-6 flex flex-col justify-between h-full">
               <h2 className="text-2xl font-bold text-navy-light text-shadow-lg mb-4 animate__animated animate__fadeInDown font-urbanist">
                 {blog.title}
               </h2>
-              <p className="text-customBlack text-sm mb-6 animate__animated animate__fadeIn font-urbanist">
+              <p className="text-customBlack btext-sm mb-6 animate__animated animate__fadeIn font-urbanist">
                 {blog.description} {/*doktor ismi gelmesi lazim simdilik böyle ekledim.*/}
               </p>
 

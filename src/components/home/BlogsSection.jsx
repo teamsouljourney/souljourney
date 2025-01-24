@@ -1,4 +1,4 @@
-
+import blogs from "../../helper/blogs.json"
 import Card from "./Card";
 const BlogsSection = () => {
   return (
@@ -8,7 +8,7 @@ const BlogsSection = () => {
         <div className="absolute top-0 left-0 w-full h-full  "></div>
 
         {/* Card Component */}
-       <Card/>
+       <Card blogs={blogs}/>
       </div>
     </>
   );

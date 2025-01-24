@@ -17,7 +17,9 @@ const TabSwitch = () => {
   <div id="tab1" className="p-4 tab-content bg-white shadow-md rounded-lg">
     <h2 className="text-2xl font-semibold mb-2 text-blue-700">Tab 1 Content</h2>
    {/* Card Component */}
-    <Card/>
+    <Card 
+      title
+    />
   </div>
   <div id="tab2" className="p-4 tab-content bg-white shadow-md rounded-lg hidden">
     <h2 className="text-2xl font-semibold mb-2 text-blue-700">Tab 2 Content</h2>
