@@ -27,8 +27,8 @@ const Register = () => {
         rowSpacing={{ sm: 3 }}
         sx={{
           height: "100%",
-          p: 2,
-          border: "1px solid red"
+          p: 3,
+          // border: "1px solid red"
         }}
       >
         <Grid
@@ -39,10 +39,11 @@ const Register = () => {
           lg={3}
           sx={{
             backgroundColor: "white",
-            p: 2,
+            p: 3,
             borderRadius: "30px",
+            boxShadow: "0px 30px 60px rgba(0, 0, 0, 0.2), 0px 40px 80px rgba(0, 0, 0, 0.15)",
             height: "700px",
-            width: "700px",
+            width: "600px",
             opacity: 0.8,
             mt: 5,
             ml: "auto",

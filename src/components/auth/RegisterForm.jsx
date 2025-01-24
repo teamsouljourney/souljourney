@@ -101,7 +101,7 @@ const RegisterForm = ({
             disabled={isSubmitting}
             sx={{
               backgroundColor: "customColors.darkblue",
-              color: "primary.main"
+              color: "primary.main",
             }}
           >
             {isSubmitting ? "Loading..." : "Sign Up"}
