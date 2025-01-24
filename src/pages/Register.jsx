@@ -6,24 +6,18 @@ import LockIcon from "@mui/icons-material/Lock";
 import { Formik } from 'formik';
 import RegisterForm, { SignupSchema } from '../components/auth/RegisterForm';
 import { Link } from 'react-router-dom';
+import { authContainerStyle } from '../styles/globalStyle';
 
 const Register = () => {
   return (
     <Container
       maxWidth="xxl"
-      sx={{
-        height: "100vh",
-        p: 0,
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      sx={authContainerStyle(bgImage)}
     >
       <Grid
         container
-        justifyContent="flex-end" // Sağ tarafa hizalama
-        alignItems="center" // Dikey ortalama
+        justifyContent="flex-end"
+        alignItems="center"
         rowSpacing={{ sm: 3 }}
         sx={{
           height: "100%",

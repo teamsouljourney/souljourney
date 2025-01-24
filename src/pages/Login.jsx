@@ -3,19 +3,13 @@ import Grid from '@mui/material/Grid2'
 import bgImage from '../assets/images/computer-4484282_1280.jpg'
 import LoginHeader from "../components/auth/LoginHeader"
 import LockIcon from "@mui/icons-material/Lock";
+import { authContainerStyle } from "../styles/globalStyle";
 
 const Login = () => {
   return (
     <Container
       maxWidth="xxl"
-      sx={{
-        height: "100vh",
-        p: 0,
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      sx={authContainerStyle(bgImage)}
     >
       <Grid
         container
