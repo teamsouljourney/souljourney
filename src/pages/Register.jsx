@@ -6,7 +6,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import { Formik } from 'formik';
 import RegisterForm, { SignupSchema } from '../components/auth/RegisterForm';
 import { Link } from 'react-router-dom';
-import { authContainerStyle } from '../styles/globalStyle';
+import { authContainerStyle, authMainContainerGridStyle, authFormContainerGridStyle, } from '../styles/globalStyle';
 
 const Register = () => {
   return (
@@ -16,14 +16,8 @@ const Register = () => {
     >
       <Grid
         container
-        justifyContent="flex-end"
-        alignItems="center"
         rowSpacing={{ sm: 3 }}
-        sx={{
-          height: "100%",
-          p: 3,
-          // border: "1px solid red"
-        }}
+        sx={authMainContainerGridStyle}
       >
         <Grid
           item
@@ -31,17 +25,7 @@ const Register = () => {
           sm={6}
           md={4}
           lg={3}
-          sx={{
-            backgroundColor: "white",
-            p: 3,
-            borderRadius: "30px",
-            boxShadow: "0px 30px 60px rgba(0, 0, 0, 0.2), 0px 40px 80px rgba(0, 0, 0, 0.15)",
-            height: "700px",
-            width: "600px",
-            opacity: 0.8,
-            mt: 5,
-            ml: "auto",
-          }}
+          sx={authFormContainerGridStyle}
         >
           <RegisterHeader />
           <Avatar

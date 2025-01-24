@@ -7,7 +7,30 @@ export const authContainerStyle = (bgImage) => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",}
     );
-  };
+};
+
+export const authMainContainerGridStyle = {
+    height: "100%",
+    p: 3,
+    justifyContent: "flex-end",
+    alignItems: "center",
+    border: "1px solid red"
+};
+
+export const authFormContainerGridStyle = {
+    backgroundColor: "primary.main",
+    border: "1px solid red",
+    p: 3,
+    borderRadius: "30px",
+    boxShadow: "0px 30px 60px rgba(0, 0, 0, 0.2), 0px 40px 80px rgba(0, 0, 0, 0.15)",
+    height: "700px",
+    width: "600px",
+    opacity: 0.7,
+    // mt: 5,
+    ml: "auto",
+
+};
+
 // export const btnStyle = {
 //     cursor: "pointer",
 //     color: "secondary.main",
