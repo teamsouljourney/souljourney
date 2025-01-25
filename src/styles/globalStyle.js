@@ -14,7 +14,11 @@ export const authMainContainerGridStyle = {
     p: 3,
     justifyContent: "flex-end",
     alignItems: "center",
-    border: "1px solid red"
+    border: "1px solid red",
+    // flexDirection: {
+    //     xs: "column",
+    //     sm: "row-reverse",
+    // }
 };
 
 export const authFormContainerGridStyle = {
