@@ -14,5 +14,5 @@
   background-image: url(./assets/images/papaioannou-kostas-tysecUm5HJA-unsplash.jpg);
   background-size: cover; /* Resmin tüm alanı kaplamasını sağlar */
   background-position: center; /* Resmi ortalar */
-  height: 100vh; /* Sayfa boyutunda bir arka plan */
+  min-height: 100vh; /* Sayfa boyutunda bir arka plan */
 }
