@@ -27,8 +27,15 @@ export const authFormContainerGridStyle = {
     width: "600px",
     opacity: 0.7,
     // mt: 5,
-    ml: "auto",
+    ml: "auto"
+};
 
+export const authFormBoxStyle = {
+    display: "flex", 
+    flexDirection: "column", 
+    gap: 2, 
+    backgroundColor: "primary.main",
+    border: "1px solid red",
 };
 
 // export const btnStyle = {

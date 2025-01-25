@@ -1,6 +1,7 @@
 import { Box, Button, TextField, useTheme } from "@mui/material";
 import { Form } from "formik";
 import * as Yup from "yup"
+import { authFormBoxStyle } from "../../styles/globalStyle";
 
 export const SignupSchema = Yup.object().shape({
   userName: Yup.string()
@@ -38,7 +39,7 @@ const RegisterForm = ({
   return (
     <div>
       <Form>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 2, backgroundColor: "primary.main" }}>
+        <Box sx={authFormBoxStyle}>
           <TextField
             name="userName"
             label="Username"
