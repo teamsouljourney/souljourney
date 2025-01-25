@@ -5,7 +5,7 @@ import { authFormBoxStyle } from "../../styles/globalStyle";
 
 export const SignupSchema = Yup.object().shape({
   userName: Yup.string()
-    .required("This field is required!")
+    .required("Username is required!")
     .min(3, "Username must be at least 3 characters!"),
   firstName: Yup.string()
     .min(2, "First name is too short! It should be at least 2 characters.")
