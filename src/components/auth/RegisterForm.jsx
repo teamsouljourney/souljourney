@@ -103,6 +103,10 @@ const RegisterForm = ({
             sx={{
               backgroundColor: "customColors.darkblue",
               color: "primary.main",
+              "&:hover": {
+                backgroundColor: "customColors.purple",
+                opacity: 0.8
+                },
             }}
           >
             {isSubmitting ? "Loading..." : "Sign Up"}

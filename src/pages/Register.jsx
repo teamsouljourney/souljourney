@@ -1,6 +1,6 @@
 import { Avatar, Box, Container, Typography } from '@mui/material'
 import Grid from '@mui/material/Grid2'
-import bgImage from '../assets/images/weSupport.jpg'
+import bgImage from '../assets/images/loginRegisterImage/weSupport1.jpg'
 import RegisterHeader from '../components/auth/RegisterHeader'
 import LockIcon from "@mui/icons-material/Lock";
 import { Formik } from 'formik';
@@ -40,10 +40,17 @@ const Register = () => {
           <Typography
             variant="h5"
             align="center"
-            mb={2}
+            mb={1}
             color="secondary"
+            sx={{
+              fontSize: {
+                xs: "1rem",
+                sm: "1.5rem",
+                md: "2rem"
+              }
+            }}
           >
-            Sign Up
+            Register
           </Typography>
           <Formik
             initialValues={{
@@ -60,10 +67,11 @@ const Register = () => {
             }}
             component={(props)=><RegisterForm {...props}/>}
           >
-
           </Formik>
           <Box sx={{ textAlign: "center", mt: 2, color: "customColor.darkblue" }}>
-            <Link to="/login">Already have an account? <b>Sign in</b> </Link>
+            <Link to="/login" style={{color: "#2E5077"}}>
+              Already have an account? <b>Sign in</b> 
+            </Link>
           </Box>
         </Grid>
       </Grid>
