@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 import { Form } from "formik";
 import { Box, Button, TextField } from "@mui/material";
-import forgotPassword from "../assets/images/forgotPassword.png";
+import forgotPassword from "../../assets/images/forgotPassword.png";
 
 export const ForgotPasswordSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
@@ -30,10 +30,9 @@ const ForgotPasswordForm = ({
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-            display: { xs: "none", lg: "block" },
-            width: { lg: "40%" },
-            height: { lg: "23rem" },
-            borderRadius: "1rem 0 0 1rem",
+            display: { xs: "none", md: "block" },
+            width: { md: "50%" },
+            height: { md: "23rem" },
           }}
         ></Box>
         <Box
@@ -41,13 +40,10 @@ const ForgotPasswordForm = ({
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            alignItems: "center",
-            bgcolor: "#fff",
-            padding: "2rem",
-            borderRadius: { xs: "1rem", lg: "0 1rem 1rem 0" },
+            padding: { xs: "1rem", md: "2rem" },
             gap: 3,
-            width: { lg: "50%" },
-            height: { lg: "23rem" },
+            width: { md: "40%" },
+            height: { md: "23rem" },
           }}
         >
           <TextField
@@ -58,14 +54,8 @@ const ForgotPasswordForm = ({
             onBlur={handleBlur}
             helperText={touched.email && errors.email}
             error={touched.email && Boolean(errors.email)}
-            sx={{ width: "27ch" }}
           />
-          <Button
-            type="submit"
-            variant="contained"
-            disabled={isSubmitting}
-            sx={{ width: "35ch" }}
-          >
+          <Button type="submit" variant="contained" disabled={isSubmitting}>
             {isSubmitting ? "Loading..." : "Forgot Password"}
           </Button>
         </Box>

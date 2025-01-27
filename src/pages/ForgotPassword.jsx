@@ -25,7 +25,7 @@ const ForgotPassword = () => {
           actions.setSubmitting(false);
         }}
       >
-        component={(props) => <ForgotPasswordForm {...props} />}
+        {(props) => <ForgotPasswordForm {...props} />}
       </Formik>
     </Container>
   );
