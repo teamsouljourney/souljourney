@@ -1,9 +1,31 @@
-import React from 'react'
+import useAxios, { axiosPublic } from './useAxios';
+import { fetchFail, fetchStart, registerSuccess } from '../features/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toastErrorNotify, toastSuccessNotify } from '../helper/ToastNotify';
 
 const useAuthCall = () => {
-  return (
-    <div>useAuthCall</div>
-  )
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { token } = useSelector((state) => state.auth);
+  const axiosWithToken = useAxios();
+
+  //* register
+  const register = async (userInfo) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosPublic.post("auth/signup", userInfo);
+      console.log(data);
+      dispatch(registerSuccess(data));
+      toastSuccessNotify("Registration successful! Please check your email to verify your account!");
+      navigate("/auth/verify-email");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(error.message, "Oops! Something went wrong during registration");
+    }
+  };
+  return {register}
 }
 
 export default useAuthCall
