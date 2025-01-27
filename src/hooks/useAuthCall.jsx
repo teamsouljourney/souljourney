@@ -1,5 +1,5 @@
 import useAxios, { axiosPublic } from './useAxios';
-import { fetchFail, fetchStart, loginSuccess, registerSuccess } from '../features/authSlice';
+import { fetchFail, fetchStart, loginSuccess, logoutSuccess, registerSuccess } from '../features/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toastErrorNotify, toastSuccessNotify } from '../helper/ToastNotify';
@@ -10,7 +10,6 @@ const useAuthCall = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { token } = useSelector((state) => state.auth);
   const axiosWithToken = useAxios();
 
   //* register
@@ -48,9 +47,24 @@ const useAuthCall = () => {
   const signInWithGoogle = async () => {
     window.open(`${BASE_URL}auth/google`, "_self");
   };
+  
+  //* logout
+  const logout = async () => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.get("auth/logout");
+      dispatch(logoutSuccess());
+      toastSuccessNotify("You have successfully logged out!");
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      dispatch(fetchFail());
+      toastErrorNotify(error.message, "Oops! Something went wrong during logout.");
+    }
+  };
 
 
-  return {register, login, signInWithGoogle}
+  return {register, login, signInWithGoogle, logout}
 }
 
 export default useAuthCall
