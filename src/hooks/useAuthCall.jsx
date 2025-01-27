@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toastErrorNotify, toastSuccessNotify } from '../helper/ToastNotify';
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 const useAuthCall = () => {
 
   const dispatch = useDispatch();
@@ -42,8 +44,13 @@ const useAuthCall = () => {
     }
   };
 
+  //* Google login and register
+  const signInWithGoogle = async () => {
+    window.open(`${BASE_URL}auth/google`, "_self");
+  };
 
-  return {register, login}
+
+  return {register, login, signInWithGoogle}
 }
 
 export default useAuthCall
