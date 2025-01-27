@@ -4,7 +4,8 @@ import bgImage from '../assets/loginRegisterImage/weSupport1.jpg'
 import RegisterHeader from '../components/auth/RegisterHeader'
 import LockIcon from "@mui/icons-material/Lock";
 import { Formik } from 'formik';
-import RegisterForm, { SignupSchema } from '../components/auth/RegisterForm';
+import RegisterForm from '../components/auth/RegisterForm';
+import { SignupSchema } from '../components/auth/RegisterForm';
 import { Link } from 'react-router-dom';
 import { authContainerStyle, authMainContainerGridStyle, authFormContainerGridStyle, } from '../styles/globalStyle';
 
