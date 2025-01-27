@@ -4,6 +4,7 @@ import { object, string } from "yup";
 import { authFormBoxStyle } from "../../styles/globalStyle";
 import googleLogo from "../../assets/loginRegisterImage/Google.png";
 import PasswordField from "./PasswordField";
+import useAuthCall from "../../hooks/useAuthCall";
 
 export const loginSchema = object({
   userName: string()
@@ -25,6 +26,7 @@ const LoginForm = ({
   isSubmitting,
 }) => {
   const theme = useTheme();
+  const {signInWithGoogle} = useAuthCall()
   return (
     <div>
       <Form>
@@ -77,7 +79,7 @@ const LoginForm = ({
                 opacity: 0.8,
               },
             }}
-            // onClick={signInWithGoogle}
+            onClick={signInWithGoogle}
           >
             {isSubmitting ? "Loading..." : "Sign in with"}
             <img src={googleLogo} alt="" />
