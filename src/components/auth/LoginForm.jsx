@@ -30,17 +30,6 @@ const LoginForm = ({
       <Form>
         <Box sx={authFormBoxStyle}>
           <TextField
-            name="userName"
-            label="Username"
-            type="text"
-            value={values.userName}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.userName && Boolean(errors.userName)}
-            helperText={touched.userName && errors.userName}
-            required
-          />
-          <TextField
             name="email"
             label="Email"
             type="text"
