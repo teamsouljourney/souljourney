@@ -1,5 +1,5 @@
 import useAxios, { axiosPublic } from './useAxios';
-import { fetchFail, fetchStart, registerSuccess } from '../features/authSlice';
+import { fetchFail, fetchStart, loginSuccess, registerSuccess } from '../features/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toastErrorNotify, toastSuccessNotify } from '../helper/ToastNotify';
@@ -25,7 +25,25 @@ const useAuthCall = () => {
       toastErrorNotify(error.message, "Oops! Something went wrong during registration");
     }
   };
-  return {register}
+
+  //* login
+
+  const login = async (userInfo) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosPublic.post("auth/login", userInfo);
+      // console.log(data);
+      dispatch(loginSuccess(data));
+      toastSuccessNotify("You have successfully logged in!");
+      navigate("/");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(error.message, "Oops! Something went wrong during login!");
+    }
+  };
+
+
+  return {register, login}
 }
 
 export default useAuthCall
