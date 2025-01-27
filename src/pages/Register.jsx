@@ -8,8 +8,10 @@ import RegisterForm from '../components/auth/RegisterForm';
 import { SignupSchema } from '../components/auth/RegisterForm';
 import { Link } from 'react-router-dom';
 import { authContainerStyle, authMainContainerGridStyle, authFormContainerGridStyle, } from '../styles/globalStyle';
+import useAuthCall from '../hooks/useAuthCall';
 
 const Register = () => {
+  const {register} = useAuthCall()
   return (
     <Container
       maxWidth="xxl"
@@ -58,9 +60,11 @@ const Register = () => {
               password: "",
             }}
             validationSchema={SignupSchema}
-            onSubmit={values => {
-         
+            onSubmit={(values, actions) => {
               console.log(values);
+              register(values)
+              actions.resetForm()
+              actions.setSubmitting(false);
             }}
             component={(props)=><RegisterForm {...props}/>}
           >

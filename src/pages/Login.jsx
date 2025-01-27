@@ -7,8 +7,10 @@ import { Formik } from "formik";
 import LoginForm, { loginSchema } from "../components/auth/LoginForm";
 import { Link } from "react-router-dom";
 import { authContainerStyle, authFormContainerGridStyle, authMainContainerGridStyle } from "../styles/globalStyle";
+import useAuthCall from "../hooks/useAuthCall";
 
 const Login = () => {
+  const {login} = useAuthCall()
   return (
     <Container
       maxWidth="xxl"
@@ -55,9 +57,11 @@ const Login = () => {
               password: "",
             }}
             validationSchema={loginSchema}
-            onSubmit={values => {
-         
+            onSubmit={(values, actions) => {         
               console.log(values);
+              login(values);
+              actions.resetForm();
+              actions.setSubmitting(false);
             }}
             component={(props)=><LoginForm {...props}/>}
           >

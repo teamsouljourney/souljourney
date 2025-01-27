@@ -4,6 +4,7 @@ import * as Yup from "yup"
 import { authFormBoxStyle } from "../../styles/globalStyle";
 import googleLogo from "../../assets/loginRegisterImage/Google.png";
 import PasswordField from "./PasswordField";
+import useAuthCall from "../../hooks/useAuthCall";
 
 export const SignupSchema = Yup.object().shape({
   userName: Yup.string()
@@ -38,6 +39,7 @@ const RegisterForm = ({
 }) => {
 
   const theme = useTheme()
+  const {signInWithGoogle} = useAuthCall()
   return (
     <div>
       <Form>
@@ -126,7 +128,7 @@ const RegisterForm = ({
                 opacity: 0.8
                 },
             }}
-              // onClick={signInWithGoogle}
+              onClick={signInWithGoogle}
             >
               {isSubmitting ? "Loading..." : "Sign up with"}
               <img src={googleLogo} alt="" />
