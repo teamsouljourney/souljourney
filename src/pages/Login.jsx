@@ -41,7 +41,7 @@ const Login = () => {
             variant="h5"
             align="center"
             mb={1}
-            color="secondary"
+            color="customColors.pink"
             sx={{
               fontSize: {
                 xs: "1rem",
