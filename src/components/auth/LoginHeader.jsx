@@ -6,7 +6,7 @@ const LoginHeader = () => {
     <Grid item xs={12} mb={3}>
       <Typography
         variant="h4"
-        color="secondary"
+        color="customColors.pink"
         align="center"
         sx={{
           fontWeight: "600",

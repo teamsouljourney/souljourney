@@ -6,7 +6,7 @@ const RegisterHeader = () => {
     <Grid item xs={12} mb={1}>
       <Typography
         variant="h4"
-        color="secondary"
+        color="customColors.pink"
         align="center"
         sx={{
           fontWeight: "600",
