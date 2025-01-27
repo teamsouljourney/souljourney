@@ -101,7 +101,7 @@ export default function Navbar() {
                 type="button"
                 className="relative rounded-md whitespace-nowrap px-2 py-2 text-sm sm:px-3 sm:py-1 xs:px-2 xs:text-xs shadow-lg shadow-mauve-light text-offWhite-light bg-navy-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
               >
-                <NavLink>Sign Up</NavLink>
+                <NavLink to="/register">Sign Up</NavLink>
               </button>
             )}
             {!showAvatar && (
@@ -109,7 +109,7 @@ export default function Navbar() {
                 type="button"
                 className="relative rounded-md whitespace-nowrap px-2 py-2 text-sm sm:px-3 sm:py-1 xs:px-2 xs:text-xs shadow-lg shadow-mauve-light text-offWhite-light bg-mauve-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
               >
-                <NavLink>Login</NavLink>
+                <NavLink  to="/login">Login</NavLink>
               </button>
             )}
 
