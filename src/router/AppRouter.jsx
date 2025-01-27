@@ -10,6 +10,8 @@ import Register from "../pages/Register";
 import Footer from "../components/Footer";
 import VerifyEmail from "../pages/VerifyEmail";
 
+import ForgotPassword from "../pages/ForgotPassword";
+import ResetPassword from "../pages/ResetPassword";
 
 const AppRouter = () => {
   return (
@@ -23,11 +25,14 @@ const AppRouter = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/auth/verify-email" element={<VerifyEmail />} />
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
+        <Route path="/auth/reset-password/:token" element={<ResetPassword />} />
+
         {/* Private Area */}
         <Route path="/private" element={<PrivateRouter />}>
-          {/* Privates Routes */}   
+          {/* Privates Routes */}
         </Route>
-        <Route path="/team" element={<Team/>} />
+        <Route path="/team" element={<Team />} />
       </Routes>
       <Footer />
     </Router>
