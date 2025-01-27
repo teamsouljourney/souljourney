@@ -1,16 +1,25 @@
+import React, { useState } from "react";
+import BlogHeroSection from "../components/Blog/BlogHeroSection";
 import BlogList from "../components/Blog/BlogList";
+import BlogDetail from "../components/Blog/BlogDetail";
 
 function Blog() {
+  const [selectedBlog, setSelectedBlog] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   return (
-    <div className="min-h-screen bg-blue-100 text-gray-800">
-      <header className="bg-blue-900 text-white py-4">
-        <h1 className="text-center text-3xl font-bold">Soul&Journey Blog</h1>
-        <p className="text-center mt-2">
-          
-        </p>
-      </header>
+    <div className="min-h-screen bg-gradient-to-b from-[#2E5077] to-[#79D7BE] text-gray-800">
+      <BlogHeroSection />
       <main className="container mx-auto p-6">
-        <BlogList/>
+        {selectedBlog ? (
+          <BlogDetail blog={selectedBlog} onBack={() => setSelectedBlog(null)} />
+        ) : (
+          <BlogList
+            onReadMore={(blog) => setSelectedBlog(blog)}
+            selectedCategory={selectedCategory}
+            onCategoryChange={(category) => setSelectedCategory(category)}
+          />
+        )}
       </main>
     </div>
   );

@@ -18,7 +18,7 @@ const ProcessSection = () => {
             <li className=" bg-offWhite p-5 pb-10 text-center">
               <div className="flex flex-col items-center">
                 <div className="flex-shrink-0 relative top-0 -mt-16">
-                  <div className="flex items-center justify-center h-20 w-30 md:h-34 md:w-34 rounded-full bg-seaGreen text-white border-4 border-white text-xl font-semibold transform transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-lg cursor-pointer mt-4">
+                  <div className="flex items-center justify-center h-20 w-30 md:h-34 md:w-34 rounded-full bg-gradient-to-r from-offWhite to-seaGreen-light text-customBlack border-4 border-white text-xl font-semibold transform transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-lg cursor-pointer mt-4">
                     Register or Login
                   </div>
                   <img
@@ -40,7 +40,7 @@ const ProcessSection = () => {
               <div className="flex flex-col items-center">
                 <div className="flex-shrink-0 relative top-0 -mt-16">
                   <div
-                    className="flex items-center justify-center h-20 w-30 md:h-34 md:w-34 rounded-full bg-seaGreen text-white border-4 border-white text-xl font-semibold transform transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-lg cursor-pointer mt-4"
+                    className="flex items-center justify-center h-20 w-30 md:h-34 md:w-34 rounded-full bg-gradient-to-r from-offWhite to-seaGreen-light  text-customBlack border-4 border-white text-xl font-semibold transform transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-lg cursor-pointer mt-4"
                   >
                     Determine Your Preferences
                   </div>
@@ -62,7 +62,7 @@ const ProcessSection = () => {
             <li className=" bg-offWhite p-5 pb-10 text-center">
               <div className="flex flex-col items-center">
                 <div className="flex-shrink-0 relative top-0 -mt-16">
-                  <div className="flex items-center justify-center h-20 w-30 md:h-34 md:w-34 rounded-full bg-seaGreen text-white border-4 border-white text-xl font-semibold transform transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-lg cursor-pointer mt-4">
+                  <div className="flex items-center justify-center h-20 w-30 md:h-34 md:w-34 rounded-full bg-gradient-to-r from-offWhite to-seaGreen-light  text-customBlack border-4 border-white text-xl font-semibold transform transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-lg cursor-pointer mt-4">
                     Choose Your Therapist
                   </div>
                   <img
@@ -83,7 +83,7 @@ const ProcessSection = () => {
             <li className=" bg-offWhite p-5 pb-10 text-center">
               <div className="flex flex-col items-center">
                 <div className="flex-shrink-0 relative top-0 -mt-16">
-                  <div className="flex items-center justify-center h-20 w-30 md:h-34 md:w-34 rounded-full bg-seaGreen text-white border-4 border-white text-xl font-semibold transform transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-lg cursor-pointer mt-4">
+                  <div className="flex items-center justify-center h-20 w-30 md:h-34 md:w-34 rounded-full bg-gradient-to-r from-offWhite to-seaGreen-light  text-customBlack border-4 border-white text-xl font-semibold transform transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-lg cursor-pointer mt-4">
                     Join the Session
                   </div>
                   <img
