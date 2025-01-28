@@ -80,14 +80,10 @@ const useAuthCall = () => {
   };
 
   //* forgot password
-
   const forgotPassword = async (userInfo) => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosPublic.post(
-        `${BASE_URL}auth/forgotPassword`,
-        userInfo
-      );
+      const { data } = await axiosPublic.post("auth/forgotPassword", userInfo);
       toastSuccessNotify("Password reset link sent successfully!");
       navigate(`/auth/reset-password/${data.jwtResetToken}`);
     } catch (error) {
@@ -99,7 +95,33 @@ const useAuthCall = () => {
     }
   };
 
-  return { register, login, signInWithGoogle, logout, forgotPassword };
+  //* reset password
+  const resetPassword = async (token, passwords) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosPublic.patch(
+        `auth/reset-password/${token}`,
+        passwords
+      );
+      console.log(data);
+      toastSuccessNotify("Password reset successful!");
+      navigate("/login");
+    } catch (error) {
+      toastErrorNotify(
+        error.message,
+        "Failed to reset password. Please try again."
+      );
+    }
+  };
+
+  return {
+    register,
+    login,
+    signInWithGoogle,
+    logout,
+    forgotPassword,
+    resetPassword,
+  };
 };
 
 export default useAuthCall;
