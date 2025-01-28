@@ -13,14 +13,15 @@ import { NavLink } from "react-router-dom";
 import Switch from "./Switch";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import useAuthCall from "../hooks/useAuthCall";
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "Services", href: "/services", current: false },
-  { name: "Pricing", href: "/pricing", current: false },
-  { name: "Team", href: "/team", current: false },
-  { name: "Contact", href: "/contact", current: false },
-  { name: "About", href: "/about", current: false },
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/services" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Team", href: "/team" },
+  { name: "Contact", href: "/contact" },
+  { name: "About", href: "/about" },
 ];
 
 function classNames(...classes) {
@@ -28,11 +29,10 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const [showAvatar, setShowAvatar] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
-
-  const { currentUser } = useSelector((state) => state.auth.currentUser);
-
+  let { currentUser } = useSelector((state) => state.auth);
+  const { logout } = useAuthCall();
+  console.log(currentUser);
   useEffect(() => {
     const handleScroll = () => {
       const TOP_OFFSET = 60;
@@ -55,7 +55,9 @@ export default function Navbar() {
     <Disclosure as="nav" className="bg-transparent w-full fixed top-0 z-20">
       <div
         className={`max-w-full sm:px-6 lg:px-8 transition duration-500 ${
-          showBackground ? "bg-navy-light dark:bg-customBlack" : ""
+          showBackground
+            ? "bg-gradient-to-b from-offWhite to-seaGreen-dark dark:from-customBlack-dark dark:to-customBlack-light"
+            : ""
         }`}
       >
         <div className="relative flex h-20 items-center justify-evenly">
@@ -90,16 +92,17 @@ export default function Navbar() {
                   <NavLink
                     key={item.name}
                     to={item.href}
-                    aria-current={item.current ? "page" : undefined}
-                    className={classNames(
-                      item.current
-                        ? "bg-mauve-dark text-offWhite-light  hover:bg-mauve-light hover:text-offWhite-light"
-                        : "text-offWhite-light hover:bg-mauve-light hover:text-offWhite-light",
-                      "rounded-md whitespace-nowrap px-4 py-2 text-sm font-medium",
-                      "lg:px-4 lg:py-2 lg:text-sm",
-                      "md:px-3 md:py-1.5 md:text-sm",
-                      "sm:px-2 sm:py-1 sm:text-xs"
-                    )}
+                    className={({ isActive }) =>
+                      classNames(
+                        isActive
+                          ? "bg-mauve-dark text-offWhite-light"
+                          : "text-offWhite-light hover:bg-mauve-light hover:text-offWhite-light",
+                        "rounded-md whitespace-nowrap px-4 py-2 text-sm font-medium",
+                        "lg:px-4 lg:py-2 lg:text-sm",
+                        "md:px-3 md:py-1.5 md:text-sm",
+                        "sm:px-2 sm:py-1 sm:text-xs"
+                      )
+                    }
                   >
                     {item.name}
                   </NavLink>
@@ -109,7 +112,7 @@ export default function Navbar() {
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center gap-1 pr-2 sm:static sm:inset-auto sm:ml-0 sm:pr-0">
             <Switch />
-            {showAvatar && (
+            {currentUser && (
               <button
                 type="button"
                 className="relative rounded-full  bg-navy-dark p-1 shadow-lg shadow-mauve-light text-offWhite-light  hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
@@ -119,8 +122,7 @@ export default function Navbar() {
                 <BellIcon aria-hidden="true" className="size-6" />
               </button>
             )}
-
-            {!showAvatar && (
+            {!currentUser && (
               <button
                 type="button"
                 className="relative rounded-md whitespace-nowrap px-2 py-2 text-sm sm:px-3 sm:py-1 xs:px-2 xs:text-xs shadow-lg shadow-mauve-light text-offWhite-light bg-navy-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
@@ -128,7 +130,7 @@ export default function Navbar() {
                 <NavLink to="/register">Sign Up</NavLink>
               </button>
             )}
-            {!showAvatar && (
+            {!currentUser && (
               <button
                 type="button"
                 className="relative rounded-md whitespace-nowrap px-2 py-2 text-sm sm:px-3 sm:py-1 xs:px-2 xs:text-xs shadow-lg shadow-mauve-light text-offWhite-light bg-mauve-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
@@ -138,47 +140,57 @@ export default function Navbar() {
             )}
 
             {/* Profile dropdown */}
-            {showAvatar && (
+            {currentUser && (
               <Menu as="div" className="relative ml-3">
                 <div>
+                  {/* MenuButton içindeki avatar kısmı */}
                   <MenuButton className="relative flex rounded-full shadow-lg shadow-mauve-light bg-offWhite-light text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy hover:shadow-3xl hover:shadow-navy-dark">
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">Open user menu</span>
-                    <img
-                      alt=""
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      className="size-8 rounded-full"
-                    />
+                    {currentUser?.image ? (
+                      <img
+                        alt=""
+                        src={currentUser.image}
+                        className="size-8 rounded-full"
+                      />
+                    ) : (
+                      <div className="size-8 rounded-full bg-navy-dark flex items-center justify-center">
+                        <span className="font-medium text-offWhite-light text-sm">
+                          {currentUser?.firstName.charAt(0).toUpperCase() +
+                            currentUser?.lastName.charAt(0).toUpperCase()}
+                        </span>
+                      </div>
+                    )}
                   </MenuButton>
                 </div>
                 <MenuItems
                   transition
-                  className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-transparent py-1 shadow-lg ring-1 ring-navy transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+                  className="absolute right-0 z-10 mt-4 w-48 origin-top-right rounded-md bg-seaGreen-light dark:bg-customBlack-dark py-1 shadow-lg ring-1 ring-navy transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
                 >
                   <MenuItem>
                     <NavLink
                       to="/userprofil"
-                      className="block px-4 py-1 text-sm fw-bold text-customBlack data-[focus]:bg-offWhite data-[focus]:outline-none"
+                      className="block px-4 py-1 text-sm fw-bold text-customBlack dark:text-offWhite data-[focus]:text-offWhite dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                     >
-                      <h5 className="capitalize">
-                        {"currentUser?.displayName"}{" "}
-                      </h5>
+                      <h5 className="">{currentUser?.userName}</h5>
                     </NavLink>
                   </MenuItem>
+                  <hr />
                   <MenuItem>
                     <NavLink
                       to="#"
-                      className="block px-4 py-1 text-sm fw-bold text-customBlack data-[focus]:bg-offWhite data-[focus]:outline-none"
+                      className="block px-4 py-1 text-sm fw-bold text-customBlack dark:text-offWhite data-[focus]:text-offWhite dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                     >
-                      Settings
+                      My Profil
                     </NavLink>
                   </MenuItem>
                   <MenuItem>
                     <NavLink
-                      to="/signout"
-                      className="block px-4 py-1 text-sm fw-bold text-customBlack data-[focus]:bg-offWhite data-[focus]:outline-none"
+                      to="auth/logout"
+                      className="block px-4 py-1 text-sm fw-bold text-customBlack dark:text-offWhite data-[focus]:text-offWhite dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
+                      onClick={() => logout()}
                     >
-                      Sign out
+                      Logout
                     </NavLink>
                   </MenuItem>
                 </MenuItems>
