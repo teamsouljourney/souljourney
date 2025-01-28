@@ -14,7 +14,7 @@ const LoginHeader = () => {
             xs: "1.5rem",
             sm: "2rem",
             md: "2.5rem",
-            lg: "3rem",
+            lg: "2.5rem",
           },
         }}
       >

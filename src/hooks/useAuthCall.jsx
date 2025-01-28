@@ -28,7 +28,6 @@ const useAuthCall = () => {
   };
 
   //* login
-
   const login = async (userInfo) => {
     dispatch(fetchStart());
     try {
@@ -62,7 +61,6 @@ const useAuthCall = () => {
       toastErrorNotify(error.message, "Oops! Something went wrong during logout.");
     }
   };
-
 
   return {register, login, signInWithGoogle, logout}
 }
