@@ -3,10 +3,11 @@ import { Formik } from "formik";
 import ResetPasswordForm, {
   ResetPasswordSchema,
 } from "../components/auth/ResetPasswordForm";
-
 import { useParams } from "react-router-dom";
+import useAuthCall from "../hooks/useAuthCall";
 
 const ResetPassword = () => {
+  const { resetPassword } = useAuthCall();
   const { token } = useParams();
   // console.log(token);
 
@@ -27,7 +28,7 @@ const ResetPassword = () => {
         initialValues={initialValues}
         validationSchema={ResetPasswordSchema}
         onSubmit={(values, actions) => {
-          console.log(values);
+          resetPassword(token, values);
           actions.resetForm();
           actions.setSubmitting(false);
         }}
