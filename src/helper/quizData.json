@@ -1,0 +1,93 @@
+[
+    {
+      "question": "How often have you felt nervous or anxious in the past week?",
+      "options": [
+        { "text": "Not at all", "score": 0 },
+        { "text": "Several days", "score": 1 },
+        { "text": "More than half the days", "score": 2 },
+        { "text": "Nearly every day", "score": 3 }
+      ]
+    },
+    {
+      "question": "Do you find it difficult to relax during your free time?",
+      "options": [
+        { "text": "Not at all", "score": 0 },
+        { "text": "Sometimes", "score": 1 },
+        { "text": "Often", "score": 2 },
+        { "text": "Always", "score": 3 }
+      ]
+    },
+    {
+      "question": "How often do you have trouble falling or staying asleep?",
+      "options": [
+        { "text": "Never", "score": 0 },
+        { "text": "Occasionally", "score": 1 },
+        { "text": "Frequently", "score": 2 },
+        { "text": "Almost every night", "score": 3 }
+      ]
+    },
+    {
+      "question": "Do you feel overwhelmed by daily responsibilities?",
+      "options": [
+        { "text": "Rarely", "score": 0 },
+        { "text": "Sometimes", "score": 1 },
+        { "text": "Often", "score": 2 },
+        { "text": "Always", "score": 3 }
+      ]
+    },
+    {
+      "question": "Do you feel a lack of interest in activities you once enjoyed?",
+      "options": [
+        { "text": "Not at all", "score": 0 },
+        { "text": "A little", "score": 1 },
+        { "text": "Quite a bit", "score": 2 },
+        { "text": "A lot", "score": 3 }
+      ]
+    },
+    {
+      "question": "How often do you feel tired or fatigued?",
+      "options": [
+        { "text": "Never", "score": 0 },
+        { "text": "Sometimes", "score": 1 },
+        { "text": "Frequently", "score": 2 },
+        { "text": "Always", "score": 3 }
+      ]
+    },
+    {
+      "question": "Do you find it hard to concentrate on tasks or decisions?",
+      "options": [
+        { "text": "Not at all", "score": 0 },
+        { "text": "A little", "score": 1 },
+        { "text": "Quite a bit", "score": 2 },
+        { "text": "A lot", "score": 3 }
+      ]
+    },
+    {
+      "question": "Do you feel disconnected from people around you?",
+      "options": [
+        { "text": "Not at all", "score": 0 },
+        { "text": "Sometimes", "score": 1 },
+        { "text": "Frequently", "score": 2 },
+        { "text": "Always", "score": 3 }
+      ]
+    },
+    {
+      "question": "Do you feel hopeless about the future?",
+      "options": [
+        { "text": "Not at all", "score": 0 },
+        { "text": "Sometimes", "score": 1 },
+        { "text": "Often", "score": 2 },
+        { "text": "Always", "score": 3 }
+      ]
+    },
+    {
+      "question": "Do you find yourself dwelling on negative thoughts?",
+      "options": [
+        { "text": "Rarely", "score": 0 },
+        { "text": "Occasionally", "score": 1 },
+        { "text": "Frequently", "score": 2 },
+        { "text": "Constantly", "score": 3 }
+      ]
+    }
+  ]
+  
