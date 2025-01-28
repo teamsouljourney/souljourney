@@ -12,6 +12,7 @@ import souljorurney_Logo from "../assets/souljourney_Logo.png";
 import { NavLink } from "react-router-dom";
 import Switch from "./Switch";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
@@ -30,10 +31,10 @@ export default function Navbar() {
   const [showAvatar, setShowAvatar] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
 
+  const { currentUser } = useSelector((state) => state.auth.currentUser);
+
   useEffect(() => {
     const handleScroll = () => {
-      // console.log(window.scrollY);
-      // scrollun üstteki kısmı 60px i geçince opacity olsun
       const TOP_OFFSET = 60;
       if (window.scrollY >= TOP_OFFSET) {
         setShowBackground(true);
