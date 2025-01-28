@@ -29,8 +29,8 @@ const Login = () => {
           <Avatar
             sx={{
               m: "auto",
-              width: 40,
-              height: 40,
+              width: 30,
+              height: 30,
             }}
           >
             <LockIcon size="30" />
@@ -43,8 +43,8 @@ const Login = () => {
             sx={{
               fontSize: {
                 xs: "1rem",
-                sm: "1.5rem",
-                md: "2rem"
+                sm: "1rem",
+                md: "1.5rem"
               }
             }}
           >
@@ -58,7 +58,7 @@ const Login = () => {
             }}
             validationSchema={loginSchema}
             onSubmit={(values, actions) => {         
-              // console.log("Form submitted:", values);
+              console.log(values);
               login(values);
               actions.resetForm();
               actions.setSubmitting(false);

@@ -38,7 +38,6 @@ const useAuthCall = () => {
   };
 
   //* login
-
   const login = async (userInfo) => {
     dispatch(fetchStart());
     try {
