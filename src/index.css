@@ -32,23 +32,29 @@
   background-repeat: no-repeat;
   min-height: 100vh;
 }
-
-/* Login-Register PAGE */
-
-.login-background {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-    url("../src/assets/images/weSupport.jpg");
+/* Quiz */
+.test-area {
+  position: relative;
+  margin-top: 50px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* background: url('./assets/images/brain-background.jpg') center/cover no-repeat; */
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  opacity: 0.2; /* Makes the image less prominent */
 }
 
-.register-background {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-    url("../src/assets/images/computer-4484282_1280.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+.test-area::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Adds a white overlay for better text readability */
+  z-index: 1;
+}
+
+.test-area form {
+  position: relative;
+  z-index: 2; /* Ensures form elements are above the overlay */
 }

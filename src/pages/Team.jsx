@@ -7,6 +7,7 @@ const Team = () => {
     <div className="backgroundImage">
       <HeroSection/>
       <TabSwitch/>
+      
     </div>
   )
 }

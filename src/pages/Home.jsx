@@ -1,16 +1,17 @@
 import BlogsSection from "../components/home/BlogsSection";
 import HeroSection from "../components/home/HeroSection";
 import ProcessSection from "../components/home/ProcessSection";
-import FAQ from "../components/home/FAQ"
+import FAQ from "../components/home/FAQ";
+import InfoSection from "../components/home/InfoSection";
 
 const Home = () => {
   return (
     <>
       <HeroSection />
-      <ProcessSection/>
-      <BlogsSection/>
-      <FAQ/>
-
+      <InfoSection />
+      <ProcessSection />
+      <BlogsSection />
+      <FAQ />
     </>
   );
 };
