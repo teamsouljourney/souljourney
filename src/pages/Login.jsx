@@ -58,7 +58,7 @@ const Login = () => {
             }}
             validationSchema={loginSchema}
             onSubmit={(values, actions) => {         
-              console.log(values);
+              // console.log("Form submitted:", values);
               login(values);
               actions.resetForm();
               actions.setSubmitting(false);
