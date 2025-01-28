@@ -13,12 +13,14 @@ function App() {
   const theme = createTheme({
     palette: {
       primary: {
-      main: "#F6F4F0", // Light Cream
+        main: "#2E5077", // dark blue
       },
       secondary: {
-        main: "#D798B0", //pink
+        main: "#F6F4F0", // Light Cream
+        // second: "#"
       },
       customColors: {
+        pink: "#D798B0",
         purple: "#8F5B8A",
         darkblue: "#2E5077",
         lightgreen: "#4DA1A9",

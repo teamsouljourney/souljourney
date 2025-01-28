@@ -14,7 +14,7 @@ export const authContainerStyle = (bgImage) => {
 
 export const authMainContainerGridStyle = {
     height: "100%",
-    p: { xs: 2, sm: 3 },
+    p: { xs: 1, sm: 2 },
     justifyContent: {
         xs: "center",
         sm: "center",
@@ -45,7 +45,7 @@ export const authFormBoxStyle = {
     display: "flex", 
     flexDirection: "column", 
     gap: 2, 
-    backgroundColor: "primary.main",
+    backgroundColor: "secondary.main",
     // border: "1px solid red",
     borderRadius: "30px",
     p: { xs: 2, sm: 3 },

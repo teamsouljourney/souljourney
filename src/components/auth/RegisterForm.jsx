@@ -2,6 +2,9 @@ import { Box, Button, TextField, useTheme } from "@mui/material";
 import { Form } from "formik";
 import * as Yup from "yup"
 import { authFormBoxStyle } from "../../styles/globalStyle";
+import googleLogo from "../../assets/loginRegisterImage/Google.png";
+import PasswordField from "./PasswordField";
+import useAuthCall from "../../hooks/useAuthCall";
 
 export const SignupSchema = Yup.object().shape({
   userName: Yup.string()
@@ -36,14 +39,18 @@ const RegisterForm = ({
 }) => {
 
   const theme = useTheme()
+  const {signInWithGoogle} = useAuthCall()
   return (
     <div>
       <Form>
-        <Box sx={authFormBoxStyle}>
+        <Box 
+        sx={authFormBoxStyle}
+        >
           <TextField
             name="userName"
             label="Username"
             type="text"
+            variant="outlined"
             value={values.userName}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -76,7 +83,7 @@ const RegisterForm = ({
           <TextField
             name="email"
             label="Email"
-            type="text"
+            type="email"
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -84,16 +91,14 @@ const RegisterForm = ({
             helperText={touched.email && errors.email}
             required
           />
-          <TextField
+          <PasswordField
             name="password"
             label="Password"
-            type="text"
             value={values.password}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.password && Boolean(errors.password)}
-            helperText={touched.password && errors.password}
-            required
+            touched={touched.password}
+            errors={errors}
           />
 
           <Button
@@ -102,7 +107,7 @@ const RegisterForm = ({
             disabled={isSubmitting}
             sx={{
               backgroundColor: "customColors.darkblue",
-              color: "primary.main",
+              color: "secondary.main",
               "&:hover": {
                 backgroundColor: "customColors.purple",
                 opacity: 0.8
@@ -111,6 +116,23 @@ const RegisterForm = ({
           >
             {isSubmitting ? "Loading..." : "Sign Up"}
           </Button>
+          <Button
+              type="submit"
+              variant="contained"
+              disabled={isSubmitting}
+              sx={{
+              backgroundColor: "customColors.darkblue",
+              color: "secondary.main",
+              "&:hover": {
+                backgroundColor: "customColors.purple",
+                opacity: 0.8
+                },
+            }}
+              onClick={signInWithGoogle}
+            >
+              {isSubmitting ? "Loading..." : "Sign up with"}
+              <img src={googleLogo} alt="" />
+            </Button>
         </Box>
       </Form>
     </div>

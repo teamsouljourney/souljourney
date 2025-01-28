@@ -4,11 +4,14 @@ import bgImage from '../assets/loginRegisterImage/weSupport1.jpg'
 import RegisterHeader from '../components/auth/RegisterHeader'
 import LockIcon from "@mui/icons-material/Lock";
 import { Formik } from 'formik';
-import RegisterForm, { SignupSchema } from '../components/auth/RegisterForm';
+import RegisterForm from '../components/auth/RegisterForm';
+import { SignupSchema } from '../components/auth/RegisterForm';
 import { Link } from 'react-router-dom';
 import { authContainerStyle, authMainContainerGridStyle, authFormContainerGridStyle, } from '../styles/globalStyle';
+import useAuthCall from '../hooks/useAuthCall';
 
 const Register = () => {
+  const {register} = useAuthCall()
   return (
     <Container
       maxWidth="xxl"
@@ -20,11 +23,7 @@ const Register = () => {
         sx={authMainContainerGridStyle}
       >
         <Grid
-          item
-          xs={12}
-          sm={6}
-          md={4}
-          lg={3}
+          size={12}
           sx={authFormContainerGridStyle}
         >
           <RegisterHeader />
@@ -41,7 +40,7 @@ const Register = () => {
             variant="h5"
             align="center"
             mb={1}
-            color="secondary"
+            color="customColors.pink"
             sx={{
               fontSize: {
                 xs: "1rem",
@@ -61,9 +60,11 @@ const Register = () => {
               password: "",
             }}
             validationSchema={SignupSchema}
-            onSubmit={values => {
-         
+            onSubmit={(values, actions) => {
               console.log(values);
+              register(values)
+              actions.resetForm()
+              actions.setSubmitting(false);
             }}
             component={(props)=><RegisterForm {...props}/>}
           >
