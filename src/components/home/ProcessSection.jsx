@@ -1,12 +1,12 @@
 import Foto1 from "../../assets/images/pexels-liza-summer-6347901.jpg";
-import Foto2 from "../../assets/images/pexels-yankrukov-6818303.jpg";
+import Foto2 from "../../assets/images/pexels-yankrukov-4458421.jpg";
 import Foto3 from "../../assets/images/pexels-karolina-grabowska-4467687.jpg";
 import Foto4 from "../../assets/images/pexels-cottonbro-4065876.jpg";
 
 const ProcessSection = () => {
   return (
     <>
-      <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between mb-10">
+      <div className=" mx-24 px-4 sm:px-6 lg:px-8 flex flex-col justify-between mb-10 ">
         <div className="text-center mt-10">
           <h3 className="text-3xl sm:text-5xl leading-normal font-extrabold tracking-tight text-gray-900">
             How it <span className="text-seaGreen">Works?</span>
@@ -17,14 +17,14 @@ const ProcessSection = () => {
           <ul className="md:grid md:grid-cols-4 md:col-gap-10 md:row-gap-10">
             <li className=" bg-offWhite p-5 pb-10 text-center">
               <div className="flex flex-col items-center">
-                <div className="flex-shrink-0 relative top-0 -mt-16">
+                <div className=" flex-shrink-0 relative top-0 -mt-16">
                   <div className="flex items-center justify-center h-20 w-30 md:h-34 md:w-34 rounded-full bg-gradient-to-r from-offWhite to-seaGreen-light text-customBlack border-4 border-white text-xl font-semibold transform transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-lg cursor-pointer mt-4">
                     Register or Login
                   </div>
                   <img
                     src={Foto1}
                     alt=""
-                    className="w-full h-64 object-cover mt-4 rounded-lg"
+                    className="w-full h-64  object-cover mt-4 rounded-lg"
                   />
                 </div>
                 <div className="mt-4">
