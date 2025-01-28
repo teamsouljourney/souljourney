@@ -46,8 +46,10 @@ const ResetPasswordForm = ({
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            padding: { xs: "1rem", md: "2rem" },
             gap: 3,
-            width: { md: "50%" },
+            width: { md: "40%" },
+            height: { md: "25rem" },
           }}
         >
           <PasswordField
@@ -91,7 +93,7 @@ const ResetPasswordForm = ({
             backgroundRepeat: "no-repeat",
             display: { xs: "none", md: "block" },
             width: { md: "50%" },
-            height: { lg: "23rem" },
+            height: { md: "25rem" },
           }}
         ></Box>
       </Box>

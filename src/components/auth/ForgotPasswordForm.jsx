@@ -32,7 +32,7 @@ const ForgotPasswordForm = ({
             backgroundRepeat: "no-repeat",
             display: { xs: "none", md: "block" },
             width: { md: "50%" },
-            height: { md: "23rem" },
+            height: { md: "25rem" },
           }}
         ></Box>
         <Box
@@ -43,7 +43,7 @@ const ForgotPasswordForm = ({
             padding: { xs: "1rem", md: "2rem" },
             gap: 3,
             width: { md: "40%" },
-            height: { md: "23rem" },
+            height: { md: "25rem" },
           }}
         >
           <TextField
