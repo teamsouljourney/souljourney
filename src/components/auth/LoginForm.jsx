@@ -7,9 +7,9 @@ import PasswordField from "./PasswordField";
 import useAuthCall from "../../hooks/useAuthCall";
 
 export const loginSchema = object({
-  userName: string()
-    .required("Username is required!")
-    .min(3, "Username must be at least 3 characters!"),
+  // userName: string()
+  //   .required("Username is required!")
+  //   .min(3, "Username must be at least 3 characters!"),
   email: string()
     .email("Please enter a valid email address")
     .required("Email is required"),
@@ -25,6 +25,7 @@ const LoginForm = ({
   handleSubmit,
   isSubmitting,
 }) => {
+  // console.log(errors, touched);
   const theme = useTheme();
   const {signInWithGoogle} = useAuthCall()
   return (
