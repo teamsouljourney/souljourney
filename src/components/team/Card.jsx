@@ -1,6 +1,6 @@
 // import teams from "../../helper/team.json"
 
-const Card = ({teamsFilter,teams}) => {
+const Card = ({teams}) => {
   console.log(teams);
   
   return (
