@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Footer from "../components/Footer";
 import VerifyEmail from "../pages/VerifyEmail";
+import Pricing from "../pages/Pricing";
 
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
@@ -26,16 +27,20 @@ const AppRouter = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/auth/verify-email" element={<VerifyEmail />} />
+        <Route path="/team" element={<Team/>} />
+        <Route path="/team/:id" element={<TeamDetail/>}/>
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/auth/reset-password/:token" element={<ResetPassword />} />
+       
 
         {/* Private Area */}
         <Route path="/private" element={<PrivateRouter />}>
           {/* Privates Routes */}
         </Route>
-        <Route path="/team" element={<Team />} />
-        <Route path="/team/:id" element={<TeamDetail/>}/>
+       
       </Routes>
+      
       <Footer />
     </Router>
   );

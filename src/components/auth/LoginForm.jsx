@@ -5,11 +5,12 @@ import { authFormBoxStyle } from "../../styles/globalStyle";
 import googleLogo from "../../assets/loginRegisterImage/Google.png";
 import PasswordField from "./PasswordField";
 import useAuthCall from "../../hooks/useAuthCall";
+import { Link } from "react-router-dom";
 
 export const loginSchema = object({
-  userName: string()
-    .required("Username is required!")
-    .min(3, "Username must be at least 3 characters!"),
+  // userName: string()
+  //   .required("Username is required!")
+  //   .min(3, "Username must be at least 3 characters!"),
   email: string()
     .email("Please enter a valid email address")
     .required("Email is required"),
@@ -25,8 +26,9 @@ const LoginForm = ({
   handleSubmit,
   isSubmitting,
 }) => {
+  // console.log(errors, touched);
   const theme = useTheme();
-  const {signInWithGoogle} = useAuthCall()
+  const { signInWithGoogle } = useAuthCall();
   return (
     <div>
       <Form>
@@ -51,22 +53,44 @@ const LoginForm = ({
             touched={touched.password}
             errors={errors}
           />
-
-          <Button
-            type="submit"
-            variant="contained"
-            disabled={isSubmitting}
+          <Box
             sx={{
-              backgroundColor: "customColors.purple",
-              color: "secondary.main",
-              "&:hover": {
-                backgroundColor: "customColors.darkblue",
-                opacity: 0.8,
-              },
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
-            {isSubmitting ? "Loading..." : "Sign In"}
-          </Button>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              disabled={isSubmitting}
+              sx={{
+                backgroundColor: "customColors.purple",
+                color: "secondary.main",
+                "&:hover": {
+                  backgroundColor: "customColors.darkblue",
+                  opacity: 0.8,
+                },
+              }}
+            >
+              {isSubmitting ? "Loading..." : "Sign In"}
+            </Button>
+            <Box
+              sx={{
+                textAlign: "center",
+                color: "customColor.darkblue",
+                width: "75%",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              }}
+            >
+              <Link to="/forgotPassword" style={{ color: "#2E5077" }}>
+                Forgot your <b>password!</b>
+              </Link>
+            </Box>
+          </Box>
           <Button
             type="submit"
             variant="contained"

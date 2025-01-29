@@ -3,8 +3,11 @@ import { Formik } from "formik";
 import ForgotPasswordForm, {
   ForgotPasswordSchema,
 } from "../components/auth/ForgotPasswordForm";
+import useAuthCall from "../hooks/useAuthCall";
 
 const ForgotPassword = () => {
+  const { forgotPassword } = useAuthCall();
+
   const initialValues = {
     email: "",
   };
@@ -20,8 +23,8 @@ const ForgotPassword = () => {
         initialValues={initialValues}
         validationSchema={ForgotPasswordSchema}
         onSubmit={(values, actions) => {
+          forgotPassword(values);
           actions.resetForm();
-          console.log(values);
           actions.setSubmitting(false);
         }}
       >
