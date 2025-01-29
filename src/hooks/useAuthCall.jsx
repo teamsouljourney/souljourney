@@ -31,7 +31,7 @@ const useAuthCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.message,
+        error.response.data.message,
         "Oops! Something went wrong during registration"
       );
     }
@@ -47,9 +47,10 @@ const useAuthCall = () => {
       toastSuccessNotify("You have successfully logged in!");
       navigate("/");
     } catch (error) {
+      // console.log(error);      
       dispatch(fetchFail());
       toastErrorNotify(
-        error.message,
+        error.response.data.message,
         "Oops! Something went wrong during login!"
       );
     }
@@ -72,7 +73,7 @@ const useAuthCall = () => {
       console.log(error);
       dispatch(fetchFail());
       toastErrorNotify(
-        error.message,
+        error.response.data.message,
         "Oops! Something went wrong during logout."
       );
     }
@@ -88,7 +89,7 @@ const useAuthCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.message,
+        error.response.data.message,
         "Oops! Something went wrong during password reset request."
       );
     }
@@ -107,7 +108,7 @@ const useAuthCall = () => {
       navigate("/login");
     } catch (error) {
       toastErrorNotify(
-        error.message,
+        error.response.data.message,
         "Failed to reset password. Please try again."
       );
     }
