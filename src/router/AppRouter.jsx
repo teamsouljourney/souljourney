@@ -12,6 +12,7 @@ import VerifyEmail from "../pages/VerifyEmail";
 
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
+import TeamDetail from "../components/team/TeamDetail";
 
 const AppRouter = () => {
   return (
@@ -33,6 +34,7 @@ const AppRouter = () => {
           {/* Privates Routes */}
         </Route>
         <Route path="/team" element={<Team />} />
+        <Route path="/team/:id" element={<TeamDetail/>}/>
       </Routes>
       <Footer />
     </Router>
