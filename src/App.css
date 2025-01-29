@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
+
 #root {
   margin: 0;
   padding: 0;
@@ -10,9 +11,14 @@
 }
 
 /****************Team Page*******************/
-.backgroundImage{
+ /*.backgroundImage{
   background-image: url(./assets/images/papaioannou-kostas-tysecUm5HJA-unsplash.jpg);
-  background-size: cover; /* Resmin tüm alanı kaplamasını sağlar */
-  background-position: center; /* Resmi ortalar */
-  min-height: 100vh; /* Sayfa boyutunda bir arka plan */
-}
+  background-size: cover; 
+  background-position: center; 
+  min-height: 100vh; 
+} */
+
+/* .backgroundImage {
+  background-color:offWhite;
+  min-height: 100vh;
+} */

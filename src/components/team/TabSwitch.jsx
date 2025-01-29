@@ -37,13 +37,13 @@ const filteredTeams = teams.filter((team) => {
  
   return (
     <>
-      <div className="w-full h-full mt-10  mx-auto">
+      <div className="w-full h-full mt-5  mx-auto">
         <div className="bg-navy-light opacity-3 p-2 rounded-t-lg">
-          <div className="flex justify-center space-x-4">
+          <div className="flex flex-wrap justify-center space-x-4">
             {tablist.map((list) => (
               <button
               key={list}
-                className={"px-4 py-2 text-white font-semibold border-b-4  hover:bg-navy focus:outline-none tab-button"}
+                className={"px- py-1 text-white font-semibold border-b-4  hover:bg-navy focus:outline-none tab-button"}
                 onClick={() => handleTabClick(list)}
               >
                 {list}
@@ -65,7 +65,7 @@ const filteredTeams = teams.filter((team) => {
 
        
 
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap justify-center gap-4 mt-1">
           <Card teams={filteredTeams}  />
         </div>
       </div>
