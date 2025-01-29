@@ -34,7 +34,7 @@ const Register = () => {
               height: 30,
             }}
           >
-            <LockIcon size="30" />
+            <LockIcon size="20" />
           </Avatar>
           <Typography
             variant="h5"
@@ -69,7 +69,16 @@ const Register = () => {
             component={(props)=><RegisterForm {...props}/>}
           >
           </Formik>
-          <Box sx={{ textAlign: "center", mt: 2, color: "customColor.darkblue" }}>
+          <Box
+             sx={{
+              textAlign: "center", 
+              mt: 2, 
+              color: "customColor.darkblue",
+              "&:hover": {
+                textDecoration: "underline",
+              },
+             }}
+          >
             <Link to="/login" style={{color: "#2E5077"}}>
               Already have an account? <b>Sign in</b> 
             </Link>

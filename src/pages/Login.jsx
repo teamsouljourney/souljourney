@@ -52,7 +52,7 @@ const Login = () => {
           </Typography>
           <Formik
             initialValues={{
-              userName: "",
+              // userName: "",
               email: "",
               password: "",
             }}
@@ -66,7 +66,16 @@ const Login = () => {
             component={(props)=><LoginForm {...props}/>}
           >
           </Formik>
-          <Box sx={{ textAlign: "center", mt: 2, color: "customColor.darkblue" }}>
+          <Box
+             sx={{
+              textAlign: "center", 
+              mt: 2, 
+              color: "customColor.darkblue",
+              "&:hover": {
+                textDecoration: "underline",
+              },
+             }}
+          >
             <Link to="/register"  style={{color: "#2E5077"}}>
               Don't have an account? <b>Sign Up</b>
             </Link>
