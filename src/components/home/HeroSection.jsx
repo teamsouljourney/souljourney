@@ -1,5 +1,6 @@
-
+import { NavLink } from "react-router-dom";
 import Video from '../../assets/images/4919748-uhd_4096_2160_25fps.mp4';
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white">
@@ -15,8 +16,8 @@ const HeroSection = () => {
         ></video>
       </div>
       <div className="video-content space-y-2 z-10">
-        <h1 className="font-light font-urbanist text-6xl mb-8">Soul Journey & Online Therapy</h1>
-        <a href="#" className="bg-pastelGreen text-gray-900 hover:bg-pastelGreen-light py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Get Started</a>
+        <h1 className="font-light font-urbanist   sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl mb-8">Soul Journey & Online Therapy</h1>
+        <NavLink to="register" className="bg-seaGreen text-gray-900 hover:bg-pastelGreen-light py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Get Started</NavLink>
       </div>
       <style>{`
         .video-docker video {

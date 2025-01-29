@@ -56,7 +56,7 @@ const filteredTeams = teams.filter((team) => {
             placeholder="Search teams..."
             value={searchTerm}
             onChange={handleSearchChange} // Arama değişikliği
-            className="px-4 py-2 border rounded-lg"
+            className="px-2 py-2 rounded-lg focus:outline-none"
           />
         </div>
           </div>
