@@ -14,6 +14,7 @@ import Pricing from "../pages/Pricing";
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
 import TeamDetail from "../components/team/TeamDetail";
+import About from "../pages/About";
 
 const AppRouter = () => {
   return (
@@ -26,6 +27,7 @@ const AppRouter = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blog />} />
+        <Route path="/blogs" element={<About/>} />
         <Route path="/auth/verify-email" element={<VerifyEmail />} />
         <Route path="/team" element={<Team/>} />
         <Route path="/team/:id" element={<TeamDetail/>}/>
