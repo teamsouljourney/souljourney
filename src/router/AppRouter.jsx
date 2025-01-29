@@ -13,6 +13,7 @@ import Pricing from "../pages/Pricing";
 
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
+import TeamDetail from "../components/team/TeamDetail";
 
 const AppRouter = () => {
   return (
@@ -27,15 +28,17 @@ const AppRouter = () => {
         <Route path="/blogs" element={<Blog />} />
         <Route path="/auth/verify-email" element={<VerifyEmail />} />
         <Route path="/team" element={<Team/>} />
+        <Route path="/team/:id" element={<TeamDetail/>}/>
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/auth/reset-password/:token" element={<ResetPassword />} />
-
+       
 
         {/* Private Area */}
         <Route path="/private" element={<PrivateRouter />}>
           {/* Privates Routes */}
         </Route>
+       
       </Routes>
       
       <Footer />

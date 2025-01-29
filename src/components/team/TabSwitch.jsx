@@ -38,12 +38,12 @@ const filteredTeams = teams.filter((team) => {
   return (
     <>
       <div className="w-full h-full mt-5  mx-auto">
-        <div className="bg-navy-light opacity-3 p-2 rounded-t-lg">
+        <div className=" opacity-3 p-2 rounded-t-lg">
           <div className="flex flex-wrap justify-center space-x-4">
             {tablist.map((list) => (
               <button
               key={list}
-                className={"px- py-1 text-white font-semibold border-b-4  hover:bg-navy focus:outline-none tab-button"}
+                className={"px- py-1 text-black font-semibold border-b-4  hover:bg-navy focus:outline-none tab-button"}
                 onClick={() => handleTabClick(list)}
               >
                 {list}
