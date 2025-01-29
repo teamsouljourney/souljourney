@@ -3,12 +3,12 @@ import souljorurney_Logo from "../assets/souljourney_Logo.png";
 
 const Footer = () => {
   return (
-    <div className="bg-navy-light dark:bg-customBlack w-full bottom-0 z-20">
-      <div className="dark:text-navy-dark text-mauve-dark flex justify-between">
+    <div className="bg-gradient-to-t from-offWhite to-seaGreen-light dark:from-customBlack-dark dark:to-customBlack-light w-full bottom-0 z-20">
+      <div className="dark:text-offWhite text-mauve-dark flex justify-between">
         <ul className="flex flex-col items-center pl-4 sm:items-end sm:flex sm:justify-center sm:flex-row gap-0 sm:gap-6 sm:pl-6">
           <li className="my-2 whitespace-nowrap">
             <NavLink
-              className="hover:text-navy-dark dark:hover:text-mauve-dark text-xs sm:text-base"
+              className="hover:text-navy-dark dark:hover:text-pink-light text-xs sm:text-base"
               to="/impressum"
             >
               Impressum
@@ -16,7 +16,7 @@ const Footer = () => {
           </li>
           <li className="my-2 whitespace-nowrap">
             <NavLink
-              className="hover:text-navy-dark dark:hover:text-mauve-dark text-xs sm:text-base"
+              className="hover:text-navy-dark dark:hover:text-pink-light text-xs sm:text-base"
               to="/termsandconditions"
             >
               Terms & Conditions
@@ -24,7 +24,7 @@ const Footer = () => {
           </li>
           <li className="my-2 whitespace-nowrap">
             <NavLink
-              className="hover:text-navy-dark dark:hover:text-mauve-dark text-xs sm:text-base"
+              className="hover:text-navy-dark dark:hover:text-pink-light text-xs sm:text-base"
               to="/privacypolicy"
             >
               Privacy Policy
@@ -43,7 +43,7 @@ const Footer = () => {
         <ul className="flex flex-col items-center sm:items-end sm:flex sm:justify-center sm:flex-row gap-0 sm:gap-6  pr-6">
           <li className="my-2 whitespace-nowrap">
             <NavLink
-              className="hover:text-navy-dark dark:hover:text-mauve-dark text-xs sm:text-base"
+              className="hover:text-navy-dark dark:hover:text-pink-light text-xs sm:text-base"
               to="/contact"
             >
               Contact
@@ -51,7 +51,7 @@ const Footer = () => {
           </li>
           <li className="my-2 whitespace-nowrap">
             <NavLink
-              className="hover:text-navy-dark dark:hover:text-mauve-dark text-xs sm:text-base"
+              className="hover:text-navy-dark dark:hover:text-pink-light text-xs sm:text-base"
               to="/cookiesettings"
             >
               Cookie Settings
@@ -59,7 +59,7 @@ const Footer = () => {
           </li>
           <li className="my-2 whitespace-nowrap">
             <NavLink
-              className="hover:text-navy-dark dark:hover:text-mauve-dark text-xs sm:text-base "
+              className="hover:text-navy-dark dark:hover:text-pink-light text-xs sm:text-base "
               to="/fortherapists"
             >
               For Therapists
@@ -73,7 +73,7 @@ const Footer = () => {
             <li>
               <NavLink
                 to="#"
-                className="text-navy-dark hover:text-mauve-dark dark:hover:text-navy-dark dark:text-mauve-dark"
+                className="text-navy-dark hover:text-mauve-dark dark:hover:text-seaGreen-light dark:text-mauve-dark"
               >
                 <svg
                   className="w-10 h-10"
@@ -92,7 +92,7 @@ const Footer = () => {
             <li>
               <NavLink
                 to="#"
-                className="text-navy-dark hover:text-mauve-dark dark:hover:text-navy-dark dark:text-mauve-dark"
+                className="text-navy-dark hover:text-mauve-dark dark:hover:text-seaGreen-light dark:text-mauve-dark"
               >
                 <svg
                   className="w-10 h-10"
@@ -111,7 +111,7 @@ const Footer = () => {
             <li>
               <NavLink
                 to="#"
-                className="text-navy-dark hover:text-mauve-dark dark:hover:text-navy-dark dark:text-mauve-dark"
+                className="text-navy-dark hover:text-mauve-dark dark:hover:text-seaGreen-light dark:text-mauve-dark"
               >
                 <svg
                   className="w-10 h-10"
@@ -126,7 +126,7 @@ const Footer = () => {
             <li>
               <NavLink
                 to="#"
-                className="text-navy-dark hover:text-mauve-dark dark:hover:text-navy-dark dark:text-mauve-dark"
+                className="text-navy-dark hover:text-mauve-dark dark:hover:text-seaGreen-light dark:text-mauve-dark"
               >
                 <svg
                   className="w-10 h-10"
@@ -145,7 +145,7 @@ const Footer = () => {
             <li>
               <NavLink
                 to="#"
-                className="text-navy-dark hover:text-mauve-dark dark:hover:text-navy-dark dark:text-mauve-dark"
+                className="text-navy-dark hover:text-mauve-dark dark:hover:text-seaGreen-light dark:text-mauve-dark"
               >
                 <svg
                   className="w-10 h-10"
@@ -169,14 +169,14 @@ const Footer = () => {
                         -0.204,-0.34l0,-4.631c0,-0.136 0.068,-0.273 0.204,-0.341c0.136,-0.068
                         0.272,-0.068 0.409,0l3.201,2.316c0.068,0.068 0.136,0.204
                         0.136,0.34c0.068,0.136 0,0.273 -0.136,0.341Z"
-                    className="fill-white dark:fill-customBlack-dark"
+                    className="fill-offWhite-dark dark:fill-customBlack-dark"
                   />
                 </svg>
               </NavLink>
             </li>
           </ul>
         </div>
-        <div className="my-5">
+        <div className="my-5 text-navy dark:text-offWhite">
           Copyright {new Date().getFullYear()} © All Rights Reserved
         </div>
       </div>
