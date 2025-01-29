@@ -3,7 +3,7 @@ import TabSwitch from "../components/team/TabSwitch";
 
 const Team = () => {
   return (
-    <div className="backgroundImage">
+    <div className=" bg-offWhite min-h-screen ">
       <HeroSection />
       <TabSwitch />
     </div>
