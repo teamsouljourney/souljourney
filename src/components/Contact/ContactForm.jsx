@@ -32,8 +32,8 @@ const ContactForm = () => {
   return (
     <form ref={form} onSubmit={sendEmail}>
       <div className="mb-6 text-center">
-        <h2 className="mb-2 text-2xl font-bold text-mauve-dark">Get Started</h2>
-        <p className="text-sm font-semibold text-customBlack-dark dark:text-gray-300">
+        <h2 className="mb-2 text-2xl font-bold text-navy">Get Started</h2>
+        <p className="text-sm font-semibold text-navy-light dark:text-offWhite">
           Fill out the form below, and we&apos;ll get back to you as soon as
           possible.
         </p>
@@ -51,7 +51,7 @@ const ContactForm = () => {
               id="user_name"
               autoComplete="given-name"
               placeholder="Your name"
-              className="w-full py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0 focus:outline-none focus:ring focus:ring-mauve-light "
+              className="w-full py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0 focus:outline-none focus:ring focus:ring-navy-light "
               name="user_name"
             />
           </div>
@@ -65,7 +65,7 @@ const ContactForm = () => {
               id="user_email"
               autoComplete="email"
               placeholder="Your email address"
-              className="w-full py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0 focus:outline-none focus:ring focus:ring-mauve-light"
+              className="w-full py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0 focus:outline-none focus:ring focus:ring-navy-light"
               name="user_email"
             />
           </div>
@@ -80,7 +80,7 @@ const ContactForm = () => {
             cols="30"
             rows="5"
             placeholder="Write your message..."
-            className="w-full h-[8rem] py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0  focus:outline-none focus:ring focus:ring-mauve-light"
+            className="w-full resize-none h-[8rem] py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0  focus:outline-none focus:ring focus:ring-navy-light"
             name="message"
           ></textarea>
         </div>
@@ -89,7 +89,7 @@ const ContactForm = () => {
         <button
           type="submit"
           value="Send"
-          className="w-full px-6 py-3 text-white transition-all duration-200 rounded-md bg-mauve hover:bg-mauve-dark font-xl sm:mb-0"
+          className="w-full px-6 py-3 transition-all duration-300 rounded-md text-offWhite bg-seaGreen hover:bg-navy-dark font-xl sm:mb-0"
         >
           Send Message
         </button>
