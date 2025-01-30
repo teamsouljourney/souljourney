@@ -6,13 +6,13 @@ import InfoSection from "../components/home/InfoSection";
 
 const Home = () => {
   return (
-    <>
+    <div className="bg-offWhite">
       <HeroSection />
       <InfoSection />
       <ProcessSection />
       <BlogsSection />
       <FAQ />
-    </>
+    </div>
   );
 };
 

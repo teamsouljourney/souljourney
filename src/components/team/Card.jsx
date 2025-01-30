@@ -3,7 +3,7 @@ const Card = ({ teams }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-wrap justify-center items-center min-h-screen gap-10 w-full p-4">
+    <div className="flex flex-wrap justify-center items-center w-full gap-10  p-4">
       {teams?.map((team) => (
         <div
           key={team.id}
@@ -33,7 +33,7 @@ const Card = ({ teams }) => {
             {/* Buton  */}
             <div className="p-6 pt-0">
               <button
-                className="w-full bg-gradient-to-r from-navy to-seaGreen text-white py-2 rounded-lg hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark"
+                className="w-[50%] block mx-auto  bg-gradient-to-r from-navy to-offWhite text-white py-2 rounded-lg hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark"
                 onClick={() => navigate(`/team/${team.id}`)}
               >
                 See More
