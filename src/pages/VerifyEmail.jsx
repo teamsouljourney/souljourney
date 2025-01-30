@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import verification from "../assets/images/verification.png";
 import verificationSuccess from "../assets/images/verificationSuccess.png";
 import verificationFail from "../assets/images/verificationFail.png";
 
@@ -50,7 +51,7 @@ const VerifyEmail = () => {
         default:
           setStatusMessage("Verifying your email... Please wait.");
           setStatusType("");
-          setStatusImage(verificationFail);
+          setStatusImage(verification);
           break;
       }
 
@@ -61,7 +62,7 @@ const VerifyEmail = () => {
   }, [verificationStatus, statusTypeParam, navigate]);
 
   return (
-    <div className="flex flex-col items-center max-w-xl gap-6 px-4 mx-auto">
+    <div className="flex flex-col items-center max-w-xl min-h-screen gap-6 px-4 py-24 mx-auto md:py-48">
       {/* Image */}
       <div
         className="w-full bg-center bg-no-repeat bg-contain h-96"
@@ -71,7 +72,7 @@ const VerifyEmail = () => {
       ></div>
 
       {/* Title */}
-      <h1 className="text-2xl font-bold text-center text-gray-800">
+      <h1 className="text-2xl font-bold text-center text-navy">
         Email Verification
       </h1>
 
@@ -79,7 +80,7 @@ const VerifyEmail = () => {
       {statusMessage && (
         <div
           className={`text-center text-offWhite text-sm font-semibold px-4 py-2 rounded-lg ${
-            statusType === "success" ? "bg-seaGreen" : "bg-mauve"
+            statusType === "success" ? "bg-seaGreen" : "bg-navy"
           }`}
         >
           {statusMessage}
@@ -88,7 +89,7 @@ const VerifyEmail = () => {
 
       {/* Only show this paragraph if status is not 'success' */}
       {verificationStatus !== "success" && (
-        <p className="text-sm text-center text-customBlack-light">
+        <p className="text-sm font-semibold text-center text-navy-dark ">
           If you didn&apos;t sign up for this account, please ignore this email.
         </p>
       )}
@@ -102,13 +103,13 @@ const VerifyEmail = () => {
         <div className="flex flex-wrap justify-center gap-4">
           <button
             onClick={() => navigate("/login")}
-            className="px-4 py-2 text-sm font-medium text-white transition duration-300 rounded-lg bg-mauve hover:bg-mauve-dark"
+            className="px-4 py-2 text-sm font-medium text-white transition duration-300 rounded-lg bg-seaGreen hover:bg-navy"
           >
             Go to Login Page
           </button>
           <button
             onClick={() => navigate("/")}
-            className="px-4 py-2 text-sm font-medium transition duration-300 border rounded-lg text-mauve border-mauve"
+            className="px-4 py-2 text-sm font-medium transition duration-300 border rounded-lg text-navy border-navy"
           >
             Back to Home
           </button>
