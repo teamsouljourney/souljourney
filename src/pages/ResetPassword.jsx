@@ -22,6 +22,7 @@ const ResetPassword = () => {
       maxWidth="lg"
       sx={{
         py: "12rem",
+        minHeight: "100vh",
       }}
     >
       <Formik
