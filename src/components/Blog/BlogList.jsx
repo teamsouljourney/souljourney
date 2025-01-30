@@ -16,7 +16,7 @@ function BlogList({ onReadMore, selectedCategory, onCategoryChange }) {
             <button
               key={category}
               onClick={() => onCategoryChange(category)}
-              className={`px-6 py-3 mr-3 mb-5 text-white font-semibold rounded-full transition-all duration-300 ease-in-out transform ${
+              className={`px-4 py-2 text-black font-semibold border-b-4 hover:bg-navy-light focus:outline-none tab-button transition-all duration-300 ease-in-out mb-5 rounded-lg ${
                 selectedCategory === category
                   ? "bg-navy-light text-white shadow-lg scale-105"
                   : "bg-seaGreen-light text-white hover:bg-navy hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-seaGreen"
@@ -29,7 +29,7 @@ function BlogList({ onReadMore, selectedCategory, onCategoryChange }) {
       </div>
 
       {/* Blog Kartları */}
-      <div className="grid grid-cols-1 gap-8">
+      <div className="grid grid-cols-1 gap-8 mt-8">
         {filteredBlogs.map((blog, index) => (
           <div
             key={blog.id}

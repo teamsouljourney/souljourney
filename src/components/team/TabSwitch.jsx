@@ -10,7 +10,7 @@ const TabSwitch = () => {
     "Health Psychology",
     "Educational Psychology",
     "Neuropsychology",
-    "Marriage and Family Therapy",
+    "Marriage and Family ",
   ];
 
     // Kategoriyi değiştiren fonksiyon
@@ -38,12 +38,12 @@ const filteredTeams = teams.filter((team) => {
   return (
     <>
       <div className="w-full h-full mt-5  mx-auto">
-        <div className=" opacity-3 p-2 rounded-t-lg">
-          <div className="flex flex-wrap justify-center space-x-4">
+        <div className=" opacity-3 p-1 rounded-t-lg">
+          <div className="flex flex-wrap justify-center space-x-4 ">
             {tablist.map((list) => (
               <button
               key={list}
-                className={"px- py-1 text-black font-semibold border-b-4  hover:bg-navy focus:outline-none tab-button"}
+                className={"px-4 py-1 text-black font-semibold border-b-4 hover:bg-navy-light focus:outline-none tab-button transition-all duration-300 ease-in-out  rounded-lg"}
                 onClick={() => handleTabClick(list)}
               >
                 {list}
@@ -65,7 +65,7 @@ const filteredTeams = teams.filter((team) => {
 
        
 
-        <div className="flex flex-wrap justify-center gap-4 mt-1">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-2 mt-5">
           <Card teams={filteredTeams}  />
         </div>
       </div>
