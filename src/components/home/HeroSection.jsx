@@ -16,8 +16,8 @@ const HeroSection = () => {
         ></video>
       </div>
       <div className="video-content space-y-2 z-10">
-        <h1 className="font-light font-urbanist   sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl mb-8">Soul Journey & Online Therapy</h1>
-        <NavLink to="register" className="bg-navy text-gray-900 hover:bg-navy-light py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">Get Started</NavLink>
+        <h1 className="font-light font-urbanist  sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl mb-20">Soul Journey & Online Therapy</h1>
+        <NavLink to="register" className="bg-customBlack opacity-70 text-offWhite hover:bg-navy  py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg sm:px-8 sm:py-3 sm:text-2xl md:px-10 md:py-4 md:text-2xl lg:px-12 lg:py-5 lg:text-2xl">Get Started</NavLink>
       </div>
       <style>{`
         .video-docker video {
