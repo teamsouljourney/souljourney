@@ -1,4 +1,5 @@
 import HeroSection from "../components/team/HeroSection";
+import Join from "../components/team/Join";
 import TabSwitch from "../components/team/TabSwitch";
 
 const Team = () => {
@@ -6,6 +7,7 @@ const Team = () => {
     <div className=" bg-offWhite min-h-screen ">
       <HeroSection />
       <TabSwitch />
+      <Join/>
     </div>
   );
 };

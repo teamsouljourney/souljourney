@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import teams from "../../helper/team.json";
 import Card from "./Card";
 const BlogsSection = () => {
@@ -14,6 +15,10 @@ const BlogsSection = () => {
             and cultivate a healthier mindset. Here’s what you can expect from
             our blog.
           </p>
+
+          <NavLink to="blogs" className="w-[50%] block mx-auto  mt-6 bg-gradient-to-r from-navy to-offWhite text-customBlack font-bold text-center py-2 rounded-lg hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark">
+            See More
+          </NavLink>
         </div>
         {/* Card Component */}
         <div className="flex flex-wrap justify-center items-center">
