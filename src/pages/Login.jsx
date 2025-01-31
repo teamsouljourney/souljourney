@@ -1,6 +1,6 @@
 import { Avatar, Box, Container, Typography } from "@mui/material"
 import Grid from '@mui/material/Grid2'
-import bgImage from '../assets/loginRegisterImage/smile1.jpg'
+import bgImage from '../assets/loginRegisterImage/weSupport2.jpg'
 import LoginHeader from "../components/auth/LoginHeader"
 import LockIcon from "@mui/icons-material/Lock";
 import { Formik } from "formik";
@@ -69,7 +69,7 @@ const Login = () => {
           <Box
              sx={{
               textAlign: "center", 
-              mt: 2, 
+              mt: 3, 
               color: "customColor.darkblue",
               "&:hover": {
                 textDecoration: "underline",
@@ -78,6 +78,21 @@ const Login = () => {
           >
             <Link to="/register"  style={{color: "#2E5077"}}>
               Don't have an account? <b>Sign Up</b>
+            </Link>
+          </Box>
+          <Box
+            sx={{
+              textAlign: "center",
+              color: "customColor.darkblue",
+              mt: 1,
+              // width: "75%",
+              "&:hover": {
+                textDecoration: "underline",
+              },
+            }}
+          >
+            <Link to="/forgotPassword" style={{ color: "#2E5077" }}>
+              Forgot your <b>password!</b>
             </Link>
           </Box>
         </Grid>
