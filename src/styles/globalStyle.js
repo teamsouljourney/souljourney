@@ -1,7 +1,7 @@
 export const authContainerStyle = (bgImage) => {
     return ({
         minHeight: "100vh",
-        minWidth: "100vw",
+        // minWidth: "100vw",
         p: 0,
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
@@ -42,7 +42,7 @@ export const authFormContainerGridStyle = {
     mr: {
         sm: 5,
         md: 6,
-        lg: 8,
+        lg: 10,
     }
 };
 
