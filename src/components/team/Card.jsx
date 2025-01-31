@@ -33,7 +33,7 @@ const Card = ({ teams }) => {
             {/* Buton  */}
             <div className="p-6 pt-0">
               <button
-                className="w-[50%] block mx-auto  bg-gradient-to-r from-navy to-offWhite text-white py-2 rounded-lg hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark"
+                className="w-[50%] block mx-auto  bg-gradient-to-r from-navy to-offWhite text-customBlack font-bold py-2 rounded-lg hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark"
                 onClick={() => navigate(`/team/${team.id}`)}
               >
                 See More
