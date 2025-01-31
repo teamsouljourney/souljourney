@@ -1,6 +1,6 @@
 import { Avatar, Box, Container, Typography } from "@mui/material"
 import Grid from '@mui/material/Grid2'
-import bgImage from '../assets/loginRegisterImage/smile1.jpg'
+import bgImage from '../assets/loginRegisterImage/weSupport2.jpg'
 import LoginHeader from "../components/auth/LoginHeader"
 import LockIcon from "@mui/icons-material/Lock";
 import { Formik } from "formik";
