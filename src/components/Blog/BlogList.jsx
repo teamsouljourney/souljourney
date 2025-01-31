@@ -37,12 +37,15 @@ function BlogList({ onReadMore, selectedCategory, onCategoryChange }) {
               index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
             }`}
           >
+                      <div className="md:w-[439px] md:h-[366px] w-[439px] h-[366px]">
+
             {/* Resim Kutusu */}
             <img
               src={blog.image}
               alt={blog.title}
-              className="w-52 h-52 object-cover rounded-full shadow-md mb-4 sm:mb-0 sm:w-1/2"
+              className="w-full h-auto rounded-l-[80%] rounded-r-[80%] object-cover aspect-[439/366]"
             />
+            </div>
 
             {/* Metin Kutusu */}
             <div className="sm:ml-6 mt-4 sm:mt-0 sm:w-1/2">
