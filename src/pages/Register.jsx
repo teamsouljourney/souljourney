@@ -40,7 +40,7 @@ const Register = () => {
             variant="h5"
             align="center"
             mb={1}
-            color="customColors.pink"
+            color="primary"
             sx={{
               fontSize: {
                 xs: "1rem",
