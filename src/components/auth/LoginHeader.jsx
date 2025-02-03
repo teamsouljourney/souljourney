@@ -13,7 +13,7 @@ const LoginHeader = () => {
           fontSize: {
             xs: "1.5rem",
             sm: "2rem",
-            md: "2.5rem",
+            md: "2rem",
             lg: "2.5rem",
           },
         }}

@@ -76,20 +76,7 @@ const LoginForm = ({
             >
               {isSubmitting ? "Loading..." : "Sign In"}
             </Button>
-            <Box
-              sx={{
-                textAlign: "center",
-                color: "customColor.darkblue",
-                width: "75%",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-              }}
-            >
-              <Link to="/forgotPassword" style={{ color: "#2E5077" }}>
-                Forgot your <b>password!</b>
-              </Link>
-            </Box>
+            
           </Box>
           <Button
             type="submit"

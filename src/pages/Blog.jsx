@@ -15,7 +15,7 @@ function Blog() {
           <BlogDetail blog={selectedBlog} onBack={() => setSelectedBlog(null)} />
         ) : (
           <BlogList
-            onReadMore={(blog) => setSelectedBlog(blog)}
+          handleReadMore={(blog) => setSelectedBlog(blog)}
             selectedCategory={selectedCategory}
             onCategoryChange={(category) => setSelectedCategory(category)}
           />
