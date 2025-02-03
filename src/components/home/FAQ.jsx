@@ -80,7 +80,7 @@ const FAQ = () => {
               <div className="text-center mt-4">
                 <button
                   onClick={visibleQuestions < faqData.length ? showMoreQuestions : showLessQuestions}
-                  className="px-4 py-2 bg-[rgb(116,206,215)] text-black font-bold rounded-full hover:bg-[hsl(164,59%,65%)] transition-all duration-300"
+                  className="px-4 py-2 bg-gradient-to-l from-offWhite to-seaGreen-light rounded-full hover:shadow-lg hover:shadow-offWhite-dark transform  text-black font-bold transition-all duration-300"
                 >
                    {visibleQuestions < faqData.length ? "See More  →" : "See Less  →"}
                 </button>
