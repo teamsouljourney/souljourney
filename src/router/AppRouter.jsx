@@ -3,6 +3,8 @@ import PrivateRouter from "./PrivateRouter";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Navbar from "../components/Navbar";
+import BlogDetail from "../components/Blog/BlogDetail"; // BlogDetail bileşenini dahil et
+
 import Blog from "../pages/Blog";
 import Team from "../pages/Team";
 import Login from "../pages/Login";
@@ -39,6 +41,7 @@ const AppRouter = () => {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/auth/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/blogs/:id" element={<BlogDetail />} />
 
         {/* Private Area */}
         <Route path="/private" element={<PrivateRouter />}>
