@@ -1,11 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import blogs from "../../helper/blogs.json";
 
 function BlogList({ onReadMore, selectedCategory, onCategoryChange }) {
+  const navigate = useNavigate();
+
   const filteredBlogs =
     selectedCategory === "All"
       ? blogs
       : blogs.filter((blog) => blog.category === selectedCategory);
+      const handleReadMore = (blog) => {
+        navigate(`/blogs/${blog.id}`);
+      };
 
   return (
     <div>
@@ -52,7 +58,7 @@ function BlogList({ onReadMore, selectedCategory, onCategoryChange }) {
               <h2 className="text-xl font-bold mb-2">{blog.title}</h2>
               <p className="text-gray-700">{blog.description}</p>
               <button
-                onClick={() => onReadMore(blog)}
+                onClick={() => handleReadMore(blog)}
                 className="mt-4 px-4 py-2 mb-5 bg-navy  text-white rounded hover:bg-navy-light transition-all"
               >
                 Read More
