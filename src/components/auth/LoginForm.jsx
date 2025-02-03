@@ -4,11 +4,12 @@ import { object, string } from "yup";
 import { authFormBoxStyle } from "../../styles/globalStyle";
 import googleLogo from "../../assets/loginRegisterImage/Google.png";
 import PasswordField from "./PasswordField";
+import useAuthCall from "../../hooks/useAuthCall";
 
 export const loginSchema = object({
-  userName: string()
-    .required("Username is required!")
-    .min(3, "Username must be at least 3 characters!"),
+  // userName: string()
+  //   .required("Username is required!")
+  //   .min(3, "Username must be at least 3 characters!"),
   email: string()
     .email("Please enter a valid email address")
     .required("Email is required"),
@@ -24,22 +25,13 @@ const LoginForm = ({
   handleSubmit,
   isSubmitting,
 }) => {
+  // console.log(errors, touched);
   const theme = useTheme();
+  const {signInWithGoogle} = useAuthCall()
   return (
     <div>
       <Form>
         <Box sx={authFormBoxStyle}>
-          <TextField
-            name="userName"
-            label="Username"
-            type="text"
-            value={values.userName}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.userName && Boolean(errors.userName)}
-            helperText={touched.userName && errors.userName}
-            required
-          />
           <TextField
             name="email"
             label="Email"
@@ -88,7 +80,7 @@ const LoginForm = ({
                 opacity: 0.8,
               },
             }}
-            // onClick={signInWithGoogle}
+            onClick={signInWithGoogle}
           >
             {isSubmitting ? "Loading..." : "Sign in with"}
             <img src={googleLogo} alt="" />

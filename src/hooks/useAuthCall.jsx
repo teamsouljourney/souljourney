@@ -1,9 +1,70 @@
-import React from 'react'
+import useAxios, { axiosPublic } from './useAxios';
+import { fetchFail, fetchStart, loginSuccess, logoutSuccess, registerSuccess } from '../features/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toastErrorNotify, toastSuccessNotify } from '../helper/ToastNotify';
+
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const useAuthCall = () => {
-  return (
-    <div>useAuthCall</div>
-  )
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const axiosWithToken = useAxios();
+
+  //* register
+  const register = async (userInfo) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosPublic.post("auth/signup", userInfo);
+      console.log(data);
+      dispatch(registerSuccess(data));
+      toastSuccessNotify("Registration successful! Please check your email to verify your account!");
+      navigate("/auth/verify-email");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(error.message, "Oops! Something went wrong during registration");
+    }
+  };
+
+  //* login
+
+  const login = async (userInfo) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosPublic.post("auth/login", userInfo);
+      console.log(data);
+      dispatch(loginSuccess(data));
+      toastSuccessNotify("You have successfully logged in!");
+      navigate("/");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(error.message, "Oops! Something went wrong during login!");
+    }
+  };
+
+  //* Google login and register
+  const signInWithGoogle = async () => {
+    window.open(`${BASE_URL}auth/google`, "_self");
+  };
+  
+  //* logout
+  const logout = async () => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.get("auth/logout");
+      dispatch(logoutSuccess());
+      toastSuccessNotify("You have successfully logged out!");
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      dispatch(fetchFail());
+      toastErrorNotify(error.message, "Oops! Something went wrong during logout.");
+    }
+  };
+
+
+  return {register, login, signInWithGoogle, logout}
 }
 
 export default useAuthCall

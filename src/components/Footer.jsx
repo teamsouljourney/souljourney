@@ -3,7 +3,7 @@ import souljorurney_Logo from "../assets/souljourney_Logo.png";
 
 const Footer = () => {
   return (
-    <div className="bg-transparent w-full bottom-0 z-20">
+    <div className="bg-navy-light dark:bg-customBlack w-full bottom-0 z-20">
       <div className="dark:text-navy-dark text-mauve-dark flex justify-between">
         <ul className="flex flex-col items-center pl-4 sm:items-end sm:flex sm:justify-center sm:flex-row gap-0 sm:gap-6 sm:pl-6">
           <li className="my-2 whitespace-nowrap">

@@ -11,8 +11,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import souljorurney_Logo from "../assets/souljourney_Logo.png";
 import { NavLink } from "react-router-dom";
 import Switch from "./Switch";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
@@ -29,11 +28,35 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const [showAvatar, setShowAvatar] = useState(false);
+  const [showBackground, setShowBackground] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // console.log(window.scrollY);
+      // scrollun üstteki kısmı 60px i geçince opacity olsun
+      const TOP_OFFSET = 60;
+      if (window.scrollY >= TOP_OFFSET) {
+        setShowBackground(true);
+      } else {
+        setShowBackground(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // referrerPolicy = "no-referrer";
   return (
-    <Disclosure as="nav" className="bg-transparent w-full my-4 top-0 z-20">
-      <div className=" max-w-full sm:px-6 lg:px-8">
+    <Disclosure as="nav" className="bg-transparent w-full fixed top-0 z-20">
+      <div
+        className={`max-w-full sm:px-6 lg:px-8 transition duration-500 ${
+          showBackground ? "bg-navy-light dark:bg-customBlack" : ""
+        }`}
+      >
         <div className="relative flex h-20 items-center justify-evenly">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
@@ -109,7 +132,7 @@ export default function Navbar() {
                 type="button"
                 className="relative rounded-md whitespace-nowrap px-2 py-2 text-sm sm:px-3 sm:py-1 xs:px-2 xs:text-xs shadow-lg shadow-mauve-light text-offWhite-light bg-mauve-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
               >
-                <NavLink  to="/login">Login</NavLink>
+                <NavLink to="/login">Login</NavLink>
               </button>
             )}
 
@@ -186,4 +209,3 @@ export default function Navbar() {
     </Disclosure>
   );
 }
-
