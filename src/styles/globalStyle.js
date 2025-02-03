@@ -53,15 +53,28 @@ export const authFormBoxStyle = {
     backgroundColor: "secondary.main",
     // border: "1px solid red",
     borderRadius: "30px",
-    px: {xs: 3, sm: 3, md: 6 ,lg:10},
-    py: 6,
+    px: {xs: 2, sm: 3, md: 4 ,lg:5},
+    py: {xs: 2, sm: 3, md: 4},
+    mx: 3
+};
+export const authButtonBoxStyle = {
+    display: "flex", 
+    flexDirection: "column", 
+    gap: 1,
+    px: {xs: 2, sm: 3, md: 4 ,lg:5},
+    py: 2,
     mx: 3
 };
 
-// export const btnStyle = {
-//     cursor: "pointer",
-//     color: "secondary.main",
-//     "&:hover": {
-//       color: "red",
-//     },
-//   };
+export const btnStyle = {
+    backgroundColor: "customColors.darkblue",
+    color: "secondary.main",
+    "&:hover": {
+      backgroundColor: "customColors.lightgreen",
+      opacity: 0.9
+      },
+  };
+
+export const inputHeightStyle = {"& .css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input": {
+    height: "1rem"
+  }}

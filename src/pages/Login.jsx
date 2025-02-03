@@ -69,7 +69,6 @@ const Login = () => {
           <Box
              sx={{
               textAlign: "center", 
-              mt: 3, 
               color: "customColor.darkblue",
               "&:hover": {
                 textDecoration: "underline",

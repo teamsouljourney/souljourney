@@ -1,7 +1,7 @@
 import { Box, Button, TextField, useTheme } from "@mui/material";
 import { Form } from "formik";
 import { object, string } from "yup";
-import { authFormBoxStyle } from "../../styles/globalStyle";
+import { authButtonBoxStyle, authFormBoxStyle, btnStyle } from "../../styles/globalStyle";
 import googleLogo from "../../assets/loginRegisterImage/Google.png";
 import PasswordField from "./PasswordField";
 import useAuthCall from "../../hooks/useAuthCall";
@@ -32,10 +32,9 @@ const LoginForm = ({
   return (
     <div>
       <Form
-        //  style={{border: "1px solid red"}}
+      //  style={{border: "1px solid red"}}
       >
         <Box sx={authFormBoxStyle}>
-          {/* <Box> */}
           <TextField
             name="email"
             label="Email"
@@ -56,53 +55,31 @@ const LoginForm = ({
             touched={touched.password}
             errors={errors}
           />
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              disabled={isSubmitting}
-              sx={{
-                backgroundColor: "customColors.purple",
-                color: "secondary.main",
-                "&:hover": {
-                  backgroundColor: "customColors.darkblue",
-                  opacity: 0.8,
-                },
-              }}
-            >
-              {isSubmitting ? "Loading..." : "Sign In"}
-            </Button>
-            
-          </Box>
-          <Button
-            type="submit"
-            variant="contained"
-            disabled={isSubmitting}
-            sx={{
-              backgroundColor: "customColors.purple",
-              color: "secondary.main",
-              "&:hover": {
-                backgroundColor: "customColors.darkblue",
-                opacity: 0.8,
-              },
-            }}
-            onClick={signInWithGoogle}
-          >
-            {isSubmitting ? "Loading..." : "Sign in with"}
-            <img src={googleLogo} alt="" />
-          </Button>
-            
-          {/* </Box> */}
-          
         </Box>
       </Form>
+      <Box
+        sx={authButtonBoxStyle}
+      >
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          disabled={isSubmitting}
+          sx={btnStyle}
+        >
+          {isSubmitting ? "Loading..." : "Sign In"}
+        </Button>
+        <Button
+          type="submit"
+          variant="contained"
+          disabled={isSubmitting}
+          sx={btnStyle}
+          onClick={signInWithGoogle}
+        >
+          {isSubmitting ? "Loading..." : "Sign in with"}
+          <img src={googleLogo} alt="" />
+        </Button>
+      </Box>
     </div>
   );
 };
