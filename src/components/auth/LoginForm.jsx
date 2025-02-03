@@ -31,8 +31,11 @@ const LoginForm = ({
   const { signInWithGoogle } = useAuthCall();
   return (
     <div>
-      <Form>
+      <Form
+        //  style={{border: "1px solid red"}}
+      >
         <Box sx={authFormBoxStyle}>
+          {/* <Box> */}
           <TextField
             name="email"
             label="Email"
@@ -95,6 +98,9 @@ const LoginForm = ({
             {isSubmitting ? "Loading..." : "Sign in with"}
             <img src={googleLogo} alt="" />
           </Button>
+            
+          {/* </Box> */}
+          
         </Box>
       </Form>
     </div>

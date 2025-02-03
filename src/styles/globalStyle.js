@@ -49,11 +49,13 @@ export const authFormContainerGridStyle = {
 export const authFormBoxStyle = {
     display: "flex", 
     flexDirection: "column", 
-    gap: 2, 
+    gap: 1, 
     backgroundColor: "secondary.main",
     // border: "1px solid red",
     borderRadius: "30px",
-    p: { xs: 2, sm: 3 },
+    px: {xs: 3, sm: 3, md: 6 ,lg:10},
+    py: 6,
+    mx: 3
 };
 
 // export const btnStyle = {
