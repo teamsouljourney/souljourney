@@ -25,6 +25,7 @@ function App() {
         darkblue: "#2E5077",
         lightgreen: "#4DA1A9",
         green: "#79D7BE",
+        darkgreen: "#459198",
       },
     },
     typography: {

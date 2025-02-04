@@ -6,7 +6,7 @@ const RegisterHeader = () => {
     <Grid xs={12} mb={1}>
       <Typography
         variant="h4"
-        color="customColors.pink"
+        color="primary"
         align="center"
         sx={{
           fontWeight: "600",
@@ -21,6 +21,7 @@ const RegisterHeader = () => {
         {/* Join Us on a Transformative Journey
         Sign Up and Begin Your Soul Journey*/}
         Create Your Account and Start Healing
+        {/* Navigate your path to inner Harmony... */}
       </Typography>
     </Grid>
   );

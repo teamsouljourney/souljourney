@@ -1,7 +1,7 @@
 import { Box, Button, TextField, useTheme } from "@mui/material";
 import { Form } from "formik";
 import * as Yup from "yup"
-import { authFormBoxStyle } from "../../styles/globalStyle";
+import { authButtonBoxStyle, authFormBoxStyle, btnStyle } from "../../styles/globalStyle";
 import googleLogo from "../../assets/loginRegisterImage/Google.png";
 import PasswordField from "./PasswordField";
 import useAuthCall from "../../hooks/useAuthCall";
@@ -44,7 +44,7 @@ const RegisterForm = ({
     <div>
       <Form>
         <Box 
-        sx={authFormBoxStyle}
+          sx={authFormBoxStyle}
         >
           <TextField
             name="userName"
@@ -101,40 +101,29 @@ const RegisterForm = ({
             errors={errors}
           />
 
-          <Button
-            type="submit"
-            variant="contained"
-            disabled={isSubmitting}
-            sx={{
-              backgroundColor: "customColors.darkblue",
-              color: "secondary.main",
-              "&:hover": {
-                backgroundColor: "customColors.purple",
-                opacity: 0.8
-                },
-            }}
-          >
-            {isSubmitting ? "Loading..." : "Sign Up"}
-          </Button>
-          <Button
-              type="submit"
-              variant="contained"
-              disabled={isSubmitting}
-              sx={{
-              backgroundColor: "customColors.darkblue",
-              color: "secondary.main",
-              "&:hover": {
-                backgroundColor: "customColors.purple",
-                opacity: 0.8
-                },
-            }}
-              onClick={signInWithGoogle}
-            >
-              {isSubmitting ? "Loading..." : "Sign up with"}
-              <img src={googleLogo} alt="" />
-            </Button>
+          
         </Box>
       </Form>
+      <Box sx={authButtonBoxStyle}>
+        <Button
+          type="submit"
+          variant="contained"
+          disabled={isSubmitting}
+          sx={btnStyle}
+        >
+          {isSubmitting ? "Loading..." : "Sign Up"}
+        </Button>
+        <Button
+          type="submit"
+          variant="contained"
+          disabled={isSubmitting}
+          sx={btnStyle}
+          onClick={signInWithGoogle}
+        >
+          {isSubmitting ? "Loading..." : "Sign up with"}
+          <img src={googleLogo} alt="" />
+        </Button>
+      </Box>      
     </div>
   )
 }
