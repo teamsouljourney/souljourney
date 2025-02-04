@@ -22,6 +22,26 @@ const Register = () => {
         rowSpacing={{ sm: 3 }}
         sx={authMainContainerGridStyle}
       >
+      {/* <Grid xs={12} 
+      // sx={authFormContainerGridStyle}
+      >
+        <Typography
+          variant="h4"
+          color="primary"
+          align="start"
+          sx={{
+            fontWeight: "600",
+            fontSize: {
+              xs: "1.5rem",
+              sm: "2rem",
+              md: "2rem",
+              lg: "2.5rem",
+            },
+          }}
+        >
+          Navigate your path to inner Harmony...
+        </Typography>
+      </Grid> */}
         <Grid
           size={12}
           sx={authFormContainerGridStyle}
@@ -40,7 +60,7 @@ const Register = () => {
             variant="h5"
             align="center"
             mb={1}
-            color="customColors.pink"
+            color="primary"
             sx={{
               fontSize: {
                 xs: "1rem",
@@ -72,7 +92,6 @@ const Register = () => {
           <Box
              sx={{
               textAlign: "center", 
-              mt: 2, 
               color: "customColor.darkblue",
               "&:hover": {
                 textDecoration: "underline",

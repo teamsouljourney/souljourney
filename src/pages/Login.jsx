@@ -39,7 +39,7 @@ const Login = () => {
             variant="h5"
             align="center"
             mb={1}
-            color="customColors.pink"
+            color="primary"
             sx={{
               fontSize: {
                 xs: "1rem",
@@ -69,7 +69,6 @@ const Login = () => {
           <Box
              sx={{
               textAlign: "center", 
-              mt: 3, 
               color: "customColor.darkblue",
               "&:hover": {
                 textDecoration: "underline",
