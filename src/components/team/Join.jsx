@@ -14,7 +14,7 @@ const Join = () => {
         <p className="text-base sm:text-sm md:text-base lg:text-lg text-customBlack mb-4 text-center sm:text-left">
           Join our passionate and professional team that is dedicated to making a positive impact. Apply now to be part of something meaningful and help others on their journey towards well-being.
         </p>
-        <NavLink to="/register" className="bg-navy text-offWhite px-6 py-2 rounded-full text-sm sm:text-base font-semibold transition duration-300 hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark transform hover:scale-105 w-full sm:w-auto">
+        <NavLink to="/contact" className="bg-navy text-offWhite px-6 py-2 rounded-full text-sm sm:text-base font-semibold transition duration-300 hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark transform hover:scale-105 w-full sm:w-auto">
           Apply Now
         </NavLink>
       </div>
