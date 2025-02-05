@@ -39,6 +39,38 @@
       "fullContent": "This is the full content for Marriage and Family Therapy. It includes detailed insights into mental well-being and how to achieve a healthier lifestyle.",
       "image": "../src/assets/bloogsImage/therapyroom2.jpg",
       "category": "Marriage and Family Therapy"
+    },
+    {
+      "id": 8,
+      "title": "Understanding Depression",
+      "description": "An overview of depression, its symptoms, and coping mechanisms.",
+      "image": "../src/assets/bloogsImage/depression.jpg",
+      "fullContent": "Detailed article about depression and ways to manage it.",
+      "category": "Depression"
+    },
+    {
+      "id": 9,
+      "title": "Anxiety: Recognizing the Signs",
+      "description": "How to identify and manage anxiety effectively.",
+      "image": "../src/assets/bloogsImage/anxiety.jpg",
+      "fullContent": "Insight into anxiety and recommended therapeutic approaches.",
+      "category": "Anxiety"
+    },
+    {
+      "id": 10,
+      "title": "PTSD: Overcoming Trauma",
+      "description": "Understanding PTSD and the steps to recovery.",
+      "image": "../src/assets/bloogsImage/ptsd.jpg",
+      "fullContent": "A deep dive into PTSD and how therapy can help.",
+      "category": "PTSD"
+    },
+    {
+      "id": 11,
+      "title": "Borderline Personality Disorder: Navigating Challenges",
+      "description": "Exploring BPD and coping strategies.",
+      "image": "../src/assets/bloogsImage/borderline.jpg",
+      "fullContent": "Comprehensive insights into BPD and available treatments.",
+      "category": "Borderline"
     }
 
 
