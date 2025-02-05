@@ -1,42 +1,37 @@
 import { NavLink } from "react-router-dom";
-import Video from '../../assets/images/4919748-uhd_4096_2160_25fps.mp4';
+import Video from "../../assets/images/4919748-uhd_4096_2160_25fps.mp4";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center text-white">
-      <div className="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
+      {/* Video Container */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <video
-          className="min-w-full min-h-full absolute object-cover"
+          className="w-full h-full object-cover"
           src={Video}
           type="video/mp4"
           autoPlay
           muted
           loop
-          // style={{ height: '20vh' }}
         ></video>
+        {/* Overlay (Bu artık tıklanmayı engellemiyor) */}
+        <div className="absolute inset-0 bg-black opacity-30 pointer-events-none"></div>
       </div>
-      <div className="video-content space-y-2 z-10">
-        <h1 className="font-light font-urbanist  sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl mb-20">Soul Journey & Online Therapy</h1>
-        <NavLink to="register" className="bg-customBlack opacity-70 text-offWhite hover:bg-navy  py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg sm:px-8 sm:py-3 sm:text-2xl md:px-10 md:py-4 md:text-2xl lg:px-12 lg:py-5 lg:text-2xl">Get Started</NavLink>
+
+      {/* **Video Üzerindeki İçerik** */}
+      <div className="z-10 flex flex-col items-center">
+        <h1 className="font-light font-urbanist text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-7xl mb-10">
+          Soul Journey & Online Therapy
+        </h1>
+        <NavLink
+          to="register"
+          className="bg-customBlack bg-opacity-70 text-offWhite hover:bg-navy py-3 px-8 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg sm:px-8 sm:py-3 sm:text-2xl md:px-10 md:py-4 md:text-2xl lg:px-12 lg:py-5 lg:text-2xl"
+        >
+          Get Started
+        </NavLink>
       </div>
-      <style>{`
-        .video-docker video {
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-        .video-docker::after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          background: rgba(0, 0, 0, 0.2); /* Arka planı transparan yaparak video tamamen görünür */
-          z-index: 1;
-        }
-      `}</style>
     </section>
   );
 };
+
 export default HeroSection;
