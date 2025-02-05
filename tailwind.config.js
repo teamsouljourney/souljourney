@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        urbanist: ['Urbanist', 'sans-serif'],
+      },
       colors: {
         // Main Colors
         pink: {
@@ -39,14 +43,9 @@ export default {
           DEFAULT: "#181a1b", // Custom Black (Main color)
           light: "#161718", // Light Custom Black
           dark: "#2f3132", // Darker Custom Black
-        },
-        
-      },
-      fontFamily: {
-        urbanist: ['Urbanist', 'sans-serif'], // Urbanist fontunu ekliyoruz
-      },
+        },        
+      },      
     },
   },
-  darkMode: "class",
   plugins: [],
 };
