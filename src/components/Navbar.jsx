@@ -20,7 +20,7 @@ const navigation = [
   { name: "Services", href: "/services" },
   { name: "Pricing", href: "/pricing" },
   { name: "Team", href: "/team" },
-  { name: "Contact", href: "/contact" },
+  { name: "Blogs", href: "/blogs" },
   { name: "About", href: "/about" },
 ];
 
@@ -33,6 +33,7 @@ export default function Navbar() {
   let { currentUser } = useSelector((state) => state.auth);
   const { logout } = useAuthCall();
   console.log(currentUser);
+
   useEffect(() => {
     const handleScroll = () => {
       const TOP_OFFSET = 60;
@@ -52,18 +53,30 @@ export default function Navbar() {
 
   // referrerPolicy = "no-referrer";
   return (
-    <Disclosure as="nav" className="bg-transparent w-full fixed top-0 z-20">
+    <Disclosure
+      as="nav"
+      className="bg-transparent w-full fixed top-0 z-20 text-navy"
+    >
       <div
         className={`max-w-full sm:px-6 lg:px-8 transition duration-500 ${
           showBackground
-            ? "bg-gradient-to-b from-offWhite to-seaGreen-dark dark:from-customBlack-dark dark:to-customBlack-light"
+            ? "bg-navy-dark/40 backdrop-blur dark:bg-customBlack/50"
             : ""
+        } 
+        ${
+          (window.location.pathname === "/pricing" ||
+            window.location.pathname.startsWith("/blogs") ||
+            window.location.pathname === "/contact" ||
+            window.location.pathname === "/forgotPassword" ||
+            window.location.pathname.startsWith("/team/") ||
+            window.location.pathname.startsWith("/reset-password")) &&
+          "bg-navy/40 backdrop-blur"
         }`}
       >
         <div className="relative flex h-20 items-center justify-evenly">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-mauve-dark hover:bg-mauve-dark hover:text-offWhite-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-navy ">
+            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset  ">
               <span className="absolute -inset-0.5" />
               <span className="sr-only border">Open main menu</span>
               <Bars3Icon
@@ -82,7 +95,7 @@ export default function Navbar() {
                 <img
                   alt="Soul Journey"
                   src={souljorurney_Logo}
-                  className="h-20 min-h-[3rem] min-w-[3rem] w-auto object-contain sm:h-16 md:h-20"
+                  className="h-[100px] min-h-[3rem] min-w-[3rem] w-auto sm:h-[100px] md:h-[120px] object-contain"
                 />
               </NavLink>
             </div>
@@ -95,9 +108,9 @@ export default function Navbar() {
                     className={({ isActive }) =>
                       classNames(
                         isActive
-                          ? "bg-mauve-dark text-offWhite-light"
-                          : "text-offWhite-light hover:bg-mauve-light hover:text-offWhite-light",
-                        "rounded-md whitespace-nowrap px-4 py-2 text-sm font-medium",
+                          ? "border-b-2 border-seaGreen-light text-offWhite-light"
+                          : "text-offWhite-light hover:border-b-2 hover:border-seaGreen-light hover:text-offWhite-light",
+                        " whitespace-nowrap px-4 py-2 text-sm font-medium",
                         "lg:px-4 lg:py-2 lg:text-sm",
                         "md:px-3 md:py-1.5 md:text-sm",
                         "sm:px-2 sm:py-1 sm:text-xs"
@@ -110,30 +123,38 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-          <div className="absolute inset-y-0 right-0 flex items-center gap-1 pr-2 sm:static sm:inset-auto sm:ml-0 sm:pr-0">
+          <div className="absolute right-0 flex items-center gap-1 pr-2 sm:static sm:inset-auto sm:ml-0 sm:pr-0">
+            <div className="w-[60px] h-auto">
+              <div className="border-none outline-none">
+                <select className="w-full bg-transparent text-offWhite-dark text-sm pl-3  py-2 transition duration-300 ease outline-none  hover:text-offWhite-light   cursor-pointer">
+                  <option className="bg-navy/50" value="english">
+                    EN
+                  </option>
+                  <option className="bg-navy/50" value="turkish">
+                    TR
+                  </option>
+                  <option className="bg-navy/50" value="german">
+                    DE
+                  </option>
+                </select>
+              </div>
+            </div>
             <Switch />
             {currentUser && (
               <button
                 type="button"
-                className="relative rounded-full  bg-navy-dark p-1 shadow-lg shadow-mauve-light text-offWhite-light  hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
+                className="relative rounded-full  bg-navy-dark p-1 text-offWhite-light  hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
               >
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">View notifications</span>
                 <BellIcon aria-hidden="true" className="size-6" />
               </button>
             )}
+
             {!currentUser && (
               <button
                 type="button"
-                className="relative rounded-md whitespace-nowrap px-2 py-2 text-sm sm:px-3 sm:py-1 xs:px-2 xs:text-xs shadow-lg shadow-mauve-light text-offWhite-light bg-navy-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
-              >
-                <NavLink to="/register">Sign Up</NavLink>
-              </button>
-            )}
-            {!currentUser && (
-              <button
-                type="button"
-                className="relative rounded-md whitespace-nowrap px-2 py-2 text-sm sm:px-3 sm:py-1 xs:px-2 xs:text-xs shadow-lg shadow-mauve-light text-offWhite-light bg-mauve-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
+                className="relative rounded-md whitespace-nowrap px-2 py-2 text-sm sm:px-3 sm:py-1 xs:px-2 xs:text-xs text-offWhite-light bg-mauve-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
               >
                 <NavLink to="/login">Login</NavLink>
               </button>
@@ -141,31 +162,29 @@ export default function Navbar() {
 
             {/* Profile dropdown */}
             {currentUser && (
-              <Menu as="div" className="relative ml-3">
-                <div>
-                  {/* MenuButton içindeki avatar kısmı */}
-                  <MenuButton className="relative flex rounded-full shadow-lg shadow-mauve-light bg-offWhite-light text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy hover:shadow-3xl hover:shadow-navy-dark">
-                    <span className="absolute -inset-1.5" />
-                    <span className="sr-only">Open user menu</span>
-                    {currentUser?.image ? (
-                      <img
-                        alt=""
-                        src={currentUser.image}
-                        className="size-8 rounded-full"
-                      />
-                    ) : (
-                      <div className="size-8 rounded-full bg-navy-dark flex items-center justify-center">
-                        <span className="font-medium text-offWhite-light text-sm">
-                          {currentUser?.firstName.charAt(0).toUpperCase() +
-                            currentUser?.lastName.charAt(0).toUpperCase()}
-                        </span>
-                      </div>
-                    )}
-                  </MenuButton>
-                </div>
+              <Menu as="div" className="relative">
+                {/* MenuButton içindeki avatar kısmı */}
+                <MenuButton className="relative flex rounded-full shadow-lg shadow-mauve-light bg-offWhite-light text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy hover:shadow-3xl hover:shadow-navy-dark">
+                  <span className="absolute -inset-1.5" />
+                  <span className="sr-only">Open user menu</span>
+                  {currentUser?.image ? (
+                    <img
+                      alt=""
+                      src={currentUser.image}
+                      className="size-8 rounded-full"
+                    />
+                  ) : (
+                    <div className="size-8 rounded-full bg-navy-dark flex items-center justify-center">
+                      <span className="font-medium text-offWhite-light text-sm">
+                        {currentUser?.firstName.charAt(0).toUpperCase() +
+                          currentUser?.lastName.charAt(0).toUpperCase()}
+                      </span>
+                    </div>
+                  )}
+                </MenuButton>
                 <MenuItems
                   transition
-                  className="absolute right-0 z-10 mt-4 w-48 origin-top-right rounded-md bg-seaGreen-light dark:bg-customBlack-dark py-1 shadow-lg ring-1 ring-navy transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+                  className="flex flex-col text-xl  text-slate-600 bg-navy/40 backdrop-blur p-4 mt-6 rounded-lg absolute right-0"
                 >
                   <MenuItem>
                     <NavLink
@@ -200,22 +219,16 @@ export default function Navbar() {
         </div>
       </div>
       <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pb-3 pt-2">
+        <div className="space-y-1 px-2 pb-3 pt-2 z-40 bg-navy/40 backdrop-blur text-navy-dark">
           {navigation.map((item) => (
-            <DisclosureButton
-              key={item.name}
-              as="NavLink"
-              to={item.href}
-              aria-current={item.current ? "page" : undefined}
-              className={classNames(
-                item.current
-                  ? "bg-mauve-dark text-offWhite-light"
-                  : "text-offWhite-light hover:bg-mauve-light hover:text-offWhite-light",
-                "block rounded-md px-3 py-2 text-base font-medium"
-              )}
-            >
-              {item.name}
-            </DisclosureButton>
+            <NavLink to={item.href} key={item.name}>
+              <DisclosureButton
+                aria-current={item.current ? "page" : undefined}
+                className="block px-3 py-2 text-base font-medium cursor-pointer hover:border-b-[1px] hover:border-seaGreen-light"
+              >
+                {item.name}
+              </DisclosureButton>
+            </NavLink>
           ))}
         </div>
       </DisclosurePanel>
