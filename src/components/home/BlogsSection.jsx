@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import teams from "../../helper/team.json";
-import Card from "./Card";
+// import Card from "./Card";
+import HomeCard from "./HomeCard";
 const BlogsSection = () => {
   return (
     <>
@@ -16,13 +17,13 @@ const BlogsSection = () => {
             our blog.
           </p>
 
-          <NavLink to="blogs" className="w-[50%] block mx-auto  mt-6 bg-gradient-to-r from-navy to-offWhite text-customBlack font-bold text-center py-2 rounded-lg hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark">
+          <NavLink to="blogs" className="w-[50%] block mx-auto  mt-6  text-offWhite font-bold text-center py-2 rounded-lg hover:bg-gradient-to-r bg-seaGreen-dark hover:bg-seaGreen-light">
             See More
           </NavLink>
         </div>
         {/* Card Component */}
         <div className="flex flex-wrap justify-center items-center">
-          <Card teams={teams} />
+          <HomeCard teams={teams} />
         </div>
       </div>
     </>

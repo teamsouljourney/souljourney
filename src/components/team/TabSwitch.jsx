@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Card from "../team/Card";
+// import Card from "../team/Card";
 import teams from "../../helper/team.json";
+import TeamCard from "./TeamCard";
 const TabSwitch = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState(""); // Arama terimi için state
@@ -66,7 +67,7 @@ const filteredTeams = teams.filter((team) => {
        
 
         <div className="flex flex-wrap justify-center gap-4 sm:gap-2 mt-5">
-          <Card teams={filteredTeams}  />
+          <TeamCard teams={filteredTeams}  />
         </div>
       </div>
     </>
