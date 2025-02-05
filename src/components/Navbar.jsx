@@ -91,7 +91,7 @@ export default function Navbar() {
                 <img
                   alt="Soul Journey"
                   src={souljorurney_Logo}
-                  className="h-20 min-h-[3rem] min-w-[3rem] w-auto object-contain sm:h-16 md:h-20"
+                  className="h-[100px] min-h-[3rem] min-w-[3rem] w-auto sm:h-[100px] md:h-[120px] object-contain"
                 />
               </NavLink>
             </div>
