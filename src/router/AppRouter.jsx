@@ -19,6 +19,12 @@ import About from "../pages/About";
 import Services from "../pages/Services";
 import AuthSuccess from "../pages/AuthSuccess";
 import AuthFail from "../pages/AuthFail";
+import Account from "../pages/Account";
+import Chat from "../pages/Chat";
+import VideoCall from "../pages/VideoCall";
+import WriteBlog from "../pages/WriteBlog";
+import Dashboard from "../pages/Dashboard";
+import Sidebar from "../components/Sidebar";
 
 const AppRouter = () => {
   return (
@@ -46,6 +52,13 @@ const AppRouter = () => {
         {/* Private Area */}
         <Route path="/private" element={<PrivateRouter />}>
           {/* Privates Routes */}
+          <Route path="" element={<Sidebar />} >
+            <Route index element={<Dashboard/>}/>
+            <Route path="account" element={<Account/>}/>
+            <Route path="chat" element={<Chat/>}/>
+            <Route path="video-call" element={<VideoCall/>}/>
+            <Route path="write-blog" element={<WriteBlog/>}/>
+          </Route>
         </Route>
       </Routes>
 
