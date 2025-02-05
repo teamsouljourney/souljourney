@@ -110,6 +110,7 @@ const RegisterForm = ({
           variant="contained"
           disabled={isSubmitting}
           sx={btnStyle}
+          onClick={handleSubmit}
         >
           {isSubmitting ? "Loading..." : "Sign Up"}
         </Button>
