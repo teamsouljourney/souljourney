@@ -5,7 +5,6 @@ import { authButtonBoxStyle, authFormBoxStyle, btnStyle } from "../../styles/glo
 import googleLogo from "../../assets/loginRegisterImage/Google.png";
 import PasswordField from "./PasswordField";
 import useAuthCall from "../../hooks/useAuthCall";
-import { Link } from "react-router-dom";
 
 export const loginSchema = object({
   // userName: string()
@@ -66,6 +65,7 @@ const LoginForm = ({
           variant="contained"
           disabled={isSubmitting}
           sx={btnStyle}
+          onClick={handleSubmit}
         >
           {isSubmitting ? "Loading..." : "Sign In"}
         </Button>
