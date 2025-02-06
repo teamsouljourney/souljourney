@@ -1,6 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "../features/authSlice";
 import appointmentReducer from "../features/appointmentSlice";
+import categoryReducer from "../features/categorySlice";
+
 //*redux-persist
 import {
   persistStore,
@@ -27,6 +29,7 @@ const store = configureStore({
   reducer: {
     auth: persistedReducer,
     appointments: appointmentReducer,
+    categories: categoryReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
