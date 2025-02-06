@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 
 const AppointmentCalendar = () => {
   const { currentUser } = useSelector((state) => state.auth);
+  const { singleTherapist } = useSelector((state) => state.therapists);
 
   const [selectedDate, setSelectedDate] = useState(null);
   const [timeSlots, setTimeSlots] = useState([]);
@@ -46,7 +47,7 @@ const AppointmentCalendar = () => {
 
     const appointmentData = {
       userId: currentUser?._id,
-      therapistId: "therapist-id",
+      therapistId: singleTherapist?._id,
       appointmentDate: selectedDate,
       startTime: startTime.toISOString(),
       endTime: endTime.toISOString(),
