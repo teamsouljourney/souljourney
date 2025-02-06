@@ -4,8 +4,11 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import useAppointmentCall from "../../hooks/useAppointmentCall";
 import { toastErrorNotify } from "../../helper/ToastNotify";
+import { useSelector } from "react-redux";
 
 const AppointmentCalendar = () => {
+  const { currentUser } = useSelector((state) => state.auth);
+
   const [selectedDate, setSelectedDate] = useState(null);
   const [timeSlots, setTimeSlots] = useState([]);
   const [selectedSlot, setSelectedSlot] = useState(null);
@@ -42,7 +45,7 @@ const AppointmentCalendar = () => {
     const endTime = new Date(startTime.getTime() + 60 * 60 * 1000);
 
     const appointmentData = {
-      userId: "user-id",
+      userId: currentUser?._id,
       therapistId: "therapist-id",
       appointmentDate: selectedDate,
       startTime: startTime.toISOString(),
