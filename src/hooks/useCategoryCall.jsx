@@ -6,7 +6,7 @@ import {
   getAllCategoriesSuccess,
   getSingleCategorySuccess,
 } from "../features/categorySlice";
-import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
+import { toastErrorNotify } from "../helper/ToastNotify";
 
 const useCategoryCall = () => {
   const dispatch = useDispatch();
@@ -18,7 +18,6 @@ const useCategoryCall = () => {
     try {
       const { data } = await axiosPublic.get("categories");
       dispatch(getAllCategoriesSuccess(data));
-      toastSuccessNotify("Categories fetched successfully!");
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -34,7 +33,6 @@ const useCategoryCall = () => {
     try {
       const { data } = await axiosWithToken.get(`categories/${id}`);
       dispatch(getSingleCategorySuccess(data));
-      toastSuccessNotify("Category fetched successfully!");
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(

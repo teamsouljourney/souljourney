@@ -16,7 +16,7 @@ const categorySlice = createSlice({
     },
     getAllCategoriesSuccess: (state, { payload }) => {
       state.loading = false;
-      state.categories = payload.data.data;
+      state.categories = payload.data;
       state.error = false;
     },
     getSingleCategorySuccess: (state, { payload }) => {
