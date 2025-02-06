@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 import { Form } from "formik";
 import { Box, Button, TextField } from "@mui/material";
-import forgotPassword from "../../assets/images/forgotPassword.png";
+import forgotPassword from "../../assets/images/verificationFail.png";
 
 export const ForgotPasswordSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
