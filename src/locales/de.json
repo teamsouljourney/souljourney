@@ -1,10 +1,51 @@
 {
+  "NAVBAR": "NAVBAR",
   "home": "Startseite",
   "services": "Dienstleistungen",
   "pricing": "Preise",
   "team": "Team",
   "contact": "Kontakt",
-  "about": "Über uns",
+  "about": "Über Uns",
   "language": "Sprache",
-   "blogs": "Blogs"
+  "blogs": "Blogs",
+  "login": "Anmelden",
+  "myProfile": "Mein Profil",
+  "accountSettings": "Kontoeinstellungen",
+  "logout": "Abmelden",
+
+
+  "HOMEPAGE": "HOMEPAGE",
+  "onlineTherapy": "Online-Therapie",
+  "getStarted": "Loslegen",
+  "selfTest": "Selbsttest",
+  "infoText": "Bei Soul Journey bieten wir Online-Beratung an, die Ihren Weg zur Heilung und persönlichen Entwicklung unterstützt...",
+  "howItWorks": "So Funktioniert Es",
+  "registerOrLogin": "Registrieren oder Anmelden",
+  "determineYourPreferences": "Bestimmen Sie Ihre Präferenzen",
+  "chooseYourTherapist": "Wählen Sie Ihren Therapeuten",
+  "joinTheSession": "Treten Sie der Sitzung bei",
+
+
+  "PROFILE": "PROFIL",
+  
+  
+  "SERVICES": "DIENSTLEISTUNGEN",
+  
+  
+  "PPRICING": "PREISE",
+  
+  
+  "TEAM": "TEAM",
+  
+  
+  "BLOGS": "BLOGS",
+  
+  
+  "ABOUT": "ÜBER UNS",
+  
+  
+  "FOOTER": "FUSSZEILE",
+  
+  
+  "CONTACT": "KONTAKT"
 }
