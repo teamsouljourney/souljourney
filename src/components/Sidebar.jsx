@@ -272,7 +272,7 @@ const Sidebar = () => {
                 </NavLink>
                 <NavLink
                   className="flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-3.5  lg:pr-6 font-semibold text-gray-500 hover:text-primary-400 cursor-pointer "
-                  to="/app/clients"
+                  to="/private/chat"
                 >
                   <span className="inline-flex justify-center items-center ml-3.5">
                     <svg
@@ -399,7 +399,7 @@ const Sidebar = () => {
           </div>
         </div>
         {/* View Content */}
-        <div className="col-span-6 bg-white p-4" ><Outlet/></div>
+        <div className="col-span-6  p-4" ><Outlet/></div>
         
       </div>
       
