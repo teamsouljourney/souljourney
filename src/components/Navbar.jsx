@@ -56,7 +56,7 @@ export default function Navbar() {
 
   // referrerPolicy = "no-referrer";
 
-  if (window.location.pathname.startsWith("/private")) return null;
+  if (window.location.pathname.startsWith("/profile")) return null;
 
   return (
     <Disclosure
@@ -192,7 +192,7 @@ export default function Navbar() {
                   <hr />
                   <MenuItem>
                     <NavLink
-                      to="/private"
+                      to="/profile"
                       className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                     >
                       {t("myProfil")}
