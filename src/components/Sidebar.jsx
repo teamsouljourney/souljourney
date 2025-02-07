@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import soulJourneyLogo from "../assets/souljourney_Logo.png";
 import Switch from "./Switch";
+import SoulJourneyLogo from "./sidebar/SoulJourneyLogo";
 
 const Sidebar = () => {
   const navigation = [
@@ -163,15 +164,7 @@ const Sidebar = () => {
             {/* Logo */}
             <NavLink to="#">
               <div className="flex justify-center lg:justify-start items-center gap-2 py-2 px-0 md:px-2 lg:px-4 cursor-pointer ">
-                <div className="flex items-center">
-                  <NavLink to="/">
-                    <img
-                      alt="Soul Journey"
-                      src={soulJourneyLogo}
-                      className="h-[50px] min-h-[3rem] min-w-[3rem] w-auto sm:h-[50px] md:h-[80px] object-contain"
-                    />
-                  </NavLink>
-                </div>
+                <SoulJourneyLogo/>
                 <Switch/>
               </div>
             </NavLink>
