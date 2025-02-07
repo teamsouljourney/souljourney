@@ -15,15 +15,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import useAuthCall from "../hooks/useAuthCall";
 import LanguageSelector from "./LanguageSelector";
-
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Team", href: "/team" },
-  { name: "Blogs", href: "/blogs" },
-  { name: "About", href: "/about" },
-];
+import { useTranslation } from "react-i18next";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -33,7 +25,17 @@ export default function Navbar() {
   const [showBackground, setShowBackground] = useState(false);
   let { currentUser } = useSelector((state) => state.auth);
   const { logout } = useAuthCall();
+  const { t } = useTranslation();
   console.log(currentUser);
+
+  const navigation = [
+    { name: t("Home"), href: "/" },
+    { name: t("Services"), href: "/services" },
+    { name: t("Pricing"), href: "/pricing" },
+    { name: t("Team"), href: "/team" },
+    { name: t("Blogs"), href: "/blogs" },
+    { name: t("About"), href: "/about" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,6 +55,9 @@ export default function Navbar() {
   }, []);
 
   // referrerPolicy = "no-referrer";
+
+  if (window.location.pathname.startsWith("/private")) return null;
+
   return (
     <Disclosure
       as="nav"
@@ -125,22 +130,7 @@ export default function Navbar() {
             </div>
           </div>
           <div className="absolute right-0 flex items-center gap-1 pr-2 sm:static sm:inset-auto sm:ml-0 sm:pr-0">
-            {/* <div className="w-[60px] h-auto">
-              <div className="border-none outline-none">
-                <select className="w-full bg-transparent text-offWhite-dark text-sm pl-3  py-2 transition duration-300 ease outline-none  hover:text-offWhite-light   cursor-pointer">
-                  <option className="bg-navy/50" value="english">
-                    EN
-                  </option>
-                  <option className="bg-navy/50" value="turkish">
-                    TR
-                  </option>
-                  <option className="bg-navy/50" value="german">
-                    DE
-                  </option>
-                </select>
-              </div>
-            </div> */}
-            <LanguageSelector/>
+            <LanguageSelector />
             <Switch />
             {currentUser && (
               <button
@@ -158,7 +148,7 @@ export default function Navbar() {
                 type="button"
                 className="relative rounded-md whitespace-nowrap px-2 py-2 text-sm sm:px-3 sm:py-1 xs:px-2 xs:text-xs text-offWhite-light bg-mauve-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
               >
-                <NavLink to="/login">Login</NavLink>
+                <NavLink to="/login">{t("Login")}</NavLink>
               </button>
             )}
 
@@ -186,32 +176,43 @@ export default function Navbar() {
                 </MenuButton>
                 <MenuItems
                   transition
-                  className="flex flex-col text-xl  text-slate-600 bg-navy/40 backdrop-blur p-4 mt-6 rounded-lg absolute right-0"
+                  className="flex flex-col text-xl w-[11rem]  text-slate-600 bg-navy/40 backdrop-blur p-4 mt-6 rounded-lg absolute right-0"
                 >
                   <MenuItem>
-                    <NavLink
-                      to="/userprofil"
-                      className="block px-4 py-1 text-sm fw-bold text-customBlack dark:text-offWhite data-[focus]:text-offWhite dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
+                    <span
+                      to="#"
+                      className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                     >
-                      <h5 className="">{currentUser?.userName}</h5>
-                    </NavLink>
+                      <h5 className="">
+                        {currentUser?.firstName.toUpperCase()}{" "}
+                        {currentUser?.lastName.toUpperCase()}
+                      </h5>
+                    </span>
                   </MenuItem>
                   <hr />
                   <MenuItem>
                     <NavLink
-                      to="#"
-                      className="block px-4 py-1 text-sm fw-bold text-customBlack dark:text-offWhite data-[focus]:text-offWhite dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
+                      to="/private"
+                      className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                     >
-                      My Profil
+                      {t("My Profil")}
+                    </NavLink>
+                  </MenuItem>
+                  <MenuItem>
+                    <NavLink
+                      to="/account-settings"
+                      className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
+                    >
+                      {t("Account Settings")}
                     </NavLink>
                   </MenuItem>
                   <MenuItem>
                     <NavLink
                       to="auth/logout"
-                      className="block px-4 py-1 text-sm fw-bold text-customBlack dark:text-offWhite data-[focus]:text-offWhite dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
+                      className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                       onClick={() => logout()}
                     >
-                      Logout
+                      {t("Logout")}
                     </NavLink>
                   </MenuItem>
                 </MenuItems>
