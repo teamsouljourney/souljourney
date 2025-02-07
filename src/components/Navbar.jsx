@@ -29,12 +29,12 @@ export default function Navbar() {
   console.log(currentUser);
 
   const navigation = [
-    { name: t("Home"), href: "/" },
-    { name: t("Services"), href: "/services" },
-    { name: t("Pricing"), href: "/pricing" },
-    { name: t("Team"), href: "/team" },
-    { name: t("Blogs"), href: "/blogs" },
-    { name: t("About"), href: "/about" },
+    { name: t("home"), href: "/" },
+    { name: t("services"), href: "/services" },
+    { name: t("pricing"), href: "/pricing" },
+    { name: t("team"), href: "/team" },
+    { name: t("blogs"), href: "/blogs" },
+    { name: t("about"), href: "/about" },
   ];
 
   useEffect(() => {
@@ -148,7 +148,7 @@ export default function Navbar() {
                 type="button"
                 className="relative rounded-md whitespace-nowrap px-2 py-2 text-sm sm:px-3 sm:py-1 xs:px-2 xs:text-xs text-offWhite-light bg-mauve-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
               >
-                <NavLink to="/login">{t("Login")}</NavLink>
+                <NavLink to="/login">{t("login")}</NavLink>
               </button>
             )}
 
@@ -195,7 +195,7 @@ export default function Navbar() {
                       to="/private"
                       className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                     >
-                      {t("My Profil")}
+                      {t("myProfil")}
                     </NavLink>
                   </MenuItem>
                   <MenuItem>
@@ -203,7 +203,7 @@ export default function Navbar() {
                       to="/account-settings"
                       className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                     >
-                      {t("Account Settings")}
+                      {t("accountSettings")}
                     </NavLink>
                   </MenuItem>
                   <MenuItem>
@@ -212,7 +212,7 @@ export default function Navbar() {
                       className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                       onClick={() => logout()}
                     >
-                      {t("Logout")}
+                      {t("logout")}
                     </NavLink>
                   </MenuItem>
                 </MenuItems>
