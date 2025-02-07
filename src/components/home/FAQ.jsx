@@ -67,7 +67,7 @@ const FAQ = () => {
                   </button>
                   <div
                     className="transition-all duration-500 ease-in-out group-hover:max-h-60 max-h-0 overflow-hidden"
-                    style={{ transition: "max-height 0.5s ease-in-out 0s" }}
+                    style={{ transition: "max-height 0.6s ease-in-out 0,2s" }}
                   >
                     <div className="pb-5 leading-relaxed px-4">
                       <div className="space-y-2 leading-relaxed">{faq.answer}</div>
