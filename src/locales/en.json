@@ -1,10 +1,65 @@
 {
+    "NAVBAR": "NAVBAR",
     "home": "Home",
     "services": "Services",
     "pricing": "Pricing",
     "team": "Team",
     "contact": "Contact",
     "about": "About",
-    "language": "Language"
+    "language": "Language",
+    "blogs": "Blogs",
+    "login": "Login",
+    "myProfile": "My Profile",
+    "accountSettings": "Account Settings",
+    "logout": "Logout",
+    
+    
+    "HOMEPAGE": "HOMEPAGE",
+    "onlineTherapy": "Online Therapy",
+    "getStarted": "Get Started",
+    "selfTest": "Self Test",
+    "infoText": "At Soul Journey, we offer online counseling that supports your path to healing and personal growth. Our professional therapists provide a safe, confidential space for you to explore your emotions, find clarity, and overcome life challenges—all from the comfort of your home. Why Soul Journey? Flexible Sessions: Access therapy anytime, anywhere. Personalized Support: Tailored guidance for your unique journey. Confidential & Safe: Your privacy is our priority. Start your journey today—healing begins within.",
+    "howItWorks": "How It Works",
+    "registerOrLogin": "Register Or Login",
+    "determineYourPreferences": "Determine Your Preferences",
+    "chooseYourTherapist": "Choose Your Therapist",
+    "joinTheSession": "Join The Session",
+    "hwStepOne": "Create an account or log in to your existing account to get started",
+    "hwStepTwo": "Specify your preferences regarding therapy type, session frequency, and goals.",
+    "hwStepThree": "Browse through a list of qualified therapists and select the one that best fits your needs.",
+    "hwStepFour": "Start your therapy session at the scheduled time through a secure video call or chat platform.",
+    "ourBlogs": "Our Blogs",
+    "ourBlogsText":"Our blog is a valuable resource filled with insightful articles on psychological counseling, personal development, and mental health. Written by our team of experienced psychologists, therapists, and counselors, our articles aim to help you better understand yourself and cultivate a healthier mindset. Here’s what you can expect from our blog.",
+    "seeMore" : "See More",
+
+     
+
+
+
+    "PROFILE": "PROFILE",
+
+
+    "SERVICES": "SERVICES",
+
+
+    "PPRICING": "PPRICING",
+
+
+    "TEAM": "TEAM",
+
+
+    "BLOGS": "BLOGS",
+
+
+    "ABOUT": "ABOUT",
+
+
+
+    "FOOTER": "FOOTER",
+
+
+
+    "CONTACT": "CONTACT"
+
 
   }

@@ -1,10 +1,21 @@
 {
+  "NAVBAR": "NAVBAR",
     "home": "Ana Sayfa",
     "services": "Hizmetler",
     "pricing": "Fiyatlandırma",
     "team": "Takım",
     "contact": "İletişim",
     "about": "Hakkında",
-    "language": "Dil"
-    
+    "language": "Dil",
+    "blogs": "Bloglar",
+
+
+    "HOMEPAGE": "GIRIS",
+
+
+    "PROFILE": "PROFILE",
+
+
+    "SERVICES": "SERVICES"
+
   } 
