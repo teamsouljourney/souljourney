@@ -1,5 +1,4 @@
-import { useTranslation } from "react-i18next";
-import { GlobeAltIcon } from "@heroicons/react/24/outline";
+import { useTranslation } from "react-i18next"
 
 const LanguageSelector = () => {
   const { i18n } = useTranslation();
@@ -9,31 +8,21 @@ const LanguageSelector = () => {
   };
 
   return (
-    <div className="relative">
-      <button className="p-2 bg-navy-dark text-white rounded-full hover:bg-mauve-light focus:outline-none">
-        <GlobeAltIcon className="size-6"/>
-      </button>
-      <div className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg z-10">
-        <button
-          className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-          onClick={() => changeLanguage("en")}
-        >
-          English
-        </button>
-        <button
-          className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-          onClick={() => changeLanguage("tr")}
-        >
-          Türkçe
-        </button>
-        <button
-          className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-          onClick={() => changeLanguage("de")}
-        >
-          Deutsch
-        </button>
-      </div>
-    </div>
+    <div className="w-[60px] h-auto">
+              <div className="border-none outline-none">
+                <select className="w-full bg-transparent text-offWhite-dark text-sm pl-3  py-2 transition duration-300 ease outline-none  hover:text-offWhite-light   cursor-pointer">
+                  <option className="bg-navy/50" value="english" onClick={() => changeLanguage("en")}>
+                    EN
+                  </option>
+                  <option className="bg-navy/50" value="turkish" onClick={() => changeLanguage("tr")}>
+                    TR
+                  </option>
+                  <option className="bg-navy/50" value="german" onClick={() => changeLanguage("de")}>
+                    DE
+                  </option>
+                </select>
+              </div>
+            </div>
   );
 };
 
