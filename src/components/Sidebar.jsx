@@ -189,8 +189,16 @@ const Sidebar = () => {
                   to=""
                 >
                   <span className="inline-flex justify-center items-center ml-1">
-                    <span style={{maskImage: `url(/assets/sidebar/edit.svg)`,maskRepeat: 'no-repeat',
-        maskSize: 'contain', width: "20px", height: "20px"}} className="inline-flex justify-center items-center mx-3.5 bg-red-700">
+                    <span
+                      style={{
+                        maskImage: `url(/assets/sidebar/edit.svg)`,
+                        maskRepeat: "no-repeat", 
+                        maskSize: "contain", 
+                        width: "16px", 
+                        height: "16px"
+                      }} 
+                      className="inline-flex justify-center items-center mx-3.5 bg-red-700"
+                    >
                       
                     </span>
                   </span>
