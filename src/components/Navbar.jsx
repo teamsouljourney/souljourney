@@ -61,7 +61,7 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="bg-transparent w-full fixed top-0 z-20 text-navy"
+      className="bg-transparent w-screen fixed top-0 z-20 text-navy"
     >
       <div
         className={`max-w-full sm:px-6 lg:px-8 transition duration-500 ${
@@ -79,7 +79,7 @@ export default function Navbar() {
           "bg-navy/40 backdrop-blur"
         }`}
       >
-        <div className="relative flex h-20 items-center justify-evenly">
+        <div className="relative flex h-20 items-center justify-around">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset  ">
@@ -139,7 +139,7 @@ export default function Navbar() {
               >
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">View notifications</span>
-                <BellIcon aria-hidden="true" className="size-6" />
+                <BellIcon aria-hidden="true" className="size-4 sm:size-6" />
               </button>
             )}
 
@@ -154,7 +154,7 @@ export default function Navbar() {
 
             {/* Profile dropdown */}
             {currentUser && (
-              <Menu as="div" className="relative">
+              <Menu as="div" className="relative mr-4">
                 {/* MenuButton içindeki avatar kısmı */}
                 <MenuButton className="relative flex rounded-full shadow-lg shadow-mauve-light bg-offWhite-light text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy hover:shadow-3xl hover:shadow-navy-dark">
                   <span className="absolute -inset-1.5" />
@@ -163,7 +163,7 @@ export default function Navbar() {
                     <img
                       alt=""
                       src={currentUser.image}
-                      className="size-8 rounded-full"
+                      className="size-6 sm:size-8 rounded-full"
                     />
                   ) : (
                     <div className="size-8 rounded-full bg-navy-dark flex items-center justify-center">
