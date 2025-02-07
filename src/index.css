@@ -53,3 +53,28 @@
   position: relative;
   z-index: 2; /* Ensures form elements are above the overlay */
 }
+
+
+/* Position the Self-Test button above the footer text */
+.self-test-btn {
+  position: relative;
+  bottom: 25px; /* Position the Self-Test button above the footer text */
+  display: block;
+  margin: 0 auto;
+}
+
+/* Move Get Started button below hero content for mobile devices */
+@media (max-width: 768px) {
+  .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .get-started-btn {
+      width: 80%; 
+      margin-top: 20px;
+      order: 2; /* Move to bottom of hero content */
+  }
+}
