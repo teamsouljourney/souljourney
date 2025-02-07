@@ -1,10 +1,58 @@
 {
-    "home": "Ana Sayfa",
-    "services": "Hizmetler",
-    "pricing": "Fiyatlandırma",
-    "team": "Takım",
-    "contact": "İletişim",
-    "about": "Hakkında",
-    "language": "Dil"
-    
-  } 
+  "NAVBAR": "NAVBAR",
+  "home": "Ana Sayfa",
+  "services": "Hizmetler",
+  "pricing": "Fiyatlandırma",
+  "team": "Ekip",
+  "contact": "İletişim",
+  "about": "Hakkımızda",
+  "language": "Dil",
+  "blogs": "Bloglar",
+  "login": "Giriş Yap",
+  "myProfile": "Profilim",
+  "accountSettings": "Hesap Ayarları",
+  "logout": "Çıkış Yap",
+  
+  
+  "HOMEPAGE": "HOMEPAGE",
+  "onlineTherapy": "Online Terapi",
+  "getStarted": "Başlayın",
+  "selfTest": "Kendi Testinizi Yapın",
+  "infoText": "Soul Journey olarak, iyileşme ve kişisel gelişim yolculuğunuzu destekleyen çevrimiçi danışmanlık hizmetleri sunuyoruz...",
+  "howItWorks": "Nasıl Çalışır",
+  "registerOrLogin": "Kayıt Ol veya Giriş Yap",
+  "determineYourPreferences": "Tercihlerinizi Belirleyin",
+  "chooseYourTherapist": "Terapistinizi Seçin",
+  "joinTheSession": "Seansa Katılın",
+  "hwStepOne": "Başlamak için bir hesap oluşturun veya mevcut hesabınıza giriş yapın.",
+  "hwStepTwo": "Terapi türü, seans sıklığı ve hedeflerinize ilişkin tercihlerinizi belirtin.",
+  "hwStepThree": "Nitelikli terapistleri inceleyin ve ihtiyaçlarınıza en uygun olanı seçin.",
+  "hwStepFour": "Planlanan saatte güvenli bir görüntülü görüşme veya sohbet platformu aracılığıyla terapi seansınıza başlayın.",
+  "ourBlogs": "Bloglarımız",
+  "ourBlogsText": "Blogumuz, psikolojik danışmanlık, kişisel gelişim ve ruh sağlığı hakkında içgörülü makalelerle dolu değerli bir kaynaktır...",
+  "seeMore": "Daha Fazlasını Gör",
+
+
+  "PROFILE": "PROFIL",
+
+
+  "SERVICES": "HIZMETLER",
+  
+  
+  "PPRICING": "FIYATLANDIRMA",
+  
+  
+  "TEAM": "EKIP",
+  
+  
+  "BLOGS": "BLOGLAR",
+  
+  
+  "ABOUT": "HAKKIMIZDA",
+  
+  
+  "FOOTER": "ALT BÖLÜM",
+  
+  
+  "CONTACT": "ILETIŞIM"
+}
