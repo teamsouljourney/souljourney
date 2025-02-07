@@ -3,6 +3,7 @@ import authReducer from "../features/authSlice";
 import appointmentReducer from "../features/appointmentSlice";
 import categoryReducer from "../features/categorySlice";
 import therapistReducer from "../features/therapistSlice";
+import noteReducer from "../features/noteSlice";
 
 //*redux-persist
 import {
@@ -32,6 +33,7 @@ const store = configureStore({
     appointments: appointmentReducer,
     categories: categoryReducer,
     therapists: therapistReducer,
+    notes: noteReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
