@@ -14,6 +14,7 @@ import Switch from "./Switch";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import useAuthCall from "../hooks/useAuthCall";
+import LanguageSelector from "./LanguageSelector";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -124,7 +125,7 @@ export default function Navbar() {
             </div>
           </div>
           <div className="absolute right-0 flex items-center gap-1 pr-2 sm:static sm:inset-auto sm:ml-0 sm:pr-0">
-            <div className="w-[60px] h-auto">
+            {/* <div className="w-[60px] h-auto">
               <div className="border-none outline-none">
                 <select className="w-full bg-transparent text-offWhite-dark text-sm pl-3  py-2 transition duration-300 ease outline-none  hover:text-offWhite-light   cursor-pointer">
                   <option className="bg-navy/50" value="english">
@@ -138,7 +139,8 @@ export default function Navbar() {
                   </option>
                 </select>
               </div>
-            </div>
+            </div> */}
+            <LanguageSelector/>
             <Switch />
             {currentUser && (
               <button
