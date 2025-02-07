@@ -50,9 +50,9 @@ const AppRouter = () => {
         <Route path="/blogs/:id" element={<BlogDetail />} />
 
         {/* Private Area */}
-        <Route path="/private" element={<PrivateRouter />}>
+        <Route path="" element={<PrivateRouter />}>
           {/* Privates Routes */}
-          <Route path="" element={<Sidebar />} >
+          <Route path="/profile" element={<Sidebar />} >
             <Route index element={<Dashboard/>}/>
             <Route path="account" element={<Account/>}/>
             <Route path="chat" element={<Chat/>}/>
