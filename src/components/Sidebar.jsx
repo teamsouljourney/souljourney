@@ -2,9 +2,12 @@ import { NavLink, Outlet } from "react-router-dom";
 import Switch from "./Switch";
 import SoulJourneyLogo from "./sidebar/SoulJourneyLogo";
 import SidebarListItems from "./sidebar/SidebarListItems";
+import useAuthCall from "../hooks/useAuthCall";
 
 const Sidebar = () => {
-  
+
+  const {logout} = useAuthCall()
+
   return (
     <>
       <div className=" w-dvw h-dvh grid grid-cols-7">
@@ -15,10 +18,30 @@ const Sidebar = () => {
             <NavLink to="#">
               <div className="flex flex-col justify-center lg:justify-start items-center gap-2 py-2 px-0 md:px-2 lg:px-4 cursor-pointer ">
                 <SoulJourneyLogo/>
-                <Switch />
+                <Switch/>
               </div>
             </NavLink>
-            <SidebarListItems/>
+            <SidebarListItems />
+            {/* Sidebar footer */}
+            <div className="px-1" onClick={()=>logout()}>
+              <div className="flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-3.5  lg:pr-6 font-semibold text-navy-dark hover:text-primary-400 cursor-pointer  hover:text-red-600">
+                <span className="inline-flex justify-center items-center ml-1">
+                  <span
+                    style={{
+                      maskImage: `url(/assets/sidebar/sign-out-2.svg)`,
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      width: "20px",
+                      height: "20px",
+                    }}
+                    className="inline-flex justify-center items-center mx-3.5 bg-red-700"
+                  ></span>
+                </span>
+                <span className="ml-2 text-sm text-navy-dark tracking-wide truncate capitalize hidden lg:block">
+                  Logout
+                </span>
+              </div>
+            </div>
           </div>
         </div>
         {/* View Content */}
