@@ -30,7 +30,7 @@ const Quiz = () => {
     <>
       {/* "Self-Test" Button */}  
       <button
-        className="absolute bottom-8 right-4 md:bottom-32 md:right-4 bg-seaGreen-dark text-white px-8 py-2 rounded-full shadow-lg hover:bg-seaGreen-light transition md:fixed md:w-auto md:right-4 md:bottom-8 w-full mx-auto text-center block md:hidden"
+        className="fixed right-4 bottom-32 bg-seaGreen-dark text-white px-8 py-2 rounded-full shadow-lg hover:bg-seaGreen-light transition"
         onClick={() => setShowQuiz(true)}
       >
         Self-Test

@@ -18,6 +18,8 @@
   "selfTest": "Kendi Testinizi Yapın",
   "getStarted": "Başlayın",
   "seeMore": "Daha Fazla Gör",
+  "close" : "Kapat",
+  "restart" : "Yeniden başlat",
   "nowFreeRegister": "Şimdi Ücretsiz Kayıt Ol",
 
 
@@ -63,6 +65,7 @@
 
 
   "QUIZ": "QUIZ",
+  "emotionalWell-beingCheck": "Duygusal Sağlık Kontrolü",
   "quizQuestionOne": "Geçtiğimiz hafta ne sıklıkla gergin veya endişeli hissettiniz?",
   "OneOptionA": "Hiç",
   "OneOptionB": "Birkaç gün",

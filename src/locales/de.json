@@ -18,6 +18,8 @@
   "selfTest": "Selbsttest",
   "getStarted": "Loslegen",
   "seeMore": "Mehr anzeigen",
+  "close" : "Schließen",
+  "restart" : "Neustart",
   "nowFreeRegister": "Jetzt kostenlos registrieren",
 
 
@@ -63,6 +65,7 @@
 
 
   "QUIZ": "QUIZ",
+  "emotionalWell-beingCheck": "Check des emotionalen Wohlbefindens",
   "quizQuestionOne": "Wie oft haben Sie sich in der letzten Woche nervös oder ängstlich gefühlt?",
   "OneOptionA": "Gar nicht",
   "OneOptionB": "An einigen Tagen",
