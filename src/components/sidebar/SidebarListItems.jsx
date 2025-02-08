@@ -91,6 +91,7 @@ const SidebarListItems = () => {
           </NavLink>
         </div>
       </div>
+      <hr className="hidden lg:block"/>
       {/* Sidebar footer */}
       {/* <div className="px-1">
         <div className="flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-3.5  lg:pr-6 font-semibold text-navy-dark hover:text-primary-400 cursor-pointer  hover:text-red-600">
