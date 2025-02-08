@@ -7,7 +7,7 @@ const Footer = () => {
   if (
     location.pathname === "/login" ||
     location.pathname === "/register" ||
-    location.pathname === "/profile"
+    location.pathname.startsWith("/profile")
   ) {
     return null;
   } else {
