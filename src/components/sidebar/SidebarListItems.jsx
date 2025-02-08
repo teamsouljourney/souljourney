@@ -36,13 +36,13 @@ const SidebarListItems = () => {
     <>
       <div className="flex flex-col h-full overflow-y-auto overflow-x-hidden flex-grow pt-2 justify-between">
         <div className="flex flex-col  space-y-1 mx-1 lg:mt-1 ">
-          <div className="px-5 pt-4 hidden lg:block">
+          {/* <div className="px-5 pt-4 hidden lg:block">
             <div className="flex flex-row items-center">
               <div className="text-sm font-bold tracking-wide text-seaGreen-dark">
                 Menu
               </div>
             </div>
-          </div>
+          </div> */}
 
           {menu.map((item, index) => (
             <NavLink
@@ -59,10 +59,10 @@ const SidebarListItems = () => {
                     width: "20px",
                     height: "20px",
                   }}
-                  className="inline-flex justify-center items-center mx-3.5 bg-navy-dark"
+                  className="inline-flex justify-center items-center mx-3.5 bg-navy-dark dark:bg-offWhite-dark"
                 ></span>
               </span>
-              <span className="ml-0 lg:ml-2 text-sm text-navy-dark tracking-wide truncate capitalize hidden lg:block">
+              <span className="ml-0 lg:ml-2 text-sm text-navy-dark dark:text-offWhite-dark tracking-wide truncate capitalize hidden lg:block">
                 {item.name}
               </span>
             </NavLink>
@@ -70,7 +70,7 @@ const SidebarListItems = () => {
         </div>
         <div className="flex flex-col  space-y-1 mx-1 lg:mt-1 ">
           <NavLink
-            className="flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-3.5  lg:pr-6 font-semibold text-navy-dark hover:text-primary-400 cursor-pointer "
+            className="flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-3.5  lg:pr-6 font-semibold text-navy-dark dark:text-offWhite-dark hover:text-primary-400 cursor-pointer "
             to="/profile/account"
           >
             <span className="inline-flex justify-center items-center ml-1">
@@ -82,10 +82,10 @@ const SidebarListItems = () => {
                   width: "20px",
                   height: "20px",
                 }}
-                className="inline-flex justify-center items-center mx-3.5 bg-navy-dark"
+                className="inline-flex justify-center items-center mx-3.5 bg-navy-dark dark:bg-offWhite-dark"
               ></span>
             </span>
-            <span className="ml-0 lg:ml-2 text-sm text-navy-dark tracking-wide truncate capitalize hidden lg:block">
+            <span className="ml-0 lg:ml-2 text-sm text-navy-dark dark:text-offWhite-dark tracking-wide truncate capitalize hidden lg:block">
               My Account
             </span>
           </NavLink>
@@ -106,7 +106,7 @@ const SidebarListItems = () => {
               className="inline-flex justify-center items-center mx-3.5 bg-red-700"
             ></span>
           </span>
-          <span className="ml-2 text-sm tracking-wide truncate capitalize hidden lg:block">
+          <span className="ml-2 text-sm text-navy-dark dark:text-offWhite-dark tracking-wide truncate capitalize hidden lg:block">
             Logout
           </span>
         </div>

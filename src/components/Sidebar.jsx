@@ -21,10 +21,18 @@ const Sidebar = () => {
                 <Switch/>
               </div>
             </NavLink>
-            <SidebarListItems />
+            {/* Sidebar Menu */}
+            <div className="px-5 pt-4 hidden lg:block">
+              <div className="flex flex-row items-center">
+                <div className="text-sm font-bold tracking-wide text-seaGreen-dark dark:text-offWhite">
+                  Menu
+                </div>
+              </div>
+            </div>
+            <SidebarListItems/>
             {/* Sidebar footer */}
             <div className="px-1" onClick={()=>logout()}>
-              <div className="flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-3.5  lg:pr-6 font-semibold text-navy-dark hover:text-primary-400 cursor-pointer  hover:text-red-600">
+              <div className="flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-3.5  lg:pr-6 font-semibold text-navy-dark dark:text-offWhite-dark hover:text-primary-400 cursor-pointer  hover:text-red-600">
                 <span className="inline-flex justify-center items-center ml-1">
                   <span
                     style={{
@@ -34,10 +42,10 @@ const Sidebar = () => {
                       width: "20px",
                       height: "20px",
                     }}
-                    className="inline-flex justify-center items-center mx-3.5 bg-red-700"
+                    className="inline-flex justify-center items-center mx-3.5 bg-pink-dark dark:bg-pink-light"
                   ></span>
                 </span>
-                <span className="ml-2 text-sm text-navy-dark tracking-wide truncate capitalize hidden lg:block">
+                <span className="ml-2 text-sm text-navy-dark dark:text-offWhite-dark tracking-wide truncate capitalize hidden lg:block">
                   Logout
                 </span>
               </div>
