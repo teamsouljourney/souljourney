@@ -173,7 +173,7 @@ const Sidebar = () => {
               <div className="flex flex-col  space-y-1 mx-1 lg:mt-1 ">
                 <div className="px-5 pt-4 hidden lg:block">
                   <div className="flex flex-row items-center">
-                    <div className="text-xs font-bold tracking-wide text-gray-600">
+                    <div className="text-sm font-bold tracking-wide text-seaGreen-dark">
                       Menu
                     </div>
                   </div>
@@ -191,11 +191,11 @@ const Sidebar = () => {
                         width: "16px", 
                         height: "16px"
                       }} 
-                      className="inline-flex justify-center items-center mx-3.5 bg-red-700"
+                      className="inline-flex justify-center items-center mx-3.5 bg-navy-dark"
                     >                      
                     </span>
                   </span>
-                  <span className="ml-0 lg:ml-2 text-sm tracking-wide truncate capitalize hidden lg:block">
+                  <span className="ml-0 lg:ml-2 text-sm text-navy-dark tracking-wide truncate capitalize hidden lg:block">
                     Dashboard
                   </span>
                 </NavLink>
@@ -212,11 +212,11 @@ const Sidebar = () => {
                         width: "16px", 
                         height: "16px"
                       }} 
-                      className="inline-flex justify-center items-center mx-3.5 bg-red-700"
+                      className="inline-flex justify-center items-center mx-3.5 bg-navy-dark"
                     >                      
                     </span>
                   </span>
-                  <span className="ml-0 lg:ml-2 text-sm tracking-wide truncate capitalize hidden lg:block">
+                  <span className="ml-0 lg:ml-2 text-sm text-navy-dark tracking-wide truncate capitalize hidden lg:block">
                     Appointments
                   </span>
                 </NavLink>
