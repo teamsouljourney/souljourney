@@ -163,7 +163,7 @@ const Sidebar = () => {
           <div className="p-2 h-full w-full flex flex-col bg-offWhite dark:bg-navy border-r border-r-gray-200">
             {/* Logo */}
             <NavLink to="#">
-              <div className="flex justify-center lg:justify-start items-center gap-2 py-2 px-0 md:px-2 lg:px-4 cursor-pointer ">
+              <div className="flex flex-col justify-center lg:justify-start items-center gap-2 py-2 px-0 md:px-2 lg:px-4 cursor-pointer ">
                 <SoulJourneyLogo/>
                 <Switch/>
               </div>
