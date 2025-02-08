@@ -192,8 +192,7 @@ const Sidebar = () => {
                         height: "16px"
                       }} 
                       className="inline-flex justify-center items-center mx-3.5 bg-red-700"
-                    >
-                      
+                    >                      
                     </span>
                   </span>
                   <span className="ml-0 lg:ml-2 text-sm tracking-wide truncate capitalize hidden lg:block">
@@ -214,8 +213,7 @@ const Sidebar = () => {
                         height: "16px"
                       }} 
                       className="inline-flex justify-center items-center mx-3.5 bg-red-700"
-                    >
-                      
+                    >                      
                     </span>
                   </span>
                   <span className="ml-0 lg:ml-2 text-sm tracking-wide truncate capitalize hidden lg:block">
@@ -224,7 +222,7 @@ const Sidebar = () => {
                 </NavLink>
                 <NavLink
                   className="flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-3.5  lg:pr-6 font-semibold text-gray-500 hover:text-primary-400 cursor-pointer "
-                  to="/private/write-blog"
+                  to="/profile/write-blog"
                 >
                   <span className="inline-flex justify-center items-center ml-1">
                     <span
@@ -246,7 +244,7 @@ const Sidebar = () => {
                 </NavLink>
                 <NavLink
                   className="flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-3.5  lg:pr-6 font-semibold text-gray-500 hover:text-primary-400 cursor-pointer "
-                  to="/private/chat"
+                  to="/profile/chat"
                 >
                   <span className="inline-flex justify-center items-center ml-1">
                     <span
@@ -268,7 +266,7 @@ const Sidebar = () => {
                 </NavLink>
                 <NavLink
                   className="flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-3.5  lg:pr-6 font-semibold bg-primary-50 shadow-sm text-primary-400  "
-                  to="/private/video-call"
+                  to="/profile/video-call"
                 >
                   <span className="inline-flex justify-center items-center ml-1">
                     <span
@@ -292,7 +290,7 @@ const Sidebar = () => {
               <div className="flex flex-col  space-y-1 mx-1 lg:mt-1 ">
                 <NavLink
                   className="flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-3.5  lg:pr-6 font-semibold text-gray-500 hover:text-primary-400 cursor-pointer "
-                  to="/private/account"
+                  to="/profile/account"
                 >
                   <span className="inline-flex justify-center items-center ml-1">
                     <span
