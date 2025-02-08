@@ -3,6 +3,7 @@ import Switch from "./Switch";
 import SoulJourneyLogo from "./sidebar/SoulJourneyLogo";
 import SidebarListItems from "./sidebar/SidebarListItems";
 import useAuthCall from "../hooks/useAuthCall";
+import LanguageSelector from "./LanguageSelector";
 
 const Sidebar = () => {
 
@@ -19,6 +20,9 @@ const Sidebar = () => {
               <div className="flex flex-col justify-center lg:justify-start items-center gap-1 pb-2 px-0 md:px-2 lg:px-4 cursor-pointer dark:bg-offWhite dark:rounded-md dark:shadow-sm dark:shadow-offWhite-light">
                 <SoulJourneyLogo/>
                 <Switch/>
+                <div className="bg-navy rounded-full m-2">
+                  <LanguageSelector/>
+                </div>
               </div>
             </NavLink>
             {/* Sidebar Menu */}
