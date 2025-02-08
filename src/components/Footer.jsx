@@ -7,7 +7,7 @@ const Footer = () => {
   if (
     location.pathname === "/login" ||
     location.pathname === "/register" ||
-    location.pathname === "/private"
+    location.pathname === "/profile"
   ) {
     return null;
   } else {
