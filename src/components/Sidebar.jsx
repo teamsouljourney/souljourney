@@ -37,7 +37,7 @@ const Sidebar = () => {
             <SidebarListItems/>
             {/* Sidebar footer */}
             <div className="px-1" onClick={()=>logout()}>
-              <div className="flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-3.5  lg:pr-6 font-semibold text-navy-dark dark:text-offWhite-dark hover:text-primary-400 cursor-pointer  hover:text-red-600">
+              <div className="group flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-1.5 lg:pr-6 font-semibold text-navy-dark dark:text-offWhite-dark hover:text-pink-light cursor-pointer  ">
                 <span className="inline-flex justify-center items-center ml-1">
                   <span
                     style={{
@@ -47,10 +47,10 @@ const Sidebar = () => {
                       width: "20px",
                       height: "20px",
                     }}
-                    className="inline-flex justify-center items-center mx-3.5 bg-pink-dark dark:bg-pink-light"
+                    className="inline-flex justify-center items-center mx-3.5 bg-red-400 group-hover:bg-red-400 dark:bg-pink-light"
                   ></span>
                 </span>
-                <span className="ml-2 text-sm text-navy-dark dark:text-offWhite-dark tracking-wide truncate capitalize hidden lg:block">
+                <span className="ml-2 text-sm text-navy-dark group-hover:text-red-400 dark:text-offWhite-dark tracking-wide truncate capitalize hidden lg:block">
                   Logout
                 </span>
               </div>
