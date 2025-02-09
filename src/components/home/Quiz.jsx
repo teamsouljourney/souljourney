@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../../index.css"; // Assuming you add styles in this CSS file
 // import { Quiz } from "@mui/icons-material"; 
 import quizData from "../../helper/quizData.json"; 
@@ -8,6 +8,20 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false); // Test area  
+  const [isScrolled, setIsScrolled] = useState(false); // SCROLL
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleAnswer = (score) => {
     setScore((prevScore) => prevScore + score);
@@ -28,14 +42,16 @@ const Quiz = () => {
 
   return (
     <>
-      {/* "Self-Test" Button */}  
-      <button
-        className="fixed right-4 bottom-32 bg-seaGreen-dark text-white px-8 py-2 rounded-full shadow-lg hover:bg-seaGreen-light transition"
-        onClick={() => setShowQuiz(true)}
-      >
-        Self-Test
-      </button>
-
+      {/* "Self-Test" Button   */}
+    <div className="flex justify-center">
+  <button
+    className={`px-9 py-2 rounded-full shadow-lg transition-all duration-300 bg-seaGreen-dark hover:bg-seaGreen-light z-50 font-semibold bottom-48 text-offWhite 
+      ${isScrolled ? "fixed bottom-40 right-5" : "absolute top-[calc(60%+15px)] left-1/2 -translate-x-1/2 text-2x1 sm:px-6 sm:py-2 sm:text-2xl md:px-8 md:py-3 md:text-2xl"}`}
+    onClick={() => setShowQuiz(true)}
+  >
+    Self-Test
+  </button>
+</div>
       {/* Quiz Section */}
       {showQuiz && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
