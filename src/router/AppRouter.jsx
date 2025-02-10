@@ -25,6 +25,7 @@ import VideoCall from "../pages/VideoCall";
 import WriteBlog from "../pages/WriteBlog";
 import Dashboard from "../pages/Dashboard";
 import Sidebar from "../components/Sidebar";
+import Appointment from "../pages/Appointment";
 
 const AppRouter = () => {
   return (
@@ -55,6 +56,7 @@ const AppRouter = () => {
           <Route path="/profile" element={<Sidebar />} >
             <Route index element={<Dashboard/>}/>
             <Route path="account" element={<Account/>}/>
+            <Route path="appointment" element={<Appointment/>}/>
             <Route path="chat" element={<Chat/>}/>
             <Route path="video-call" element={<VideoCall/>}/>
             <Route path="write-blog" element={<WriteBlog/>}/>
