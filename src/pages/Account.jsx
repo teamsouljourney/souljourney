@@ -21,10 +21,11 @@ const Account = () => {
           justifyContent: "center",
           alignItems: "center",
           border: "1px solid red",
-          // flexDirection: {
-          //     xs: "column",
-          //     sm: "row-reverse",
-          // }
+          bgcolor: "secondary",
+          flexDirection: {
+              xs: "column",
+              sm: "row-reverse",
+          }
         }}
       >
         <Grid xs={12}>
@@ -40,6 +41,10 @@ const Account = () => {
                 md: "2rem",
                 lg: "2.5rem",
               },
+              mb: {
+                xs: 2,
+                sm: 3,
+              }
             }}
           >
             Navigate your path to inner Harmony...

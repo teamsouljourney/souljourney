@@ -55,7 +55,6 @@ const AccountForm = ({
             onBlur={handleBlur}
             error={touched.firstName && Boolean(errors.firstName)}
             helperText={touched.firstName && errors.firstName}
-            required
           />
           <TextField
             name="lastName"
@@ -66,7 +65,6 @@ const AccountForm = ({
             onBlur={handleBlur}
             error={touched.lastName && Boolean(errors.lastName)}
             helperText={touched.lastName && errors.lastName}
-            required
           />
           <TextField
             name="email"
@@ -77,16 +75,6 @@ const AccountForm = ({
             onBlur={handleBlur}
             error={touched.email && Boolean(errors.email)}
             helperText={touched.email && errors.email}
-            required
-          />
-          <PasswordField
-            name="password"
-            label="Password"
-            value={values.password}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            touched={touched.password}
-            errors={errors}
           />
             <TextField
             name="image"
@@ -97,7 +85,6 @@ const AccountForm = ({
             onBlur={handleBlur}
             error={touched.email && Boolean(errors.email)}
             helperText={touched.email && errors.email}
-            required
           />
           <TextField
             name="phone"
@@ -108,7 +95,6 @@ const AccountForm = ({
             onBlur={handleBlur}
             error={touched.email && Boolean(errors.email)}
             helperText={touched.email && errors.email}
-            required
           />
           <TextField
             name="address"
@@ -119,7 +105,6 @@ const AccountForm = ({
             onBlur={handleBlur}
             error={touched.email && Boolean(errors.email)}
             helperText={touched.email && errors.email}
-            required
           />
           <TextField
             name="profession"
@@ -130,7 +115,15 @@ const AccountForm = ({
             onBlur={handleBlur}
             error={touched.email && Boolean(errors.email)}
             helperText={touched.email && errors.email}
-            required
+          />
+          <PasswordField
+            name="password"
+            label="Password"
+            value={values.password}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            touched={touched.password}
+            errors={errors}
           />
         </Box>
       </Form>
@@ -142,7 +135,7 @@ const AccountForm = ({
           sx={btnStyle}
           onClick={handleSubmit}
         >
-          {isSubmitting ? "Loading..." : "Update"}
+          {isSubmitting ? "Loading..." : "Update Your Account"}
         </Button>
         
       </Box>      
