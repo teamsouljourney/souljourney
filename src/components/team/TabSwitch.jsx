@@ -66,7 +66,7 @@ const filteredTeams = teams.filter((team) => {
 
        
 
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-2 mt-5">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-2 mt-[100px] mb-[100px]">
           <TeamCard teams={filteredTeams}  />
         </div>
       </div>

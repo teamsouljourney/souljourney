@@ -6,7 +6,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import { NavLink } from "react-router-dom";
 const Join = () => {
   return (
-    <div className="flex flex-col sm:flex-row justify-center gap-5 mt-10 px-4 sm:px-8 bg-gradient-to-b from-offWhite to-navy-light py-12">
+    <div className="flex flex-col sm:flex-row justify-center gap-5 mt-10 px-4 sm:px-8 bg-offWhite py-12">
       <div className="flex flex-col justify-center items-center sm:items-start sm:w-1/2">
         <h1 className="font-urbanist text-xl sm:text-2xl lg:text-2xl font-bold text-navy  mb-4 text-center sm:text-left">
           Join Our Team
@@ -19,7 +19,7 @@ const Join = () => {
         </NavLink>
       </div>
 
-      <div className="bg-offWhite sm:w-1/2 p-6 rounded-lg shadow-lg">
+      {/* <div className="bg-offWhite sm:w-1/2 p-6 rounded-lg shadow-lg">
         <h2 className="text-navy text-xl sm:text-2xl mb-4 font-semibold">Contact Us</h2>
         
         <div className="mb-3">
@@ -40,7 +40,7 @@ const Join = () => {
             <a href="https://instagram.com" target="_blank" className="text-black hover:text-seaGreen transition duration-300 text-xs sm:text-sm"> <InstagramIcon/> </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
