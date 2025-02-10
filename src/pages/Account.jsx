@@ -14,6 +14,7 @@ const Account = () => {
       <Grid
         container
         rowSpacing={{ sm: 3 }}
+        bgcolor="secondary.light"
         sx={{
           // height: "100vh",
           p: { xs: 1, sm: 2 },
@@ -21,10 +22,9 @@ const Account = () => {
           justifyContent: "center",
           alignItems: "center",
           border: "1px solid red",
-          bgcolor: "secondary",
           flexDirection: {
               xs: "column",
-              sm: "row-reverse",
+              md: "row-reverse",
           }
         }}
       >
@@ -47,14 +47,14 @@ const Account = () => {
               }
             }}
           >
-            Navigate your path to inner Harmony...
+            Navigate your path to inner Harmony!...
           </Typography>
         </Grid>
         <Grid
           size={12}
           sx={{
             backgroundColor: "rgba(246, 244, 240, 0.7)",
-            // border: "1px solid red",
+            border: "1px solid red",
             p: { xs: 2, sm: 3 },
             borderRadius: "30px",
             boxShadow:
