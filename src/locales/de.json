@@ -143,5 +143,10 @@
   "email": "E-Mail",
   "emailDescription": "team.souljourney@gmail.com",
   "location": "Standort",
-  "locationDescription": "Jederzeit, Überall"
+  "locationDescription": "Jederzeit, Überall",
+  "namePlaceholder": "Ihr Name",
+  "emailPlaceholder": "Ihre E-Mail-Adresse",
+  "messagePlaceholder": "Schreiben Sie Ihre Nachricht ...",
+  "messageSentSuccess": "Ihre Nachricht wurde erfolgreich gesendet.",
+  "messageSentError": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
 }

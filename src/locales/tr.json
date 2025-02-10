@@ -143,5 +143,10 @@
   "email": "E-posta",
   "emailDescription": "team.souljourney@gmail.com",
   "location": "Konum",
-  "locationDescription": "Her Zaman, Her Yerde"
+  "locationDescription": "Her Zaman, Her Yerde",
+  "namePlaceholder": "Adınız",
+  "emailPlaceholder": "E-posta Adresiniz",
+  "messagePlaceholder": "Mesajınızı Yazın ...",
+  "messageSentSuccess": "Mesajınız başarıyla gönderildi.",
+  "messageSentError": "Mesajınızı gönderirken bir hata oluştu. Lütfen daha sonra tekrar deneyin."
 }

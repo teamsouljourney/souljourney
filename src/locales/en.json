@@ -38,7 +38,6 @@
   "ourBlogs": "Our Blogs",
   "ourBlogsText": "Our blog is a valuable resource filled with insightful articles on psychological counseling, personal development, and mental health. Written by our team of experienced psychologists, therapists, and counselors, our articles aim to help you better understand yourself and cultivate a healthier mindset. Here's what you can expect from our blog.",
 
-  
   "FAQ": "FAQ",
   "faq": "F.A.Q",
   "faqTitle": "Frequently Asked Questions",
@@ -62,7 +61,6 @@
   "faqAnswerNine": "All our therapists are licensed, experts in their fields, and have extensive experience.",
   "faqQuestionTen": "Who is online counseling suitable for?",
   "faqAnswerTen": "It is suitable for anyone seeking privacy and comfort, especially those with time or location constraints.",
-
 
   "QUIZ": "QUIZ",
   "emotionalWell-beingCheck": "Emotional Well-being Check",
@@ -121,29 +119,19 @@
   "score3": "Consider reaching out to one of our professionals for guidance.",
   "yourScore": "Your Score",
 
-
-
   "PROFILE": "PROFILE",
-
-
 
   "SERVICES": "SERVICES",
 
-
   "PPRICING": "PPRICING",
-
 
   "TEAM": "TEAM",
 
-
   "BLOGS": "BLOGS",
-
 
   "ABOUT": "ABOUT",
 
-
   "FOOTER": "FOOTER",
-
 
   "CONTACT": "CONTACT",
   "getInTouch": "Get in Touch",
@@ -154,7 +142,10 @@
   "email": "Email",
   "emailDescription": "team.souljourney@gmail.com",
   "location": "Location",
-  "locationDescription": "Anywhere, Anytime"
-
-
-  }
+  "locationDescription": "Anywhere, Anytime",
+  "namePlaceholder": "Your Name",
+  "emailPlaceholder": "Your Email Address",
+  "messagePlaceholder": "Write Your Message ...",
+  "messageSentSuccess": "Your message has been sent successfully.",
+  "messageSentError": "An error occurred while sending your message. Please try again later."
+}
