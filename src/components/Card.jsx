@@ -12,7 +12,9 @@ const Card = ({
     <div className="max-w-xs w-full bg-white rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-105 cursor-pointer">
       {/* Resim Alanı */}
       <div className="relative">
-        <img className="w-full h-64 object-cover" src={team.image} alt={team.name} />
+        <img className="w-full h-64 object-fit " style={{
+          // width:"320px"
+        }} src={team.image} alt={team.name} />
       </div>
 
       {/* İçerik Alanı */}
