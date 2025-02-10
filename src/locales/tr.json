@@ -15,12 +15,13 @@
 
   "BUTTONS": "BUTTONS",
   "selfTest": "Kendi Testinizi Yapın",
-  "getStarted": "Başlayın",
+  "getStarted": "Hadi Başlayalım",
   "seeMore": "Daha Fazla Gör",
   "seeLess": "Daha Az Gör",
   "close": "Kapat",
   "restart": "Yeniden başlat",
   "nowFreeRegister": "Şimdi Ücretsiz Kayıt Ol",
+  "sendMessage": "Mesaj Gönder",
 
   "HOMEPAGE": "HOMEPAGE",
   "onlineTherapy": "Online Terapi",
@@ -132,5 +133,14 @@
 
   "FOOTER": "ALT BÖLÜM",
 
-  "CONTACT": "İLETİŞİM"
+  "CONTACT": "İLETİŞİM",
+  "getInTouch": "İletişime Geçin",
+  "contactText": "Bize ulaşın ve birlikte anlamlı bir yolculuk oluşturalım. Soul Journey olarak, kendinizi keşfetme ve büyüme yolculuğunuzda yanınızdayız.",
+  "contactFormText": "Aşağıdaki formu doldurun, en kısa sürede size geri dönüş yapacağız.",
+  "contactPersons": "İletişim Ekibi",
+  "contactPersonsDescription": "Soul Journey Geliştirici Ekibi",
+  "email": "E-posta",
+  "emailDescription": "team.souljourney@gmail.com",
+  "location": "Konum",
+  "locationDescription": "Her Zaman, Her Yerde"
 }

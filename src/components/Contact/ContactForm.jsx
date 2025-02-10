@@ -1,8 +1,10 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { toastErrorNotify, toastSuccessNotify } from "../../helper/ToastNotify";
+import { useTranslation } from "react-i18next";
 
 const ContactForm = () => {
+  const { t } = useTranslation();
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -32,10 +34,9 @@ const ContactForm = () => {
   return (
     <form ref={form} onSubmit={sendEmail}>
       <div className="mb-6 text-center">
-        <h2 className="mb-2 text-2xl font-bold text-navy">Get Started</h2>
+        <h2 className="mb-2 text-2xl font-bold text-navy">{t("getStarted")}</h2>
         <p className="text-sm font-semibold text-navy-light dark:text-offWhite">
-          Fill out the form below, and we&apos;ll get back to you as soon as
-          possible.
+          {t("contactFormText")}
         </p>
       </div>
 
@@ -91,7 +92,7 @@ const ContactForm = () => {
           value="Send"
           className="w-full px-6 py-3 transition-all duration-300 rounded-md text-offWhite bg-seaGreen hover:bg-navy-dark font-xl sm:mb-0"
         >
-          Send Message
+          {t("sendMessage")}
         </button>
       </div>
     </form>

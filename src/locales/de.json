@@ -21,6 +21,7 @@
   "close": "Schließen",
   "restart": "Neustart",
   "nowFreeRegister": "Jetzt kostenlos registrieren",
+  "sendMessage": "Nachricht senden",
 
   "HOMEPAGE": "HOMEPAGE",
   "onlineTherapy": "Online-Therapie",
@@ -132,5 +133,14 @@
 
   "FOOTER": "FUSSZEILE",
 
-  "CONTACT": "KONTAKT"
+  "CONTACT": "KONTAKT",
+  "getInTouch": "Kontakt aufnehmen",
+  "contactText": "Melden Sie sich bei uns und lassen Sie uns gemeinsam eine bedeutungsvolle Reise gestalten. Bei Soul Journey unterstützen wir Sie auf Ihrem Weg der Selbstentdeckung und des Wachstums.",
+  "contactFormText": "Füllen Sie das untenstehende Formular aus, und wir werden uns so schnell wie möglich bei Ihnen melden.",
+  "contactPersons": "Kontaktpersonen",
+  "contactPersonsDescription": "Soul Journey Entwicklerteam",
+  "email": "E-Mail",
+  "emailDescription": "team.souljourney@gmail.com",
+  "location": "Standort",
+  "locationDescription": "Jederzeit, Überall"
 }
