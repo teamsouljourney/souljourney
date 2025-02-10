@@ -13,15 +13,14 @@
   "accountSettings": "Kontoeinstellungen",
   "logout": "Abmelden",
 
-
   "BUTTONS": "BUTTONS",
   "selfTest": "Selbsttest",
   "getStarted": "Loslegen",
   "seeMore": "Mehr anzeigen",
-  "close" : "Schließen",
-  "restart" : "Neustart",
+  "seeLess": "Weniger anzeigen",
+  "close": "Schließen",
+  "restart": "Neustart",
   "nowFreeRegister": "Jetzt kostenlos registrieren",
-
 
   "HOMEPAGE": "HOMEPAGE",
   "onlineTherapy": "Online-Therapie",
@@ -37,7 +36,6 @@
   "hwStepFour": "Starten Sie Ihre Therapiesitzung zum geplanten Zeitpunkt über eine sichere Videoanruf- oder Chat-Plattform.",
   "ourBlogs": "Unsere Blogs",
   "ourBlogsText": "Unser Blog ist eine wertvolle Quelle mit aufschlussreichen Artikeln zu psychologischer Beratung, persönlicher Entwicklung und psychischer Gesundheit...",
-
 
   "FAQ": "FAQ",
   "faq": "F.A.Q.",
@@ -63,7 +61,6 @@
   "faqQuestionTen": "Für wen ist Online-Beratung geeignet?",
   "faqAnswerTen": "Sie ist für alle geeignet, die Wert auf Privatsphäre und Komfort legen, insbesondere für Menschen mit Zeit- oder Ortsbeschränkungen.",
 
-
   "QUIZ": "QUIZ",
   "emotionalWell-beingCheck": "Check des emotionalen Wohlbefindens",
   "quizQuestionOne": "Wie oft haben Sie sich in der letzten Woche nervös oder ängstlich gefühlt?",
@@ -72,7 +69,7 @@
   "OneOptionC": "An mehr als der Hälfte der Tage",
   "OneOptionD": "Fast jeden Tag",
   "quizQuestionTwo": "Fällt es Ihnen schwer, sich in Ihrer Freizeit zu entspannen?",
-  "TwoOptionA": "Gar nicht", 
+  "TwoOptionA": "Gar nicht",
   "TwoOptionB": "Manchmal",
   "TwoOptionC": "Oft",
   "TwoOptionD": "Immer",
@@ -87,7 +84,7 @@
   "FourOptionC": "Oft",
   "FourOptionD": "Immer",
   "quizQuestionFive": "Haben Sie das Interesse an Aktivitäten verloren, die Ihnen früher Spaß gemacht haben?",
-  "FiveOptionA": "Gar nicht", 
+  "FiveOptionA": "Gar nicht",
   "FiveOptionB": "Ein wenig",
   "FiveOptionC": "Ziemlich viel",
   "FiveOptionD": "Sehr viel",
@@ -97,17 +94,17 @@
   "SixOptionC": "Häufig",
   "SixOptionD": "Immer",
   "quizQuestionSeven": "Fällt es Ihnen schwer, sich auf Aufgaben oder Entscheidungen zu konzentrieren?",
-  "SevenOptionA": "Gar nicht", 
+  "SevenOptionA": "Gar nicht",
   "SevenOptionB": "Ein wenig",
   "SevenOptionC": "Ziemlich viel",
   "SevenOptionD": "Sehr viel",
   "quizQuestionEight": "Fühlen Sie sich von den Menschen um Sie herum distanziert?",
-  "EightOptionA": "Gar nicht", 
+  "EightOptionA": "Gar nicht",
   "EightOptionB": "Manchmal",
   "EightOptionC": "Häufig",
   "EightOptionD": "Immer",
   "quizQuestionNine": "Fühlen Sie sich hoffnungslos in Bezug auf die Zukunft?",
-  "NineOptionA": "Gar nicht", 
+  "NineOptionA": "Gar nicht",
   "NineOptionB": "Manchmal",
   "NineOptionC": "Oft",
   "NineOptionD": "Immer",
@@ -120,30 +117,20 @@
   "score2": "Vielleicht möchten Sie über einige Aspekte Ihres Wohlbefindens nachdenken.",
   "score3": "Ziehen Sie in Erwägung, sich an einen unserer Experten zu wenden, um sich beraten zu lassen.",
   "yourScore": "Ihre Punktzahl",
-  
 
   "PROFILE": "PROFIL",
-  
-  
-  "SERVICES": "DIENSTLEISTUNGEN",
-  
-  
-  "PPRICING": "PREISE",
-  
-  
-  "TEAM": "TEAM",
-  
-  
-  "BLOGS": "BLOGS",
-  
-  
-  "ABOUT": "ÜBER UNS",
-  
-  
-  "FOOTER": "FUSSZEILE",
-  
-  
-  "CONTACT": "KONTAKT"
 
-  
+  "SERVICES": "DIENSTLEISTUNGEN",
+
+  "PPRICING": "PREISE",
+
+  "TEAM": "TEAM",
+
+  "BLOGS": "BLOGS",
+
+  "ABOUT": "ÜBER UNS",
+
+  "FOOTER": "FUSSZEILE",
+
+  "CONTACT": "KONTAKT"
 }
