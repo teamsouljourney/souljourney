@@ -154,7 +154,12 @@
   "email": "Email",
   "emailDescription": "team.souljourney@gmail.com",
   "location": "Location",
-  "locationDescription": "Anywhere, Anytime"
+  "locationDescription": "Anywhere, Anytime",
 
 
+  "NOTFOUND": "NOTFOUND",
+  "pageNotFound": "Page Not Found",
+  "textNot": "The page you are looking for does not exist.",
+  "goHome": "⬅ Go Back to Home"
+  
   }
