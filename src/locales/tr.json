@@ -13,15 +13,15 @@
   "accountSettings": "Hesap Ayarları",
   "logout": "Çıkış Yap",
 
-
   "BUTTONS": "BUTTONS",
   "selfTest": "Kendi Testinizi Yapın",
-  "getStarted": "Başlayın",
+  "getStarted": "Hadi Başlayalım",
   "seeMore": "Daha Fazla Gör",
-  "close" : "Kapat",
-  "restart" : "Yeniden başlat",
+  "seeLess": "Daha Az Gör",
+  "close": "Kapat",
+  "restart": "Yeniden başlat",
   "nowFreeRegister": "Şimdi Ücretsiz Kayıt Ol",
-
+  "sendMessage": "Mesaj Gönder",
 
   "HOMEPAGE": "HOMEPAGE",
   "onlineTherapy": "Online Terapi",
@@ -37,7 +37,6 @@
   "hwStepFour": "Belirlenen saatte güvenli bir video görüşmesi veya sohbet platformu üzerinden seansınızı başlatın.",
   "ourBlogs": "Bloglarımız",
   "ourBlogsText": "Blogumuz, psikolojik danışmanlık, kişisel gelişim ve ruh sağlığı konularında içgörüler sunan değerli bir kaynaktır...",
-
 
   "FAQ": "FAQ",
   "faq": "S.S.S",
@@ -63,7 +62,6 @@
   "faqQuestionTen": "Online danışmanlık kimler için uygundur?",
   "faqAnswerTen": "Özellikle zaman veya mekân kısıtlamaları olanlar için, gizlilik ve konfor arayan herkes için uygundur.",
 
-
   "QUIZ": "QUIZ",
   "question": "Soru",
   "emotionalWell-beingCheck": "Duygusal Sağlık Kontrolü",
@@ -73,7 +71,7 @@
   "OneOptionC": "Haftanın yarısından fazla",
   "OneOptionD": "Neredeyse her gün",
   "quizQuestionTwo": "Boş zamanlarınızda rahatlamakta zorluk çekiyor musunuz?",
-  "TwoOptionA": "Hiç", 
+  "TwoOptionA": "Hiç",
   "TwoOptionB": "Bazen",
   "TwoOptionC": "Sık sık",
   "TwoOptionD": "Her zaman",
@@ -88,7 +86,7 @@
   "FourOptionC": "Sık sık",
   "FourOptionD": "Her zaman",
   "quizQuestionFive": "Daha önce keyif aldığınız aktivitelere karşı ilginizi kaybettiniz mi?",
-  "FiveOptionA": "Hiç", 
+  "FiveOptionA": "Hiç",
   "FiveOptionB": "Biraz",
   "FiveOptionC": "Oldukça fazla",
   "FiveOptionD": "Çok fazla",
@@ -98,17 +96,17 @@
   "SixOptionC": "Sık sık",
   "SixOptionD": "Her zaman",
   "quizQuestionSeven": "Görevler veya kararlar üzerinde odaklanmakta zorlanıyor musunuz?",
-  "SevenOptionA": "Hiç", 
+  "SevenOptionA": "Hiç",
   "SevenOptionB": "Biraz",
   "SevenOptionC": "Oldukça fazla",
   "SevenOptionD": "Çok fazla",
   "quizQuestionEight": "Çevrenizdeki insanlardan kopuk hissediyor musunuz?",
-  "EightOptionA": "Hiç", 
+  "EightOptionA": "Hiç",
   "EightOptionB": "Bazen",
   "EightOptionC": "Sık sık",
   "EightOptionD": "Her zaman",
   "quizQuestionNine": "Gelecekle ilgili umutsuz hissediyor musunuz?",
-  "NineOptionA": "Hiç", 
+  "NineOptionA": "Hiç",
   "NineOptionB": "Bazen",
   "NineOptionC": "Sık sık",
   "NineOptionD": "Her zaman",
@@ -121,34 +119,29 @@
   "score2": "Refahınızın bazı yönlerini düşünmek isteyebilirsiniz.",
   "score3": "Rehberlik için profesyonellerimizden birine ulaşmayı düşünün.",
   "yourScore": "Puanınız",
-  
+
   "PROFILE": "PROFIL",
-
-
 
   "SERVICES": "HIZMETLER",
 
-
-
   "PPRICING": "FİYATLANDIRMA",
-  
-  
-  
+
   "TEAM": "EKIP",
-  
-  
-  
+
   "BLOGS": "BLOGLAR",
-  
-  
-  
+
   "ABOUT": "HAKKIMIZDA",
-  
-  
-  
+
   "FOOTER": "ALT BÖLÜM",
-  
-  
-  
-  "CONTACT": "İLETİŞİM"
+
+  "CONTACT": "İLETİŞİM",
+  "getInTouch": "İletişime Geçin",
+  "contactText": "Bize ulaşın ve birlikte anlamlı bir yolculuk oluşturalım. Soul Journey olarak, kendinizi keşfetme ve büyüme yolculuğunuzda yanınızdayız.",
+  "contactFormText": "Aşağıdaki formu doldurun, en kısa sürede size geri dönüş yapacağız.",
+  "contactPersons": "İletişim Ekibi",
+  "contactPersonsDescription": "Soul Journey Geliştirici Ekibi",
+  "email": "E-posta",
+  "emailDescription": "team.souljourney@gmail.com",
+  "location": "Konum",
+  "locationDescription": "Her Zaman, Her Yerde"
 }
