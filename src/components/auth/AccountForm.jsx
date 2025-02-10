@@ -80,41 +80,41 @@ const AccountForm = ({
             name="image"
             label="Image"
             type="text"
-            value={values.email}
+            value={values.image}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.email && Boolean(errors.email)}
-            helperText={touched.email && errors.email}
+            error={touched.image && Boolean(errors.image)}
+            helperText={touched.image && errors.image}
           />
           <TextField
             name="phone"
             label="Phone"
             type="text"
-            value={values.email}
+            value={values.phone}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.email && Boolean(errors.email)}
-            helperText={touched.email && errors.email}
+            error={touched.phone && Boolean(errors.phone)}
+            helperText={touched.phone && errors.phone}
           />
           <TextField
             name="address"
             label="Adress"
             type="text"
-            value={values.email}
+            value={values.address}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.email && Boolean(errors.email)}
-            helperText={touched.email && errors.email}
+            error={touched.address && Boolean(errors.address)}
+            helperText={touched.address && errors.address}
           />
           <TextField
             name="profession"
             label="Profession"
             type="text"
-            value={values.email}
+            value={values.profession}
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.email && Boolean(errors.email)}
-            helperText={touched.email && errors.email}
+            error={touched.profession && Boolean(errors.profession)}
+            helperText={touched.profession && errors.profession}
           />
           <PasswordField
             name="password"

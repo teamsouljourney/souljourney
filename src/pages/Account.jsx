@@ -80,18 +80,21 @@ const Account = () => {
           </Typography>
           <Formik
             initialValues={{
-              userName: "",
               firstName: "",
               lastName: "",
               email: "",
               password: "",
+              image: "",
+              phone: "",
+              address: "",
+              profession: ""
             }}
-            validationSchema={SignupSchema}
+            // validationSchema={UpdateSchema}
             onSubmit={(values, actions) => {
               console.log(values);
-              register(values);
-              actions.resetForm();
-              actions.setSubmitting(false);
+              // register(values);
+              // actions.resetForm();
+              // actions.setSubmitting(false);
             }}
             component={(props) => <AccountForm {...props} />}
           ></Formik>
