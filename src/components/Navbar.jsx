@@ -32,7 +32,7 @@ export default function Navbar() {
     { name: t("home"), href: "/" },
     { name: t("services"), href: "/services" },
     { name: t("pricing"), href: "/pricing" },
-    { name: t("team"), href: "/team" },
+    { name: t("team"), href: "/therapists" },
     { name: t("blogs"), href: "/blogs" },
     { name: t("about"), href: "/about" },
   ];
@@ -74,7 +74,7 @@ export default function Navbar() {
             window.location.pathname.startsWith("/blogs") ||
             window.location.pathname === "/contact" ||
             window.location.pathname === "/forgotPassword" ||
-            window.location.pathname.startsWith("/team/") ||
+            window.location.pathname.startsWith("/therapists/") ||
             window.location.pathname.startsWith("/reset-password")) &&
           "bg-navy/40 backdrop-blur"
         }`}

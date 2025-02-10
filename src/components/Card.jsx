@@ -14,13 +14,13 @@ const Card = ({
       <div className="relative">
         <img className="w-full h-64 object-fit " style={{
           // width:"320px"
-        }} src={team.image} alt={team.name} />
+        }} src={team.image} alt={team.firstName} />
       </div>
 
       {/* İçerik Alanı */}
       <div className="p-6">
-        <h2 className="text-2xl font-bold mb-2 text-gray-800">{team.name}</h2>
-        <p className="text-gray-600 mb-4">{team.description}</p>
+        <h2 className="text-2xl font-bold mb-2 text-gray-800">{team.firstName}</h2>
+        <p className="text-gray-600 mb-4">{team.categoryId.name}</p>
         <div className="flex flex-wrap justify-between items-center">
           <span className="text-2xl font-urbanist text-gray-800">{team.area}</span>
         </div>
@@ -31,7 +31,7 @@ const Card = ({
         {variant !== "default" ? (
           <> <FavoriteBorderIcon/> 
           <NavLink
-            to={`/team/${team.id}`}
+            to={`/therapists/${team.id}`}
             className="w-[50%] block mx-auto text-offWhite font-bold text-center py-2 rounded-lg hover:bg-gradient-to-r bg-seaGreen-dark hover:bg-seaGreen-light"
           >
             Read More
@@ -40,7 +40,7 @@ const Card = ({
           <button
           
             className="w-[50%] block mx-auto bg-gradient-to-r from-navy to-offWhite text-customBlack font-bold py-2 rounded-lg hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark"
-            onClick={() => onClick ? onClick() : navigate(`/team/${team.id}`)}
+            onClick={() => onClick ? onClick() : navigate(`/therapists/${team._id}`)}
           >
             See More
            

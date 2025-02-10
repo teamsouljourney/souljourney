@@ -42,8 +42,8 @@ const AppRouter = () => {
         <Route path="/auth/verify-email" element={<VerifyEmail />} />
         <Route path="auth/success" element={<AuthSuccess />} />
         <Route path="auth/fail" element={<AuthFail />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/team/:id" element={<TeamDetail />} />
+        <Route path="/therapists" element={<Team />} />
+        <Route path="/therapists/:id" element={<TeamDetail />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/auth/reset-password/:token" element={<ResetPassword />} />
