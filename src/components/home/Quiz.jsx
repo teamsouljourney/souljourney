@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../../index.css"; // Assuming you add styles in this CSS file
 // import { Quiz } from "@mui/icons-material"; 
 import quizData from "../../helper/quizData.json"; 
+import { useTranslation } from "react-i18next";
  
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -9,7 +10,8 @@ const Quiz = () => {
   const [showResult, setShowResult] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false); // Test area  
   const [isScrolled, setIsScrolled] = useState(false); // SCROLL
-  
+  const { t } = useTranslation();
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
@@ -45,8 +47,8 @@ const Quiz = () => {
       {/* "Self-Test" Button   */}
     <div className="flex justify-center">
   <button
-    className={`px-9 py-2 rounded-full shadow-lg transition-all duration-300 bg-seaGreen-dark hover:bg-seaGreen-light z-50 font-semibold bottom-48 text-offWhite 
-      ${isScrolled ? "fixed bottom-40 right-5" : "absolute top-[calc(60%+15px)] left-1/2 -translate-x-1/2 text-2x1 sm:px-6 sm:py-2 sm:text-2xl md:px-8 md:py-3 md:text-2xl"}`}
+    className={`px-10 py-2 rounded-full shadow-lg transition-all duration-300 bg-seaGreen-dark hover:bg-seaGreen-light z-50 font-semibold bottom-48 text-offWhite 
+      ${isScrolled ? "fixed bottom-40 right-5" : "absolute top-[calc(65%+30px)] left-1/2 -translate-x-1/2 text-2x1 sm:px-6 sm:py-2 sm:text-2xl md:px-8 md:py-3 md:text-2xl"}`}
     onClick={() => setShowQuiz(true)}
   >
     Self-Test
@@ -57,7 +59,7 @@ const Quiz = () => {
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white w-11/12 max-w-md p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold mb-4 text-center">
-              Emotional Well-being Check
+             { t("emotionalWell-beingCheck")}
             </h2>
 
             {showResult ? (
