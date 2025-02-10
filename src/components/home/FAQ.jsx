@@ -67,7 +67,7 @@ const FAQ = () => {
         <div className="flex flex-col max-w-5xl gap-12 px-8 py-24 mx-auto md:flex-row">
           <div className="flex flex-col text-center basis-1/2">
             <p className="inline-block mb-4 font-semibold text-primary">
-              F.A.Q
+            {t("faq")}
             </p>
             <p className="sm:text-4xl text-3xl font-extrabold text-base-content font-[Urbanist] text-center">
               {t("faqTitle")}
