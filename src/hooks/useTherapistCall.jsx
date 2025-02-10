@@ -29,7 +29,7 @@ const useTherapistCall = () => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosPublic.get(`therapists/${id}`);
-      dispatch(getSingleTherapistSuccess(data));
+      dispatch(getSingleTherapistSuccess(data.data));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
