@@ -25,7 +25,7 @@ export default function Navbar() {
   const [showBackground, setShowBackground] = useState(false);
   let { currentUser } = useSelector((state) => state.auth);
   const { logout } = useAuthCall();
-  const { t } = useTranslation();
+  const { t} = useTranslation();
   console.log(currentUser);
 
   const navigation = [
@@ -237,4 +237,4 @@ export default function Navbar() {
       </DisclosurePanel>
     </Disclosure>
   );
-}
+};

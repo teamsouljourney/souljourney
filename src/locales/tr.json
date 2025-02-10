@@ -12,47 +12,142 @@
   "myProfile": "Profilim",
   "accountSettings": "Hesap Ayarları",
   "logout": "Çıkış Yap",
-  
-  
+
+
+  "BUTTONS": "BUTTONS",
+  "selfTest": "Kendi Testinizi Yapın",
+  "getStarted": "Başlayın",
+  "seeMore": "Daha Fazla Gör",
+  "close" : "Kapat",
+  "restart" : "Yeniden başlat",
+  "nowFreeRegister": "Şimdi Ücretsiz Kayıt Ol",
+
+
   "HOMEPAGE": "HOMEPAGE",
   "onlineTherapy": "Online Terapi",
-  "getStarted": "Başlayın",
-  "selfTest": "Kendi Testinizi Yapın",
-  "infoText": "Soul Journey olarak, iyileşme ve kişisel gelişim yolculuğunuzu destekleyen çevrimiçi danışmanlık hizmetleri sunuyoruz...",
+  "infoText": "Soul Journey'de, iyileşme ve kişisel gelişim yolunuzu destekleyen çevrimiçi danışmanlık hizmeti sunuyoruz. Profesyonel terapistlerimiz, duygularınızı keşfetmeniz, netlik bulmanız ve yaşam zorluklarının üstesinden gelmeniz için güvenli ve gizli bir alan sağlar; tüm bunları evinizin konforunda yapabilirsiniz. Neden Soul Journey? Esnek Seanslar: Terapiye istediğiniz zaman, istediğiniz yerden erişin. Kişiselleştirilmiş Destek: Benzersiz yolculuğunuz için özel rehberlik. Gizli ve Güvenli: Gizliliğiniz önceliğimizdir. Yolculuğunuza bugün başlayın; iyileşme içeriden başlar.",
   "howItWorks": "Nasıl Çalışır",
   "registerOrLogin": "Kayıt Ol veya Giriş Yap",
   "determineYourPreferences": "Tercihlerinizi Belirleyin",
   "chooseYourTherapist": "Terapistinizi Seçin",
   "joinTheSession": "Seansa Katılın",
   "hwStepOne": "Başlamak için bir hesap oluşturun veya mevcut hesabınıza giriş yapın.",
-  "hwStepTwo": "Terapi türü, seans sıklığı ve hedeflerinize ilişkin tercihlerinizi belirtin.",
+  "hwStepTwo": "Terapi türü, seans sıklığı ve hedeflerinizi belirleyin.",
   "hwStepThree": "Nitelikli terapistleri inceleyin ve ihtiyaçlarınıza en uygun olanı seçin.",
-  "hwStepFour": "Planlanan saatte güvenli bir görüntülü görüşme veya sohbet platformu aracılığıyla terapi seansınıza başlayın.",
+  "hwStepFour": "Belirlenen saatte güvenli bir video görüşmesi veya sohbet platformu üzerinden seansınızı başlatın.",
   "ourBlogs": "Bloglarımız",
-  "ourBlogsText": "Blogumuz, psikolojik danışmanlık, kişisel gelişim ve ruh sağlığı hakkında içgörülü makalelerle dolu değerli bir kaynaktır...",
-  "seeMore": "Daha Fazlasını Gör",
+  "ourBlogsText": "Blogumuz, psikolojik danışmanlık, kişisel gelişim ve ruh sağlığı konularında içgörüler sunan değerli bir kaynaktır...",
 
 
+  "FAQ": "FAQ",
+  "faq": "S.S.S",
+  "faqTitle": "Sıkça Sorulan Sorular",
+  "faqQuestionOne": "Online psikolojik danışmanlık nasıl çalışır?",
+  "faqAnswerOne": "Danışan ve terapist, çevrimiçi platformlar aracılığıyla video veya sesli görüşmeler yapar. Tüm süreç gizliliğe dayalıdır.",
+  "faqQuestionTwo": "Danışmanlık seansları ne kadar sürer?",
+  "faqAnswerTwo": "Bir seans genellikle 50 dakika ile 1 saat arasında sürer.",
+  "faqQuestionThree": "Online terapi yüz yüze terapi kadar etkili mi?",
+  "faqAnswerThree": "Araştırmalar, online terapinin yüz yüze terapi kadar etkili olduğunu göstermektedir. Özellikle erişilebilirliği nedeniyle tercih edilmektedir.",
+  "faqQuestionFour": "Hangi konularda destek alabilirim?",
+  "faqAnswerFour": "Kaygı, depresyon, ilişkiler, stres yönetimi, travma sonrası stres bozukluğu (TSSB) ve diğer birçok konuda destek alabilirsiniz.",
+  "faqQuestionFive": "Seanslar sırasında hangi platform kullanılıyor?",
+  "faqAnswerFive": "Zoom, Google Meet veya platformun kendi video konferans aracı kullanılabilir.",
+  "faqQuestionSix": "Online terapi güvenli mi?",
+  "faqAnswerSix": "Evet, seanslar şifrelenmiştir ve gizliliğiniz tamamen korunur. Terapistinizle yaptığınız konuşmalar asla paylaşılmaz.",
+  "faqQuestionSeven": "Seans ücretleri nasıl ödenir?",
+  "faqAnswerSeven": "Kredi kartı, banka havalesi veya platformun sunduğu diğer ödeme yöntemlerini kullanabilirsiniz.",
+  "faqQuestionEight": "Seansları iptal edebilir miyim?",
+  "faqAnswerEight": "Evet, gerekli bildirim süresi içinde haber verdiğiniz takdirde seansları iptal edebilir veya yeniden planlayabilirsiniz.",
+  "faqQuestionNine": "Terapistlerinizin yeterlilikleri nelerdir?",
+  "faqAnswerNine": "Tüm terapistlerimiz lisanslı, alanlarında uzman ve geniş deneyime sahiptir.",
+  "faqQuestionTen": "Online danışmanlık kimler için uygundur?",
+  "faqAnswerTen": "Özellikle zaman veya mekân kısıtlamaları olanlar için, gizlilik ve konfor arayan herkes için uygundur.",
+
+
+  "QUIZ": "QUIZ",
+  "emotionalWell-beingCheck": "Duygusal Sağlık Kontrolü",
+  "quizQuestionOne": "Geçtiğimiz hafta ne sıklıkla gergin veya endişeli hissettiniz?",
+  "OneOptionA": "Hiç",
+  "OneOptionB": "Birkaç gün",
+  "OneOptionC": "Haftanın yarısından fazla",
+  "OneOptionD": "Neredeyse her gün",
+  "quizQuestionTwo": "Boş zamanlarınızda rahatlamakta zorluk çekiyor musunuz?",
+  "TwoOptionA": "Hiç", 
+  "TwoOptionB": "Bazen",
+  "TwoOptionC": "Sık sık",
+  "TwoOptionD": "Her zaman",
+  "quizQuestionThree": "Uykuya dalma veya uykuda kalma konusunda ne sıklıkla sorun yaşıyorsunuz?",
+  "ThreeOptionA": "Asla",
+  "ThreeOptionB": "Ara sıra",
+  "ThreeOptionC": "Sık sık",
+  "ThreeOptionD": "Hemen hemen her gece",
+  "quizQuestionFour": "Günlük sorumluluklar sizi bunaltıyor mu?",
+  "FourOptionA": "Nadiren",
+  "FourOptionB": "Bazen",
+  "FourOptionC": "Sık sık",
+  "FourOptionD": "Her zaman",
+  "quizQuestionFive": "Daha önce keyif aldığınız aktivitelere karşı ilginizi kaybettiniz mi?",
+  "FiveOptionA": "Hiç", 
+  "FiveOptionB": "Biraz",
+  "FiveOptionC": "Oldukça fazla",
+  "FiveOptionD": "Çok fazla",
+  "quizQuestionSix": "Ne sıklıkla yorgun veya bitkin hissediyorsunuz?",
+  "SixOptionA": "Asla",
+  "SixOptionB": "Bazen",
+  "SixOptionC": "Sık sık",
+  "SixOptionD": "Her zaman",
+  "quizQuestionSeven": "Görevler veya kararlar üzerinde odaklanmakta zorlanıyor musunuz?",
+  "SevenOptionA": "Hiç", 
+  "SevenOptionB": "Biraz",
+  "SevenOptionC": "Oldukça fazla",
+  "SevenOptionD": "Çok fazla",
+  "quizQuestionEight": "Çevrenizdeki insanlardan kopuk hissediyor musunuz?",
+  "EightOptionA": "Hiç", 
+  "EightOptionB": "Bazen",
+  "EightOptionC": "Sık sık",
+  "EightOptionD": "Her zaman",
+  "quizQuestionNine": "Gelecekle ilgili umutsuz hissediyor musunuz?",
+  "NineOptionA": "Hiç", 
+  "NineOptionB": "Bazen",
+  "NineOptionC": "Sık sık",
+  "NineOptionD": "Her zaman",
+  "quizQuestionTen": "Olumsuz düşüncelere takılıp kalıyor musunuz?",
+  "TenOptionA": "Nadiren",
+  "TenOptionB": "Ara sıra",
+  "TenOptionC": "Sık sık",
+  "TenOptionD": "Sürekli",
+  "score1": "Harika bir duygusal refahtasin! Devam et!",
+  "score2": "Refahınızın bazı yönlerini düşünmek isteyebilirsiniz.",
+  "score3": "Rehberlik için profesyonellerimizden birine ulaşmayı düşünün.",
+  "yourScore": "Puanınız",
+  
   "PROFILE": "PROFIL",
 
 
+
   "SERVICES": "HIZMETLER",
+
+
+
+  "PPRICING": "FİYATLANDIRMA",
   
-  
-  "PPRICING": "FIYATLANDIRMA",
   
   
   "TEAM": "EKIP",
   
   
+  
   "BLOGS": "BLOGLAR",
+  
   
   
   "ABOUT": "HAKKIMIZDA",
   
   
+  
   "FOOTER": "ALT BÖLÜM",
   
   
-  "CONTACT": "ILETIŞIM"
+  
+  "CONTACT": "İLETİŞİM"
 }
