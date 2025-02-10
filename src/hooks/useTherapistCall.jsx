@@ -15,7 +15,7 @@ const useTherapistCall = () => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosPublic.get("therapists");
-      dispatch(getAllTherapistsSuccess(data));
+      dispatch(getAllTherapistsSuccess(data.data));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
