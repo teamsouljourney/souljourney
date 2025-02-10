@@ -2,16 +2,23 @@ import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useTherapistCall from "../../hooks/useTherapistCall";
 import { useSelector } from "react-redux";
+import AppointmentCalendar from "../calendar/appointmentCalendar";
+import useAppointmentCall from "../../hooks/useAppointmentCall";
 
 const TeamDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { getAllAppointments } = useAppointmentCall();
   const { getSingleTherapist } = useTherapistCall();
   const { singleTherapist, loading, error } = useSelector(
     (state) => state.therapists
   );
+  const { appointments } = useSelector((state) => state.appointments);
+
+  console.log(appointments);
 
   useEffect(() => {
+    getAllAppointments();
     getSingleTherapist(id);
   }, [id]);
 
@@ -68,6 +75,7 @@ const TeamDetail = () => {
           Go Back
         </button>
       </div>
+      <AppointmentCalendar />
     </div>
   );
 };
