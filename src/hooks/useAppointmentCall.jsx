@@ -5,6 +5,8 @@ import {
   fetchFail,
   createAppointmentSuccess,
   getAllAppointmentsSuccess,
+  updateAppointmentSuccess,
+  deleteAppointmentSuccess,
 } from "../features/appointmentSlice";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
@@ -46,9 +48,44 @@ const useAppointmentCall = () => {
     }
   };
 
+  //* Update appointment
+  const updateAppointment = async (id, updatedData) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosWithToken.put(
+        `appointments/${id}`,
+        updatedData
+      );
+      dispatch(updateAppointmentSuccess(data));
+      toastSuccessNotify("Appointment updated successfully!");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to update appointment."
+      );
+    }
+  };
+
+  //* Delete appointment
+  const deleteAppointment = async (id) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.delete(`appointments/${id}`);
+      dispatch(deleteAppointmentSuccess(id));
+      toastSuccessNotify("Appointment deleted successfully!");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to delete appointment."
+      );
+    }
+  };
+
   return {
     getAllAppointments,
     createAppointment,
+    updateAppointment,
+    deleteAppointment,
   };
 };
 
