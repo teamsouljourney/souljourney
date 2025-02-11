@@ -155,7 +155,7 @@
   "textNot": "Aradığınız sayfa mevcut değil.",
   "goHome": "⬅ Ana Sayfaya Dön",
 
-  "slogan": "Finden Sie Ihren Weg zur inneren Harmonie!",
+  "slogan": "İç huzura giden yolunuzu keşfedin!",
 
   "register": "Kayıt Ol",
   "haveAccount": "Hesabınız var mı?",
@@ -187,11 +187,11 @@
   "usernameMinMessage": "Kullanıcı adı en az 3 karakter olmalıdır!",
   "firstnameMinMessage": "Ad çok kısa! En az 2 karakter olmalıdır.",
   "firstnameMaxMessage": "Ad çok uzun! En fazla 50 karakter olmalıdır.",
-  "requiredFirtsNameMessage": "Ad gerekli!",
+  "requiredFirtsnameMessage": "Ad gerekli!",
   "lastnameMinMessage": "Soyad çok kısa! En az 2 karakter olmalıdır.",
   "lastnameMaxMessage": "Soyad çok uzun! En fazla 50 karakter olmalıdır.",
   "requiredLastnameMessage": "Soyad gerekli!",
-  "passwordMinMessage": "Şifre en az 8 karakter uzunluğunda olmalıdır!",
+  "passwordMinLengthMessage": "Şifre en az 8 karakter uzunluğunda olmalıdır!",
   "passwordDigitMessage": "Şifre en az bir rakam içermelidir!",
   "passwordLowerCaseMessage": "Şifre en az bir küçük harf içermelidir!",
   "passwordUpperCaseMessage": "Şifre en az bir büyük harf içermelidir!",
