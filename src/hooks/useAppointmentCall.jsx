@@ -18,7 +18,7 @@ const useAppointmentCall = () => {
   const getAllAppointments = async () => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosWithToken.get("therapists");
+      const { data } = await axiosWithToken.get("appointments");
       dispatch(getAllAppointmentsSuccess(data.data));
     } catch (error) {
       dispatch(fetchFail());
