@@ -1,21 +1,15 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import useAppointmentCall from "../../hooks/useAppointmentCall";
+import { useDispatch, useSelector } from "react-redux";
 import { toastErrorNotify } from "../../helper/ToastNotify";
 import dayjs from "dayjs";
 import Calendar from "./Calendar";
 import TimeSlotSelector from "./TimeSlotSelector";
 import AppointmentActions from "./AppointmentActions";
+import { setSelectedDate, setSelectedSlot } from "../../features/calendarSlice";
 
 const AppointmentCalendar = () => {
-  const { createAppointment } = useAppointmentCall();
-  const { currentUser } = useSelector((state) => state.auth);
-  const { singleTherapist, therapistTimeTable } = useSelector(
-    (state) => state.therapists
-  );
-
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedSlot, setSelectedSlot] = useState(null);
+  const dispatch = useDispatch();
+  const { selectedDate, selectedSlot } = useSelector((state) => state.calendar);
+  const { therapistTimeTable } = useSelector((state) => state.therapists);
 
   const generateTimeSlots = () => {
     const slots = [];
@@ -43,36 +37,13 @@ const AppointmentCalendar = () => {
       return;
     }
 
-    setSelectedDate(date);
-    setSelectedSlot(null);
+    dispatch(setSelectedDate(date));
   };
 
   const handleSlotSelect = (slot) => {
     if (!isSlotUnavailable(selectedDate, slot)) {
-      setSelectedSlot(slot);
+      dispatch(setSelectedSlot(slot));
     }
-  };
-
-  const handleCreateAppointment = () => {
-    if (!selectedSlot) {
-      toastErrorNotify("Please select a time slot.");
-      return;
-    }
-
-    const startTime = new Date(
-      `${selectedDate}T${selectedSlot.split(" ")[0]}:00`
-    );
-    const endTime = new Date(startTime.getTime() + 60 * 60 * 1000);
-
-    const appointmentData = {
-      userId: currentUser?._id,
-      therapistId: singleTherapist?._id,
-      appointmentDate: selectedDate,
-      startTime: startTime.toISOString(),
-      endTime: endTime.toISOString(),
-    };
-
-    createAppointment(appointmentData);
   };
 
   return (
@@ -88,10 +59,7 @@ const AppointmentCalendar = () => {
             generateTimeSlots={generateTimeSlots}
             isSlotUnavailable={isSlotUnavailable}
           />
-          <AppointmentActions
-            selectedSlot={selectedSlot}
-            onCreateAppointment={handleCreateAppointment}
-          />
+          <AppointmentActions selectedSlot={selectedSlot} />
         </>
       )}
     </div>

@@ -13,12 +13,12 @@ const calendarSlice = createSlice({
       state.loading = true;
       state.error = false;
     },
-    setSelectedDate: (state, action) => {
-      state.selectedDate = action.payload;
+    setSelectedDate: (state, { payload }) => {
+      state.selectedDate = payload;
       state.selectedSlot = null;
     },
-    setSelectedSlot: (state, action) => {
-      state.selectedSlot = action.payload;
+    setSelectedSlot: (state, { payload }) => {
+      state.selectedSlot = payload;
     },
     fetchFail: (state) => {
       state.loading = false;

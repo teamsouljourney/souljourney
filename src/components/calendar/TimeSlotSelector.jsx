@@ -1,10 +1,20 @@
+import { useDispatch } from "react-redux";
+import { setSelectedSlot } from "../../features/calendarSlice";
+
 const TimeSlotSelector = ({
   selectedDate,
   selectedSlot,
-  onSlotSelect,
   generateTimeSlots,
   isSlotUnavailable,
 }) => {
+  const dispatch = useDispatch();
+
+  const handleSlotSelect = (slot) => {
+    if (!isSlotUnavailable(selectedDate, slot)) {
+      dispatch(setSelectedSlot(slot));
+    }
+  };
+
   return (
     <div className="p-4 mt-4 border rounded bg-offWhite">
       <h3 className="font-semibold text-mauve text-md">
@@ -16,7 +26,7 @@ const TimeSlotSelector = ({
           return (
             <button
               key={index}
-              onClick={() => onSlotSelect(slot)}
+              onClick={() => handleSlotSelect(slot)}
               disabled={unavailable}
               className={`px-[.5rem] py-[.3rem] rounded-lg ${
                 unavailable
