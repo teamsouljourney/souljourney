@@ -1,15 +1,17 @@
-import { axiosPublic } from "../hooks/useAxios";
+import useAxios, { axiosPublic } from "../hooks/useAxios";
 import { useDispatch } from "react-redux";
 import {
   fetchStart,
   fetchFail,
   getAllTherapistsSuccess,
   getSingleTherapistSuccess,
+  getTherapistTimeTableSuccess,
 } from "../features/therapistSlice";
 import { toastErrorNotify } from "../helper/ToastNotify";
 
 const useTherapistCall = () => {
   const dispatch = useDispatch();
+  const axiosWithToken = useAxios();
 
   const getAllTherapists = async () => {
     dispatch(fetchStart());
@@ -39,7 +41,20 @@ const useTherapistCall = () => {
     }
   };
 
-  return { getAllTherapists, getSingleTherapist };
+  const getTherapistTimeTable = async (id) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosWithToken.get(`therapists-time-tables/${id}`);
+      dispatch(getTherapistTimeTableSuccess(data.data));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response.data.message,
+        "Failed to fetch therapist time table."
+      );
+    }
+  };
+  return { getAllTherapists, getSingleTherapist, getTherapistTimeTable };
 };
 
 export default useTherapistCall;
