@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import soulJourney from "../../assets/souljourney_Logo.png";
+import soulJourney from "../assets/souljourney_Logo.png";
 
 const SoulJourneyLogo = () => {
   return (

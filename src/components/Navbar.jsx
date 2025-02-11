@@ -26,13 +26,13 @@ export default function Navbar() {
   let { currentUser } = useSelector((state) => state.auth);
   const { logout } = useAuthCall();
   const { t } = useTranslation();
-  console.log(currentUser);
+  // console.log(currentUser);
 
   const navigation = [
     { name: t("home"), href: "/" },
     { name: t("services"), href: "/services" },
     { name: t("pricing"), href: "/pricing" },
-    { name: t("team"), href: "/team" },
+    { name: t("team"), href: "/therapists" },
     { name: t("blogs"), href: "/blogs" },
     { name: t("about"), href: "/about" },
   ];
@@ -61,7 +61,7 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="bg-transparent w-screen fixed top-0 z-20 text-navy"
+      className="fixed top-0 z-20 w-screen bg-transparent text-navy"
     >
       <div
         className={`max-w-full sm:px-6 lg:px-8 transition duration-500 ${
@@ -74,17 +74,17 @@ export default function Navbar() {
             window.location.pathname.startsWith("/blogs") ||
             window.location.pathname === "/contact" ||
             window.location.pathname === "/forgotPassword" ||
-            window.location.pathname.startsWith("/team/") ||
+            window.location.pathname.startsWith("/therapists/") ||
             window.location.pathname.startsWith("/reset-password")) &&
           "bg-navy/40 backdrop-blur"
         }`}
       >
-        <div className="relative flex h-20 items-center justify-around">
+        <div className="relative flex items-center justify-around h-20">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset  ">
+            <DisclosureButton className="relative inline-flex items-center justify-center p-2 rounded-md group focus:outline-none focus:ring-2 focus:ring-inset ">
               <span className="absolute -inset-0.5" />
-              <span className="sr-only border">Open main menu</span>
+              <span className="border sr-only">Open main menu</span>
               <Bars3Icon
                 aria-hidden="true"
                 className="block size-6 group-data-[open]:hidden"
@@ -95,7 +95,7 @@ export default function Navbar() {
               />
             </DisclosureButton>
           </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+          <div className="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
             <div className="flex items-center">
               <NavLink to="/">
                 <img
@@ -105,7 +105,7 @@ export default function Navbar() {
                 />
               </NavLink>
             </div>
-            <div className="hidden self-center  sm:ml-2 sm:block">
+            <div className="self-center hidden sm:ml-2 sm:block">
               <div className="flex items-center space-x-6 sm:space-x-1">
                 {navigation.map((item) => (
                   <NavLink
@@ -135,7 +135,7 @@ export default function Navbar() {
             {currentUser && (
               <button
                 type="button"
-                className="relative rounded-full  bg-navy-dark p-1 text-offWhite-light  hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
+                className="relative p-1 rounded-full bg-navy-dark text-offWhite-light hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
               >
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">View notifications</span>
@@ -146,7 +146,7 @@ export default function Navbar() {
             {!currentUser && (
               <button
                 type="button"
-                className="relative rounded-md whitespace-nowrap px-2 py-2 text-sm sm:px-3 sm:py-1 xs:px-2 xs:text-xs text-offWhite-light bg-mauve-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
+                className="relative px-2 py-2 text-sm rounded-md whitespace-nowrap sm:px-3 sm:py-1 xs:px-2 xs:text-xs text-offWhite-light bg-mauve-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
               >
                 <NavLink to="/login">{t("login")}</NavLink>
               </button>
@@ -156,18 +156,18 @@ export default function Navbar() {
             {currentUser && (
               <Menu as="div" className="relative mr-4">
                 {/* MenuButton içindeki avatar kısmı */}
-                <MenuButton className="relative flex rounded-full shadow-lg shadow-mauve-light bg-offWhite-light text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy hover:shadow-3xl hover:shadow-navy-dark">
+                <MenuButton className="relative flex text-sm rounded-full shadow-lg shadow-mauve-light bg-offWhite-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy hover:shadow-3xl hover:shadow-navy-dark">
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">Open user menu</span>
                   {currentUser?.image ? (
                     <img
                       alt=""
                       src={currentUser.image}
-                      className="size-6 sm:size-8 rounded-full"
+                      className="rounded-full size-6 sm:size-8"
                     />
                   ) : (
-                    <div className="size-8 rounded-full bg-navy-dark flex items-center justify-center">
-                      <span className="font-medium text-offWhite-light text-sm">
+                    <div className="flex items-center justify-center rounded-full size-8 bg-navy-dark">
+                      <span className="text-sm font-medium text-offWhite-light">
                         {currentUser?.firstName.charAt(0).toUpperCase() +
                           currentUser?.lastName.charAt(0).toUpperCase()}
                       </span>
@@ -222,7 +222,7 @@ export default function Navbar() {
         </div>
       </div>
       <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pb-3 pt-2 z-40 bg-navy/40 backdrop-blur text-navy-dark">
+        <div className="z-40 px-2 pt-2 pb-3 space-y-1 bg-navy/40 backdrop-blur text-navy-dark">
           {navigation.map((item) => (
             <NavLink to={item.href} key={item.name}>
               <DisclosureButton

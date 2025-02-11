@@ -1,55 +1,96 @@
-import { useState } from "react";
-// import Card from "../team/Card";
+import { useEffect, useState } from "react";
 import teams from "../../helper/team.json";
 import TeamCard from "./TeamCard";
+import useCategoryCall from "../../hooks/useCategoryCall";
+import useTherapistCall from "../../hooks/useTherapistCall";
+import { useSelector } from "react-redux";
+import MoreCategories from "../MoreCategories";
+
+
+
 const TabSwitch = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [searchTerm, setSearchTerm] = useState(""); // Arama terimi için state
+  const [searchTerm, setSearchTerm] = useState(""); 
+  const{categories}=useSelector((state)=>state.categories)
+  const{therapists}=useSelector((state)=>state.therapists)
+  const {getAllCategories}=useCategoryCall();
+  const{getAllTherapists} =useTherapistCall()
 
-  const tablist = [
-    "All",
-    "Health Psychology",
-    "Educational Psychology",
-    "Neuropsychology",
-    "Marriage and Family ",
-  ];
+  useEffect(()=>{
+    getAllCategories();
+    getAllTherapists();
+    console.log("Therapist API cagirildi");
+    
+  },[])
+
+  // const tablist = [
+  //   "All",
+  //   "Health Psychology",
+  //   "Educational Psychology",
+  //   "Neuropsychology",
+  //   "Marriage and Family ",
+  // ];
 
     // Kategoriyi değiştiren fonksiyon
   const handleTabClick = (category) => {
-    setSelectedCategory(category);
+    setSelectedCategory(category._id || category.name);
   };
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value); // Arama kutusundaki değeri güncelle
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value); // Arama kutusundaki değeri güncelle
   };
 
 
 // Filtrelenmiş takımlar
-const filteredTeams = teams.filter((team) => {
-  // Kategori filtrelemesi
-  const isCategoryMatch = selectedCategory === "All" || team.area === selectedCategory;
+// const filteredTeams = therapists.filter((therapist) => {
+//   // Kategori filtrelemesi
+//   const isCategoryMatch = selectedCategory === "All" || therapist.area === selectedCategory;
   
-  // Arama terimiyle istenen takımı filtrele
-  const isSearchMatch = team.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                         team.description.toLowerCase().includes(searchTerm.toLowerCase());
+//   // Arama terimiyle istenen takımı filtrele
+//   const isSearchMatch = therapist.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+//                          therapist.description.toLowerCase().includes(searchTerm.toLowerCase());
 
-  return isCategoryMatch && isSearchMatch; // Hem kategoriye hem de arama terimine uyanları göster
+//   return isCategoryMatch && isSearchMatch; // Hem kategoriye hem de arama terimine uyanları göster
+// });
+const filteredTeams = (therapists || []).filter((therapist) => {
+  console.log(therapist);
+  
+  // therapist nesnesinin gerekli alanlarının tanımlı olup olmadığını kontrol et
+  if (!therapist || !therapist.firstName || !therapist.lastName) return false;
+
+  const isCategoryMatch = selectedCategory === "All" || therapist.categoryId.name === selectedCategory;
+  console.log(selectedCategory);
+  
+  const isSearchMatch =
+    therapist.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    therapist.lastName.toLowerCase().includes(searchTerm.toLowerCase());
+
+  return isCategoryMatch && isSearchMatch;
 });
+
+
  
   return (
     <>
       <div className="w-full h-full mt-5  mx-auto">
         <div className=" opacity-3 p-1 rounded-t-lg">
           <div className="flex flex-wrap justify-center space-x-4 ">
-            {tablist.map((list) => (
+            {categories.slice(0,4).map((category) => (
               <button
-              key={list}
+              key={category._id || category.name}
                 className={"px-4 py-1 text-black font-semibold border-b-4 hover:bg-navy-light focus:outline-none tab-button transition-all duration-300 ease-in-out  rounded-lg"}
-                onClick={() => handleTabClick(list)}
+                onClick={() => handleTabClick(category)}
               >
-                {list}
+                {category.name}
               </button>
             ))}
+
+              {/* More Categories Bileşeni */}
+          <MoreCategories 
+            categories={categories.slice(5,9)} // Geriye kalan kategorileri MoreCategories'ye aktar
+            handleTabClick={handleTabClick} 
+            selectedCategory={selectedCategory}
+          />
                  {/* Arama kutusu */}
         <div className="mt-5 flex justify-center">
           <input
@@ -66,7 +107,7 @@ const filteredTeams = teams.filter((team) => {
 
        
 
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-2 mt-5">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-2 mt-[100px] mb-[100px]">
           <TeamCard teams={filteredTeams}  />
         </div>
       </div>

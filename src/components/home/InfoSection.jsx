@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom";
 import foto from "../../assets/images/pexels-yankrukov-6818303.jpg";
+import { useTranslation } from "react-i18next";
 
 const InfoSection = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="text-center mt-16 h-full overflow-y-hidden bg-no-repeat bg-cover">
       <div className="xl:w-[70%] lg:w-[80%] md:w-[90%] mx-auto relative md:px-0 px-4 md:my-10 bg-gradient-to-l from-offWhite to-seaGreen-light rounded-xl overflow-hidden">
@@ -13,15 +16,7 @@ const InfoSection = () => {
                 Soul Journey
               </h2>
               <p className="text-customBlack dark:text-offWhite-light text-sm md:text-xs xl:text-sm mb-6 ">
-                At Soul Journey, we offer online counseling that supports your
-                path to healing and personal growth. Our professional therapists
-                provide a safe, confidential space for you to explore your
-                emotions, find clarity, and overcome life challenges—all from
-                the comfort of your home. Why Soul Journey? Flexible Sessions:
-                Access therapy anytime, anywhere. Personalized Support: Tailored
-                guidance for your unique journey. Confidential & Safe: Your
-                privacy is our priority. Start your journey today—healing begins
-                within.
+                {t("infoText")}
               </p>
               <div>
                 <button className="md:px-6 px-4 py-2 text-customBlack-light font-semibold bg-gradient-to-l from-offWhite to-seaGreen-light rounded-full hover:shadow-lg hover:shadow-offWhite-dark transform trasition delay-100">

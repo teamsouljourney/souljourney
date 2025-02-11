@@ -3,26 +3,29 @@ import {
   EnvelopeIcon,
   MapPinIcon,
 } from "@heroicons/react/24/outline";
-
-const info = [
-  {
-    icon: <UsersIcon className="w-6 h-6" />,
-    title: "Contact Persons",
-    description: "Soul Journey Developer Team",
-  },
-  {
-    icon: <EnvelopeIcon className="w-6 h-6" />,
-    title: "Email",
-    description: "team.souljourney@gmail.com",
-  },
-  {
-    icon: <MapPinIcon className="w-6 h-6" />,
-    title: "Location",
-    description: "Anywhere, Anytime",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const ContactInfo = () => {
+  const { t } = useTranslation();
+
+  const info = [
+    {
+      icon: <UsersIcon className="w-6 h-6" />,
+      title: `${t("contactPersons")}`,
+      description: `${t("contactPersonsDescription")}`,
+    },
+    {
+      icon: <EnvelopeIcon className="w-6 h-6" />,
+      title: `${t("email")}`,
+      description: `${t("emailDescription")}`,
+    },
+    {
+      icon: <MapPinIcon className="w-6 h-6" />,
+      title: `${t("location")}`,
+      description: `${t("locationDescription")}`,
+    },
+  ];
+
   return (
     <div className="flex flex-col gap-8 py-8 md:flex-row">
       {info.map((item, index) => (

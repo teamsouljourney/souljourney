@@ -25,6 +25,8 @@ import VideoCall from "../pages/VideoCall";
 import WriteBlog from "../pages/WriteBlog";
 import Dashboard from "../pages/Dashboard";
 import Sidebar from "../components/Sidebar";
+import Appointment from "../pages/Appointment";
+import NotFound from "../pages/NotFound";
 
 const AppRouter = () => {
   return (
@@ -42,19 +44,20 @@ const AppRouter = () => {
         <Route path="/auth/verify-email" element={<VerifyEmail />} />
         <Route path="auth/success" element={<AuthSuccess />} />
         <Route path="auth/fail" element={<AuthFail />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/team/:id" element={<TeamDetail />} />
+        <Route path="/therapists" element={<Team />} />
+        <Route path="/therapists/:id" element={<TeamDetail />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/auth/reset-password/:token" element={<ResetPassword />} />
         <Route path="/blogs/:id" element={<BlogDetail />} />
-
+        <Route path="*" element={<NotFound/>}/>
         {/* Private Area */}
         <Route path="" element={<PrivateRouter />}>
           {/* Privates Routes */}
           <Route path="/profile" element={<Sidebar />} >
             <Route index element={<Dashboard/>}/>
             <Route path="account" element={<Account/>}/>
+            <Route path="appointment" element={<Appointment/>}/>
             <Route path="chat" element={<Chat/>}/>
             <Route path="video-call" element={<VideoCall/>}/>
             <Route path="write-blog" element={<WriteBlog/>}/>
