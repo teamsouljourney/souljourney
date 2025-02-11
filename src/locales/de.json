@@ -168,9 +168,11 @@
   "signIn": "Anmelden",
   "signInWith": "Anmelden mit",
   "dontHaveAccount": "Haben Sie kein Konto?",
-  "forgotYour": "Haben Sie Ihr",
+  "forgotYourPassword": "Haben Sie Ihr Passwort vergessen?",
   "registerHeader": "Erstellen Sie Ihr Konto und beginnen Sie mit der Heilung",
   "loginHeader": "Bereit, Ihre Reise fortzusetzen?",
+
+  "usernameMin": "Der Benutzername muss mindestens 3 Zeichen lang sein!",
 
   "SIDEBAR": "SEITENLEISTE",
   "menu": "Menü",

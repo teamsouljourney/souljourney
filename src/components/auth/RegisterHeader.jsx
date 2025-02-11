@@ -22,7 +22,7 @@ const RegisterHeader = () => {
       >
         {/* Join Us on a Transformative Journey
         Sign Up and Begin Your Soul Journey*/}
-        Create Your Account and Start Healing
+        {t("registerHeader")}
         {/* Navigate your path to inner Harmony... */}
       </Typography>
     </Grid>

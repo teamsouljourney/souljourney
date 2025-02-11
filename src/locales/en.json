@@ -167,9 +167,11 @@
   "signIn": "Sign In",
   "signInWith": "Sign in with",
   "dontHaveAccount": "Don't have an account?",
-  "forgotYour": "Forgot your",
+  "forgotYourPassword": "Forgot your password?",
   "registerHeader": "Create Your Account and Start Healing",
   "loginHeader": "Ready to Continue Your Journey?",
+
+  "usernameMin": "Username must be at least 3 characters!",
 
   "SIDEBAR": "SIDEBAR",
   "menu": "Menu",

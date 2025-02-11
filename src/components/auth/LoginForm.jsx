@@ -49,7 +49,7 @@ const LoginForm = ({
           />
           <PasswordField
             name="password"
-            label="Password"
+            label={t("password")}
             value={values.password}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -69,7 +69,7 @@ const LoginForm = ({
           sx={btnStyle}
           onClick={handleSubmit}
         >
-          {isSubmitting ? "Loading..." : "Sign In"}
+          {isSubmitting ? t("loading") + "..." : t("signIn")}
         </Button>
         <Button
           type="submit"
@@ -78,8 +78,8 @@ const LoginForm = ({
           sx={btnStyle}
           onClick={signInWithGoogle}
         >
-          {isSubmitting ? "Loading..." : "Sign in with"}
-          <img src={googleLogo} alt="" />
+          {isSubmitting ? t("loading") + "..." : t("signInWith")}
+          <img style={{marginLeft: 6}} src={googleLogo} alt="" />
         </Button>
       </Box>
     </div>

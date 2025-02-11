@@ -156,7 +156,7 @@
   "goHome": "⬅ Ana Sayfaya Dön",
 
   "register": "Kayıt Ol",
-  "haveAccount": "Zaten bir hesabınız var mı?",
+  "haveAccount": "Hesabınız var mı?",
   "signin": "Giriş Yap",
   "username": "Kullanıcı Adı",
   "firstName": "Ad",
@@ -168,9 +168,11 @@
   "signIn": "Giriş Yap",
   "signInWith": "Şununla giriş yap",
   "dontHaveAccount": "Hesabınız yok mu?",
-  "forgotYour": "Şifrenizi mi unuttunuz?",
+  "forgotYourPassword": "Şifrenizi mi unuttunuz?",
   "registerHeader": "Hesabınızı Oluşturun ve İyileşmeye Başlayın",
   "loginHeader": "Yolculuğunuza Devam Etmeye Hazır mısınız?",
+
+  "usernameMin": "Kullanıcı adı en az 3 karakter olmalıdır!",
 
   "SIDEBAR": "YAN MENÜ",
   "menu": "Menü",

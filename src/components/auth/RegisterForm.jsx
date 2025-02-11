@@ -51,7 +51,7 @@ const RegisterForm = ({
         >
           <TextField
             name="userName"
-            label="Username"
+            label={t("username")}
             type="text"
             variant="outlined"
             value={values.userName}
@@ -63,7 +63,7 @@ const RegisterForm = ({
           />
           <TextField
             name="firstName"
-            label="First Name"
+            label={t("firstName")}
             type="text"
             value={values.firstName}
             onChange={handleChange}
@@ -74,7 +74,7 @@ const RegisterForm = ({
           />
           <TextField
             name="lastName"
-            label="Last Name"
+            label={t("lastName")}
             type="text"
             value={values.lastName}
             onChange={handleChange}
@@ -96,7 +96,7 @@ const RegisterForm = ({
           />
           <PasswordField
             name="password"
-            label="Password"
+            label={t("password")}
             value={values.password}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -115,7 +115,7 @@ const RegisterForm = ({
           sx={btnStyle}
           onClick={handleSubmit}
         >
-          {isSubmitting ? "Loading..." : "Sign Up"}
+          {isSubmitting ? t("loading")+"..." : t("signUp")}
         </Button>
         <Button
           type="submit"
@@ -124,8 +124,8 @@ const RegisterForm = ({
           sx={btnStyle}
           onClick={signInWithGoogle}
         >
-          {isSubmitting ? "Loading..." : "Sign up with"}
-          <img src={googleLogo} alt="" />
+          {isSubmitting ? t("loading")+"..." : t("signUpWith")}
+          <img style={{marginLeft: 6}} src={googleLogo} alt="" />
         </Button>
       </Box>      
     </div>

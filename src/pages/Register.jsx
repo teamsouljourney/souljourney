@@ -101,7 +101,7 @@ const Register = () => {
              }}
           >
             <Link to="/login" style={{color: "#2E5077"}}>
-              Already have an account? <b>Sign in</b> 
+              {t("haveAccount")} <b>{t("signin")}</b> 
             </Link>
           </Box>
         </Grid>

@@ -78,7 +78,7 @@ const Login = () => {
              }}
           >
             <Link to="/register"  style={{color: "#2E5077"}}>
-              Don't have an account? <b>Sign Up</b>
+              {t("dontHaveAccount")} <b>{t("signUp")}</b>
             </Link>
           </Box>
           <Box
@@ -93,7 +93,7 @@ const Login = () => {
             }}
           >
             <Link to="/forgotPassword" style={{ color: "#2E5077" }}>
-              Forgot your <b>password!</b>
+              {t("forgotYourPassword")}
             </Link>
           </Box>
         </Grid>
