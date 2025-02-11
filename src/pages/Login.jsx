@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 const Login = () => {
   const {login} = useAuthCall()
   const { t } = useTranslation();
+  const schema = loginSchema(t)
   return (
     <Container
       maxWidth="xxl"
@@ -58,7 +59,7 @@ const Login = () => {
               email: "",
               password: "",
             }}
-            validationSchema={loginSchema}
+            validationSchema={schema}
             onSubmit={(values, actions) => {         
               console.log(values);
               login(values);

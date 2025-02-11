@@ -7,14 +7,12 @@ import PasswordField from "./PasswordField";
 import useAuthCall from "../../hooks/useAuthCall";
 import { useTranslation } from "react-i18next";
 
-export const loginSchema = object({
-  // userName: string()
-  //   .required("Username is required!")
-  //   .min(3, "Username must be at least 3 characters!"),
-  email: string()
-    .email("Please enter a valid email address")
-    .required("Email is required"),
-  password: string().required("Password is required"),
+export const loginSchema = (t) => 
+  object({
+    email: string()
+      .email(t("appointment"))
+      .required(t("chat")),
+    password: string().required(t("Password is required")),
 });
 
 const LoginForm = ({
