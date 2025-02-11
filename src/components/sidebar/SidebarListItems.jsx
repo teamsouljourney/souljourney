@@ -4,36 +4,36 @@ const icon = (name) => `/assets/sidebar/${name}.svg`;
 const NavLinkto = (to) => `/profile/${to}`;
 import { useTranslation } from "react-i18next";
 
-const menu = [
-  {
-    to: NavLinkto(""),
-    icon: icon("dashboard"),
-    name: "Dashboard",
-  },
-  {
-    to: NavLinkto("appointment"),
-    icon: icon("appointment"),
-    name: "Appointment",
-  },
-  {
-    to: NavLinkto("write-blog"),
-    icon: icon("write-blog"),
-    name: "Write Blog",
-  },
-  {
-    to: NavLinkto("chat"),
-    icon: icon("chat"),
-    name: "Chat",
-  },
-  {
-    to: NavLinkto("video-call"),
-    icon: icon("videoCall"),
-    name: "Video Call",
-  },
-];
 
 const SidebarListItems = () => {
   const { t } = useTranslation();
+  const menu = [
+    {
+      to: NavLinkto(""),
+      icon: icon("dashboard"),
+      name: t("dashboard"),
+    },
+    {
+      to: NavLinkto("appointment"),
+      icon: icon("appointment"),
+      name: t("appointment"),
+    },
+    {
+      to: NavLinkto("write-blog"),
+      icon: icon("write-blog"),
+      name: t("writeBlog"),
+    },
+    {
+      to: NavLinkto("chat"),
+      icon: icon("chat"),
+      name: t("chat"),
+    },
+    {
+      to: NavLinkto("video-call"),
+      icon: icon("videoCall"),
+      name: t("videoCall"),
+    },
+  ];
   return (
     <>
       <div className="flex flex-col h-full overflow-y-auto overflow-x-hidden flex-grow pt-2 justify-between">
@@ -41,7 +41,7 @@ const SidebarListItems = () => {
           {/* <div className="px-5 pt-4 hidden lg:block">
             <div className="flex flex-row items-center">
               <div className="text-sm font-bold tracking-wide text-seaGreen-dark">
-                Menu
+                {t("menu")}
               </div>
             </div>
           </div> */}
@@ -96,7 +96,7 @@ const SidebarListItems = () => {
                   ></span>
                 </span>
                 <span className={`ml-0 lg:ml-2 text-sm text-navy-dark group-hover:text-seaGreen-dark dark:group-hover:text-seaGreen-light dark:text-offWhite-dark tracking-wide truncate capitalize hidden lg:block ${isActive ? "text-seaGreen-dark" : ""}`}>
-                  My Account
+                  {t("myAccount")}
                 </span>
               </>
             )}
