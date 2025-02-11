@@ -5,15 +5,14 @@ import { authButtonBoxStyle, authFormBoxStyle, btnStyle } from "../../styles/glo
 import googleLogo from "../../assets/loginRegisterImage/Google.png";
 import PasswordField from "./PasswordField";
 import useAuthCall from "../../hooks/useAuthCall";
+import { useTranslation } from "react-i18next";
 
-export const loginSchema = object({
-  // userName: string()
-  //   .required("Username is required!")
-  //   .min(3, "Username must be at least 3 characters!"),
-  email: string()
-    .email("Please enter a valid email address")
-    .required("Email is required"),
-  password: string().required("Password is required"),
+export const loginSchema = (t) => 
+  object({
+    email: string()
+      .email(t("validEmailMessage"))
+      .required(t("requiredEmailMessage")),
+    password: string().required(t("requiredPasswordMessage")),
 });
 
 const LoginForm = ({
@@ -28,6 +27,7 @@ const LoginForm = ({
   // console.log(errors, touched);
   const theme = useTheme();
   const { signInWithGoogle } = useAuthCall();
+  const { t } = useTranslation();
   return (
     <div>
       <Form
@@ -36,7 +36,7 @@ const LoginForm = ({
         <Box sx={authFormBoxStyle}>
           <TextField
             name="email"
-            label="Email"
+            label={t("email")}
             type="text"
             value={values.email}
             onChange={handleChange}
@@ -47,7 +47,7 @@ const LoginForm = ({
           />
           <PasswordField
             name="password"
-            label="Password"
+            label={t("password")}
             value={values.password}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -67,7 +67,7 @@ const LoginForm = ({
           sx={btnStyle}
           onClick={handleSubmit}
         >
-          {isSubmitting ? "Loading..." : "Sign In"}
+          {isSubmitting ? t("loading") + "..." : t("signIn")}
         </Button>
         <Button
           type="submit"
@@ -76,8 +76,8 @@ const LoginForm = ({
           sx={btnStyle}
           onClick={signInWithGoogle}
         >
-          {isSubmitting ? "Loading..." : "Sign in with"}
-          <img src={googleLogo} alt="" />
+          {isSubmitting ? t("loading") + "..." : t("signInWith")}
+          <img style={{marginLeft: 6}} src={googleLogo} alt="" />
         </Button>
       </Box>
     </div>

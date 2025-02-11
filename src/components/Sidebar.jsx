@@ -4,10 +4,12 @@ import SoulJourneyLogo from "./SoulJourneyLogo";
 import SidebarListItems from "./sidebar/SidebarListItems";
 import useAuthCall from "../hooks/useAuthCall";
 import LanguageSelector from "./LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 const Sidebar = () => {
 
   const {logout} = useAuthCall()
+  const { t } = useTranslation();
 
   return (
     <>
@@ -29,7 +31,7 @@ const Sidebar = () => {
             <div className="px-5 pt-4 hidden lg:block mb-1">
               <div className="flex flex-row items-center">
                 <div className="text-sm font-bold tracking-wide text-seaGreen-dark dark:text-offWhite">
-                  Menu
+                  {t("menu")}
                 </div>
               </div>
             </div>
@@ -51,14 +53,14 @@ const Sidebar = () => {
                   ></span>
                 </span>
                 <span className="ml-2 text-sm text-navy-dark group-hover:text-red-400 dark:text-offWhite-dark tracking-wide truncate capitalize hidden lg:block">
-                  Logout
+                  {t("logout")}
                 </span>
               </div>
             </div>
           </div>
         </div>
         {/* View Content */}
-        <div className="col-span-6 p-1 flex justify-center items-center">
+        <div className="col-span-6 p-1 ">
           <Outlet/>
         </div>
       </div>
