@@ -165,7 +165,10 @@
   "lastName": "Soyad",
   "password": "Şifre",
   "currentPassword": "Mevcut Şifre",
+  "currentPasswordPlaceHolder": "Mevcut şifreyi girin",
   "newPassword": "Yeni Şifre",
+  "newPasswordPlaceHolder": "Yeni şifreyi girin",
+  "retypeNewPasswordPlaceHolder": "Yeni şifreyi tekrar girin",
   "changePassword": "Şifreyi Değiştir",
   "loading": "Yükleniyor",
   "signUp": "Kaydol",
@@ -174,6 +177,7 @@
   "signInWith": "Şununla giriş yap",
   "dontHaveAccount": "Hesabınız yok mu?",
   "forgotYourPassword": "Şifrenizi mi unuttunuz?",
+  "resetPassword": "Şifreyi sıfırla",
   "registerHeader": "Hesabınızı Oluşturun ve İyileşmeye Başlayın",
   "loginHeader": "Yolculuğunuza Devam Etmeye Hazır mısınız?",
 

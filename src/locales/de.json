@@ -165,7 +165,10 @@
   "lastName": "Nachname",
   "password": "Passwort",
   "currentPassword": "Aktuelles Passwort",
+  "currentPasswordPlaceHolder": "Geben Sie das aktuelle Passwort ein",
   "newPassword": "Neues Passwort",
+  "newPasswordPlaceHolder": "Geben Sie ein neues Passwort ein",
+  "retypeNewPasswordPlaceHolder": "Neues Passwort erneut eingeben",
   "changePassword": "Passwort ändern",
   "loading": "Lädt",
   "signUp": "Registrieren",
@@ -174,6 +177,7 @@
   "signInWith": "Anmelden mit",
   "dontHaveAccount": "Haben Sie kein Konto?",
   "forgotYourPassword": "Haben Sie Ihr Passwort vergessen?",
+  "resetPassword": "Passwort zurücksetzen",
   "registerHeader": "Erstellen Sie Ihr Konto und beginnen Sie mit der Heilung",
   "loginHeader": "Bereit, Ihre Reise fortzusetzen?",
 

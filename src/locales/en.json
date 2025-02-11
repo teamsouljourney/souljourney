@@ -164,7 +164,10 @@
   "lastName": "Last Name",
   "password": "Password",
   "currentPassword": "Current Password",
+  "currentPasswordPlaceHolder": "Enter current password",
   "newPassword": "New Password",
+  "newPasswordPlaceHolder": "Enter new password",
+  "retypeNewPasswordPlaceHolder": "Re-type new password",
   "changePassword": "Change Password",
   "loading": "Loading",
   "signUp": "Sign Up",
@@ -173,6 +176,7 @@
   "signInWith": "Sign in with",
   "dontHaveAccount": "Don't have an account?",
   "forgotYourPassword": "Forgot your password?",
+  "resetPassword": "Reset Password",
   "registerHeader": "Create Your Account and Start Healing",
   "loginHeader": "Ready to Continue Your Journey?",
 
