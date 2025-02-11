@@ -1,21 +1,18 @@
-import { Outlet, useNavigate, useLocation } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
+import { toastErrorNotify } from "../helper/ToastNotify";
 
 const PrivateRouter = () => {
     const navigate = useNavigate();
-    const location = useLocation();
 
-    const { auth } = useSelector((state) => state.auth);
+    const currentUser  = useSelector((state) => state.auth.currentUser );
 
-    const isAuthenticated = auth?.currentUser;
 
-    if (!isAuthenticated) {
+    if (!currentUser) {
         navigate("/login", { state: { from: location } });
         toastErrorNotify("You must be logged in to access this page.");
         return null; 
     }else{
-        toastSuccessNotify("You are logged in.");
         return <Outlet/>
     }
 };
