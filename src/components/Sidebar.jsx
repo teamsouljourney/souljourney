@@ -31,7 +31,7 @@ const Sidebar = () => {
             <div className="px-5 pt-4 hidden lg:block mb-1">
               <div className="flex flex-row items-center">
                 <div className="text-sm font-bold tracking-wide text-seaGreen-dark dark:text-offWhite">
-                  Menu
+                  {t("menu")}
                 </div>
               </div>
             </div>
@@ -60,7 +60,7 @@ const Sidebar = () => {
           </div>
         </div>
         {/* View Content */}
-        <div className="col-span-6 p-1 flex justify-center items-center">
+        <div className="col-span-6 p-1 ">
           <Outlet/>
         </div>
       </div>
