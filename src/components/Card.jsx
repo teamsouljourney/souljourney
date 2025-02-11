@@ -40,7 +40,7 @@ const Card = ({ team, variant = "default", onClick }) => {
             {" "}
             <FavoriteBorderIcon />
             <NavLink
-              to={`/therapists/${team.id}`}
+              to={`/blogs/${team.id}`}
               className="w-[50%] block mx-auto text-offWhite font-bold text-center py-2 rounded-lg hover:bg-gradient-to-r bg-seaGreen-dark hover:bg-seaGreen-light"
             >
               Read More
