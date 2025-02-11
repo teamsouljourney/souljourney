@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import "../../index.css"; // Assuming you add styles in this CSS file
-// import { Quiz } from "@mui/icons-material"; 
-//import quizData from "../../helper/quizData.json"; 
+import "../../index.css"; // Assuming you add styles in this CSS file 
 import { useTranslation } from "react-i18next";
  
 const Quiz = () => {
@@ -139,9 +137,9 @@ const Quiz = () => {
     <>
       {/* "Self-Test" Button   */}
     <div className="flex justify-center">
-  <button
-    className={`px-10 py-2 rounded-full shadow-lg transition-all duration-300 bg-seaGreen-dark hover:bg-seaGreen-light z-50 font-semibold bottom-48 text-offWhite 
-      ${isScrolled ? "fixed bottom-40 right-5" : "absolute top-[calc(65%+30px)] left-1/2 -translate-x-1/2 text-2x1 sm:px-6 sm:py-2 sm:text-2xl md:px-8 md:py-3 md:text-2xl"}`}
+    <button
+    className={`px-8 py-2 rounded-full shadow-lg duration-300 bg-seaGreen-dark hover:bg-seaGreen-light z-50 font-semibold bottom-48 text-offWhite 
+      ${isScrolled ? "fixed bottom-40 right-5" : "absolute top-[calc(70%+10px)] text-2x1 sm:px-6 sm:py-2 sm:text-2xl md:px-6 md:py-2 md:text-2xl"}`}
     onClick={() => setShowQuiz(true)}
   >
      {t("selfTest")}

@@ -143,5 +143,11 @@
   "email": "E-posta",
   "emailDescription": "team.souljourney@gmail.com",
   "location": "Konum",
-  "locationDescription": "Her Zaman, Her Yerde"
+  "locationDescription": "Her Zaman, Her Yerde",
+
+
+  "NOTFOUND": "NOTFOUND",
+  "pageNotFound": "Sayfa Bulunamadı",
+  "textNot": "Aradığınız sayfa mevcut değil.",
+  "goHome": "⬅ Ana Sayfaya Dön"
 }

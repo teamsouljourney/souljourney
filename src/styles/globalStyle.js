@@ -78,3 +78,43 @@ export const btnStyle = {
 export const inputHeightStyle = {"& .css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input": {
     height: "1rem"
   }}
+
+  const notFoundStyles = {
+    container: { 
+      textAlign: "center", 
+      padding: "50px", 
+      display: "flex", 
+      flexDirection: "column", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      height: "100vh" 
+    },
+    image: { 
+      width: "600px", 
+      height: "auto", 
+      marginBottom: "10px" 
+    },
+    heading: { 
+      fontSize: "36px", 
+      fontWeight: "bold", 
+      color: "#333" 
+    },
+    text: { 
+      fontSize: "20px", 
+      color: "#555", 
+      marginBottom: "20px" 
+    },
+    link: { 
+      textDecoration: "none", 
+      color: "white", 
+      backgroundColor: "#3CA6A6", 
+      padding: "12px 25px", 
+      borderRadius: "30px", 
+      fontSize: "18px", 
+      fontWeight: "bold",
+      display: "inline-block", 
+      textAlign: "center" 
+    }
+  };
+  
+  export default notFoundStyles;

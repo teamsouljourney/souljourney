@@ -26,6 +26,7 @@ import WriteBlog from "../pages/WriteBlog";
 import Dashboard from "../pages/Dashboard";
 import Sidebar from "../components/Sidebar";
 import Appointment from "../pages/Appointment";
+import NotFound from "../pages/NotFound";
 
 const AppRouter = () => {
   return (
@@ -49,7 +50,7 @@ const AppRouter = () => {
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/auth/reset-password/:token" element={<ResetPassword />} />
         <Route path="/blogs/:id" element={<BlogDetail />} />
-
+        <Route path="*" element={<NotFound/>}/>
         {/* Private Area */}
         <Route path="" element={<PrivateRouter />}>
           {/* Privates Routes */}
