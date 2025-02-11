@@ -8,16 +8,17 @@ import useAppointmentCall from "../hooks/useAppointmentCall";
 import AppointmentCard from "../components/appointment/AppointmentCard";
 
 const Appointment = () => {
-  const { getAllAppointments, getSingleAppointment } = useAppointmentCall();
-  const { appointments, singleAppointment } = useSelector(
+  const { getUserAppointments, getSingleAppointment } = useAppointmentCall();
+  const { currentUserAppointments, singleAppointment } = useSelector(
     (state) => state.appointments
   );
+  const { currentUser } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    getAllAppointments();
-  }, []);
+    currentUser?._id && getUserAppointments(currentUser?._id);
+  }, [currentUser?._id]);
 
-  const formattedEvents = appointments?.map((appointment) => ({
+  const formattedEvents = currentUserAppointments?.map((appointment) => ({
     id: appointment._id,
     title: `${appointment.userId.firstName} ${appointment.userId.lastName}`,
     start: appointment.startTime,
