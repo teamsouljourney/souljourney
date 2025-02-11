@@ -155,6 +155,8 @@
   "textNot": "Die gesuchte Seite existiert nicht.",
   "goHome": "⬅ Zurück zur Startseite",
 
+  "slogan": "Finden Sie Ihren Weg zur inneren Harmonie!",
+
   "register": "Registrieren",
   "haveAccount": "Haben Sie bereits ein Konto?",
   "signin": "Anmelden",
@@ -181,5 +183,12 @@
   "writeBlog": "Blog schreiben",
   "chat": "Chat",
   "videoCall": "Videoanruf",
-  "myAccount": "Mein Konto"
+  "myAccount": "Mein Konto",
+
+  "ACCOUNT": "KONTO",
+  "updateAccount": "Aktualisieren Sie Ihr Konto",
+  "image": "Bild",
+  "phone": "Telefon",
+  "address": "Adresse",
+  "profession": "Beruf"
 }

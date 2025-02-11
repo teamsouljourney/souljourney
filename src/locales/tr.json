@@ -155,6 +155,8 @@
   "textNot": "Aradığınız sayfa mevcut değil.",
   "goHome": "⬅ Ana Sayfaya Dön",
 
+  "slogan": "Finden Sie Ihren Weg zur inneren Harmonie!",
+
   "register": "Kayıt Ol",
   "haveAccount": "Hesabınız var mı?",
   "signin": "Giriş Yap",
@@ -181,5 +183,12 @@
   "writeBlog": "Blog Yaz",
   "chat": "Sohbet",
   "videoCall": "Görüntülü Arama",
-  "myAccount": "Hesabım"
+  "myAccount": "Hesabım",
+
+  "ACCOUNT": "HESAP",
+  "updateAccount": "Hesabınızı Güncelleyin",
+  "image": "Görsel",
+  "phone": "Telefon",
+  "address": "Adres",
+  "profession": "Meslek"
 }

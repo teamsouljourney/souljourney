@@ -154,6 +154,8 @@
   "textNot": "The page you are looking for does not exist.",
   "goHome": "⬅ Go Back to Home",
 
+  "slogan": "Navigate your path to inner Harmony!",
+
   "register": "Register",
   "haveAccount": "Already have an account?",
   "signin": "Sign in",
@@ -180,5 +182,12 @@
   "writeBlog": "Write Blog",
   "chat": "Chat",
   "videoCall": "Video Call",
-  "myAccount": "My Account"
+  "myAccount": "My Account",
+
+  "ACCOUNT": "ACCOUNT",
+  "updateAccount": "Update Your Account",
+  "image": "Image",
+  "phone": "Phone",
+  "address": "Address",
+  "profession": "Profession"
 }
