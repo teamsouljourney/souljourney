@@ -7,8 +7,10 @@ import {
   authFormContainerGridStyle,
 } from "../styles/globalStyle";
 import AccountForm from "../components/auth/AccountForm";
+import { useTranslation } from "react-i18next";
 
 const Account = () => {
+  const { t } = useTranslation();
   return (
     <Container maxWidth="xxl">
       <Grid

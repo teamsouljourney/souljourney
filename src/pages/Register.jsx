@@ -9,9 +9,12 @@ import { SignupSchema } from '../components/auth/RegisterForm';
 import { Link } from 'react-router-dom';
 import { authContainerStyle, authMainContainerGridStyle, authFormContainerGridStyle, } from '../styles/globalStyle';
 import useAuthCall from '../hooks/useAuthCall';
+import { useTranslation } from "react-i18next";
 
 const Register = () => {
   const {register} = useAuthCall()
+  const { t } = useTranslation();
+  const schemaRegister = SignupSchema(t)
   return (
     <Container
       maxWidth="xxl"
@@ -69,7 +72,7 @@ const Register = () => {
               }
             }}
           >
-            Register
+            {t("register")}
           </Typography>
           <Formik
             initialValues={{
@@ -79,7 +82,7 @@ const Register = () => {
               email: "",
               password: "",
             }}
-            validationSchema={SignupSchema}
+            validationSchema={schemaRegister}
             onSubmit={(values, actions) => {
               console.log(values);
               register(values)
@@ -99,7 +102,7 @@ const Register = () => {
              }}
           >
             <Link to="/login" style={{color: "#2E5077"}}>
-              Already have an account? <b>Sign in</b> 
+              {t("haveAccount")} <b>{t("signin")}</b> 
             </Link>
           </Box>
         </Grid>
