@@ -22,7 +22,7 @@ const LoginHeader = () => {
       >
         {/* Welcome Back to Soul Journey
         Log in to Access Your Personal Path */}
-        Ready to Continue Your Journey?
+        {t("loginHeader")}
       </Typography>
     </Grid>
   )
