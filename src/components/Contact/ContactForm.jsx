@@ -20,11 +20,11 @@ const ContactForm = () => {
         )
         .then(
           () => {
-            toastSuccessNotify("Message sent successfully!");
+            toastSuccessNotify(t("messageSentSuccess"));
             form.current?.reset();
           },
           (error) => {
-            toastErrorNotify("Failed to send message!");
+            toastErrorNotify(t("messageSentError"));
             console.log(error.text);
           }
         );
@@ -51,7 +51,7 @@ const ContactForm = () => {
               type="text"
               id="user_name"
               autoComplete="given-name"
-              placeholder="Your name"
+              placeholder={t("namePlaceholder")}
               className="w-full py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0 focus:outline-none focus:ring focus:ring-navy-light "
               name="user_name"
             />
@@ -65,7 +65,7 @@ const ContactForm = () => {
               type="email"
               id="user_email"
               autoComplete="email"
-              placeholder="Your email address"
+              placeholder={t("emailPlaceholder")}
               className="w-full py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0 focus:outline-none focus:ring focus:ring-navy-light"
               name="user_email"
             />
@@ -80,7 +80,7 @@ const ContactForm = () => {
             id="message"
             cols="30"
             rows="5"
-            placeholder="Write your message..."
+            placeholder={t("messagePlaceholder")}
             className="w-full resize-none h-[8rem] py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0  focus:outline-none focus:ring focus:ring-navy-light"
             name="message"
           ></textarea>

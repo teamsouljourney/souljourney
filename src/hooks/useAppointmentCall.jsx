@@ -4,12 +4,28 @@ import {
   fetchStart,
   fetchFail,
   createAppointmentSuccess,
+  getAllAppointmentsSuccess,
 } from "../features/appointmentSlice";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
 const useAppointmentCall = () => {
   const dispatch = useDispatch();
   const axiosWithToken = useAxios();
+
+  //* List Appointments
+  const getAllAppointments = async () => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosWithToken.get("therapists");
+      dispatch(getAllAppointmentsSuccess(data.data));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response.data.message,
+        "Failed to fetch therapists."
+      );
+    }
+  };
 
   //* Create appointment
   const createAppointment = async (appointmentData) => {
@@ -31,6 +47,7 @@ const useAppointmentCall = () => {
   };
 
   return {
+    getAllAppointments,
     createAppointment,
   };
 };

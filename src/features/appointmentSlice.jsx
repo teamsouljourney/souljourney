@@ -13,6 +13,11 @@ const appointmentSlice = createSlice({
       state.loading = true;
       state.error = false;
     },
+    getAllAppointmentsSuccess: (state, { payload }) => {
+      state.loading = false;
+      state.appointments = payload;
+      state.error = false;
+    },
     createAppointmentSuccess: (state, { payload }) => {
       state.loading = false;
       state.appointments.push(payload);
@@ -25,7 +30,11 @@ const appointmentSlice = createSlice({
   },
 });
 
-export const { fetchStart, fetchFail, createAppointmentSuccess } =
-  appointmentSlice.actions;
+export const {
+  fetchStart,
+  fetchFail,
+  getAllAppointmentsSuccess,
+  createAppointmentSuccess,
+} = appointmentSlice.actions;
 
 export default appointmentSlice.reducer;
