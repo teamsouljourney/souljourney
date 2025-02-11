@@ -24,7 +24,7 @@ const therapistSlice = createSlice({
     },
     getTherapistTimeTableSuccess: (state, { payload }) => {
       state.loading = false;
-      state.therapistTimeTable = payload;
+      state.therapistTimeTable = payload.unavailableDates;
     },
     fetchFail: (state) => {
       state.loading = false;

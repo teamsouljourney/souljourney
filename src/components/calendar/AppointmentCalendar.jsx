@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -7,21 +7,18 @@ import { toastErrorNotify } from "../../helper/ToastNotify";
 import { useSelector } from "react-redux";
 
 const AppointmentCalendar = () => {
-  const { getAllAppointments, createAppointment } = useAppointmentCall();
+  const { createAppointment } = useAppointmentCall();
 
   const { currentUser } = useSelector((state) => state.auth);
-  const { singleTherapist } = useSelector((state) => state.therapists);
-  const { appointments } = useSelector((state) => state.appointments);
+  const { singleTherapist, therapistTimeTable } = useSelector(
+    (state) => state.therapists
+  );
 
   const [selectedDate, setSelectedDate] = useState(null);
   const [timeSlots, setTimeSlots] = useState([]);
   const [selectedSlot, setSelectedSlot] = useState(null);
 
-  useEffect(() => {
-    getAllAppointments();
-  }, []);
-
-  console.log(appointments);
+  console.log(therapistTimeTable);
 
   const generateTimeSlots = () => {
     const slots = [];

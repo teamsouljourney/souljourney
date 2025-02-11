@@ -7,13 +7,14 @@ import AppointmentCalendar from "../calendar/appointmentCalendar";
 const TeamDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { getSingleTherapist } = useTherapistCall();
+  const { getSingleTherapist, getTherapistTimeTable } = useTherapistCall();
   const { singleTherapist, loading, error } = useSelector(
     (state) => state.therapists
   );
 
   useEffect(() => {
     getSingleTherapist(id);
+    getTherapistTimeTable(id);
   }, [id]);
 
   if (loading) {
