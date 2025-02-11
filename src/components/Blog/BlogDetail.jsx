@@ -1,10 +1,32 @@
 import { useParams, useNavigate } from "react-router-dom";
-import blogs from "../../helper/blogs.json"; // Blog verilerini içeri aktarın
+import { useState, useEffect } from "react";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import blogs from "../../helper/blogs.json";
 
 function BlogDetail() {   
   const { id } = useParams();
   const navigate = useNavigate();
+  const [likeCount, setLikeCount] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
   const blog = blogs.find((b) => b.id.toString() === id);
+
+  // Local Storage'dan beğeni sayısını al
+  useEffect(() => {
+    const storedLikes = localStorage.getItem(`blog-${id}-likes`);
+    const storedIsLiked = localStorage.getItem(`blog-${id}-isLiked`);
+    if (storedLikes) setLikeCount(parseInt(storedLikes));
+    if (storedIsLiked) setIsLiked(JSON.parse(storedIsLiked));
+  }, [id]);
+
+  const handleLike = () => {
+    const newLikeCount = isLiked ? likeCount - 1 : likeCount + 1;
+    setLikeCount(newLikeCount);
+    setIsLiked(!isLiked);
+    
+    // Local Storage'a kaydet
+    localStorage.setItem(`blog-${id}-likes`, newLikeCount.toString());
+    localStorage.setItem(`blog-${id}-isLiked`, (!isLiked).toString());
+  };
 
   if (!blog) {
     return (
@@ -28,12 +50,27 @@ function BlogDetail() {
           <h2 className="text-xl font-bold mb-4">{blog.title}</h2>
           <p>{blog.fullContent || blog.description}</p>
         </div>
-        <button
-          onClick={() => navigate("/blogs")}
-          className="mt-4 px-4 py-2 bg-navy-dark text-white rounded hover:bg-navy-light"
-        >
-          Back to Blogs
-        </button>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleLike}
+              className="flex items-center focus:outline-none"
+            >
+              {isLiked ? (
+                <AiFillHeart className="text-2xl text-red-500" />
+              ) : (
+                <AiOutlineHeart className="text-2xl hover:text-red-500" />
+              )}
+            </button>
+            <span className="text-gray-600">{likeCount}</span>
+          </div>
+          <button
+            onClick={() => navigate("/blogs")}
+            className="px-4 py-2 bg-navy-dark text-white rounded hover:bg-navy-light"
+          >
+            Back to Blogs
+          </button>
+        </div>
       </div>
     </div>
   );
