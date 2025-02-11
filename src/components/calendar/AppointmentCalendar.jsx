@@ -1,24 +1,21 @@
 import { useState } from "react";
-import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import interactionPlugin from "@fullcalendar/interaction";
+import { useSelector } from "react-redux";
 import useAppointmentCall from "../../hooks/useAppointmentCall";
 import { toastErrorNotify } from "../../helper/ToastNotify";
-import { useSelector } from "react-redux";
+import dayjs from "dayjs";
+import Calendar from "./Calendar";
+import TimeSlotSelector from "./TimeSlotSelector";
+import AppointmentActions from "./AppointmentActions";
 
 const AppointmentCalendar = () => {
   const { createAppointment } = useAppointmentCall();
-
   const { currentUser } = useSelector((state) => state.auth);
   const { singleTherapist, therapistTimeTable } = useSelector(
     (state) => state.therapists
   );
 
   const [selectedDate, setSelectedDate] = useState(null);
-  const [timeSlots, setTimeSlots] = useState([]);
   const [selectedSlot, setSelectedSlot] = useState(null);
-
-  console.log(therapistTimeTable);
 
   const generateTimeSlots = () => {
     const slots = [];
@@ -28,14 +25,32 @@ const AppointmentCalendar = () => {
     return slots;
   };
 
-  const handleDateSelect = (info) => {
-    setSelectedDate(info.startStr);
-    setTimeSlots(generateTimeSlots());
+  const isSlotUnavailable = (date, slot) => {
+    const slotStartTime = dayjs(
+      `${date}T${slot.split(" ")[0]}:00`
+    ).toISOString();
+    return therapistTimeTable.some(
+      (entry) => entry.startTime === slotStartTime || entry.unavailable
+    );
+  };
+
+  const handleDateSelect = (date) => {
+    const selectedDay = dayjs(date);
+    const today = dayjs().startOf("day");
+
+    if (selectedDay.isBefore(today)) {
+      toastErrorNotify("You cannot select past dates.");
+      return;
+    }
+
+    setSelectedDate(date);
     setSelectedSlot(null);
   };
 
-  const handleSlotClick = (slot) => {
-    setSelectedSlot(slot);
+  const handleSlotSelect = (slot) => {
+    if (!isSlotUnavailable(selectedDate, slot)) {
+      setSelectedSlot(slot);
+    }
   };
 
   const handleCreateAppointment = () => {
@@ -63,47 +78,21 @@ const AppointmentCalendar = () => {
   return (
     <div className="p-4">
       <h2 className="mb-8 text-lg font-semibold text-navy">Booking Calendar</h2>
-
-      <FullCalendar
-        plugins={[dayGridPlugin, interactionPlugin]}
-        initialView="dayGridWeek"
-        select={handleDateSelect}
-        selectable={true}
-        headerToolbar={{
-          left: "prev,next",
-          center: "title",
-          right: "dayGridMonth,dayGridWeek,dayGridDay",
-        }}
-        height="auto"
-      />
-
+      <Calendar handleDateSelect={handleDateSelect} />
       {selectedDate && (
-        <div className="p-4 mt-4 border rounded bg-offWhite">
-          <h3 className="font-semibold text-mauve text-md">
-            Selected Date: {selectedDate}
-          </h3>
-          <div className="flex flex-wrap gap-2 mt-2">
-            {timeSlots.map((slot, index) => (
-              <button
-                key={index}
-                onClick={() => handleSlotClick(slot)}
-                className={`px-[.5rem] py-[.3rem] rounded-lg ${
-                  selectedSlot === slot
-                    ? "bg-seaGreen text-white"
-                    : "bg-navy text-white"
-                }`}
-              >
-                {slot}
-              </button>
-            ))}
-          </div>
-          <button
-            onClick={handleCreateAppointment}
-            className="px-4 py-2 mt-4 text-white transition duration-300 rounded-lg bg-seaGreen hover:bg-navy"
-          >
-            Create Appointment
-          </button>
-        </div>
+        <>
+          <TimeSlotSelector
+            selectedDate={selectedDate}
+            selectedSlot={selectedSlot}
+            onSlotSelect={handleSlotSelect}
+            generateTimeSlots={generateTimeSlots}
+            isSlotUnavailable={isSlotUnavailable}
+          />
+          <AppointmentActions
+            selectedSlot={selectedSlot}
+            onCreateAppointment={handleCreateAppointment}
+          />
+        </>
       )}
     </div>
   );
