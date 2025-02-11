@@ -164,6 +164,9 @@
   "firstName": "Ad",
   "lastName": "Soyad",
   "password": "Şifre",
+  "currentPassword": "Mevcut Şifre",
+  "newPassword": "Yeni Şifre",
+  "changePassword": "Şifreyi Değiştir",
   "loading": "Yükleniyor",
   "signUp": "Kaydol",
   "signUpWith": "Şununla kaydol",
@@ -186,9 +189,12 @@
   "myAccount": "Hesabım",
 
   "ACCOUNT": "HESAP",
+  "account": "Hesap",
   "updateAccount": "Hesabınızı Güncelleyin",
   "image": "Görsel",
   "phone": "Telefon",
   "address": "Adres",
-  "profession": "Meslek"
+  "profession": "Meslek",
+  "profile": "Profil",
+  "upload": "Yükle"
 }

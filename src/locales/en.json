@@ -163,6 +163,9 @@
   "firstName": "First Name",
   "lastName": "Last Name",
   "password": "Password",
+  "currentPassword": "Current Password",
+  "newPassword": "New Password",
+  "changePassword": "Change Password",
   "loading": "Loading",
   "signUp": "Sign Up",
   "signUpWith": "Sign up with",
@@ -185,9 +188,12 @@
   "myAccount": "My Account",
 
   "ACCOUNT": "ACCOUNT",
+  "account": "Account",
   "updateAccount": "Update Your Account",
   "image": "Image",
   "phone": "Phone",
   "address": "Address",
-  "profession": "Profession"
+  "profession": "Profession",
+  "profile": "Profile",
+  "upload": "Upload"
 }

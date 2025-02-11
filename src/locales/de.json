@@ -164,6 +164,9 @@
   "firstName": "Vorname",
   "lastName": "Nachname",
   "password": "Passwort",
+  "currentPassword": "Aktuelles Passwort",
+  "newPassword": "Neues Passwort",
+  "changePassword": "Passwort ändern",
   "loading": "Lädt",
   "signUp": "Registrieren",
   "signUpWith": "Registrieren mit",
@@ -186,9 +189,12 @@
   "myAccount": "Mein Konto",
 
   "ACCOUNT": "KONTO",
+  "account": "Konto",
   "updateAccount": "Aktualisieren Sie Ihr Konto",
   "image": "Bild",
   "phone": "Telefon",
   "address": "Adresse",
-  "profession": "Beruf"
+  "profession": "Beruf",
+  "profile": "Profil",
+  "upload": "Hochladen"
 }
