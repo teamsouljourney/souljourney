@@ -149,4 +149,11 @@
   "messagePlaceholder": "Mesajınızı Yazın ...",
   "messageSentSuccess": "Mesajınız başarıyla gönderildi.",
   "messageSentError": "Mesajınızı gönderirken bir hata oluştu. Lütfen daha sonra tekrar deneyin."
+  "locationDescription": "Her Zaman, Her Yerde",
+
+
+  "NOTFOUND": "NOTFOUND",
+  "pageNotFound": "Sayfa Bulunamadı",
+  "textNot": "Aradığınız sayfa mevcut değil.",
+  "goHome": "⬅ Ana Sayfaya Dön"
 }

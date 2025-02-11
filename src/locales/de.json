@@ -149,4 +149,11 @@
   "messagePlaceholder": "Schreiben Sie Ihre Nachricht ...",
   "messageSentSuccess": "Ihre Nachricht wurde erfolgreich gesendet.",
   "messageSentError": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
+  "locationDescription": "Jederzeit, Überall",
+
+
+  "NOTFOUND": "NOTFOUND",
+  "pageNotFound": "Seite nicht gefunden",
+  "textNot": "Die gesuchte Seite existiert nicht.",
+  "goHome": "⬅ Zurück zur Startseite"
 }
