@@ -147,14 +147,10 @@
   "emailPlaceholder": "Your Email Address",
   "messagePlaceholder": "Write Your Message ...",
   "messageSentSuccess": "Your message has been sent successfully.",
-  "messageSentError": "An error occurred while sending your message. Please try again later."
-}
-  "locationDescription": "Anywhere, Anytime",
-
+  "messageSentError": "An error occurred while sending your message. Please try again later.",
 
   "NOTFOUND": "NOTFOUND",
   "pageNotFound": "Page Not Found",
   "textNot": "The page you are looking for does not exist.",
   "goHome": "⬅ Go Back to Home"
-  
-  }
+}

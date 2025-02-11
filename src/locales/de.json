@@ -148,9 +148,7 @@
   "emailPlaceholder": "Ihre E-Mail-Adresse",
   "messagePlaceholder": "Schreiben Sie Ihre Nachricht ...",
   "messageSentSuccess": "Ihre Nachricht wurde erfolgreich gesendet.",
-  "messageSentError": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
-  "locationDescription": "Jederzeit, Überall",
-
+  "messageSentError": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
 
   "NOTFOUND": "NOTFOUND",
   "pageNotFound": "Seite nicht gefunden",
