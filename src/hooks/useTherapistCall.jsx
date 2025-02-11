@@ -44,7 +44,7 @@ const useTherapistCall = () => {
   const getTherapistTimeTable = async (id) => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosWithToken.get(`therapists-time-tables/${id}`);
+      const { data } = await axiosWithToken.get(`therapist-time-tables/${id}`);
       dispatch(getTherapistTimeTableSuccess(data.data));
     } catch (error) {
       dispatch(fetchFail());

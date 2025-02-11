@@ -5,7 +5,7 @@ const therapistSlice = createSlice({
   initialState: {
     therapists: [],
     singleTherapist: null,
-    singleTherapistTimeTable: [],
+    therapistTimeTable: [],
     loading: false,
     error: false,
   },
@@ -24,7 +24,7 @@ const therapistSlice = createSlice({
     },
     getTherapistTimeTableSuccess: (state, { payload }) => {
       state.loading = false;
-      state.singleTherapistTimeTable = payload;
+      state.therapistTimeTable = payload;
     },
     fetchFail: (state) => {
       state.loading = false;
