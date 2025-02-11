@@ -8,9 +8,11 @@ import LoginForm, { loginSchema } from "../components/auth/LoginForm";
 import { Link } from "react-router-dom";
 import { authContainerStyle, authFormContainerGridStyle, authMainContainerGridStyle } from "../styles/globalStyle";
 import useAuthCall from "../hooks/useAuthCall";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
   const {login} = useAuthCall()
+  const { t } = useTranslation();
   return (
     <Container
       maxWidth="xxl"
@@ -48,7 +50,7 @@ const Login = () => {
               }
             }}
           >
-            Login
+            {t("login")}
           </Typography>
           <Formik
             initialValues={{

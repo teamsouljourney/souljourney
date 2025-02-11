@@ -5,6 +5,7 @@ import { authButtonBoxStyle, authFormBoxStyle, btnStyle } from "../../styles/glo
 import googleLogo from "../../assets/loginRegisterImage/Google.png";
 import PasswordField from "./PasswordField";
 import useAuthCall from "../../hooks/useAuthCall";
+import { useTranslation } from "react-i18next";
 
 export const SignupSchema = Yup.object().shape({
   userName: Yup.string()
@@ -40,6 +41,8 @@ const RegisterForm = ({
 
   const theme = useTheme()
   const {signInWithGoogle} = useAuthCall()
+  const { t } = useTranslation();
+
   return (
     <div>
       <Form>
@@ -82,7 +85,7 @@ const RegisterForm = ({
           />
           <TextField
             name="email"
-            label="Email"
+            label={t("email")}
             type="email"
             value={values.email}
             onChange={handleChange}

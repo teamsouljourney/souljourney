@@ -123,7 +123,7 @@
 
   "SERVICES": "SERVICES",
 
-  "PPRICING": "PPRICING",
+  "PRICING": "PRICING",
 
   "TEAM": "TEAM",
 
@@ -152,5 +152,31 @@
   "NOTFOUND": "NOTFOUND",
   "pageNotFound": "Page Not Found",
   "textNot": "The page you are looking for does not exist.",
-  "goHome": "⬅ Go Back to Home"
+  "goHome": "⬅ Go Back to Home",
+
+  "register": "Register",
+  "haveAccount": "Already have an account?",
+  "signin": "Sign in",
+  "username": "Username",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "password": "Password",
+  "loading": "Loading",
+  "signUp": "Sign Up",
+  "signUpWith": "Sign up with",
+  "signIn": "Sign In",
+  "signInWith": "Sign in with",
+  "dontHaveAccount": "Don't have an account?",
+  "forgotYour": "Forgot your",
+  "registerHeader": "Create Your Account and Start Healing",
+  "loginHeader": "Ready to Continue Your Journey?",
+
+  "SIDEBAR": "SIDEBAR",
+  "menu": "Menu",
+  "dashboard": "Dashboard",
+  "appointment": "Appointment",
+  "writeBlog": "Write Blog",
+  "chat": "Chat",
+  "videoCall": "Video Call",
+  "myAccount": "My Account"
 }

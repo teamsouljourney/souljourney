@@ -153,5 +153,31 @@
   "NOTFOUND": "NOTFOUND",
   "pageNotFound": "Seite nicht gefunden",
   "textNot": "Die gesuchte Seite existiert nicht.",
-  "goHome": "⬅ Zurück zur Startseite"
+  "goHome": "⬅ Zurück zur Startseite",
+
+  "register": "Registrieren",
+  "haveAccount": "Haben Sie bereits ein Konto?",
+  "signin": "Anmelden",
+  "username": "Benutzername",
+  "firstName": "Vorname",
+  "lastName": "Nachname",
+  "password": "Passwort",
+  "loading": "Lädt",
+  "signUp": "Registrieren",
+  "signUpWith": "Registrieren mit",
+  "signIn": "Anmelden",
+  "signInWith": "Anmelden mit",
+  "dontHaveAccount": "Haben Sie kein Konto?",
+  "forgotYour": "Haben Sie Ihr",
+  "registerHeader": "Erstellen Sie Ihr Konto und beginnen Sie mit der Heilung",
+  "loginHeader": "Bereit, Ihre Reise fortzusetzen?",
+
+  "SIDEBAR": "SEITENLEISTE",
+  "menu": "Menü",
+  "dashboard": "Dashboard",
+  "appointment": "Termin",
+  "writeBlog": "Blog schreiben",
+  "chat": "Chat",
+  "videoCall": "Videoanruf",
+  "myAccount": "Mein Konto"
 }

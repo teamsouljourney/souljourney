@@ -9,9 +9,11 @@ import { SignupSchema } from '../components/auth/RegisterForm';
 import { Link } from 'react-router-dom';
 import { authContainerStyle, authMainContainerGridStyle, authFormContainerGridStyle, } from '../styles/globalStyle';
 import useAuthCall from '../hooks/useAuthCall';
+import { useTranslation } from "react-i18next";
 
 const Register = () => {
   const {register} = useAuthCall()
+  const { t } = useTranslation();
   return (
     <Container
       maxWidth="xxl"
@@ -69,7 +71,7 @@ const Register = () => {
               }
             }}
           >
-            Register
+            {t("register")}
           </Typography>
           <Formik
             initialValues={{

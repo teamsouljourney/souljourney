@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const icon = (name) => `/assets/sidebar/${name}.svg`;
 const NavLinkto = (to) => `/profile/${to}`;
+import { useTranslation } from "react-i18next";
 
 const menu = [
   {
@@ -32,6 +33,7 @@ const menu = [
 ];
 
 const SidebarListItems = () => {
+  const { t } = useTranslation();
   return (
     <>
       <div className="flex flex-col h-full overflow-y-auto overflow-x-hidden flex-grow pt-2 justify-between">
@@ -119,7 +121,7 @@ const SidebarListItems = () => {
             ></span>
           </span>
           <span className="ml-2 text-sm text-navy-dark group-hover:text-red-400 dark:text-offWhite-dark tracking-wide truncate capitalize hidden lg:block">
-            Logout
+            {t("logout")}
           </span>
         </div>
       </div> */}

@@ -5,6 +5,7 @@ import { authButtonBoxStyle, authFormBoxStyle, btnStyle } from "../../styles/glo
 import googleLogo from "../../assets/loginRegisterImage/Google.png";
 import PasswordField from "./PasswordField";
 import useAuthCall from "../../hooks/useAuthCall";
+import { useTranslation } from "react-i18next";
 
 export const loginSchema = object({
   // userName: string()
@@ -28,6 +29,7 @@ const LoginForm = ({
   // console.log(errors, touched);
   const theme = useTheme();
   const { signInWithGoogle } = useAuthCall();
+  const { t } = useTranslation();
   return (
     <div>
       <Form
@@ -36,7 +38,7 @@ const LoginForm = ({
         <Box sx={authFormBoxStyle}>
           <TextField
             name="email"
-            label="Email"
+            label={t("email")}
             type="text"
             value={values.email}
             onChange={handleChange}

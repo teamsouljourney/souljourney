@@ -1,7 +1,9 @@
 import { Typography } from '@mui/material'
 import Grid from '@mui/material/Grid2'
+import { useTranslation } from "react-i18next";
 
 const LoginHeader = () => {
+  const { t } = useTranslation();
   return (
     <Grid xs={12} mb={3}>
       <Typography

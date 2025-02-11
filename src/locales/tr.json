@@ -153,5 +153,31 @@
   "NOTFOUND": "NOTFOUND",
   "pageNotFound": "Sayfa Bulunamadı",
   "textNot": "Aradığınız sayfa mevcut değil.",
-  "goHome": "⬅ Ana Sayfaya Dön"
+  "goHome": "⬅ Ana Sayfaya Dön",
+
+  "register": "Kayıt Ol",
+  "haveAccount": "Zaten bir hesabınız var mı?",
+  "signin": "Giriş Yap",
+  "username": "Kullanıcı Adı",
+  "firstName": "Ad",
+  "lastName": "Soyad",
+  "password": "Şifre",
+  "loading": "Yükleniyor",
+  "signUp": "Kaydol",
+  "signUpWith": "Şununla kaydol",
+  "signIn": "Giriş Yap",
+  "signInWith": "Şununla giriş yap",
+  "dontHaveAccount": "Hesabınız yok mu?",
+  "forgotYour": "Şifrenizi mi unuttunuz?",
+  "registerHeader": "Hesabınızı Oluşturun ve İyileşmeye Başlayın",
+  "loginHeader": "Yolculuğunuza Devam Etmeye Hazır mısınız?",
+
+  "SIDEBAR": "YAN MENÜ",
+  "menu": "Menü",
+  "dashboard": "Gösterge Paneli",
+  "appointment": "Randevu",
+  "writeBlog": "Blog Yaz",
+  "chat": "Sohbet",
+  "videoCall": "Görüntülü Arama",
+  "myAccount": "Hesabım"
 }
