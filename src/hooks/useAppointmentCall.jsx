@@ -4,6 +4,7 @@ import {
   fetchStart,
   fetchFail,
   createAppointmentSuccess,
+  getSingleAppointmentSuccess,
   getAllAppointmentsSuccess,
   updateAppointmentSuccess,
   deleteAppointmentSuccess,
@@ -25,6 +26,21 @@ const useAppointmentCall = () => {
       toastErrorNotify(
         error.response.data.message,
         "Failed to fetch therapists."
+      );
+    }
+  };
+
+  //* Read Appointment
+  const getSingleAppointment = async (id) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosWithToken.get(`appointments/${id}`);
+      dispatch(getSingleAppointmentSuccess(data.data));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response.data.message,
+        "Failed to fetch therapist details."
       );
     }
   };
@@ -83,6 +99,7 @@ const useAppointmentCall = () => {
 
   return {
     getAllAppointments,
+    getSingleAppointment,
     createAppointment,
     updateAppointment,
     deleteAppointment,
