@@ -2,10 +2,10 @@ import { useSelector } from "react-redux";
 import { toastErrorNotify } from "../../helper/ToastNotify";
 import useAppointmentCall from "../../hooks/useAppointmentCall";
 
-const AppointmentActions = ({ selectedSlot }) => {
+const AppointmentActions = () => {
   const { createAppointment } = useAppointmentCall();
   const { currentUser } = useSelector((state) => state.auth);
-  const { selectedDate } = useSelector((state) => state.calendar);
+  const { selectedDate, selectedSlot } = useSelector((state) => state.calendar);
   const { singleTherapist } = useSelector((state) => state.therapists);
 
   const handleCreateAppointment = () => {

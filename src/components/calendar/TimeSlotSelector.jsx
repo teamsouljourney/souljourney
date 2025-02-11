@@ -1,13 +1,26 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setSelectedSlot } from "../../features/calendarSlice";
 
-const TimeSlotSelector = ({
-  selectedDate,
-  selectedSlot,
-  generateTimeSlots,
-  isSlotUnavailable,
-}) => {
+const TimeSlotSelector = () => {
   const dispatch = useDispatch();
+  const { therapistTimeTable } = useSelector((state) => state.therapists);
+  const { selectedDate, selectedSlot } = useSelector((state) => state.calendar);
+
+  const generateTimeSlots = () => {
+    const slots = [];
+    for (let hour = 8; hour <= 18; hour++) {
+      slots.push(`${hour}:00 - ${hour + 1}:00`);
+    }
+    return slots;
+  };
+
+  const isSlotUnavailable = (date, slot) => {
+    const slotStartTime = new Date(`${date}T${slot.split(" ")[0]}:00`);
+
+    return therapistTimeTable.some(
+      (entry) => new Date(entry.startTime).getTime() === slotStartTime.getTime()
+    );
+  };
 
   const handleSlotSelect = (slot) => {
     if (!isSlotUnavailable(selectedDate, slot)) {
