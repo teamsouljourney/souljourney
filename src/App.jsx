@@ -13,11 +13,14 @@ function App() {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#2E5077", // dark blue
+        main: "#2E5077", // Navy Blue (Main color)
+        light: "#436285", // Light Navy Blue
+        dark: "#29486b", // Dark Navy Blue
       },
       secondary: {
-        main: "#F6F4F0", // Light Cream
-        // second: "#"
+        main: "#F6F4F0", // Off-White (Main color)
+        light: "#F7F5F2", // Lighter Off-White
+        dark: "#dddcd8", // Darker Off-White
       },
       customColors: {
         pink: "#D798B0",
