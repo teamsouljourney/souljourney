@@ -8,6 +8,7 @@ const appointmentSlice = createSlice({
     error: false,
     appointments: [],
     singleAppointment: null,
+    currentUserAppointments: [],
   },
   reducers: {
     fetchStart: (state) => {
@@ -22,6 +23,11 @@ const appointmentSlice = createSlice({
     getSingleAppointmentSuccess: (state, { payload }) => {
       state.loading = false;
       state.singleAppointment = payload;
+      state.error = false;
+    },
+    getCurrentUserAppointmentsSuccess: (state, { payload }) => {
+      state.loading = false;
+      state.currentUserAppointments = payload;
       state.error = false;
     },
     createAppointmentSuccess: (state, { payload }) => {
@@ -55,6 +61,7 @@ export const {
   fetchFail,
   getAllAppointmentsSuccess,
   getSingleAppointmentSuccess,
+  getCurrentUserAppointmentsSuccess,
   createAppointmentSuccess,
   updateAppointmentSuccess,
   deleteAppointmentSuccess,
