@@ -10,8 +10,8 @@ import { useTranslation } from "react-i18next";
 export const loginSchema = (t) => 
   object({
     email: string()
-      .email(t("appointment"))
-      .required(t("chat")),
+      .email(t("Please enter a valid email address"))
+      .required(t("Email is required")),
     password: string().required(t("Password is required")),
 });
 

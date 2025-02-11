@@ -7,26 +7,26 @@ import PasswordField from "./PasswordField";
 import useAuthCall from "../../hooks/useAuthCall";
 import { useTranslation } from "react-i18next";
 
-export const SignupSchema = Yup.object().shape({
+export const SignupSchema = (t) => Yup.object().shape({
   userName: Yup.string()
-    .required("Username is required!")
-    .min(3, "Username must be at least 3 characters!"),
+    .required(t("Username is required!"))
+    .min(3, t("Username must be at least 3 characters!")),
   firstName: Yup.string()
-    .min(2, "First name is too short! It should be at least 2 characters.")
-    .max(50, "First name is too long! It should be at most 50 characters.")
-    .required("First name is required!"),
+    .min(2, t("First name is too short! It should be at least 2 characters."))
+    .max(50, t("First name is too long! It should be at most 50 characters."))
+    .required(t("First name is required!")),
   lastName: Yup.string()
-    .min(2, "Last name is too short! It should be at least 2 characters.")
-    .max(50, "Last name is too long! It should be at most 50 characters.")
-    .required("Last name is required!"),
-  email: Yup.string().email("Please enter a valid email address!").required("Email is required!"),
+    .min(2, t("Last name is too short! It should be at least 2 characters."))
+    .max(50, t("Last name is too long! It should be at most 50 characters."))
+    .required(t("Last name is required!")),
+  email: Yup.string().email(t("Please enter a valid email address!")).required(t("Email is required!")),
   password: Yup.string()
-    .required("Password is required!")
-    .min(8, "Password must be at least 8 characters long!")
-    .matches(/\d+/, "Password must contain at least one digit!")
-    .matches(/[a-z]/, "Password must contain at least one lowercase letter!")
-    .matches(/[A-Z]/, "Password must contain at least one uppercase letter!")
-    .matches(/[@$?!%&*]+/, "Password must contain at least one special character (@$?!%&*)")
+    .required(t("Password is required!"))
+    .min(8, t("Password must be at least 8 characters long!"))
+    .matches(/\d+/, t("Password must contain at least one digit!"))
+    .matches(/[a-z]/, t("Password must contain at least one lowercase letter!"))
+    .matches(/[A-Z]/, t("Password must contain at least one uppercase letter!"))
+    .matches(/[@$?!%&*]+/, t("Password must contain at least one special character (@$?!%&*)"))
 });
 
 const RegisterForm = ({

@@ -14,6 +14,7 @@ import { useTranslation } from "react-i18next";
 const Register = () => {
   const {register} = useAuthCall()
   const { t } = useTranslation();
+  const schemaRegister = SignupSchema(t)
   return (
     <Container
       maxWidth="xxl"
@@ -81,7 +82,7 @@ const Register = () => {
               email: "",
               password: "",
             }}
-            validationSchema={SignupSchema}
+            validationSchema={schemaRegister}
             onSubmit={(values, actions) => {
               console.log(values);
               register(values)
