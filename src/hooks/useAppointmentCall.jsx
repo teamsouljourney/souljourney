@@ -11,10 +11,13 @@ import {
   getCurrentUserAppointmentsSuccess,
 } from "../features/appointmentSlice";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
+import { setSelectedSlot } from "../features/calendarSlice";
+import useTherapistCall from "./useTherapistCall";
 
 const useAppointmentCall = () => {
   const dispatch = useDispatch();
   const axiosWithToken = useAxios();
+  const { getTherapistTimeTable } = useTherapistCall();
 
   //* List Appointments
   const getAllAppointments = async () => {
@@ -70,6 +73,8 @@ const useAppointmentCall = () => {
         appointmentData
       );
       dispatch(createAppointmentSuccess(data));
+      dispatch(setSelectedSlot(null));
+      // dispatch(setSelectedDate(null));
       toastSuccessNotify("Appointment created successfully!");
     } catch (error) {
       dispatch(fetchFail());
@@ -77,6 +82,8 @@ const useAppointmentCall = () => {
         error.response.data.message,
         "Oops! Something went wrong during appointment creation."
       );
+    } finally {
+      getTherapistTimeTable(appointmentData.therapistId);
     }
   };
 

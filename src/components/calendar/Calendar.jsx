@@ -1,8 +1,25 @@
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setSelectedDate } from "../../features/calendarSlice";
+import { useEffect } from "react";
 
-const Calendar = ({ handleDateSelect }) => {
+const Calendar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleDateSelect = (date) => {
+    dispatch(setSelectedDate(date));
+  };
+
+  useEffect(() => {
+    return () => {
+      dispatch(setSelectedDate(null));
+    };
+  }, [navigate]);
+
   const today = new Date();
   const todayFormatted = today.toISOString().split("T")[0];
 
