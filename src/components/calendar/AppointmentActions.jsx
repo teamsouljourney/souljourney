@@ -17,7 +17,8 @@ const AppointmentActions = () => {
     const startTime = new Date(
       `${selectedDate}T${selectedSlot.split(" ")[0]}:00`
     );
-    const endTime = new Date(startTime.getTime() + 60 * 60 * 1000);
+
+    const endTime = new Date(startTime.getTime() + 50 * 60 * 1000);
 
     const appointmentData = {
       userId: currentUser?._id,

@@ -29,6 +29,9 @@ const Appointment = () => {
     getSingleAppointment(info.event?._def.publicId);
   };
 
+  const today = new Date();
+  const todayFormatted = today.toISOString().split("T")[0];
+
   return (
     <div className="p-4">
       <h2 className="mb-4 text-xl font-semibold">Appointments</h2>
@@ -37,6 +40,7 @@ const Appointment = () => {
         initialView="dayGridMonth"
         events={formattedEvents}
         eventClick={handleEventClick}
+        validRange={{ start: todayFormatted }}
         editable={true}
         selectable={true}
         headerToolbar={{

@@ -8,7 +8,7 @@ const TimeSlotSelector = () => {
 
   const generateTimeSlots = () => {
     const slots = [];
-    for (let hour = 8; hour <= 18; hour++) {
+    for (let hour = 9; hour <= 18; hour++) {
       slots.push(
         `${String(hour).padStart(2, "0")}:00 - ${String(hour).padStart(
           2,
@@ -21,6 +21,14 @@ const TimeSlotSelector = () => {
 
   const isSlotUnavailable = (date, slot) => {
     const slotStartTime = new Date(`${date}T${slot.split(" ")[0]}:00`);
+    // console.log(slotStartTime);
+    const now = new Date();
+
+    if (new Date(date).toDateString() === now.toDateString()) {
+      if (slotStartTime < now) {
+        return true;
+      }
+    }
 
     return therapistTimeTable?.some(
       (entry) => new Date(entry.startTime).getTime() === slotStartTime.getTime()
