@@ -18,6 +18,7 @@ const Calendar = ({ handleDateSelect }) => {
         center: "title",
         right: "dayGridMonth,dayGridWeek,dayGridDay",
       }}
+      hiddenDays={[0, 6]}
       height="auto"
     />
   );

@@ -99,7 +99,7 @@ const useAppointmentCall = () => {
   };
 
   //* Delete appointment
-  const deleteAppointment = async (id) => {
+  const deleteAppointment = async (id, userId) => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.delete(`appointments/${id}`);
@@ -110,6 +110,8 @@ const useAppointmentCall = () => {
       toastErrorNotify(
         error.response?.data?.message || "Failed to delete appointment."
       );
+    } finally {
+      getUserAppointments(userId);
     }
   };
 
