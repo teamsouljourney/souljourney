@@ -59,16 +59,16 @@ const AppointmentCard = () => {
         </div>
 
         {/* Butonlar */}
-        <div className="flex justify-between mt-4">
+        <div className="flex gap-4 mt-4">
           <button
             onClick={handleEdit}
-            className="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+            className="px-2 py-1 text-sm transition duration-300 rounded-lg sm:text-base text-offWhite bg-seaGreen hover:bg-navy"
           >
             Edit Appointment
           </button>
           <button
             onClick={handleCancel}
-            className="px-4 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700"
+            className="px-2 py-1 text-sm text-white transition duration-300 rounded-lg sm:text-base bg-mauve hover:bg-mauve-dark"
           >
             Cancel Appointment
           </button>
