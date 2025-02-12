@@ -12,22 +12,21 @@ import { useTranslation } from "react-i18next";
 const Account = () => {
   const { t } = useTranslation();
   return (
-    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-6 self-stretch bg-default-background py-12 shadow-sm">
+    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-1 self-stretch bg-offWhite-light py-8 shadow-sm">
 
       {/* Profile */}
 
-
-      <div className="flex w-full max-w-[576px] flex-col items-start gap-12">
+      <div className="flex w-full max-w-[576px] flex-col items-start gap-6 border-b-2">
         <div className="flex w-full flex-col items-start gap-1">
-          <span className="w-full text-heading-2 font-heading-2 text-default-font">
+          <span className="w-full text-heading-2 font-heading-2 text-default-font text-2xl">
             Account
           </span>
           <span className="w-full text-body font-body text-subtext-color">
             Update your profile and personal details here
           </span>
         </div>
-        <div className="flex w-full flex-col items-start gap-6">
-          <span className="text-heading-3 font-heading-3 text-default-font">
+        <div className="flex w-full flex-col items-start gap-2">
+          <span className="text-heading-3 font-heading-3 text-default-font text-lg">
             Profile
           </span>
           <div className="flex w-full flex-col items-start gap-4">
@@ -112,20 +111,6 @@ const Account = () => {
                 </div>
               </div>
 
-              {/* <div class="sm:col-span-3">
-          <label for="country" class="block text-sm/6 font-medium text-gray-900">Country</label>
-          <div class="mt-2 grid grid-cols-1">
-            <select id="country" name="country" autocomplete="country-name" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-              <option>United States</option>
-              <option>Canada</option>
-              <option>Mexico</option>
-            </select>
-            <svg class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
-              <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-            </svg>
-          </div>
-              </div> */}
-
               {/* Personel Info */}
               <div class="sm:col-span-4">
                 <label
@@ -147,7 +132,7 @@ const Account = () => {
               </div>
               <div class="col-span-full">
                 <label
-                  for="email"
+                  for="profession"
                   class="block text-sm/6 font-medium text-gray-900"
                 >
                   Profession
@@ -171,7 +156,7 @@ const Account = () => {
                   Address
                 </label>
                 <div class="mt-2">
-                  <input
+                  <textarea
                     type="address"
                     name="address"
                     id="address"
@@ -182,7 +167,7 @@ const Account = () => {
                 </div>
               </div>
 
-              <div class="col-span-full">
+              {/* <div class="col-span-full">
                 <label
                   for="about"
                   class="block text-sm/6 font-medium text-gray-900"
@@ -200,53 +185,10 @@ const Account = () => {
                 <p class="mt-3 text-sm/6 text-gray-600">
                   Write a few sentences about yourself.
                 </p>
-              </div>
-
-              {/* <div class="sm:col-span-2 sm:col-start-1">
-          <label for="city" class="block text-sm/6 font-medium text-gray-900">City</label>
-          <div class="mt-2">
-            <input type="text" name="city" id="city" autocomplete="address-level2" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"/>
-          </div>
-              </div>
-
-              <div class="sm:col-span-2">
-          <label for="region" class="block text-sm/6 font-medium text-gray-900">State / Province</label>
-          <div class="mt-2">
-            <input type="text" name="region" id="region" autocomplete="address-level1" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"/>
-          </div>
-              </div>
-
-              <div class="sm:col-span-2">
-          <label for="postal-code" class="block text-sm/6 font-medium text-gray-900">ZIP / Postal code</label>
-          <div class="mt-2">
-            <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"/>
-          </div>
               </div> */}
+
             </div>
           </div>
-
-          {/* <TextField
-          className="h-auto grow shrink-0 basis-0"
-          label="First name"
-          helpText=""
-        >
-          <TextField.Input
-            placeholder="Josef"
-            value=""
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {}}
-          />
-          </TextField>
-          <TextField
-          className="h-auto grow shrink-0 basis-0"
-          label="Last name"
-          helpText=""
-        >
-          <TextField.Input
-            placeholder="Albers"
-            value=""
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {}}
-          />
-          </TextField> */}
         </div>
         <div className="flex w-full items-center gap-4">
           {/* <TextField
@@ -262,26 +204,56 @@ const Account = () => {
           </TextField> */}
         </div>
       </div>
+      <div className="flex h-px w-full flex-none flex-col items-center gap-2 bg-neutral-border" />
 
       {/* Password */}
       
-      <div className="flex h-px w-full flex-none flex-col items-center gap-2 bg-neutral-border" />
-      <div className="flex w-full max-w-[576px] flex-col items-start gap-12">
-        <span className="text-heading-3 font-heading-3 text-default-font">
+      <div className="flex w-full max-w-[576px] flex-col items-start gap-4 border-b-2">
+        <span className="text-heading-3 font-heading-3 text-default-font text-lg">
           Password
         </span>
 
-        <div class="sm:col-span-4">
-          <label for="phone" class="block text-sm/6 font-medium text-gray-900">
-            Phone
+        <div class="sm:col-span-4 ">
+          <label for="password" class="block text-sm/6 font-medium text-gray-900">
+            Current Password
           </label>
           <div class="mt-2">
             <input
-              id="phone"
-              name="phone"
-              type="phone"
-              placeholder="Write your phone..."
-              autocomplete="phone"
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Write your current password..."
+              autocomplete="password"
+              class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+            />
+          </div>
+        </div>
+        <div class="sm:col-span-4 ">
+          <label for="new-password" class="block text-sm/6 font-medium text-gray-900">
+            New Password
+          </label>
+          <div class="mt-2">
+            <input
+              id="new-password"
+              name="new-password"
+              type="password"
+              placeholder="Write your new password..."
+              autocomplete="password"
+              class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+            />
+          </div>
+        </div>
+        <div class="sm:col-span-4 ">
+          <label for="retype-password" class="block text-sm/6 font-medium text-gray-900">
+            New Password
+          </label>
+          <div class="mt-2">
+            <input
+              id="retype-password"
+              name="retype-password"
+              type="password"
+              placeholder="Re-write your new password..."
+              autocomplete="password"
               class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
             />
           </div>
@@ -325,12 +297,14 @@ const Account = () => {
         </Button> */}
         </div>
       </div>
-      <div className="flex h-px w-full flex-none flex-col items-center gap-2 bg-neutral-border" />
+
+      {/* ------- */}
+      <div className="flex h-px w-full flex-none flex-col items-center gap-2 bg-neutral-border " />
 
       {/* Delete Account */}
 
       <div className="flex w-full max-w-[576px] flex-col items-start gap-12">
-        <span className="text-heading-3 font-heading-3 text-default-font">
+        <span className="text-heading-3 font-heading-3 text-default-font text-lg">
           Danger zone/Delete Account
         </span>
         {/* <Alert
