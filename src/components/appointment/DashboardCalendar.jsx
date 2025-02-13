@@ -3,9 +3,11 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import useAppointmentCall from "../../hooks/useAppointmentCall";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedDate } from "../../features/calendarSlice";
 
 const DashboardCalendar = () => {
+  const dispatch = useDispatch();
   const { getSingleAppointment } = useAppointmentCall();
 
   const { currentUser } = useSelector((state) => state.auth);
@@ -13,12 +15,16 @@ const DashboardCalendar = () => {
     (state) => state.appointments
   );
 
-  const today = new Date();
-  const todayFormatted = today.toISOString().split("T")[0];
-
   const handleEventClick = (info) => {
     getSingleAppointment(info.event?._def.publicId);
   };
+
+  const handleDateSelect = (date) => {
+    dispatch(setSelectedDate(date));
+  };
+
+  const today = new Date();
+  const todayFormatted = today.toISOString().split("T")[0];
 
   const formattedEvents = currentUserAppointments?.map((appointment) => ({
     id: appointment._id,
@@ -35,6 +41,7 @@ const DashboardCalendar = () => {
       initialView="dayGridMonth"
       events={formattedEvents}
       eventClick={handleEventClick}
+      select={(info) => handleDateSelect(info.startStr)}
       validRange={{ start: todayFormatted }}
       editable={true}
       selectable={true}

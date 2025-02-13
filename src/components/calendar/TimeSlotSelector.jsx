@@ -44,7 +44,9 @@ const TimeSlotSelector = () => {
   return (
     <div className="p-4 mt-4 border rounded bg-offWhite">
       <h3 className="font-semibold text-mauve text-md">
-        Selected Date: {selectedDate}
+        {selectedDate
+          ? `Selected Date: ${selectedDate}`
+          : "Please select a date from the calendar"}
       </h3>
       <div className="flex flex-wrap gap-2 mt-2">
         {generateTimeSlots().map((slot, index) => {
