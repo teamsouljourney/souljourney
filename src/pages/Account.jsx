@@ -196,7 +196,8 @@ const Account = () => {
                     : "/assets/invisible1.svg"
                 }
                 alt={showPassword ? "Hide password" : "Show password"}
-                className="w-4 h-4  opacity-60 hover:opacity-100 transition-opacity"
+                className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
+                draggable="false"
               />
             </button>
           </div>
@@ -230,7 +231,8 @@ const Account = () => {
                     : "/assets/invisible1.svg"
                 }
                 alt={showPassword ? "Hide password" : "Show password"}
-                className="w-4 h-4  opacity-60 hover:opacity-100 transition-opacity"
+                className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
+                draggable="false"
               />
             </button>
           </div>
@@ -264,7 +266,8 @@ const Account = () => {
                     : "/assets/invisible1.svg"
                 }
                 alt={showPassword ? "Hide password" : "Show password"}
-                className="w-4 h-4  opacity-60 hover:opacity-100 transition-opacity"
+                className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
+                draggable="false"
               />
             </button>
           </div>
