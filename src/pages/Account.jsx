@@ -14,7 +14,7 @@ const Account = () => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light px-4 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-gray-700">
+    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light px-4 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-background-darker">
       {/* Update Profile Section */}
 
       <div className="flex w-full max-w-[576px] flex-col items-start gap-10 border-b-2 border-b-gray-200 dark:border-b-gray-400">
@@ -25,9 +25,9 @@ const Account = () => {
         </div>
         {/* Profile Section */}
         <div className="flex w-full flex-col items-start gap-2">
-          <span className="text-lg font-medium">{t("profile")}</span>
+          <span className="text-lg font-medium mb-4">{t("profile")}</span>
           <div className="flex w-full flex-col items-start gap-4">
-            <span>John Doe</span>
+            <span className="text-2xl">John Doe</span>
             <div className="flex items-center gap-4">
               <img
                 className="h-16 w-16 flex-none object-cover [clip-path:circle()]"
@@ -37,7 +37,7 @@ const Account = () => {
               <div className="flex flex-col items-start gap-2">
                 <button
                   type="button"
-                  class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50 hover:shadow-lg"
+                  className="rounded-md bg-navy-dark text-offWhite-dark dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/80 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95"
                 >
                   Upload
                 </button>
@@ -49,98 +49,98 @@ const Account = () => {
           </div>
           <div className="flex w-full items-center gap-4">
             {/* Personel Info Field */}
-            <div class="mt-10 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-6">
-              <div class="sm:col-span-3">
-                <label for="firstName" class="block text-sm/6 font-medium">
+            <div className="mt-10 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-6">
+              <div className="sm:col-span-3">
+                <label for="firstName" className="block text-sm/6 font-medium">
                   {t("firstName")}
                 </label>
-                <div class="mt-2">
+                <div className="mt-2">
                   <input
                     type="text"
                     name="firstName"
                     id="firstName"
                     placeholder="Enter your name"
                     autocomplete="given-name"
-                    class="block w-full rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="block w-full rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
 
-              <div class="sm:col-span-3">
-                <label for="lastName" class="block text-sm/6 font-medium">
+              <div className="sm:col-span-3">
+                <label for="lastName" className="block text-sm/6 font-medium">
                   {t("lastName")}
                 </label>
-                <div class="mt-2">
+                <div className="mt-2">
                   <input
                     type="text"
                     name="lastName"
                     id="lastName"
                     placeholder="Enter your last name"
                     autocomplete="family-name"
-                    class="block w-full rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="block w-full rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
 
-              <div class="sm:col-span-4">
-                <label for="email" class="block text-sm/6 font-medium">
+              <div className="sm:col-span-4">
+                <label for="email" className="block text-sm/6 font-medium">
                   {t("email")}
                 </label>
-                <div class="mt-2">
+                <div className="mt-2">
                   <input
                     id="email"
                     name="email"
                     type="email"
                     placeholder="Enter your email"
                     autocomplete="email"
-                    class="block w-full rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="block w-full rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
 
               {/* Contact Info Field */}
-              <div class="sm:col-span-4">
-                <label for="phone" class="block text-sm/6 font-medium">
+              <div className="sm:col-span-4">
+                <label for="phone" className="block text-sm/6 font-medium">
                   {t("phone")}
                 </label>
-                <div class="mt-2">
+                <div className="mt-2">
                   <input
                     id="phone"
                     name="phone"
                     type="phone"
                     placeholder="Enter your phone"
                     autocomplete="phone"
-                    class="block w-full rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="block w-full rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
-              <div class="col-span-full">
-                <label for="profession" class="block text-sm/6 font-medium">
+              <div className="col-span-full">
+                <label for="profession" className="block text-sm/6 font-medium">
                   {t("profession")}
                 </label>
-                <div class="mt-2">
+                <div className="mt-2">
                   <input
                     id="profession"
                     name="profession"
                     type="text"
                     placeholder="Enter your profession (Student, Teacher.. ext.)"
                     autocomplete="profession"
-                    class="block w-full rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="block w-full rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
-              <div class="col-span-full">
-                <label for="address" class="block text-sm/6 font-medium">
+              <div className="col-span-full">
+                <label for="address" className="block text-sm/6 font-medium">
                   {t("address")}
                 </label>
-                <div class="mt-2">
+                <div className="mt-2">
                   <textarea
                     type="address"
                     name="address"
                     id="address"
                     placeholder="Enter your address"
                     autocomplete="address"
-                    class="block w-full rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6 mb-4"
+                    className="block w-full rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6 mb-4"
                   />
                 </div>
               </div>
@@ -157,7 +157,7 @@ const Account = () => {
         <span className="text-lg font-medium">Password</span>
         {/* Password input */}
         
-        <div className="w-full sm:col-span-4 relative">
+        <div className="sm:col-span-4 relative">
           <label htmlFor="password" className="block text-sm font-medium">
             Current Password
           </label>
@@ -168,7 +168,7 @@ const Account = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Enter current password"
               autoComplete="current-password"
-              className="block w-full min-w-[280px] rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
+              className="block min-w-[280px] rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
             />
             <button
               type="button"
@@ -178,18 +178,18 @@ const Account = () => {
               <img
                 src={
                   showPassword
-                    ? "/assets/visible1.svg"
-                    : "/assets/invisible1.svg"
+                    ? "/assets/visible.svg"
+                    : "/assets/invisible.svg"
                 }
                 alt={showPassword ? "Hide password" : "Show password"}
-                className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity dark:bgoff"
+                className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
                 draggable="false"
               />
             </button>
           </div>
         </div>
 
-        <div className="w-full sm:col-span-4 relative">
+        <div className="sm:col-span-4 relative">
           <label htmlFor="new-password" className="block text-sm font-medium">
             New Password
           </label>
@@ -200,7 +200,7 @@ const Account = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Enter new password"
               autoComplete="current-password"
-              className="block w-full min-w-[280px] rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
+              className="block min-w-[280px] rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
             />
             <button
               type="button"
@@ -210,8 +210,8 @@ const Account = () => {
               <img
                 src={
                   showPassword
-                    ? "/assets/visible1.svg"
-                    : "/assets/invisible1.svg"
+                    ? "/assets/visible.svg"
+                    : "/assets/invisible.svg"
                 }
                 alt={showPassword ? "Hide password" : "Show password"}
                 className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
@@ -235,7 +235,7 @@ const Account = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Re-type new password"
               autoComplete="retype-password"
-              className="block w-full min-w-[280px] rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
+              className="block min-w-[280px] rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
             />
             <button
               type="button"
@@ -245,8 +245,8 @@ const Account = () => {
               <img
                 src={
                   showPassword
-                    ? "/assets/visible1.svg"
-                    : "/assets/invisible1.svg"
+                    ? "/assets/visible.svg"
+                    : "/assets/invisible.svg"
                 }
                 alt={showPassword ? "Hide password" : "Show password"}
                 className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
@@ -256,10 +256,10 @@ const Account = () => {
           </div>
         </div>
 
-        <div className="flex w-full flex-col items-start justify-center gap-6">
+        <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
           <button
             type="button"
-            class="rounded-md bg-white text-navy-dark dark:text-white dark:bg-navy-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50 hover:shadow-lg mb-4"
+            className="rounded-md bg-navy-dark text-offWhite-dark dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/80 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4"
           >
             Change Password
           </button>
