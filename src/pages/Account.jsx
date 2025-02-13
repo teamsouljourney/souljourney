@@ -18,7 +18,7 @@ const Account = () => {
 
       {/* Update Profile Section */}
 
-      <div className="flex w-full max-w-[576px] flex-col items-start gap-10 border-b-2">
+      <div className="flex w-full max-w-[576px] flex-col items-start gap-10 border-b-2 border-b-gray-200 dark:border-b-gray-400">
         {/* Header */}
         <div className="flex w-full flex-col items-start gap-2 font-semibold">
           <span className="text-3xl">
@@ -119,7 +119,7 @@ const Account = () => {
                     type="phone"
                     placeholder="Enter your phone"
                     autocomplete="phone"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    class="block w-full rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -134,7 +134,7 @@ const Account = () => {
                     type="text"
                     placeholder="Enter your profession (Student, Teacher.. ext.)"
                     autocomplete="profession"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/600 sm:text-sm/6"
+                    class="block w-full rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -149,7 +149,7 @@ const Account = () => {
                     id="address"
                     placeholder="Enter your address"
                     autocomplete="address"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400  focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6 mb-4"
+                    class="block w-full rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6 mb-4"
                   />
                 </div>
               </div>
@@ -163,7 +163,7 @@ const Account = () => {
 
       {/* Reset Password Field */}
 
-      <div className="flex w-full max-w-[576px] flex-col items-start gap-4 border-b-2">
+      <div className="flex w-full max-w-[576px] flex-col items-start gap-4 border-b-2 border-b-gray-200 dark:border-b-gray-400">
         <span className="text-lg font-medium">
           Password
         </span>
