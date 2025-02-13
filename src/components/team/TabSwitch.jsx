@@ -23,14 +23,6 @@ const TabSwitch = () => {
     
   },[])
 
-  // const tablist = [
-  //   "All",
-  //   "Health Psychology",
-  //   "Educational Psychology",
-  //   "Neuropsychology",
-  //   "Marriage and Family ",
-  // ];
-
     // Kategoriyi değiştiren fonksiyon
   const handleTabClick = (category) => {
     setSelectedCategory(category._id || category.name);
@@ -53,20 +45,22 @@ const TabSwitch = () => {
 //   return isCategoryMatch && isSearchMatch; // Hem kategoriye hem de arama terimine uyanları göster
 // });
 const filteredTeams = (therapists || []).filter((therapist) => {
-  console.log(therapist);
+ 
   
   // therapist nesnesinin gerekli alanlarının tanımlı olup olmadığını kontrol et
   if (!therapist || !therapist.firstName || !therapist.lastName) return false;
 
-  const isCategoryMatch = selectedCategory === "All" || therapist.categoryId.name === selectedCategory;
+  const isCategoryMatch = selectedCategory === "All" || therapist.categoryId._id === selectedCategory;
   console.log(selectedCategory);
   
   const isSearchMatch =
     therapist.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    therapist.lastName.toLowerCase().includes(searchTerm.toLowerCase());
+    therapist.categoryId?.name?.toLowerCase().includes(searchTerm.toLowerCase());
+    console.log(isSearchMatch);
 
   return isCategoryMatch && isSearchMatch;
 });
+
 
 
  
@@ -75,9 +69,9 @@ const filteredTeams = (therapists || []).filter((therapist) => {
       <div className="w-full h-full mt-5  mx-auto">
         <div className=" opacity-3 p-1 rounded-t-lg">
           <div className="flex flex-wrap justify-center space-x-4 ">
-            {categories.slice(0,4).map((category) => (
+            {categories.slice(0,5).map((category) => (
               <button
-              key={category._id || category.name}
+              key={category._id}
                 className={"px-4 py-1 text-black font-semibold border-b-4 hover:bg-navy-light focus:outline-none tab-button transition-all duration-300 ease-in-out  rounded-lg"}
                 onClick={() => handleTabClick(category)}
               >
