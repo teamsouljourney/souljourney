@@ -5,12 +5,16 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import useAppointmentCall from "../../hooks/useAppointmentCall";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedDate } from "../../features/calendarSlice";
+import useTherapistCall from "../../hooks/useTherapistCall";
+import { useEffect } from "react";
 
 const DashboardCalendar = () => {
   const dispatch = useDispatch();
   const { getSingleAppointment } = useAppointmentCall();
+  const { getTherapistTimeTable } = useTherapistCall();
 
   const { currentUser } = useSelector((state) => state.auth);
+  const { singleAppointment } = useSelector((state) => state.appointments);
   const { currentUserAppointments } = useSelector(
     (state) => state.appointments
   );
@@ -18,6 +22,12 @@ const DashboardCalendar = () => {
   const handleEventClick = (info) => {
     getSingleAppointment(info.event?._def.publicId);
   };
+
+  useEffect(() => {
+    if (singleAppointment?.therapistId?._id) {
+      getTherapistTimeTable(singleAppointment.therapistId._id);
+    }
+  }, [singleAppointment]);
 
   const handleDateSelect = (date) => {
     dispatch(setSelectedDate(date));

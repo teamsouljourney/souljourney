@@ -2,24 +2,37 @@ import { useDispatch, useSelector } from "react-redux";
 import { setEditStatus, setSelectedSlot } from "../../features/calendarSlice";
 import TimeSlotSelector from "../calendar/TimeSlotSelector";
 import useAppointmentCall from "../../hooks/useAppointmentCall";
+import { toastErrorNotify } from "../../helper/ToastNotify";
 
 const AppointmentEdit = () => {
   const dispatch = useDispatch();
   const { updateAppointment } = useAppointmentCall();
 
   const { singleAppointment } = useSelector((state) => state.appointments);
-  const { selectedSlot } = useSelector((state) => state.calendar);
+  const { selectedDate, selectedSlot } = useSelector((state) => state.calendar);
+  const { currentUser } = useSelector((state) => state.auth);
 
   const handleSave = () => {
-    if (!selectedSlot) return;
+    if (!selectedSlot) {
+      toastErrorNotify("Please select a time slot.");
+      return;
+    }
+
+    const startTime = new Date(
+      `${selectedDate}T${selectedSlot.split(" ")[0]}:00`
+    );
+
+    const endTime = new Date(startTime.getTime() + 50 * 60 * 1000);
 
     const updatedData = {
-      appointmentDate: singleAppointment.appointmentDate,
-      startTime: selectedSlot.split(" - ")[0],
-      endTime: selectedSlot.split(" - ")[1],
+      userId: singleAppointment?.userId._id,
+      therapistId: singleAppointment?.therapistId._id,
+      appointmentDate: selectedDate,
+      startTime: startTime.toISOString(),
+      endTime: endTime.toISOString(),
     };
 
-    updateAppointment(singleAppointment._id, updatedData);
+    updateAppointment(singleAppointment._id, updatedData, currentUser._id);
   };
 
   return (

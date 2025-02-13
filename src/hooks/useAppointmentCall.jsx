@@ -91,7 +91,7 @@ const useAppointmentCall = () => {
   };
 
   //* Update appointment
-  const updateAppointment = async (id, updatedData) => {
+  const updateAppointment = async (id, updatedData, userId) => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.put(
@@ -105,6 +105,9 @@ const useAppointmentCall = () => {
       toastErrorNotify(
         error.response?.data?.message || "Failed to update appointment."
       );
+    } finally {
+      getUserAppointments(userId);
+      dispatch(getSingleAppointmentSuccess(null));
     }
   };
 

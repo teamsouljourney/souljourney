@@ -38,7 +38,8 @@ const appointmentSlice = createSlice({
     updateAppointmentSuccess: (state, { payload }) => {
       state.loading = false;
       state.currentUserAppointments = state.currentUserAppointments.map(
-        (appointment) => (appointment.id === payload.id ? payload : appointment)
+        (appointment) =>
+          appointment._id === payload._id ? payload : appointment
       );
       state.error = false;
     },

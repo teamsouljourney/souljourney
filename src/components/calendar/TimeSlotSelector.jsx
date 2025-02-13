@@ -6,6 +6,8 @@ const TimeSlotSelector = () => {
   const { therapistTimeTable } = useSelector((state) => state.therapists);
   const { selectedDate, selectedSlot } = useSelector((state) => state.calendar);
 
+  console.log(therapistTimeTable);
+
   const generateTimeSlots = () => {
     const slots = [];
     for (let hour = 9; hour <= 18; hour++) {
