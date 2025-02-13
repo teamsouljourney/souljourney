@@ -1,8 +1,28 @@
 import { NavLink } from "react-router-dom";
-import teams from "../../helper/team.json";
+// import teams from "../../helper/team.json";
 // import Card from "./Card";
 import HomeCard from "./HomeCard";
+import { useSelector } from "react-redux";
+import useBlogCall from "../../hooks/useBlogCall";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 const BlogsSection = () => {
+  const{blogs}=useSelector((state)=>state.blogs)
+  const{getAllBlogs}=useBlogCall();
+  // const { id } = useParams();
+  console.log(blogs);
+  
+ 
+
+   useEffect(()=>{
+    
+      getAllBlogs();
+      console.log("Blogs API cagirildi");
+      
+    },[])
+  
+
   return (
     <>
       <div className=" flex flex-col items-center gap-10 w-full">
@@ -23,7 +43,7 @@ const BlogsSection = () => {
         </div>
         {/* Card Component */}
         <div className="flex flex-wrap justify-center items-center">
-          <HomeCard teams={teams} />
+          <HomeCard blogs={blogs} />
         </div>
       </div>
     </>
