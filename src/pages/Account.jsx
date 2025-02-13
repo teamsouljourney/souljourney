@@ -37,7 +37,7 @@ const Account = () => {
               <div className="flex flex-col items-start gap-2">
                 <button
                   type="button"
-                  className="rounded-md bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95"
+                  className="rounded-md bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95"
                 >
                   Upload
                 </button>
@@ -150,7 +150,7 @@ const Account = () => {
           <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
           <button
             type="button"
-            className="rounded-md bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4 w-1/2 "
+            className="rounded-md bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4 w-1/2 "
           >
             Update Profile
           </button>
@@ -268,7 +268,7 @@ const Account = () => {
         <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
           <button
             type="button"
-            className="rounded-md bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4 w-1/2"
+            className="rounded-md bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4 w-1/2"
           >
             Change Password
           </button>
