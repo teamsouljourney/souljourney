@@ -14,7 +14,7 @@ const Account = () => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light px-4 py-8 shadow-sm text-navy-dark">
+    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light px-4 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-gray-700">
 
       {/* Update Profile Section */}
 
@@ -70,7 +70,7 @@ const Account = () => {
                     id="firstName"
                     placeholder="Enter your name"
                     autocomplete="given-name"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    class="block w-full rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -86,7 +86,7 @@ const Account = () => {
                     id="lastName"
                     placeholder="Enter your last name"
                     autocomplete="family-name"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    class="block w-full rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -100,9 +100,9 @@ const Account = () => {
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="Enter your email..."
+                    placeholder="Enter your email"
                     autocomplete="email"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    class="block w-full rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>

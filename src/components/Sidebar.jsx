@@ -60,7 +60,7 @@ const Sidebar = () => {
           </div>
         </div>
         {/* View Content */}
-        <div className="col-span-6 p-1 ">
+        <div className="col-span-6 ">
           <Outlet/>
         </div>
       </div>
