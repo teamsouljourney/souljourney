@@ -122,6 +122,7 @@ const useAppointmentCall = () => {
       );
     } finally {
       getUserAppointments(userId);
+      dispatch(getSingleAppointmentSuccess(null));
     }
   };
 
