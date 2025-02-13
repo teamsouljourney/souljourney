@@ -7,6 +7,9 @@ const calendarSlice = createSlice({
     appointments: [],
     selectedDate: null,
     selectedSlot: null,
+    isEditing: false,
+    loading: false,
+    error: false,
   },
   reducers: {
     fetchStart: (state) => {
@@ -20,6 +23,9 @@ const calendarSlice = createSlice({
     setSelectedSlot: (state, { payload }) => {
       state.selectedSlot = payload;
     },
+    setEditStatus: (state, { payload }) => {
+      state.isEditing = payload;
+    },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
@@ -27,7 +33,12 @@ const calendarSlice = createSlice({
   },
 });
 
-export const { fetchStart, fetchFail, setSelectedDate, setSelectedSlot } =
-  calendarSlice.actions;
+export const {
+  fetchStart,
+  fetchFail,
+  setSelectedDate,
+  setSelectedSlot,
+  setEditStatus,
+} = calendarSlice.actions;
 
 export default calendarSlice.reducer;
