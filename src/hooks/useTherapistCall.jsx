@@ -45,7 +45,7 @@ const useTherapistCall = () => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.get(`therapist-time-tables/${id}`);
-      dispatch(getTherapistTimeTableSuccess(data.data));
+      dispatch(getTherapistTimeTableSuccess(data?.data?.unavailableDates));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
