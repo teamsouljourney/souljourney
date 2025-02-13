@@ -14,7 +14,7 @@ const Account = () => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light px-4 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-background-darker">
+    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light pl-4 pr-6 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-background-darker">
       {/* Update Profile Section */}
 
       <div className="flex w-full max-w-[576px] flex-col items-start gap-10 border-b-2 border-b-gray-200 dark:border-b-gray-400">
@@ -49,8 +49,8 @@ const Account = () => {
           </div>
           <div className="flex w-full items-center gap-4">
             {/* Personel Info Field */}
-            <div className="mt-10 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-6">
-              <div className="sm:col-span-3">
+            <div className="mt-10 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 w-full max-w-[576px]">
+              <div className="sm:col-span-2">
                 <label for="firstName" className="block text-sm/6 font-medium">
                   {t("firstName")}
                 </label>
@@ -66,7 +66,7 @@ const Account = () => {
                 </div>
               </div>
 
-              <div className="sm:col-span-3">
+              <div className="sm:col-span-2">
                 <label for="lastName" className="block text-sm/6 font-medium">
                   {t("lastName")}
                 </label>
@@ -146,6 +146,15 @@ const Account = () => {
               </div>
             </div>
           </div>
+
+          <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
+          <button
+            type="button"
+            className="rounded-md bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4 w-1/2 "
+          >
+            Update Profile
+          </button>
+        </div>
         </div>
       </div>
       {/* ------- */}
@@ -259,7 +268,7 @@ const Account = () => {
         <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
           <button
             type="button"
-            className="rounded-md bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4"
+            className="rounded-md bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4 w-1/2"
           >
             Change Password
           </button>
