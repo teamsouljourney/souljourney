@@ -5,7 +5,7 @@ const Card = ({ team, variant = "default", blog }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="max-w-xs w-full bg-white rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-105 cursor-pointer flex flex-col">
+    <div className="max-w-xs w-full bg-white rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-105 cursor-pointer flex flex-col p-3">
       {/* Resim Alanı */}
       <div className="relative">
         <img
