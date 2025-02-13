@@ -22,7 +22,7 @@ const Account = () => {
         {/* Header */}
         <div className="flex w-full flex-col items-start gap-2 font-semibold">
           <span className="text-3xl">
-            Account
+            {t("account")}
           </span>
           <span>
             Update your profile and personal details here
@@ -31,7 +31,7 @@ const Account = () => {
         {/* Profile Section */}
         <div className="flex w-full flex-col items-start gap-2">
           <span className="text-lg font-medium">
-            Profile
+            {t("profile")}
           </span>
           <div className="flex w-full flex-col items-start gap-4">
             <span>
@@ -61,7 +61,7 @@ const Account = () => {
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
               <div class="sm:col-span-3">
                 <label for="firstName" class="block text-sm/6 font-medium">
-                  First name
+                  {t("firstName")}
                 </label>
                 <div class="mt-2">
                   <input
@@ -70,14 +70,14 @@ const Account = () => {
                     id="firstName"
                     placeholder="Enter your name"
                     autocomplete="given-name"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-dark sm:text-sm/6"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
 
               <div class="sm:col-span-3">
                 <label for="lastName" class="block text-sm/6 font-medium">
-                  Last name
+                {t("lastName")}
                 </label>
                 <div class="mt-2">
                   <input
@@ -86,23 +86,23 @@ const Account = () => {
                     id="lastName"
                     placeholder="Enter your last name"
                     autocomplete="family-name"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light sm:text-sm/6"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
 
               <div class="sm:col-span-4">
                 <label for="email" class="block text-sm/6 font-medium">
-                  Email
+                  {t("email")}
                 </label>
                 <div class="mt-2">
                   <input
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="Write your email..."
+                    placeholder="Enter your email..."
                     autocomplete="email"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -110,46 +110,46 @@ const Account = () => {
               {/* Contact Info Field */}
               <div class="sm:col-span-4">
                 <label for="phone" class="block text-sm/6 font-medium">
-                  Phone
+                  {t("phone")}
                 </label>
                 <div class="mt-2">
                   <input
                     id="phone"
                     name="phone"
                     type="phone"
-                    placeholder="Write your phone..."
+                    placeholder="Enter your phone"
                     autocomplete="phone"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
               <div class="col-span-full">
                 <label for="profession" class="block text-sm/6 font-medium">
-                  Profession
+                  {t("profession")}
                 </label>
                 <div class="mt-2">
                   <input
                     id="profession"
                     name="profession"
                     type="text"
-                    placeholder="Write your profession... (Student, Teacher.. ext.)"
+                    placeholder="Enter your profession (Student, Teacher.. ext.)"
                     autocomplete="profession"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/600 sm:text-sm/6"
                   />
                 </div>
               </div>
               <div class="col-span-full">
                 <label for="address" class="block text-sm/6 font-medium">
-                  Address
+                  {t("address")}
                 </label>
                 <div class="mt-2">
                   <textarea
                     type="address"
                     name="address"
                     id="address"
-                    placeholder="Write your address..."
+                    placeholder="Enter your address"
                     autocomplete="address"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400  focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 mb-4"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400  focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6 mb-4"
                   />
                 </div>
               </div>
@@ -182,7 +182,7 @@ const Account = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Enter current password"
               autoComplete="current-password"
-              className="block w-full min-w-[280px] rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
+              className="block w-full min-w-[280px] rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
             />
             <button
               type="button"
@@ -216,7 +216,7 @@ const Account = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Enter new password"
               autoComplete="current-password"
-              className="block w-full min-w-[280px] rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
+              className="block w-full min-w-[280px] rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
             />
             <button
               type="button"
@@ -250,7 +250,7 @@ const Account = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Re-type new password"
               autoComplete="retype-password"
-              className="block w-full min-w-[280px] rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
+              className="block w-full min-w-[280px] rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
             />
             <button
               type="button"
