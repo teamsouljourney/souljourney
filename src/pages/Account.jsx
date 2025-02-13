@@ -15,28 +15,19 @@ const Account = () => {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light px-4 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-gray-700">
-
       {/* Update Profile Section */}
 
       <div className="flex w-full max-w-[576px] flex-col items-start gap-10 border-b-2 border-b-gray-200 dark:border-b-gray-400">
         {/* Header */}
         <div className="flex w-full flex-col items-start gap-2 font-semibold">
-          <span className="text-3xl">
-            {t("account")}
-          </span>
-          <span>
-            Update your profile and personal details here
-          </span>
+          <span className="text-3xl">{t("account")}</span>
+          <span>Update your profile and personal details here</span>
         </div>
         {/* Profile Section */}
         <div className="flex w-full flex-col items-start gap-2">
-          <span className="text-lg font-medium">
-            {t("profile")}
-          </span>
+          <span className="text-lg font-medium">{t("profile")}</span>
           <div className="flex w-full flex-col items-start gap-4">
-            <span>
-              John Doe
-            </span>
+            <span>John Doe</span>
             <div className="flex items-center gap-4">
               <img
                 className="h-16 w-16 flex-none object-cover [clip-path:circle()]"
@@ -58,7 +49,7 @@ const Account = () => {
           </div>
           <div className="flex w-full items-center gap-4">
             {/* Personel Info Field */}
-            <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+            <div class="mt-10 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-6">
               <div class="sm:col-span-3">
                 <label for="firstName" class="block text-sm/6 font-medium">
                   {t("firstName")}
@@ -77,7 +68,7 @@ const Account = () => {
 
               <div class="sm:col-span-3">
                 <label for="lastName" class="block text-sm/6 font-medium">
-                {t("lastName")}
+                  {t("lastName")}
                 </label>
                 <div class="mt-2">
                   <input
@@ -156,7 +147,6 @@ const Account = () => {
             </div>
           </div>
         </div>
-        
       </div>
       {/* ------- */}
       {/* <div className="flex h-px w-full flex-none flex-col items-center bg-neutral-border" /> */}
@@ -164,15 +154,11 @@ const Account = () => {
       {/* Reset Password Field */}
 
       <div className="flex w-full max-w-[576px] flex-col items-start gap-4 border-b-2 border-b-gray-200 dark:border-b-gray-400">
-        <span className="text-lg font-medium">
-          Password
-        </span>
+        <span className="text-lg font-medium">Password</span>
         {/* Password input */}
-        <div className="sm:col-span-4 relative">
-          <label
-            htmlFor="password"
-            className="block text-sm font-medium"
-          >
+        
+        <div className="w-full sm:col-span-4 relative">
+          <label htmlFor="password" className="block text-sm font-medium">
             Current Password
           </label>
           <div className="mt-2 relative">
@@ -182,7 +168,7 @@ const Account = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Enter current password"
               autoComplete="current-password"
-              className="block w-full min-w-[280px] rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
+              className="block w-full min-w-[280px] rounded-md bg-white dark:bg-gray-600 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
             />
             <button
               type="button"
@@ -196,18 +182,15 @@ const Account = () => {
                     : "/assets/invisible1.svg"
                 }
                 alt={showPassword ? "Hide password" : "Show password"}
-                className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
+                className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity dark:bgoff"
                 draggable="false"
               />
             </button>
           </div>
         </div>
 
-        <div className="sm:col-span-4 relative">
-          <label
-            htmlFor="new-password"
-            className="block text-sm font-medium"
-          >
+        <div className="w-full sm:col-span-4 relative">
+          <label htmlFor="new-password" className="block text-sm font-medium">
             New Password
           </label>
           <div className="mt-2 relative">
@@ -274,9 +257,12 @@ const Account = () => {
         </div>
 
         <div className="flex w-full flex-col items-start justify-center gap-6">
-          {/* <Button onClick={(event: React.MouseEvent<HTMLButtonElement>) => {}}>
-          Change password
-        </Button> */}
+          <button
+            type="button"
+            class="rounded-md bg-white text-navy-dark dark:text-white dark:bg-navy-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50 hover:shadow-lg mb-4"
+          >
+            Change Password
+          </button>
         </div>
       </div>
 
@@ -286,9 +272,7 @@ const Account = () => {
       {/* Delete Account Field */}
 
       <div className="flex w-full max-w-[576px] flex-col items-start gap-12">
-        <span className="text-lg font-medium">
-          Danger zone/Delete Account
-        </span>
+        <span className="text-lg font-medium">Danger zone/Delete Account</span>
         {/* <Alert
         variant="error"
         icon={null}
