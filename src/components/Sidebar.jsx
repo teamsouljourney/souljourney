@@ -13,7 +13,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className=" w-dvw h-dvh grid grid-cols-7 bg-offWhite-light">
+      <div className=" w-dvw h-dvh grid grid-cols-7 bg-offWhite-light dark:bg-gray-700">
         {/* SideBar */}
         <div className="col-span-1 bg-white">
           <div className="xs:pb-2 sm:p-2 h-full w-full flex flex-col bg-offWhite dark:bg-navy border-r border-r-gray-200">
@@ -60,7 +60,7 @@ const Sidebar = () => {
           </div>
         </div>
         {/* View Content */}
-        <div className="col-span-6 ">
+        <div className="col-span-6">
           <Outlet/>
         </div>
       </div>
