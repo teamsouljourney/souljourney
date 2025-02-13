@@ -14,24 +14,27 @@ const Account = () => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light py-8 shadow-sm text-navy-dark">
-      {/* Profile */}
+    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light px-4 py-8 shadow-sm text-navy-dark">
+
+      {/* Update Profile Section */}
 
       <div className="flex w-full max-w-[576px] flex-col items-start gap-10 border-b-2">
-        <div className="flex w-full flex-col items-start gap-1">
-          <span className="w-full text-heading-2 font-heading-2 text-default-font text-2xl">
+        {/* Header */}
+        <div className="flex w-full flex-col items-start gap-2 font-semibold">
+          <span className="text-3xl">
             Account
           </span>
-          <span className="w-full text-body font-body text-subtext-color">
+          <span>
             Update your profile and personal details here
           </span>
         </div>
+        {/* Profile Section */}
         <div className="flex w-full flex-col items-start gap-2">
-          <span className="text-heading-3 font-heading-3 text-default-font text-lg">
+          <span className="text-lg font-medium">
             Profile
           </span>
           <div className="flex w-full flex-col items-start gap-4">
-            <span className="text-body-bold font-body-bold text-default-font">
+            <span>
               John Doe
             </span>
             <div className="flex items-center gap-4">
@@ -39,21 +42,22 @@ const Account = () => {
                 className="h-16 w-16 flex-none object-cover [clip-path:circle()]"
                 src="https://res.cloudinary.com/subframe/image/upload/v1711417513/shared/kwut7rhuyivweg8tmyzl.jpg"
               />
+              {/* Upload Profile Image Section */}
               <div className="flex flex-col items-start gap-2">
                 <button
                   type="button"
-                  class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50"
+                  class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50 hover:shadow-lg"
                 >
                   Upload
                 </button>
-                <span className="text-caption font-caption text-subtext-color">
+                <span>
                   For best results, upload an image 512x512 or larger.
                 </span>
               </div>
             </div>
           </div>
           <div className="flex w-full items-center gap-4">
-            {/* Input Field */}
+            {/* Personel Info Field */}
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
               <div class="sm:col-span-3">
                 <label for="firstName" class="block text-sm/6 font-medium">
@@ -64,9 +68,9 @@ const Account = () => {
                     type="text"
                     name="firstName"
                     id="firstName"
-                    placeholder="Write your first name..."
+                    placeholder="Enter your name"
                     autocomplete="given-name"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-dark sm:text-sm/6"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-dark sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -80,9 +84,9 @@ const Account = () => {
                     type="text"
                     name="lastName"
                     id="lastName"
-                    placeholder="Write your last name..."
+                    placeholder="Enter your last name"
                     autocomplete="family-name"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light sm:text-sm/6"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -98,12 +102,12 @@ const Account = () => {
                     type="email"
                     placeholder="Write your email..."
                     autocomplete="email"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   />
                 </div>
               </div>
 
-              {/* Personel Info */}
+              {/* Contact Info Field */}
               <div class="sm:col-span-4">
                 <label for="phone" class="block text-sm/6 font-medium">
                   Phone
@@ -115,7 +119,7 @@ const Account = () => {
                     type="phone"
                     placeholder="Write your phone..."
                     autocomplete="phone"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -130,7 +134,7 @@ const Account = () => {
                     type="text"
                     placeholder="Write your profession... (Student, Teacher.. ext.)"
                     autocomplete="profession"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -145,7 +149,7 @@ const Account = () => {
                     id="address"
                     placeholder="Write your address..."
                     autocomplete="address"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 mb-4"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400  focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 mb-4"
                   />
                 </div>
               </div>
@@ -154,19 +158,20 @@ const Account = () => {
         </div>
         
       </div>
-      <div className="flex h-px w-full flex-none flex-col items-center bg-neutral-border" />
+      {/* ------- */}
+      {/* <div className="flex h-px w-full flex-none flex-col items-center bg-neutral-border" /> */}
 
-      {/* Password */}
+      {/* Reset Password Field */}
 
       <div className="flex w-full max-w-[576px] flex-col items-start gap-4 border-b-2">
-        <span className="text-heading-3 font-heading-3 text-default-font text-lg">
+        <span className="text-lg font-medium">
           Password
         </span>
-
+        {/* Password input */}
         <div className="sm:col-span-4 relative">
           <label
             htmlFor="password"
-            className="block text-sm font-medium text-gray-900"
+            className="block text-sm font-medium"
           >
             Current Password
           </label>
@@ -200,7 +205,7 @@ const Account = () => {
         <div className="sm:col-span-4 relative">
           <label
             htmlFor="new-password"
-            className="block text-sm font-medium text-gray-900"
+            className="block text-sm font-medium"
           >
             New Password
           </label>
@@ -234,7 +239,7 @@ const Account = () => {
         <div className="sm:col-span-4 relative">
           <label
             htmlFor="retype-password"
-            className="block text-sm font-medium text-gray-900"
+            className="block text-sm font-medium"
           >
             Re-type New Password
           </label>
@@ -273,12 +278,12 @@ const Account = () => {
       </div>
 
       {/* ------- */}
-      <div className="flex h-px w-full flex-none flex-col items-center bg-neutral-border " />
+      {/* <div className="flex h-px w-full flex-none flex-col items-center bg-neutral-border " /> */}
 
-      {/* Delete Account */}
+      {/* Delete Account Field */}
 
       <div className="flex w-full max-w-[576px] flex-col items-start gap-12">
-        <span className="text-heading-3 font-heading-3 text-default-font text-lg">
+        <span className="text-lg font-medium">
           Danger zone/Delete Account
         </span>
         {/* <Alert
