@@ -16,7 +16,7 @@ const Card = ({ team, variant = "default", blog }) => {
       </div>
 
       {/* İçerik Alanı */}
-      <div className="p-6 flex-grow">
+      <div className="p-6 flex-grow flex flex-col justify-between">
         {team ? (
           <>
             <h2 className="text-xl font-bold mb-2 text-gray-800">
@@ -31,17 +31,19 @@ const Card = ({ team, variant = "default", blog }) => {
               {blog.title}
             </h2>
             <p className="text-gray-600 line-clamp-2">{blog.content}</p>
-            <div className="flex justify-between items-center mt-2">
-              <span className="text-sm text-gray-500">
-                {new Date(blog.createdAt).toLocaleDateString()}
-              </span>
-            </div>
+            <div className="flex items-center gap-1 mt-2">
+  <span className="text-sm text-gray-700 font-medium">Date:</span>
+  <span className="text-sm text-gray-500">
+    {new Date(blog.createdAt).toLocaleDateString()}
+  </span>
+</div>
+
           </>
         )}
       </div>
 
       {/* Çizgi ve Buton Alanı */}
-      <div className="border-t border-gray-300 mt-auto px-6 py-4 flex justify-between items-center">
+      <div className="border-t border-gray-300 mt-auto px-4 py-4 flex justify-between items-center">
         <FavoriteBorderIcon className="text-gray-600 cursor-pointer hover:text-red-500 transition" />
 
         {variant !== "default" ? (
