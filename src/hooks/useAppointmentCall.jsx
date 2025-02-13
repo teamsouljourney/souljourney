@@ -13,9 +13,11 @@ import {
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import { setSelectedSlot } from "../features/calendarSlice";
 import useTherapistCall from "./useTherapistCall";
+import { useNavigate } from "react-router-dom";
 
 const useAppointmentCall = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const axiosWithToken = useAxios();
   const { getTherapistTimeTable } = useTherapistCall();
 
@@ -76,6 +78,7 @@ const useAppointmentCall = () => {
       dispatch(setSelectedSlot(null));
       // dispatch(setSelectedDate(null));
       toastSuccessNotify("Appointment created successfully!");
+      navigate("/profile/appointment");
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
