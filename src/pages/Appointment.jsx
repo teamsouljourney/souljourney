@@ -20,10 +20,10 @@ const Appointment = () => {
 
   return (
     <div className="py-16">
-      {currentUserAppointments?.length === 0 ? (
-        <NoAppointments />
-      ) : (
+      {currentUser?.isTherapist || currentUserAppointments?.length > 0 ? (
         <DashboardCalendar />
+      ) : (
+        <NoAppointments />
       )}
 
       {singleAppointment && <AppointmentCard />}
