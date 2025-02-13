@@ -37,7 +37,7 @@ const Account = () => {
               <div className="flex flex-col items-start gap-2">
                 <button
                   type="button"
-                  className="rounded-md bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95"
+                  className="peer bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95"
                 >
                   Upload
                 </button>
@@ -61,7 +61,7 @@ const Account = () => {
                     id="firstName"
                     placeholder="Enter your name"
                     autocomplete="given-name"
-                    className="block w-full rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="peer w-full bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -77,7 +77,7 @@ const Account = () => {
                     id="lastName"
                     placeholder="Enter your last name"
                     autocomplete="family-name"
-                    className="block w-full rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="peer w-full bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -93,7 +93,7 @@ const Account = () => {
                     type="email"
                     placeholder="Enter your email"
                     autocomplete="email"
-                    className="block w-full rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="peer w-full bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -110,7 +110,7 @@ const Account = () => {
                     type="phone"
                     placeholder="Enter your phone"
                     autocomplete="phone"
-                    className="block w-full rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="peer w-full bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -125,7 +125,7 @@ const Account = () => {
                     type="text"
                     placeholder="Enter your profession (Student, Teacher.. ext.)"
                     autocomplete="profession"
-                    className="block w-full rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="peer w-full bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -148,13 +148,13 @@ const Account = () => {
           </div>
 
           <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
-          <button
-            type="button"
-            className="rounded-md bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4 w-1/2 "
-          >
-            Update Profile
-          </button>
-        </div>
+            <button
+              type="button"
+              className="peer bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4 w-1/2 "
+            >
+              Update Profile
+            </button>
+          </div>
         </div>
       </div>
       {/* ------- */}
@@ -165,7 +165,7 @@ const Account = () => {
       <div className="flex w-full max-w-[576px] flex-col items-start gap-4 border-b-2 border-b-gray-200 dark:border-b-gray-400">
         <span className="text-lg font-medium">{t("password")}</span>
         {/* Password input */}
-        
+
         <div className="sm:col-span-4 relative">
           <label htmlFor="password" className="block text-sm font-medium">
             Current Password
@@ -177,7 +177,7 @@ const Account = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Enter current password"
               autoComplete="current-password"
-              className="block min-w-[280px] rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
+              className="peer min-w-[280px] bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
             />
             <button
               type="button"
@@ -186,9 +186,7 @@ const Account = () => {
             >
               <img
                 src={
-                  showPassword
-                    ? "/assets/visible.svg"
-                    : "/assets/invisible.svg"
+                  showPassword ? "/assets/visible.svg" : "/assets/invisible.svg"
                 }
                 alt={showPassword ? "Hide password" : "Show password"}
                 className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
@@ -209,7 +207,7 @@ const Account = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Enter new password"
               autoComplete="current-password"
-              className="block min-w-[280px] rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
+              className="peer min-w-[280px] bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
             />
             <button
               type="button"
@@ -218,9 +216,7 @@ const Account = () => {
             >
               <img
                 src={
-                  showPassword
-                    ? "/assets/visible.svg"
-                    : "/assets/invisible.svg"
+                  showPassword ? "/assets/visible.svg" : "/assets/invisible.svg"
                 }
                 alt={showPassword ? "Hide password" : "Show password"}
                 className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
@@ -244,7 +240,7 @@ const Account = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Re-type new password"
               autoComplete="retype-password"
-              className="block min-w-[280px] rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
+              className="peer min-w-[280px] bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
             />
             <button
               type="button"
@@ -253,9 +249,7 @@ const Account = () => {
             >
               <img
                 src={
-                  showPassword
-                    ? "/assets/visible.svg"
-                    : "/assets/invisible.svg"
+                  showPassword ? "/assets/visible.svg" : "/assets/invisible.svg"
                 }
                 alt={showPassword ? "Hide password" : "Show password"}
                 className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
@@ -268,7 +262,7 @@ const Account = () => {
         <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
           <button
             type="button"
-            className="rounded-md bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4 w-1/2"
+            className="peer bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4 w-1/2"
           >
             Change Password
           </button>
