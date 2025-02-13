@@ -5,27 +5,28 @@ import { authButtonBoxStyle, authFormBoxStyle, btnStyle } from "../../styles/glo
 import googleLogo from "../../assets/loginRegisterImage/Google.png";
 import PasswordField from "./PasswordField";
 import useAuthCall from "../../hooks/useAuthCall";
+import { useTranslation } from "react-i18next";
 
-export const SignupSchema = Yup.object().shape({
+export const SignupSchema = (t) => Yup.object().shape({
   userName: Yup.string()
-    .required("Username is required!")
-    .min(3, "Username must be at least 3 characters!"),
+    .required(t("requiredUsernameMessage"))
+    .min(3, t("usernameMinMessage")),
   firstName: Yup.string()
-    .min(2, "First name is too short! It should be at least 2 characters.")
-    .max(50, "First name is too long! It should be at most 50 characters.")
-    .required("First name is required!"),
+    .min(2, t("firstnameMinMessage"))
+    .max(50, t("firstnameMaxMessage"))
+    .required(t("requiredFirtsnameMessage")),
   lastName: Yup.string()
-    .min(2, "Last name is too short! It should be at least 2 characters.")
-    .max(50, "Last name is too long! It should be at most 50 characters.")
-    .required("Last name is required!"),
-  email: Yup.string().email("Please enter a valid email address!").required("Email is required!"),
+    .min(2, t("lastnameMinMessage"))
+    .max(50, t("lastnameMaxMessage"))
+    .required(t("Last name is required!")),
+  email: Yup.string().email(t("validEmailMessage")).required(t("requiredEmailMessage")),
   password: Yup.string()
-    .required("Password is required!")
-    .min(8, "Password must be at least 8 characters long!")
-    .matches(/\d+/, "Password must contain at least one digit!")
-    .matches(/[a-z]/, "Password must contain at least one lowercase letter!")
-    .matches(/[A-Z]/, "Password must contain at least one uppercase letter!")
-    .matches(/[@$?!%&*]+/, "Password must contain at least one special character (@$?!%&*)")
+    .required(t("requiredPasswordMessage"))
+    .min(8, t("passwordMinLengthMessage"))
+    .matches(/\d+/, t("passwordDigitMessage"))
+    .matches(/[a-z]/, t("passwordLowerCaseMessage"))
+    .matches(/[A-Z]/, t("passwordUpperCaseMessage"))
+    .matches(/[@$?!%&*]+/, t("passwordSpecialCharMessage"))
 });
 
 const RegisterForm = ({
@@ -40,6 +41,8 @@ const RegisterForm = ({
 
   const theme = useTheme()
   const {signInWithGoogle} = useAuthCall()
+  const { t } = useTranslation();
+
   return (
     <div>
       <Form>
@@ -48,7 +51,7 @@ const RegisterForm = ({
         >
           <TextField
             name="userName"
-            label="Username"
+            label={t("username")}
             type="text"
             variant="outlined"
             value={values.userName}
@@ -60,7 +63,7 @@ const RegisterForm = ({
           />
           <TextField
             name="firstName"
-            label="First Name"
+            label={t("firstName")}
             type="text"
             value={values.firstName}
             onChange={handleChange}
@@ -71,7 +74,7 @@ const RegisterForm = ({
           />
           <TextField
             name="lastName"
-            label="Last Name"
+            label={t("lastName")}
             type="text"
             value={values.lastName}
             onChange={handleChange}
@@ -82,7 +85,7 @@ const RegisterForm = ({
           />
           <TextField
             name="email"
-            label="Email"
+            label={t("email")}
             type="email"
             value={values.email}
             onChange={handleChange}
@@ -93,7 +96,7 @@ const RegisterForm = ({
           />
           <PasswordField
             name="password"
-            label="Password"
+            label={t("password")}
             value={values.password}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -112,7 +115,7 @@ const RegisterForm = ({
           sx={btnStyle}
           onClick={handleSubmit}
         >
-          {isSubmitting ? "Loading..." : "Sign Up"}
+          {isSubmitting ? t("loading")+"..." : t("signUp")}
         </Button>
         <Button
           type="submit"
@@ -121,8 +124,8 @@ const RegisterForm = ({
           sx={btnStyle}
           onClick={signInWithGoogle}
         >
-          {isSubmitting ? "Loading..." : "Sign up with"}
-          <img src={googleLogo} alt="" />
+          {isSubmitting ? t("loading")+"..." : t("signUpWith")}
+          <img style={{marginLeft: 6}} src={googleLogo} alt="" />
         </Button>
       </Box>      
     </div>

@@ -8,9 +8,12 @@ import LoginForm, { loginSchema } from "../components/auth/LoginForm";
 import { Link } from "react-router-dom";
 import { authContainerStyle, authFormContainerGridStyle, authMainContainerGridStyle } from "../styles/globalStyle";
 import useAuthCall from "../hooks/useAuthCall";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
   const {login} = useAuthCall()
+  const { t } = useTranslation();
+  const schemaLogin = loginSchema(t)
   return (
     <Container
       maxWidth="xxl"
@@ -48,7 +51,7 @@ const Login = () => {
               }
             }}
           >
-            Login
+            {t("login")}
           </Typography>
           <Formik
             initialValues={{
@@ -56,7 +59,7 @@ const Login = () => {
               email: "",
               password: "",
             }}
-            validationSchema={loginSchema}
+            validationSchema={schemaLogin}
             onSubmit={(values, actions) => {         
               console.log(values);
               login(values);
@@ -76,7 +79,7 @@ const Login = () => {
              }}
           >
             <Link to="/register"  style={{color: "#2E5077"}}>
-              Don't have an account? <b>Sign Up</b>
+              {t("dontHaveAccount")} <b>{t("signUp")}</b>
             </Link>
           </Box>
           <Box
@@ -91,7 +94,7 @@ const Login = () => {
             }}
           >
             <Link to="/forgotPassword" style={{ color: "#2E5077" }}>
-              Forgot your <b>password!</b>
+              {t("forgotYourPassword")}
             </Link>
           </Box>
         </Grid>
