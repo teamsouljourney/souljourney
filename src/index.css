@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  input {
+    @apply block rounded-md dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark placeholder:text-xs placeholder:text-gray-400 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6
+  }
+  label {
+    @apply block text-sm/6 font-medium
+  }
+}
+
+@layer components {
+  .account-btn {
+    @apply rounded-md transition-transform duration-150 ease-in-out active:scale-95 bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-sm ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600
+  }
+  .password-label {
+    @apply block text-sm font-medium
+  }
+  .textarea-style {
+    @apply block w-full rounded-md dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 text-navy-dark dark:text-offWhite-dark placeholder:text-xs placeholder:text-gray-400 sm:text-sm/6 mb-4
+  }
+}
+
 @layer utilities {
   .after-line {
     position: relative;
@@ -20,6 +41,10 @@
     width: 100%;
     left: 0;
   }
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* Quiz */
