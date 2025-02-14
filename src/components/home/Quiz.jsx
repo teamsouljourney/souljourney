@@ -138,8 +138,8 @@ const Quiz = () => {
       {/* "Self-Test" Button   */}
     <div className="flex justify-center">
     <button
-    className={`px-8 py-2 rounded-full shadow-lg duration-300 bg-seaGreen-dark hover:bg-seaGreen-light z-50 font-semibold bottom-48 text-offWhite 
-      ${isScrolled ? "fixed bottom-40 right-5" : "absolute top-[calc(70%+10px)] text-2x1 sm:px-6 sm:py-2 sm:text-2xl md:px-6 md:py-2 md:text-2xl"}`}
+    className={`px-8 py-2 rounded-full shadow-lg duration-300 bg-mauve hover:bg-seaGreen-light z-50 font-semibold bottom-[11rem] text-offWhite 
+      ${isScrolled ? "fixed bottom-35 right-5" : "absolute top-[calc(63%+20px)] text-2x1 sm:px-6 sm:py-2 sm:text-2xl md:px-6 md:py-2 md:text-2xl"}`}
     onClick={() => setShowQuiz(true)}
   >
      {t("selfTest")}
