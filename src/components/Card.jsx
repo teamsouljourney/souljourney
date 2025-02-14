@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import Buttons from "./button/Button"; // Buttons componentini import ettik
 
 const Card = ({ team, variant = "default", blog }) => {
   const navigate = useNavigate();
@@ -32,12 +33,11 @@ const Card = ({ team, variant = "default", blog }) => {
             </h2>
             <p className="text-gray-600 line-clamp-2">{blog.content}</p>
             <div className="flex items-center gap-1 mt-2">
-  <span className="text-sm text-gray-700 font-medium">Date:</span>
-  <span className="text-sm text-gray-500">
-    {new Date(blog.createdAt).toLocaleDateString()}
-  </span>
-</div>
-
+              <span className="text-sm text-gray-700 font-medium">Date:</span>
+              <span className="text-sm text-gray-500">
+                {new Date(blog.createdAt).toLocaleDateString()}
+              </span>
+            </div>
           </>
         )}
       </div>
@@ -54,12 +54,12 @@ const Card = ({ team, variant = "default", blog }) => {
             Read More
           </NavLink>
         ) : (
-          <button
-            className="w-28 sm:w-32 bg-gradient-to-r from-navy to-offWhite text-customBlack font-bold py-2 rounded-lg hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark transition"
+          <Buttons
+            type="type7" // Burada butonun stilini belirliyoruz
             onClick={() => navigate(`/therapists/${team._id}`)}
           >
             See More
-          </button>
+          </Buttons>
         )}
       </div>
     </div>

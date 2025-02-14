@@ -43,7 +43,14 @@ export default {
           DEFAULT: "#181a1b", // Custom Black (Main color)
           light: "#161718", // Light Custom Black
           dark: "#2f3132", // Darker Custom Black
-        },        
+        },
+        // Background Colors
+        background: {
+          DEFAULT: "#F7F7F7", // Background (Main color)
+          light: "#F7F7F7", // Light Background
+          dark: "#374151", // gray-700
+          darker: "#1f2937",  // gray-800
+        }
       },      
     },
   },
