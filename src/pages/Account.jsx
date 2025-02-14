@@ -37,7 +37,7 @@ const Account = () => {
               <div className="flex flex-col items-start gap-2">
                 <button
                   type="button"
-                  className="peer bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95"
+                  className="peer"
                 >
                   Upload
                 </button>
@@ -51,7 +51,7 @@ const Account = () => {
             {/* Personel Info Field */}
             <div className="mt-10 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 w-full max-w-[576px]">
               <div className="sm:col-span-2">
-                <label for="firstName" className="block text-sm/6 font-medium">
+                <label for="firstName" className="peer">
                   {t("firstName")}
                 </label>
                 <div className="mt-2">
@@ -61,13 +61,13 @@ const Account = () => {
                     id="firstName"
                     placeholder="Enter your name"
                     autocomplete="given-name"
-                    className="peer w-full bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="peer w-full"
                   />
                 </div>
               </div>
 
               <div className="sm:col-span-2">
-                <label for="lastName" className="block text-sm/6 font-medium">
+                <label for="lastName" className="peer">
                   {t("lastName")}
                 </label>
                 <div className="mt-2">
@@ -77,13 +77,13 @@ const Account = () => {
                     id="lastName"
                     placeholder="Enter your last name"
                     autocomplete="family-name"
-                    className="peer w-full bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="peer w-full"
                   />
                 </div>
               </div>
 
               <div className="sm:col-span-4">
-                <label for="email" className="block text-sm/6 font-medium">
+                <label for="email" className="peer">
                   {t("email")}
                 </label>
                 <div className="mt-2">
@@ -93,14 +93,14 @@ const Account = () => {
                     type="email"
                     placeholder="Enter your email"
                     autocomplete="email"
-                    className="peer w-full bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="peer w-full"
                   />
                 </div>
               </div>
 
               {/* Contact Info Field */}
               <div className="sm:col-span-4">
-                <label for="phone" className="block text-sm/6 font-medium">
+                <label for="phone" className="peer">
                   {t("phone")}
                 </label>
                 <div className="mt-2">
@@ -110,12 +110,12 @@ const Account = () => {
                     type="phone"
                     placeholder="Enter your phone"
                     autocomplete="phone"
-                    className="peer w-full bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="peer w-full"
                   />
                 </div>
               </div>
               <div className="col-span-full">
-                <label for="profession" className="block text-sm/6 font-medium">
+                <label for="profession" className="peer">
                   {t("profession")}
                 </label>
                 <div className="mt-2">
@@ -125,12 +125,12 @@ const Account = () => {
                     type="text"
                     placeholder="Enter your profession (Student, Teacher.. ext.)"
                     autocomplete="profession"
-                    className="peer w-full bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
+                    className="peer w-full"
                   />
                 </div>
               </div>
               <div className="col-span-full">
-                <label for="address" className="block text-sm/6 font-medium">
+                <label for="address" className="peer">
                   {t("address")}
                 </label>
                 <div className="mt-2">
@@ -140,7 +140,7 @@ const Account = () => {
                     id="address"
                     placeholder="Enter your address"
                     autocomplete="address"
-                    className="block w-full rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6 mb-4"
+                    className="block w-full rounded-md dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 text-navy-dark dark:text-offWhite-dark placeholder:text-xs placeholder:text-gray-400 sm:text-sm/6 mb-4"
                   />
                 </div>
               </div>
@@ -150,7 +150,7 @@ const Account = () => {
           <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
             <button
               type="button"
-              className="peer bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4 w-1/2 "
+              className="peer mb-4 w-1/2"
             >
               Update Profile
             </button>
@@ -167,7 +167,7 @@ const Account = () => {
         {/* Password input */}
 
         <div className="sm:col-span-4 relative">
-          <label htmlFor="password" className="block text-sm font-medium">
+          <label htmlFor="password" className="password-label">
             Current Password
           </label>
           <div className="mt-2 relative">
@@ -177,12 +177,12 @@ const Account = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Enter current password"
               autoComplete="current-password"
-              className="peer min-w-[280px] bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
+              className="peer min-w-[280px]"
             />
-            <button
+            <div
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute inset-y-0 right-2 flex items-center px-2 text-gray-500 hover:text-gray-700"
+              className="absolute inset-y-0 right-2 flex items-center px-2 text-gray-500 hover:text-gray-700 cursor-pointer"
             >
               <img
                 src={
@@ -192,12 +192,12 @@ const Account = () => {
                 className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
                 draggable="false"
               />
-            </button>
+            </div>
           </div>
         </div>
 
         <div className="sm:col-span-4 relative">
-          <label htmlFor="new-password" className="block text-sm font-medium">
+          <label htmlFor="new-password" className="password-label">
             New Password
           </label>
           <div className="mt-2 relative">
@@ -207,12 +207,12 @@ const Account = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Enter new password"
               autoComplete="current-password"
-              className="peer min-w-[280px] bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
+              className="peer min-w-[280px]"
             />
-            <button
+            <div
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute inset-y-0 right-2 flex items-center px-2 text-gray-500 hover:text-gray-700"
+              className="absolute inset-y-0 right-2 flex items-center px-2 text-gray-500 hover:text-gray-700 cursor-pointer"
             >
               <img
                 src={
@@ -222,14 +222,14 @@ const Account = () => {
                 className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
                 draggable="false"
               />
-            </button>
+            </div>
           </div>
         </div>
 
         <div className="sm:col-span-4 relative">
           <label
             htmlFor="retype-password"
-            className="block text-sm font-medium"
+            className="password-label"
           >
             Re-type New Password
           </label>
@@ -240,12 +240,12 @@ const Account = () => {
               type={showPassword ? "text" : "password"}
               placeholder="Re-type new password"
               autoComplete="retype-password"
-              className="peer min-w-[280px] bg-white text-navy-dark dark:text-offWhite-dark outline-1 -outline-offset-1 outline-gray-300 placeholder:text-xs placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm"
+              className="peer min-w-[280px]"
             />
-            <button
+            <div
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute inset-y-0 right-2 flex items-center px-2 text-gray-500 hover:text-gray-700"
+              className="absolute inset-y-0 right-2 flex items-center px-2 text-gray-500 hover:text-gray-700 cursor-pointer"
             >
               <img
                 src={
@@ -255,14 +255,14 @@ const Account = () => {
                 className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
                 draggable="false"
               />
-            </button>
+            </div>
           </div>
         </div>
 
         <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
           <button
             type="button"
-            className="peer bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-xs ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600 transition-transform duration-150 ease-in-out active:scale-95 mb-4 w-1/2"
+            className="peer mb-4 w-1/2"
           >
             Change Password
           </button>
