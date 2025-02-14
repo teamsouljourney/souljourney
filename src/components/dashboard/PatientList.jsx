@@ -1,238 +1,140 @@
 import { useTranslation } from "react-i18next";
-import notes from "../../assets/notes.svg";
+
 const PatientList = () => {
   const { t } = useTranslation();
+
   return (
-    <div className="w-screen">
-      <div className="mt-2 w-1/5 relative z-10 ">
+    <div className="w-full lg:w-1/2 p-4">
+      <div className="w-full lg:w-4/5 relative z-10">
+        {/* Header */}
         <div className="flex justify-between p-4 text-center rounded-xl mb-3 bg-seaGreen-dark">
-          <p className="text-xl md:text-xl text-offWhite">
+          <p className="text-lg md:text-xl text-offWhite">
             {t("Patients List")}
           </p>
-          <div className="calendar">Today</div>
+          <div className="text-sm md:text-base text-offWhite">Today</div>
         </div>
-        <form action="/search" className="max-w-[480px] w-full px-4">
+
+        {/* Search Form */}
+        <form action="/search" className="w-full">
           <div className="relative">
             <input
               type="text"
               name="q"
-              className="w-full  h-2 shadow p-5 rounded-xl border-[1px] border-seaGreen-dark dark:border-seaGreen-dark dark:text-customBlack-dark "
-              placeholder="search"
+              className="w-full h-12 shadow px-4 py-2 rounded-xl border border-seaGreen-dark dark:border-seaGreen-dark dark:text-customBlack-dark"
+              placeholder="Search patient..."
             />
-            <button type="submit">
+            <button type="submit" className="absolute right-3 top-3">
               <svg
-                className="text-seaGreen-dark h-5 w-5 absolute top-3.5 right-3 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                version="1.1"
-                x="0px"
-                y="0px"
-                viewBox="0 0 56.966 56.966"
-                style={{ enableBackground: "new 0 0 56.966 56.966" }}
-                xmlSpace="preserve"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-6"
               >
-                <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"></path>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
               </svg>
             </button>
           </div>
         </form>
 
-        <ul
-          role="list"
-          className=" mt-8 mx-auto text-lg  border-offWhite-dark divide-y divide-offWhite-dark"
-        >
-          <li className="flex justify-between gap-x-6 py-3 items-center text-navy-dark hover:text-navy-light hover:bg-offWhite pr-10 rounded-md">
-            <span className="ml-0 w-2 h-12 bg-seaGreen-dark rounded-r-md" />
-            <div className="flex min-w-0 gap-x-2 p-3">
-              <img
-                className="h-12 w-12 flex-none rounded-full bg-gray-50"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt=""
-              />
-              <div className=" flex gap-4 justify-between items-start ">
-                <div className="mt-1 flex flex-col items-start gap-x-1.5">
-                  <p className="text-sm font-semibold leading-6 text-gray-900">
-                    Leslie Alexander
-                  </p>
-                  <p className="mt-1 truncate text-xs leading-5 text-gray-500">
-                    leslie.alexander@example.com
-                  </p>
+        {/* Patient List */}
+        <ul className="mt-8 divide-y divide-offWhite-dark dark:divide-gray-700">
+          {[1, 2].map((index) => (
+            <li
+              key={index}
+              className="flex items-center hover:bg-offWhite rounded-md transition-colors duration-200"
+            >
+              <span className="w-2 h-16 md:h-20 bg-seaGreen-dark rounded-r-md" />
+              <div className="flex flex-1 p-3 md:p-4 gap-3 md:gap-4">
+                {/* Avatar */}
+                <div className="shrink-0">
+                  <img
+                    className="h-12 w-12 md:h-14 md:w-14 rounded-full"
+                    src={`https://images.unsplash.com/photo-${
+                      index === 1
+                        ? "1494790108377-be9c29b29330"
+                        : "1519244703995-f4e0f30006d5"
+                    }?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80`}
+                    alt=""
+                  />
                 </div>
 
-                <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-start">
-                  <div className="mt-1 flex flex-col items-center gap-2">
-                    <p className="text-sm leading-6 text-gray-900 bg-pastelGreen-light backdrop-blur px-3 rounded-lg">
-                      09:00
-                    </p>
-                    {/* <p className="mt-1 text-xs leading-5 text-gray-500">
-                      Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time>
-                    </p> */}
-                    <div className="flex-none rounded-full bg-emerald-500/20 p-1">
-                      <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                {/* Patient Info */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex justify-between items-start">
+                    {/* Name and Email */}
+                    <div>
+                      <p className="text-sm md:text-base font-semibold text-gray-900">
+                        Leslie Alexander
+                      </p>
+                      <p className="text-xs md:text-sm text-gray-500 mt-1">
+                        leslie.alexander@example.com
+                      </p>
                     </div>
-                    <p className="text-xs leading-5 text-gray-500">Online</p>
-                  </div>
-                </div>
 
-                <div className="mt-1 flex flex-col items-start gap-x-1.5 gap-y-5 fill-mauve font-extrabold hover:fill-pastelGreen-dark hover:cursor-pointer">
-                  <div>
-                    <svg
-                      fill="currentColor"
-                      height="20px"
-                      width="20px"
-                      version="1.1"
-                      id="Layer_1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                    >
-                      <g>
-                        <g>
-                          <g className="fill-mauve font-extrabold hover:fill-pastelGreen-dark hover:cursor-pointer">
-                            <path
-                              d="M179.184,170.667h170.667c4.719,0,8.533-3.823,8.533-8.533c0-4.71-3.814-8.533-8.533-8.533H179.184
-				c-4.71,0-8.533,3.823-8.533,8.533C170.651,166.844,174.474,170.667,179.184,170.667z"
-                            />
-                            <path
-                              d="M484.754,351.497l-17.067-17.067c-13.124-13.116-33.092-13.09-46.199,0L309.684,446.234
-				c-1.604,1.596-2.5,3.772-2.5,6.033v51.2c0,4.71,3.814,8.533,8.533,8.533h51.2c2.27,0,4.437-0.896,6.033-2.5l111.804-111.804
-				C498.348,384.102,498.348,365.099,484.754,351.497z M410.454,369.596l13.534,13.534l-74.138,74.138l-13.534-13.534
-				L410.454,369.596z M324.251,494.933v-39.134l39.134,39.134H324.251z M375.451,482.867l-13.534-13.534l74.138-74.138
-				l13.525,13.534L375.451,482.867z M472.688,385.63l-11.034,11.034l-39.134-39.134l11.034-11.034c6.758-6.75,15.292-6.767,22.067,0
-				l17.067,17.067C479.591,370.475,479.591,378.726,472.688,385.63z"
-                            />
-                            <path
-                              d="M315.717,51.2h17.067c4.719,0,8.533-3.823,8.533-8.533c0-4.71-3.814-8.533-8.533-8.533h-17.067
-				c-4.719,0-8.533,3.823-8.533,8.533C307.184,47.377,310.998,51.2,315.717,51.2z"
-                            />
-                            <path
-                              d="M366.917,102.4c14.114,0,25.6-11.486,25.6-25.6c0-11.11-7.159-20.489-17.067-24.03V8.533c0-4.71-3.814-8.533-8.533-8.533
-				s-8.533,3.823-8.533,8.533V52.77c-9.907,3.541-17.067,12.919-17.067,24.03C341.317,90.914,352.803,102.4,366.917,102.4z
-				 M366.917,68.267c4.71,0,8.533,3.831,8.533,8.533c0,4.702-3.823,8.533-8.533,8.533s-8.533-3.831-8.533-8.533
-				C358.384,72.098,362.207,68.267,366.917,68.267z"
-                            />
-                            <path
-                              d="M179.184,221.867h153.6c4.719,0,8.533-3.823,8.533-8.533c0-4.71-3.814-8.533-8.533-8.533h-153.6
-				c-4.71,0-8.533,3.823-8.533,8.533C170.651,218.044,174.474,221.867,179.184,221.867z"
-                            />
-                            <path
-                              d="M401.051,51.2h17.067c12.442,0,25.6,13.158,25.6,25.6v221.158c0,4.71,3.814,8.533,8.533,8.533s8.533-3.823,8.533-8.533
-				V76.8c0-21.931-20.736-42.667-42.667-42.667h-17.067c-4.719,0-8.533,3.823-8.533,8.533C392.517,47.377,396.332,51.2,401.051,51.2
-				z"
-                            />
-                            <path
-                              d="M281.584,102.4c14.114,0,25.6-11.486,25.6-25.6c0-11.11-7.159-20.489-17.067-24.03V8.533c0-4.71-3.814-8.533-8.533-8.533
-				c-4.719,0-8.533,3.823-8.533,8.533V52.77c-9.907,3.541-17.067,12.919-17.067,24.03C255.984,90.914,267.47,102.4,281.584,102.4z
-				 M281.584,68.267c4.71,0,8.533,3.831,8.533,8.533c0,4.702-3.823,8.533-8.533,8.533s-8.533-3.831-8.533-8.533
-				C273.051,72.098,276.874,68.267,281.584,68.267z"
-                            />
-                            <path
-                              d="M375.451,264.533c0-4.71-3.814-8.533-8.533-8.533H179.184c-4.71,0-8.533,3.823-8.533,8.533
-				c0,4.71,3.823,8.533,8.533,8.533h187.733C371.636,273.067,375.451,269.244,375.451,264.533z"
-                            />
-                            <path
-                              d="M179.184,307.2c-4.71,0-8.533,3.823-8.533,8.533s3.823,8.533,8.533,8.533h170.667c4.719,0,8.533-3.823,8.533-8.533
-				s-3.814-8.533-8.533-8.533H179.184z"
-                            />
-                            <path
-                              d="M281.584,443.733c4.719,0,8.533-3.823,8.533-8.533s-3.814-8.533-8.533-8.533H34.117V76.8c0-12.442,13.158-25.6,25.6-25.6
-				h17.067c4.71,0,8.533-3.823,8.533-8.533c0-4.71-3.823-8.533-8.533-8.533H59.717c-21.931,0-42.667,20.736-42.667,42.667v392.533
-				c0,21.931,20.736,42.667,42.667,42.667h221.867c4.719,0,8.533-3.823,8.533-8.533s-3.814-8.533-8.533-8.533H59.717
-				c-9.574,0-19.507-7.808-23.612-17.067h245.478c4.719,0,8.533-3.823,8.533-8.533s-3.814-8.533-8.533-8.533H34.117v-17.067H281.584
-				z"
-                            />
-                            <path
-                              d="M127.984,204.8h-17.067c-4.71,0-8.533,3.823-8.533,8.533c0,4.71,3.823,8.533,8.533,8.533h17.067
-				c4.71,0,8.533-3.823,8.533-8.533C136.517,208.623,132.694,204.8,127.984,204.8z"
-                            />
-                            <path
-                              d="M127.984,358.4h-17.067c-4.71,0-8.533,3.823-8.533,8.533s3.823,8.533,8.533,8.533h17.067c4.71,0,8.533-3.823,8.533-8.533
-				S132.694,358.4,127.984,358.4z"
-                            />
-                            <path
-                              d="M230.384,51.2h17.067c4.719,0,8.533-3.823,8.533-8.533c0-4.71-3.814-8.533-8.533-8.533h-17.067
-				c-4.71,0-8.533,3.823-8.533,8.533C221.851,47.377,225.674,51.2,230.384,51.2z"
-                            />
-                            <path
-                              d="M298.651,358.4H179.184c-4.71,0-8.533,3.823-8.533,8.533s3.823,8.533,8.533,8.533h119.467
-				c4.719,0,8.533-3.823,8.533-8.533S303.37,358.4,298.651,358.4z"
-                            />
-                            <path
-                              d="M127.984,153.6h-17.067c-4.71,0-8.533,3.823-8.533,8.533c0,4.71,3.823,8.533,8.533,8.533h17.067
-				c4.71,0,8.533-3.823,8.533-8.533C136.517,157.423,132.694,153.6,127.984,153.6z"
-                            />
-                            <path
-                              d="M127.984,256h-17.067c-4.71,0-8.533,3.823-8.533,8.533c0,4.71,3.823,8.533,8.533,8.533h17.067
-				c4.71,0,8.533-3.823,8.533-8.533C136.517,259.823,132.694,256,127.984,256z"
-                            />
-                            <path
-                              d="M145.051,51.2h17.067c4.71,0,8.533-3.823,8.533-8.533c0-4.71-3.823-8.533-8.533-8.533h-17.067
-				c-4.71,0-8.533,3.823-8.533,8.533C136.517,47.377,140.34,51.2,145.051,51.2z"
-                            />
-                            <path
-                              d="M127.984,307.2h-17.067c-4.71,0-8.533,3.823-8.533,8.533s3.823,8.533,8.533,8.533h17.067c4.71,0,8.533-3.823,8.533-8.533
-				S132.694,307.2,127.984,307.2z"
-                            />
-                            <path
-                              d="M196.251,102.4c14.114,0,25.6-11.486,25.6-25.6c0-11.11-7.151-20.489-17.067-24.03V8.533c0-4.71-3.823-8.533-8.533-8.533
-				s-8.533,3.823-8.533,8.533V52.77c-9.916,3.541-17.067,12.919-17.067,24.03C170.651,90.914,182.137,102.4,196.251,102.4z
-				 M196.251,68.267c4.702,0,8.533,3.831,8.533,8.533c0,4.702-3.831,8.533-8.533,8.533c-4.702,0-8.533-3.831-8.533-8.533
-				C187.717,72.098,191.549,68.267,196.251,68.267z"
-                            />
-                            <path
-                              d="M110.917,102.4c14.114,0,25.6-11.486,25.6-25.6c0-11.11-7.151-20.489-17.067-24.03V8.533c0-4.71-3.823-8.533-8.533-8.533
-				c-4.71,0-8.533,3.823-8.533,8.533V52.77C92.468,56.311,85.317,65.69,85.317,76.8C85.317,90.914,96.803,102.4,110.917,102.4z
-				 M110.917,68.267c4.702,0,8.533,3.831,8.533,8.533c0,4.702-3.831,8.533-8.533,8.533c-4.702,0-8.533-3.831-8.533-8.533
-				C102.384,72.098,106.215,68.267,110.917,68.267z"
-                            />
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
+                    {/* Time and Status */}
+                    <div className="flex flex-col items-center gap-2">
+                      <p className="text-sm bg-pastelGreen-light px-3 py-1 rounded-lg">
+                        09:00
+                      </p>
+                      <div className="flex items-center gap-2">
+                        <div className="rounded-full bg-emerald-500/20 p-1">
+                          <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                        </div>
+                        <p className="text-xs text-gray-500">Online</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <svg
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 512 512"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M241.406 21l-15.22 34.75c-7.864.478-15.703 1.472-23.467 2.97l-23.282-30.064-25.094 8.532-.125 38.25c-10.63 5.464-20.817 12.07-30.44 19.78L88.313 79.25 70.156 98.563 88.312 133c-5.852 8.346-10.925 17.072-15.218 26.094l-38.938 1.062-7.906 25.28 31.438 23.158c-1.505 9.38-2.24 18.858-2.282 28.344L20.5 254.625l3.656 26.25 38.313 7.5c2.284 7.982 5.107 15.826 8.5 23.5L45.72 343.22l14.093 22.436 39.25-9.187c2.47 2.895 5.037 5.757 7.718 8.53 5.643 5.835 11.565 11.206 17.72 16.125l-7.625 39.313 22.938 13.25 29.968-26.094c8.606 3.462 17.435 6.23 26.407 8.312l9.782 38.406 26.405 2.157 15.875-36.22c10.97-.66 21.904-2.3 32.656-4.938l25.22 29.22 24.593-9.844-.72-14.813-57.406-43.53c-16.712 4.225-34.042 5.356-51.063 3.436-31.754-3.58-62.27-17.92-86.218-42.686-54.738-56.614-53.173-146.67 3.438-201.406 27.42-26.513 62.69-39.963 98-40.344 37.59-.406 75.214 13.996 103.438 43.187 45.935 47.512 52.196 118.985 19.562 173.095l31.97 24.25c3.997-6.28 7.594-12.75 10.75-19.375l38.655-1.063 7.906-25.28-31.217-23c1.513-9.457 2.262-19.035 2.28-28.594l34.688-17.625-3.655-26.25-38.28-7.5c-3.196-10.993-7.444-21.762-12.75-32.125l22.81-31.594-15.25-21.657-37.56 10.906c-.472-.5-.93-1.007-1.408-1.5-5.998-6.205-12.33-11.89-18.937-17.064l7.188-37.125L334 43.78l-28.5 24.814c-9.226-3.713-18.702-6.603-28.313-8.75l-9.343-36.688L241.406 21zM183.25 174.5c-10.344.118-20.597 2.658-30 7.28l45.22 34.314c13.676 10.376 17.555 30.095 7.06 43.937-10.498 13.85-30.656 15.932-44.53 5.408l-45.188-34.282c-4.627 24.793 4.135 51.063 25.594 67.344 19.245 14.597 43.944 17.33 65.22 9.688l4.78-1.72 4.03 3.063 135.19 102.564 4.03 3.062-.344 5.063c-1.637 22.55 7.59 45.61 26.844 60.217 21.46 16.28 49.145 17.63 71.78 6.5l-45.186-34.28c-13.874-10.526-17.282-30.506-6.78-44.344 10.5-13.84 30.537-15.405 44.217-5.032l45.188 34.283c4.616-24.784-4.11-51.067-25.563-67.344-19.313-14.658-43.817-17.562-64.968-10.033l-4.75 1.688-4.03-3.063-135.19-102.562-4.03-3.063.344-5.03c1.55-22.387-7.85-45.194-27.157-59.845-12.544-9.516-27.222-13.978-41.78-13.812zm43.563 90.25l163.875 124.344L379.406 404 215.5 279.625l11.313-14.875z"
-                        className="fill-navy"
-                      />
-                    </svg>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-4 mt-9">
+                    <button className="text-mauve hover:text-pastelGreen-dark">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="size-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+                        />
+                      </svg>
+                    </button>
+                    <button className="text-navy hover:text-pastelGreen-dark">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="size-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>
-            </div>
-          </li>
-          <li className="flex justify-between gap-x-6 py-3 w-full items-center text-navy-dark hover:text-navy-light hover:bg-offWhite pr-10 rounded-md">
-            <span className="ml-0 w-2 h-12 bg-seaGreen-dark rounded-r-md" />
-            <div className="flex min-w-0 gap-x-4 p-3">
-              <img
-                className="h-12 w-12 flex-none rounded-full bg-gray-50"
-                src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt=""
-              />
-              <div className="min-w-0 flex-auto">
-                <p className="text-sm font-semibold leading-6 text-gray-900">
-                  Michael Foster
-                </p>
-                <p className="mt-1 truncate text-xs leading-5 text-gray-500">
-                  michael.foster@example.com
-                </p>
-              </div>
-            </div>
-            <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-              <p className="text-sm leading-6 text-gray-900">
-                Co-Founder / CTO
-              </p>
-              <p className="mt-1 text-xs leading-5 text-gray-500">
-                Last seen <time dateTime="2023-01-23T13:23Z">ago</time>
-              </p>
-            </div>
-          </li>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

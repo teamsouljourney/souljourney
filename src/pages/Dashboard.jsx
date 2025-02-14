@@ -1,10 +1,11 @@
+import MyBlogList from "../components/dashboard/MyBlogList";
 import PatientList from "../components/dashboard/PatientList";
 
 const Dashboard = () => {
   return (
-    <div>
-      Dashboard
+    <div className="flex flex-wrap">
       <PatientList />
+      <MyBlogList />
     </div>
   );
 };
