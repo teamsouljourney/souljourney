@@ -51,6 +51,7 @@ const SidebarListItems = () => {
               className={({isActive})=> `group flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-1.5 lg:pr-6 font-semibold text-navy-dark hover:text-seaGreen-dark cursor-pointer ${isActive ? "bg-seaGreen-dark/20 text-seaGreen-dark dark:bg-offWhite-dark/20 dark:text-offWhite-dark" : ""}`}
               to={item.to}
               key={index}
+              draggable="false"
               end
             >
               {({isActive}) => (
@@ -80,6 +81,7 @@ const SidebarListItems = () => {
           <NavLink
             className={({isActive})=> `group flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-1.5 lg:pr-6 font-semibold text-navy-dark hover:text-seaGreen-dark cursor-pointer ${isActive ? "bg-seaGreen-dark/20 text-seaGreen-dark dark:bg-offWhite-dark/20 dark:text-offWhite-dark" : ""}`}
             to="/profile/account"
+            draggable="false"
           >
             {({isActive}) => (
               <>
