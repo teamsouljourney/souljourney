@@ -9,12 +9,12 @@
   label {
     @apply block text-sm/6 font-medium
   }
-  button {
-    @apply rounded-md transition-transform duration-150 ease-in-out active:scale-95 bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-sm ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600 
-  }
 }
 
 @layer components {
+  .account-btn {
+    @apply rounded-md transition-transform duration-150 ease-in-out active:scale-95 bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-sm ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600
+  }
   .password-label {
     @apply block text-sm font-medium
   }

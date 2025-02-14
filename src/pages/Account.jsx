@@ -37,7 +37,7 @@ const Account = () => {
               <div className="flex flex-col items-start gap-2">
                 <button
                   type="button"
-                  className="peer"
+                  className="account-btn"
                 >
                   Upload
                 </button>
@@ -150,7 +150,7 @@ const Account = () => {
           <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
             <button
               type="button"
-              className="peer mb-4 w-1/2"
+              className="account-btn mb-4 w-1/2"
             >
               Update Profile
             </button>
@@ -262,7 +262,7 @@ const Account = () => {
         <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
           <button
             type="button"
-            className="peer mb-4 w-1/2"
+            className="account-btn mb-4 w-1/2"
           >
             Change Password
           </button>
