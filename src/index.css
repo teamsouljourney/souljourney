@@ -18,6 +18,9 @@
   .password-label {
     @apply block text-sm font-medium
   }
+  .textarea-style {
+    @apply block w-full rounded-md dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 text-navy-dark dark:text-offWhite-dark placeholder:text-xs placeholder:text-gray-400 sm:text-sm/6 mb-4
+  }
 }
 
 @layer utilities {

@@ -140,7 +140,7 @@ const Account = () => {
                     id="address"
                     placeholder="Enter your address"
                     autocomplete="address"
-                    className="block w-full rounded-md dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 text-navy-dark dark:text-offWhite-dark placeholder:text-xs placeholder:text-gray-400 sm:text-sm/6 mb-4"
+                    className="textarea-style"
                   />
                 </div>
               </div>
