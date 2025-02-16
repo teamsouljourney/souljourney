@@ -15,11 +15,11 @@ const blogSlice = createSlice({
     },
     getAllBlogsSuccess: (state, { payload }) => {
       state.loading = false;
-      state.therapists = payload;
+      state.blogs = payload;
     },
     getSingleBlogSuccess: (state, { payload }) => {
       state.loading = false;
-      state.singleTherapist = payload;
+      state.singleBlog = payload;
     },
     fetchFail: (state) => {
       state.loading = false;

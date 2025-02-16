@@ -16,6 +16,8 @@ const useBlogCall = () => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosPublic.get("blogs");
+      console.log(data.data);
+      
       dispatch(getAllBlogsSuccess(data.data));
     } catch (error) {
       dispatch(fetchFail());

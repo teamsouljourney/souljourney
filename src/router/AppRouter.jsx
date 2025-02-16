@@ -3,7 +3,7 @@ import PrivateRouter from "./PrivateRouter";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Navbar from "../components/Navbar";
-import BlogDetail from "../components/Blog/BlogDetail"; // BlogDetail bileşenini dahil et
+import BlogDetail from "../components/blog/BlogDetail"; // BlogDetail bileşenini dahil et
 
 import Blog from "../pages/Blog";
 import Team from "../pages/Team";
