@@ -1,26 +1,26 @@
-import AboutHeroSection from '../components/About/AboutHeroSection'
+import AboutHeroSection from '../components/About/AboutHeroSection';
 import AboutDetail from '../components/About/AboutDetail';
 import AboutRow from '../components/About/AboutRow';
 
 const About = () => {
   return (
-    <div className="flex flex-col">
-      {/* About Hero Section: %20 */}
-      <div className="w-full h-1/5">
+    <div className="flex flex-col w-full">
+      {/* About Hero Section */}
+      <section className="w-full min-h-[60vh]">
         <AboutHeroSection />
-      </div>
+      </section>
 
-      {/* About Details: %60 */}
-      <div className="w-full h-3/5">
+      {/* About Details */}
+      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
         <AboutDetail />
-      </div>
+      </section>
 
-      {/* About Row: %20 */}
-      <div className="w-full h-1/5">
+      {/* About Row */}
+      <section className="w-full px-4 md:px-8 lg:px-16 py-8">
         <AboutRow />
-      </div>
+      </section>
     </div>
   );
-}
+};
 
 export default About;
