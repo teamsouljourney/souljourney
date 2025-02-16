@@ -29,31 +29,31 @@ const TeamDetail = () => {
 
   // console.log(singleTherapist);
 
-  const {  firstName, lastName, fullName, email, image, categoryId, feedbackId, description,  } = singleTherapist;
+  const {firstName, lastName, fullName, email, image, categoryId, feedbackId, description} = singleTherapist;
     
   // console.log(categoryId.name);
   
 
   return (
-    <div className="flex flex-col p-5 mt-14 mx-auto sm:p-10 md:p-16 bg-offWhite dark:bg-background-dark text-navy-dark dark:text-offWhite">
+    <div className="flex flex-col gap-10 justify-center items-center p-5 mt-14 px-auto sm:p-10 md:p-16 bg-offWhite dark:bg-background-dark text-navy-dark dark:text-offWhite">
       {/* Header */}
-      <div className="flex flex-row flex-wrap items-start justify-center mt-12 mx-auto rounded">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mx-auto w-full max-w-7xl p-8">
         {/* Profile Pic */}
-        <div>
-          <img className="w-[150px] h-[150px] rounded-full" src={image} alt={fullName} />
+        <div className="lg:col-span-3 flex justify-center">
+          <img className="w-32 h-32 rounded-full border-4 border-seaGreen shadow-lg" src={image} alt={fullName} />
           
         </div>
 
         {/* Identity */}
-        <div>
-          <div className="relative px-10 pt-5 pb-16 m-10 -mt-16 ">
+        <div className="lg:col-span-6 flex flex-col text-center lg:text-left">
+          <div className="text-2xl font-semibold text-navy">
             <a
               href="#"
               className="inline-block mb-2 text-lg font-semibold transition duration-500 ease-in-out hover:text-indigo-600"
             >
               {firstName} {lastName} {fullName}
             </a>
-            <p className="text-sm">{categoryId.name}</p>
+            <p className="flex flex-wrap justify-center lg:justify-start mt-2 gap-2">{categoryId.name}</p>
             <p className="text-sm">{email}</p>
             <p className="mt-5 text-xs">
               By{" "}
@@ -75,13 +75,13 @@ const TeamDetail = () => {
         </div>
 
         {/* Appointment button */}
-        <div>
-        <button
-          onClick={() => setDisplayCalendar(!displayCalendar)}
-          className="px-6 py-3 text-lg text-white rounded-lg bg-gradient-to-r from-navy to-seaGreen hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark"
-        >
-          work with me
-        </button>
+        <div className="lg:col-span-3 flex justify-center lg:justify-end items-center">
+          <button
+            onClick={() => setDisplayCalendar(!displayCalendar)}
+            className="px-6 py-3 text-lg leading-none text-white rounded-lg bg-gradient-to-r from-navy to-seaGreen hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark transition-transform duration-150 ease-in-out active:scale-95"
+          >
+            work with me
+          </button>
         </div>
       </div>
 
@@ -94,18 +94,21 @@ const TeamDetail = () => {
       <div className="p-6 pt-0 mt-8 text-center">
         <button
           onClick={() => navigate(-1)}
-          className="px-6 py-3 text-lg text-white rounded-lg bg-gradient-to-r from-navy to-seaGreen hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark"
+          className="px-6 py-3 text-lg text-white rounded-lg bg-gradient-to-r from-navy to-seaGreen hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark transition-transform duration-150 ease-in-out active:scale-95"
         >
           Go Back
         </button>
       </div>
 
       {/* Appointment */}
-      {displayCalendar && (
-        <div>
-        <AppointmentCalendar />
+      <div className={displayCalendar ? "min-h-[200px]" : "min-h-[100px]"}>
+        {displayCalendar && (
+          <div>
+            <AppointmentCalendar />
+          </div>
+        )}
       </div>
-      )}
+      
       
     </div>
   );
