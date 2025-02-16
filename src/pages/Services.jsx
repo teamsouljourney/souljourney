@@ -1,6 +1,6 @@
 import ServicesHeroSection from "../components/ServicesPage/ServicesHeroSection"
 import ServicesDetail from "../components/ServicesPage/ServicesDetail"
-import ServicesRow from "../components/ServicesPage/ServicesRow"
+// import ServicesRow from "../components/ServicesPage/ServicesRow"
 
 const Services = () => {
   return (
@@ -17,7 +17,7 @@ const Services = () => {
 
       {/* About Row: %20 */}
       <div className="w-full h-1/5">
-        <ServicesRow />
+        {/* <ServicesRow /> */}
       </div>
     </div>
   )
