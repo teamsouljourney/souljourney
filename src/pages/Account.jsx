@@ -9,10 +9,29 @@
 // import AccountForm from "../components/auth/AccountForm";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const Account = () => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
+  const {currentUser} = useSelector((state) => state.auth);
+  console.log(currentUser);
+
+  const [userInfo, setUserInfo] = useState(currentUser)
+
+  console.log(userInfo);
+
+  const handleChange = (e) => {
+    // console.log(e.target.value);
+    setUserInfo({...userInfo, [e.target.name]: e.target.value})
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(userInfo)
+  }
+  
+  
   return (
     <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light pl-4 pr-6 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-background-darker mt">
       {/* Update Profile Section */}
@@ -27,7 +46,7 @@ const Account = () => {
         <div className="flex w-full flex-col items-start gap-2">
           <span className="text-3xl font-semibold mb-4">{t("profile")}</span>
           <div className="flex w-full flex-col items-start gap-4">
-            <span className="text-2xl font-medium"><i>John Doe</i></span>
+            <span className="text-2xl font-medium"><i>{userInfo.firstName} {userInfo.lastName}</i></span>
             <div className="flex items-center gap-4">
               <img
                 className="h-16 w-16 flex-none object-cover [clip-path:circle()]"
@@ -59,9 +78,11 @@ const Account = () => {
                     type="text"
                     name="firstName"
                     id="firstName"
+                    value={userInfo.firstName}
                     placeholder="Enter your name"
                     autocomplete="given-name"
                     className="peer w-full"
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -75,9 +96,11 @@ const Account = () => {
                     type="text"
                     name="lastName"
                     id="lastName"
+                    value={userInfo.lastName}
                     placeholder="Enter your last name"
                     autocomplete="family-name"
                     className="peer w-full"
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -91,9 +114,11 @@ const Account = () => {
                     id="email"
                     name="email"
                     type="email"
+                    value={userInfo.email}
                     placeholder="Enter your email"
                     autocomplete="email"
                     className="peer w-full"
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -108,9 +133,11 @@ const Account = () => {
                     id="phone"
                     name="phone"
                     type="phone"
+                    value={userInfo.phone}
                     placeholder="Enter your phone"
                     autocomplete="phone"
                     className="peer w-full"
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -123,9 +150,11 @@ const Account = () => {
                     id="profession"
                     name="profession"
                     type="text"
+                    value={userInfo.profession}
                     placeholder="Enter your profession (Student, Teacher.. ext.)"
                     autocomplete="profession"
                     className="peer w-full"
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -138,9 +167,11 @@ const Account = () => {
                     type="address"
                     name="address"
                     id="address"
+                    value={userInfo.address}
                     placeholder="Enter your address"
                     autocomplete="address"
                     className="textarea-style"
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -151,6 +182,7 @@ const Account = () => {
             <button
               type="button"
               className="account-btn mb-4 w-1/2"
+              onClick={handleSubmit}
             >
               Update Profile
             </button>
