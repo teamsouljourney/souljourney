@@ -9,7 +9,7 @@ import useBlogCall from "../hooks/useBlogCall";
 import useCategoryCall from "../hooks/useCategoryCall";
 
 const WriteBlog = () => {
-  const { getSingleBlog, addNewBlog, updateBlog } = useBlogCall();
+  const { getSingleBlog, createNewBlog, updateBlog } = useBlogCall();
   const { getAllCategories } = useCategoryCall();
   const { id } = useParams();
   const { singleBlog } = useSelector((state) => state.blogs);
@@ -49,7 +49,7 @@ const WriteBlog = () => {
             if (isEditMode && id) {
               updateBlog(id, values);
             } else {
-              addNewBlog("blogs", values);
+              createNewBlog(values);
             }
             actions.resetForm();
             actions.setSubmitting(false);
