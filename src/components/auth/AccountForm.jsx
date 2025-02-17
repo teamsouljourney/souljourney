@@ -16,7 +16,7 @@ const AccountForm = ({userInfo, handleChange, handleSubmit}) => {
               id="firstName"
               value={userInfo.firstName}
               placeholder="Enter your name"
-              autocomplete="given-name"
+              autoComplete="given-name"
               className="peer w-full"
               onChange={handleChange}
             />
@@ -34,7 +34,7 @@ const AccountForm = ({userInfo, handleChange, handleSubmit}) => {
               id="lastName"
               value={userInfo.lastName}
               placeholder="Enter your last name"
-              autocomplete="family-name"
+              autoComplete="family-name"
               className="peer w-full"
               onChange={handleChange}
             />
@@ -52,7 +52,7 @@ const AccountForm = ({userInfo, handleChange, handleSubmit}) => {
               type="email"
               value={userInfo.email}
               placeholder="Enter your email"
-              autocomplete="email"
+              autoComplete="email"
               className="peer w-full"
               onChange={handleChange}
             />
@@ -71,7 +71,7 @@ const AccountForm = ({userInfo, handleChange, handleSubmit}) => {
               type="phone"
               value={userInfo.phone}
               placeholder="Enter your phone"
-              autocomplete="phone"
+              autoComplete="phone"
               className="peer w-full"
               onChange={handleChange}
             />
@@ -88,7 +88,7 @@ const AccountForm = ({userInfo, handleChange, handleSubmit}) => {
               type="text"
               value={userInfo.profession}
               placeholder="Enter your profession (Student, Teacher.. ext.)"
-              autocomplete="profession"
+              autoComplete="profession"
               className="peer w-full"
               onChange={handleChange}
             />
@@ -105,7 +105,7 @@ const AccountForm = ({userInfo, handleChange, handleSubmit}) => {
               id="address"
               value={userInfo.address}
               placeholder="Enter your address"
-              autocomplete="address"
+              autoComplete="address"
               className="textarea-style"
               onChange={handleChange}
             />
