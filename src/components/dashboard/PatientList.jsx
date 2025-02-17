@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import useAppointmentCall from "../../hooks/useAppointmentCall";
 import { useEffect, useState } from "react";
+import Notes from "./Notes";
 
 const PatientList = () => {
   const { t } = useTranslation();
@@ -13,7 +14,7 @@ const PatientList = () => {
 
   useEffect(() => {
     getUserAppointments(currentUser?._id);
-  }, []);
+  }, [currentUser, getUserAppointments]);
 
   useEffect(() => {
     // Get unique patients from appointments
@@ -133,14 +134,7 @@ const PatientList = () => {
 
                       {/* Time and Status */}
                       <div className="flex flex-col items-center gap-2">
-                        <div>
-                          <button
-                            className="filled bg-mauve-light text-offWhite-light px-3 py-1 rounded-lg"
-                            // onClick={}
-                          >
-                            Notes
-                          </button>
-                        </div>
+                        <Notes currentUser={currentUser} />
                         <div className="flex items-center gap-2">
                           <div className="rounded-full bg-emerald-500/20 p-1">
                             <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
