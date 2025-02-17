@@ -6,7 +6,7 @@ const AccountForm = ({userInfo, handleChange, handleSubmit}) => {
     <>
       <div className="mt-10 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 w-full max-w-[576px]">
         <div className="sm:col-span-2">
-          <label for="firstName" className="peer">
+          <label htmlFor="firstName" className="peer">
             {t("firstName")}
           </label>
           <div className="mt-2">
@@ -24,7 +24,7 @@ const AccountForm = ({userInfo, handleChange, handleSubmit}) => {
         </div>
 
         <div className="sm:col-span-2">
-          <label for="lastName" className="peer">
+          <label htmlFor="lastName" className="peer">
             {t("lastName")}
           </label>
           <div className="mt-2">
@@ -42,7 +42,7 @@ const AccountForm = ({userInfo, handleChange, handleSubmit}) => {
         </div>
 
         <div className="sm:col-span-4">
-          <label for="email" className="peer">
+          <label htmlFor="email" className="peer">
             {t("email")}
           </label>
           <div className="mt-2">
@@ -61,7 +61,7 @@ const AccountForm = ({userInfo, handleChange, handleSubmit}) => {
 
         {/* Contact Info Field */}
         <div className="sm:col-span-4">
-          <label for="phone" className="peer">
+          <label htmlFor="phone" className="peer">
             {t("phone")}
           </label>
           <div className="mt-2">
@@ -78,7 +78,7 @@ const AccountForm = ({userInfo, handleChange, handleSubmit}) => {
           </div>
         </div>
         <div className="col-span-full">
-          <label for="profession" className="peer">
+          <label htmlFor="profession" className="peer">
             {t("profession")}
           </label>
           <div className="mt-2">
@@ -95,7 +95,7 @@ const AccountForm = ({userInfo, handleChange, handleSubmit}) => {
           </div>
         </div>
         <div className="col-span-full">
-          <label for="address" className="peer">
+          <label htmlFor="address" className="peer">
             {t("address")}
           </label>
           <div className="mt-2">
