@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BlogHeroSection from "../components/Blog/BlogHeroSection";
-import BlogList from "../components/Blog/BlogList";
-import BlogDetail from "../components/Blog/BlogDetail";
+import BlogList from "../components/blog/BlogList";
+import BlogDetail from "../components/blog/BlogDetail";
 
 function Blog() {
   const [selectedBlog, setSelectedBlog] = useState(null);
