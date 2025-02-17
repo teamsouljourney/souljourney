@@ -1,5 +1,4 @@
 import { useState } from "react";
-import NotesModal from "./NotesModal";
 
 const Notes = ({ currentUser }) => {
   const [open, setOpen] = useState(false);
@@ -13,11 +12,6 @@ const Notes = ({ currentUser }) => {
       >
         Notes
       </button>
-      {/* <NotesModal
-        open={open}
-        handleClose={handleClose}
-        currentUser={currentUser}
-      /> */}
     </div>
   );
 };
