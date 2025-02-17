@@ -1,312 +1,281 @@
-import { Box, Container, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid2";
-import { Formik } from "formik";
-import { SignupSchema } from "../components/auth/RegisterForm";
-import {
-  authMainContainerGridStyle,
-  authFormContainerGridStyle,
-} from "../styles/globalStyle";
-import AccountForm from "../components/auth/AccountForm";
+// import { Box, Container, Typography } from "@mui/material";
+// import Grid from "@mui/material/Grid2";
+// import { Formik } from "formik";
+// import { SignupSchema } from "../components/auth/RegisterForm";
+// import {
+//   authMainContainerGridStyle,
+//   authFormContainerGridStyle,
+// } from "../styles/globalStyle";
+// import AccountForm from "../components/auth/AccountForm";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const Account = () => {
   const { t } = useTranslation();
+  const [showPassword, setShowPassword] = useState(false);
   return (
-    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-1 self-stretch bg-offWhite-light py-8 shadow-sm">
+    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light pl-4 pr-6 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-background-darker">
+      {/* Update Profile Section */}
 
-      {/* Profile */}
-
-      <div className="flex w-full max-w-[576px] flex-col items-start gap-6 border-b-2">
-        <div className="flex w-full flex-col items-start gap-1">
-          <span className="w-full text-heading-2 font-heading-2 text-default-font text-2xl">
-            Account
-          </span>
-          <span className="w-full text-body font-body text-subtext-color">
-            Update your profile and personal details here
-          </span>
+      <div className="flex w-full max-w-[576px] flex-col items-start gap-10 border-b-2 border-b-gray-200 dark:border-b-gray-400">
+        {/* Header */}
+        <div className="flex w-full flex-col items-start gap-2 font-semibold">
+          <span className="text-3xl">{t("account")}</span>
+          <span>Update your profile and personal details here</span>
         </div>
+        {/* Profile Section */}
         <div className="flex w-full flex-col items-start gap-2">
-          <span className="text-heading-3 font-heading-3 text-default-font text-lg">
-            Profile
-          </span>
+          <span className="text-lg font-medium mb-4">{t("profile")}</span>
           <div className="flex w-full flex-col items-start gap-4">
-            <span className="text-body-bold font-body-bold text-default-font">
-              John Doe
-            </span>
+            <span className="text-2xl">John Doe</span>
             <div className="flex items-center gap-4">
               <img
                 className="h-16 w-16 flex-none object-cover [clip-path:circle()]"
                 src="https://res.cloudinary.com/subframe/image/upload/v1711417513/shared/kwut7rhuyivweg8tmyzl.jpg"
               />
+              {/* Upload Profile Image Section */}
               <div className="flex flex-col items-start gap-2">
-                {/* <Button
-              variant="neutral-secondary"
-              icon="FeatherUpload"
-              onClick={(event: React.MouseEvent<HTMLButtonElement>) => {}}
-            >
-              Upload
-                </Button> */}
-                <span className="text-caption font-caption text-subtext-color">
+                <button
+                  type="button"
+                  className="account-btn"
+                >
+                  Upload
+                </button>
+                <span>
                   For best results, upload an image 512x512 or larger.
                 </span>
               </div>
             </div>
           </div>
           <div className="flex w-full items-center gap-4">
-            <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
-              <div class="sm:col-span-3">
-                <label
-                  for="firstName"
-                  class="block text-sm/6 font-medium text-gray-900"
-                >
-                  First name
+            {/* Personel Info Field */}
+            <div className="mt-10 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 w-full max-w-[576px]">
+              <div className="sm:col-span-2">
+                <label for="firstName" className="peer">
+                  {t("firstName")}
                 </label>
-                <div class="mt-2">
+                <div className="mt-2">
                   <input
                     type="text"
                     name="firstName"
                     id="firstName"
-                    placeholder="Write your first name..."
+                    placeholder="Enter your name"
                     autocomplete="given-name"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-dark sm:text-sm/6"
+                    className="peer w-full"
                   />
                 </div>
               </div>
 
-              <div class="sm:col-span-3">
-                <label
-                  for="lastName"
-                  class="block text-sm/6 font-medium text-gray-900"
-                >
-                  Last name
+              <div className="sm:col-span-2">
+                <label for="lastName" className="peer">
+                  {t("lastName")}
                 </label>
-                <div class="mt-2">
+                <div className="mt-2">
                   <input
                     type="text"
                     name="lastName"
                     id="lastName"
-                    placeholder="Write your last name..."
+                    placeholder="Enter your last name"
                     autocomplete="family-name"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light sm:text-sm/6"
+                    className="peer w-full"
                   />
                 </div>
               </div>
 
-              <div class="sm:col-span-4">
-                <label
-                  for="email"
-                  class="block text-sm/6 font-medium text-gray-900"
-                >
-                  Email
+              <div className="sm:col-span-4">
+                <label for="email" className="peer">
+                  {t("email")}
                 </label>
-                <div class="mt-2">
+                <div className="mt-2">
                   <input
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="Write your email..."
+                    placeholder="Enter your email"
                     autocomplete="email"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    className="peer w-full"
                   />
                 </div>
               </div>
 
-              {/* Personel Info */}
-              <div class="sm:col-span-4">
-                <label
-                  for="phone"
-                  class="block text-sm/6 font-medium text-gray-900"
-                >
-                  Phone
+              {/* Contact Info Field */}
+              <div className="sm:col-span-4">
+                <label for="phone" className="peer">
+                  {t("phone")}
                 </label>
-                <div class="mt-2">
+                <div className="mt-2">
                   <input
                     id="phone"
                     name="phone"
                     type="phone"
-                    placeholder="Write your phone..."
+                    placeholder="Enter your phone"
                     autocomplete="phone"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    className="peer w-full"
                   />
                 </div>
               </div>
-              <div class="col-span-full">
-                <label
-                  for="profession"
-                  class="block text-sm/6 font-medium text-gray-900"
-                >
-                  Profession
+              <div className="col-span-full">
+                <label for="profession" className="peer">
+                  {t("profession")}
                 </label>
-                <div class="mt-2">
+                <div className="mt-2">
                   <input
                     id="profession"
                     name="profession"
                     type="text"
-                    placeholder="Write your profession... (Student, Teacher.. ext.)"
+                    placeholder="Enter your profession (Student, Teacher.. ext.)"
                     autocomplete="profession"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    className="peer w-full"
                   />
                 </div>
               </div>
-              <div class="col-span-full">
-                <label
-                  for="address"
-                  class="block text-sm/6 font-medium text-gray-900"
-                >
-                  Address
+              <div className="col-span-full">
+                <label for="address" className="peer">
+                  {t("address")}
                 </label>
-                <div class="mt-2">
+                <div className="mt-2">
                   <textarea
                     type="address"
                     name="address"
                     id="address"
-                    placeholder="Write your address..."
+                    placeholder="Enter your address"
                     autocomplete="address"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    className="textarea-style"
                   />
                 </div>
               </div>
-
-              {/* <div class="col-span-full">
-                <label
-                  for="about"
-                  class="block text-sm/6 font-medium text-gray-900"
-                >
-                  About/feedback
-                </label>
-                <div class="mt-2">
-                  <textarea
-                    name="about"
-                    id="about"
-                    rows="3"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  ></textarea>
-                </div>
-                <p class="mt-3 text-sm/6 text-gray-600">
-                  Write a few sentences about yourself.
-                </p>
-              </div> */}
-
             </div>
           </div>
-        </div>
-        <div className="flex w-full items-center gap-4">
-          {/* <TextField
-          className="h-auto grow shrink-0 basis-0"
-          label="Email"
-          helpText=""
-        >
-          <TextField.Input
-            placeholder="josef@subframe.com"
-            value=""
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {}}
-          />
-          </TextField> */}
+
+          <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
+            <button
+              type="button"
+              className="account-btn mb-4 w-1/2"
+            >
+              Update Profile
+            </button>
+          </div>
         </div>
       </div>
-      <div className="flex h-px w-full flex-none flex-col items-center gap-2 bg-neutral-border" />
+      {/* ------- */}
+      {/* <div className="flex h-px w-full flex-none flex-col items-center bg-neutral-border" /> */}
 
-      {/* Password */}
-      
-      <div className="flex w-full max-w-[576px] flex-col items-start gap-4 border-b-2">
-        <span className="text-heading-3 font-heading-3 text-default-font text-lg">
-          Password
-        </span>
+      {/* Reset Password Field */}
 
-        <div class="sm:col-span-4 ">
-          <label for="password" class="block text-sm/6 font-medium text-gray-900">
+      <div className="flex w-full max-w-[576px] flex-col items-start gap-4 border-b-2 border-b-gray-200 dark:border-b-gray-400">
+        <span className="text-lg font-medium">{t("password")}</span>
+        {/* Password input */}
+
+        <div className="sm:col-span-4 relative">
+          <label htmlFor="password" className="password-label">
             Current Password
           </label>
-          <div class="mt-2">
+          <div className="mt-2 relative">
             <input
               id="password"
               name="password"
-              type="password"
-              placeholder="Write your current password..."
-              autocomplete="password"
-              class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+              type={showPassword ? "text" : "password"}
+              placeholder="Enter current password"
+              autoComplete="current-password"
+              className="peer min-w-[280px]"
             />
-          </div>
-        </div>
-        <div class="sm:col-span-4 ">
-          <label for="new-password" class="block text-sm/6 font-medium text-gray-900">
-            New Password
-          </label>
-          <div class="mt-2">
-            <input
-              id="new-password"
-              name="new-password"
-              type="password"
-              placeholder="Write your new password..."
-              autocomplete="password"
-              class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-            />
-          </div>
-        </div>
-        <div class="sm:col-span-4 ">
-          <label for="retype-password" class="block text-sm/6 font-medium text-gray-900">
-            New Password
-          </label>
-          <div class="mt-2">
-            <input
-              id="retype-password"
-              name="retype-password"
-              type="password"
-              placeholder="Re-write your new password..."
-              autocomplete="password"
-              class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-            />
+            <div
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute inset-y-0 right-2 flex items-center px-2 text-gray-500 hover:text-gray-700 cursor-pointer"
+            >
+              <img
+                src={
+                  showPassword ? "/assets/visible.svg" : "/assets/invisible.svg"
+                }
+                alt={showPassword ? "Hide password" : "Show password"}
+                className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
+                draggable="false"
+              />
+            </div>
           </div>
         </div>
 
-        {/* <TextField
-        className="h-auto w-full flex-none"
-        label="Current password"
-        helpText=""
-      >
-        <TextField.Input
-          type="password"
-          placeholder="Enter current password"
-          value=""
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {}}
-        />
-      </TextField>
-      <TextField
-        className="h-auto w-full flex-none"
-        label="New password"
-        helpText="Your password must have at least 8 characters, include one uppercase letter, and one number."
-      >
-        <TextField.Input
-          type="password"
-          placeholder="Enter new password"
-          value=""
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {}}
-        />
-      </TextField>
-      <TextField className="h-auto w-full flex-none" label="" helpText="">
-        <TextField.Input
-          type="password"
-          placeholder="Re-type new password"
-          value=""
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {}}
-        />
-      </TextField> */}
-        <div className="flex w-full flex-col items-start justify-center gap-6">
-          {/* <Button onClick={(event: React.MouseEvent<HTMLButtonElement>) => {}}>
-          Change password
-        </Button> */}
+        <div className="sm:col-span-4 relative">
+          <label htmlFor="new-password" className="password-label">
+            New Password
+          </label>
+          <div className="mt-2 relative">
+            <input
+              id="new-password"
+              name="new-password"
+              type={showPassword ? "text" : "password"}
+              placeholder="Enter new password"
+              autoComplete="current-password"
+              className="peer min-w-[280px]"
+            />
+            <div
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute inset-y-0 right-2 flex items-center px-2 text-gray-500 hover:text-gray-700 cursor-pointer"
+            >
+              <img
+                src={
+                  showPassword ? "/assets/visible.svg" : "/assets/invisible.svg"
+                }
+                alt={showPassword ? "Hide password" : "Show password"}
+                className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
+                draggable="false"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="sm:col-span-4 relative">
+          <label
+            htmlFor="retype-password"
+            className="password-label"
+          >
+            Re-type New Password
+          </label>
+          <div className="mt-2 relative">
+            <input
+              id="retype-password"
+              name="retype-password"
+              type={showPassword ? "text" : "password"}
+              placeholder="Re-type new password"
+              autoComplete="retype-password"
+              className="peer min-w-[280px]"
+            />
+            <div
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute inset-y-0 right-2 flex items-center px-2 text-gray-500 hover:text-gray-700 cursor-pointer"
+            >
+              <img
+                src={
+                  showPassword ? "/assets/visible.svg" : "/assets/invisible.svg"
+                }
+                alt={showPassword ? "Hide password" : "Show password"}
+                className="w-4 h-4  opacity-60 hover:opacity-80 transition-opacity"
+                draggable="false"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
+          <button
+            type="button"
+            className="account-btn mb-4 w-1/2"
+          >
+            Change Password
+          </button>
         </div>
       </div>
 
       {/* ------- */}
-      <div className="flex h-px w-full flex-none flex-col items-center gap-2 bg-neutral-border " />
+      {/* <div className="flex h-px w-full flex-none flex-col items-center bg-neutral-border " /> */}
 
-      {/* Delete Account */}
+      {/* Delete Account Field */}
 
       <div className="flex w-full max-w-[576px] flex-col items-start gap-12">
-        <span className="text-heading-3 font-heading-3 text-default-font text-lg">
-          Danger zone/Delete Account
-        </span>
+        <span className="text-lg font-medium">Danger zone/Delete Account</span>
         {/* <Alert
         variant="error"
         icon={null}

@@ -3,13 +3,13 @@ import AboutHeroSectionBackground from "../../assets/AboutImages/Image1.png";
 const AboutHeroSection = () => {
   return (
     <div
-      className="relative w-full h-[60vh] bg-cover bg-center"
+      className="relative w-full h-[60vh] bg-cover bg-center pt-24"
       style={{ backgroundImage: `url(${AboutHeroSectionBackground})` }}
     >
       <div className="relative z-10 text-white text-center p-8 flex flex-col justify-center items-center h-full">
-       
+        
         <h1
-          className="text-6xl md:text-[96px] font-bold w-[402px] h-[120px] mx-auto"
+          className="text-5xl md:text-[80px] font-bold w-[80%] mx-auto mb-16"
           style={{
             fontFamily: "'Source Serif Pro', serif",
           }}
@@ -17,9 +17,8 @@ const AboutHeroSection = () => {
           About Us
         </h1>
 
-        
         <p
-          className="text-lg mb-6 px-4 md:px-20 w-[863px] h-[116px] mx-auto text-[24px]"
+          className="text-base md:text-lg lg:text-xl mb-4 px-4 md:px-12 w-[90%] max-w-[800px] mx-auto"
           style={{
             fontFamily: "'Urbanist', sans-serif",
           }}
@@ -30,8 +29,7 @@ const AboutHeroSection = () => {
           for your mental well-being.
         </p>
 
-        {/* See More Butonu */}
-        <button className="bg-[#2E5077] text-white py-2 px-6 rounded-md hover:bg-blue-600 transition-all mt-[60px]">
+        <button className="bg-[#2E5077] text-white py-2 px-6 rounded-md hover:bg-blue-600 transition-all mt-6">
           See More
         </button>
       </div>
