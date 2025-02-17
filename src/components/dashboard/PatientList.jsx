@@ -14,7 +14,7 @@ const PatientList = () => {
 
   useEffect(() => {
     getUserAppointments(currentUser?._id);
-  }, [currentUser, getUserAppointments]);
+  }, [currentUser]);
 
   useEffect(() => {
     // Get unique patients from appointments
@@ -59,12 +59,11 @@ const PatientList = () => {
 
     setFilteredAppointments(uniqueFilteredPatients);
   };
-  console.log(filteredAppointments);
 
   if (currentUser && currentUser.isTherapist === true) {
     return (
-      <div className="w-full lg:w-1/2 p-4">
-        <div className="w-full lg:w-4/5 relative z-10">
+      <div className="w-full lg:w-1/2 p-8">
+        <div className="w-full relative z-10">
           {/* Header */}
           <div className="flex justify-center px-4 py-2 text-center rounded-xl mb-3 bg-seaGreen-dark">
             <p className="text-lg md:text-xl text-offWhite">

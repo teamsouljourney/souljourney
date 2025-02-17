@@ -1,53 +1,127 @@
 import {
+  Box,
   Container,
   IconButton,
   ImageList,
   ImageListItem,
   ImageListItemBar,
   ListSubheader,
+  Typography,
 } from "@mui/material";
 import EditNoteRoundedIcon from "@mui/icons-material/EditNoteRounded";
+import { useSelector } from "react-redux";
+import useBlogCall from "../../hooks/useBlogCall";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function MyBlogList() {
+  const { getAllBlogs } = useBlogCall();
+  const { blogs } = useSelector((state) => state.blogs);
+  const { currentUser } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    getAllBlogs();
+  }, []);
+
+  const filteredBlogsByTherapist = blogs.filter(
+    (blog) => blog.therapistId._id === currentUser._id
+  );
+
+  console.log(filteredBlogsByTherapist);
   return (
     <Container
-      maxWidth="lg" // Büyüyünce daha geniş ekran için maxWidth
+      maxWidth="lg"
       sx={{
         width: {
-          xs: "100%", // Küçük ekranlarda %100
-          sm: "100%", // Orta ekranlarda da %100
-          md: "50%", // Büyük ekranlarda %50 genişlik
+          xs: "100%",
+          sm: "100%",
+          md: "100%",
+          lg: "50%",
         },
-        margin: "auto", // Ekranı ortalamak için
+        margin: "auto",
+        padding: "2rem",
       }}
     >
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          px: 4,
+          py: 1,
+          textAlign: "center",
+          borderRadius: "12px",
+          mb: 3,
+          bgcolor: "customColors.darkgreen",
+        }}
+      >
+        <Typography
+          variant="body"
+          sx={{ color: "secondary.main", fontSize: "1.2rem" }}
+        >
+          {"My Blogs"}
+        </Typography>
+      </Box>
       <ImageList
         sx={{
-          minWidth: 200,
-          height: 450,
+          width: "100%",
+          height: "auto",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+          gridTemplateColumns: {
+            xs: "1fr",
+            md: "repeat(auto-fill, minmax(250px, 1fr))",
+          },
           gap: 16,
         }}
       >
-        <ImageListItem key="Subheader" cols={2}>
-          <ListSubheader component="div">My Blogs</ListSubheader>
-        </ImageListItem>
-        {itemData.map((item) => (
-          <ImageListItem key={item.img} sx={{ width: "100%", height: "100%" }}>
-            <img
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              alt={item.title}
-              loading="lazy"
-            />
+        {filteredBlogsByTherapist?.map((item) => (
+          <ImageListItem
+            key={item.title}
+            sx={{
+              width: "100%",
+              height: "100%",
+              "&:hover": {
+                padding: "2px",
+                transition: "all 0.1s ease-in-out",
+                cursor: "pointer",
+              },
+            }}
+            onClick={() => navigate(`/blogs/${item._id}`)}
+          >
+            <img src={item.image} alt={item.title} loading="lazy" />
             <ImageListItemBar
-              title={item.title}
-              subtitle={item.author}
+              title={
+                <Typography
+                  sx={{
+                    fontSize: "0.875rem",
+                    fontWeight: 500,
+                    wordBreak: "break-word",
+                    display: "block",
+                    whiteSpace: "normal",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
+                >
+                  {item.title}
+                </Typography>
+              }
+              subtitle={new Date(item.createdAt).toLocaleDateString("de-DE")}
               actionIcon={
                 <IconButton
-                  sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                  aria-label={`info about ${item.title}`}
+                  sx={{
+                    color: "customColors.darkgreen",
+                    "&:hover": {
+                      color: "customColors.lightgreen",
+                      transform: "scale(1.2)",
+                    },
+                    position: "relative",
+                    zIndex: 10,
+                  }}
+                  aria-label={`info about ${item.therapistId.title}`}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    navigate(`/profile/write-blog/${item._id}`);
+                  }}
                 >
                   <EditNoteRoundedIcon />
                 </IconButton>
@@ -59,77 +133,3 @@ export default function MyBlogList() {
     </Container>
   );
 }
-
-const itemData = [
-  {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Breakfast",
-    author: "@bkristastucchio",
-    rows: 2,
-    cols: 2,
-    featured: true,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-    title: "Burger",
-    author: "@rollelflex_graphy726",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Camera",
-    author: "@helloimnik",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-    title: "Coffee",
-    author: "@nolanissac",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-    title: "Hats",
-    author: "@hjrc33",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-    title: "Honey",
-    author: "@arwinneil",
-    rows: 2,
-    cols: 2,
-    featured: true,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-    title: "Basketball",
-    author: "@tjdragotta",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-    title: "Fern",
-    author: "@katie_wasserman",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-    title: "Mushrooms",
-    author: "@silverdalex",
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-    title: "Tomato basil",
-    author: "@shelleypauls",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-    title: "Sea star",
-    author: "@peterlaster",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-    title: "Bike",
-    author: "@southside_customs",
-    cols: 2,
-  },
-];

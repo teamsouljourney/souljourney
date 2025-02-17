@@ -29,7 +29,8 @@ function BlogList() {
 
   const handleCategoryChange = (category) => {
     // Eğer category bir string ise direkt kullan, değilse category.name'i kullan
-    const categoryName = typeof category === 'string' ? category : category.name;
+    const categoryName =
+      typeof category === "string" ? category : category.name;
     setSelectedCategory(categoryName);
     setIsMenuOpen(false);
   };
