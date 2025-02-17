@@ -1,9 +1,30 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import Buttons from "./button/Button"; // Buttons componentini import ettik
+import ShareIcon from "@mui/icons-material/Share"; // Paylaşım ikonu
+import Buttons from "./button/Button"; // Buton bileşeni
 
 const Card = ({ team, variant = "default", blog }) => {
   const navigate = useNavigate();
+
+  // Web Share API ile paylaşım fonksiyonu
+  const handleShare = async () => {
+    if (!blog) return; // Eğer blog yoksa paylaşma
+    const blogUrl = `${window.location.origin}/blogs/${blog._id}`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: blog.title,
+          text: blog.content,
+          url: blogUrl,
+        });
+      } catch (error) {
+        console.error("Share failed:", error);
+      }
+    } else {
+      alert("Paylaşım özelliği tarayıcınız tarafından desteklenmiyor.");
+    }
+  };
 
   return (
     <div className="max-w-xs w-full bg-white rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-105 cursor-pointer flex flex-col p-3">
@@ -11,8 +32,8 @@ const Card = ({ team, variant = "default", blog }) => {
       <div className="relative">
         <img
           className="w-full h-64 object-cover"
-          src={team ? team.image : blog.image} // Conditional image
-          alt={team ? team.firstName : blog.title} // Conditional alt text
+          src={team ? team.image : blog.image}
+          alt={team ? team.firstName : blog.title}
         />
       </div>
 
@@ -46,6 +67,16 @@ const Card = ({ team, variant = "default", blog }) => {
       <div className="border-t border-gray-300 mt-auto px-4 py-4 flex justify-between items-center">
         <FavoriteBorderIcon className="text-gray-600 cursor-pointer hover:text-red-500 transition" />
 
+        {/* Paylaş Butonu Sadece Bloglar İçin */}
+        {blog && (
+          <button
+            onClick={handleShare}
+            className="flex items-center gap-1 text-gray-600 hover:text-seaGreen transition"
+          >
+            <ShareIcon /> Share
+          </button>
+        )}
+
         {variant !== "default" ? (
           <NavLink
             to={`/blogs/${blog._id}`}
@@ -55,7 +86,7 @@ const Card = ({ team, variant = "default", blog }) => {
           </NavLink>
         ) : (
           <Buttons
-            type="type7" // Burada butonun stilini belirliyoruz
+            type="type7"
             onClick={() => navigate(`/therapists/${team._id}`)}
           >
             See More
