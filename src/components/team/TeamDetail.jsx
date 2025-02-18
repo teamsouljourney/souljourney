@@ -27,50 +27,74 @@ const TeamDetail = () => {
     return <div className="text-center text-mauve">Therapist not found!</div>;
   }
 
-  // console.log(singleTherapist);
+  console.log(singleTherapist);
 
   const {firstName, lastName, fullName, email, image, categoryId, feedbackId, description} = singleTherapist;
     
-  // console.log(categoryId.name);
+  console.log(categoryId);
+
+  const therapistCategories = categoryId
+
   
 
   return (
-    <div className="flex flex-col gap-10 justify-center items-center p-5 mt-14 px-auto sm:p-10 md:p-16 bg-offWhite dark:bg-background-dark text-navy-dark dark:text-offWhite">
+    <div className="container max-w-none min-h-screen flex flex-col justify-center items-center gap-10 mt-14 py-3 bg-offWhite dark:bg-background-dark text-navy-dark dark:text-offWhite">
       {/* Header */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mx-auto w-full max-w-7xl p-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mx-auto w-full max-w-7xl p-8 mt-10">
         {/* Profile Pic */}
         <div className="lg:col-span-3 flex justify-center">
-          <img className="w-32 h-32 rounded-full border-4 border-seaGreen shadow-lg" src={image} alt={fullName} />
-          
+          <img className="w-44 h-44 rounded-full border-4 border-seaGreen shadow-lg" src={image} alt={fullName} />          
         </div>
 
         {/* Identity */}
         <div className="lg:col-span-6 flex flex-col text-center lg:text-left">
-          <div className="text-2xl font-semibold text-navy">
-            <a
-              href="#"
-              className="inline-block mb-2 text-lg font-semibold transition duration-500 ease-in-out hover:text-indigo-600"
-            >
+          <div className="text-2xl font-semibold">
+            {/* Name */}
+            <div className="text-4xl font-semibold">
               {firstName} {lastName} {fullName}
-            </a>
-            <p className="flex flex-wrap justify-center lg:justify-start mt-2 gap-2">{categoryId.name}</p>
-            <p className="text-sm">{email}</p>
-            <p className="mt-5 text-xs">
-              By{" "}
-              <a
-                href="#"
-                className="text-xs text-indigo-600 transition duration-500 ease-in-out"
-              >
-                {firstName}
-              </a>{" "}
-              | in{" "}
-              <a
-                href="#"
-                className="text-xs text-indigo-600 transition duration-500 ease-in-out"
-              >
-                {lastName}
-              </a>
-            </p>
+              <p className="text-sm">{email}</p>
+            </div>
+            {/* Categories */}
+            <div className="flex sm:flex-wrap lg:flex-nowrap justify-center lg:justify-start mt-4 gap-2 text-lg">
+              {therapistCategories.map((category) => <span key={category._id}>{category.name}</span> )}
+            </div>
+            {/* Services */}
+            <div className="flex flex-wrap justify-center lg:justify-start items-center mt-2 gap-x-6">
+              
+              <div className="flex flex-row items-center  justify-center lg:justify-start gap-2">                
+                <span
+                  style={{
+                    maskImage: `url(/assets/sidebar/videoCall.svg)`,
+                    maskRepeat: "no-repeat",
+                    maskSize: "contain",
+                    width: "30px",
+                    height: "30px",
+                  }}
+                  className="inline-flex justify-center items-center  bg-navy-light "
+                ></span>
+                
+                <span className="text-[1.25rem] font-semibold">
+                  Video Call
+                </span>
+              </div>
+              <div className="flex flex-row items-center  justify-center lg:justify-start gap-2">                
+                <span
+                  style={{
+                    maskImage: `url(/assets/sidebar/chat.svg)`,
+                    maskRepeat: "no-repeat",
+                    maskSize: "contain",
+                    width: "30px",
+                    height: "30px",
+                  }}
+                  className="inline-flex justify-center items-center  bg-navy-light "
+                ></span>
+                
+                <span className="text-[1.25rem] font-semibold">
+                  Live Chat
+                </span>
+              </div>
+              
+            </div>
           </div>
         </div>
 
