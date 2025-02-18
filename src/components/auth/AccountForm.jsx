@@ -1,146 +1,128 @@
-import { Box, Button, TextField, useTheme } from "@mui/material";
-import { Form } from "formik";
-import * as Yup from "yup"
-import { authButtonBoxStyle, authFormBoxStyle, btnStyle } from "../../styles/globalStyle";
-import googleLogo from "../../assets/loginRegisterImage/Google.png";
-import PasswordField from "./PasswordField";
-import useAuthCall from "../../hooks/useAuthCall";
+import { useTranslation } from "react-i18next";
 
-// export const UpdateSchema = Yup.object().shape({
-//   userName: Yup.string()
-//     .required("Username is required!")
-//     .min(3, "Username must be at least 3 characters!"),
-//   firstName: Yup.string()
-//     .min(2, "First name is too short! It should be at least 2 characters.")
-//     .max(50, "First name is too long! It should be at most 50 characters.")
-//     .required("First name is required!"),
-//   lastName: Yup.string()
-//     .min(2, "Last name is too short! It should be at least 2 characters.")
-//     .max(50, "Last name is too long! It should be at most 50 characters.")
-//     .required("Last name is required!"),
-//   email: Yup.string().email("Please enter a valid email address!").required("Email is required!"),
-//   password: Yup.string()
-//     .required("Password is required!")
-//     .min(8, "Password must be at least 8 characters long!")
-//     .matches(/\d+/, "Password must contain at least one digit!")
-//     .matches(/[a-z]/, "Password must contain at least one lowercase letter!")
-//     .matches(/[A-Z]/, "Password must contain at least one uppercase letter!")
-//     .matches(/[@$?!%&*]+/, "Password must contain at least one special character (@$?!%&*)")
-// });
-
-const AccountForm = ({
-    values,
-    errors,
-    touched,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    isSubmitting
-  }) => {
-
-    const theme = useTheme()
-
+const AccountForm = ({userInfo, handleChange, handleSubmit}) => {
+  const { t } = useTranslation();
   return (
-    <div>
-      <Form>
-        <Box 
-          sx={authFormBoxStyle}
-        >
-          <TextField
-            name="firstName"
-            label="First Name"
-            type="text"
-            value={values.firstName}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.firstName && Boolean(errors.firstName)}
-            helperText={touched.firstName && errors.firstName}
-          />
-          <TextField
-            name="lastName"
-            label="Last Name"
-            type="text"
-            value={values.lastName}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.lastName && Boolean(errors.lastName)}
-            helperText={touched.lastName && errors.lastName}
-          />
-          <TextField
-            name="email"
-            label="Email"
-            type="email"
-            value={values.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.email && Boolean(errors.email)}
-            helperText={touched.email && errors.email}
-          />
-            <TextField
-            name="image"
-            label="Image"
-            type="text"
-            value={values.image}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.image && Boolean(errors.image)}
-            helperText={touched.image && errors.image}
-          />
-          <TextField
-            name="phone"
-            label="Phone"
-            type="text"
-            value={values.phone}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.phone && Boolean(errors.phone)}
-            helperText={touched.phone && errors.phone}
-          />
-          <TextField
-            name="address"
-            label="Adress"
-            type="text"
-            value={values.address}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.address && Boolean(errors.address)}
-            helperText={touched.address && errors.address}
-          />
-          <TextField
-            name="profession"
-            label="Profession"
-            type="text"
-            value={values.profession}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={touched.profession && Boolean(errors.profession)}
-            helperText={touched.profession && errors.profession}
-          />
-          <PasswordField
-            name="password"
-            label="Password"
-            value={values.password}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            touched={touched.password}
-            errors={errors}
-          />
-        </Box>
-      </Form>
-      <Box sx={authButtonBoxStyle}>
-        <Button
-          type="submit"
-          variant="contained"
-          disabled={isSubmitting}
-          sx={btnStyle}
+    <>
+      <div className="mt-10 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 w-full max-w-[576px]">
+        <div className="sm:col-span-2">
+          <label htmlFor="firstName" className="peer">
+            {t("firstName")}
+          </label>
+          <div className="mt-2">
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              value={userInfo.firstName}
+              placeholder="Enter your name"
+              autoComplete="given-name"
+              className="peer w-full"
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+
+        <div className="sm:col-span-2">
+          <label htmlFor="lastName" className="peer">
+            {t("lastName")}
+          </label>
+          <div className="mt-2">
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              value={userInfo.lastName}
+              placeholder="Enter your last name"
+              autoComplete="family-name"
+              className="peer w-full"
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+
+        <div className="sm:col-span-4">
+          <label htmlFor="email" className="peer">
+            {t("email")}
+          </label>
+          <div className="mt-2">
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={userInfo.email}
+              placeholder="Enter your email"
+              autoComplete="email"
+              className="peer w-full"
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+
+        {/* Contact Info Field */}
+        <div className="sm:col-span-4">
+          <label htmlFor="phone" className="peer">
+            {t("phone")}
+          </label>
+          <div className="mt-2">
+            <input
+              id="phone"
+              name="phone"
+              type="phone"
+              value={userInfo.phone}
+              placeholder="Enter your phone"
+              autoComplete="phone"
+              className="peer w-full"
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+        <div className="col-span-full">
+          <label htmlFor="profession" className="peer">
+            {t("profession")}
+          </label>
+          <div className="mt-2">
+            <input
+              id="profession"
+              name="profession"
+              type="text"
+              value={userInfo.profession}
+              placeholder="Enter your profession (Student, Teacher.. ext.)"
+              autoComplete="profession"
+              className="peer w-full"
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+        <div className="col-span-full">
+          <label htmlFor="address" className="peer">
+            {t("address")}
+          </label>
+          <div className="mt-2">
+            <textarea
+              type="address"
+              name="address"
+              id="address"
+              value={userInfo.address}
+              placeholder="Enter your address"
+              autoComplete="address"
+              className="textarea-style"
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
+        <button
+          type="button"
+          className="account-btn mb-4 w-1/2"
           onClick={handleSubmit}
         >
-          {isSubmitting ? "Loading..." : "Update Your Account"}
-        </Button>
-        
-      </Box>      
-    </div>
-  )
-}
+          Update Profile
+        </button>
+      </div>
+    </>
+  );
+};
 
-export default AccountForm
+export default AccountForm;
