@@ -42,9 +42,13 @@ const useCategoryCall = () => {
     }
   };
 
+
+
+
   return {
     getAllCategories,
     getSingleCategory,
+  
   };
 };
 
