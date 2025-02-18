@@ -1,9 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import useCategoryCall from "../hooks/useCategoryCall";
 
-const MoreCategories = ({ categories, handleTabClick, selectedCategory }) => {
+const MoreCategories = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const { categories } = useSelector((state) => state.categories);
+  const { getAllCategories } = useCategoryCall();
 
-  //Category burda cekilcek props yerine
+    useEffect(() => {
+      getAllCategories();
+    
+    }, []);
+
+
+  const handleTabClick = (category) => {
+    setSelectedCategory(category);
+  };
+
   return (
     <div className="relative ">
       {/* "More Categories" Butonu */}
@@ -19,7 +33,7 @@ const MoreCategories = ({ categories, handleTabClick, selectedCategory }) => {
       {/* Hamburger Menü (Daha fazla kategori) */}
       {isMenuOpen && (
         <div className="absolute top-full left-0 bg-white border shadow-md mt-1 w-fit z-10 max-h-60 overflow-y-auto">
-          {categories.map((category) => (
+          {categories.slice(5).map((category) => (
             <button
               key={category._id || category.name}
               onClick={() => handleTabClick(category.name)} 
