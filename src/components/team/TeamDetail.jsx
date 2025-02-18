@@ -111,8 +111,16 @@ const TeamDetail = () => {
 
       {/* Body */}
       <div>
-        <p>Abut me</p>
-        {description}
+        <div>
+          <p>Abut me</p>
+          {description}
+        </div>
+        <div>
+          <p>Reviews</p>
+          {feedbackId.comment}
+        </div>
+        
+
       </div>
       {/* GoBack */}
       <div className="p-6 pt-0 mt-8 text-center">
