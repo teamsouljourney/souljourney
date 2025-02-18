@@ -4,6 +4,7 @@ const therapistSlice = createSlice({
   name: "therapists",
   initialState: {
     therapists: [],
+    filteredTherapists: [],
     singleTherapist: null,
     therapistTimeTable: [],
     loading: false,
@@ -26,6 +27,9 @@ const therapistSlice = createSlice({
       state.loading = false;
       state.therapistTimeTable = payload;
     },
+    getFilterTherapistsSuccess: (state, { payload }) => {
+      state.filteredTherapists = payload
+    },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
@@ -39,6 +43,7 @@ export const {
   getAllTherapistsSuccess,
   getSingleTherapistSuccess,
   getTherapistTimeTableSuccess,
+  getFilterTherapistsSuccess,
 } = therapistSlice.actions;
 
 export default therapistSlice.reducer;

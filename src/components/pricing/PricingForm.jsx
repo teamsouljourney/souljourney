@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {loadStripe} from '@stripe/stripe-js';
 import { useSelector } from 'react-redux';
-
-
+import Button from "../button/Button";
 
 const PricingForm = () => {
     
@@ -59,14 +58,15 @@ const PricingForm = () => {
           <p className="mb-5 font-light text-navy-light gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
       </div>
       <div className="flex flex-col sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 mb-4">
-        <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-        onClick={() => setSelectedPlan("Monthly")}>
+        <Button type="type19"
+        onClick={() => setSelectedPlan("Monthly")}
+        >
                 Monthly
-        </button>
-        <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+        </Button>
+        <Button type="type19"
         onClick={() => setSelectedPlan("Yearly")}>
                 Yearly 
-        </button>
+        </Button>
       </div>
 
 
@@ -97,8 +97,9 @@ const PricingForm = () => {
                       <span>Appointment Count: <span className="font-semibold">5x/month</span></span>
                   </li>
                   
-              </ul>
-              <button onClick={handleRedirect} className="bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:focus:ring-primary-900 hover:bg-offWhite-dark white dark:hover:bg-white dark:hover:text-black dark:text-white">Get started</button>
+              </ul> 
+              
+              <button onClick={handleRedirect} className="bg-blue-100 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 hover:bg-offWhite-dark white dark:hover:bg-white dark:hover:text-black dark:text-white">Get started</button>
           </div>
           {/* <!-- Pricing Card --> */}
           <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-navy bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
@@ -128,7 +129,7 @@ const PricingForm = () => {
                   
                   
               </ul>
-              <button onClick={()=> handleCheckout(selectedPlan === "Monthly" ? "price_1QsAPGP6ONB2IDlqFgbc5PMm" : "price_1QsAQkP6ONB2IDlqiMwUcvQS")} className="bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 hover:bg-offWhite-dark dark:hover:text-black dark:hover:bg-white">Get started</button>
+              <button onClick={()=> handleCheckout(selectedPlan === "Monthly" ? "price_1QsAPGP6ONB2IDlqFgbc5PMm" : "price_1QsAQkP6ONB2IDlqiMwUcvQS")} className="bg-blue-100 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 hover:bg-offWhite-dark dark:hover:text-black dark:hover:bg-white">Get started</button>
           </div>
           {/* <!-- Pricing Card --> */}
           <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-white bg-navy rounded-lg border border-gray-100 shadow-blue-700 dark:border-gray-600 xl:p-8 dark:bg-gray-700 dark:text-white">
@@ -157,7 +158,7 @@ const PricingForm = () => {
                   </li>
 
               </ul>
-              <button onClick={()=>handleCheckout(selectedPlan === "Monthly" ? "price_1QsATcP6ONB2IDlq8IPG3Ubl" : "price_1QsAUOP6ONB2IDlqrxmCfsS3")} className="text-white  bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-base px-5 py-2.5 text-center dark:text-white dark:hover:text-black dark:focus:ring-primary-900 hover:bg-seaGreen dark:hover:bg-[#c3bac2]">Get started</button>
+              <button onClick={()=>handleCheckout(selectedPlan === "Monthly" ? "price_1QsATcP6ONB2IDlq8IPG3Ubl" : "price_1QsAUOP6ONB2IDlqrxmCfsS3")} className="text-white  bg-blue-500 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-base px-5 py-2.5 text-center dark:text-white dark:hover:text-black dark:focus:ring-primary-900 hover:bg-seaGreen dark:hover:bg-[#c3bac2]">Get started</button>
           </div>
       </div>
   </div>

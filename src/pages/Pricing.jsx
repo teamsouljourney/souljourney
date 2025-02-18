@@ -5,7 +5,7 @@ import PricingForm from "../components/pricing/PricingForm";
 
 const Pricing = () => {
     return (
-      <div className="min-h-screen bg-offWhite-light">
+      <div className="min-h-screen bg-offWhite-light p-16">
         <PricingHeader />
         <PricingForm />
       </div>

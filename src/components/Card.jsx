@@ -1,9 +1,9 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import ShareIcon from "@mui/icons-material/Share"; // Paylaşım ikonu
-import Buttons from "./button/Button"; // Buton bileşeni
+import ShareIcon from "@mui/icons-material/Share"; 
+import Buttons from "./button/Button"; 
 
-const Card = ({ team, variant = "default", blog }) => {
+const Card = ({ therapist, variant = "default", blog }) => {
   const navigate = useNavigate();
 
   // Web Share API ile paylaşım fonksiyonu
@@ -32,31 +32,31 @@ const Card = ({ team, variant = "default", blog }) => {
       <div className="relative">
         <img
           className="w-full h-64 object-cover"
-          src={team ? team.image : blog.image}
-          alt={team ? team.firstName : blog.title}
+          src={therapist ? therapist?.image : blog?.image}
+          alt={therapist ? therapist?.firstName : blog?.title}
         />
       </div>
 
       {/* İçerik Alanı */}
       <div className="p-6 flex-grow flex flex-col justify-between">
-        {team ? (
+        {therapist ? (
           <>
             <h2 className="text-xl font-bold mb-2 text-gray-800">
-              {`${team.firstName} ${team.lastName}`}
+              {`${therapist?.firstName} ${therapist?.lastName}`}
             </h2>
-            <p className="text-gray-600 mb-2">{team.categoryId?.name}</p>
-            <p className="text-gray-600 line-clamp-2">{team.description}</p>
+            <p className="text-gray-600 mb-2">{therapist?.categoryId?.name}</p>
+            <p className="text-gray-600 line-clamp-2">{therapist?.description}</p>
           </>
         ) : (
           <>
             <h2 className="text-xl font-bold mb-2 text-gray-800">
-              {blog.title}
+              {blog?.title}
             </h2>
-            <p className="text-gray-600 line-clamp-2">{blog.content}</p>
+            <p className="text-gray-600 line-clamp-2">{blog?.content}</p>
             <div className="flex items-center gap-1 mt-2">
               <span className="text-sm text-gray-700 font-medium">Date:</span>
               <span className="text-sm text-gray-500">
-                {new Date(blog.createdAt).toLocaleDateString()}
+                {new Date(blog?.createdAt).toLocaleDateString()}
               </span>
             </div>
           </>
@@ -79,7 +79,7 @@ const Card = ({ team, variant = "default", blog }) => {
 
         {variant !== "default" ? (
           <NavLink
-            to={`/blogs/${blog._id}`}
+            to={`/blogs/${blog?._id}`}
             className="w-28 sm:w-32 text-offWhite font-bold text-center py-2 rounded-lg bg-seaGreen-dark hover:bg-seaGreen-light transition"
           >
             Read More
@@ -87,7 +87,7 @@ const Card = ({ team, variant = "default", blog }) => {
         ) : (
           <Buttons
             type="type7"
-            onClick={() => navigate(`/therapists/${team._id}`)}
+            onClick={() => navigate(`/therapists/${therapist?._id}`)}
           >
             See More
           </Buttons>
