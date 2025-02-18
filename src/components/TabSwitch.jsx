@@ -19,7 +19,7 @@ const TabSwitch = () => {
     console.log("Therapist API cagirildi");
   }, []);
 
-  // Kategoriyi değiştiren fonksiyon
+ // Kategoriyi değiştiren fonksiyon
   const handleTabClick = (category) => {
     setSelectedCategory(category);
   };
@@ -68,9 +68,9 @@ const TabSwitch = () => {
 
             {/* More Categories Bileşeni */}
             <MoreCategories
-              categories={categories.slice(5)}
-              handleTabClick={handleTabClick}
-              selectedCategory={selectedCategory}
+              // categories={categories.slice(5)}
+              // handleTabClick={handleTabClick}
+              // selectedCategory={selectedCategory}
             />
             {/* Arama kutusu */}
             <div className="mt-5 flex justify-center">
