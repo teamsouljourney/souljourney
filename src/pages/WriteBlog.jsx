@@ -39,7 +39,7 @@ const WriteBlog = () => {
   }
 
   return (
-    <div className="max-w-5xl p-12 mx-auto">
+    <div className="max-w-5xl px-4 py-16 mx-auto sm:px-8">
       {isEditMode && !singleBlog ? (
         <p className="text-center text-gray-500">{t("loading")}</p>
       ) : (

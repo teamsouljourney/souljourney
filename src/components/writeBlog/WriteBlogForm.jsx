@@ -35,8 +35,8 @@ const WriteBlogForm = ({
 
   return (
     <Form>
-      <div className="flex flex-col items-center gap-6">
-        <div className="flex flex-wrap justify-center gap-4">
+      <div className="flex flex-col items-center gap-6 ">
+        <div className="flex flex-wrap items-center justify-center gap-4">
           <input
             type="text"
             name="title"
@@ -44,13 +44,13 @@ const WriteBlogForm = ({
             value={values.title}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="peer"
+            className="peer w-72 sm:w-64"
           />
           <select
             name="categoryId"
             value={values.categoryId || ""}
             onChange={handleChange}
-            className="p-2 border w-80"
+            className="rounded-md w-72 dark:bg-gray-600 dark:hover:bg-gray-500 px-1 py-1.5 text-navy-dark dark:text-offWhite-dark placeholder:text-xs placeholder:text-gray-400 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6"
           >
             <option value="" disabled>
               {t("selectCategory")}
@@ -68,10 +68,10 @@ const WriteBlogForm = ({
             value={values.image}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="peer"
+            className="peer w-72 sm:w-64"
           />
         </div>
-        <div className="w-full max-w-4xl overflow-hidden border rounded-md">
+        <div className="w-full overflow-hidden border rounded-md">
           <ReactQuill
             id="content"
             theme="snow"
@@ -79,10 +79,10 @@ const WriteBlogForm = ({
             value={values.content}
             placeholder={t("contentPlaceholder")}
             onChange={(value) => setFieldValue("content", value)}
-            className="w-full h-[30rem]"
+            className="w-full h-[20rem] sm:h-[30rem] dark:text-offWhite text-md"
           />
         </div>
-        <div className="flex gap-8">
+        <div>
           <button
             type="submit"
             className="px-4 py-2 text-white transition duration-300 rounded-md bg-navy hover:bg-seaGreen"
