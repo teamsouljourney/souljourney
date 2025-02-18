@@ -222,5 +222,12 @@
   "imagePlaceholder": "Görsel *",
   "contentPlaceholder": "Blog içeriğinizi buraya yazın...",
   "updateBlog": "Bloğu Güncelle",
-  "createNewBlog": "Yeni Blog Oluştur"
+  "createNewBlog": "Yeni Blog Oluştur",
+
+  "APPOINTMENT CALENDAR": "RANDEVU TAKVİMİ",
+  "bookingCalendar": "Rezervasyon Takvimi",
+  "createAppointment": "Randevu Oluştur",
+  "pleaseSelectTimeSlot": "Lütfen bir zaman dilimi seçin.",
+  "selectedDate": "Seçilen Tarih",
+  "pleaseSelectDate": "Lütfen takvimden bir tarih seçin"
 }

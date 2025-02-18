@@ -222,5 +222,12 @@
   "imagePlaceholder": "Bild *",
   "contentPlaceholder": "Schreiben Sie hier Ihren Blog-Inhalt...",
   "updateBlog": "Blog aktualisieren",
-  "createNewBlog": "Neuen Blog erstellen"
+  "createNewBlog": "Neuen Blog erstellen",
+
+  "APPOINTMENT CALENDAR": "TERMINKALENDER",
+  "bookingCalendar": "Buchungskalender",
+  "createAppointment": "Termin erstellen",
+  "pleaseSelectTimeSlot": "Bitte wählen Sie ein Zeitfenster aus.",
+  "selectedDate": "Ausgewähltes Datum",
+  "pleaseSelectDate": "Bitte wählen Sie ein Datum aus dem Kalender"
 }
