@@ -229,5 +229,18 @@
   "createAppointment": "Termin erstellen",
   "pleaseSelectTimeSlot": "Bitte wählen Sie ein Zeitfenster aus.",
   "selectedDate": "Ausgewähltes Datum",
-  "pleaseSelectDate": "Bitte wählen Sie ein Datum aus dem Kalender"
+  "pleaseSelectDate": "Bitte wählen Sie ein Datum aus dem Kalender",
+  "cancelConfirmation": "Möchten Sie diesen Termin wirklich stornieren?",
+  "editAppointment": "Termin bearbeiten",
+  "cancelAppointment": "Termin stornieren",
+  "appointmentDetails": "Termindetails",
+  "client": "Kunde",
+  "therapist": "Therapeut",
+  "date": "Datum",
+  "time": "Uhrzeit",
+  "joinMeeting": "Meeting beitreten",
+  "saveChanges": "Änderungen speichern",
+  "cancel": "Abbrechen",
+  "noAppointmentsMessage": "Sie haben keinen geplanten Termin.",
+  "bookAppointmentButton": "Termin buchen"
 }

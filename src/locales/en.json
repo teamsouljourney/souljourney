@@ -228,5 +228,18 @@
   "createAppointment": "Create Appointment",
   "pleaseSelectTimeSlot": "Please select a time slot.",
   "selectedDate": "Selected Date",
-  "pleaseSelectDate": "Please select a date from the calendar"
+  "pleaseSelectDate": "Please select a date from the calendar",
+  "cancelConfirmation": "Are you sure you want to cancel this appointment?",
+  "editAppointment": "Edit Appointment",
+  "cancelAppointment": "Cancel Appointment",
+  "appointmentDetails": "Appointment Details",
+  "client": "Client",
+  "therapist": "Therapist",
+  "date": "Date",
+  "time": "Time",
+  "joinMeeting": "Join Meeting",
+  "saveChanges": "Save Changes",
+  "cancel": "Cancel",
+  "noAppointmentsMessage": "You have no scheduled appointments.",
+  "bookAppointmentButton": "Book an Appointment"
 }
