@@ -7,8 +7,10 @@ import NewBlogForm, {
 } from "../components/writeBlog/WriteBlogForm";
 import useBlogCall from "../hooks/useBlogCall";
 import useCategoryCall from "../hooks/useCategoryCall";
+import { useTranslation } from "react-i18next";
 
 const WriteBlog = () => {
+  const { t } = useTranslation();
   const { getSingleBlog, createNewBlog, updateBlog } = useBlogCall();
   const { getAllCategories } = useCategoryCall();
   const { id } = useParams();
@@ -33,13 +35,13 @@ const WriteBlog = () => {
   }, [id, isEditMode]);
 
   if (isEditMode && !singleBlog) {
-    return <p className="text-center text-gray-500">Loading...</p>;
+    return <p className="text-center text-gray-500">{t("loading")}</p>;
   }
 
   return (
     <div className="max-w-5xl p-12 mx-auto">
       {isEditMode && !singleBlog ? (
-        <p className="text-center text-gray-500">Loading...</p>
+        <p className="text-center text-gray-500">{t("loading")}</p>
       ) : (
         <Formik
           enableReinitialize

@@ -214,5 +214,13 @@
   "address": "Adres",
   "profession": "Meslek",
   "profile": "Profil",
-  "upload": "Yükle"
+  "upload": "Yükle",
+
+  "WRITEBLOG": "WRITEBLOG",
+  "blogTitlePlaceholder": "Blog Başlığı *",
+  "selectCategory": "Kategori Seç",
+  "imagePlaceholder": "Görsel *",
+  "contentPlaceholder": "Blog içeriğinizi buraya yazın...",
+  "updateBlog": "Bloğu Güncelle",
+  "createNewBlog": "Yeni Blog Oluştur"
 }

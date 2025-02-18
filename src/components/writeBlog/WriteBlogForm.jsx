@@ -3,6 +3,7 @@ import { Form } from "formik";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 // For React Quill Text Editor
 const modules = {
@@ -30,6 +31,7 @@ const WriteBlogForm = ({
   isEditMode,
 }) => {
   const { categories } = useSelector((state) => state.categories);
+  const { t } = useTranslation();
 
   return (
     <Form>
@@ -38,7 +40,7 @@ const WriteBlogForm = ({
           <input
             type="text"
             name="title"
-            placeholder="Blog Title *"
+            placeholder={t("blogTitlePlaceholder")}
             value={values.title}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -51,7 +53,7 @@ const WriteBlogForm = ({
             className="p-2 border w-80"
           >
             <option value="" disabled>
-              Select Category
+              {t("selectCategory")}
             </option>
             {categories.map((category) => (
               <option key={category._id} value={category._id}>
@@ -62,7 +64,7 @@ const WriteBlogForm = ({
           <input
             type="text"
             name="image"
-            placeholder="Image *"
+            placeholder={t("imagePlaceholder")}
             value={values.image}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -75,9 +77,9 @@ const WriteBlogForm = ({
             theme="snow"
             modules={modules}
             value={values.content}
-            placeholder="Write your blog content here..."
+            placeholder={t("contentPlaceholder")}
             onChange={(value) => setFieldValue("content", value)}
-            className="w-full h-[10rem]"
+            className="w-full h-[30rem]"
           />
         </div>
         <div className="flex gap-8">
@@ -87,10 +89,10 @@ const WriteBlogForm = ({
             disabled={isSubmitting}
           >
             {isSubmitting
-              ? "Loading..."
+              ? t("loading")
               : isEditMode
-              ? "Update Blog"
-              : "Create New Blog"}
+              ? t("updateBlog")
+              : t("createNewBlog")}
           </button>
         </div>
       </div>

@@ -214,5 +214,13 @@
   "address": "Adresse",
   "profession": "Beruf",
   "profile": "Profil",
-  "upload": "Hochladen"
+  "upload": "Hochladen",
+
+  "WRITEBLOG": "WRITEBLOG",
+  "blogTitlePlaceholder": "Blog-Titel *",
+  "selectCategory": "Kategorie auswählen",
+  "imagePlaceholder": "Bild *",
+  "contentPlaceholder": "Schreiben Sie hier Ihren Blog-Inhalt...",
+  "updateBlog": "Blog aktualisieren",
+  "createNewBlog": "Neuen Blog erstellen"
 }
