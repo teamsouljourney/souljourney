@@ -3,6 +3,7 @@ import { useState } from "react";
 const MoreCategories = ({ categories, handleTabClick, selectedCategory }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  //Category burda cekilcek props yerine
   return (
     <div className="relative ">
       {/* "More Categories" Butonu */}
@@ -17,7 +18,7 @@ const MoreCategories = ({ categories, handleTabClick, selectedCategory }) => {
 
       {/* Hamburger Menü (Daha fazla kategori) */}
       {isMenuOpen && (
-        <div className="absolute top-full left-0 bg-white border shadow-md mt-1 w-fit z-10">
+        <div className="absolute top-full left-0 bg-white border shadow-md mt-1 w-fit z-10 max-h-60 overflow-y-auto">
           {categories.map((category) => (
             <button
               key={category._id || category.name}
