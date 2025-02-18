@@ -2,50 +2,33 @@ import { useEffect, useState } from "react";
 import TeamCard from "../components/team/TeamCard";
 import useCategoryCall from "../hooks/useCategoryCall";
 import useTherapistCall from "../hooks/useTherapistCall";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import MoreCategories from "../components/MoreCategories";
+import { setSelectedCategory } from "../features/categorySlice";
 
 const TabSwitch = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const dispatch=useDispatch()
   const [searchTerm, setSearchTerm] = useState("");
-  const { categories } = useSelector((state) => state.categories);
-  const { therapists } = useSelector((state) => state.therapists);
-  const { getAllCategories } = useCategoryCall();
-  const { getAllTherapists } = useTherapistCall();
+  const { categories,selectedCategory } = useSelector((state) => state.categories);
+  const { getAllCategories} = useCategoryCall();
+  const { getAllTherapists, getFilterTherapists } = useTherapistCall();
 
   useEffect(() => {
     getAllCategories();
     getAllTherapists();
     console.log("Therapist API cagirildi");
+    console.log(getAllCategories());
   }, []);
 
- // Kategoriyi değiştiren fonksiyon
-  const handleTabClick = (category) => {
-    setSelectedCategory(category);
+  // Kategoriyi değiştiren fonksiyon
+  const handleTabClick = (categoryId) => {
+    dispatch(setSelectedCategory(categoryId))
+    getFilterTherapists(categoryId);
   };
 
   const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value); // Arama kutusundaki değeri güncelle
+    setSearchTerm(e.target.value);
   };
-
-  const filteredTherapists = (therapists || []).filter((therapist) => {
-    // therapist nesnesinin gerekli alanlarının tanımlı olup olmadığını kontrol et
-    if (!therapist || !therapist.firstName || !therapist.lastName) return false;
-
-    const isCategoryMatch =
-      selectedCategory === "All" ||
-      therapist.categoryId?._id === selectedCategory;
-    console.log(selectedCategory);
-
-    const isSearchMatch =
-      therapist.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      therapist.categoryId?.name
-        ?.toLowerCase()
-        .includes(searchTerm.toLowerCase());
-    console.log(isSearchMatch);
-
-    return isCategoryMatch && isSearchMatch;
-  });
 
   return (
     <>
@@ -56,7 +39,7 @@ const TabSwitch = () => {
               <button
                 key={category._id}
                 className={`px-4 py-2 text-black font-semibold border-b-4 hover:bg-navy-light focus:outline-none tab-button transition-all duration-300 ease-in-out mb-5 rounded-lg ${
-                  selectedCategory === category.name
+                  selectedCategory === category._id
                     ? "bg-navy-light text-white shadow-lg scale-105"
                     : ""
                 }`}
@@ -67,11 +50,7 @@ const TabSwitch = () => {
             ))}
 
             {/* More Categories Bileşeni */}
-            <MoreCategories
-              // categories={categories.slice(5)}
-              // handleTabClick={handleTabClick}
-              // selectedCategory={selectedCategory}
-            />
+            <MoreCategories />
             {/* Arama kutusu */}
             <div className="mt-5 flex justify-center">
               <input
@@ -85,9 +64,7 @@ const TabSwitch = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-2 mt-[100px] mb-[100px]">
-          <TeamCard teams={filteredTherapists} />
-        </div>
+        
       </div>
     </>
   );
