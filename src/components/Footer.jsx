@@ -1,8 +1,10 @@
 import { NavLink, useLocation } from "react-router-dom";
 import souljorurney_Logo from "../assets/souljourney_Logo.png";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const location = useLocation();
+  const { t } = useTranslation();
 
   if (
     location.pathname === "/login" ||
@@ -20,7 +22,7 @@ const Footer = () => {
                 className="my-2 hover:text-mauve-dark dark:hover:text-pink-light text-xs sm:text-base"
                 to="/impressum"
               >
-                Impressum
+                {/* {t(Impressum)} */}
               </NavLink>
             </li>
             <li className="my-2 whitespace-nowrap">
