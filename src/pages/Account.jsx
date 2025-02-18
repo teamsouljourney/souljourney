@@ -9,25 +9,44 @@
 // import AccountForm from "../components/auth/AccountForm";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import AccountForm from "../components/auth/AccountForm";
 
 const Account = () => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
+  const {currentUser} = useSelector((state) => state.auth);
+  console.log(currentUser);
+
+  const [userInfo, setUserInfo] = useState(currentUser)
+  console.log(userInfo);
+
+  const handleChange = (e) => {
+    // console.log(e.target.value);
+    setUserInfo({...userInfo, [e.target.name]: e.target.value})
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(userInfo)
+  }
+  
+  
   return (
-    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light pl-4 pr-6 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-background-darker">
+    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light pl-4 pr-6 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-background-darker mt">
       {/* Update Profile Section */}
 
-      <div className="flex w-full max-w-[576px] flex-col items-start gap-10 border-b-2 border-b-gray-200 dark:border-b-gray-400">
+      <div className="flex w-full max-w-[576px] flex-col items-start gap-10 border-b-2 border-b-gray-200 dark:border-b-gray-400 mt-10">
         {/* Header */}
         <div className="flex w-full flex-col items-start gap-2 font-semibold">
-          <span className="text-3xl">{t("account")}</span>
+          <span className="text-5xl">{t("account")}</span>
           <span>Update your profile and personal details here</span>
         </div>
         {/* Profile Section */}
         <div className="flex w-full flex-col items-start gap-2">
-          <span className="text-lg font-medium mb-4">{t("profile")}</span>
+          <span className="text-3xl font-semibold mb-4">{t("profile")}</span>
           <div className="flex w-full flex-col items-start gap-4">
-            <span className="text-2xl">John Doe</span>
+            <span className="text-2xl font-medium"><i>{userInfo.firstName} {userInfo.lastName}</i></span>
             <div className="flex items-center gap-4">
               <img
                 className="h-16 w-16 flex-none object-cover [clip-path:circle()]"
@@ -47,114 +66,12 @@ const Account = () => {
               </div>
             </div>
           </div>
-          <div className="flex w-full items-center gap-4">
+          <div className="flex flex-col w-full items-center gap-4">
             {/* Personel Info Field */}
-            <div className="mt-10 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 w-full max-w-[576px]">
-              <div className="sm:col-span-2">
-                <label for="firstName" className="peer">
-                  {t("firstName")}
-                </label>
-                <div className="mt-2">
-                  <input
-                    type="text"
-                    name="firstName"
-                    id="firstName"
-                    placeholder="Enter your name"
-                    autocomplete="given-name"
-                    className="peer w-full"
-                  />
-                </div>
-              </div>
 
-              <div className="sm:col-span-2">
-                <label for="lastName" className="peer">
-                  {t("lastName")}
-                </label>
-                <div className="mt-2">
-                  <input
-                    type="text"
-                    name="lastName"
-                    id="lastName"
-                    placeholder="Enter your last name"
-                    autocomplete="family-name"
-                    className="peer w-full"
-                  />
-                </div>
-              </div>
-
-              <div className="sm:col-span-4">
-                <label for="email" className="peer">
-                  {t("email")}
-                </label>
-                <div className="mt-2">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="Enter your email"
-                    autocomplete="email"
-                    className="peer w-full"
-                  />
-                </div>
-              </div>
-
-              {/* Contact Info Field */}
-              <div className="sm:col-span-4">
-                <label for="phone" className="peer">
-                  {t("phone")}
-                </label>
-                <div className="mt-2">
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="phone"
-                    placeholder="Enter your phone"
-                    autocomplete="phone"
-                    className="peer w-full"
-                  />
-                </div>
-              </div>
-              <div className="col-span-full">
-                <label for="profession" className="peer">
-                  {t("profession")}
-                </label>
-                <div className="mt-2">
-                  <input
-                    id="profession"
-                    name="profession"
-                    type="text"
-                    placeholder="Enter your profession (Student, Teacher.. ext.)"
-                    autocomplete="profession"
-                    className="peer w-full"
-                  />
-                </div>
-              </div>
-              <div className="col-span-full">
-                <label for="address" className="peer">
-                  {t("address")}
-                </label>
-                <div className="mt-2">
-                  <textarea
-                    type="address"
-                    name="address"
-                    id="address"
-                    placeholder="Enter your address"
-                    autocomplete="address"
-                    className="textarea-style"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
-            <button
-              type="button"
-              className="account-btn mb-4 w-1/2"
-            >
-              Update Profile
-            </button>
-          </div>
+            <AccountForm userInfo={userInfo} handleChange={handleChange} handleSubmit={handleSubmit} />
+            
+          </div>          
         </div>
       </div>
       {/* ------- */}
