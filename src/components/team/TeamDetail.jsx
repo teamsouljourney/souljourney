@@ -64,7 +64,7 @@ const TeamDetail = () => {
               <div className="flex flex-row items-center  justify-center lg:justify-start gap-2">                
                 <span
                   style={{
-                    maskImage: `url(/assets/sidebar/videoCall.svg)`,
+                    maskImage: `url(/assets/sidebar/videoCall2.svg)`,
                     maskRepeat: "no-repeat",
                     maskSize: "contain",
                     width: "30px",
@@ -80,7 +80,7 @@ const TeamDetail = () => {
               <div className="flex flex-row items-center  justify-center lg:justify-start gap-2">                
                 <span
                   style={{
-                    maskImage: `url(/assets/sidebar/chat.svg)`,
+                    maskImage: `url(/assets/sidebar/chat2.svg)`,
                     maskRepeat: "no-repeat",
                     maskSize: "contain",
                     width: "30px",
@@ -127,9 +127,7 @@ const TeamDetail = () => {
       {/* Appointment */}
       <div className={displayCalendar ? "min-h-[200px]" : "min-h-[100px]"}>
         {displayCalendar && (
-          <div>
-            <AppointmentCalendar />
-          </div>
+          <AppointmentCalendar />
         )}
       </div>
       
