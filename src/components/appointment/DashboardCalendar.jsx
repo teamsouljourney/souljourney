@@ -7,9 +7,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSelectedDate } from "../../features/calendarSlice";
 import useTherapistCall from "../../hooks/useTherapistCall";
 import { useEffect } from "react";
+import { getSingleAppointmentSuccess } from "../../features/appointmentSlice";
+import { useNavigate } from "react-router-dom";
 
 const DashboardCalendar = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const { getSingleAppointment } = useAppointmentCall();
   const { getTherapistTimeTable } = useTherapistCall();
 
@@ -22,6 +26,12 @@ const DashboardCalendar = () => {
   const handleEventClick = (info) => {
     getSingleAppointment(info.event?._def.publicId);
   };
+
+  useEffect(() => {
+    return () => {
+      dispatch(getSingleAppointmentSuccess(null));
+    };
+  }, [navigate]);
 
   useEffect(() => {
     if (singleAppointment?.therapistId?._id) {

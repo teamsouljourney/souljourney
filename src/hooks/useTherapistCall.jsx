@@ -6,6 +6,7 @@ import {
   getAllTherapistsSuccess,
   getSingleTherapistSuccess,
   getTherapistTimeTableSuccess,
+  getFilterTherapistsSuccess,
 } from "../features/therapistSlice";
 import { toastErrorNotify } from "../helper/ToastNotify";
 
@@ -54,7 +55,28 @@ const useTherapistCall = () => {
       );
     }
   };
-  return { getAllTherapists, getSingleTherapist, getTherapistTimeTable };
+
+  
+  const getFilterTherapists = async (categoryId) => {
+    dispatch(fetchStart());
+    console.log(categoryId);
+    
+    try {
+      const { data } = await axiosWithToken.get(`therapists?category=${categoryId}`);
+      dispatch(getFilterTherapistsSuccess(data?.data));
+      console.log(data);
+      
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response.data.message,
+        "Failed to fetch filtered therapist"
+      );
+    }
+  };
+
+
+  return { getAllTherapists, getSingleTherapist, getTherapistTimeTable, getFilterTherapists };
 };
 
 export default useTherapistCall;

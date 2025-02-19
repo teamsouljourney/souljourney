@@ -6,11 +6,11 @@ import {
   getAllBlogsSuccess,
   getSingleBlogSuccess,
 } from "../features/blogSlice";
-import { toastErrorNotify } from "../helper/ToastNotify";
+import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
 const useBlogCall = () => {
   const dispatch = useDispatch();
-//   const axiosWithToken = useAxios();
+  const axiosWithToken = useAxios();
 
   const getAllBlogs = async () => {
     dispatch(fetchStart());
@@ -22,8 +22,7 @@ const useBlogCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to fetch blogs."
+        error.response?.data?.message || "Failed to fetch blogs."
       );
     }
   };
@@ -36,14 +35,42 @@ const useBlogCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to fetch blogs details."
+        error.response?.data?.message || "Failed to fetch blog details."
       );
     }
   };
 
+  const createNewBlog = async (blogData) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.post("blogs", blogData);
+      toastSuccessNotify("Blog created successfully!");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to create blog."
+      );
+    } finally {
+      getAllBlogs();
+    }
+  };
 
-  return { getAllBlogs, getSingleBlog};
+  const updateBlog = async (id, blogData) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.put(`blogs/${id}`, blogData);
+      toastSuccessNotify("Blog updated successfully!");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to update blog."
+      );
+    } finally {
+      getAllBlogs();
+    }
+  };
+
+  return { getAllBlogs, getSingleBlog, createNewBlog, updateBlog };
 };
 
 export default useBlogCall;

@@ -1,8 +1,8 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 
-const Buttons = ({ children, to, onClick, type,className }) => {
+const Buttons = ({ children, to, onClick, type, className }) => {
  
   const buttonStyles = {
     type1: "bg-[#2E5077] text-white py-2 px-6 rounded-md hover:bg-blue-600 transition-all mt-[60px]",//aboutherosection
@@ -32,10 +32,23 @@ const Buttons = ({ children, to, onClick, type,className }) => {
     type25:"relative rounded-md whitespace-nowrap px-2 py-2 text-sm sm:px-3 sm:py-1 xs:px-2 xs:text-xs text-offWhite-light bg-mauve-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy", //navbar-2
     type26:"relative p-[8px] text-navy-dark bg-offWhite rounded-full group hover:bg-navy-dark hover:text-offWhite focus:z-10 dark:focus:ring-navy-dark dark:bg-navy focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy dark:text-gray-400 dark:hover:text-offWhite dark:hover:bg-navy-light shadow-lg shadow-mauve-light hover:shadow-6xl hover:shadow-navy-dark", // component - Switch
     type27:"px-4 py-2 text-sm font-medium text-white transition duration-300 rounded-lg bg-seaGreen hover:bg-navy",  //pages - verifyEmail- 1
-    type28:"px-4 py-2 text-sm font-medium transition duration-300 border rounded-lg text-navy border-navy", //pages - verifyEmail - 2
+    type28:"px-4 py-2 text-sm font-medium transition duration-300 border rounded-lg text-navy border-navy",
+     //pages - verifyEmail - 2
+  
+
+     
   };
 
   const combinedClassName = `${buttonStyles[type]} ${className}`
+
+
+  if (to) {
+    return (
+      <Link to={to} className={combinedClassName}>
+        {children}
+      </Link>
+    );
+  }
 
   return (
     <button

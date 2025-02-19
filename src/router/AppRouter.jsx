@@ -3,7 +3,7 @@ import PrivateRouter from "./PrivateRouter";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Navbar from "../components/Navbar";
-import BlogDetail from "../components/Blog/BlogDetail"; // BlogDetail bileşenini dahil et
+import BlogDetail from "../components/blog/BlogDetail"; // BlogDetail bileşenini dahil et
 
 import Blog from "../pages/Blog";
 import Team from "../pages/Team";
@@ -27,6 +27,12 @@ import Dashboard from "../pages/Dashboard";
 import Sidebar from "../components/Sidebar";
 import Appointment from "../pages/Appointment";
 import NotFound from "../pages/NotFound";
+import UserManagement from "../pages/UserManagement";
+import TherapistManagement from "../pages/TherapistManagement";
+import CategoryManagement from "../pages/CategoryManagement";
+import AppointmentManagement from "../pages/AppointmentManagement";
+import BlogManagement from "../pages/BlogManagement";
+import FeedbackManagement from "../pages/FeedbackManagement";
 
 const AppRouter = () => {
   return (
@@ -50,17 +56,36 @@ const AppRouter = () => {
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/auth/reset-password/:token" element={<ResetPassword />} />
         <Route path="/blogs/:id" element={<BlogDetail />} />
-        <Route path="*" element={<NotFound/>}/>
+        <Route path="*" element={<NotFound />} />
         {/* Private Area */}
         <Route path="" element={<PrivateRouter />}>
           {/* Privates Routes */}
-          <Route path="/profile" element={<Sidebar />} >
-            <Route index element={<Dashboard/>}/>
-            <Route path="account" element={<Account/>}/>
-            <Route path="appointment" element={<Appointment/>}/>
-            <Route path="chat" element={<Chat/>}/>
-            <Route path="video-call" element={<VideoCall/>}/>
-            <Route path="write-blog" element={<WriteBlog/>}/>
+          <Route path="/profile" element={<Sidebar />}>
+            <Route index element={<Dashboard />} />
+            <Route path="account" element={<Account />} />
+            <Route path="appointment" element={<Appointment />} />
+            <Route path="chat" element={<Chat />} />
+            <Route path="video-call" element={<VideoCall />} />
+            <Route path="write-blog" element={<WriteBlog />} />
+            <Route path="write-blog/:id" element={<WriteBlog />} />
+            <Route path="user-management" element={<UserManagement />} />
+            <Route
+              path="therapist-management"
+              element={<TherapistManagement />}
+            />
+            <Route
+              path="category-management"
+              element={<CategoryManagement />}
+            />
+            <Route
+              path="appointment-management"
+              element={<AppointmentManagement />}
+            />
+            <Route path="blog-management" element={<BlogManagement />} />
+            <Route
+              path="feedback-management"
+              element={<FeedbackManagement />}
+            />
           </Route>
         </Route>
       </Routes>

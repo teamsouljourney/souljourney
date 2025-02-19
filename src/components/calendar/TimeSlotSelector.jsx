@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedSlot } from "../../features/calendarSlice";
+import { useTranslation } from "react-i18next";
 
 const TimeSlotSelector = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { therapistTimeTable } = useSelector((state) => state.therapists);
   const { selectedDate, selectedSlot } = useSelector((state) => state.calendar);
-
-  // console.log(therapistTimeTable);
 
   const generateTimeSlots = () => {
     const slots = [];
@@ -23,7 +23,6 @@ const TimeSlotSelector = () => {
 
   const isSlotUnavailable = (date, slot) => {
     const slotStartTime = new Date(`${date}T${slot.split(" ")[0]}:00`);
-    // console.log(slotStartTime);
     const now = new Date();
 
     if (new Date(date).toDateString() === now.toDateString()) {
@@ -47,8 +46,8 @@ const TimeSlotSelector = () => {
     <div className="p-4 mt-4 border rounded bg-offWhite">
       <h3 className="font-semibold text-mauve text-md">
         {selectedDate
-          ? `Selected Date: ${selectedDate}`
-          : "Please select a date from the calendar"}
+          ? `${t("selectedDate")}: ${selectedDate}`
+          : t("pleaseSelectDate")}
       </h3>
       <div className="flex flex-wrap gap-2 mt-2">
         {generateTimeSlots().map((slot, index) => {
