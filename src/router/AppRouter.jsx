@@ -50,17 +50,18 @@ const AppRouter = () => {
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/auth/reset-password/:token" element={<ResetPassword />} />
         <Route path="/blogs/:id" element={<BlogDetail />} />
-        <Route path="*" element={<NotFound/>}/>
+        <Route path="*" element={<NotFound />} />
         {/* Private Area */}
         <Route path="" element={<PrivateRouter />}>
           {/* Privates Routes */}
-          <Route path="/profile" element={<Sidebar />} >
-            <Route index element={<Dashboard/>}/>
-            <Route path="account" element={<Account/>}/>
-            <Route path="appointment" element={<Appointment/>}/>
-            <Route path="chat" element={<Chat/>}/>
-            <Route path="video-call" element={<VideoCall/>}/>
-            <Route path="write-blog" element={<WriteBlog/>}/>
+          <Route path="/profile" element={<Sidebar />}>
+            <Route index element={<Dashboard />} />
+            <Route path="account" element={<Account />} />
+            <Route path="appointment" element={<Appointment />} />
+            <Route path="chat" element={<Chat />} />
+            <Route path="video-call" element={<VideoCall />} />
+            <Route path="write-blog" element={<WriteBlog />} />
+            <Route path="write-blog/:id" element={<WriteBlog />} />
           </Route>
         </Route>
       </Routes>

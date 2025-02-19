@@ -4,22 +4,22 @@
 
 @layer base {
   input {
-    @apply block rounded-md dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark placeholder:text-xs placeholder:text-gray-400 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6
+    @apply block rounded-md dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 text-navy-dark dark:text-offWhite-dark placeholder:text-xs placeholder:text-gray-400 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-navy-light/60 sm:text-sm/6;
   }
   label {
-    @apply block text-sm/6 font-medium
+    @apply block font-medium text-sm/6;
   }
 }
 
 @layer components {
   .account-btn {
-    @apply rounded-md transition-transform duration-150 ease-in-out active:scale-95 bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-sm ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600
+    @apply rounded-md transition-transform duration-150 ease-in-out active:scale-95 bg-navy-dark text-offWhite dark:text-background-dark dark:bg-offWhite-dark px-2.5 py-1.5 text-sm font-semibold ring-1 shadow-sm ring-navy-dark dark:ring-offWhite-dark ring-inset hover:bg-navy-dark/90 dark:hover:bg-offWhite-dark/90 hover:shadow-md dark:shadow-gray-600;
   }
   .password-label {
-    @apply block text-sm font-medium
+    @apply block text-sm font-medium;
   }
   .textarea-style {
-    @apply block w-full rounded-md dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 text-navy-dark dark:text-offWhite-dark placeholder:text-xs placeholder:text-gray-400 sm:text-sm/6 mb-4
+    @apply block w-full rounded-md dark:bg-gray-600 dark:hover:bg-gray-500 px-3 py-1.5 outline-1 -outline-offset-1 outline-gray-300 text-navy-dark dark:text-offWhite-dark placeholder:text-xs placeholder:text-gray-400 sm:text-sm/6 mb-4;
   }
 }
 
@@ -79,7 +79,6 @@
   z-index: 2; /* Ensures form elements are above the overlay */
 }
 
-
 /* Position the Self-Test button above the footer text */
 .self-test-btn {
   position: relative;
@@ -91,15 +90,93 @@
 /* Move Get Started button below hero content for mobile devices */
 @media (max-width: 768px) {
   .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .get-started-btn {
-      width: 80%; 
-      margin-top: 20px;
-      order: 2; /* Move to bottom of hero content */
+    width: 80%;
+    margin-top: 20px;
+    order: 2; /* Move to bottom of hero content */
   }
+}
+
+/* Text Editor - Dark Mode Styles */
+
+.ql-editor p {
+  font-size: 1rem;
+}
+
+/* Set background and fill color for icons in dark mode */
+.dark .ql-fill {
+  background-color: #f7f7f7 !important;
+  fill: #fff !important;
+}
+
+/* Adjust placeholder text color in dark mode */
+.dark .ql-editor::before {
+  color: #f7f7f7 !important;
+}
+
+/* Set toolbar button icons color */
+.dark .ql-toolbar button svg {
+  fill: #f7f7f7 !important;
+}
+
+/* Dark mode: Set toolbar background and border color */
+.dark .ql-toolbar {
+  background-color: #374151 !important; /* Dark background */
+  border-color: #f7f7f7 !important; /* Border color */
+}
+
+.dark .ql-picker-options {
+  background-color: #374151 !important; /* Dropdown background */
+}
+
+/* Set stroke color for toolbar icons */
+.dark .ql-stroke {
+  stroke: #f7f7f7 !important; /* Arrow and icon strokes */
+}
+
+/* Dark mode: Set dropdown labels  to white */
+.dark .ql-picker-label {
+  color: #f7f7f7 !important;
+}
+
+/* Adjust dropdown item text color */
+.dark .ql-picker-item {
+  color: #f7f7f7 !important;
+}
+
+/* Dark mode: Active toolbar buttons */
+.dark .ql-toolbar button.ql-active svg,
+.dark .ql-toolbar .ql-picker-label.ql-active,
+.dark .ql-toolbar .ql-picker-item.ql-selected {
+  color: #9a6b96 !important;
+  fill: #9a6b96 !important;
+  stroke: #9a6b96 !important;
+}
+
+/* Active header, bold, italic, underline */
+.dark .ql-header.ql-active,
+.dark .ql-bold.ql-active,
+.dark .ql-italic.ql-active,
+.dark .ql-underline.ql-active {
+  color: #9a6b96 !important;
+  fill: #9a6b96 !important;
+  stroke: #9a6b96 !important;
+}
+
+/* Active dropdown options */
+.dark .ql-picker-options .ql-picker-item.ql-selected {
+  background-color: rgba(154, 107, 150, 0.2) !important; /* Highlight effect */
+  color: #9a6b96 !important;
+}
+
+/* Ensuring headers in dropdown stay colored */
+.dark .ql-picker-item.ql-selected,
+.dark .ql-picker-label.ql-active {
+  color: #9a6b96 !important;
 }

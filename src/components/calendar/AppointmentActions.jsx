@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
 import { toastErrorNotify } from "../../helper/ToastNotify";
 import useAppointmentCall from "../../hooks/useAppointmentCall";
+import { useTranslation } from "react-i18next";
 
 const AppointmentActions = () => {
+  const { t } = useTranslation();
   const { createAppointment } = useAppointmentCall();
   const { currentUser } = useSelector((state) => state.auth);
   const { selectedDate, selectedSlot } = useSelector((state) => state.calendar);
@@ -10,7 +12,7 @@ const AppointmentActions = () => {
 
   const handleCreateAppointment = () => {
     if (!selectedSlot) {
-      toastErrorNotify("Please select a time slot.");
+      toastErrorNotify(t("pleaseSelectTimeSlot"));
       return;
     }
 
@@ -37,7 +39,7 @@ const AppointmentActions = () => {
         onClick={handleCreateAppointment}
         className="px-4 py-2 text-white rounded-md bg-seaGreen"
       >
-        Create Appointment
+        {t("createAppointment")}
       </button>
     </div>
   );
