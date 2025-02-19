@@ -6,6 +6,7 @@ import therapistReducer from "../features/therapistSlice";
 import noteReducer from "../features/noteSlice";
 import blogReducer from "../features/blogSlice";
 import calendarReducer from "../features/calendarSlice";
+import userReducer from "../features/userSlice";
 
 //*redux-persist
 import {
@@ -38,6 +39,7 @@ const store = configureStore({
     notes: noteReducer,
     blogs: blogReducer,
     calendar: calendarReducer,
+    users: userReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
