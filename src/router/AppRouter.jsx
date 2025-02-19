@@ -27,6 +27,12 @@ import Dashboard from "../pages/Dashboard";
 import Sidebar from "../components/Sidebar";
 import Appointment from "../pages/Appointment";
 import NotFound from "../pages/NotFound";
+import UserManagement from "../pages/UserManagement";
+import TherapistManagement from "../pages/TherapistManagement";
+import CategoryManagement from "../pages/CategoryManagement";
+import AppointmentManagement from "../pages/AppointmentManagement";
+import BlogManagement from "../pages/BlogManagement";
+import FeedbackManagement from "../pages/FeedbackManagement";
 
 const AppRouter = () => {
   return (
@@ -62,6 +68,24 @@ const AppRouter = () => {
             <Route path="video-call" element={<VideoCall />} />
             <Route path="write-blog" element={<WriteBlog />} />
             <Route path="write-blog/:id" element={<WriteBlog />} />
+            <Route path="user-management" element={<UserManagement />} />
+            <Route
+              path="therapist-management"
+              element={<TherapistManagement />}
+            />
+            <Route
+              path="category-management"
+              element={<CategoryManagement />}
+            />
+            <Route
+              path="appointment-management"
+              element={<AppointmentManagement />}
+            />
+            <Route path="blog-management" element={<BlogManagement />} />
+            <Route
+              path="feedback-management"
+              element={<FeedbackManagement />}
+            />
           </Route>
         </Route>
       </Routes>
