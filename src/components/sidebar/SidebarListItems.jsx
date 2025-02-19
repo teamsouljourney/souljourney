@@ -9,7 +9,7 @@ const SidebarListItems = () => {
   const { t } = useTranslation();
   const { currentUser } = useSelector((state) => state.auth);
   let menu = [];
-  currentUser.isTherapist && (
+  currentUser?.isTherapist && (
     menu = [
       {
         to: NavLinkto(""),
@@ -38,7 +38,7 @@ const SidebarListItems = () => {
       },
     ]
   );
-  currentUser.isAdmin && (
+  currentUser?.isAdmin && (
     menu = [
       {
         to: NavLinkto(""),
@@ -147,7 +147,8 @@ const SidebarListItems = () => {
             </NavLink>
           ))}
         </div>
-        <div className="flex flex-col  space-y-1 mx-1 mb-2 lg:mt-1 ">
+        {!currentUser?.isAdmin && (
+          <div className="flex flex-col  space-y-1 mx-1 mb-2 lg:mt-1 ">
           <NavLink
             className={({ isActive }) =>
               `group flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-1.5 lg:pr-6 font-semibold text-navy-dark hover:text-seaGreen-dark cursor-pointer ${
@@ -186,6 +187,8 @@ const SidebarListItems = () => {
             )}
           </NavLink>
         </div>
+        )}
+        
       </div>
       <hr className="xs:hidden lg:block " />
       {/* Sidebar footer */}
