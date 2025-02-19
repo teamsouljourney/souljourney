@@ -120,6 +120,10 @@
   "score3": "Rehberlik için profesyonellerimizden birine ulaşmayı düşünün.",
   "yourScore": "Puanınız",
 
+  "welcome": "Uygulamamıza hoş geldiniz!",
+  "error_network": "Ağ hatası. Lütfen tekrar deneyin.",
+  "msg_sent": "Mesaj başarıyla gönderildi!",
+
   "PROFILE": "PROFIL",
 
   "SERVICES": "HIZMETLER",
