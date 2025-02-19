@@ -64,14 +64,15 @@ const FAQ = () => {
   return (
     <>
       <div className="relative overflow-hidden isolate bg-custom">
-        <div className="flex flex-col max-w-5xl gap-12 px-8 py-24 mx-auto md:flex-row">
-          <div className="flex flex-col text-center basis-1/2">
-            <p className="inline-block mb-4 font-semibold text-primary">
-            {t("faq")}
-            </p>
-            <p className="sm:text-4xl text-3xl font-extrabold text-base-content font-[Urbanist] text-center">
+      <p className="text-3xl sm:text-5xl font-semibold text-base-content font-[Urbanist] text-center mt-16 text-navy">
               {t("faqTitle")}
             </p>
+        <div className="flex flex-col max-w-5xl gap-12 px-8 py-12 mx-auto md:flex-row">
+          <div className="flex flex-col text-center basis-1/2">
+            <p className="inline-block mb-4 font-semibold text-primary ">
+            {t("faq")}
+            </p>
+           
             <div
               className="w-full h-64 mt-4 bg-center bg-cover rounded-md"
               style={{ backgroundImage: `url(${image})` }}

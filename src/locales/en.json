@@ -119,6 +119,10 @@
   "score3": "Consider reaching out to one of our professionals for guidance.",
   "yourScore": "Your Score",
 
+  "welcome": "Welcome to our application!",
+  "error_network": "Network error. Please try again.",
+  "msg_sent": "Message sent successfully!",
+
   "PROFILE": "PROFILE",
 
   "SERVICES": "SERVICES",

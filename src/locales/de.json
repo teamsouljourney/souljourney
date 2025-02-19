@@ -120,6 +120,10 @@
   "score3": "Ziehen Sie in Erwägung, sich an einen unserer Experten zu wenden, um sich beraten zu lassen.",
   "yourScore": "Ihre Punktzahl",
 
+  "welcome": "Willkommen bei unserer Anwendung!",
+  "error_network": "Netzwerkfehler. Bitte versuchen Sie es erneut.",
+  "msg_sent": "Nachricht erfolgreich gesendet!",
+
   "PROFILE": "PROFIL",
 
   "SERVICES": "DIENSTLEISTUNGEN",
