@@ -45,9 +45,28 @@ const useUserCall = () => {
     }
   };
 
+  //* Change User Status
+  const changeUserStatus = async (id, isActive) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.patch(`users/${id}`);
+      toastSuccessNotify(
+        `User ${isActive ? "disabled" : "activated"} successfully!`
+      );
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to change user status."
+      );
+    } finally {
+      getAllUsers();
+    }
+  };
+
   return {
     getAllUsers,
     deleteUser,
+    changeUserStatus,
   };
 };
 
