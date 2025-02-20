@@ -35,7 +35,7 @@ const UserRow = ({ user }) => {
                 : "bg-red-100 text-red-700"
             }`}
           >
-            {user?.isActive ? "Aktif" : "Engelli"}
+            {user?.isActive ? "Active" : "Disabled"}
           </span>
         </div>
         <div className="flex gap-2">

@@ -45,7 +45,7 @@ const UserManagement = () => {
       <div className="bg-white border rounded-lg shadow-sm">
         <div className="p-6">
           <div className="flex flex-col gap-4 mb-6 md:flex-row md:items-center md:justify-between">
-            <h2 className="text-lg font-semibold">Çalışan Listesi</h2>
+            <h2 className="text-lg font-semibold">User List</h2>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <div className="w-full sm:w-72">
                 <input
@@ -58,19 +58,19 @@ const UserManagement = () => {
               </div>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                className="px-4 py-2 text-white transition duration-300 rounded-md bg-seaGreen hover:bg-navy focus:outline-none focus:ring-2 focus:ring-navy-dark focus:ring-opacity-50"
               >
                 <PlusIcon className="inline-block w-5 h-5 mr-2" />
-                Çalışan Ekle
+                Add a new User
               </button>
             </div>
           </div>
           <div className="space-y-4">
             <div className="hidden text-sm font-medium text-gray-500 md:grid md:grid-cols-12 md:gap-4">
-              <div className="col-span-4">Çalışan</div>
+              <div className="col-span-4">User</div>
               <div className="col-span-4">Email</div>
-              <div className="col-span-2 text-center">Durum</div>
-              <div className="col-span-2 text-right">İşlemler</div>
+              <div className="col-span-2">Status</div>
+              <div className="col-span-2 text-right">Actions</div>
             </div>
             {users.map((user) => (
               <UserRow key={user._id} user={user} />
