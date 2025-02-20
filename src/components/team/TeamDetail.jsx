@@ -215,10 +215,12 @@ const TeamDetail = () => {
           </div>
           <div className="row-span-2 mx-auto pb-3 border-b-2 w-full">
             <h2 className="text-2xl font-semibold mb-4 ">Reviews</h2>
-            <div className="">{feedbackId.comment}</div>
+            
             <p className=" leading-relaxed">We truly appreciate the wonderful feedback we receive about our professionals. Each review reflects the genuine experiences of those who have worked with them, shared voluntarily by individuals who found value in their journey. Everyone’s therapy experience is unique, and we are grateful for the trust placed in us.</p>
             {/* Profesyonellerimiz hakkında aldığımız harika geri bildirimler için gerçekten minnettarız. Her bir yorum, onlarla çalışmış kişilerin gerçek deneyimlerini yansıtmakta olup, yolculuklarından değer bulan bireyler tarafından gönüllü olarak paylaşılmıştır. Herkesin terapi süreci kendine özgüdür ve bize duyulan güven için teşekkür ederiz. */}
             {/* Wir sind sehr dankbar für das wunderbare Feedback, das wir über unsere Fachkräfte erhalten. Jede Bewertung spiegelt die echten Erfahrungen von Menschen wider, die mit ihnen gearbeitet haben und ihren Weg freiwillig teilen. Jede Therapieerfahrung ist einzigartig, und wir schätzen das Vertrauen, das in uns gesetzt wird. */}
+
+            <div className="mt-4">{feedbackId[0]?.comment}</div>
           </div>
         </div>
       </div>
