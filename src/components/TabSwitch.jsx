@@ -5,13 +5,15 @@ import useTherapistCall from "../hooks/useTherapistCall";
 import { useDispatch, useSelector } from "react-redux";
 import MoreCategories from "../components/MoreCategories";
 import { setSelectedCategory } from "../features/categorySlice";
+import { setSearchTerm } from "../features/therapistSlice";
 
 const TabSwitch = () => {
   const dispatch = useDispatch();
-  const [searchTerm, setSearchTerm] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategoryState] = useState(null); // Başlangıçta All seçili
   const { categories } = useSelector((state) => state.categories);
   const { therapists } = useSelector((state) => state.therapists);
+  const {searchTerm}=useSelector((state)=> state.therapists)
 
   const { getAllCategories } = useCategoryCall();
   const { getAllTherapists, getFilterTherapists } = useTherapistCall();
@@ -47,7 +49,7 @@ const TabSwitch = () => {
   };
 
   const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
+    dispatch(setSearchTerm(e.target.value))
   };
 
   return (
