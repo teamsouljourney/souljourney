@@ -29,6 +29,8 @@ const therapistSlice = createSlice({
     },
     getFilterTherapistsSuccess: (state, { payload }) => {
       state.filteredTherapists = payload
+      console.log("Data from API:",payload);
+      
     },
     fetchFail: (state) => {
       state.loading = false;
