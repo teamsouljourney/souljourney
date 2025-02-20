@@ -28,6 +28,20 @@ const useUserCall = () => {
     }
   };
 
+  //* Create User
+  const createUser = async (userData) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosWithToken.post("users", userData);
+      toastSuccessNotify("User created successfully!");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(error.response.data.message, "Failed to create user.");
+    } finally {
+      getAllUsers();
+    }
+  };
+
   //* Delete User
   const deleteUser = async (id) => {
     dispatch(fetchStart());
@@ -65,6 +79,7 @@ const useUserCall = () => {
 
   return {
     getAllUsers,
+    createUser,
     deleteUser,
     changeUserStatus,
   };

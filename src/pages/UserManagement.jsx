@@ -1,43 +1,23 @@
 import { useEffect, useState } from "react";
 import { PlusIcon } from "@heroicons/react/24/outline";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import useUserCall from "../hooks/useUserCall";
 import UserRow from "../components/adminPanel/UserRow";
+import UserForm from "../components/adminPanel/UserForm";
+import { toggleModal } from "../features/userSlice";
 
 const UserManagement = () => {
-  const { users } = useSelector((state) => state.users);
+  const dispatch = useDispatch();
+  const { users, isModalOpen } = useSelector((state) => state.users);
   const { getAllUsers } = useUserCall();
   const [searchTerm, setSearchTerm] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [newEmployee, setNewEmployee] = useState({
-    name: "",
-    title: "",
-    email: "",
-    status: "active",
-  });
 
   useEffect(() => {
     getAllUsers();
   }, []);
 
-  console.log(users);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNewEmployee((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleAddEmployee = () => {
-    // setEmployees((prev) => [
-    //   ...prev,
-    //   {
-    //     ...newEmployee,
-    //     id: prev.length + 1,
-    //     avatar: "/placeholder.svg?height=40&width=40",
-    //   },
-    // ]);
-    setNewEmployee({ name: "", title: "", email: "", status: "active" });
-    setIsModalOpen(false);
+  const handleToogleModal = (payload) => {
+    dispatch(toggleModal(payload));
   };
 
   return (
@@ -57,7 +37,7 @@ const UserManagement = () => {
                 />
               </div>
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => handleToogleModal(true)}
                 className="px-4 py-2 text-white transition duration-300 rounded-md bg-seaGreen hover:bg-navy focus:outline-none focus:ring-2 focus:ring-navy-dark focus:ring-opacity-50"
               >
                 <PlusIcon className="inline-block w-5 h-5 mr-2" />
@@ -120,63 +100,7 @@ const UserManagement = () => {
             >
               &#8203;
             </span>
-
-            <div className="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-              <div className="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
-                <div className="sm:flex sm:items-start">
-                  <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                    <h3
-                      className="text-lg font-medium leading-6 text-gray-900"
-                      id="modal-title"
-                    >
-                      Yeni Çalışan Ekle
-                    </h3>
-                    <div className="mt-2">
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Ad Soyad"
-                        value={newEmployee.name}
-                        onChange={handleInputChange}
-                        className="w-full px-3 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      />
-                      <input
-                        type="text"
-                        name="title"
-                        placeholder="Ünvan"
-                        value={newEmployee.title}
-                        onChange={handleInputChange}
-                        className="w-full px-3 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      />
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="E-posta"
-                        value={newEmployee.email}
-                        onChange={handleInputChange}
-                        className="w-full px-3 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse">
-                <button
-                  type="button"
-                  className="inline-flex justify-center w-full px-4 py-2 text-base font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
-                  onClick={handleAddEmployee}
-                >
-                  Ekle
-                </button>
-                <button
-                  type="button"
-                  className="inline-flex justify-center w-full px-4 py-2 mt-3 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-                  onClick={() => setIsModalOpen(false)}
-                >
-                  Kapat
-                </button>
-              </div>
-            </div>
+            <UserForm />
           </div>
         </div>
       )}
