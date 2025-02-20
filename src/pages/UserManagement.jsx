@@ -44,10 +44,10 @@ const UserManagement = () => {
     <div className="container py-10 mx-auto">
       <div className="bg-white border rounded-lg shadow-sm">
         <div className="p-6">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col gap-4 mb-6 md:flex-row md:items-center md:justify-between">
             <h2 className="text-lg font-semibold">Çalışan Listesi</h2>
-            <div className="flex items-center gap-4">
-              <div className="w-72">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="w-full sm:w-72">
                 <input
                   type="text"
                   placeholder="Çalışan ara..."
@@ -65,12 +65,12 @@ const UserManagement = () => {
               </button>
             </div>
           </div>
-          <div className="mt-6 space-y-4">
-            <div className="hidden text-sm font-medium text-gray-500 md:flex">
-              <div className="flex-1">Çalışan</div>
-              <div className="w-1/4">Email</div>
-              <div className="w-24 text-left md:text-center">Durum</div>
-              <div className="w-24 text-right">İşlemler</div>
+          <div className="space-y-4">
+            <div className="hidden text-sm font-medium text-gray-500 md:grid md:grid-cols-12 md:gap-4">
+              <div className="col-span-4">Çalışan</div>
+              <div className="col-span-4">Email</div>
+              <div className="col-span-2 text-center">Durum</div>
+              <div className="col-span-2 text-right">İşlemler</div>
             </div>
             {users.map((user) => (
               <UserRow key={user._id} user={user} />
