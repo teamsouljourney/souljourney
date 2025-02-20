@@ -4,9 +4,17 @@ import {
   LockClosedIcon,
 } from "@heroicons/react/24/outline";
 import useUserCall from "../../hooks/useUserCall";
+import { useDispatch } from "react-redux";
+import { setNewUser, toggleModal } from "../../features/userSlice";
 
 const UserRow = ({ user }) => {
+  const dispatch = useDispatch();
   const { changeUserStatus, deleteUser } = useUserCall();
+
+  const handleUpdateUser = (id) => {
+    dispatch(setNewUser(user));
+    dispatch(toggleModal(true));
+  };
 
   return (
     <div className="flex flex-col items-start py-4 space-y-2 border-b md:flex-row md:items-center md:space-y-0">
@@ -42,7 +50,10 @@ const UserRow = ({ user }) => {
           </span>
         </div>
         <div className="flex gap-2">
-          <button className="p-1 rounded hover:bg-gray-100">
+          <button
+            onClick={() => handleUpdateUser(user._id)}
+            className="p-1 rounded hover:bg-gray-100"
+          >
             <PencilIcon className="w-4 h-4" />
           </button>
           <button
