@@ -125,7 +125,7 @@ const TeamDetail = () => {
           </div>
 
           {/* Appointment button */}
-          <div className="lg:col-span-3 flex justify-center lg:justify-end items-center">
+          <div className="lg:col-span-2 flex justify-center lg:justify-end items-center">
             <button
               onClick={() => toggleCalendar(true)}
               className="px-6 py-3 text-lg leading-none text-white rounded-lg bg-gradient-to-r from-navy to-seaGreen hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark transition-transform duration-150 ease-in-out active:scale-95 capitalize"
@@ -135,11 +135,40 @@ const TeamDetail = () => {
           </div>
         </div>
       </div>
+      {/* Decorative Wave Border */}
+      {/* <div className="w-full h-24 relative overflow-hidden">
+        <div
+          className="absolute inset-0 w-full h-24"
+          style={{
+            background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%234DA1A9' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        />
+      </div> */}
+      {/* Tab Navigation */}
+      {/* <div className="w-full bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-700">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex space-x-8">
+            <button className="py-4 px-1 border-b-2 border-seaGreen text-seaGreen font-medium">About me</button>
+            <button className="py-4 px-1 border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-seaGreen hover:border-seaGreen font-medium">
+              Professional experience
+            </button>
+            <button className="py-4 px-1 border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-seaGreen hover:border-seaGreen font-medium">
+              Credentials information
+            </button>
+            <button className="py-4 px-1 border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-seaGreen hover:border-seaGreen font-medium">
+              Reviews
+            </button>
+          </div>
+        </div>
+      </div> */}
 
       {/* Body */}
       <div className="w-full px-4">
         <div className="grid grid-cols-1 gap-6 mx-auto w-full max-w-6xl p-8">
-          <div className="row-span-4 mx-auto pb-3 border-b-2">
+          <div className="row-span-4 mx-auto pb-3 border-b-2 w-full">
             <h2 className="text-2xl font-semibold mb-4 ">About</h2>
             <p className=" leading-relaxed">{description}</p>
           </div>
@@ -187,7 +216,8 @@ const TeamDetail = () => {
             <h2 className="text-2xl font-semibold mb-4 ">Reviews</h2>
             <div className="">{feedbackId.comment}</div>
             <p className=" leading-relaxed">We truly appreciate the wonderful feedback we receive about our professionals. Each review reflects the genuine experiences of those who have worked with them, shared voluntarily by individuals who found value in their journey. Everyone’s therapy experience is unique, and we are grateful for the trust placed in us.</p>
-            
+            {/* Profesyonellerimiz hakkında aldığımız harika geri bildirimler için gerçekten minnettarız. Her bir yorum, onlarla çalışmış kişilerin gerçek deneyimlerini yansıtmakta olup, yolculuklarından değer bulan bireyler tarafından gönüllü olarak paylaşılmıştır. Herkesin terapi süreci kendine özgüdür ve bize duyulan güven için teşekkür ederiz. */}
+            {/* Wir sind sehr dankbar für das wunderbare Feedback, das wir über unsere Fachkräfte erhalten. Jede Bewertung spiegelt die echten Erfahrungen von Menschen wider, die mit ihnen gearbeitet haben und ihren Weg freiwillig teilen. Jede Therapieerfahrung ist einzigartig, und wir schätzen das Vertrauen, das in uns gesetzt wird. */}
           </div>
         </div>
       </div>
