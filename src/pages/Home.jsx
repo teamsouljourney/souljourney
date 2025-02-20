@@ -8,7 +8,7 @@ import Quiz from "../components/home/Quiz";
 const Home = () => {
   return (
     <div className="bg-offWhite">
-      <HeroSection />
+      {/* <HeroSection /> */}
       <InfoSection />
       <ProcessSection />
       <BlogsSection />

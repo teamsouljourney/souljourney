@@ -3,8 +3,15 @@ import {
   TrashIcon,
   LockClosedIcon,
 } from "@heroicons/react/24/outline";
+import useUserCall from "../../hooks/useUserCall";
 
 const UserRow = ({ user }) => {
+  const { deleteUser } = useUserCall();
+
+  const handleDeleteUser = (userId) => {
+    deleteUser(userId);
+  };
+
   return (
     <div className="flex flex-col items-start py-4 space-y-2 border-b md:flex-row md:items-center md:space-y-0">
       <div className="flex items-center gap-3 md:w-1/3">
@@ -51,7 +58,11 @@ const UserRow = ({ user }) => {
           >
             <LockClosedIcon className="w-4 h-4" />
           </button>
-          <button className="p-1 rounded hover:bg-gray-100" aria-label="Sil">
+          <button
+            onClick={() => handleDeleteUser(user?._id)}
+            className="p-1 rounded hover:bg-gray-100"
+            aria-label="Sil"
+          >
             <TrashIcon className="w-4 h-4" />
           </button>
         </div>

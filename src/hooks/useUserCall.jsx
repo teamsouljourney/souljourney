@@ -32,13 +32,13 @@ const useUserCall = () => {
   const deleteUser = async (id) => {
     dispatch(fetchStart());
     try {
-      await axiosWithToken.delete(`appointments/${id}`);
+      await axiosWithToken.delete(`users/${id}`);
       dispatch(deleteUserSuccess(id));
-      toastSuccessNotify("Appointment deleted successfully!");
+      toastSuccessNotify("User deleted successfully!");
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to delete appointment."
+        error.response?.data?.message || "Failed to delete users."
       );
     } finally {
       getAllUsers();
