@@ -5,6 +5,7 @@ import useUserCall from "../hooks/useUserCall";
 import UserRow from "../components/adminPanel/UserRow";
 import UserForm from "../components/adminPanel/UserForm";
 import { toggleModal } from "../features/userSlice";
+import AdminModal from "../components/adminPanel/AdminModal";
 
 const UserManagement = () => {
   const dispatch = useDispatch();
@@ -85,24 +86,9 @@ const UserManagement = () => {
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 z-10 overflow-y-auto">
-          <div className="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-            <div
-              className="fixed inset-0 transition-opacity"
-              aria-hidden="true"
-            >
-              <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
-            </div>
-
-            <span
-              className="hidden sm:inline-block sm:align-middle sm:h-screen"
-              aria-hidden="true"
-            >
-              &#8203;
-            </span>
-            <UserForm />
-          </div>
-        </div>
+        <AdminModal>
+          <UserForm />
+        </AdminModal>
       )}
     </div>
   );
