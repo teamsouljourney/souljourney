@@ -1,7 +1,11 @@
 import { useState } from "react";
 import useUserCall from "../../hooks/useUserCall";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleModal } from "../../features/userSlice";
+import {
+  resetNewUser,
+  setNewUser,
+  toggleModal,
+} from "../../features/userSlice";
 
 const UserForm = () => {
   const dispatch = useDispatch();
@@ -15,12 +19,14 @@ const UserForm = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    dispatch(setNewUser({ [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(toggleModal(true));
     createUser(newUser);
+    dispatch(toggleModal(false));
+    dispatch(resetNewUser());
   };
 
   return (
@@ -93,7 +99,7 @@ const UserForm = () => {
           className="inline-flex justify-center w-full px-4 py-2 mt-3 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
           onClick={() => handleToogleModal(false)}
         >
-          Kapat
+          Close
         </button>
       </div>
     </div>

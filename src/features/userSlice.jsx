@@ -28,6 +28,18 @@ const userSlice = createSlice({
       state.loading = false;
       state.users = state.users.filter((user) => user.id !== payload);
     },
+    setNewUser: (state, { payload }) => {
+      state.newUser = { ...state.newUser, ...payload };
+    },
+    resetNewUser: (state) => {
+      state.newUser = {
+        userName: "",
+        password: "",
+        email: "",
+        firstName: "",
+        lastName: "",
+      };
+    },
     toggleModal: (state, { payload }) => {
       state.isModalOpen = payload;
     },
@@ -43,6 +55,8 @@ export const {
   fetchFail,
   getAllUsersSuccess,
   deleteUserSuccess,
+  setNewUser,
+  resetNewUser,
   toggleModal,
 } = userSlice.actions;
 export default userSlice.reducer;
