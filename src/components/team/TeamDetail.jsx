@@ -44,6 +44,7 @@ const TeamDetail = () => {
   } = singleTherapist;
 
   // console.log(categoryId);
+  console.log(feedbackId);
 
   const therapistCategories = categoryId;
 
@@ -179,48 +180,219 @@ const TeamDetail = () => {
             </h2>
             <div className="">{experience}</div>
             <div className="">{graduation}</div>
-          </div>          
+          </div>
           <div className="row-span-2 mx-auto pb-3 border-b-2 w-full">
             <h2 className="text-2xl font-semibold mb-4 ">Services</h2>
             <div className="flex flex-wrap justify-center lg:justify-start items-center mt-2 gap-x-6">
-                <div className="flex flex-row items-center  justify-center gap-2">
-                  <span
-                    style={{
-                      maskImage: `url(/assets/sidebar/videoCall2.svg)`,
-                      maskRepeat: "no-repeat",
-                      maskSize: "contain",
-                      width: "20px",
-                      height: "20px",
-                    }}
-                    className="inline-flex justify-center items-center  bg-navy-light "
-                  ></span>
+              <div className="flex flex-row items-center  justify-center gap-2">
+                <span
+                  style={{
+                    maskImage: `url(/assets/sidebar/videoCall2.svg)`,
+                    maskRepeat: "no-repeat",
+                    maskSize: "contain",
+                    width: "20px",
+                    height: "20px",
+                  }}
+                  className="inline-flex justify-center items-center  bg-navy-light "
+                ></span>
 
-                  <span className="text-[1rem] font-semibold">Video Call</span>
-                </div>
-                <div className="flex flex-row items-center  justify-center gap-2">
-                  <span
-                    style={{
-                      maskImage: `url(/assets/sidebar/chat2.svg)`,
-                      maskRepeat: "no-repeat",
-                      maskSize: "contain",
-                      width: "20px",
-                      height: "20px",
-                    }}
-                    className="inline-flex justify-center items-center  bg-navy-light "
-                  ></span>
-
-                  <span className="text-[1rem] font-semibold">Live Chat</span>
-                </div>
+                <span className="text-[1rem] font-semibold">Video Call</span>
               </div>
+              <div className="flex flex-row items-center  justify-center gap-2">
+                <span
+                  style={{
+                    maskImage: `url(/assets/sidebar/chat2.svg)`,
+                    maskRepeat: "no-repeat",
+                    maskSize: "contain",
+                    width: "20px",
+                    height: "20px",
+                  }}
+                  className="inline-flex justify-center items-center  bg-navy-light "
+                ></span>
+
+                <span className="text-[1rem] font-semibold">Live Chat</span>
+              </div>
+            </div>
           </div>
           <div className="row-span-2 mx-auto pb-3 border-b-2 w-full">
             <h2 className="text-2xl font-semibold mb-4 ">Reviews</h2>
-            
-            <p className=" leading-relaxed">We truly appreciate the wonderful feedback we receive about our professionals. Each review reflects the genuine experiences of those who have worked with them, shared voluntarily by individuals who found value in their journey. Everyone’s therapy experience is unique, and we are grateful for the trust placed in us.</p>
+
+            <p className=" leading-relaxed">
+              We truly appreciate the wonderful feedback we receive about our professionals. Each review reflects the genuine experiences of those who have worked with them, shared voluntarily by individuals who found value in their journey. Everyone’s therapy experience is unique, and we are grateful for the trust placed in us.
+            </p>
             {/* Profesyonellerimiz hakkında aldığımız harika geri bildirimler için gerçekten minnettarız. Her bir yorum, onlarla çalışmış kişilerin gerçek deneyimlerini yansıtmakta olup, yolculuklarından değer bulan bireyler tarafından gönüllü olarak paylaşılmıştır. Herkesin terapi süreci kendine özgüdür ve bize duyulan güven için teşekkür ederiz. */}
             {/* Wir sind sehr dankbar für das wunderbare Feedback, das wir über unsere Fachkräfte erhalten. Jede Bewertung spiegelt die echten Erfahrungen von Menschen wider, die mit ihnen gearbeitet haben und ihren Weg freiwillig teilen. Jede Therapieerfahrung ist einzigartig, und wir schätzen das Vertrauen, das in uns gesetzt wird. */}
 
             <div className="mt-4">{feedbackId[0]?.comment}</div>
+
+            {/* Review Cards */}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+              {/* Example Review Card 1 */}
+
+              {feedbackId?.map((feedback) => (
+                <div key={feedback._id} className="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src="/placeholder.svg"
+                        alt="Sarah M."
+                        className="w-12 h-12 rounded-full object-cover border-2 border-seaGreen"
+                      />
+                      <div>
+                        <h3 className="font-semibold text-gray-800 dark:text-gray-200">
+                          Sarah M. {/* username*/}
+                        </h3>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">
+                          2 weeks ago
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, index) => (
+                        <svg
+                          key={index}
+                          className={`w-5 h-5 ${
+                            index < 5
+                              ? "text-seaGreen fill-seaGreen"
+                              : "text-gray-300 fill-gray-300"
+                          }`}
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                  <h4 className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {feedback?.title}
+                  </h4>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {feedback?.comment}
+                  </p>
+                </div>
+              ))}
+
+              {/* Example Review Card 2 */}
+              <div className="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src="/placeholder.svg"
+                      alt="Michael R."
+                      className="w-12 h-12 rounded-full object-cover border-2 border-seaGreen"
+                    />
+                    <div>
+                      <h3 className="font-semibold text-gray-800 dark:text-gray-200">
+                        Michael R.
+                      </h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        1 month ago
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, index) => (
+                      <svg
+                        key={index}
+                        className={`w-5 h-5 ${
+                          index < 4
+                            ? "text-seaGreen fill-seaGreen"
+                            : "text-gray-300 fill-gray-300"
+                        }`}
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  "The video sessions were very convenient and effective. The
+                  therapist provided practical strategies that helped me manage
+                  my stress better."
+                </p>
+              </div>
+
+              {/* Example Review Card 3 */}
+              <div className="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src="/placeholder.svg"
+                      alt="Emma L."
+                      className="w-12 h-12 rounded-full object-cover border-2 border-seaGreen"
+                    />
+                    <div>
+                      <h3 className="font-semibold text-gray-800 dark:text-gray-200">
+                        Emma L.
+                      </h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        3 months ago
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, index) => (
+                      <svg
+                        key={index}
+                        className={`w-5 h-5 ${
+                          index < 5
+                            ? "text-seaGreen fill-seaGreen"
+                            : "text-gray-300 fill-gray-300"
+                        }`}
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  "I appreciate the flexible scheduling and the thoughtful
+                  approach to my concerns. The combination of video calls and
+                  chat support worked perfectly for me."
+                </p>
+              </div>
+            </div>
+
+            {/* <!-- Add Comment Form --> */}
+            <form class="mt-8 bg-white p-4 rounded-lg shadow">
+              <h3 class="text-lg font-semibold mb-2">Add a Comment</h3>
+              <div class="mb-4">
+                <label for="title" class="block text-gray-700 font-medium mb-2">
+                  Title
+                </label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  for="comment"
+                  class="block text-gray-700 font-medium mb-2"
+                >
+                  Comment
+                </label>
+                <textarea
+                  id="comment"
+                  name="comment"
+                  rows="4"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                Post Comment
+              </button>
+            </form>
           </div>
         </div>
       </div>
