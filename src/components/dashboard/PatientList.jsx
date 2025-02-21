@@ -67,7 +67,7 @@ const PatientList = () => {
           {/* Header */}
           <div className="flex justify-center px-4 py-2 text-center rounded-xl mb-3 bg-seaGreen-dark">
             <p className="text-lg md:text-xl text-offWhite">
-              {t("Patients List")}
+              {t("patientList")}
             </p>
           </div>
 
@@ -78,7 +78,7 @@ const PatientList = () => {
                 type="text"
                 name="q"
                 className="w-full h-10 shadow px-4 py-2 rounded-xl border border-seaGreen-dark dark:border-seaGreen-dark dark:text-customBlack-dark"
-                placeholder="Search patient..."
+                placeholder={t("searchPatient")}
               />
               <button type="submit" className="absolute right-3 top-3">
                 <svg
