@@ -63,7 +63,7 @@ const TeamDetail = () => {
   };
 
   return (
-    <div className="container max-w-none min-h-screen flex flex-col justify-center items-center gap-2 py-3 bg-offWhite dark:bg-background-darker text-navy-dark dark:text-offWhite">
+    <div className="container max-w-none min-h-screen flex flex-col justify-center items-center gap-2 py-3 bg-offWhite dark:bg-background-darker text-navy-dark dark:text-offWhite-dark">
       {/* Header */}
       <div className="w-full bg-offWhite-dark dark:bg-background-dark pt-12">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-2 mx-auto w-full max-w-6xl p-8 mt-6">
@@ -241,13 +241,13 @@ const TeamDetail = () => {
                       <img
                         src={feedback.userId.image || avatar}
                         alt="Sarah M."
-                        className="w-12 h-12 rounded-full object-cover border-2 border-seaGreen"
+                        className="w-12 h-12 rounded-full object-cover border-2 border-seaGreen bg-inherit"
                       />
                       <div>
-                        <h3 className="font-semibold text-gray-800 dark:text-gray-200">
-                          {feedback.userId.firstName}
+                        <h3 className="font-semibold">
+                          {feedback.userId.firstName} {feedback.userId.lastName}
                         </h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">
+                        <p className="text-sm">
                           2 weeks ago
                         </p>
                       </div>
@@ -268,10 +268,10 @@ const TeamDetail = () => {
                       ))}
                     </div>
                   </div>
-                  <h4 className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h4 className="leading-relaxed">
                     {feedback?.title}
                   </h4>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <p className="leading-relaxed">
                     {feedback?.comment}
                   </p>
                 </div>
@@ -361,7 +361,7 @@ const TeamDetail = () => {
             </div>
 
             {/* <!-- Add Comment Form --> */}
-            <form class="mt-8 bg-white p-4 rounded-lg shadow">
+            <form class="mt-8 bg-white dark:bg-background-dark p-4 rounded-lg shadow">
               <h3 class="text-lg font-semibold mb-2">Add a Comment</h3>
               <div class="mb-4">
                 <label for="title" class="block text-gray-700 font-medium mb-2">
