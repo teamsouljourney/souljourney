@@ -5,20 +5,24 @@ import { useSelector } from "react-redux";
 import AppointmentCalendar from "../calendar/appointmentCalendar";
 import avatar from "../../assets/avatar.png";
 import Button from "../button/Button";
+import useFeedbackCall from "../../hooks/useFeedbackCall";
 
 const TeamDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { getSingleTherapist, getTherapistTimeTable } = useTherapistCall();
+  const {getSingleTherapistFeedbacks} = useFeedbackCall()
   const { singleTherapist, loading, error } = useSelector(
     (state) => state.therapists
   );
+  const {singleTherapistFeedbacks} = useSelector(state => state.feedbacks)
 
   const [displayCalendar, setDisplayCalendar] = useState(false);
 
   useEffect(() => {
     getSingleTherapist(id);
     getTherapistTimeTable(id);
+    getSingleTherapistFeedbacks(id)
   }, [id]);
 
   if (loading) {
@@ -44,7 +48,7 @@ const TeamDetail = () => {
   } = singleTherapist;
 
   // console.log(categoryId);
-  console.log(feedbackId);
+  console.log(singleTherapistFeedbacks);
 
   const therapistCategories = categoryId;
 

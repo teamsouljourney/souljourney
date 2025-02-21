@@ -5,7 +5,8 @@ const feedbackSlice = createSlice({
     initialState: {
         loading: false,
         error: false,
-        feedbacks: []
+        feedbacks: [],
+        singleTherapistFeedbacks: []
     },
     reducers: {
         fetchStart: (state) => {
@@ -16,6 +17,11 @@ const feedbackSlice = createSlice({
             state.loading = true
             state.error = false
             state.feedbacks = payload
+        },
+        getSingleTherapistFeedbacksSuccess: (state, {payload}) => {
+            state.loading = true
+            state.error = false
+            state.singleTherapistFeedbacks = payload
         },
         fetchFail: () => {
             state.loading = false,
@@ -28,6 +34,7 @@ export const {
     fetchStart,
     fetchFail,
     getAllFeedbacksSuccess,
+    getSingleTherapistFeedbacksSuccess,
 } = feedbackSlice.actions
 
 export default feedbackSlice.reducer;
