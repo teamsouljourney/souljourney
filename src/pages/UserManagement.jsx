@@ -7,6 +7,7 @@ import UserForm from "../components/adminPanel/UserForm";
 import { toggleModal } from "../features/userSlice";
 import AdminModal from "../components/adminPanel/AdminModal";
 import ListToolbar from "../components/adminPanel/ListToolBar";
+import Pagination from "../components/adminPanel/Pagination";
 
 const UserManagement = () => {
   const dispatch = useDispatch();
@@ -52,31 +53,7 @@ const UserManagement = () => {
               <UserRow key={user._id} user={user} />
             ))}
           </div>
-
-          <div className="flex items-center justify-between px-2 mt-4">
-            <div className="text-sm text-gray-500">
-              Toplam {users.length} çalışandan 1-{users.length} arası
-              gösteriliyor
-            </div>
-            <div className="flex items-center gap-2">
-              <button className="px-3 py-1 text-sm border rounded hover:bg-gray-50">
-                Önceki
-              </button>
-              <button className="px-3 py-1 text-sm text-white bg-blue-500 rounded">
-                1
-              </button>
-              <button className="px-3 py-1 text-sm rounded hover:bg-gray-50">
-                2
-              </button>
-              <button className="px-3 py-1 text-sm rounded hover:bg-gray-50">
-                3
-              </button>
-              <span className="px-2">...</span>
-              <button className="px-3 py-1 text-sm border rounded hover:bg-gray-50">
-                Sonraki
-              </button>
-            </div>
-          </div>
+          <Pagination />
         </div>
       </div>
 
