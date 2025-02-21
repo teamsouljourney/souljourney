@@ -53,7 +53,7 @@ const UserManagement = () => {
               <UserRow key={user._id} user={user} />
             ))}
           </div>
-          <Pagination />
+          <Pagination data={users} />
         </div>
       </div>
 
