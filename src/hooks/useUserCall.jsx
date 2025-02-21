@@ -9,8 +9,6 @@ import {
 } from "../features/userSlice";
 import { deleteUserSuccess } from "../features/userSlice";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL;
-
 const useUserCall = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

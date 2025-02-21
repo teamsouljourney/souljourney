@@ -11,17 +11,19 @@ import Pagination from "../components/adminPanel/Pagination";
 
 const UserManagement = () => {
   const dispatch = useDispatch();
-  const { users, isModalOpen } = useSelector((state) => state.users);
   const { getAllUsers } = useUserCall();
-  const [searchTerm, setSearchTerm] = useState("");
+  const { isModalOpen, users } = useSelector((state) => state.users);
+  const { pagUsers } = useSelector((state) => state.pagination);
 
-  useEffect(() => {
-    getAllUsers();
-  }, []);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleToogleModal = (payload) => {
     dispatch(toggleModal(payload));
   };
+
+  useEffect(() => {
+    getAllUsers();
+  }, []);
 
   return (
     <div className="container py-10 mx-auto ">
@@ -49,11 +51,11 @@ const UserManagement = () => {
               <div className="col-span-2">Status</div>
               <div className="col-span-2 text-right">Actions</div>
             </div>
-            {users.map((user) => (
+            {pagUsers?.map((user) => (
               <UserRow key={user._id} user={user} />
             ))}
           </div>
-          <Pagination data={users} />
+          <Pagination data={users} endpoint={"users"} slice={"pagUsers"} />
         </div>
       </div>
 

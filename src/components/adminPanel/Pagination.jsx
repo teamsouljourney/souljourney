@@ -1,8 +1,11 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import usePaginationCall from "../../hooks/usePaginationCall";
 import { setPage } from "../../features/paginationSlice";
 
-const Pagination = ({ data }) => {
+const Pagination = ({ endpoint, slice, data }) => {
   const dispatch = useDispatch();
+  const { getDataByPage } = usePaginationCall();
   const { currentPage, itemsPerPage } = useSelector(
     (state) => state.pagination
   );
@@ -13,6 +16,10 @@ const Pagination = ({ data }) => {
     { length: totalPages },
     (_, index) => index + 1
   );
+
+  useEffect(() => {
+    getDataByPage(endpoint, slice, itemsPerPage, currentPage);
+  }, [itemsPerPage, currentPage]);
 
   const handlePageChange = (page) => {
     if (page > 0 && page <= totalPages) {
