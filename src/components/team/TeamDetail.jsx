@@ -3,6 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import useTherapistCall from "../../hooks/useTherapistCall";
 import { useSelector } from "react-redux";
 import AppointmentCalendar from "../calendar/appointmentCalendar";
+import avatar from "../../assets/avatar.png";
+import Button from "../button/Button";
 
 const TeamDetail = () => {
   const { id } = useParams();
@@ -12,7 +14,7 @@ const TeamDetail = () => {
     (state) => state.therapists
   );
 
-  const [displayCalendar, setDisplayCalendar] = useState(false)
+  const [displayCalendar, setDisplayCalendar] = useState(false);
 
   useEffect(() => {
     getSingleTherapist(id);
@@ -29,111 +31,217 @@ const TeamDetail = () => {
 
   console.log(singleTherapist);
 
-  const {firstName, lastName, fullName, email, image, categoryId, feedbackId, description} = singleTherapist;
-    
-  console.log(categoryId);
+  const {
+    firstName,
+    lastName,
+    email,
+    image,
+    categoryId,
+    feedbackId,
+    description,
+    graduation,
+    experience,
+  } = singleTherapist;
 
-  const therapistCategories = categoryId
+  // console.log(categoryId);
 
-  
+  const therapistCategories = categoryId;
+
+  const toggleCalendar = (show) => {
+    setDisplayCalendar(show);
+  };
+
+  const handleOutSideClick = (e) => {
+    if (e.target === e.currentTarget) {
+      toggleCalendar(false);
+    }
+  };
 
   return (
-    <div className="container max-w-none min-h-screen flex flex-col justify-center items-center gap-10 mt-14 py-3 bg-offWhite dark:bg-background-dark text-navy-dark dark:text-offWhite">
+    <div className="container max-w-none min-h-screen flex flex-col justify-center items-center gap-2 py-3 bg-offWhite dark:bg-background-darker text-navy-dark dark:text-offWhite">
       {/* Header */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mx-auto w-full max-w-7xl p-8 mt-10">
-        {/* Profile Pic */}
-        <div className="lg:col-span-3 flex justify-center">
-          <img className="w-44 h-44 rounded-full border-4 border-seaGreen shadow-lg" src={image} alt={fullName} />          
-        </div>
+      <div className="w-full bg-offWhite-dark dark:bg-background-dark pt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-2 mx-auto w-full max-w-6xl p-8 mt-6">
+          {/* Profile Pic */}
+          <div className="lg:col-span-1 flex justify-center">
+            <img
+              className="w-48 h-48 rounded-full border-4 border-seaGreen object-cover bg-offWhite"
+              src={image || avatar}
+              alt={firstName}
+            />
+          </div>
 
-        {/* Identity */}
-        <div className="lg:col-span-6 flex flex-col text-center lg:text-left">
-          <div className="text-2xl font-semibold">
-            {/* Name */}
-            <div className="text-4xl font-semibold">
-              {firstName} {lastName} {fullName}
-              <p className="text-sm">{email}</p>
-            </div>
-            {/* Categories */}
-            <div className="flex sm:flex-wrap lg:flex-nowrap justify-center lg:justify-start mt-4 gap-2 text-lg">
-              {therapistCategories.map((category) => <span key={category._id}>{category.name}</span> )}
-            </div>
-            {/* Services */}
-            <div className="flex flex-wrap justify-center lg:justify-start items-center mt-2 gap-x-6">
-              
-              <div className="flex flex-row items-center  justify-center lg:justify-start gap-2">                
-                <span
-                  style={{
-                    maskImage: `url(/assets/sidebar/videoCall.svg)`,
-                    maskRepeat: "no-repeat",
-                    maskSize: "contain",
-                    width: "30px",
-                    height: "30px",
-                  }}
-                  className="inline-flex justify-center items-center  bg-navy-light "
-                ></span>
-                
-                <span className="text-[1.25rem] font-semibold">
-                  Video Call
-                </span>
+          {/* Identity */}
+          <div className="lg:col-span-3 flex flex-col lg:justify-center lg:items-start lg:pl-5  text-center lg:text-left">
+            <div className="text-2xl font-semibold">
+              {/* Name */}
+              <div className="text-4xl font-semibold mb-2">
+                {firstName} {lastName}
+                <p className="text-sm mt-1">{email}</p>
               </div>
-              <div className="flex flex-row items-center  justify-center lg:justify-start gap-2">                
-                <span
-                  style={{
-                    maskImage: `url(/assets/sidebar/chat.svg)`,
-                    maskRepeat: "no-repeat",
-                    maskSize: "contain",
-                    width: "30px",
-                    height: "30px",
-                  }}
-                  className="inline-flex justify-center items-center  bg-navy-light "
-                ></span>
-                
-                <span className="text-[1.25rem] font-semibold">
-                  Live Chat
-                </span>
+              {/* Categories */}
+              <div className="flex flex-wrap justify-center lg:justify-start mt-4 gap-2 text-lg">
+                {therapistCategories.map((category) => (
+                  <span
+                    className="inline-block px-2 py-1 bg-[#E8F5E9] text-seaGreen rounded-full text-sm"
+                    key={category._id}
+                  >
+                    {category.name}
+                  </span>
+                ))}
               </div>
-              
+              {/* Services */}
+              <div className="flex flex-wrap justify-center lg:justify-start items-center mt-2 gap-x-6">
+                <div className="flex flex-row items-center  justify-center gap-2">
+                  <span
+                    style={{
+                      maskImage: `url(/assets/sidebar/videoCall2.svg)`,
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      width: "20px",
+                      height: "20px",
+                    }}
+                    className="inline-flex justify-center items-center  bg-navy-light "
+                  ></span>
+
+                  <span className="text-[1rem] font-semibold">Video Call</span>
+                </div>
+                <div className="flex flex-row items-center  justify-center gap-2">
+                  <span
+                    style={{
+                      maskImage: `url(/assets/sidebar/chat2.svg)`,
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      width: "20px",
+                      height: "20px",
+                    }}
+                    className="inline-flex justify-center items-center  bg-navy-light "
+                  ></span>
+
+                  <span className="text-[1rem] font-semibold">Live Chat</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Appointment button */}
-        <div className="lg:col-span-3 flex justify-center lg:justify-end items-center">
-          <button
-            onClick={() => setDisplayCalendar(!displayCalendar)}
-            className="px-6 py-3 text-lg leading-none text-white rounded-lg bg-gradient-to-r from-navy to-seaGreen hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark transition-transform duration-150 ease-in-out active:scale-95"
-          >
-            work with me
-          </button>
+          {/* Appointment button */}
+          <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
+            <Button
+              onClick={() => toggleCalendar(true)}
+              className="capitalize"
+              type="type22"
+            >
+              work with me
+            </Button>
+          </div>
         </div>
       </div>
+      {/* Decorative Wave Border */}
+      {/* <div className="w-full h-24 relative overflow-hidden">
+        <div
+          className="absolute inset-0 w-full h-24"
+          style={{
+            background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%234DA1A9' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        />
+      </div> */}
+      {/* Tab Navigation */}
+      {/* <div className="w-full bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-700">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex space-x-8">
+            <button className="py-4 px-1 border-b-2 border-seaGreen text-seaGreen font-medium">About me</button>
+            <button className="py-4 px-1 border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-seaGreen hover:border-seaGreen font-medium">
+              Professional experience
+            </button>
+            <button className="py-4 px-1 border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-seaGreen hover:border-seaGreen font-medium">
+              Credentials information
+            </button>
+            <button className="py-4 px-1 border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-seaGreen hover:border-seaGreen font-medium">
+              Reviews
+            </button>
+          </div>
+        </div>
+      </div> */}
 
       {/* Body */}
-      <div>
-        <p>Abut me</p>
-        {description}
+      <div className="w-full px-4">
+        <div className="grid grid-cols-1 gap-6 mx-auto w-full max-w-6xl p-8">
+          <div className="row-span-4 mx-auto pb-3 border-b-2 w-full">
+            <h2 className="text-2xl font-semibold mb-4 ">About</h2>
+            <p className=" leading-relaxed">{description}</p>
+          </div>
+          <div className="row-span-3 mx-auto pb-3 border-b-2 w-full">
+            <h2 className="text-2xl font-semibold mb-4 ">
+              Proffesional experience
+            </h2>
+            <div className="">{experience}</div>
+            <div className="">{graduation}</div>
+          </div>          
+          <div className="row-span-2 mx-auto pb-3 border-b-2 w-full">
+            <h2 className="text-2xl font-semibold mb-4 ">Services</h2>
+            <div className="flex flex-wrap justify-center lg:justify-start items-center mt-2 gap-x-6">
+                <div className="flex flex-row items-center  justify-center gap-2">
+                  <span
+                    style={{
+                      maskImage: `url(/assets/sidebar/videoCall2.svg)`,
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      width: "20px",
+                      height: "20px",
+                    }}
+                    className="inline-flex justify-center items-center  bg-navy-light "
+                  ></span>
+
+                  <span className="text-[1rem] font-semibold">Video Call</span>
+                </div>
+                <div className="flex flex-row items-center  justify-center gap-2">
+                  <span
+                    style={{
+                      maskImage: `url(/assets/sidebar/chat2.svg)`,
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      width: "20px",
+                      height: "20px",
+                    }}
+                    className="inline-flex justify-center items-center  bg-navy-light "
+                  ></span>
+
+                  <span className="text-[1rem] font-semibold">Live Chat</span>
+                </div>
+              </div>
+          </div>
+          <div className="row-span-2 mx-auto pb-3 border-b-2 w-full">
+            <h2 className="text-2xl font-semibold mb-4 ">Reviews</h2>
+            
+            <p className=" leading-relaxed">We truly appreciate the wonderful feedback we receive about our professionals. Each review reflects the genuine experiences of those who have worked with them, shared voluntarily by individuals who found value in their journey. Everyone’s therapy experience is unique, and we are grateful for the trust placed in us.</p>
+            {/* Profesyonellerimiz hakkında aldığımız harika geri bildirimler için gerçekten minnettarız. Her bir yorum, onlarla çalışmış kişilerin gerçek deneyimlerini yansıtmakta olup, yolculuklarından değer bulan bireyler tarafından gönüllü olarak paylaşılmıştır. Herkesin terapi süreci kendine özgüdür ve bize duyulan güven için teşekkür ederiz. */}
+            {/* Wir sind sehr dankbar für das wunderbare Feedback, das wir über unsere Fachkräfte erhalten. Jede Bewertung spiegelt die echten Erfahrungen von Menschen wider, die mit ihnen gearbeitet haben und ihren Weg freiwillig teilen. Jede Therapieerfahrung ist einzigartig, und wir schätzen das Vertrauen, das in uns gesetzt wird. */}
+
+            <div className="mt-4">{feedbackId[0]?.comment}</div>
+          </div>
+        </div>
       </div>
       {/* GoBack */}
-      <div className="p-6 pt-0 mt-8 text-center">
-        <button
-          onClick={() => navigate(-1)}
-          className="px-6 py-3 text-lg text-white rounded-lg bg-gradient-to-r from-navy to-seaGreen hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark transition-transform duration-150 ease-in-out active:scale-95"
-        >
+      <div className="p-6 pt-0 mt-8 text-center w-full">
+        <Button onClick={() => navigate(-1)} type="type22">
           Go Back
-        </button>
+        </Button>
       </div>
 
       {/* Appointment */}
-      <div className={displayCalendar ? "min-h-[200px]" : "min-h-[100px]"}>
-        {displayCalendar && (
-          <div>
+      {displayCalendar && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+          onClick={handleOutSideClick}
+        >
+          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto">
             <AppointmentCalendar />
           </div>
-        )}
-      </div>
-      
-      
+        </div>
+      )}
     </div>
   );
 };
