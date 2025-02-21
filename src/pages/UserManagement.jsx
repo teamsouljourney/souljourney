@@ -6,6 +6,7 @@ import UserRow from "../components/adminPanel/UserRow";
 import UserForm from "../components/adminPanel/UserForm";
 import { toggleModal } from "../features/userSlice";
 import AdminModal from "../components/adminPanel/AdminModal";
+import ListToolbar from "../components/adminPanel/ListToolBar";
 
 const UserManagement = () => {
   const dispatch = useDispatch();
@@ -22,30 +23,24 @@ const UserManagement = () => {
   };
 
   return (
-    <div className="container py-10 mx-auto">
+    <div className="container py-10 mx-auto ">
       <div className="bg-white border rounded-lg shadow-sm">
         <div className="p-6">
-          <div className="flex flex-col gap-4 mb-6 md:flex-row md:items-center md:justify-between">
-            <h2 className="text-lg font-semibold">User List</h2>
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <div className="w-full sm:w-72">
-                <input
-                  type="text"
-                  placeholder="Çalışan ara..."
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-              </div>
+          <ListToolbar
+            title="User List"
+            searchTerm={searchTerm}
+            onSearchChange={setSearchTerm}
+            placeholder="Search user..."
+            actions={
               <button
                 onClick={() => handleToogleModal(true)}
-                className="px-4 py-2 text-white transition duration-300 rounded-md bg-seaGreen hover:bg-navy focus:outline-none focus:ring-2 focus:ring-navy-dark focus:ring-opacity-50"
+                className="px-4 py-2 text-white transition duration-300 rounded-md bg-seaGreen hover:bg-navy"
               >
                 <PlusIcon className="inline-block w-5 h-5 mr-2" />
                 Add a new User
               </button>
-            </div>
-          </div>
+            }
+          />
           <div className="space-y-4">
             <div className="hidden text-sm font-medium text-gray-500 md:grid md:grid-cols-12 md:gap-4">
               <div className="col-span-4">User</div>

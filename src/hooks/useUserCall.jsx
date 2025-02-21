@@ -65,7 +65,7 @@ const useUserCall = () => {
   const updateUser = async (id, updatedUser) => {
     dispatch(fetchStart());
     try {
-      await axiosWithToken.put(`users/${id}`, updatedUser);
+      await axiosWithToken.patch(`users/${id}`, updatedUser);
       toastSuccessNotify("User updated successfully!");
     } catch (error) {
       dispatch(fetchFail());
@@ -81,7 +81,7 @@ const useUserCall = () => {
   const changeUserStatus = async (id, isActive) => {
     dispatch(fetchStart());
     try {
-      await axiosWithToken.patch(`users/${id}`);
+      await axiosWithToken.patch(`users/${id}/status`);
       toastSuccessNotify(
         `User ${isActive ? "disabled" : "activated"} successfully!`
       );
