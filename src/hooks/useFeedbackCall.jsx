@@ -24,7 +24,7 @@ const useFeedbackCall = () => {
     dispatch(fetchStart())
     try {
       const {data} = await axiosPublic.get(`feedbacks/therapists/${therapistId}`)
-      dispatch(getSingleTherapistFeedbacksSuccess(data))
+      dispatch(getSingleTherapistFeedbacksSuccess(data.data))
     } catch (error) {
       dispatch(fetchFail())
       toastErrorNotify(

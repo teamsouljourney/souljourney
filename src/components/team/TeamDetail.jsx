@@ -227,25 +227,25 @@ const TeamDetail = () => {
             {/* Profesyonellerimiz hakkında aldığımız harika geri bildirimler için gerçekten minnettarız. Her bir yorum, onlarla çalışmış kişilerin gerçek deneyimlerini yansıtmakta olup, yolculuklarından değer bulan bireyler tarafından gönüllü olarak paylaşılmıştır. Herkesin terapi süreci kendine özgüdür ve bize duyulan güven için teşekkür ederiz. */}
             {/* Wir sind sehr dankbar für das wunderbare Feedback, das wir über unsere Fachkräfte erhalten. Jede Bewertung spiegelt die echten Erfahrungen von Menschen wider, die mit ihnen gearbeitet haben und ihren Weg freiwillig teilen. Jede Therapieerfahrung ist einzigartig, und wir schätzen das Vertrauen, das in uns gesetzt wird. */}
 
-            <div className="mt-4">{feedbackId[0]?.comment}</div>
+            {/* <div className="mt-4">{feedbackId[0]?.comment}</div> */}
 
             {/* Review Cards */}
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
               {/* Example Review Card 1 */}
 
-              {feedbackId?.map((feedback) => (
+              {singleTherapistFeedbacks?.map((feedback) => (
                 <div key={feedback._id} className="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <img
-                        src="/placeholder.svg"
+                        src={feedback.userId.image || avatar}
                         alt="Sarah M."
                         className="w-12 h-12 rounded-full object-cover border-2 border-seaGreen"
                       />
                       <div>
                         <h3 className="font-semibold text-gray-800 dark:text-gray-200">
-                          Sarah M. {/* username*/}
+                          {feedback.userId.firstName}
                         </h3>
                         <p className="text-sm text-gray-500 dark:text-gray-400">
                           2 weeks ago
@@ -278,7 +278,7 @@ const TeamDetail = () => {
               ))}
 
               {/* Example Review Card 2 */}
-              <div className="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
+              {/* <div className="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <img
@@ -316,10 +316,10 @@ const TeamDetail = () => {
                   therapist provided practical strategies that helped me manage
                   my stress better."
                 </p>
-              </div>
+              </div> */}
 
               {/* Example Review Card 3 */}
-              <div className="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
+              {/* <div className="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <img
@@ -357,7 +357,7 @@ const TeamDetail = () => {
                   approach to my concerns. The combination of video calls and
                   chat support worked perfectly for me."
                 </p>
-              </div>
+              </div> */}
             </div>
 
             {/* <!-- Add Comment Form --> */}
