@@ -2,8 +2,8 @@ import { useSelector } from "react-redux";
 import useFeedbackCall from "../../hooks/useFeedbackCall";
 import { useEffect } from "react";
 import Button from "../button/Button";
-import avatar from "../../assets/avatar.png";
 import TeamDetailFeedbackCards from "./TeamDetailFeedbackCards";
+import TeamDetailFeedbackForm from "./TeamDetailFeedbackForm";
 
 const TeamDetailBody = ({ singleTherapist, id }) => {
   const { getSingleTherapistFeedbacks } = useFeedbackCall();
@@ -21,36 +21,7 @@ const TeamDetailBody = ({ singleTherapist, id }) => {
     return <div className="text-center text-mauve">Therapist' feedbacks not found!</div>;
   }
 
-  const { categoryId, description, graduation, experience } = singleTherapist;
-
-  const getTimeAgo = (createdAt) => {
-    const now = new Date();
-    const created = new Date(createdAt);
-    const diffInMilliseconds = now - created;
-    const diffInSeconds = Math.floor(diffInMilliseconds / 1000);
-    const diffInMinutes = Math.floor(diffInSeconds / 60);
-    const diffInHours = Math.floor(diffInMinutes / 60);
-    const diffInDays = Math.floor(diffInHours / 24);
-    const diffInMonths = Math.floor(diffInDays / 30);
-    const diffInYears = Math.floor(diffInDays / 365);
-
-    if (diffInYears > 0) {
-      return `${diffInYears} ${diffInYears === 1 ? "year" : "years"} ago`;
-    } else if (diffInMonths > 0) {
-      return `${diffInMonths} ${diffInMonths === 1 ? "month" : "months"} ago`;
-    } else if (diffInDays > 0) {
-      return `${diffInDays} ${diffInDays === 1 ? "day" : "days"} ago`;
-    } else if (diffInHours > 0) {
-      return `${diffInHours} ${diffInHours === 1 ? "hour" : "hours"} ago`;
-    } else if (diffInMinutes > 0) {
-      return `${diffInMinutes} ${
-        diffInMinutes === 1 ? "minute" : "minutes"
-      } ago`;
-    } else {
-      return "Just now";
-    }
-  };
-
+  const { description, graduation, experience } = singleTherapist;
   // console.log(singleTherapist);
   // console.log(categoryId);
   // console.log(singleTherapistFeedbacks);
@@ -122,38 +93,11 @@ const TeamDetailBody = ({ singleTherapist, id }) => {
           {/* Review/Feedback Cards */}
 
           <TeamDetailFeedbackCards singleTherapistFeedbacks={singleTherapistFeedbacks}/>
-          
+
           {/* <!-- Add Comment Form --> */}
-          <form className="mt-8 bg-offWhite-light dark:bg-background-dark p-4 rounded-lg shadow">
-            <h3 className="text-lg font-semibold mb-2">Add a Comment</h3>
-            <div className="mb-4">
-              <label htmlFor="title" className="peer">
-                Title
-              </label>
-              <input
-                type="text"
-                id="title"
-                name="title"
-                placeholder="Enter your title"
-                className="w-full peer"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="comment" className="peer">
-                Comment
-              </label>
-              <textarea
-                id="comment"
-                name="comment"
-                placeholder="Enter your comment"
-                rows="4"
-                className="w-full textarea-style"
-                required
-              ></textarea>
-            </div>
-            <Button type="type22">Post Comment</Button>
-          </form>
+          
+          <TeamDetailFeedbackForm id={id}/>
+          
         </div>
       </div>
     </>
