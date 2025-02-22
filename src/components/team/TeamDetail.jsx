@@ -62,6 +62,32 @@ const TeamDetail = () => {
     }
   };
 
+  const getTimeAgo = (createdAt) => {
+    const now = new Date();
+    const created = new Date(createdAt);
+    const diffInMilliseconds = now - created;
+    const diffInSeconds = Math.floor(diffInMilliseconds / 1000);
+    const diffInMinutes = Math.floor(diffInSeconds / 60);
+    const diffInHours = Math.floor(diffInMinutes / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+    const diffInMonths = Math.floor(diffInDays / 30);
+    const diffInYears = Math.floor(diffInDays / 365);
+  
+    if (diffInYears > 0) {
+      return `${diffInYears} ${diffInYears === 1 ? 'year' : 'years'} ago`;
+    } else if (diffInMonths > 0) {
+      return `${diffInMonths} ${diffInMonths === 1 ? 'month' : 'months'} ago`;
+    } else if (diffInDays > 0) {
+      return `${diffInDays} ${diffInDays === 1 ? 'day' : 'days'} ago`;
+    } else if (diffInHours > 0) {
+      return `${diffInHours} ${diffInHours === 1 ? 'hour' : 'hours'} ago`;
+    } else if (diffInMinutes > 0) {
+      return `${diffInMinutes} ${diffInMinutes === 1 ? 'minute' : 'minutes'} ago`;
+    } else {
+      return 'Just now';
+    }
+  };
+
   return (
     <div className="container max-w-none min-h-screen flex flex-col justify-center items-center gap-2 py-3 bg-offWhite dark:bg-background-darker text-navy-dark dark:text-offWhite-dark">
       {/* Header */}
@@ -174,10 +200,12 @@ const TeamDetail = () => {
       {/* Body */}
       <div className="w-full px-4">
         <div className="grid grid-cols-1 gap-6 mx-auto w-full max-w-6xl p-8">
+          {/* About */}
           <div className="row-span-4 mx-auto pb-3 border-b-2 w-full">
             <h2 className="text-2xl font-semibold mb-4 ">About</h2>
             <p className=" leading-relaxed">{description}</p>
           </div>
+          {/* Experience */}
           <div className="row-span-3 mx-auto pb-3 border-b-2 w-full">
             <h2 className="text-2xl font-semibold mb-4 ">
               Proffesional experience
@@ -185,9 +213,10 @@ const TeamDetail = () => {
             <div className="">{experience}</div>
             <div className="">{graduation}</div>
           </div>
+          {/* Services */}
           <div className="row-span-2 mx-auto pb-3 border-b-2 w-full">
             <h2 className="text-2xl font-semibold mb-4 ">Services</h2>
-            <div className="flex flex-wrap justify-center lg:justify-start items-center mt-2 gap-x-6">
+            <div className="flex flex-wrap justify-start items-center mt-2 gap-x-6">
               <div className="flex flex-row items-center  justify-center gap-2">
                 <span
                   style={{
@@ -218,7 +247,8 @@ const TeamDetail = () => {
               </div>
             </div>
           </div>
-          <div className="row-span-2 mx-auto pb-3 border-b-2 w-full">
+          {/* Reviews */}
+          <div className="row-span-2 mx-auto pb-3 w-full">
             <h2 className="text-2xl font-semibold mb-4 ">Reviews</h2>
 
             <p className=" leading-relaxed">
@@ -235,20 +265,21 @@ const TeamDetail = () => {
               {/* Example Review Card 1 */}
 
               {singleTherapistFeedbacks?.map((feedback) => (
-                <div key={feedback._id} className="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
+                <div key={feedback?._id} className="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 transition-all hover:shadow-lg">
+                  {/* Card Header */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <img
-                        src={feedback.userId.image || avatar}
-                        alt="Sarah M."
+                        src={feedback?.userId?.image || avatar}
+                        alt={feedback?.userId?.userName}
                         className="w-12 h-12 rounded-full object-cover border-2 border-seaGreen bg-inherit"
                       />
                       <div>
-                        <h3 className="font-semibold">
-                          {feedback.userId.firstName} {feedback.userId.lastName}
+                        <h3 className="font-semibold leading-tight">
+                          {feedback?.userId?.firstName} {feedback?.userId?.lastName}
                         </h3>
-                        <p className="text-sm">
-                          2 weeks ago
+                        <p className="text-sm pt-2">
+                        {getTimeAgo(feedback?.createdAt)}
                         </p>
                       </div>
                     </div>
@@ -268,8 +299,9 @@ const TeamDetail = () => {
                       ))}
                     </div>
                   </div>
-                  <h4 className="leading-relaxed">
-                    {feedback?.title}
+                  {/* Card Body */}
+                  <h4 className="leading-relaxed font-semibold">
+                    <i>{feedback?.title}</i>
                   </h4>
                   <p className="leading-relaxed">
                     {feedback?.comment}
@@ -361,41 +393,42 @@ const TeamDetail = () => {
             </div>
 
             {/* <!-- Add Comment Form --> */}
-            <form class="mt-8 bg-white dark:bg-background-dark p-4 rounded-lg shadow">
+            <form class="mt-8 bg-offWhite-light dark:bg-background-dark p-4 rounded-lg shadow">
               <h3 class="text-lg font-semibold mb-2">Add a Comment</h3>
               <div class="mb-4">
-                <label for="title" class="block text-gray-700 font-medium mb-2">
+                <label for="title" className="peer">
                   Title
                 </label>
                 <input
                   type="text"
                   id="title"
                   name="title"
-                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter your title"
+                  className="w-full peer"
                   required
                 />
               </div>
               <div class="mb-4">
                 <label
                   for="comment"
-                  class="block text-gray-700 font-medium mb-2"
+                  className="peer"
                 >
                   Comment
                 </label>
                 <textarea
                   id="comment"
                   name="comment"
+                  placeholder="Enter your comment"
                   rows="4"
-                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full textarea-style"
                   required
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              <Button
+                type="type22"
               >
                 Post Comment
-              </button>
+              </Button>
             </form>
           </div>
         </div>
