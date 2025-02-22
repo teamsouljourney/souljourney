@@ -283,12 +283,13 @@ const TeamDetail = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-1">
+                    {/* Rating */}
+                    <div className="flex items-center">
                       {[...Array(5)].map((_, index) => (
                         <svg
                           key={index}
                           className={`w-5 h-5 ${
-                            index < 5
+                            index < feedback?.rating
                               ? "text-seaGreen fill-seaGreen"
                               : "text-gray-300 fill-gray-300"
                           }`}
