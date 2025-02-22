@@ -118,11 +118,10 @@ const TeamDetailBody = ({ singleTherapist, id }) => {
           {/* Profesyonellerimiz hakkında aldığımız harika geri bildirimler için gerçekten minnettarız. Her bir yorum, onlarla çalışmış kişilerin gerçek deneyimlerini yansıtmakta olup, yolculuklarından değer bulan bireyler tarafından gönüllü olarak paylaşılmıştır. Herkesin terapi süreci kendine özgüdür ve bize duyulan güven için teşekkür ederiz. */}
           {/* Wir sind sehr dankbar für das wunderbare Feedback, das wir über unsere Fachkräfte erhalten. Jede Bewertung spiegelt die echten Erfahrungen von Menschen wider, die mit ihnen gearbeitet haben und ihren Weg freiwillig teilen. Jede Therapieerfahrung ist einzigartig, und wir schätzen das Vertrauen, das in uns gesetzt wird. */}
 
-          {/* Review Cards */}
+          {/* Review/Feedback Cards */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {/* Example Review Card 1 */}
-
+            
             {singleTherapistFeedbacks?.map((feedback) => (
               <div
                 key={feedback?._id}
@@ -173,10 +172,10 @@ const TeamDetailBody = ({ singleTherapist, id }) => {
           </div>
 
           {/* <!-- Add Comment Form --> */}
-          <form class="mt-8 bg-offWhite-light dark:bg-background-dark p-4 rounded-lg shadow">
-            <h3 class="text-lg font-semibold mb-2">Add a Comment</h3>
-            <div class="mb-4">
-              <label for="title" className="peer">
+          <form className="mt-8 bg-offWhite-light dark:bg-background-dark p-4 rounded-lg shadow">
+            <h3 className="text-lg font-semibold mb-2">Add a Comment</h3>
+            <div className="mb-4">
+              <label htmlFor="title" className="peer">
                 Title
               </label>
               <input
@@ -188,8 +187,8 @@ const TeamDetailBody = ({ singleTherapist, id }) => {
                 required
               />
             </div>
-            <div class="mb-4">
-              <label for="comment" className="peer">
+            <div className="mb-4">
+              <label htmlFor="comment" className="peer">
                 Comment
               </label>
               <textarea
