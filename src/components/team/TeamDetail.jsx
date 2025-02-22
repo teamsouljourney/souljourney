@@ -6,6 +6,7 @@ import AppointmentCalendar from "../calendar/appointmentCalendar";
 import avatar from "../../assets/avatar.png";
 import Button from "../button/Button";
 import useFeedbackCall from "../../hooks/useFeedbackCall";
+import TeamDetailHeader from "./TeamDetailHeader";
 
 const TeamDetail = () => {
   const { id } = useParams();
@@ -92,80 +93,8 @@ const TeamDetail = () => {
     <div className="container max-w-none min-h-screen flex flex-col justify-center items-center gap-2 py-3 bg-offWhite dark:bg-background-darker text-navy-dark dark:text-offWhite-dark">
       {/* Header */}
       <div className="w-full bg-offWhite-dark dark:bg-background-dark pt-12">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-2 mx-auto w-full max-w-6xl p-8 mt-6">
-          {/* Profile Pic */}
-          <div className="lg:col-span-1 flex justify-center">
-            <img
-              className="w-48 h-48 rounded-full border-4 border-seaGreen object-cover bg-offWhite"
-              src={image || avatar}
-              alt={firstName}
-            />
-          </div>
-
-          {/* Identity */}
-          <div className="lg:col-span-3 flex flex-col lg:justify-center lg:items-start lg:pl-5  text-center lg:text-left">
-            <div className="text-2xl font-semibold">
-              {/* Name */}
-              <div className="text-4xl font-semibold mb-2">
-                {firstName} {lastName}
-                <p className="text-sm mt-1">{email}</p>
-              </div>
-              {/* Categories */}
-              <div className="flex flex-wrap justify-center lg:justify-start mt-4 gap-2 text-lg">
-                {therapistCategories.map((category) => (
-                  <span
-                    className="inline-block px-2 py-1 bg-[#E8F5E9] text-seaGreen rounded-full text-sm"
-                    key={category._id}
-                  >
-                    {category.name}
-                  </span>
-                ))}
-              </div>
-              {/* Services */}
-              <div className="flex flex-wrap justify-center lg:justify-start items-center mt-2 gap-x-6">
-                <div className="flex flex-row items-center  justify-center gap-2">
-                  <span
-                    style={{
-                      maskImage: `url(/assets/sidebar/videoCall2.svg)`,
-                      maskRepeat: "no-repeat",
-                      maskSize: "contain",
-                      width: "20px",
-                      height: "20px",
-                    }}
-                    className="inline-flex justify-center items-center  bg-navy-light "
-                  ></span>
-
-                  <span className="text-[1rem] font-semibold">Video Call</span>
-                </div>
-                <div className="flex flex-row items-center  justify-center gap-2">
-                  <span
-                    style={{
-                      maskImage: `url(/assets/sidebar/chat2.svg)`,
-                      maskRepeat: "no-repeat",
-                      maskSize: "contain",
-                      width: "20px",
-                      height: "20px",
-                    }}
-                    className="inline-flex justify-center items-center  bg-navy-light "
-                  ></span>
-
-                  <span className="text-[1rem] font-semibold">Live Chat</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Appointment button */}
-          <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
-            <Button
-              onClick={() => toggleCalendar(true)}
-              className="capitalize"
-              type="type22"
-            >
-              work with me
-            </Button>
-          </div>
-        </div>
+        <TeamDetailHeader singleTherapist={singleTherapist} />
+        
       </div>
       {/* Decorative Wave Border */}
       {/* <div className="w-full h-24 relative overflow-hidden">
