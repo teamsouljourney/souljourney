@@ -14,12 +14,12 @@ const feedbackSlice = createSlice({
             state.error = false
         },
         getAllFeedbacksSuccess: (state, {payload}) => {
-            state.loading = true
+            state.loading = false
             state.error = false
             state.feedbacks = payload
         },
         getSingleTherapistFeedbacksSuccess: (state, {payload}) => {
-            state.loading = true
+            state.loading = false
             state.error = false
             state.singleTherapistFeedbacks = payload
         },
