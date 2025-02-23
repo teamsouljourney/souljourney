@@ -36,6 +36,11 @@ const categorySlice = createSlice({
     setNewCategory: (state, { payload }) => {
       state.newCategory = { ...state.newCategory, ...payload };
     },
+    resetNewCategory: (state) => {
+      state.newCategory = {
+        name: "",
+      };
+    },
     toggleModal: (state, { payload }) => {
       state.isModalOpen = payload;
     },
@@ -53,6 +58,7 @@ export const {
   getSingleCategorySuccess,
   setSelectedCategory,
   setNewCategory,
+  resetNewCategory,
   toggleModal,
 } = categorySlice.actions;
 
