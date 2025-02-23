@@ -12,8 +12,9 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import AccountForm from "../components/auth/AccountForm";
 import AccountChangePasswordForm from "../components/auth/AccountChangePasswordForm";
-import avatar from "../assets/avatar.png"
+import avatar from "../assets/avatar.png";
 import AccountDelete from "../components/auth/AccountDelete";
+import AccountUploadProfilePicture from "../components/auth/AccountUploadProfilePicture";
 
 const Account = () => {
   const { t } = useTranslation();
@@ -48,54 +49,19 @@ const Account = () => {
         <div className="flex w-full flex-col items-start gap-2">
           <span className="text-3xl font-semibold mb-4">{t("profile")}</span>
           {/* Profile Picture Section */}
-          <div className="flex w-full flex-col items-start gap-4">
-            <span className="text-2xl font-medium">
-              <i>
-                {userInfo.firstName} {userInfo.lastName}
-              </i>
-            </span>
-            <div className="flex items-center gap-4">
-              <img
-                className="h-16 w-16 rounded-full border-1 border-navy object-cover "
-                src={userInfo.image || avatar}
-              />
-              {/* Upload Profile Image Section */}
-              <div className="flex flex-col items-start gap-2">
-                <button type="button" className="account-btn">
-                  Upload
-                </button>
-                <span>
-                  For best results, upload an image 512x512 or larger.
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col w-full items-center gap-4">
-            {/* Personel Info Field */}
-
-            <AccountForm
-              userInfo={userInfo}
-              handleChange={handleChange}
-              handleSubmit={handleSubmit}
-            />
-          </div>
+          <AccountUploadProfilePicture userInfo={userInfo} />
+          {/* Personel Info Field */}
+          <AccountForm
+            userInfo={userInfo}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+          />
         </div>
       </div>
-      
-
       {/* Change Password Field */}
-
-      <AccountChangePasswordForm/>
-
-      {/* Delete Account Field */}
-
-      <div className="flex w-full max-w-[576px] flex-col items-start gap-12">
-        <span className="text-lg font-medium">Danger zone/Delete Account</span>
-        {/* Delete Account Alert */}
-
-        <AccountDelete/>
-
-      </div>
+      <AccountChangePasswordForm />
+      {/* Account Delete Field */}
+      <AccountDelete />
     </div>
   );
 };

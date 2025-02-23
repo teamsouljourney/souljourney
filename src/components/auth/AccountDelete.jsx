@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react";
 
 const AccountDelete = () => {
   return (
     <>
+      <div className="flex w-full max-w-[576px] flex-col items-start gap-12">
+        <span className="text-lg font-medium">Danger zone/Delete Account</span>
         <div className="w-full p-4 border-2 border-red-200 bg-red-50 dark:bg-red-900/50 dark:border-red-900/30 rounded-lg">
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
@@ -35,8 +37,9 @@ const AccountDelete = () => {
             </div>
           </div>
         </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default AccountDelete
+export default AccountDelete;
