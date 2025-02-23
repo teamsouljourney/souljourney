@@ -1,9 +1,13 @@
 import Button from "../button/Button";
 
-const TeamDetailFeedbackForm = ({id}) => {
+const TeamDetailFeedbackForm = ({id, handleSubmit, feedback, setFeedback}) => {
     console.log("therapistID:", id);
     
-    // const [feedback, setFeedback] = useState(initialState)    
+    const handleChange = (e) => {
+        console.log(e.target.value);
+        
+        setFeedback({ ...feedback, [e.target.name]: e.target.value})
+    }
 
   return (
     <>
@@ -17,9 +21,11 @@ const TeamDetailFeedbackForm = ({id}) => {
                 type="number"
                 id="rating"
                 name="rating"
+                value={feedback.rating}
                 placeholder="Enter your rating"
                 className="w-full peer"
                 required
+                onChange={handleChange}
               />
             </div>
             <div className="mb-4">
@@ -30,9 +36,11 @@ const TeamDetailFeedbackForm = ({id}) => {
                 type="text"
                 id="title"
                 name="title"
+                value={feedback.title}
                 placeholder="Enter your title"
                 className="w-full peer"
                 required
+                onChange={handleChange}
               />
             </div>
             <div className="mb-4">
@@ -46,9 +54,10 @@ const TeamDetailFeedbackForm = ({id}) => {
                 rows="4"
                 className="w-full textarea-style"
                 required
+                onChange={handleChange}
               ></textarea>
             </div>
-            <Button type="type22">Post Comment</Button>
+            <Button type="type22" onClick={handleSubmit}>Post Comment</Button>
           </form>
     </>
   )

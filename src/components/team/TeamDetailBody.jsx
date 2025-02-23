@@ -1,13 +1,27 @@
 import { useSelector } from "react-redux";
 import useFeedbackCall from "../../hooks/useFeedbackCall";
-import { useEffect } from "react";
-import Button from "../button/Button";
+import { useEffect, useState } from "react";
 import TeamDetailFeedbackCards from "./TeamDetailFeedbackCards";
 import TeamDetailFeedbackForm from "./TeamDetailFeedbackForm";
 
 const TeamDetailBody = ({ singleTherapist, id }) => {
-  const { getSingleTherapistFeedbacks } = useFeedbackCall();
+  const { getSingleTherapistFeedbacks, postTherapistFeedback } = useFeedbackCall();
   const { singleTherapistFeedbacks, loading, error } = useSelector((state) => state.feedbacks);
+  const{currentUser} = useSelector(state=>state.auth)
+
+//   console.log(currentUser);
+  
+
+  const [feedback, setFeedback] = useState({
+    userId: currentUser?._id,
+    therapistId: id,
+    title: "",
+    comment: "",
+    rating: 1
+  })
+
+//   console.log(feedback);
+  
 
   useEffect(() => {
     getSingleTherapistFeedbacks(id);
@@ -25,6 +39,11 @@ const TeamDetailBody = ({ singleTherapist, id }) => {
   // console.log(singleTherapist);
   // console.log(categoryId);
   // console.log(singleTherapistFeedbacks);
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    postTherapistFeedback(feedback)
+  }
 
   return (
     <>
@@ -96,7 +115,7 @@ const TeamDetailBody = ({ singleTherapist, id }) => {
 
           {/* <!-- Add Comment Form --> */}
           
-          <TeamDetailFeedbackForm id={id}/>
+          <TeamDetailFeedbackForm id={id} handleSubmit={handleSubmit} feedback={feedback} setFeedback={setFeedback} />
           
         </div>
       </div>
