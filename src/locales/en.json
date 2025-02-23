@@ -119,6 +119,10 @@
   "score3": "Consider reaching out to one of our professionals for guidance.",
   "yourScore": "Your Score",
 
+  "welcome": "Welcome to our application!",
+  "error_network": "Network error. Please try again.",
+  "msg_sent": "Message sent successfully!",
+
   "PROFILE": "PROFILE",
 
   "SERVICES": "SERVICES",
@@ -126,12 +130,26 @@
   "PRICING": "PRICING",
 
   "TEAM": "TEAM",
+  "OurPsychologicalCounselingTeam": "Our psychological counseling team is dedicated to supporting your mental well-being with personalized care. With diverse expertise in counseling and guidance, our professionals are here to help you on your journey to emotional balance.",
+  "all": "All",
+  "healthPsychology": "Health Psychology",
+  "marriageAndFamilyTherapy": "Marriage and Family Therapy",
+  "neuropsychology": "Neuropsychology",
+  "educationalPsychology": "Educational Psychology",
+  "moreCategories": "More Categories",
+  "searchTherapist": "Search Therapist",
 
   "BLOGS": "BLOGS",
 
   "ABOUT": "ABOUT",
 
   "FOOTER": "FOOTER",
+  "termsAndCondition": "Term & Conditions",
+  "privacyPolicy": "Privacy Policy",
+  "contactUs": "Contact Us",
+  "cookieSettings": "Cookie Settings",
+  "forTherapist": "For Therapists",
+  "impressum": "Impressum",
 
   "CONTACT": "CONTACT",
   "getInTouch": "Get in Touch",
@@ -241,5 +259,13 @@
   "saveChanges": "Save Changes",
   "cancel": "Cancel",
   "noAppointmentsMessage": "You have no scheduled appointments.",
-  "bookAppointmentButton": "Book an Appointment"
+  "bookAppointmentButton": "Book an Appointment",
+
+  "DASHBOARD": "DASHBOARD",
+  "patientList": "Patients List",
+  "searchPatient": "Search Patient...",
+  "myBlogs": "My Blogs",
+  "noPatient": "No patients found in the list.",
+  "noBlogs": "No blog posts available. Start writing now!",
+  "notes": "Notes"
 }

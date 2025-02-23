@@ -120,6 +120,10 @@
   "score3": "Rehberlik için profesyonellerimizden birine ulaşmayı düşünün.",
   "yourScore": "Puanınız",
 
+  "welcome": "Uygulamamıza hoş geldiniz!",
+  "error_network": "Ağ hatası. Lütfen tekrar deneyin.",
+  "msg_sent": "Mesaj başarıyla gönderildi!",
+
   "PROFILE": "PROFIL",
 
   "SERVICES": "HIZMETLER",
@@ -127,12 +131,26 @@
   "PPRICING": "FİYATLANDIRMA",
 
   "TEAM": "EKIP",
+  "OurPsychologicalCounselingTeam": "Psikolojik danışmanlık ekibimiz, zihinsel sağlığınızı kişiselleştirilmiş bakım ile desteklemeye kendini adamıştır. Danışmanlık ve rehberlik konusundaki geniş uzmanlıklarıyla, profesyonellerimiz duygusal denge yolculuğunuzda size yardımcı olmak için burada.",
+  "all": "Tümü",
+  "healthPsychology": "Sağlık Psikolojisi",
+  "marriageAndFamilyTherapy": "Evlilik ve Aile Terapisi",
+  "neuropsychology": "Nöropsikoloji",
+  "educationalPsychology": "Eğitim Psikolojisi",
+  "moreCategories": "Daha Fazla Kategori",
+  "searchTherapist": "Terapist Ara",
 
   "BLOGS": "BLOGLAR",
 
   "ABOUT": "HAKKIMIZDA",
 
   "FOOTER": "ALT BÖLÜM",
+  "termsAndCondition": "Şartlar ve Koşullar",
+  "privacyPolicy": "Gizlilik Politikası",
+  "contactUs": "Bize Ulaşın",
+  "cookieSettings": "Çerez Ayarları",
+  "forTherapist": "Terapistler için",
+  "impressum": "Künye",
 
   "CONTACT": "İLETİŞİM",
   "getInTouch": "İletişime Geçin",
@@ -242,5 +260,14 @@
   "saveChanges": "Değişiklikleri Kaydet",
   "cancel": "İptal",
   "noAppointmentsMessage": "Henüz planlanmış randevunuz yok.",
-  "bookAppointmentButton": "Randevu Al"
+  "bookAppointmentButton": "Randevu Al",
+
+  "DASHBOARD": "DASHBOARD",
+  "descriptionOfTherapist": "Ruh sağlığı alanında uzmanlaşmış deneyimli psikolog.",
+  "patientList": "Hasta Listesi",
+  "searchPatient": "Hasta ara...",
+  "myBlogs": "Bloglarım",
+  "noPatient": "Kayıtlı hasta bulunmamaktadır.",
+  "noBlogs": "Henüz blog yazısı yok. Hemen yazmaya başla!",
+  "notes": "Notlar"
 }

@@ -120,6 +120,10 @@
   "score3": "Ziehen Sie in Erwägung, sich an einen unserer Experten zu wenden, um sich beraten zu lassen.",
   "yourScore": "Ihre Punktzahl",
 
+  "welcome": "Willkommen bei unserer Anwendung!",
+  "error_network": "Netzwerkfehler. Bitte versuchen Sie es erneut.",
+  "msg_sent": "Nachricht erfolgreich gesendet!",
+
   "PROFILE": "PROFIL",
 
   "SERVICES": "DIENSTLEISTUNGEN",
@@ -127,12 +131,26 @@
   "PPRICING": "PREISE",
 
   "TEAM": "TEAM",
+  "OurPsychologicalCounselingTeam": "Unser psychologisches Beratungsteam engagiert sich für Ihre mentale Gesundheit mit individueller Betreuung. Mit vielfältiger Expertise in Beratung und Begleitung stehen Ihnen unsere Fachkräfte auf Ihrem Weg zu emotionalem Gleichgewicht zur Seite.",
+  "all": "Alle",
+  "healthPsychology": "Gesundheitspsychologie",
+  "marriageAndFamilyTherapy": "Ehe- und Familientherapie",
+  "neuropsychology": "Neuropsychologie",
+  "educationalPsychology": "Pädagogische Psychologie",
+  "moreCategories": "Weitere Kategorien",
+  "searchTherapist": "Therapeuten suchen",
 
   "BLOGS": "BLOGS",
 
   "ABOUT": "ÜBER UNS",
 
   "FOOTER": "FUSSZEILE",
+  "termsAndCondition": "Allgemeine Geschäftsbedingungen",
+  "privacyPolicy": "Datenschutzrichtlinie",
+  "contactUs": "Kontakt",
+  "cookieSettings": "Cookie-Einstellungen",
+  "forTherapist": "Für Therapeuten",
+  "impressum": "Impressum",
 
   "CONTACT": "KONTAKT",
   "getInTouch": "Kontakt aufnehmen",
@@ -242,5 +260,14 @@
   "saveChanges": "Änderungen speichern",
   "cancel": "Abbrechen",
   "noAppointmentsMessage": "Sie haben keinen geplanten Termin.",
-  "bookAppointmentButton": "Termin buchen"
+  "bookAppointmentButton": "Termin buchen",
+
+  "DASHBOARD": "DASHBOARD",
+  "descriptionOfTherapist": "Erfahrener Psychologe, spezialisiert auf psychische Gesundheit.",
+  "patientList": "Patientenliste",
+  "searchPatient": "Suchen nach Patient..",
+  "myBlogs": "Meine Blogbeiträge",
+  "noPatient": "Keine Patienten in der Liste gefunden.",
+  "noBlogs": "Keine Blogbeiträge verfügbar. Fang jetzt an zu schreiben!",
+  "notes": "Notizen"
 }

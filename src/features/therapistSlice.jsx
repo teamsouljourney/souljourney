@@ -7,6 +7,7 @@ const therapistSlice = createSlice({
     filteredTherapists: [],
     singleTherapist: null,
     therapistTimeTable: [],
+    searchTerm:"",
     loading: false,
     error: false,
   },
@@ -29,6 +30,11 @@ const therapistSlice = createSlice({
     },
     getFilterTherapistsSuccess: (state, { payload }) => {
       state.filteredTherapists = payload
+      console.log("Data from API:",payload);
+      
+    },
+    setSearchTerm:(state, {payload}) =>{
+      state.searchTerm=payload
     },
     fetchFail: (state) => {
       state.loading = false;
@@ -44,6 +50,7 @@ export const {
   getSingleTherapistSuccess,
   getTherapistTimeTableSuccess,
   getFilterTherapistsSuccess,
+  setSearchTerm,
 } = therapistSlice.actions;
 
 export default therapistSlice.reducer;

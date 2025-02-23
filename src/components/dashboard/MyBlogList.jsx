@@ -13,12 +13,14 @@ import { useSelector } from "react-redux";
 import useBlogCall from "../../hooks/useBlogCall";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function MyBlogList() {
   const { getAllBlogs } = useBlogCall();
   const { blogs } = useSelector((state) => state.blogs);
   const { currentUser } = useSelector((state) => state.auth);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     getAllBlogs();
@@ -59,7 +61,7 @@ export default function MyBlogList() {
           variant="body"
           sx={{ color: "secondary.main", fontSize: "1.2rem" }}
         >
-          {"My Blogs"}
+          {t("myBlogs")}
         </Typography>
       </Box>
       <ImageList

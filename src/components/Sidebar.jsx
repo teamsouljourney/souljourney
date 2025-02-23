@@ -12,9 +12,9 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className=" w-dvw min-h-screen grid grid-cols-7 bg-offWhite-light dark:bg-gray-700">
+      <div className=" w-dvw h-screen overflow-hidden min-h-screen grid grid-cols-7 bg-offWhite-light dark:bg-gray-700">
         {/* SideBar */}
-        <div className="col-span-1 bg-white">
+        <div className="col-span-1 bg-white h-screen">
           <div className="xs:pb-2 sm:p-2 h-full w-full flex flex-col bg-offWhite-dark dark:bg-gray-700 border-r border-r-gray-200">
             {/* Logo */}
             <NavLink to="#">
@@ -37,7 +37,7 @@ const Sidebar = () => {
             <hr className="hidden lg:block" />
             <SidebarListItems />
             {/* Sidebar footer */}
-            <div className="px-1" onClick={() => logout()}>
+            <div className="px-1 mt-auto" onClick={() => logout()}>
               <div className="group flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-1 lg:pr-6 font-semibold text-navy-dark dark:text-offWhite-dark hover:text-pink-light cursor-pointer  ">
                 <span className="inline-flex justify-center items-center ml-1">
                   <span
@@ -59,7 +59,7 @@ const Sidebar = () => {
           </div>
         </div>
         {/* View Content */}
-        <div className="col-span-6">
+        <div className="col-span-6 h-screen overflow-y-auto">
           <Outlet />
         </div>
       </div>

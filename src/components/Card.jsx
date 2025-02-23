@@ -31,7 +31,7 @@ const Card = ({ therapist, variant = "default", blog }) => {
       {/* Resim Alanı */}
       <div className="relative">
         <img
-          className="w-full h-64 object-cover"
+          className="w-full h-64 object-contain"
           src={therapist ? therapist?.image : blog?.image}
           alt={therapist ? therapist?.firstName : blog?.title}
         />
