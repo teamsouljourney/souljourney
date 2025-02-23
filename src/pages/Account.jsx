@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import AccountForm from "../components/auth/AccountForm";
 import AccountChangePasswordForm from "../components/auth/AccountChangePasswordForm";
+import avatar from "../assets/avatar.png"
 
 const Account = () => {
   const { t } = useTranslation();
@@ -45,6 +46,7 @@ const Account = () => {
         {/* Profile Section */}
         <div className="flex w-full flex-col items-start gap-2">
           <span className="text-3xl font-semibold mb-4">{t("profile")}</span>
+          {/* Profile Picture Section */}
           <div className="flex w-full flex-col items-start gap-4">
             <span className="text-2xl font-medium">
               <i>
@@ -53,8 +55,8 @@ const Account = () => {
             </span>
             <div className="flex items-center gap-4">
               <img
-                className="h-16 w-16 flex-none object-cover [clip-path:circle()]"
-                src="https://res.cloudinary.com/subframe/image/upload/v1711417513/shared/kwut7rhuyivweg8tmyzl.jpg"
+                className="h-16 w-16 rounded-full border-1 border-navy object-cover "
+                src={userInfo.image || avatar}
               />
               {/* Upload Profile Image Section */}
               <div className="flex flex-col items-start gap-2">
