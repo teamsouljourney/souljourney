@@ -10,17 +10,17 @@ const TeamDetailBody = ({ singleTherapist, id }) => {
   const{currentUser} = useSelector(state=>state.auth)
 
 //   console.log(currentUser);
-  
-
-  const [feedback, setFeedback] = useState({
+  const initialFeedback = {
     userId: currentUser?._id,
     therapistId: id,
     title: "",
     comment: "",
-    rating: 1
-  })
+    rating: 5
+  }
 
-//   console.log(feedback);
+  const [feedback, setFeedback] = useState(initialFeedback)
+
+  console.log(feedback);
   
 
   useEffect(() => {
@@ -40,9 +40,11 @@ const TeamDetailBody = ({ singleTherapist, id }) => {
   // console.log(categoryId);
   // console.log(singleTherapistFeedbacks);
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    postTherapistFeedback(feedback)
+    await postTherapistFeedback(feedback)
+    getSingleTherapistFeedbacks(id)
+    setFeedback(initialFeedback)
   }
 
   return (

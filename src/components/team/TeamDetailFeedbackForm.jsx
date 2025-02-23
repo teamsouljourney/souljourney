@@ -11,7 +11,7 @@ const TeamDetailFeedbackForm = ({id, handleSubmit, feedback, setFeedback}) => {
 
   return (
     <>
-        <form className="mt-16 bg-offWhite-light dark:bg-background-dark p-4 rounded-lg shadow">
+        <form className="mt-16 bg-offWhite-light dark:bg-background-dark p-4 rounded-lg shadow-xl">
             <h3 className="text-lg font-semibold mb-2">Add a Comment</h3>
             <div className="mb-4">
               <label htmlFor="rating" className="peer">
@@ -21,9 +21,11 @@ const TeamDetailFeedbackForm = ({id, handleSubmit, feedback, setFeedback}) => {
                 type="number"
                 id="rating"
                 name="rating"
+                min="1"
+                max="5"
                 value={feedback.rating}
                 placeholder="Enter your rating"
-                className="w-full peer"
+                className="w-full peer shadow-md"
                 required
                 onChange={handleChange}
               />
@@ -38,7 +40,7 @@ const TeamDetailFeedbackForm = ({id, handleSubmit, feedback, setFeedback}) => {
                 name="title"
                 value={feedback.title}
                 placeholder="Enter your title"
-                className="w-full peer"
+                className="w-full peer shadow-md"
                 required
                 onChange={handleChange}
               />
@@ -53,12 +55,12 @@ const TeamDetailFeedbackForm = ({id, handleSubmit, feedback, setFeedback}) => {
                 value={feedback.comment}
                 placeholder="Enter your comment"
                 rows="4"
-                className="w-full textarea-style"
+                className="w-full textarea-style shadow-md"
                 required
                 onChange={handleChange}
               ></textarea>
             </div>
-            <Button type="type22" onClick={handleSubmit}>Post Comment</Button>
+            <Button type="type22" className="shadow-lg" onClick={handleSubmit}>Post Comment</Button>
           </form>
     </>
   )

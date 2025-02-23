@@ -23,7 +23,7 @@ const feedbackSlice = createSlice({
             state.error = false
             state.singleTherapistFeedbacks = payload
         },
-        fetchFail: () => {
+        fetchFail: (state) => {
             state.loading = false,
             state.error = true
         }
