@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import AccountForm from "../components/auth/AccountForm";
@@ -9,12 +9,22 @@ import useUserCall from "../hooks/useUserCall";
 
 const Account = () => {
   const { t } = useTranslation();
-  const [showPassword, setShowPassword] = useState(false);
+  const {getSingleUser, updateUser} = useUserCall()
   const { currentUser } = useSelector((state) => state.auth);
+  const { singleUser } = useSelector((state) => state.users);
+  
+  
   console.log(currentUser);
-  const {updateUser} = useUserCall()
 
-  const [userInfo, setUserInfo] = useState(currentUser);
+  const id = currentUser._id  
+
+  useEffect(() => {
+    getSingleUser(id);
+  }, [id]);
+
+  console.log(singleUser);
+
+  const [userInfo, setUserInfo] = useState(singleUser);
   console.log(userInfo);
 
   const handleChange = (e) => {
@@ -52,7 +62,7 @@ const Account = () => {
         </div>
       </div>
       {/* Change Password Field */}
-      <AccountChangePasswordForm currentUser={currentUser} />
+      <AccountChangePasswordForm singleUser={singleUser} />
       {/* Account Delete Field */}
       <AccountDelete />
     </div>

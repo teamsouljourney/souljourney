@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const AccountChangePasswordForm = ({currentUser}) => {
+const AccountChangePasswordForm = ({singleUser}) => {
     const { t } = useTranslation();
     const [showPassword, setShowPassword] = useState(false);
 
-    console.log(currentUser);
-    
+    console.log(singleUser);
 
     const initialState = {
       currentPassword: "",
@@ -26,7 +25,7 @@ const AccountChangePasswordForm = ({currentUser}) => {
     const changePassword = (e) => {
       e.preventDefault()
 
-      if (currentUser?.password !== passwordInfo?.currentPassword) {
+      if (singleUser?.password !== passwordInfo?.currentPassword) {
         console.log("Your current password is wrong!");
         
       }
@@ -36,7 +35,7 @@ const AccountChangePasswordForm = ({currentUser}) => {
         
       }
 
-      // currentUser.
+      // singleUser.
 
     }
 

@@ -11,7 +11,7 @@ const userSlice = createSlice({
       firstName: "",
       lastName: "",
     },
-    singleUser: null,
+    singleUser: {},
     loading: false,
     error: false,
     isModalOpen: false,
