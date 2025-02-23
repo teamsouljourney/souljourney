@@ -20,7 +20,6 @@ const usePaginationCall = () => {
       const { data } = await axiosWithToken.get(
         `${BASE_URL}${endpoint}?limit=${limit}&page=${page}`
       );
-      console.log(data.data);
       dispatch(getPagDataSuccess({ slice, data: data.data }));
     } catch (error) {
       dispatch(fetchFail());

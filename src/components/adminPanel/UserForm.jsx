@@ -81,8 +81,9 @@ const UserForm = () => {
             placeholder="Enter password"
             value={newUser.password || ""}
             onChange={handleInputChange}
-            disabled={newUser._id}
-            className="w-full px-3 py-2 mt-2 border rounded-md opacity-50 border-navy focus:outline-none focus:ring-mauve-dark focus:border-mauve-dark hover:cursor-not-allowed"
+            disabled={!!newUser._id}
+            className={`w-full px-3 py-2 mt-2 border rounded-md border-navy focus:outline-none focus:ring-mauve-dark focus:border-mauve-dark 
+    ${newUser._id ? "opacity-50 cursor-not-allowed" : ""}`}
           />
         </div>
       </div>

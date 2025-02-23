@@ -1,5 +1,5 @@
 import useAxios from "./useAxios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import {
@@ -8,11 +8,16 @@ import {
   getAllUsersSuccess,
 } from "../features/userSlice";
 import { deleteUserSuccess } from "../features/userSlice";
+import usePaginationCall from "./usePaginationCall";
 
 const useUserCall = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const axiosWithToken = useAxios();
+  const { getDataByPage } = usePaginationCall();
+  const { currentPage, itemsPerPage } = useSelector(
+    (state) => state.pagination
+  );
 
   //* Get All Users
   const getAllUsers = async () => {
@@ -38,7 +43,7 @@ const useUserCall = () => {
       dispatch(fetchFail());
       toastErrorNotify(error.response.data.message, "Failed to create user.");
     } finally {
-      getAllUsers();
+      getDataByPage("users", "pagUsers", itemsPerPage, currentPage);
     }
   };
 
@@ -55,7 +60,7 @@ const useUserCall = () => {
         error.response?.data?.message || "Failed to delete users."
       );
     } finally {
-      getAllUsers();
+      getDataByPage("users", "pagUsers", itemsPerPage, currentPage);
     }
   };
 
@@ -71,7 +76,7 @@ const useUserCall = () => {
         error.response?.data?.message || "Failed to update users."
       );
     } finally {
-      getAllUsers();
+      getDataByPage("users", "pagUsers", itemsPerPage, currentPage);
     }
   };
 
@@ -89,7 +94,7 @@ const useUserCall = () => {
         error.response?.data?.message || "Failed to change user status."
       );
     } finally {
-      getAllUsers();
+      getDataByPage("users", "pagUsers", itemsPerPage, currentPage);
     }
   };
 
