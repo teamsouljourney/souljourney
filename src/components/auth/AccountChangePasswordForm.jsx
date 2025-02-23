@@ -26,7 +26,7 @@ const AccountChangePasswordForm = ({currentUser}) => {
     const changePassword = (e) => {
       e.preventDefault()
 
-      if (currentUser.password !== passwordInfo.currentPassword) {
+      if (currentUser?.password !== passwordInfo?.currentPassword) {
         console.log("Your current password is wrong!");
         
       }

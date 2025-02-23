@@ -6,6 +6,7 @@ import {
   fetchStart,
   fetchFail,
   getAllUsersSuccess,
+  getSingleUserSuccess,
 } from "../features/userSlice";
 import { deleteUserSuccess } from "../features/userSlice";
 import usePaginationCall from "./usePaginationCall";
@@ -28,6 +29,17 @@ const useUserCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(error.response.data.message, "Failed to fetch users.");
+    }
+  };
+
+  const getSingleUser = async (id) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosWithToken.get(`users/${id}`);
+      dispatch(getSingleUserSuccess(data.data));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(error.response.data.message, "Failed to fetch the user.");
     }
   };
 
@@ -104,6 +116,7 @@ const useUserCall = () => {
     deleteUser,
     updateUser,
     changeUserStatus,
+    getSingleUser
   };
 };
 

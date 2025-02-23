@@ -11,6 +11,7 @@ const userSlice = createSlice({
       firstName: "",
       lastName: "",
     },
+    singleUser: null,
     loading: false,
     error: false,
     isModalOpen: false,
@@ -23,6 +24,11 @@ const userSlice = createSlice({
     getAllUsersSuccess: (state, { payload }) => {
       state.loading = false;
       state.users = payload;
+    },
+    getSingleUserSuccess: (state, { payload }) => {
+      state.loading = false;
+      state.singleUser = payload;
+      state.error = false
     },
     deleteUserSuccess: (state, { payload }) => {
       state.loading = false;
@@ -58,5 +64,6 @@ export const {
   setNewUser,
   resetNewUser,
   toggleModal,
+  getSingleUserSuccess
 } = userSlice.actions;
 export default userSlice.reducer;
