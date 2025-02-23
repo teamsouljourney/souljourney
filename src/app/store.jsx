@@ -8,6 +8,9 @@ import blogReducer from "../features/blogSlice";
 import calendarReducer from "../features/calendarSlice";
 import chatReducer from "../features/chatSlice";
 
+
+import feedbackReducer from "../features/feedbackSlice";
+
 //*redux-persist
 import {
   persistStore,
@@ -40,6 +43,9 @@ const store = configureStore({
     blogs: blogReducer,
     calendar: calendarReducer,
     chats: chatReducer,
+    
+
+    feedbacks: feedbackReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

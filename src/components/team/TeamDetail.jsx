@@ -3,16 +3,20 @@ import { useParams, useNavigate } from "react-router-dom";
 import useTherapistCall from "../../hooks/useTherapistCall";
 import { useSelector } from "react-redux";
 import AppointmentCalendar from "../calendar/appointmentCalendar";
-import avatar from "../../assets/avatar.png";
 import Button from "../button/Button";
+import TeamDetailHeader from "./TeamDetailHeader";
+import TeamDetailBody from "./TeamDetailBody";
+import { useTranslation } from "react-i18next";
 
 const TeamDetail = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
   const { getSingleTherapist, getTherapistTimeTable } = useTherapistCall();
   const { singleTherapist, loading, error } = useSelector(
     (state) => state.therapists
   );
+  const { currentUser } = useSelector((state) => state.auth);
 
   const [displayCalendar, setDisplayCalendar] = useState(false);
 
@@ -29,23 +33,7 @@ const TeamDetail = () => {
     return <div className="text-center text-mauve">Therapist not found!</div>;
   }
 
-  console.log(singleTherapist);
-
-  const {
-    firstName,
-    lastName,
-    email,
-    image,
-    categoryId,
-    feedbackId,
-    description,
-    graduation,
-    experience,
-  } = singleTherapist;
-
-  // console.log(categoryId);
-
-  const therapistCategories = categoryId;
+  console.log(singleTherapist);  
 
   const toggleCalendar = (show) => {
     setDisplayCalendar(show);
@@ -55,86 +43,15 @@ const TeamDetail = () => {
     if (e.target === e.currentTarget) {
       toggleCalendar(false);
     }
-  };
+  };  
 
   return (
-    <div className="container max-w-none min-h-screen flex flex-col justify-center items-center gap-2 py-3 bg-offWhite dark:bg-background-darker text-navy-dark dark:text-offWhite">
+    <div className="container max-w-none min-h-screen flex flex-col justify-center items-center gap-2 py-3 bg-offWhite dark:bg-background-darker text-navy-dark dark:text-offWhite-dark">
       {/* Header */}
       <div className="w-full bg-offWhite-dark dark:bg-background-dark pt-12">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-2 mx-auto w-full max-w-6xl p-8 mt-6">
-          {/* Profile Pic */}
-          <div className="lg:col-span-1 flex justify-center">
-            <img
-              className="w-48 h-48 rounded-full border-4 border-seaGreen object-cover bg-offWhite"
-              src={image || avatar}
-              alt={firstName}
-            />
-          </div>
 
-          {/* Identity */}
-          <div className="lg:col-span-3 flex flex-col lg:justify-center lg:items-start lg:pl-5  text-center lg:text-left">
-            <div className="text-2xl font-semibold">
-              {/* Name */}
-              <div className="text-4xl font-semibold mb-2">
-                {firstName} {lastName}
-                <p className="text-sm mt-1">{email}</p>
-              </div>
-              {/* Categories */}
-              <div className="flex flex-wrap justify-center lg:justify-start mt-4 gap-2 text-lg">
-                {therapistCategories.map((category) => (
-                  <span
-                    className="inline-block px-2 py-1 bg-[#E8F5E9] text-seaGreen rounded-full text-sm"
-                    key={category._id}
-                  >
-                    {category.name}
-                  </span>
-                ))}
-              </div>
-              {/* Services */}
-              <div className="flex flex-wrap justify-center lg:justify-start items-center mt-2 gap-x-6">
-                <div className="flex flex-row items-center  justify-center gap-2">
-                  <span
-                    style={{
-                      maskImage: `url(/assets/sidebar/videoCall2.svg)`,
-                      maskRepeat: "no-repeat",
-                      maskSize: "contain",
-                      width: "20px",
-                      height: "20px",
-                    }}
-                    className="inline-flex justify-center items-center  bg-navy-light "
-                  ></span>
-
-                  <span className="text-[1rem] font-semibold">Video Call</span>
-                </div>
-                <div className="flex flex-row items-center  justify-center gap-2">
-                  <span
-                    style={{
-                      maskImage: `url(/assets/sidebar/chat2.svg)`,
-                      maskRepeat: "no-repeat",
-                      maskSize: "contain",
-                      width: "20px",
-                      height: "20px",
-                    }}
-                    className="inline-flex justify-center items-center  bg-navy-light "
-                  ></span>
-
-                  <span className="text-[1rem] font-semibold">Live Chat</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Appointment button */}
-          <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
-            <Button
-              onClick={() => toggleCalendar(true)}
-              className="capitalize"
-              type="type22"
-            >
-              work with me
-            </Button>
-          </div>
-        </div>
+        <TeamDetailHeader singleTherapist={singleTherapist} currentUser={currentUser} toggleCalendar={toggleCalendar} />
+        
       </div>
       {/* Decorative Wave Border */}
       {/* <div className="w-full h-24 relative overflow-hidden">
@@ -168,71 +85,18 @@ const TeamDetail = () => {
 
       {/* Body */}
       <div className="w-full px-4">
-        <div className="grid grid-cols-1 gap-6 mx-auto w-full max-w-6xl p-8">
-          <div className="row-span-4 mx-auto pb-3 border-b-2 w-full">
-            <h2 className="text-2xl font-semibold mb-4 ">About</h2>
-            <p className=" leading-relaxed">{description}</p>
-          </div>
-          <div className="row-span-3 mx-auto pb-3 border-b-2 w-full">
-            <h2 className="text-2xl font-semibold mb-4 ">
-              Proffesional experience
-            </h2>
-            <div className="">{experience}</div>
-            <div className="">{graduation}</div>
-          </div>          
-          <div className="row-span-2 mx-auto pb-3 border-b-2 w-full">
-            <h2 className="text-2xl font-semibold mb-4 ">Services</h2>
-            <div className="flex flex-wrap justify-center lg:justify-start items-center mt-2 gap-x-6">
-                <div className="flex flex-row items-center  justify-center gap-2">
-                  <span
-                    style={{
-                      maskImage: `url(/assets/sidebar/videoCall2.svg)`,
-                      maskRepeat: "no-repeat",
-                      maskSize: "contain",
-                      width: "20px",
-                      height: "20px",
-                    }}
-                    className="inline-flex justify-center items-center  bg-navy-light "
-                  ></span>
 
-                  <span className="text-[1rem] font-semibold">Video Call</span>
-                </div>
-                <div className="flex flex-row items-center  justify-center gap-2">
-                  <span
-                    style={{
-                      maskImage: `url(/assets/sidebar/chat2.svg)`,
-                      maskRepeat: "no-repeat",
-                      maskSize: "contain",
-                      width: "20px",
-                      height: "20px",
-                    }}
-                    className="inline-flex justify-center items-center  bg-navy-light "
-                  ></span>
-
-                  <span className="text-[1rem] font-semibold">Live Chat</span>
-                </div>
-              </div>
-          </div>
-          <div className="row-span-2 mx-auto pb-3 border-b-2 w-full">
-            <h2 className="text-2xl font-semibold mb-4 ">Reviews</h2>
-            
-            <p className=" leading-relaxed">We truly appreciate the wonderful feedback we receive about our professionals. Each review reflects the genuine experiences of those who have worked with them, shared voluntarily by individuals who found value in their journey. Everyone’s therapy experience is unique, and we are grateful for the trust placed in us.</p>
-            {/* Profesyonellerimiz hakkında aldığımız harika geri bildirimler için gerçekten minnettarız. Her bir yorum, onlarla çalışmış kişilerin gerçek deneyimlerini yansıtmakta olup, yolculuklarından değer bulan bireyler tarafından gönüllü olarak paylaşılmıştır. Herkesin terapi süreci kendine özgüdür ve bize duyulan güven için teşekkür ederiz. */}
-            {/* Wir sind sehr dankbar für das wunderbare Feedback, das wir über unsere Fachkräfte erhalten. Jede Bewertung spiegelt die echten Erfahrungen von Menschen wider, die mit ihnen gearbeitet haben und ihren Weg freiwillig teilen. Jede Therapieerfahrung ist einzigartig, und wir schätzen das Vertrauen, das in uns gesetzt wird. */}
-
-            <div className="mt-4">{feedbackId[0]?.comment}</div>
-          </div>
-        </div>
+        <TeamDetailBody currentUser={currentUser} singleTherapist={singleTherapist} id={id}/>
+        
       </div>
       {/* GoBack */}
       <div className="p-6 pt-0 mt-8 text-center w-full">
         <Button onClick={() => navigate(-1)} type="type22">
-          Go Back
+          Go Back {/* {t("goBack")} */}
         </Button>
       </div>
-
       {/* Appointment */}
-      {displayCalendar && (
+      {displayCalendar && currentUser && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
           onClick={handleOutSideClick}
