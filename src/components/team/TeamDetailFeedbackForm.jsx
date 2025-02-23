@@ -10,6 +10,19 @@ const TeamDetailFeedbackForm = ({id}) => {
         <form className="mt-16 bg-offWhite-light dark:bg-background-dark p-4 rounded-lg shadow">
             <h3 className="text-lg font-semibold mb-2">Add a Comment</h3>
             <div className="mb-4">
+              <label htmlFor="rating" className="peer">
+                Rating
+              </label>
+              <input
+                type="number"
+                id="rating"
+                name="rating"
+                placeholder="Enter your rating"
+                className="w-full peer"
+                required
+              />
+            </div>
+            <div className="mb-4">
               <label htmlFor="title" className="peer">
                 Title
               </label>
