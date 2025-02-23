@@ -5,12 +5,14 @@ import AccountForm from "../components/auth/AccountForm";
 import AccountChangePasswordForm from "../components/auth/AccountChangePasswordForm";
 import AccountDelete from "../components/auth/AccountDelete";
 import AccountUploadProfilePicture from "../components/auth/AccountUploadProfilePicture";
+import useUserCall from "../hooks/useUserCall";
 
 const Account = () => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const { currentUser } = useSelector((state) => state.auth);
   console.log(currentUser);
+  const {updateUser} = useUserCall()
 
   const [userInfo, setUserInfo] = useState(currentUser);
   console.log(userInfo);
@@ -23,6 +25,7 @@ const Account = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(userInfo);
+    updateUser(userInfo._id, userInfo)
   };
 
   return (
