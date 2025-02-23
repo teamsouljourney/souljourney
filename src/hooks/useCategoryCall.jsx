@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import useAxios, { axiosPublic } from "./useAxios";
 import {
   fetchStart,
@@ -6,11 +6,16 @@ import {
   getAllCategoriesSuccess,
   getSingleCategorySuccess,
 } from "../features/categorySlice";
-import { toastErrorNotify } from "../helper/ToastNotify";
+import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
+import usePaginationCall from "./usePaginationCall";
 
 const useCategoryCall = () => {
   const dispatch = useDispatch();
   const axiosWithToken = useAxios();
+  const { getDataByPage } = usePaginationCall();
+  const { currentPage, itemsPerPage } = useSelector(
+    (state) => state.pagination
+  );
 
   //* Get All Categories
   const getAllCategories = async () => {
@@ -42,13 +47,61 @@ const useCategoryCall = () => {
     }
   };
 
+  //* Create Category
+  const createCategory = async (categoryData) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosWithToken.post("categories", categoryData);
+      toastSuccessNotify("Category created successfully!");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to create category."
+      );
+    } finally {
+      getDataByPage("categories", "pagCategories", itemsPerPage, currentPage);
+    }
+  };
 
+  //* Delete Category
+  const deleteCategory = async (id) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.delete(`categories/${id}`);
+      // dispatch(deleteCategorySuccess(id));
+      toastSuccessNotify("Category deleted successfully!");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to delete category."
+      );
+    } finally {
+      getDataByPage("categories", "pagCategories", itemsPerPage, currentPage);
+    }
+  };
 
+  //* Update Category
+  const updateCategory = async (id, updatedCategory) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.patch(`categories/${id}`, updatedCategory);
+      toastSuccessNotify("Category updated successfully!");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to update category."
+      );
+    } finally {
+      getDataByPage("categories", "pagCategories", itemsPerPage, currentPage);
+    }
+  };
 
   return {
     getAllCategories,
     getSingleCategory,
-  
+    createCategory,
+    deleteCategory,
+    updateCategory,
   };
 };
 
