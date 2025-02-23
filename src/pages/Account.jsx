@@ -52,7 +52,7 @@ const Account = () => {
         </div>
       </div>
       {/* Change Password Field */}
-      <AccountChangePasswordForm />
+      <AccountChangePasswordForm currentUser={currentUser} />
       {/* Account Delete Field */}
       <AccountDelete />
     </div>

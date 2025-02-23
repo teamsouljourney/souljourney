@@ -4,8 +4,9 @@ const AccountForm = ({ userInfo, handleChange, handleSubmit }) => {
   const { t } = useTranslation();
   return (
     <>
-      <div className="flex flex-col w-full items-center gap-4">
-        <div className="mt-10 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 w-full max-w-[576px]">
+      <div className="flex flex-col w-full items-start gap-4">
+      <span className="text-lg mt-10 font-medium">Personel Info {/* {t("password")} */}</span>
+        <div className="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 w-full max-w-[576px]">
           <div className="sm:col-span-2">
             <label htmlFor="firstName" className="peer">
               {t("firstName")}

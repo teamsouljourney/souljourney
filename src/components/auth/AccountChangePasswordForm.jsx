@@ -1,9 +1,45 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const AccountChangePasswordForm = () => {
+const AccountChangePasswordForm = ({currentUser}) => {
     const { t } = useTranslation();
     const [showPassword, setShowPassword] = useState(false);
+
+    console.log(currentUser);
+    
+
+    const initialState = {
+      currentPassword: "",
+      newPassword: "",
+      retypePassword: ""
+    }
+    const [passwordInfo, setPasswordInfo] = useState(initialState);
+
+    console.log(passwordInfo);
+
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setPasswordInfo({ ...passwordInfo, [name]: value });
+    }
+    
+
+    const changePassword = (e) => {
+      e.preventDefault()
+
+      if (currentUser.password !== passwordInfo.currentPassword) {
+        console.log("Your current password is wrong!");
+        
+      }
+
+      if (passwordInfo.newPassword !== passwordInfo.retypePassword) {
+        console.log("Please check your confirm password");
+        
+      }
+
+      // currentUser.
+
+    }
+
   return (
     <>
         <div className="flex w-full max-w-[576px] flex-col items-start gap-4 border-b-2 border-b-gray-200 dark:border-b-gray-400">
@@ -11,17 +47,19 @@ const AccountChangePasswordForm = () => {
         {/* Password input */}
 
         <div className="sm:col-span-4 relative">
-          <label htmlFor="password" className="password-label">
+          <label htmlFor="currentPassword" className="password-label">
             Current Password
           </label>
           <div className="mt-2 relative">
             <input
-              id="password"
-              name="password"
               type={showPassword ? "text" : "password"}
+              id="currentPassword"
+              name="currentPassword"
+              value={passwordInfo.currentPassword}
               placeholder="Enter current password"
               autoComplete="current-password"
               className="peer min-w-[280px]"
+              onChange={handleChange}
             />
             <div
               type="button"
@@ -41,17 +79,19 @@ const AccountChangePasswordForm = () => {
         </div>
 
         <div className="sm:col-span-4 relative">
-          <label htmlFor="new-password" className="password-label">
+          <label htmlFor="newPassword" className="password-label">
             New Password
           </label>
           <div className="mt-2 relative">
             <input
-              id="new-password"
-              name="new-password"
               type={showPassword ? "text" : "password"}
+              id="newPassword"
+              name="newPassword"
+              value={passwordInfo.newPassword}
               placeholder="Enter new password"
               autoComplete="current-password"
               className="peer min-w-[280px]"
+              onChange={handleChange}
             />
             <div
               type="button"
@@ -71,17 +111,19 @@ const AccountChangePasswordForm = () => {
         </div>
 
         <div className="sm:col-span-4 relative">
-          <label htmlFor="retype-password" className="password-label">
+          <label htmlFor="retypePassword" className="password-label">
             Re-type New Password
           </label>
           <div className="mt-2 relative">
             <input
-              id="retype-password"
-              name="retype-password"
               type={showPassword ? "text" : "password"}
+              id="retypePassword"
+              name="retypePassword"
+              value={passwordInfo.retypePassword}
               placeholder="Re-type new password"
               autoComplete="retype-password"
               className="peer min-w-[280px]"
+              onChange={handleChange}
             />
             <div
               type="button"
