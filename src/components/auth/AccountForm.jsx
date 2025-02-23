@@ -119,7 +119,7 @@ const AccountForm = ({ userInfo, handleChange, handleSubmit }) => {
             className="account-btn mb-4 w-1/2"
             onClick={handleSubmit}
           >
-            Update Profile
+            Update Profile {/* {t("updateProfile")} */}
           </button>
         </div>
       </div>

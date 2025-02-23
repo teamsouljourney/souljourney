@@ -1,6 +1,10 @@
 import avatar from "../../assets/avatar.png";
+import { useTranslation } from "react-i18next";
 
 const TeamDetailFeedbackCards = ({ singleTherapistFeedbacks }) => {
+  const { t } = useTranslation();
+  {/* {t("goBack")} */}
+  
   const getTimeAgo = (createdAt) => {
     const now = new Date();
     const created = new Date(createdAt);

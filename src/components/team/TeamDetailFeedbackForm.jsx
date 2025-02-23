@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "../button/Button";
+import { useTranslation } from "react-i18next";
 
 const TeamDetailFeedbackForm = ({
   id,
@@ -7,7 +8,8 @@ const TeamDetailFeedbackForm = ({
   feedback,
   setFeedback,
 }) => {
-//   console.log("therapistID:", id);
+  // console.log("therapistID:", id);
+  const { t } = useTranslation();
 
   const [hoveredRating, setHoveredRating] = useState(0);
 
@@ -20,8 +22,8 @@ const TeamDetailFeedbackForm = ({
   return (
     <>
       <form className="mt-16 bg-offWhite-light dark:bg-background-dark p-8 rounded-lg shadow-xl">
-        <h3 className="text-lg font-semibold mb-2">Add a Comment</h3>
-        
+        <h3 className="text-lg font-semibold mb-2">Add a Comment {/* {t("addAComment")} */}</h3>
+
         <div className="mb-4">
           <label htmlFor="title" className="peer">
             Title

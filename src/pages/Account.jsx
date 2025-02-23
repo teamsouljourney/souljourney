@@ -1,18 +1,8 @@
-// import { Box, Container, Typography } from "@mui/material";
-// import Grid from "@mui/material/Grid2";
-// import { Formik } from "formik";
-// import { SignupSchema } from "../components/auth/RegisterForm";
-// import {
-//   authMainContainerGridStyle,
-//   authFormContainerGridStyle,
-// } from "../styles/globalStyle";
-// import AccountForm from "../components/auth/AccountForm";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import AccountForm from "../components/auth/AccountForm";
 import AccountChangePasswordForm from "../components/auth/AccountChangePasswordForm";
-import avatar from "../assets/avatar.png";
 import AccountDelete from "../components/auth/AccountDelete";
 import AccountUploadProfilePicture from "../components/auth/AccountUploadProfilePicture";
 

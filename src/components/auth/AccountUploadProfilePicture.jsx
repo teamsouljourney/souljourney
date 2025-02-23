@@ -1,6 +1,8 @@
 import avatar from "../../assets/avatar.png"
+import { useTranslation } from "react-i18next";
 
 const AccountUploadProfilePicture = ({userInfo}) => {
+    const { t } = useTranslation();
   return (
     <>
         <div className="flex w-full flex-col items-start gap-4">
@@ -17,10 +19,11 @@ const AccountUploadProfilePicture = ({userInfo}) => {
                       {/* Upload Profile Image Section */}
                       <div className="flex flex-col items-start gap-2">
                         <button type="button" className="account-btn">
-                          Upload
+                          Upload {/* {t("upload")} */}
                         </button>
                         <span>
                           For best results, upload an image 512x512 or larger.
+                          {/* {t("")} */}
                         </span>
                       </div>
                     </div>

@@ -6,8 +6,10 @@ import AppointmentCalendar from "../calendar/appointmentCalendar";
 import Button from "../button/Button";
 import TeamDetailHeader from "./TeamDetailHeader";
 import TeamDetailBody from "./TeamDetailBody";
+import { useTranslation } from "react-i18next";
 
 const TeamDetail = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
   const { getSingleTherapist, getTherapistTimeTable } = useTherapistCall();
@@ -90,7 +92,7 @@ const TeamDetail = () => {
       {/* GoBack */}
       <div className="p-6 pt-0 mt-8 text-center w-full">
         <Button onClick={() => navigate(-1)} type="type22">
-          Go Back
+          Go Back {/* {t("goBack")} */}
         </Button>
       </div>
       {/* Appointment */}

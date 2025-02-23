@@ -3,8 +3,10 @@ import useFeedbackCall from "../../hooks/useFeedbackCall";
 import { useEffect, useState } from "react";
 import TeamDetailFeedbackCards from "./TeamDetailFeedbackCards";
 import TeamDetailFeedbackForm from "./TeamDetailFeedbackForm";
+import { useTranslation } from "react-i18next";
 
 const TeamDetailBody = ({ singleTherapist, id, currentUser }) => {
+  const { t } = useTranslation();
   const { getSingleTherapistFeedbacks, postTherapistFeedback } =
     useFeedbackCall();
   const { singleTherapistFeedbacks, loading, error } = useSelector(
@@ -58,7 +60,7 @@ const TeamDetailBody = ({ singleTherapist, id, currentUser }) => {
       <div className="grid grid-cols-1 gap-6 mx-auto w-full max-w-6xl p-8">
         {/* About */}
         <div className="row-span-4 mx-auto pb-3 border-b-2 w-full">
-          <h2 className="text-2xl font-semibold mb-4 ">About</h2>
+          <h2 className="text-2xl font-semibold mb-4 ">About {/* {t("about")} */}</h2>
           <p className=" leading-relaxed">{description}</p>
         </div>
         {/* Experience */}

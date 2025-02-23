@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../button/Button";
+import { useTranslation } from "react-i18next";
 
 const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
-    const navigate = useNavigate()
+  const { t } = useTranslation();
+  const navigate = useNavigate()
   const { firstName, lastName, email, image, categoryId } = singleTherapist;
 
   const therapistCategories = categoryId;
@@ -52,7 +54,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
                   className="inline-flex justify-center items-center  bg-navy-light "
                 ></span>
 
-                <span className="text-[1rem] font-semibold">Video Call</span>
+                <span className="text-[1rem] font-semibold">Video Call {/* {t("videoCall")} */}</span>
               </div>
               <div className="flex flex-row items-center  justify-center gap-2">
                 <span
@@ -66,7 +68,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
                   className="inline-flex justify-center items-center  bg-navy-light "
                 ></span>
 
-                <span className="text-[1rem] font-semibold">Live Chat</span>
+                <span className="text-[1rem] font-semibold">Live Chat{/* {t("liveChat")} */}</span>
               </div>
             </div>
           </div>
@@ -81,7 +83,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
             className="capitalize"
             type="type22"
           >
-            work with me
+            work with me {/* {t("workWithMe")} */}
           </Button>
         </div>
         ) : (
@@ -91,7 +93,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
             className="capitalize"
             type="type22"
           >
-            work with me
+            work with me {/* {t("workWithMe")} */}
           </Button>
         </div>
         )}
