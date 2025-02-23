@@ -6,6 +6,7 @@ import therapistReducer from "../features/therapistSlice";
 import noteReducer from "../features/noteSlice";
 import blogReducer from "../features/blogSlice";
 import calendarReducer from "../features/calendarSlice";
+import chatReducer from "../features/chatSlice";
 
 
 import feedbackReducer from "../features/feedbackSlice";
@@ -41,6 +42,7 @@ const store = configureStore({
     notes: noteReducer,
     blogs: blogReducer,
     calendar: calendarReducer,
+    chats: chatReducer,
     
 
     feedbacks: feedbackReducer

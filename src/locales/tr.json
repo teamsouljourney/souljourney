@@ -140,12 +140,17 @@
   "moreCategories": "Daha Fazla Kategori",
   "searchTherapist": "Terapist Ara",
 
-
   "BLOGS": "BLOGLAR",
 
   "ABOUT": "HAKKIMIZDA",
 
   "FOOTER": "ALT BÖLÜM",
+  "termsAndCondition": "Şartlar ve Koşullar",
+  "privacyPolicy": "Gizlilik Politikası",
+  "contactUs": "Bize Ulaşın",
+  "cookieSettings": "Çerez Ayarları",
+  "forTherapist": "Terapistler için",
+  "impressum": "Künye",
 
   "CONTACT": "İLETİŞİM",
   "getInTouch": "İletişime Geçin",
@@ -255,5 +260,14 @@
   "saveChanges": "Değişiklikleri Kaydet",
   "cancel": "İptal",
   "noAppointmentsMessage": "Henüz planlanmış randevunuz yok.",
-  "bookAppointmentButton": "Randevu Al"
+  "bookAppointmentButton": "Randevu Al",
+
+  "DASHBOARD": "DASHBOARD",
+  "descriptionOfTherapist": "Ruh sağlığı alanında uzmanlaşmış deneyimli psikolog.",
+  "patientList": "Hasta Listesi",
+  "searchPatient": "Hasta ara...",
+  "myBlogs": "Bloglarım",
+  "noPatient": "Kayıtlı hasta bulunmamaktadır.",
+  "noBlogs": "Henüz blog yazısı yok. Hemen yazmaya başla!",
+  "notes": "Notlar"
 }

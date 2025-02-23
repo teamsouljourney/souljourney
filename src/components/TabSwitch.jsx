@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import TeamCard from "../components/team/TeamCard";
+import { FaBars, FaTimes } from "react-icons/fa";
 import useCategoryCall from "../hooks/useCategoryCall";
 import useTherapistCall from "../hooks/useTherapistCall";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,21 +9,18 @@ import { setSearchTerm } from "../features/therapistSlice";
 
 const TabSwitch = () => {
   const dispatch = useDispatch();
-  // const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategoryState] = useState(null); // Başlangıçta All seçili
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedCategory, setSelectedCategoryState] = useState(null);
   const { categories } = useSelector((state) => state.categories);
-  const { therapists } = useSelector((state) => state.therapists);
-  const {searchTerm}=useSelector((state)=> state.therapists)
+  const { therapists, searchTerm } = useSelector((state) => state.therapists);
 
   const { getAllCategories } = useCategoryCall();
   const { getAllTherapists, getFilterTherapists } = useTherapistCall();
 
- 
   useEffect(() => {
     getAllCategories();
     getAllTherapists();
   }, []);
-
 
   useEffect(() => {
     if (selectedCategory) {
@@ -34,65 +31,96 @@ const TabSwitch = () => {
   }, [selectedCategory]);
 
   const handleTabClick = (categoryId) => {
-    if (selectedCategory === categoryId) {
-      setSelectedCategoryState(null); 
-      dispatch(setSelectedCategory(null));
-    } else {
-      setSelectedCategoryState(categoryId);
-      dispatch(setSelectedCategory(categoryId));
-    }
+    setSelectedCategoryState(categoryId === selectedCategory ? null : categoryId);
+    dispatch(setSelectedCategory(categoryId === selectedCategory ? null : categoryId));
+    setMenuOpen(false);
   };
 
   const handleAllClick = () => {
     setSelectedCategoryState(null);
     dispatch(setSelectedCategory(null));
+    setMenuOpen(false);
   };
 
   const handleSearchChange = (e) => {
-    dispatch(setSearchTerm(e.target.value))
+    dispatch(setSearchTerm(e.target.value));
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className="w-full h-full mt-5 mx-auto">
-      <div className="opacity-3 p-1 rounded-t-lg">
-        <div className="flex flex-wrap justify-center space-x-4">
-          {/* All Butonu */}
-          <button
-            onClick={handleAllClick}
-            className={`px-4 py-2 font-semibold border-b-4 transition-all duration-300 ease-in-out mb-5 rounded-lg ${
-              selectedCategory === null ? "bg-navy-light text-white" : "text-black hover:bg-navy-light"
-            }`}
-          >
+    <div className="w-full mt-5 mx-auto">
+      {/* Hamburger Menü Butonu (Mobil) */}
+      <div className="md:hidden flex justify-end p-3">
+        <button onClick={() => setMenuOpen(!menuOpen)} className="text-2xl p-2 rounded-lg border">
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+
+      {/* Küçük Açılır Menü (Mobilde Görünecek) */}
+      {menuOpen && (
+        <div className="absolute bottom-[105px] right-14 w-48 bg-transparent shadow-lg rounded-lg  z-50">
+          <button onClick={handleAllClick} className="block w-full text-left px-3 py-2 hover:bg-gray-100 rounded">
             All
           </button>
-
-          {/* Kategori Butonları */}
           {categories.slice(0, 4).map((category) => (
             <button
               key={category._id}
-              className={`px-4 py-2 font-semibold border-b-4 transition-all duration-300 ease-in-out mb-5 rounded-lg ${
-                selectedCategory === category._id ? "bg-navy-light text-white" : "text-black hover:bg-navy-light"
-              }`}
+              className="block w-full text-left px-3 py-2 hover:bg-gray-100 rounded"
               onClick={() => handleTabClick(category._id)}
             >
               {category.name}
             </button>
           ))}
-
-          {/* More Categories Bileşeni */}
-          <MoreCategories />
-
-          {/* Arama kutusu */}
-          <div className="flex justify-center items-center">
-            <input
-              type="text"
-              placeholder="Search Therapist..."
-              value={searchTerm}
-              onChange={handleSearchChange}
-              className="rounded-lg focus:outline-none"
-            />
-          </div>
+           {window.innerWidth >= 768 && <MoreCategories />}
         </div>
+      )}
+
+      {/* Büyük Ekranda Normal Menü */}
+      <div className="hidden md:flex justify-center space-x-4">
+        <button
+          onClick={handleAllClick}
+          className={`px-4 py-2 font-semibold border-b-4 rounded-lg ${
+            selectedCategory === null ? "bg-navy-light text-white" : "text-black hover:bg-navy-light"
+          }`}
+        >
+          All
+        </button>
+        {categories.slice(0, 4).map((category) => (
+          <button
+            key={category._id}
+            className={`px-4 py-2 font-semibold border-b-4 rounded-lg ${
+              selectedCategory === category._id ? "bg-navy-light text-white" : "text-black hover:bg-navy-light"
+            }`}
+            onClick={() => handleTabClick(category._id)}
+          >
+            {category.name}
+          </button>
+        ))}
+        <MoreCategories />
+      </div>
+
+      {/* Arama Kutusu (Her Ekranda Görünür) */}
+      <div className="flex justify-center items-center ">
+        <input
+          type="text"
+          placeholder="Search Therapist..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className="rounded-lg border px-2 py-1 w-3/4 sm:w-[30%] md:w-1/3 lg:w-1/3 "
+        />
       </div>
     </div>
   );

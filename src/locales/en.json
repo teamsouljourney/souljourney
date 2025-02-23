@@ -144,6 +144,12 @@
   "ABOUT": "ABOUT",
 
   "FOOTER": "FOOTER",
+  "termsAndCondition": "Term & Conditions",
+  "privacyPolicy": "Privacy Policy",
+  "contactUs": "Contact Us",
+  "cookieSettings": "Cookie Settings",
+  "forTherapist": "For Therapists",
+  "impressum": "Impressum",
 
   "CONTACT": "CONTACT",
   "getInTouch": "Get in Touch",
@@ -253,5 +259,13 @@
   "saveChanges": "Save Changes",
   "cancel": "Cancel",
   "noAppointmentsMessage": "You have no scheduled appointments.",
-  "bookAppointmentButton": "Book an Appointment"
+  "bookAppointmentButton": "Book an Appointment",
+
+  "DASHBOARD": "DASHBOARD",
+  "patientList": "Patients List",
+  "searchPatient": "Search Patient...",
+  "myBlogs": "My Blogs",
+  "noPatient": "No patients found in the list.",
+  "noBlogs": "No blog posts available. Start writing now!",
+  "notes": "Notes"
 }
