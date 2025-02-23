@@ -50,6 +50,7 @@ const TeamDetailFeedbackForm = ({id, handleSubmit, feedback, setFeedback}) => {
               <textarea
                 id="comment"
                 name="comment"
+                value={feedback.comment}
                 placeholder="Enter your comment"
                 rows="4"
                 className="w-full textarea-style"
