@@ -22,7 +22,7 @@ const Footer = () => {
                 className="my-2 hover:text-mauve-dark dark:hover:text-pink-light text-xs sm:text-base"
                 to="/impressum"
               >
-                {/* {t(Impressum)} */}
+                {t("impressum")}
               </NavLink>
             </li>
             <li className="my-2 whitespace-nowrap">
@@ -30,7 +30,7 @@ const Footer = () => {
                 className="hover:text-mauve-dark dark:hover:text-pink-light text-xs sm:text-base"
                 to="/termsandconditions"
               >
-                Terms & Conditions
+                {t("termsAndCondition")}
               </NavLink>
             </li>
             <li className="my-2 whitespace-nowrap">
@@ -38,7 +38,7 @@ const Footer = () => {
                 className="hover:text-mauve-dark dark:hover:text-pink-light text-xs sm:text-base"
                 to="/privacypolicy"
               >
-                Privacy Policy
+                {t("privacyPolicy")}
               </NavLink>
             </li>
           </ul>
@@ -57,7 +57,7 @@ const Footer = () => {
                 className="hover:text-mauve-dark dark:hover:text-pink-light text-xs sm:text-base"
                 to="/contact"
               >
-                Contact
+                {t("contactUs")}
               </NavLink>
             </li>
             <li className="my-2 whitespace-nowrap">
@@ -65,7 +65,7 @@ const Footer = () => {
                 className="hover:text-mauve-dark dark:hover:text-pink-light text-xs sm:text-base"
                 to="/cookiesettings"
               >
-                Cookie Settings
+                {t("cookieSettings")}
               </NavLink>
             </li>
             <li className="my-2 whitespace-nowrap">
@@ -73,7 +73,7 @@ const Footer = () => {
                 className="hover:text-mauve-dark dark:hover:text-pink-light text-xs sm:text-base "
                 to="/fortherapists"
               >
-                For Therapists
+                {t("forTherapist")}
               </NavLink>
             </li>
           </ul>
