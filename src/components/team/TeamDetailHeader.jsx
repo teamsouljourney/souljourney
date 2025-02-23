@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../button/Button";
 
-const TeamDetailHeader = ({ singleTherapist }) => {
+const TeamDetailHeader = ({ singleTherapist, currentUser }) => {
+    const navigate = useNavigate()
   const { firstName, lastName, email, image, categoryId } = singleTherapist;
 
   const therapistCategories = categoryId;
@@ -71,7 +73,9 @@ const TeamDetailHeader = ({ singleTherapist }) => {
         </div>
 
         {/* Appointment button */}
-        <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
+
+        {currentUser ? (
+            <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
           <Button
             onClick={() => toggleCalendar(true)}
             className="capitalize"
@@ -80,6 +84,18 @@ const TeamDetailHeader = ({ singleTherapist }) => {
             work with me
           </Button>
         </div>
+        ) : (
+            <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
+          <Button
+            onClick={() => navigate("/login")}
+            className="capitalize"
+            type="type22"
+          >
+            work with me
+          </Button>
+        </div>
+        )}
+        
       </div>
     </>
   );

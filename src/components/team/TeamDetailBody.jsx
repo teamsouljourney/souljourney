@@ -4,24 +4,26 @@ import { useEffect, useState } from "react";
 import TeamDetailFeedbackCards from "./TeamDetailFeedbackCards";
 import TeamDetailFeedbackForm from "./TeamDetailFeedbackForm";
 
-const TeamDetailBody = ({ singleTherapist, id }) => {
-  const { getSingleTherapistFeedbacks, postTherapistFeedback } = useFeedbackCall();
-  const { singleTherapistFeedbacks, loading, error } = useSelector((state) => state.feedbacks);
-  const{currentUser} = useSelector(state=>state.auth)
+const TeamDetailBody = ({ singleTherapist, id, currentUser }) => {
+  const { getSingleTherapistFeedbacks, postTherapistFeedback } =
+    useFeedbackCall();
+  const { singleTherapistFeedbacks, loading, error } = useSelector(
+    (state) => state.feedbacks
+  );
+//   const { currentUser } = useSelector((state) => state.auth);
 
-//   console.log(currentUser);
+  // console.log(currentUser);
   const initialFeedback = {
     userId: currentUser?._id,
     therapistId: id,
     title: "",
     comment: "",
-    rating: 5
-  }
+    rating: 5,
+  };
 
-  const [feedback, setFeedback] = useState(initialFeedback)
+  const [feedback, setFeedback] = useState(initialFeedback);
 
-  console.log(feedback);
-  
+  // console.log(feedback);
 
   useEffect(() => {
     getSingleTherapistFeedbacks(id);
@@ -32,20 +34,24 @@ const TeamDetailBody = ({ singleTherapist, id }) => {
   }
 
   if (error || !singleTherapistFeedbacks) {
-    return <div className="text-center text-mauve">Therapist' feedbacks not found!</div>;
+    return (
+      <div className="text-center text-mauve">
+        Therapist' feedbacks not found!
+      </div>
+    );
   }
 
   const { description, graduation, experience } = singleTherapist;
   // console.log(singleTherapist);
   // console.log(categoryId);
   // console.log(singleTherapistFeedbacks);
-  
+
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    await postTherapistFeedback(feedback)
-    getSingleTherapistFeedbacks(id)
-    setFeedback(initialFeedback)
-  }
+    e.preventDefault();
+    await postTherapistFeedback(feedback);
+    getSingleTherapistFeedbacks(id);
+    setFeedback(initialFeedback);
+  };
 
   return (
     <>
@@ -113,12 +119,21 @@ const TeamDetailBody = ({ singleTherapist, id }) => {
 
           {/* Review/Feedback Cards */}
 
-          <TeamDetailFeedbackCards singleTherapistFeedbacks={singleTherapistFeedbacks}/>
+          <TeamDetailFeedbackCards
+            singleTherapistFeedbacks={singleTherapistFeedbacks}
+          />
 
           {/* <!-- Add Comment Form --> */}
-          
-          <TeamDetailFeedbackForm id={id} handleSubmit={handleSubmit} feedback={feedback} setFeedback={setFeedback} />
-          
+
+          {currentUser && (
+            <TeamDetailFeedbackForm
+              id={id}
+              handleSubmit={handleSubmit}
+              feedback={feedback}
+              setFeedback={setFeedback}
+              currentUser={currentUser}
+            />
+          )}
         </div>
       </div>
     </>

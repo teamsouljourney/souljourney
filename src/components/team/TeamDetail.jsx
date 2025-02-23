@@ -14,6 +14,7 @@ const TeamDetail = () => {
   const { singleTherapist, loading, error } = useSelector(
     (state) => state.therapists
   );
+  const { currentUser } = useSelector((state) => state.auth);
 
   const [displayCalendar, setDisplayCalendar] = useState(false);
 
@@ -47,7 +48,7 @@ const TeamDetail = () => {
       {/* Header */}
       <div className="w-full bg-offWhite-dark dark:bg-background-dark pt-12">
 
-        <TeamDetailHeader singleTherapist={singleTherapist} />
+        <TeamDetailHeader singleTherapist={singleTherapist} currentUser={currentUser} />
         
       </div>
       {/* Decorative Wave Border */}
@@ -83,7 +84,7 @@ const TeamDetail = () => {
       {/* Body */}
       <div className="w-full px-4">
 
-        <TeamDetailBody singleTherapist={singleTherapist} id={id}/>
+        <TeamDetailBody currentUser={currentUser} singleTherapist={singleTherapist} id={id}/>
         
       </div>
       {/* GoBack */}
@@ -93,7 +94,7 @@ const TeamDetail = () => {
         </Button>
       </div>
       {/* Appointment */}
-      {displayCalendar && (
+      {displayCalendar && currentUser && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
           onClick={handleOutSideClick}
