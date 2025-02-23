@@ -48,7 +48,7 @@ const TeamDetail = () => {
       {/* Header */}
       <div className="w-full bg-offWhite-dark dark:bg-background-dark pt-12">
 
-        <TeamDetailHeader singleTherapist={singleTherapist} currentUser={currentUser} />
+        <TeamDetailHeader singleTherapist={singleTherapist} currentUser={currentUser} toggleCalendar={toggleCalendar} />
         
       </div>
       {/* Decorative Wave Border */}

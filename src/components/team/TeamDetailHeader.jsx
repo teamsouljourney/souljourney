@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../button/Button";
 
-const TeamDetailHeader = ({ singleTherapist, currentUser }) => {
+const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
     const navigate = useNavigate()
   const { firstName, lastName, email, image, categoryId } = singleTherapist;
 
