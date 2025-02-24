@@ -2,9 +2,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareIcon from "@mui/icons-material/Share"; 
 import Buttons from "./button/Button"; 
+import { useTranslation } from "react-i18next";
 
 const Card = ({ therapist, variant = "default", blog }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   // Web Share API ile paylaşım fonksiyonu
   const handleShare = async () => {
@@ -54,7 +56,7 @@ const Card = ({ therapist, variant = "default", blog }) => {
             </h2>
             <p className="text-gray-600 line-clamp-2">{blog?.content}</p>
             <div className="flex items-center gap-1 mt-2">
-              <span className="text-sm text-gray-700 font-medium">Date:</span>
+              <span className="text-sm text-gray-700 font-medium">{t("homeCardDate")}:</span>
               <span className="text-sm text-gray-500">
                 {new Date(blog?.createdAt).toLocaleDateString()}
               </span>
@@ -73,7 +75,7 @@ const Card = ({ therapist, variant = "default", blog }) => {
             onClick={handleShare}
             className="flex items-center gap-1 text-gray-600 hover:text-seaGreen transition"
           >
-            <ShareIcon /> Share
+            <ShareIcon /> {t('share')}
           </button>
         )}
 
@@ -82,14 +84,14 @@ const Card = ({ therapist, variant = "default", blog }) => {
             to={`/blogs/${blog?._id}`}
             className="w-28 sm:w-32 text-offWhite font-bold text-center py-2 rounded-lg bg-seaGreen-dark hover:bg-seaGreen-light transition"
           >
-            Read More
+            {t("readMore")}
           </NavLink>
         ) : (
           <Buttons
             type="type7"
             onClick={() => navigate(`/therapists/${therapist?._id}`)}
           >
-            See More
+           {t("seeMore")}
           </Buttons>
         )}
       </div>
