@@ -144,7 +144,25 @@
 
   "SERVICES": "DIENSTLEISTUNGEN",
 
-  "PPRICING": "PREISE",
+  "PRICING": "PREISE",
+  "paymentDetails": "Zahlungsdetails",
+  "paymentDetailsText": "Bei Soul Journey bieten wir flexible Preisoptionen, die auf Ihre einzigartigen Bedürfnisse und Ihr Budget abgestimmt sind. Unsere Mission ist es, außergewöhnliche, personalisierte Beratungsdienste anzubieten, die auf Ihre individuelle Reise zugeschnitten sind. Wählen Sie aus unseren drei Plänen unten und machen Sie den ersten Schritt in ein ausgewogenes und erfülltes Leben.",
+  "plansPricing": "Pläne & Preisgestaltung",
+  "plansPricingText": "Bei Flowbite konzentrieren wir uns auf Märkte, in denen Technologie, Innovation und Kapital langfristigen Wert schaffen und das Wirtschaftswachstum vorantreiben können.",
+  "month": "Monat",
+  "monthly": "Monatlich",
+  "year": "Jahr",
+  "yearly": "Jährlich",
+  "free": "Kostenlos",
+  "freeText": "Beste Option für den persönlichen Gebrauch und Ihr nächstes Projekt.",
+  "individualConfig": "Individuelle Konfiguration",
+  "setupHiddenFees": "Keine Einrichtungs- oder versteckten Gebühren",
+  "appointmentCount": "Anzahl der Termine :",
+  "premium": "Premium",
+  "premiumText": "Relevante Optionen für mehrere Benutzer, erweiterter & Premium-Support.",
+  "ultraPremium": "Ultra Premium",
+  "ultraPremiumText": "Am besten für groß angelegte Anwendungen und erweiterte Weiterverbreitungsrechte.",
+  "unlimited": "Unbegrenzt",
 
   "TEAM": "TEAM",
   "OurPsychologicalCounselingTeam": "Unser psychologisches Beratungsteam engagiert sich für Ihre mentale Gesundheit mit individueller Betreuung. Mit vielfältiger Expertise in Beratung und Begleitung stehen Ihnen unsere Fachkräfte auf Ihrem Weg zu emotionalem Gleichgewicht zur Seite.",
@@ -165,6 +183,12 @@
   "ABOUT": "ÜBER UNS",
 
   "FOOTER": "FUSSZEILE",
+  "termsAndCondition": "Allgemeine Geschäftsbedingungen",
+  "privacyPolicy": "Datenschutzrichtlinie",
+  "contactUs": "Kontakt",
+  "cookieSettings": "Cookie-Einstellungen",
+  "forTherapist": "Für Therapeuten",
+  "impressum": "Impressum",
 
   "CONTACT": "KONTAKT",
   "getInTouch": "Kontakt aufnehmen",
@@ -274,5 +298,14 @@
   "saveChanges": "Änderungen speichern",
   "cancel": "Abbrechen",
   "noAppointmentsMessage": "Sie haben keinen geplanten Termin.",
-  "bookAppointmentButton": "Termin buchen"
+  "bookAppointmentButton": "Termin buchen",
+
+  "DASHBOARD": "DASHBOARD",
+  "descriptionOfTherapist": "Erfahrener Psychologe, spezialisiert auf psychische Gesundheit.",
+  "patientList": "Patientenliste",
+  "searchPatient": "Suchen nach Patient..",
+  "myBlogs": "Meine Blogbeiträge",
+  "noPatient": "Keine Patienten in der Liste gefunden.",
+  "noBlogs": "Keine Blogbeiträge verfügbar. Fang jetzt an zu schreiben!",
+  "notes": "Notizen"
 }
