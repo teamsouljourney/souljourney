@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import MoreCategories from "../components/MoreCategories";
 import { setSelectedCategory } from "../features/categorySlice";
 import { setSearchTerm } from "../features/therapistSlice";
+import { useTranslation } from "react-i18next";
 
 const TabSwitch = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategoryState] = useState(null);
@@ -62,18 +64,16 @@ const TabSwitch = () => {
 
   return (
     <div className="w-full mt-5 mx-auto">
-      {/* Hamburger Menü Butonu (Mobil) */}
       <div className="md:hidden flex justify-end p-3">
         <button onClick={() => setMenuOpen(!menuOpen)} className="text-2xl p-2 rounded-lg border">
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
-      {/* Küçük Açılır Menü (Mobilde Görünecek) */}
       {menuOpen && (
         <div className="absolute bottom-[105px] right-14 w-48 bg-transparent shadow-lg rounded-lg  z-50">
           <button onClick={handleAllClick} className="block w-full text-left px-3 py-2 hover:bg-gray-100 rounded">
-            All
+            {t("all")}
           </button>
           {categories.slice(0, 4).map((category) => (
             <button
@@ -84,11 +84,10 @@ const TabSwitch = () => {
               {category.name}
             </button>
           ))}
-           {window.innerWidth >= 768 && <MoreCategories />}
+          {window.innerWidth >= 768 && <MoreCategories />}
         </div>
       )}
 
-      {/* Büyük Ekranda Normal Menü */}
       <div className="hidden md:flex justify-center space-x-4">
         <button
           onClick={handleAllClick}
@@ -96,7 +95,7 @@ const TabSwitch = () => {
             selectedCategory === null ? "bg-navy-light text-white" : "text-black hover:bg-navy-light"
           }`}
         >
-          All
+          {t("all")}
         </button>
         {categories.slice(0, 4).map((category) => (
           <button
@@ -112,14 +111,13 @@ const TabSwitch = () => {
         <MoreCategories />
       </div>
 
-      {/* Arama Kutusu (Her Ekranda Görünür) */}
       <div className="flex justify-center items-center ">
         <input
           type="text"
-          placeholder="Search Therapist..."
+          placeholder={t("searchTherapist")}
           value={searchTerm}
           onChange={handleSearchChange}
-          className="rounded-lg border px-2 py-1 w-3/4 sm:w-[30%] md:w-1/3 lg:w-1/3 "
+          className="rounded-lg border px-2 py-1 w-1/4 sm:w-1/3 md:w-1/3 lg:w-1/3 "
         />
       </div>
     </div>

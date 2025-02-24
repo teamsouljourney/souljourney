@@ -1,6 +1,8 @@
 import heroFoto from "../../assets/images/papaioannou-kostas-tysecUm5HJA-unsplash.jpg";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation(); 
   return (
     <>
       <main
@@ -28,10 +30,7 @@ const HeroSection = () => {
         </h1>
 
         <p className="mx-auto max-w-xl text-lg text-offWhite  sm:text-sm md:text-lg lg:text-xl xl:text-xl font-urbanist">
-          Our Psychological Counseling team is dedicated to supporting your
-          mental well-being with personalized care. With diverse expertise in
-          counseling and guidance, our professionals are here to help you on
-          your journey to emotional balance.
+        {t("OurPsychologicalCounselingTeam")}
         </p>
       </main>
     </>

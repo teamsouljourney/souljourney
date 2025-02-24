@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import useCategoryCall from "../hooks/useCategoryCall";
+import { useTranslation } from "react-i18next";
 
 const MoreCategories = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const { categories } = useSelector((state) => state.categories);
   const { getAllCategories } = useCategoryCall();
+  const { t } = useTranslation();
 
   useEffect(() => {
     getAllCategories();
@@ -26,7 +28,7 @@ const MoreCategories = () => {
           isMenuOpen ? "bg-navy-light text-white shadow-lg scale-105" : ""
         }`}
       >
-        More Categories
+        {t("moreCategories")}
       </button>
 
       {/* Açılan Menü */}

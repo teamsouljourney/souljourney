@@ -17,26 +17,41 @@
   "selfTest": "Kendi Testinizi Yapın",
   "getStarted": "Hadi Başlayalım",
   "seeMore": "Daha Fazla Gör",
+  "readMore":"Daha Fazla Oku",
+  "share":"Paylaş",
   "seeLess": "Daha Az Gör",
   "close": "Kapat",
   "restart": "Yeniden başlat",
   "nowFreeRegister": "Şimdi Ücretsiz Kayıt Ol",
   "sendMessage": "Mesaj Gönder",
-
-  "HOMEPAGE": "HOMEPAGE",
-  "onlineTherapy": "Online Terapi",
-  "infoText": "Soul Journey'de, iyileşme ve kişisel gelişim yolunuzu destekleyen çevrimiçi danışmanlık hizmeti sunuyoruz. Profesyonel terapistlerimiz, duygularınızı keşfetmeniz, netlik bulmanız ve yaşam zorluklarının üstesinden gelmeniz için güvenli ve gizli bir alan sağlar; tüm bunları evinizin konforunda yapabilirsiniz. Neden Soul Journey? Esnek Seanslar: Terapiye istediğiniz zaman, istediğiniz yerden erişin. Kişiselleştirilmiş Destek: Benzersiz yolculuğunuz için özel rehberlik. Gizli ve Güvenli: Gizliliğiniz önceliğimizdir. Yolculuğunuza bugün başlayın; iyileşme içeriden başlar.",
-  "howItWorks": "Nasıl Çalışır",
-  "registerOrLogin": "Kayıt Ol veya Giriş Yap",
-  "determineYourPreferences": "Tercihlerinizi Belirleyin",
-  "chooseYourTherapist": "Terapistinizi Seçin",
-  "joinTheSession": "Seansa Katılın",
-  "hwStepOne": "Başlamak için bir hesap oluşturun veya mevcut hesabınıza giriş yapın.",
-  "hwStepTwo": "Terapi türü, seans sıklığı ve hedeflerinizi belirleyin.",
-  "hwStepThree": "Nitelikli terapistleri inceleyin ve ihtiyaçlarınıza en uygun olanı seçin.",
-  "hwStepFour": "Belirlenen saatte güvenli bir video görüşmesi veya sohbet platformu üzerinden seansınızı başlatın.",
-  "ourBlogs": "Bloglarımız",
-  "ourBlogsText": "Blogumuz, psikolojik danışmanlık, kişisel gelişim ve ruh sağlığı konularında içgörüler sunan değerli bir kaynaktır...",
+  
+    "HOMEPAGE": "ANA SAYFA",
+    "onlineTherapy": "Soul Journey & Online Terapi",
+    "infoText": "Soul Journey olarak, şifa ve kişisel gelişim yolculuğunuzda sizi destekleyen online danışmanlık hizmeti sunuyoruz. Profesyonel terapistlerimiz, duygularınızı keşfetmeniz, netlik kazanmanız ve yaşam zorluklarının üstesinden gelmeniz için güvenli ve gizli bir alan sağlar—hem de evinizin konforunda. Neden Soul Journey? Esnek Seanslar: İstediğiniz zaman, istediğiniz yerden terapiye erişin. Kişiselleştirilmiş Destek: Size özel rehberlik sunuyoruz. Güvenli ve Gizli: Gizliliğiniz bizim önceliğimizdir. Bugün yolculuğunuza başlayın—şifa içeride başlar.",
+    "howItWorks": "Nasıl Çalışır",
+    "processSteps": [
+      {
+        "title": "Kayıt Ol veya Giriş Yap",
+        "description": "Başlamak için bir hesap oluşturun veya mevcut hesabınıza giriş yapın."
+      },
+      {
+        "title": "Tercihlerinizi Belirleyin",
+        "description": "Terapi türü, seans sıklığı ve hedeflerinizle ilgili tercihlerinizi belirleyin."
+      },
+      {
+        "title": "Terapistinizi Seçin",
+        "description": "Nitelikli terapistler arasından ihtiyaçlarınıza en uygun olanı seçin."
+      },
+      {
+        "title": "Seansa Katılın",
+        "description": "Planlanan saatte güvenli bir video görüşmesi veya sohbet platformu aracılığıyla terapi seansınıza başlayın."
+      }
+    ],
+    "ourBlogs": "Bloglarımız",
+    "ourBlogsText": "Blogumuz, psikolojik danışmanlık, kişisel gelişim ve ruh sağlığı konularında bilgilendirici makalelerle dolu değerli bir kaynaktır. Deneyimli psikolog, terapist ve danışman ekibimiz tarafından yazılan makaleler, kendinizi daha iyi anlamanıza ve daha sağlıklı bir bakış açısı geliştirmenize yardımcı olmayı amaçlamaktadır. İşte blogumuzda sizi bekleyenler.",
+    "homeCardDate": "Tarih"
+  ,
+  
 
   "FAQ": "FAQ",
   "faq": "S.S.S",
@@ -157,6 +172,10 @@
   "educationalPsychology": "Eğitim Psikolojisi",
   "moreCategories": "Daha Fazla Kategori",
   "searchTherapist": "Terapist Ara",
+
+  "JOIN": "EKİBİMİZE KATILIN",
+  "joinOurTeam": "Pozitif bir etki yaratmaya adanmış tutkulu ve profesyonel ekibimize katılın. Anlamlı bir şeyin parçası olmak ve başkalarına refah yolculuklarında yardımcı olmak için şimdi başvurun.",
+  "applyNow": "Şimdi Başvur",
 
   "BLOGS": "BLOGLAR",
 

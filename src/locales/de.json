@@ -17,26 +17,42 @@
   "selfTest": "Selbsttest",
   "getStarted": "Loslegen",
   "seeMore": "Mehr anzeigen",
+  "readMore":"Mehr lesen",
+  "share":"Teilen",
   "seeLess": "Weniger anzeigen",
   "close": "Schließen",
   "restart": "Neustart",
   "nowFreeRegister": "Jetzt kostenlos registrieren",
   "sendMessage": "Nachricht senden",
 
-  "HOMEPAGE": "HOMEPAGE",
-  "onlineTherapy": "Online-Therapie",
-  "infoText": "Bei Soul Journey bieten wir Online-Beratung an, die Sie auf Ihrem Weg zur Heilung und zu persönlichem Wachstum unterstützt. Unsere professionellen Therapeuten bieten Ihnen einen sicheren, vertraulichen Raum, in dem Sie Ihre Emotionen erkunden, Klarheit finden und die Herausforderungen des Lebens meistern können – und das alles bequem von zu Hause aus. Warum Soul Journey? Flexible Sitzungen: Greifen Sie jederzeit und überall auf die Therapie zu. Personalisierte Unterstützung: Maßgeschneiderte Anleitung für Ihre einzigartige Reise. Vertraulich und sicher: Ihre Privatsphäre ist unsere Priorität. Beginnen Sie Ihre Reise noch heute – die Heilung beginnt im Inneren.",
-  "howItWorks": "Wie es funktioniert",
-  "registerOrLogin": "Registrieren oder Anmelden",
-  "determineYourPreferences": "Legen Sie Ihre Präferenzen fest",
-  "chooseYourTherapist": "Wählen Sie Ihren Therapeuten",
-  "joinTheSession": "Nehmen Sie an der Sitzung teil",
-  "hwStepOne": "Erstellen Sie ein Konto oder melden Sie sich in Ihrem bestehenden Konto an, um zu beginnen.",
-  "hwStepTwo": "Geben Sie Ihre Präferenzen bezüglich Therapieart, Sitzungsfrequenz und Zielen an.",
-  "hwStepThree": "Durchsuchen Sie die Liste der qualifizierten Therapeuten und wählen Sie denjenigen aus, der am besten zu Ihnen passt.",
-  "hwStepFour": "Starten Sie Ihre Therapiesitzung zum geplanten Zeitpunkt über eine sichere Videoanruf- oder Chat-Plattform.",
-  "ourBlogs": "Unsere Blogs",
-  "ourBlogsText": "Unser Blog ist eine wertvolle Quelle mit aufschlussreichen Artikeln zu psychologischer Beratung, persönlicher Entwicklung und psychischer Gesundheit...",
+  
+    "HOMEPAGE": "STARTSEITE",
+    "onlineTherapy": "Soul Journey & Online Therapie",
+    "infoText": "Bei Soul Journey bieten wir Online-Beratung an, die Ihre Reise zur Heilung und persönlichen Entwicklung unterstützt. Unsere professionellen Therapeuten bieten Ihnen einen sicheren, vertraulichen Raum, um Ihre Emotionen zu erkunden, Klarheit zu gewinnen und Lebensherausforderungen zu meistern – alles bequem von zu Hause aus. Warum Soul Journey? Flexible Sitzungen: Greifen Sie jederzeit und überall auf Therapie zu. Persönliche Unterstützung: Maßgeschneiderte Beratung für Ihre individuelle Reise. Vertraulich & Sicher: Ihre Privatsphäre hat für uns oberste Priorität. Beginnen Sie Ihre Reise noch heute – Heilung beginnt von innen.",
+    "howItWorks": "Wie funktioniert es",
+    "processSteps": [
+      {
+        "title": "Registrieren oder Einloggen",
+        "description": "Erstellen Sie ein Konto oder loggen Sie sich in Ihr bestehendes Konto ein, um zu starten."
+      },
+      {
+        "title": "Bestimmen Sie Ihre Präferenzen",
+        "description": "Geben Sie Ihre Präferenzen bezüglich der Therapieart, Sitzungsfrequenz und Ziele an."
+      },
+      {
+        "title": "Wählen Sie Ihren Therapeuten",
+        "description": "Durchsuchen Sie eine Liste qualifizierter Therapeuten und wählen Sie denjenigen aus, der am besten zu Ihnen passt."
+      },
+      {
+        "title": "Treten Sie der Sitzung bei",
+        "description": "Starten Sie Ihre Therapiesitzung zur geplanten Zeit über eine sichere Videoanruf- oder Chat-Plattform."
+      }
+    ],
+    "ourBlogs": "Unsere Blogs",
+    "ourBlogsText": "Unser Blog ist eine wertvolle Ressource mit aufschlussreichen Artikeln zu psychologischer Beratung, persönlicher Entwicklung und psychischer Gesundheit. Geschrieben von unserem Team erfahrener Psychologen, Therapeuten und Berater, sollen unsere Artikel Ihnen helfen, sich selbst besser zu verstehen und eine gesündere Denkweise zu entwickeln. Hier erfahren Sie, was Sie in unserem Blog erwartet.",
+    "homeCardDate": "Datum"
+  ,
+  
 
   "FAQ": "FAQ",
   "faq": "H.G.F.",
@@ -157,6 +173,10 @@
   "educationalPsychology": "Pädagogische Psychologie",
   "moreCategories": "Weitere Kategorien",
   "searchTherapist": "Therapeuten suchen",
+
+  "JOIN": "WERDEN SIE TEIL UNSERES TEAMS",
+  "joinOurTeam": "Werden Sie Teil unseres engagierten und professionellen Teams, das sich für das Wohlbefinden anderer einsetzt. Bewerben Sie sich jetzt und helfen Sie mit, einen positiven Unterschied zu machen.",
+  "applyNow": "Jetzt bewerben",
 
   "BLOGS": "BLOGS",
 
