@@ -11,8 +11,7 @@ const Account = () => {
   const { t } = useTranslation();
   const {getSingleUser, updateUser} = useUserCall()
   const { currentUser } = useSelector((state) => state.auth);
-  const { singleUser } = useSelector((state) => state.users);
-  
+  const { singleUser } = useSelector((state) => state.users);  
   
   console.log(currentUser);
 
@@ -35,7 +34,7 @@ const Account = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(userInfo);
-    updateUser(userInfo._id, userInfo)
+    updateUser(id, userInfo)
   };
 
   return (
