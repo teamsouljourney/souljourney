@@ -17,6 +17,8 @@
   "selfTest": "Self-Test",
   "getStarted": "Get Started",
   "seeMore": "See More",
+  "readMore": "Read More",
+  "share": "Share",
   "seeLess": "See Less",
   "close": "Close",
   "restart": "Restart",
@@ -24,19 +26,30 @@
   "sendMessage": "Send Message",
 
   "HOMEPAGE": "HOMEPAGE",
-  "onlineTherapy": "Online Therapy",
+  "onlineTherapy": "Soul Journey & Online Therapy",
   "infoText": "At Soul Journey, we offer online counseling that supports your path to healing and personal growth. Our professional therapists provide a safe, confidential space for you to explore your emotions, find clarity, and overcome life challenges—all from the comfort of your home. Why Soul Journey? Flexible Sessions: Access therapy anytime, anywhere. Personalized Support: Tailored guidance for your unique journey. Confidential & Safe: Your privacy is our priority. Start your journey today—healing begins within.",
   "howItWorks": "How It Works",
-  "registerOrLogin": "Register Or Login",
-  "determineYourPreferences": "Determine Your Preferences",
-  "chooseYourTherapist": "Choose Your Therapist",
-  "joinTheSession": "Join The Session",
-  "hwStepOne": "Create an account or log in to your existing account to get started",
-  "hwStepTwo": "Specify your preferences regarding therapy type, session frequency, and goals.",
-  "hwStepThree": "Browse through a list of qualified therapists and select the one that best fits your needs.",
-  "hwStepFour": "Start your therapy session at the scheduled time through a secure video call or chat platform.",
+  "processSteps": [
+    {
+      "title": "Register Or Login",
+      "description": "Create an account or log in to your existing account to get started."
+    },
+    {
+      "title": "Determine Your Preferences",
+      "description": "Specify your preferences regarding therapy type, session frequency, and goals."
+    },
+    {
+      "title": "Choose Your Therapist",
+      "description": "Browse through a list of qualified therapists and select the one that best fits your needs."
+    },
+    {
+      "title": "Join The Session",
+      "description": "Start your therapy session at the scheduled time through a secure video call or chat platform."
+    }
+  ],
   "ourBlogs": "Our Blogs",
   "ourBlogsText": "Our blog is a valuable resource filled with insightful articles on psychological counseling, personal development, and mental health. Written by our team of experienced psychologists, therapists, and counselors, our articles aim to help you better understand yourself and cultivate a healthier mindset. Here's what you can expect from our blog.",
+  "homeCardDate": "Date",
 
   "FAQ": "FAQ",
   "faq": "F.A.Q",
@@ -138,6 +151,10 @@
   "educationalPsychology": "Educational Psychology",
   "moreCategories": "More Categories",
   "searchTherapist": "Search Therapist",
+
+  "JOIN": "JOIN OUR TEAM",
+  "joinOurTeam": "Join our passionate and professional team that is dedicated to making a positive impact. Apply now to be part of something meaningful and help others on their journey towards well-being.",
+  "applyNow": "Apply Now",
 
   "BLOGS": "BLOGS",
 
@@ -247,7 +264,6 @@
   "appointmentDetails": "Appointment Details",
   "client": "Client",
   "therapist": "Therapist",
-  "date": "Date",
   "time": "Time",
   "joinMeeting": "Join Meeting",
   "saveChanges": "Save Changes",

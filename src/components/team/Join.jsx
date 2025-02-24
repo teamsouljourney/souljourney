@@ -4,19 +4,24 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+
+ 
 const Join = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col sm:flex-row justify-center gap-5 mt-10 px-4 sm:px-8 bg-offWhite py-12">
       <div className="flex flex-col justify-center items-center sm:items-start sm:w-1/2">
-        <h1 className="font-urbanist text-xl sm:text-2xl lg:text-2xl font-bold text-navy  mb-4 text-center sm:text-left">
-          Join Our Team
-        </h1>
-        <p className="text-base sm:text-sm md:text-base lg:text-lg text-customBlack mb-4 text-center sm:text-left">
-          Join our passionate and professional team that is dedicated to making a positive impact. Apply now to be part of something meaningful and help others on their journey towards well-being.
-        </p>
-        <NavLink to="/contact" className="bg-navy text-offWhite px-6 py-2 rounded-full text-sm sm:text-base font-semibold transition duration-300 hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark transform hover:scale-105 w-full sm:w-auto">
-          Apply Now
-        </NavLink>
+      <h1 className="font-urbanist text-xl sm:text-2xl lg:text-2xl font-bold text-navy mb-4 text-center sm:text-left">
+  {t("JOIN")}
+</h1>
+<p className="text-base sm:text-sm md:text-base lg:text-lg text-customBlack mb-4 text-center sm:text-left">
+  {t("joinOurTeam")}
+</p>
+<NavLink to="/contact" className="bg-navy text-offWhite px-6 py-2 rounded-full text-sm sm:text-base font-semibold transition duration-300 hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark transform hover:scale-105 w-full sm:w-auto">
+  {t("applyNow")}
+</NavLink>
       </div>
 
       {/* <div className="bg-offWhite sm:w-1/2 p-6 rounded-lg shadow-lg">
