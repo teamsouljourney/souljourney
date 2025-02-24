@@ -124,7 +124,25 @@
 
   "SERVICES": "HIZMETLER",
 
-  "PPRICING": "FİYATLANDIRMA",
+  "PRICING": "FİYATLANDIRMA",
+  "paymentDetails": "Ödeme Detayları",
+  "paymentDetailsText": "Soul Journey olarak, benzersiz ihtiyaçlarınıza ve bütçenize uyacak esnek fiyatlandırma seçenekleri sunuyoruz. Misyonumuz, mükemmel, kişiselleştirilmiş danışmanlık hizmetleri sağlayarak, bireysel yolculuğunuza özel çözümler sunmaktır. Aşağıdaki üç planımızdan birini seçerek daha dengeli ve tatmin edici bir hayata doğru ilk adımı atın.",
+  "plansPricing": "Planlar ve Fiyatlandırma",
+  "plansPricingText": "Flowbite olarak teknoloji, yenilik ve sermayenin uzun vadeli değerleri açığa çıkarabileceği ve ekonomik büyümeyi destekleyebileceği pazarlarla ilgileniyoruz.",
+  "month": "Ay",
+  "monthly": "Aylık",
+  "year": "Yıl",
+  "yearly": "Yıllık",
+  "free": "Ücretsiz",
+  "freeText": "Kişisel kullanım ve bir sonraki projeniz için en iyi seçenek.",
+  "individualConfig": "Bireysel yapılandırma",
+  "setupHiddenFees": "Kurulum ya da gizli ücret yok",
+  "appointmentCount": "Randevu Sayısı :",
+  "premium": "Premium",
+  "premiumText": "Birden fazla kullanıcıya uygun, genişletilmiş ve premium destek.",
+  "ultraPremium": "Ultra Premium",
+  "ultraPremiumText": "Büyük ölçekli kullanımlar ve genişletilmiş dağıtım hakları için en iyisi.",
+  "unlimited": "Sınırsız",
 
   "TEAM": "EKIP",
 
