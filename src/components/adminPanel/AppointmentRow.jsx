@@ -50,9 +50,6 @@ const AppointmentRow = ({ appointment }) => {
       </div>
       <div className="flex justify-end col-span-2">
         <div className="flex gap-2">
-          <button className="p-1 rounded hover:bg-gray-100">
-            <EyeIcon className="w-4 h-4" />
-          </button>
           <button
             onClick={handleUpdateAppointment}
             className="p-1 rounded hover:bg-gray-100"
