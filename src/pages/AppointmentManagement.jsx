@@ -47,9 +47,10 @@ const AppointmentManagement = () => {
           />
           <div>
             <div className="hidden text-sm font-medium text-gray-500 md:grid md:grid-cols-12 md:gap-4">
-              <div className="col-span-4">Appointmenrt Id</div>
-              <div className="col-span-4">Therapist Id</div>
-              <div className="col-span-2 ">Client Id</div>
+              <div className="col-span-3">Therapist</div>
+              <div className="col-span-3">Client</div>
+              <div className="col-span-2 ">Date</div>
+              <div className="col-span-2 ">Time</div>
               <div className="col-span-2 text-right">Actions</div>
             </div>
             {pagAppointments?.map((appointment) => (
