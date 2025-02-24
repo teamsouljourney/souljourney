@@ -9,6 +9,7 @@ const appointmentSlice = createSlice({
     appointments: [],
     singleAppointment: null,
     currentUserAppointments: [],
+    isModalOpen: false,
   },
   reducers: {
     fetchStart: (state) => {
@@ -50,6 +51,9 @@ const appointmentSlice = createSlice({
       );
       state.error = false;
     },
+    toggleModal: (state, { payload }) => {
+      state.isModalOpen = payload;
+    },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
@@ -66,6 +70,7 @@ export const {
   createAppointmentSuccess,
   updateAppointmentSuccess,
   deleteAppointmentSuccess,
+  toggleModal,
 } = appointmentSlice.actions;
 
 export default appointmentSlice.reducer;
