@@ -1,47 +1,66 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import * as Yup from "yup";
 
-const AccountChangePasswordForm = ({singleUser}) => {
-    const { t } = useTranslation();
-    const [showPassword, setShowPassword] = useState(false);
+// Validation Schema
+export const PasswordSchema = (t) =>
+  Yup.object().shape({
+    currentPassword: Yup.string().required("Current password is required"),
+    newPassword: Yup.string()
+      .required(t("requiredPasswordMessage"))
+      .min(8, t("passwordMinLengthMessage"))
+      .matches(/\d+/, t("passwordDigitMessage"))
+      .matches(/[a-z]/, t("passwordLowerCaseMessage"))
+      .matches(/[A-Z]/, t("passwordUpperCaseMessage"))
+      .matches(/[@$?!%&*]+/, t("passwordSpecialCharMessage")),
+    retypePassword: Yup.string()
+      .oneOf([Yup.ref("newPassword"), null], "Passwords must match")
+      .required("Please confirm your password"),
+  });
 
-    console.log(singleUser);
+const AccountChangePasswordForm = ({ singleUser,values,
+  errors,
+  touched,
+  handleChange,
+  handleBlur,
+  handleSubmit,
+  isSubmitting }) => {
+  const { t } = useTranslation();
+  const [showPassword, setShowPassword] = useState(false);
 
-    const initialState = {
-      currentPassword: "",
-      newPassword: "",
-      retypePassword: ""
+  console.log(singleUser);
+
+  const initialState = {
+    currentPassword: "",
+    newPassword: "",
+    retypePassword: "",
+  };
+  const [passwordInfo, setPasswordInfo] = useState(initialState);
+
+  console.log(passwordInfo);
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setPasswordInfo({ ...passwordInfo, [name]: value });
+  // };
+
+  const changePassword = (e) => {
+    e.preventDefault();
+
+    if (singleUser?.password !== passwordInfo?.currentPassword) {
+      console.log("Your current password is wrong!");
     }
-    const [passwordInfo, setPasswordInfo] = useState(initialState);
 
-    console.log(passwordInfo);
-
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setPasswordInfo({ ...passwordInfo, [name]: value });
+    if (passwordInfo.newPassword !== passwordInfo.retypePassword) {
+      console.log("Please check your confirm password");
     }
-    
 
-    const changePassword = (e) => {
-      e.preventDefault()
-
-      if (singleUser?.password !== passwordInfo?.currentPassword) {
-        console.log("Your current password is wrong!");
-        
-      }
-
-      if (passwordInfo.newPassword !== passwordInfo.retypePassword) {
-        console.log("Please check your confirm password");
-        
-      }
-
-      // singleUser.
-
-    }
+    // singleUser.
+  };
 
   return (
     <>
-        <div className="flex w-full max-w-[576px] flex-col items-start gap-4 border-b-2 border-b-gray-200 dark:border-b-gray-400">
+      <div className="flex w-full max-w-[576px] flex-col items-start gap-4 border-b-2 border-b-gray-200 dark:border-b-gray-400">
         <span className="text-lg font-medium">{t("password")}</span>
         {/* Password input */}
 
@@ -54,7 +73,7 @@ const AccountChangePasswordForm = ({singleUser}) => {
               type={showPassword ? "text" : "password"}
               id="currentPassword"
               name="currentPassword"
-              value={passwordInfo.currentPassword}
+              value={values.currentPassword}
               placeholder="Enter current password"
               autoComplete="current-password"
               className="peer min-w-[280px]"
@@ -86,7 +105,7 @@ const AccountChangePasswordForm = ({singleUser}) => {
               type={showPassword ? "text" : "password"}
               id="newPassword"
               name="newPassword"
-              value={passwordInfo.newPassword}
+              value={values.newPassword}
               placeholder="Enter new password"
               autoComplete="current-password"
               className="peer min-w-[280px]"
@@ -118,7 +137,7 @@ const AccountChangePasswordForm = ({singleUser}) => {
               type={showPassword ? "text" : "password"}
               id="retypePassword"
               name="retypePassword"
-              value={passwordInfo.retypePassword}
+              value={values.retypePassword}
               placeholder="Re-type new password"
               autoComplete="retype-password"
               className="peer min-w-[280px]"
@@ -148,7 +167,7 @@ const AccountChangePasswordForm = ({singleUser}) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default AccountChangePasswordForm
+export default AccountChangePasswordForm;

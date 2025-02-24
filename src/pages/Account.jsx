@@ -2,16 +2,18 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import AccountForm from "../components/auth/AccountForm";
-import AccountChangePasswordForm from "../components/auth/AccountChangePasswordForm";
+import AccountChangePasswordForm, { PasswordSchema } from "../components/auth/AccountChangePasswordForm";
 import AccountDelete from "../components/auth/AccountDelete";
 import AccountUploadProfilePicture from "../components/auth/AccountUploadProfilePicture";
 import useUserCall from "../hooks/useUserCall";
+import { Formik } from "formik";
 
 const Account = () => {
   const { t } = useTranslation();
   const {getSingleUser, updateUser} = useUserCall()
   const { currentUser } = useSelector((state) => state.auth);
-  const { singleUser } = useSelector((state) => state.users);  
+  const { singleUser } = useSelector((state) => state.users); 
+  const schemaPassword = PasswordSchema(t);
   
   console.log(currentUser);
 
@@ -61,7 +63,23 @@ const Account = () => {
         </div>
       </div>
       {/* Change Password Field */}
-      <AccountChangePasswordForm singleUser={singleUser} />
+      <Formik
+        initialValues={{
+          currentPassword: "",
+          newPassword: "",
+          retypePassword: "",
+        }}
+        validationSchema={schemaPassword}
+        onSubmit={(values, actions) => {
+          console.log(values);
+          register(values);
+          actions.resetForm();
+          actions.setSubmitting(false);
+        }}
+        component={(props)=><AccountChangePasswordForm {...props} singleUser={singleUser} />}
+      >
+
+      </Formik>
       {/* Account Delete Field */}
       <AccountDelete />
     </div>
