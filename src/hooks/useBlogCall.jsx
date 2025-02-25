@@ -15,7 +15,12 @@ const useBlogCall = () => {
   const getAllBlogs = async () => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosPublic.get("blogs");
+      const { data } = await axiosPublic.get("blogs", {
+        params:{
+          limit:4,
+          sort:{createdAt:-1}
+        }
+      });
       console.log("APIden gelen veriler :", data.data);
       
       dispatch(getAllBlogsSuccess(data.data));

@@ -16,7 +16,7 @@ const MoreCategories = () => {
 
   const handleTabClick = (category) => {
     setSelectedCategory(category);
-    setIsMenuOpen(false); // Kategori seçildiğinde menüyü kapat
+    setIsMenuOpen(false); 
   };
 
   return (
