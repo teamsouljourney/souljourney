@@ -1,7 +1,9 @@
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
-const AccountForm = ({ userInfo, handleChange, handleSubmit }) => {
+const AccountForm = ({ handleChange, handleSubmit }) => {
   const { t } = useTranslation();
+  const { singleUser } = useSelector((state) => state.users);
   return (
     <>
       <div className="flex flex-col w-full items-start gap-4">
@@ -16,7 +18,7 @@ const AccountForm = ({ userInfo, handleChange, handleSubmit }) => {
                 type="text"
                 name="firstName"
                 id="firstName"
-                value={userInfo.firstName}
+                value={singleUser?.firstName}
                 placeholder="Enter your name"
                 autoComplete="given-name"
                 className="peer w-full"
@@ -34,7 +36,7 @@ const AccountForm = ({ userInfo, handleChange, handleSubmit }) => {
                 type="text"
                 name="lastName"
                 id="lastName"
-                value={userInfo.lastName}
+                value={singleUser?.lastName}
                 placeholder="Enter your last name"
                 autoComplete="family-name"
                 className="peer w-full"
@@ -42,7 +44,24 @@ const AccountForm = ({ userInfo, handleChange, handleSubmit }) => {
               />
             </div>
           </div>
-
+          <div className="sm:col-span-4">
+            <label htmlFor="userName" className="peer">
+              {t("userName")}
+            </label>
+            <div className="mt-2">
+              <input
+                id="userName"
+                name="userName"
+                type="userName"
+                value={singleUser?.userName}
+                placeholder="Enter your username"
+                autoComplete="userName"
+                className="peer w-full bg-gray-50 hover:cursor-not-allowed"
+                // onChange={handleChange}
+                disabled
+              />
+            </div>
+          </div>
           <div className="sm:col-span-4">
             <label htmlFor="email" className="peer">
               {t("email")}
@@ -52,14 +71,16 @@ const AccountForm = ({ userInfo, handleChange, handleSubmit }) => {
                 id="email"
                 name="email"
                 type="email"
-                value={userInfo.email}
+                value={singleUser?.email}
                 placeholder="Enter your email"
                 autoComplete="email"
-                className="peer w-full"
-                onChange={handleChange}
+                className="peer w-full bg-gray-50 hover:cursor-not-allowed"
+                // onChange={handleChange}
+                disabled
               />
             </div>
           </div>
+          
 
           {/* Contact Info Field */}
           <div className="sm:col-span-4">
@@ -71,7 +92,7 @@ const AccountForm = ({ userInfo, handleChange, handleSubmit }) => {
                 id="phone"
                 name="phone"
                 type="phone"
-                value={userInfo.phone}
+                value={singleUser?.phone}
                 placeholder="Enter your phone"
                 autoComplete="phone"
                 className="peer w-full"
@@ -88,7 +109,7 @@ const AccountForm = ({ userInfo, handleChange, handleSubmit }) => {
                 id="profession"
                 name="profession"
                 type="text"
-                value={userInfo.profession}
+                value={singleUser?.profession}
                 placeholder="Enter your profession (Student, Teacher.. ext.)"
                 autoComplete="profession"
                 className="peer w-full"
@@ -105,7 +126,7 @@ const AccountForm = ({ userInfo, handleChange, handleSubmit }) => {
                 type="address"
                 name="address"
                 id="address"
-                value={userInfo.address}
+                value={singleUser?.address}
                 placeholder="Enter your address"
                 autoComplete="address"
                 className="textarea-style"

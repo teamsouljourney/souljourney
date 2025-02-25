@@ -1,7 +1,17 @@
 import { useTranslation } from "react-i18next";
+import useUserCall from "../../hooks/useUserCall";
+import { useEffect } from "react";
+import useAuthCall from "../../hooks/useAuthCall";
 
-const AccountDelete = () => {
+const AccountDelete = ({id, isActive}) => {
     const { t } = useTranslation();
+    const {changeMyStatus} = useUserCall()
+    
+
+    // useEffect(() => {
+    //   changeUserStatus()
+    // }, [])
+    
   return (
     <>
       <div className="flex w-full max-w-[576px] flex-col items-start gap-12">
@@ -29,8 +39,9 @@ const AccountDelete = () => {
                       "Are you sure you want to delete your account? This action cannot be undone."
                     )
                   ) {
-                    //? Delete?
+                    //* Delete
                     console.log("Account deletion triggered");
+                    changeMyStatus(id, isActive);
                   }
                 }}
               >

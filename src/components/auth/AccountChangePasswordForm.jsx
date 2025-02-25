@@ -18,17 +18,20 @@ export const PasswordSchema = (t) =>
       .required("Please confirm your password"),
   });
 
-const AccountChangePasswordForm = ({ singleUser,values,
+const AccountChangePasswordForm = ({
+  singleUser,
+  values,
   errors,
   touched,
   handleChange,
   handleBlur,
   handleSubmit,
-  isSubmitting }) => {
+  isSubmitting,
+}) => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
 
-  console.log(singleUser);
+  // console.log(singleUser);
 
   const initialState = {
     currentPassword: "",
@@ -37,25 +40,25 @@ const AccountChangePasswordForm = ({ singleUser,values,
   };
   const [passwordInfo, setPasswordInfo] = useState(initialState);
 
-  console.log(passwordInfo);
+  // console.log(passwordInfo);
 
   // const handleChange = (e) => {
   //   const { name, value } = e.target;
   //   setPasswordInfo({ ...passwordInfo, [name]: value });
   // };
 
-  const changePassword = (e) => {
-    e.preventDefault();
-
-    if (singleUser?.password !== passwordInfo?.currentPassword) {
+  const changePassword = (values, actions) => {
+    console.log("values",values);
+    console.log("actions",actions);
+    
+    if (singleUser?.password !== currentPassword) {
       console.log("Your current password is wrong!");
     }
 
     if (passwordInfo.newPassword !== passwordInfo.retypePassword) {
       console.log("Please check your confirm password");
     }
-
-    // singleUser.
+    
   };
 
   return (
@@ -78,6 +81,10 @@ const AccountChangePasswordForm = ({ singleUser,values,
               autoComplete="current-password"
               className="peer min-w-[280px]"
               onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.currentPassword && Boolean(errors.currentPassword)}
+              helpertext={touched.currentPassword && errors.currentPassword}
+              required
             />
             <div
               type="button"
@@ -110,6 +117,7 @@ const AccountChangePasswordForm = ({ singleUser,values,
               autoComplete="current-password"
               className="peer min-w-[280px]"
               onChange={handleChange}
+              
             />
             <div
               type="button"
@@ -161,7 +169,9 @@ const AccountChangePasswordForm = ({ singleUser,values,
         </div>
 
         <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
-          <button type="button" className="account-btn mb-4 w-1/2">
+          <button type="submit" className="account-btn mb-4 w-1/2"
+            onSubmit={changePassword}
+          >
             Change Password
           </button>
         </div>
