@@ -9,26 +9,26 @@ const AppointmentDetails = () => {
   return (
     <div className="mt-4 space-y-2 text-gray-700">
       <p>
-        <strong>{t("client")}:</strong> {singleAppointment.userId.firstName}{" "}
-        {singleAppointment.userId.lastName}
+        <strong>{t("client")}:</strong> {singleAppointment?.userId?.firstName}{" "}
+        {singleAppointment?.userId?.lastName}
       </p>
       <p>
         <strong>{t("therapist")}:</strong>{" "}
-        {singleAppointment.therapistId.firstName}{" "}
-        {singleAppointment.therapistId.lastName}
+        {singleAppointment?.therapistId?.firstName}{" "}
+        {singleAppointment?.therapistId.lastName}
       </p>
       <p>
         <strong>{t("date")}:</strong>{" "}
-        {formatDateTime(singleAppointment.appointmentDate, "date")}
+        {formatDateTime(singleAppointment?.appointmentDate, "date")}
       </p>
       <p>
         <strong>{t("time")}:</strong>{" "}
-        {formatDateTime(singleAppointment.startTime, "time")} -{" "}
-        {formatDateTime(singleAppointment.endTime, "time")}
+        {formatDateTime(singleAppointment?.startTime, "time")} -{" "}
+        {formatDateTime(singleAppointment?.endTime, "time")}
       </p>
-      {singleAppointment.videoCallUrl && (
+      {singleAppointment?.videoCallUrl && (
         <a
-          href={singleAppointment.videoCallUrl}
+          href={singleAppointment?.videoCallUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="block mt-2 text-indigo-600 hover:underline"
