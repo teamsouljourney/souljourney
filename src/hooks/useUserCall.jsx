@@ -148,6 +148,22 @@ const useUserCall = () => {
     }
   };
 
+  //* Change User's Own Password
+  const changeMyPassword = async (id) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.patch(`users/${id}/changeMyPassword`);
+      toastSuccessNotify("Your password has been changed!");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to change your password."
+      );
+    } finally {
+      
+    }
+  };
+
   return {
     getAllUsers,
     getSingleUser,
@@ -156,7 +172,8 @@ const useUserCall = () => {
     updateUser,
     updateMe,
     changeUserStatus,
-    changeMyStatus
+    changeMyStatus,
+    changeMyPassword
   };
 };
 

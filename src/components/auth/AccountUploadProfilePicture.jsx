@@ -13,7 +13,7 @@ const AccountUploadProfilePicture = ({ singleUser }) => {
         </span>
         <div className="flex items-center gap-4">
           <img
-            className="h-16 w-16 rounded-full border-1 border-navy object-cover "
+            className="h-16 w-16 rounded-full border-3 border-navy dark:border-offWhite  object-cover "
             src={singleUser?.image || avatar}
           />
           {/* Upload Profile Image Section */}
