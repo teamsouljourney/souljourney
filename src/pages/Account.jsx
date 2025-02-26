@@ -14,7 +14,7 @@ const Account = () => {
   const { t } = useTranslation();
   const { currentUser } = useSelector((state) => state.auth); 
   const { singleUser, loading } = useSelector((state) => state.users); 
-  const {getSingleUser, updateMe} = useUserCall()
+  const {getSingleUser, updateMe, changeMyPassword} = useUserCall()
   const schemaPassword = PasswordSchema(t);
 
   const id = currentUser?._id
@@ -36,7 +36,7 @@ const Account = () => {
     updateMe(id, singleUser)
   };
  
-  if (!singleUser || loading) {
+  if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-seaGreen"></div>
@@ -74,13 +74,11 @@ const Account = () => {
         }}
         validationSchema={schemaPassword}
         onSubmit={(values, actions) => {
-          console.log(values);
-          console.log(actions);
-          // register(values);
+          changeMyPassword(id, values);
           actions.resetForm();
           actions.setSubmitting(false);
         }}
-        component={(props)=><AccountChangePasswordForm {...props} singleUser={singleUser} />}
+        component={(props)=><AccountChangePasswordForm {...props}  />}
       >
       </Formik>
       {/* Account Delete Field */}
