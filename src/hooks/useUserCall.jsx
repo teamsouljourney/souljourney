@@ -18,7 +18,6 @@ const useUserCall = () => {
   const navigate = useNavigate();
   const axiosWithToken = useAxios();
   const { getDataByPage } = usePaginationCall();
-  const {logout} = useAuthCall()
   const { currentPage, itemsPerPage } = useSelector(
     (state) => state.pagination
   );
@@ -107,6 +106,8 @@ const useUserCall = () => {
       toastErrorNotify(
         error.response?.data?.message || "Failed to update your profile."
       );
+    } finally {
+      getSingleUser(id)
     }
   };
 
@@ -152,7 +153,7 @@ const useUserCall = () => {
   const changeMyPassword = async (id, values) => {
     dispatch(fetchStart());
     try {
-      await axiosWithToken.patch(`users/${id}/changeMyPassword`);
+      await axiosWithToken.patch(`users/${id}/changeMyPassword`, values);
       toastSuccessNotify("Your password has been changed!");
     } catch (error) {
       dispatch(fetchFail());
@@ -160,7 +161,9 @@ const useUserCall = () => {
         error.response?.data?.message || "Failed to change your password."
       );
     } finally {
-      
+      await axiosWithToken.get("auth/logout");
+      dispatch(logoutSuccess());
+      navigate("/")
     }
   };
 
