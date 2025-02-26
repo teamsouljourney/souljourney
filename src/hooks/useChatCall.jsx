@@ -27,7 +27,7 @@ const useChatCall = () => {
       );
       console.log(data);
       dispatch(getAllChatsSuccess(data));
-      dispatch(setSelectedUser({ chatWithId, chatWithModel }));
+      // dispatch(setSelectedUser({ chatWithId, chatWithModel }));
       toastSuccessNotify("Chats fetched successfully");
     } catch (error) {
       dispatch(fetchFail());

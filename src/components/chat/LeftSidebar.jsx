@@ -1,11 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedUser } from "../../features/chatSlice";
+import { useSocket } from "../../context/SocketContext";
 
 export default function LeftSidebar({ isOpen, toggleSidebar }) {
   let { currentUserAppointments } = useSelector((state) => state.appointments);
   const { currentUser } = useSelector((state) => state.auth);
   const { chats, selectedUser } = useSelector((state) => state.chats);
   const dispatch = useDispatch();
+  const socket = useSocket();
 
   console.log(chats);
   console.log(currentUserAppointments);
@@ -21,11 +23,11 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
   console.log("ajanda", agenda);
 
   const handleUserClick = (user) => {
-    const userModel = user.isTherapist == true ? "Therapist" : "User";
     const userId = user._id;
-    dispatch(setSelectedUser({ userId, userModel }));
+    dispatch(setSelectedUser(userId));
   };
   console.log(selectedUser);
+  console.log("leftChats", chats);
   return (
     <div
       className={`${
@@ -64,7 +66,7 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
             onClick={() => handleUserClick(item)}
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full border-2 border-seaGreen-light flex items-center justify-center">
                 {item.image ? (
                   <img
                     alt=""
@@ -82,10 +84,10 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
               </div>
               <div className="flex-1">
                 <div className="flex justify-between">
-                  <p className="font-medium">
+                  <p className="font-medium text-navy">
                     {item.firstName} {item.lastName}
                   </p>
-                  <span className="text-xs text-navy">
+                  <span className="text-xs text-navy text-right">
                     {item.isOnline ? (
                       <div className="flex items-center gap-2">
                         <div className="rounded-full bg-emerald-500/20 p-1">
@@ -102,7 +104,7 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
                         if (date.toDateString() === today.toDateString()) {
                           return (
                             <span className="text-xs text-navy">
-                              {date.toLocaleString("tr-TR", {
+                              {date.toLocaleString("de-DE", {
                                 hour: "2-digit",
                                 minute: "2-digit",
                               })}
@@ -111,10 +113,9 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
                         } else {
                           return (
                             <span className="text-xs text-navy">
-                              {date.toLocaleString("tr-TR", {
-                                weekday: "long",
+                              {date.toLocaleString("de-DE", {
                                 year: "numeric",
-                                month: "long",
+                                month: "numeric",
                                 day: "numeric",
                               })}
                             </span>
@@ -124,9 +125,6 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
                     )}
                   </span>
                 </div>
-                <p className="text-sm text-navy truncate">
-                  {chats?.[0]?.content}
-                </p>
               </div>
             </div>
           </div>
