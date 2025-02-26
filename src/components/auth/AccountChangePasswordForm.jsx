@@ -31,14 +31,14 @@ const AccountChangePasswordForm = ({
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
 
-  // console.log(singleUser);
+  console.log(singleUser);
 
-  const initialState = {
-    currentPassword: "",
-    newPassword: "",
-    retypePassword: "",
-  };
-  const [passwordInfo, setPasswordInfo] = useState(initialState);
+  // const initialState = {
+  //   currentPassword: "",
+  //   newPassword: "",
+  //   retypePassword: "",
+  // };
+  // const [passwordInfo, setPasswordInfo] = useState(initialState);
 
   // console.log(passwordInfo);
 
@@ -47,19 +47,19 @@ const AccountChangePasswordForm = ({
   //   setPasswordInfo({ ...passwordInfo, [name]: value });
   // };
 
-  const changePassword = (values, actions) => {
-    console.log("values",values);
-    console.log("actions",actions);
+  // const changePassword = (values, actions) => {
+  //   console.log("values",values);
+  //   console.log("actions",actions);
     
-    if (singleUser?.password !== currentPassword) {
-      console.log("Your current password is wrong!");
-    }
+  //   if (singleUser?.password !== currentPassword) {
+  //     console.log("Your current password is wrong!");
+  //   }
 
-    if (passwordInfo.newPassword !== passwordInfo.retypePassword) {
-      console.log("Please check your confirm password");
-    }
+  //   if (passwordInfo.newPassword !== passwordInfo.retypePassword) {
+  //     console.log("Please check your confirm password");
+  //   }
     
-  };
+  // };
 
   return (
     <>
@@ -81,8 +81,8 @@ const AccountChangePasswordForm = ({
               autoComplete="current-password"
               className="peer min-w-[280px]"
               onChange={handleChange}
-              onBlur={handleBlur}
-              error={touched.currentPassword && Boolean(errors.currentPassword)}
+              onBlurCapture={handleBlur}
+              onError={touched.currentPassword && Boolean(errors.currentPassword)}
               helpertext={touched.currentPassword && errors.currentPassword}
               required
             />
@@ -112,7 +112,7 @@ const AccountChangePasswordForm = ({
               type={showPassword ? "text" : "password"}
               id="newPassword"
               name="newPassword"
-              value={values.newPassword}
+              value={values?.newPassword}
               placeholder="Enter new password"
               autoComplete="current-password"
               className="peer min-w-[280px]"
@@ -145,7 +145,7 @@ const AccountChangePasswordForm = ({
               type={showPassword ? "text" : "password"}
               id="retypePassword"
               name="retypePassword"
-              value={values.retypePassword}
+              value={values?.retypePassword}
               placeholder="Re-type new password"
               autoComplete="retype-password"
               className="peer min-w-[280px]"
@@ -170,7 +170,7 @@ const AccountChangePasswordForm = ({
 
         <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
           <button type="submit" className="account-btn mb-4 w-1/2"
-            onSubmit={changePassword}
+            onSubmit={handleSubmit}
           >
             Change Password
           </button>

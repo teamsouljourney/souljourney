@@ -76,7 +76,7 @@ const Account = () => {
         onSubmit={(values, actions) => {
           console.log(values);
           console.log(actions);
-          // register(values);
+          // changeMyPassword(id, values);
           actions.resetForm();
           actions.setSubmitting(false);
         }}

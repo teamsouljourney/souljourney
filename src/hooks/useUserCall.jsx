@@ -149,7 +149,7 @@ const useUserCall = () => {
   };
 
   //* Change User's Own Password
-  const changeMyPassword = async (id) => {
+  const changeMyPassword = async (id, values) => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.patch(`users/${id}/changeMyPassword`);
