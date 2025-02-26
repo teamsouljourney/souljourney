@@ -10,7 +10,6 @@ import {
 } from "../features/userSlice";
 import { deleteUserSuccess } from "../features/userSlice";
 import usePaginationCall from "./usePaginationCall";
-import useAuthCall from "./useAuthCall";
 import { logoutSuccess } from "../features/authSlice";
 
 const useUserCall = () => {
