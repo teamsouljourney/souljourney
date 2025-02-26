@@ -4,6 +4,8 @@ import MainChatArea from "../components/chat/MainChatArea";
 import RightSidebar from "../components/chat/RightSidebar";
 import { useSelector } from "react-redux";
 import useChatCall from "../hooks/useChatCall";
+import useAppointmentCall from "../hooks/useAppointmentCall";
+import { setSelectedUser } from "../features/chatSlice";
 
 export default function Chat() {
   // const [chats, setChats] = useState([]);
@@ -12,14 +14,25 @@ export default function Chat() {
   const [isEmojiPickerOpen, setIsEmojiPickerOpen] = useState(false);
   const rightSidebarRef = useRef(null);
   const emojiPickerRef = useRef(null);
-  // const { chats } = useSelector((state) => state.chats);
-  // const { getAllChats } = useChatCall();
+  const { chats, setSelectedUser } = useSelector((state) => state.chats);
+  const { getAllChats } = useChatCall();
+  const { currentUser } = useSelector((state) => state.auth);
+  const { getUserAppointments } = useAppointmentCall();
 
-  // useEffect(() => {
-  //   getAllChats();
-  // }, []);
+  useEffect(() => {
+    getUserAppointments(currentUser?._id);
+  }, [currentUser]);
 
-  // console.log(chats);
+  // console.log(selectedUser);
+
+  let userModel = currentUser?.isTherapist ? "Therapist" : "User";
+  let chatWithModel = currentUser?.isTherapist ? "User" : "Therapist";
+
+  useEffect(() => {
+    getAllChats(currentUser._id, userModel, setSelectedUser, chatWithModel);
+  }, []);
+
+  console.log(chats);
 
   const toggleLeftSidebar = () => setIsLeftSidebarOpen(!isLeftSidebarOpen);
   const toggleRightSidebar = () => setIsRightSidebarOpen(!isRightSidebarOpen);

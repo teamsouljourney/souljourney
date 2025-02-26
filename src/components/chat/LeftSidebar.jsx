@@ -1,9 +1,36 @@
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedUser } from "../../features/chatSlice";
+
 export default function LeftSidebar({ isOpen, toggleSidebar }) {
+  let { currentUserAppointments } = useSelector((state) => state.appointments);
+  const { currentUser } = useSelector((state) => state.auth);
+  const { chats, selectedUser } = useSelector((state) => state.chats);
+  const dispatch = useDispatch();
+
+  console.log(chats);
+  console.log(currentUserAppointments);
+
+  let agenda = [];
+
+  currentUser.isTherapist == true
+    ? agenda.push(currentUserAppointments.map((user) => user.userId))
+    : agenda.push(
+        currentUserAppointments.map((therapist) => therapist.therapistId)
+      );
+
+  console.log("ajanda", agenda);
+
+  const handleUserClick = (user) => {
+    const userModel = user.isTherapist == true ? "Therapist" : "User";
+    const userId = user._id;
+    dispatch(setSelectedUser({ userId, userModel }));
+  };
+  console.log(selectedUser);
   return (
     <div
       className={`${
         isOpen ? "translate-x-0" : "-translate-x-full"
-      } fixed inset-y-0 left-0 z-30 w-80 bg-white border-r transition-transform duration-300 ease-in-out md:translate-x-0 md:static`}
+      } fixed inset-y-0 left-0 z-30 w-80 bg-offWhite border-r transition-transform duration-300 ease-in-out md:translate-x-0 md:static`}
     >
       <div className="p-4 border-b">
         <div className="relative">
@@ -29,22 +56,82 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
       </div>
       <div className="overflow-y-auto h-full">
         {/* Chat List */}
-        <div className="p-4 hover:bg-slate-50 cursor-pointer">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-              <span className="text-blue-600 font-medium">SP</span>
-            </div>
-            <div className="flex-1">
-              <div className="flex justify-between">
-                <p className="font-medium">Sarah Parker</p>
-                <span className="text-xs text-gray-500">12:30 PM</span>
+
+        {agenda[0].map((item) => (
+          <div
+            className="p-4 hover:bg-slate-50 cursor-pointer"
+            key={item._id}
+            onClick={() => handleUserClick(item)}
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                {item.image ? (
+                  <img
+                    alt=""
+                    src={item.image}
+                    className="rounded-full size-6 sm:size-8"
+                  />
+                ) : (
+                  <div className="flex items-center justify-center rounded-full size-8 bg-navy-dark">
+                    <span className="text-sm font-medium text-offWhite-light">
+                      {item.firstName.charAt(0).toUpperCase() +
+                        item.lastName.charAt(0).toUpperCase()}
+                    </span>
+                  </div>
+                )}
               </div>
-              <p className="text-sm text-gray-500 truncate">
-                Sure, let's meet tomorrow at 10
-              </p>
+              <div className="flex-1">
+                <div className="flex justify-between">
+                  <p className="font-medium">
+                    {item.firstName} {item.lastName}
+                  </p>
+                  <span className="text-xs text-navy">
+                    {item.isOnline ? (
+                      <div className="flex items-center gap-2">
+                        <div className="rounded-full bg-emerald-500/20 p-1">
+                          <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                        </div>
+                        <p className="text-xs text-navy">Online</p>
+                      </div>
+                    ) : (
+                      (() => {
+                        const date = new Date(item.lastSeen);
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);
+
+                        if (date.toDateString() === today.toDateString()) {
+                          return (
+                            <span className="text-xs text-navy">
+                              {date.toLocaleString("tr-TR", {
+                                hour: "2-digit",
+                                minute: "2-digit",
+                              })}
+                            </span>
+                          );
+                        } else {
+                          return (
+                            <span className="text-xs text-navy">
+                              {date.toLocaleString("tr-TR", {
+                                weekday: "long",
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                              })}
+                            </span>
+                          );
+                        }
+                      })()
+                    )}
+                  </span>
+                </div>
+                <p className="text-sm text-navy truncate">
+                  {chats?.[0]?.content}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
+
         {/* More chat items would go here */}
       </div>
     </div>
