@@ -6,10 +6,14 @@ const categorySlice = createSlice({
   initialState: {
     categories: [],
     filteredCategories: [],
-    selectedCategory:"67a47623b6da7c1f2119462e",
+    selectedCategory: "67a47623b6da7c1f2119462e",
+    newCategory: {
+      name: "",
+    },
     singleCategory: null,
     loading: false,
     error: false,
+    isModalOpen: false,
   },
   reducers: {
     fetchStart: (state) => {
@@ -26,10 +30,20 @@ const categorySlice = createSlice({
       state.singleCategory = payload.data;
       state.error = false;
     },
-    setSelectedCategory:(state, {payload})=>{
-      state.selectedCategory=payload
+    setSelectedCategory: (state, { payload }) => {
+      state.selectedCategory = payload;
     },
-  
+    setNewCategory: (state, { payload }) => {
+      state.newCategory = { ...state.newCategory, ...payload };
+    },
+    resetNewCategory: (state) => {
+      state.newCategory = {
+        name: "",
+      };
+    },
+    toggleModal: (state, { payload }) => {
+      state.isModalOpen = payload;
+    },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
@@ -43,6 +57,9 @@ export const {
   getAllCategoriesSuccess,
   getSingleCategorySuccess,
   setSelectedCategory,
+  setNewCategory,
+  resetNewCategory,
+  toggleModal,
 } = categorySlice.actions;
 
 export default categorySlice.reducer;
