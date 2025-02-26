@@ -12,8 +12,6 @@ const usePaginationCall = () => {
   const dispatch = useDispatch();
   const axiosWithToken = useAxios();
 
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
-
   const getDataByPage = async (endpoint, slice, limit, page) => {
     dispatch(fetchStart());
     try {
