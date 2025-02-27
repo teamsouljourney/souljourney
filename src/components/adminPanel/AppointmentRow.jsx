@@ -1,11 +1,9 @@
 import { TrashIcon } from "@heroicons/react/24/outline";
-import { useDispatch } from "react-redux";
 import useAppointmentCall from "../../hooks/useAppointmentCall";
 import { formatDateTime } from "../../helper/dateFormatter";
 
 const AppointmentRow = ({ appointment }) => {
-  const dispatch = useDispatch();
-  const { deleteAppointment } = useAppointmentCall();
+  const { deleteAppointmentByAdmin } = useAppointmentCall();
 
   if (!appointment) return null;
 
@@ -42,7 +40,7 @@ const AppointmentRow = ({ appointment }) => {
       <div className="flex justify-end col-span-1 md:justify-center">
         <div>
           <button
-            onClick={() => deleteAppointment(_id)}
+            onClick={() => deleteAppointmentByAdmin(_id)}
             className="p-1 rounded hover:bg-gray-100"
           >
             <TrashIcon className="w-4 h-4" />

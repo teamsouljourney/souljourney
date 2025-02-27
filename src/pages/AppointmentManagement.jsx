@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import ListToolbar from "../components/adminPanel/ListToolBar";
 import Pagination from "../components/adminPanel/Pagination";
 import useAppointmentCall from "../hooks/useAppointmentCall";
 import AppointmentRow from "../components/adminPanel/AppointmentRow";
 
 const AppointmentManagement = () => {
-  const dispatch = useDispatch();
   const { getAllAppointments } = useAppointmentCall();
   const { appointments } = useSelector((state) => state.appointments);
   const { pagAppointments } = useSelector((state) => state.pagination);
