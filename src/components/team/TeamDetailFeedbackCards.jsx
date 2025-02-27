@@ -2,9 +2,12 @@ import { useState } from "react";
 import avatar from "../../assets/avatar.png";
 import { useTranslation } from "react-i18next";
 import TeamDetailFeedbackCardsModal from "./TeamDetailFeedbackCardsModal";
+import Pagination from "../adminPanel/Pagination";
+import { useSelector } from "react-redux";
 
 const TeamDetailFeedbackCards = ({ singleTherapistFeedbacks }) => {
   const { t } = useTranslation();
+  const {pagFeedbacks} = useSelector((state)=>state.pagination)
   {
     /* {t("goBack")} */
   }
@@ -41,7 +44,7 @@ const TeamDetailFeedbackCards = ({ singleTherapistFeedbacks }) => {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        {singleTherapistFeedbacks?.map((feedback) => (
+        {pagFeedbacks?.map((feedback) => (
           <div
             key={feedback?._id}
             className="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 transition-all hover:shadow-lg flex flex-col min-h-[300px]"
@@ -104,6 +107,7 @@ const TeamDetailFeedbackCards = ({ singleTherapistFeedbacks }) => {
           </div>
         ))}
       </div>
+      <Pagination endpoint={"feedbacks"} slice={"pagFeedbacks"} data={singleTherapistFeedbacks} />
       {/* Modal */}
       {isModalOpen && selectedFeedback && (
 
