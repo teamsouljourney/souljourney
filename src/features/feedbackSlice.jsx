@@ -7,6 +7,7 @@ const feedbackSlice = createSlice({
     error: false,
     feedbacks: [],
     singleTherapistFeedbacks: [],
+    singleFeedback: null,
     isModalOpen: false,
   },
   reducers: {
@@ -24,6 +25,11 @@ const feedbackSlice = createSlice({
       state.error = false;
       state.singleTherapistFeedbacks = payload;
     },
+    getSingleFeedbackSuccess: (state, { payload }) => {
+      state.loading = false;
+      state.singleFeedback = payload;
+      state.error = false;
+    },
     toggleModal: (state, { payload }) => {
       state.isModalOpen = payload;
     },
@@ -38,6 +44,7 @@ export const {
   fetchFail,
   getAllFeedbacksSuccess,
   getSingleTherapistFeedbacksSuccess,
+  getSingleFeedbackSuccess,
   toggleModal,
 } = feedbackSlice.actions;
 

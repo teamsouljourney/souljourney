@@ -1,9 +1,17 @@
 import { BookOpenIcon, TrashIcon } from "@heroicons/react/24/outline";
 import useFeedbackCall from "../../hooks/useFeedbackCall";
 import { formatDateTime } from "../../helper/dateFormatter";
+import { useDispatch } from "react-redux";
+import { toggleModal } from "../../features/feedbackSlice";
 
 const FeedbackRow = ({ feedback }) => {
-  const { deleteFeedback } = useFeedbackCall();
+  const dispatch = useDispatch();
+  const { deleteFeedback, getSingleFeedback } = useFeedbackCall();
+
+  const handleReadFeedback = async (id) => {
+    await getSingleFeedback(id);
+    dispatch(toggleModal(true));
+  };
 
   if (!feedback) return null;
 
@@ -32,7 +40,10 @@ const FeedbackRow = ({ feedback }) => {
         </span>
       </div>
       <div className="flex justify-end col-span-1">
-        <button className="p-1 rounded hover:bg-gray-100">
+        <button
+          onClick={() => handleReadFeedback(_id)}
+          className="p-1 rounded hover:bg-gray-100"
+        >
           <BookOpenIcon className="w-5 h-5" />
         </button>
         <button

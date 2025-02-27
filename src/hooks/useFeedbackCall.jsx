@@ -3,6 +3,7 @@ import {
   fetchFail,
   fetchStart,
   getAllFeedbacksSuccess,
+  getSingleFeedbackSuccess,
   getSingleTherapistFeedbacksSuccess,
 } from "../features/feedbackSlice";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
@@ -60,7 +61,7 @@ const useFeedbackCall = () => {
     }
   };
 
-  //* Delete appointment
+  //* Delete feedback
   const deleteFeedback = async (id, userId) => {
     dispatch(fetchStart());
     try {
@@ -76,11 +77,27 @@ const useFeedbackCall = () => {
     }
   };
 
+  //* Read single feedback
+  const getSingleFeedback = async (id) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosWithToken.get(`feedbacks/${id}`);
+      dispatch(getSingleFeedbackSuccess(data.data));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response.data.message,
+        "Failed to fetch feedback details."
+      );
+    }
+  };
+
   return {
     getAllFeedbacks,
     getSingleTherapistFeedbacks,
     postTherapistFeedback,
     deleteFeedback,
+    getSingleFeedback,
   };
 };
 

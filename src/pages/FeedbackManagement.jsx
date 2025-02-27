@@ -1,24 +1,18 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import AdminModal from "../components/adminPanel/AdminModal";
 import ListToolbar from "../components/adminPanel/ListToolBar";
 import Pagination from "../components/adminPanel/Pagination";
 import { PlusIcon } from "@heroicons/react/24/outline";
 import useFeedbackCall from "../hooks/useFeedbackCall";
-import { toggleModal } from "../features/feedbackSlice";
 import FeedbackRow from "../components/adminPanel/FeedbackRow";
-import FeedbackForm from "../components/adminPanel/FeedbackForm";
+import FeedbackCard from "../components/adminPanel/FeedbackCard";
 
 const FeedbackManagement = () => {
-  const dispatch = useDispatch();
   const { getAllFeedbacks } = useFeedbackCall();
   const { isModalOpen, feedbacks } = useSelector((state) => state.feedbacks);
   const { pagFeedbacks } = useSelector((state) => state.pagination);
   const [searchTerm, setSearchTerm] = useState("");
-
-  const handleToogleModal = (payload) => {
-    dispatch(toggleModal(payload));
-  };
 
   useEffect(() => {
     getAllFeedbacks();
@@ -34,10 +28,7 @@ const FeedbackManagement = () => {
             onSearchChange={setSearchTerm}
             placeholder="Search feedback..."
             actions={
-              <button
-                onClick={() => handleToogleModal(true)}
-                className="px-4 py-2 text-white transition duration-300 rounded-md bg-seaGreen hover:bg-navy"
-              >
+              <button className="px-4 py-2 text-white transition duration-300 rounded-md bg-seaGreen hover:bg-navy">
                 <PlusIcon className="inline-block w-5 h-5 mr-2" />
                 Add a new Feedback
               </button>
@@ -65,7 +56,7 @@ const FeedbackManagement = () => {
 
       {isModalOpen && (
         <AdminModal>
-          <FeedbackForm />
+          <FeedbackCard />
         </AdminModal>
       )}
     </div>
