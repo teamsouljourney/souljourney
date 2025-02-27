@@ -1,6 +1,8 @@
 import * as Yup from "yup";
 import { Form } from "formik";
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
+import { ArrowBack } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 import forgotPassword from "../../assets/images/verificationFail.png";
 
 export const ForgotPasswordSchema = Yup.object().shape({
@@ -15,6 +17,12 @@ const ForgotPasswordForm = ({
   handleBlur,
   isSubmitting,
 }) => {
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-1); // Navigate to previous page
+  };
+
   return (
     <Form>
       <Box
@@ -46,6 +54,42 @@ const ForgotPasswordForm = ({
             height: { md: "25rem" },
           }}
         >
+          <Box sx={{ display: "flex", flexDirection: "column" }}>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <Button
+                onClick={handleBack}
+                sx={{
+                  minWidth: "40px",
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "50%",
+                  mr: 5,
+                  color: "customColors.purple",
+                  "&:hover": {
+                    backgroundColor: "customColors.pink",
+                    opacity: 0.8,
+                  },
+                }}
+                variant="text"
+              >
+                <ArrowBack />
+              </Button>
+              <Typography
+                variant="h5"
+                component="h1"
+                sx={{
+                  color: "customColors.darkblue",
+                  fontWeight: "semibold",
+                }}
+              >
+                Forgot Password
+              </Typography>
+            </Box>
+            <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
+              Please enter your email to reset your password
+            </Typography>
+          </Box>
+
           <TextField
             name="email"
             label="Email"
@@ -56,7 +100,7 @@ const ForgotPasswordForm = ({
             error={touched.email && Boolean(errors.email)}
           />
           <Button type="submit" variant="contained" disabled={isSubmitting}>
-            {isSubmitting ? "Loading..." : "Forgot Password"}
+            {isSubmitting ? "Loading..." : "Reset Password"}
           </Button>
         </Box>
       </Box>
