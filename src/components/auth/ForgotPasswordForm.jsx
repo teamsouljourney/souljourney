@@ -20,7 +20,7 @@ const ForgotPasswordForm = ({
   const navigate = useNavigate();
 
   const handleBack = () => {
-    navigate(-1); // Navigate to previous page
+    navigate(-1);
   };
 
   return (
