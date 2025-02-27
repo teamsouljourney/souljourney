@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import TeamDetailFeedbackCardsModal from "./TeamDetailFeedbackCardsModal";
 import Pagination from "../adminPanel/Pagination";
 import { useSelector } from "react-redux";
+import {getTimeAgo} from "../../helper/dateFormatter"
 
 const TeamDetailFeedbackCards = ({ singleTherapistFeedbacks }) => {
   const { t } = useTranslation();
@@ -13,34 +14,7 @@ const TeamDetailFeedbackCards = ({ singleTherapistFeedbacks }) => {
   }
   const [selectedFeedback, setSelectedFeedback] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const getTimeAgo = (createdAt) => {
-    const now = new Date();
-    const created = new Date(createdAt);
-    const diffInMilliseconds = now - created;
-    const diffInSeconds = Math.floor(diffInMilliseconds / 1000);
-    const diffInMinutes = Math.floor(diffInSeconds / 60);
-    const diffInHours = Math.floor(diffInMinutes / 60);
-    const diffInDays = Math.floor(diffInHours / 24);
-    const diffInMonths = Math.floor(diffInDays / 30);
-    const diffInYears = Math.floor(diffInDays / 365);
-
-    if (diffInYears > 0) {
-      return `${diffInYears} ${diffInYears === 1 ? "year" : "years"} ago`;
-    } else if (diffInMonths > 0) {
-      return `${diffInMonths} ${diffInMonths === 1 ? "month" : "months"} ago`;
-    } else if (diffInDays > 0) {
-      return `${diffInDays} ${diffInDays === 1 ? "day" : "days"} ago`;
-    } else if (diffInHours > 0) {
-      return `${diffInHours} ${diffInHours === 1 ? "hour" : "hours"} ago`;
-    } else if (diffInMinutes > 0) {
-      return `${diffInMinutes} ${
-        diffInMinutes === 1 ? "minute" : "minutes"
-      } ago`;
-    } else {
-      return "Just now";
-    }
-  };
+  
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
