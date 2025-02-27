@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useSearchParams, useNavigate } from "react-router-dom"; // URL yönetimi için
+import { useSearchParams, useNavigate } from "react-router-dom";
 import usePaginationCall from "../../hooks/usePaginationCall";
 import { setPage } from "../../features/paginationSlice";
 
@@ -12,7 +12,7 @@ const Pagination = ({ endpoint, slice, data }) => {
     (state) => state.pagination
   );
 
-  const totalPages = Math.ceil(data?.length / itemsPerPage);
+  const totalPages = Math.ceil(data.length / itemsPerPage);
 
   const pageFromUrl = Number(searchParams.get("page")) || 1;
 
