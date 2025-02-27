@@ -3,7 +3,8 @@ import Card from "../../components/Card";
 
 const TeamCard = () => {
   const { filteredTherapists, therapists,searchTerm } = useSelector((state) => state.therapists);
-  
+  const {selectedCategory}=useSelector((state)=>state.categories)
+
   const displayedTherapists = filteredTherapists?.length > 0 ? filteredTherapists : therapists;
   // const cardsToShow = displayedTherapists?.slice(0, 4) || [];
 
