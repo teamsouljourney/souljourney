@@ -108,10 +108,10 @@ const TabSwitch = () => {
             {category.name}
           </button>
         ))}
-        <MoreCategories />
+        <MoreCategories/>
       </div>
 
-      <div className="flex justify-center items-center ">
+      <div className="flex justify-center items-center mt-6">
         <input
           type="text"
           placeholder={t("searchTherapist")}

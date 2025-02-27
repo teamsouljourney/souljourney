@@ -1,4 +1,4 @@
-import avatar from "../../assets/avatar.png";
+import avatar from "../../assets/avatar3.svg";
 import { useTranslation } from "react-i18next";
 
 const AccountUploadProfilePicture = ({ singleUser }) => {
