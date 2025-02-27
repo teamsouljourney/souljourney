@@ -142,27 +142,23 @@
 
   "PRICING": "PRICING",
   "paymentDetails": "Payment Details",
-  "paymentDetailsText":"At Soul Journey, we offer flexible pricing options designed to fit your unique needs and budget. Our mission is to provide exceptional, personalized counseling services and tailored to your individual journey. Choose from our three plans below and take the first step towards a more balanced and fullfilling life.",
+  "paymentDetailsText": "At Soul Journey, we offer flexible pricing options designed to fit your unique needs and budget. Our mission is to provide exceptional, personalized counseling services and tailored to your individual journey. Choose from our three plans below and take the first step towards a more balanced and fullfilling life.",
   "plansPricing": "Plans & Pricing",
-  "plansPricingText":"Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.",
-  "month":"Month",
+  "plansPricingText": "Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.",
+  "month": "Month",
   "monthly": "Monthly",
-  "year":"Year",
+  "year": "Year",
   "yearly": "Yearly",
-  "free":"Free",
-  "freeText":"Best option for personal use & for your next project.",
-  "individualConfig":"Individual configuration",
-  "setupHiddenFees":"No setup, or hidden fees",
-  "appointmentCount":"Appointment Count :",
-  "premium":"Premium",
-  "premiumText":"Relevant for multiple users, extended & premium support.",
-  "ultraPremium":"Ultra Premium",
-  "ultraPremiumText":"Best for large scale uses and extended redistribution rights.",
-  "unlimited":"Unlimited",
-
-
-
-
+  "free": "Free",
+  "freeText": "Best option for personal use & for your next project.",
+  "individualConfig": "Individual configuration",
+  "setupHiddenFees": "No setup, or hidden fees",
+  "appointmentCount": "Appointment Count :",
+  "premium": "Premium",
+  "premiumText": "Relevant for multiple users, extended & premium support.",
+  "ultraPremium": "Ultra Premium",
+  "ultraPremiumText": "Best for large scale uses and extended redistribution rights.",
+  "unlimited": "Unlimited",
 
   "TEAM": "TEAM",
   "OurPsychologicalCounselingTeam": "Our psychological counseling team is dedicated to supporting your mental well-being with personalized care. With diverse expertise in counseling and guidance, our professionals are here to help you on your journey to emotional balance.",
@@ -303,7 +299,7 @@
   "patientList": "Patients List",
   "searchPatient": "Search Patient...",
   "myBlogs": "My Blogs",
-  "noPatient": "No patients found in the list.",
   "noBlogs": "No blog posts available. Start writing now!",
-  "notes": "Notes"
+  "notes": "Notes",
+  "noPatient": "You have no scheduled appointments."
 }
