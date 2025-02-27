@@ -12,7 +12,7 @@ const Pagination = ({ endpoint, slice, data }) => {
     (state) => state.pagination
   );
 
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const totalPages = Math.ceil(data?.length / itemsPerPage);
 
   const pageFromUrl = Number(searchParams.get("page")) || 1;
 

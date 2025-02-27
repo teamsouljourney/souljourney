@@ -7,7 +7,7 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 import useFeedbackCall from "../hooks/useFeedbackCall";
 import { toggleModal } from "../features/feedbackSlice";
 import FeedbackRow from "../components/adminPanel/FeedbackRow";
-import FeedbackForm from "../components/adminPanel/FeedbackForm,";
+import FeedbackForm from "../components/adminPanel/FeedbackForm";
 
 const FeedbackManagement = () => {
   const dispatch = useDispatch();
@@ -44,10 +44,11 @@ const FeedbackManagement = () => {
             }
           />
           <div>
-            <div className="hidden text-sm font-medium text-gray-500 md:grid md:grid-cols-12 md:gap-4">
-              <div className="col-span-4">Feedback Id</div>
+            <div className="hidden text-sm font-medium text-gray-500 md:grid md:grid-cols-12 md:gap-5">
+              <div className="col-span-3">Feedback Id</div>
               <div className="col-span-3">Therapist</div>
-              <div className="col-span-3">Client</div>
+              <div className="col-span-2">Client</div>
+              <div className="col-span-2 text-right">Date</div>
               <div className="col-span-2 text-right">Actions</div>
             </div>
             {pagFeedbacks?.map((feedback) => (
