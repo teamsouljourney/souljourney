@@ -1,44 +1,27 @@
+import { useState } from "react";
 import avatar from "../../assets/avatar.png";
 import { useTranslation } from "react-i18next";
+import TeamDetailFeedbackCardsModal from "./TeamDetailFeedbackCardsModal";
+import Pagination from "../adminPanel/Pagination";
+import { useSelector } from "react-redux";
+import {getTimeAgo} from "../../helper/dateFormatter"
 
 const TeamDetailFeedbackCards = ({ singleTherapistFeedbacks }) => {
   const { t } = useTranslation();
-  {/* {t("goBack")} */}
+  const {pagFeedbacks} = useSelector((state)=>state.pagination)
+  {
+    /* {t("goBack")} */
+  }
+  const [selectedFeedback, setSelectedFeedback] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
-  const getTimeAgo = (createdAt) => {
-    const now = new Date();
-    const created = new Date(createdAt);
-    const diffInMilliseconds = now - created;
-    const diffInSeconds = Math.floor(diffInMilliseconds / 1000);
-    const diffInMinutes = Math.floor(diffInSeconds / 60);
-    const diffInHours = Math.floor(diffInMinutes / 60);
-    const diffInDays = Math.floor(diffInHours / 24);
-    const diffInMonths = Math.floor(diffInDays / 30);
-    const diffInYears = Math.floor(diffInDays / 365);
-
-    if (diffInYears > 0) {
-      return `${diffInYears} ${diffInYears === 1 ? "year" : "years"} ago`;
-    } else if (diffInMonths > 0) {
-      return `${diffInMonths} ${diffInMonths === 1 ? "month" : "months"} ago`;
-    } else if (diffInDays > 0) {
-      return `${diffInDays} ${diffInDays === 1 ? "day" : "days"} ago`;
-    } else if (diffInHours > 0) {
-      return `${diffInHours} ${diffInHours === 1 ? "hour" : "hours"} ago`;
-    } else if (diffInMinutes > 0) {
-      return `${diffInMinutes} ${
-        diffInMinutes === 1 ? "minute" : "minutes"
-      } ago`;
-    } else {
-      return "Just now";
-    }
-  };
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        {singleTherapistFeedbacks?.map((feedback) => (
+        {pagFeedbacks?.map((feedback) => (
           <div
             key={feedback?._id}
-            className="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 transition-all hover:shadow-lg"
+            className="bg-white dark:bg-background-dark rounded-lg shadow-md p-6 transition-all hover:shadow-lg flex flex-col min-h-[300px]"
           >
             {/* Card Header */}
             <div className="flex items-center justify-between mb-4">
@@ -75,13 +58,36 @@ const TeamDetailFeedbackCards = ({ singleTherapistFeedbacks }) => {
               </div>
             </div>
             {/* Card Body */}
-            <h4 className="leading-relaxed font-semibold">
-              <i>{feedback?.title}</i>
-            </h4>
-            <p className="leading-relaxed">{feedback?.comment}</p>
+            <div className="flex-1">
+              <h4 className="leading-relaxed font-semibold line-clamp-1">
+                <i>{feedback?.title}</i>
+              </h4>
+              <p className="leading-relaxed line-clamp-4">
+                {feedback?.comment}
+              </p>
+            </div>
+            {/* Read More Button */}
+            <div className="flex justify-end">
+              <button
+                onClick={() => {
+                  setSelectedFeedback(feedback);
+                  setIsModalOpen(true);
+                }}
+                className="mt-2 px-2 py-1 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-700/50 dark:hover:bg-gray-700 text-seaGreen hover:text-seaGreen-dark border border-gray-200 dark:border-gray-600 rounded-md transition-colors"
+              >
+                Read more
+              </button>
+            </div>
           </div>
         ))}
       </div>
+      <Pagination endpoint={"feedbacks"} slice={"pagFeedbacks"} data={singleTherapistFeedbacks} />
+      {/* Modal */}
+      {isModalOpen && selectedFeedback && (
+
+        <TeamDetailFeedbackCardsModal selectedFeedback={selectedFeedback} getTimeAgo={getTimeAgo} setIsModalOpen={setIsModalOpen} setSelectedFeedback={setSelectedFeedback} />
+        
+      )}
     </>
   );
 };

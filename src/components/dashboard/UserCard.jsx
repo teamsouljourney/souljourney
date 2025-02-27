@@ -7,7 +7,8 @@ export default function UserCard() {
     <div className="w-full min-h-[200px] bg-gradient-to-bl from-navy-dark to-seaGreen-dark p-6 rounded-xl m-10 flex justify-between items-center">
       <div>
         <h1 className="text-3xl sm:text-5xl text-offWhite">
-          {currentUser.firstName} {currentUser.lastName}
+          {currentUser.firstName.toUpperCase()}{" "}
+          {currentUser.lastName.toUpperCase()}
         </h1>
         <p className="text-offWhite-dark text-sm w-52 md:w-full mt-6">
           {currentUser.description}

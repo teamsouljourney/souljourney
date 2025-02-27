@@ -21,7 +21,7 @@ const TeamDetailFeedbackForm = ({
 
   return (
     <>
-      <form className="mt-16 bg-offWhite-light dark:bg-background-dark p-8 rounded-lg shadow-xl">
+      <form className="mt-16 bg-white/30 dark:bg-background-dark p-8 rounded-lg shadow-xl">
         <h3 className="text-lg font-semibold mb-2">Add a Comment {/* {t("addAComment")} */}</h3>
 
         <div className="mb-4">
