@@ -35,7 +35,7 @@ const Pagination = ({ endpoint, slice, data }) => {
   return (
     <div className="flex items-center justify-between px-2 mt-6">
       <div className="text-sm text-gray-500">
-        Showing {data.length} users from 1 to {data.length}
+        Showing {data.length} {endpoint} from 1 to {data.length}
       </div>
       <div className="flex items-center gap-2">
         <button

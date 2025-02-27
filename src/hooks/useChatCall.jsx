@@ -1,11 +1,13 @@
-import useAxios, { axiosPublic } from "./useAxios";
+import useAxios from "./useAxios";
 import { useDispatch } from "react-redux";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import { useNavigate } from "react-router-dom";
 import {
+  createChatSuccess,
   fetchFail,
   fetchStart,
   getAllChatsSuccess,
+  setSelectedUser,
 } from "../features/chatSlice";
 
 const useChatCall = () => {
@@ -13,14 +15,19 @@ const useChatCall = () => {
   const navigate = useNavigate();
   const axiosWithToken = useAxios();
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+
   //* list all chats
 
-  const getAllChats = async () => {
+  const getAllChats = async (userId, userModel, chatWithId, chatWithModel) => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosPublic.get("chats");
+      const { data } = await axiosWithToken.get(
+        `${BASE_URL}messages?userId=${userId}&userModel=${userModel}&chatWithId=${chatWithId}&chatWithModel=${chatWithModel}`
+      );
       console.log(data);
       dispatch(getAllChatsSuccess(data));
+      // dispatch(setSelectedUser({ chatWithId, chatWithModel }));
       toastSuccessNotify("Chats fetched successfully");
     } catch (error) {
       dispatch(fetchFail());
@@ -31,8 +38,21 @@ const useChatCall = () => {
     }
   };
 
+  const createChat = async (messageData) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosWithToken.post("messages", messageData);
+      console.log("chatdata", data);
+      dispatch(createChatSuccess(data));
+      toastSuccessNotify("Chat created successfully");
+    } catch (error) {
+      dispatch(fetchFail());
+    }
+  };
+
   return {
     getAllChats,
+    createChat,
   };
 };
 

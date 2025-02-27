@@ -5,7 +5,7 @@ const chatSlice = createSlice({
 
   initialState: {
     chats: [],
-    singleChat: null,
+    selectedUser: null,
     loading: false,
     error: false,
   },
@@ -19,11 +19,17 @@ const chatSlice = createSlice({
       state.chats = payload.data;
       state.error = false;
     },
-    // getSingleChatCSuccess: (state, { payload }) => {
-    //   state.loading = false;
-    //   state.singleChat = payload.data;
-    //   state.error = false;
-    // },
+    createChatSuccess: (state, { payload }) => {
+      state.loading = false;
+      state.chats = [...state.chats, payload.data];
+      state.error = false;
+    },
+    setSelectedUser: (state, { payload }) => {
+      state.loading = false;
+      state.selectedUser = payload;
+      state.error = false;
+      console.log("selecteduserPayload", payload);
+    },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
@@ -35,7 +41,8 @@ export const {
   fetchStart,
   fetchFail,
   getAllChatsSuccess,
-  getSingleChatSuccess,
+  setSelectedUser,
+  createChatSuccess,
 } = chatSlice.actions;
 
 export default chatSlice.reducer;

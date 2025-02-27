@@ -1,5 +1,5 @@
 import useAxios, { axiosPublic } from "../hooks/useAxios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   fetchStart,
   fetchFail,
@@ -7,22 +7,20 @@ import {
   getSingleBlogSuccess,
 } from "../features/blogSlice";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
+import usePaginationCall from "./usePaginationCall";
 
 const useBlogCall = () => {
   const dispatch = useDispatch();
   const axiosWithToken = useAxios();
+  const { getDataByPage } = usePaginationCall();
+  const { currentPage, itemsPerPage } = useSelector(
+    (state) => state.pagination
+  );
 
   const getAllBlogs = async () => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosPublic.get("blogs", {
-        params:{
-          limit:4,
-          sort:{createdAt:-1}
-        }
-      });
-      console.log("APIden gelen veriler :", data.data);
-      
+      const { data } = await axiosPublic.get("blogs");
       dispatch(getAllBlogsSuccess(data.data));
     } catch (error) {
       dispatch(fetchFail());
@@ -75,7 +73,23 @@ const useBlogCall = () => {
     }
   };
 
-  return { getAllBlogs, getSingleBlog, createNewBlog, updateBlog };
+  //* Delete Blog
+  const deleteBlog = async (id) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.delete(`blogs/${id}`);
+      toastSuccessNotify("Blog deleted successfully!");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to delete blog.."
+      );
+    } finally {
+      getDataByPage("blogs", "pagBlogs", itemsPerPage, currentPage);
+    }
+  };
+
+  return { getAllBlogs, getSingleBlog, createNewBlog, updateBlog, deleteBlog };
 };
 
 export default useBlogCall;

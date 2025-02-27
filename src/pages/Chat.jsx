@@ -4,31 +4,38 @@ import MainChatArea from "../components/chat/MainChatArea";
 import RightSidebar from "../components/chat/RightSidebar";
 import { useSelector } from "react-redux";
 import useChatCall from "../hooks/useChatCall";
+import useAppointmentCall from "../hooks/useAppointmentCall";
+import { setSelectedUser } from "../features/chatSlice";
 
 export default function Chat() {
-  // const [chats, setChats] = useState([]);
   const [isLeftSidebarOpen, setIsLeftSidebarOpen] = useState(false);
   const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
   const [isEmojiPickerOpen, setIsEmojiPickerOpen] = useState(false);
   const rightSidebarRef = useRef(null);
   const emojiPickerRef = useRef(null);
-  // const { chats } = useSelector((state) => state.chats);
-  // const { getAllChats } = useChatCall();
+  const { chats, selectedUser } = useSelector((state) => state.chats);
+  const { getAllChats } = useChatCall();
+  const { currentUser } = useSelector((state) => state.auth);
+  const { getUserAppointments } = useAppointmentCall();
 
-  // useEffect(() => {
-  //   getAllChats();
-  // }, []);
+  useEffect(() => {
+    getUserAppointments(currentUser?._id);
+  }, [currentUser]);
 
-  // console.log(chats);
+  let userModel = currentUser?.isTherapist ? "Therapist" : "User";
+  let chatWithModel = currentUser?.isTherapist ? "User" : "Therapist";
+
+  useEffect(() => {
+    if (selectedUser) {
+      getAllChats(currentUser._id, userModel, selectedUser, chatWithModel);
+    }
+  }, [selectedUser]);
+
+  console.log(selectedUser);
 
   const toggleLeftSidebar = () => setIsLeftSidebarOpen(!isLeftSidebarOpen);
   const toggleRightSidebar = () => setIsRightSidebarOpen(!isRightSidebarOpen);
   const toggleEmojiPicker = () => setIsEmojiPickerOpen(!isEmojiPickerOpen);
-
-  const onEmojiClick = (emojiObject) => {
-    // setChats((prevMsg) => prevMsg + emojiObject.emoji);
-    setIsEmojiPickerOpen(false);
-  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -61,8 +68,8 @@ export default function Chat() {
       <MainChatArea
         // chats={chats}
         isEmojiPickerOpen={isEmojiPickerOpen}
+        setIsEmojiPickerOpen={setIsEmojiPickerOpen}
         toggleEmojiPicker={toggleEmojiPicker}
-        onEmojiClick={onEmojiClick}
         emojiPickerRef={emojiPickerRef}
         toggleLeftSidebar={toggleLeftSidebar}
         toggleRightSidebar={toggleRightSidebar}

@@ -45,6 +45,9 @@
     "socket.io-client": "^4.8.1",
     "stripe": "^17.6.0",
     "webrtc-adapter": "^9.0.1",
+    "socket.io-client": "^4.8.1",
+    "stripe": "^17.6.0",
+    "sweetalert2": "^11.17.2",
     "yup": "^1.6.1"
   },
   "devDependencies": {

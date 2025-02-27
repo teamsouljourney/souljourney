@@ -195,7 +195,7 @@ export default function Navbar() {
                       to="/profile"
                       className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                     >
-                      {t("myProfil")}
+                      {t("myProfile")}
                     </NavLink>
                   </MenuItem>
                   <MenuItem>
