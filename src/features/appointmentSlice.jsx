@@ -10,14 +10,6 @@ const appointmentSlice = createSlice({
     singleAppointment: null,
     currentUserAppointments: [],
     isModalOpen: false,
-    newAppointment: {
-      userId: "",
-      therapistId: "",
-      appointmentDate: "",
-      startTime: "",
-      endTime: "",
-      videoCallUrl: "",
-    },
   },
   reducers: {
     fetchStart: (state) => {
@@ -59,9 +51,6 @@ const appointmentSlice = createSlice({
       );
       state.error = false;
     },
-    setNewAppointment: (state, { payload }) => {
-      state.newAppointment = { ...state.newAppointment, ...payload };
-    },
     resetNewAppointment: (state) => {
       state.newAppointment = {
         name: "",
@@ -86,7 +75,6 @@ export const {
   createAppointmentSuccess,
   updateAppointmentSuccess,
   deleteAppointmentSuccess,
-  setNewAppointment,
   resetNewAppointment,
   toggleModal,
 } = appointmentSlice.actions;
