@@ -36,12 +36,6 @@ const AboutDetail = () => {
             index % 2 === 1 ? "md:flex-row-reverse" : ""
           }`}
         >
-          <div className="md:w-1/2 text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">{section.title}</h2>
-            <div className="h-[3px] bg-[#8F5B8A] my-2 mx-auto md:mx-0 w-128"></div>
-            <p className="text-black opacity-80 text-base md:text-lg leading-relaxed">{section.text}</p>
-          </div>
-
           <div className="w-3/4 md:w-[400px] lg:w-[450px] h-auto">
             <img
               src={section.image}
@@ -49,6 +43,11 @@ const AboutDetail = () => {
               className="w-full h-auto rounded-l-[50%] rounded-r-[50%] object-cover"
             />
           </div>
+          <div className="md:w-1/2 text-center md:text-left">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">{section.title}</h2>
+            <div className="h-[3px] bg-mauve dark:bg-mauve-light my-2 mx-auto md:mx-0 w-128"></div>
+            <p className="opacity-80 text-base md:text-lg leading-relaxed">{section.text}</p>
+          </div>          
         </div>
       ))}
     </div>

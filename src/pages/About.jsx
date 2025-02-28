@@ -4,7 +4,7 @@ import AboutRow from '../components/About/AboutRow';
 
 const About = () => {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full bg-offWhite dark:bg-background-dark text-navy dark:text-offWhite-dark">
       {/* About Hero Section */}
       <section className="w-full min-h-[60vh]">
         <AboutHeroSection />

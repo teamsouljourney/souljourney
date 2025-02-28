@@ -38,7 +38,7 @@ const AboutRow = () => {
             <div key={index} className="flex flex-col items-center text-center space-y-4 w-full md:w-[30%]">
               <img src={item.image} alt="Frame" className="w-auto h-auto max-w-full" />
               <h2 className="text-xl font-semibold">{item.title}</h2>
-              <p className="text-base text-gray-700">{item.text}</p>
+              <p className="text-base">{item.text}</p>
             </div>
           ))}
         </div>
