@@ -59,20 +59,20 @@ const TeamDetailBody = ({ singleTherapist, id, currentUser }) => {
     <>
       <div className="grid grid-cols-1 gap-6 mx-auto w-full max-w-6xl p-8">
         {/* About */}
-        <div className="row-span-4 mx-auto pb-3 border-b-2 w-full">
+        <section id="about" className="scroll-mt-40 row-span-4 mx-auto pb-3 border-b-2 w-full">
           <h2 className="text-2xl font-semibold mb-4 ">About {/* {t("about")} */}</h2>
           <p className=" leading-relaxed">{description}</p>
-        </div>
+        </section>
         {/* Experience */}
-        <div className="row-span-3 mx-auto pb-3 border-b-2 w-full">
+        <section id="experience" className="scroll-mt-[40] row-span-3 mx-auto pb-3 border-b-2 w-full">
           <h2 className="text-2xl font-semibold mb-4 ">
             Proffesional experience
           </h2>
           <div className="">{experience}</div>
           <div className="">{graduation}</div>
-        </div>
+        </section>
         {/* Services */}
-        <div className="row-span-2 mx-auto pb-3 border-b-2 w-full">
+        <section id="services" className="scroll-mt-40 row-span-2 mx-auto pb-3 border-b-2 w-full">
           <h2 className="text-2xl font-semibold mb-4 ">Services</h2>
           <div className="flex flex-wrap justify-start items-center mt-2 gap-x-6">
             <div className="flex flex-row items-center  justify-center gap-2">
@@ -104,9 +104,9 @@ const TeamDetailBody = ({ singleTherapist, id, currentUser }) => {
               <span className="text-[1rem] font-semibold">Live Chat</span>
             </div>
           </div>
-        </div>
+        </section>
         {/* Reviews */}
-        <div className="row-span-2 mx-auto pb-3 w-full">
+        <section id="reviews" className="scroll-mt-40 row-span-2 mx-auto pb-3 w-full">
           <h2 className="text-2xl font-semibold mb-4 ">Reviews</h2>
 
           <p className=" leading-relaxed">
@@ -136,7 +136,7 @@ const TeamDetailBody = ({ singleTherapist, id, currentUser }) => {
               currentUser={currentUser}
             />
           )}
-        </div>
+        </section>
       </div>
     </>
   );
