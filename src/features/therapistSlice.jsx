@@ -10,6 +10,7 @@ const therapistSlice = createSlice({
     searchTerm:"",
     loading: false,
     error: false,
+    isModalOpen: false
   },
   reducers: {
     fetchStart: (state) => {
@@ -30,12 +31,15 @@ const therapistSlice = createSlice({
     },
     getFilterTherapistsSuccess: (state, { payload }) => {
       state.filteredTherapists = payload
-      console.log("Data from API:",payload);
       
     },
     setSearchTerm:(state, {payload}) =>{
       state.searchTerm=payload
     },
+
+  toggleModal: (state, { payload }) => {
+    state.isModalOpen = payload;
+  },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
@@ -51,6 +55,7 @@ export const {
   getTherapistTimeTableSuccess,
   getFilterTherapistsSuccess,
   setSearchTerm,
+  toggleModal
 } = therapistSlice.actions;
 
 export default therapistSlice.reducer;

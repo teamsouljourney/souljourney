@@ -5,7 +5,7 @@ const paginationSlice = createSlice({
 
   initialState: {
     pagUsers: [],
-    pagtherapists: [],
+    pagTherapists: [],
     pagCategories: [],
     pagAppointments: [],
     pagBlogs: [],

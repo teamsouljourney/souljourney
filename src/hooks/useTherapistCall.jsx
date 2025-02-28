@@ -13,11 +13,11 @@ import { toastErrorNotify } from "../helper/ToastNotify";
 const useTherapistCall = () => {
   const dispatch = useDispatch();
   const axiosWithToken = useAxios();
-
   const getAllTherapists = async () => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosPublic.get("therapists");
+      const {data} = await axiosPublic.get("therapists");
+
       dispatch(getAllTherapistsSuccess(data.data));
     } catch (error) {
       dispatch(fetchFail());
@@ -27,7 +27,6 @@ const useTherapistCall = () => {
       );
     }
   };
-
   const getSingleTherapist = async (id) => {
     dispatch(fetchStart());
     try {
@@ -41,7 +40,6 @@ const useTherapistCall = () => {
       );
     }
   };
-
   const getTherapistTimeTable = async (id) => {
     dispatch(fetchStart());
     try {
@@ -55,17 +53,11 @@ const useTherapistCall = () => {
       );
     }
   };
-
-  
   const getFilterTherapists = async (categoryId) => {
     dispatch(fetchStart());
-    console.log(categoryId);
-    
     try {
       const { data } = await axiosWithToken.get(`therapists?category=${categoryId}`);
       dispatch(getFilterTherapistsSuccess(data?.data));
-      console.log(data);
-      
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -76,7 +68,12 @@ const useTherapistCall = () => {
   };
 
 
-  return { getAllTherapists, getSingleTherapist, getTherapistTimeTable, getFilterTherapists };
+  return { 
+    getAllTherapists, 
+    getSingleTherapist, 
+    getTherapistTimeTable, 
+    getFilterTherapists 
+  };
 };
 
 export default useTherapistCall;
