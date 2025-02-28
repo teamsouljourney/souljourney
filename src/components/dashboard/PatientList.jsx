@@ -100,53 +100,59 @@ const PatientList = () => {
           </form>
 
           {/* Patient List */}
-          <ul className="mt-8 divide-y divide-offWhite-dark dark:divide-gray-700">
-            {filteredAppointments?.map(({ userId }, index) => (
-              <li
-                key={index}
-                className="flex items-center hover:bg-offWhite dark:hover:bg-navy rounded-md transition-colors duration-200"
-              >
-                <span className="w-2 h-16 md:h-20 bg-seaGreen-dark rounded-r-md" />
-                <div className="flex flex-1 p-3 md:p-4 gap-3 md:gap-4">
-                  {/* Avatar */}
-                  <div className="shrink-0">
-                    <img
-                      className="h-12 w-12 md:h-14 md:w-14 rounded-full"
-                      src={userId.image}
-                      alt=""
-                    />
-                  </div>
+          {filteredAppointments.length === 0 ? (
+            <p className="text-xs md:text-sm text-gray-500 mt-1">
+              {t("noPatient")}
+            </p>
+          ) : (
+            <ul className="mt-8 divide-y divide-offWhite-dark dark:divide-gray-700">
+              {filteredAppointments?.map(({ userId }, index) => (
+                <li
+                  key={index}
+                  className="flex items-center hover:bg-offWhite dark:hover:bg-navy rounded-md transition-colors duration-200"
+                >
+                  <span className="w-2 h-16 md:h-20 bg-seaGreen-dark rounded-r-md" />
+                  <div className="flex flex-1 p-3 md:p-4 gap-3 md:gap-4">
+                    {/* Avatar */}
+                    <div className="shrink-0">
+                      <img
+                        className="h-12 w-12 md:h-14 md:w-14 rounded-full"
+                        src={userId.image}
+                        alt=""
+                      />
+                    </div>
 
-                  {/* Patient Info */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex justify-between items-start">
-                      {/* Name and Email */}
-                      <div>
-                        <p className="text-sm md:text-base font-semibold text-navy dark:text-offWhite-light">
-                          {userId?.firstName.toUpperCase()}{" "}
-                          {userId.lastName.toUpperCase()}
-                        </p>
-                        <p className="text-xs md:text-sm text-gray-500 mt-1">
-                          {userId.email}
-                        </p>
-                      </div>
+                    {/* Patient Info */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex justify-between items-start">
+                        {/* Name and Email */}
+                        <div>
+                          <p className="text-sm md:text-base font-semibold text-navy dark:text-offWhite-light">
+                            {userId?.firstName.toUpperCase()}{" "}
+                            {userId.lastName.toUpperCase()}
+                          </p>
+                          <p className="text-xs md:text-sm text-gray-500 mt-1">
+                            {userId.email}
+                          </p>
+                        </div>
 
-                      {/* Time and Status */}
-                      <div className="flex flex-col items-center gap-2">
-                        <Notes currentUser={currentUser} />
-                        <div className="flex items-center gap-2">
-                          <div className="rounded-full bg-emerald-500/20 p-1">
-                            <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                        {/* Time and Status */}
+                        <div className="flex flex-col items-center gap-2">
+                          <Notes currentUser={currentUser} />
+                          <div className="flex items-center gap-2">
+                            <div className="rounded-full bg-emerald-500/20 p-1">
+                              <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                            </div>
+                            <p className="text-xs text-gray-500">Online</p>
                           </div>
-                          <p className="text-xs text-gray-500">Online</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </li>
-            ))}
-          </ul>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     );
