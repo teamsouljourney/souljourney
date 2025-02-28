@@ -84,7 +84,7 @@ const TeamDetailBody = ({ singleTherapist, id, currentUser }) => {
                   width: "20px",
                   height: "20px",
                 }}
-                className="inline-flex justify-center items-center  bg-navy-light "
+                className="inline-flex justify-center items-center  bg-navy-light dark:bg-offWhite-dark"
               ></span>
 
               <span className="text-[1rem] font-semibold">Video Call</span>
@@ -98,7 +98,7 @@ const TeamDetailBody = ({ singleTherapist, id, currentUser }) => {
                   width: "20px",
                   height: "20px",
                 }}
-                className="inline-flex justify-center items-center  bg-navy-light "
+                className="inline-flex justify-center items-center  bg-navy-light dark:bg-offWhite-dark"
               ></span>
 
               <span className="text-[1rem] font-semibold">Live Chat</span>

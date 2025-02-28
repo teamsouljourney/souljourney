@@ -73,7 +73,7 @@ const TeamDetailFeedbackCards = ({ singleTherapistFeedbacks }) => {
                   setSelectedFeedback(feedback);
                   setIsModalOpen(true);
                 }}
-                className="mt-2 px-2 py-1 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-700/50 dark:hover:bg-gray-700 text-seaGreen hover:text-seaGreen-dark border border-gray-200 dark:border-gray-600 rounded-md transition-colors"
+                className="mt-2 px-2 py-1 text-sm font-semibold bg-gray-50 hover:bg-gray-100 dark:bg-gray-700/50 dark:hover:bg-offWhite-dark text-seaGreen dark:text-seaGreen-light hover:text-seaGreen-dark dark:hover:text-seaGreen-dark border border-gray-200 dark:border-gray-600 rounded-md transition-colors"
               >
                 Read more
               </button>
