@@ -17,42 +17,39 @@
   "selfTest": "Kendi Testinizi Yapın",
   "getStarted": "Hadi Başlayalım",
   "seeMore": "Daha Fazla Gör",
-  "readMore":"Daha Fazla Oku",
-  "share":"Paylaş",
+  "readMore": "Daha Fazla Oku",
+  "share": "Paylaş",
   "seeLess": "Daha Az Gör",
   "close": "Kapat",
   "restart": "Yeniden başlat",
   "nowFreeRegister": "Şimdi Ücretsiz Kayıt Ol",
   "sendMessage": "Mesaj Gönder",
-  
-    "HOMEPAGE": "ANA SAYFA",
-    "onlineTherapy": "Soul Journey & Online Terapi",
-    "infoText": "Soul Journey olarak, şifa ve kişisel gelişim yolculuğunuzda sizi destekleyen online danışmanlık hizmeti sunuyoruz. Profesyonel terapistlerimiz, duygularınızı keşfetmeniz, netlik kazanmanız ve yaşam zorluklarının üstesinden gelmeniz için güvenli ve gizli bir alan sağlar—hem de evinizin konforunda. Neden Soul Journey? Esnek Seanslar: İstediğiniz zaman, istediğiniz yerden terapiye erişin. Kişiselleştirilmiş Destek: Size özel rehberlik sunuyoruz. Güvenli ve Gizli: Gizliliğiniz bizim önceliğimizdir. Bugün yolculuğunuza başlayın—şifa içeride başlar.",
-    "howItWorks": "Nasıl Çalışır",
-    "processSteps": [
-      {
-        "title": "Kayıt Ol veya Giriş Yap",
-        "description": "Başlamak için bir hesap oluşturun veya mevcut hesabınıza giriş yapın."
-      },
-      {
-        "title": "Tercihlerinizi Belirleyin",
-        "description": "Terapi türü, seans sıklığı ve hedeflerinizle ilgili tercihlerinizi belirleyin."
-      },
-      {
-        "title": "Terapistinizi Seçin",
-        "description": "Nitelikli terapistler arasından ihtiyaçlarınıza en uygun olanı seçin."
-      },
-      {
-        "title": "Seansa Katılın",
-        "description": "Planlanan saatte güvenli bir video görüşmesi veya sohbet platformu aracılığıyla terapi seansınıza başlayın."
-      }
-    ],
-    "ourBlogs": "Bloglarımız",
-    "ourBlogsText": "Blogumuz, psikolojik danışmanlık, kişisel gelişim ve ruh sağlığı konularında bilgilendirici makalelerle dolu değerli bir kaynaktır. Deneyimli psikolog, terapist ve danışman ekibimiz tarafından yazılan makaleler, kendinizi daha iyi anlamanıza ve daha sağlıklı bir bakış açısı geliştirmenize yardımcı olmayı amaçlamaktadır. İşte blogumuzda sizi bekleyenler.",
-    "homeCardDate": "Tarih"
-  ,
-  
 
+  "HOMEPAGE": "ANA SAYFA",
+  "onlineTherapy": "Soul Journey & Online Terapi",
+  "infoText": "Soul Journey olarak, şifa ve kişisel gelişim yolculuğunuzda sizi destekleyen online danışmanlık hizmeti sunuyoruz. Profesyonel terapistlerimiz, duygularınızı keşfetmeniz, netlik kazanmanız ve yaşam zorluklarının üstesinden gelmeniz için güvenli ve gizli bir alan sağlar—hem de evinizin konforunda. Neden Soul Journey? Esnek Seanslar: İstediğiniz zaman, istediğiniz yerden terapiye erişin. Kişiselleştirilmiş Destek: Size özel rehberlik sunuyoruz. Güvenli ve Gizli: Gizliliğiniz bizim önceliğimizdir. Bugün yolculuğunuza başlayın—şifa içeride başlar.",
+  "howItWorks": "Nasıl Çalışır",
+  "processSteps": [
+    {
+      "title": "Kayıt Ol veya Giriş Yap",
+      "description": "Başlamak için bir hesap oluşturun veya mevcut hesabınıza giriş yapın."
+    },
+    {
+      "title": "Tercihlerinizi Belirleyin",
+      "description": "Terapi türü, seans sıklığı ve hedeflerinizle ilgili tercihlerinizi belirleyin."
+    },
+    {
+      "title": "Terapistinizi Seçin",
+      "description": "Nitelikli terapistler arasından ihtiyaçlarınıza en uygun olanı seçin."
+    },
+    {
+      "title": "Seansa Katılın",
+      "description": "Planlanan saatte güvenli bir video görüşmesi veya sohbet platformu aracılığıyla terapi seansınıza başlayın."
+    }
+  ],
+  "ourBlogs": "Bloglarımız",
+  "ourBlogsText": "Blogumuz, psikolojik danışmanlık, kişisel gelişim ve ruh sağlığı konularında bilgilendirici makalelerle dolu değerli bir kaynaktır. Deneyimli psikolog, terapist ve danışman ekibimiz tarafından yazılan makaleler, kendinizi daha iyi anlamanıza ve daha sağlıklı bir bakış açısı geliştirmenize yardımcı olmayı amaçlamaktadır. İşte blogumuzda sizi bekleyenler.",
+  "homeCardDate": "Tarih",
   "FAQ": "FAQ",
   "faq": "S.S.S",
   "faqTitle": "Sıkça Sorulan Sorular",
@@ -304,7 +301,7 @@
   "patientList": "Hasta Listesi",
   "searchPatient": "Hasta ara...",
   "myBlogs": "Bloglarım",
-  "noPatient": "Kayıtlı hasta bulunmamaktadır.",
+  "noPatient": "Randevusu olan hastanız yoktur.",
   "noBlogs": "Henüz blog yazısı yok. Hemen yazmaya başla!",
   "notes": "Notlar"
 }
