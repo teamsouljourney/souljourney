@@ -24,6 +24,19 @@ const UserManagement = () => {
     getAllUsers();
   }, []);
 
+  console.log(pagUsers);
+
+  const displayedUsers =
+    searchTerm.trim() === ""
+      ? pagUsers
+      : pagUsers?.filter((user) =>
+          [user.userName, user.email]
+            .filter(Boolean)
+            .some((name) =>
+              name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+
   return (
     <div className="container py-10 mx-auto ">
       <div className="bg-white border rounded-lg shadow-sm">
@@ -50,7 +63,7 @@ const UserManagement = () => {
               <div className="col-span-2">Status</div>
               <div className="col-span-2 text-right">Actions</div>
             </div>
-            {pagUsers?.map((user) => (
+            {displayedUsers?.map((user) => (
               <UserRow key={user._id} user={user} />
             ))}
           </div>
