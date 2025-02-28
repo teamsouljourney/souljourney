@@ -15,14 +15,14 @@ const ListToolbar = ({
             <input
               type="text"
               placeholder={placeholder}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-navy focus:outline-none"
               value={searchTerm}
               onChange={(e) => onSearchChange(e.target.value)}
             />
           </div>
         )}
 
-        <div className="flex gap-2">{actions}</div>
+        {actions && <div className="flex gap-2">{actions}</div>}
       </div>
     </div>
   );

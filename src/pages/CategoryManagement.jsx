@@ -24,6 +24,17 @@ const CategoryManagement = () => {
     getAllCategories();
   }, []);
 
+  const displayedCategories =
+    searchTerm.trim() === ""
+      ? pagCategories
+      : pagCategories?.filter((category) =>
+          [category.name]
+            .filter(Boolean)
+            .some((name) =>
+              name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+
   return (
     <div className="container py-10 mx-auto ">
       <div className="bg-white border rounded-lg shadow-sm">
@@ -49,7 +60,7 @@ const CategoryManagement = () => {
               <div className="col-span-4">Created At</div>
               <div className="col-span-4 text-right">Actions</div>
             </div>
-            {pagCategories?.map((category) => (
+            {displayedCategories?.map((category) => (
               <CategoryRow key={category._id} category={category} />
             ))}
           </div>
