@@ -30,7 +30,8 @@ export default function MyBlogList() {
     (blog) => blog.therapistId._id === currentUser._id
   );
 
-  console.log(filteredBlogsByTherapist);
+  if (!currentUser.isTherapist) return null;
+
   return (
     <Container
       maxWidth="lg"

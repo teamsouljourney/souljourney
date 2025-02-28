@@ -1,13 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedUser } from "../../features/chatSlice";
-import { useSocket } from "../../context/SocketContext";
 
 export default function LeftSidebar({ isOpen, toggleSidebar }) {
   let { currentUserAppointments } = useSelector((state) => state.appointments);
   const { currentUser } = useSelector((state) => state.auth);
   const { chats, selectedUser } = useSelector((state) => state.chats);
   const dispatch = useDispatch();
-  const socket = useSocket();
 
   console.log(chats);
   console.log(currentUserAppointments);
