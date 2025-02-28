@@ -224,8 +224,8 @@ export default function MainChatArea({
                   <div
                     className={`text-navy-light rounded-3xl p-3 max-w-xs sm:max-w-md ${
                       chat.senderId === currentUser?._id
-                        ? "bg-pastelGreen-light"
-                        : "bg-mauve-light/50"
+                        ? "bg-pastelGreen-light rounded-br-none"
+                        : "bg-mauve-light/50 rounded-tl-none"
                     }`}
                   >
                     <p className="overflow-auto break-words">{chat?.content}</p>
