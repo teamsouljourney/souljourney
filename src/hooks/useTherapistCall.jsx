@@ -1,5 +1,5 @@
 import useAxios, { axiosPublic } from "../hooks/useAxios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   fetchStart,
   fetchFail,
@@ -8,11 +8,16 @@ import {
   getTherapistTimeTableSuccess,
   getFilterTherapistsSuccess,
 } from "../features/therapistSlice";
-import { toastErrorNotify } from "../helper/ToastNotify";
+import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
+import usePaginationCall from "./usePaginationCall";
 
 const useTherapistCall = () => {
   const dispatch = useDispatch();
   const axiosWithToken = useAxios();
+  const { getDataByPage } = usePaginationCall();
+  const { currentPage, itemsPerPage } = useSelector(
+    (state) => state.pagination
+  );
   const getAllTherapists = async () => {
     dispatch(fetchStart());
     try {
@@ -67,12 +72,46 @@ const useTherapistCall = () => {
     }
   };
 
+  //* Delete Therapist
+    const deleteTherapist = async (id) => {
+      dispatch(fetchStart());
+      try {
+        await axiosWithToken.delete(`therapists/${id}`);
+        toastSuccessNotify("Therapist deleted successfully!");
+      } catch (error) {
+        dispatch(fetchFail());
+        toastErrorNotify(
+          error.response?.data?.message || "Failed to delete therapists."
+        );
+      } finally {
+        getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
+      }
+    };
+  
+    //* Update Therapist
+    const updateTherapist = async (id, updatedTherapist) => {
+      dispatch(fetchStart());
+      try {
+        await axiosWithToken.patch(`therapists/${id}`, updatedTherapist);
+        toastSuccessNotify("Therapist updated successfully!");
+      } catch (error) {
+        dispatch(fetchFail());
+        toastErrorNotify(
+          error.response?.data?.message || "Failed to update therapists."
+        );
+      } finally {
+        getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
+      }
+    };
+
 
   return { 
     getAllTherapists, 
     getSingleTherapist, 
     getTherapistTimeTable, 
-    getFilterTherapists 
+    getFilterTherapists,
+    deleteTherapist,
+    updateTherapist
   };
 };
 
