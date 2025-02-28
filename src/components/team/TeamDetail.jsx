@@ -96,44 +96,44 @@ const TeamDetail = () => {
       </div>
       
       {/* Tab Navigation */}
-      <div className="sticky top-[90px] z-10 w-full max-w-6xl h-100 px-8 bg-offWhite dark:bg-background-dark border-b-2 border-gray-200 dark:border-gray-700">
+      <div className="sticky top-[80px] z-10 w-full max-w-6xl h-100 px-8 py-4 bg-offWhite dark:bg-background-darker border-b-2 border-gray-200 dark:border-gray-700">
         <div className="max-w-6xl mx-auto px-4 overflow-x-auto">
           <div className="flex justify-start items-end space-x-4 md:space-x-8 lg:space-x-16 min-w-max">
             <button 
               onClick={() => scrollToSection("about")}
-              className={`py-4 px-1 border-b-2 text-sm md:text-base lg:text-lg whitespace-nowrap ${
+              className={`py-2 px-1 border-b-2 text-sm md:text-base lg:text-lg whitespace-nowrap ${
                 activeTab === "about"
                   ? "border-seaGreen text-seaGreen"
-                  : "border-transparent text-gray-500 dark:text-gray-400 hover:text-seaGreen hover:border-seaGreen"
-              } font-medium transition-colors duration-200`}
-            >About me</button>
+                  : "border-transparent  hover:text-seaGreen hover:border-seaGreen"
+              } font-bold transition-colors duration-200`}
+            >About</button>
             <button
               onClick={() => scrollToSection("experience")}
-              className={`py-4 px-1 border-b-2 text-sm md:text-base lg:text-lg whitespace-nowrap ${
+              className={`py-2 px-1 border-b-2 text-sm md:text-base lg:text-lg whitespace-nowrap ${
                 activeTab === "experience"
                   ? "border-seaGreen text-seaGreen"
-                  : "border-transparent text-gray-500 dark:text-gray-400 hover:text-seaGreen hover:border-seaGreen"
-              } font-medium transition-colors duration-200`}
+                  : "border-transparent hover:text-seaGreen hover:border-seaGreen"
+              } font-bold transition-colors duration-200`}
             >
-              Professional experience
+              Experience
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className={`py-4 px-1 border-b-2 text-sm md:text-base lg:text-lg whitespace-nowrap ${
+              className={`py-2 px-1 border-b-2 text-sm md:text-base lg:text-lg whitespace-nowrap ${
                 activeTab === "services"
                   ? "border-seaGreen text-seaGreen"
-                  : "border-transparent text-gray-500 dark:text-gray-400 hover:text-seaGreen hover:border-seaGreen"
-              } font-medium transition-colors duration-200`}
+                  : "border-transparent  hover:text-seaGreen hover:border-seaGreen"
+              } font-bold transition-colors duration-200`}
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("reviews")}
-              className={`py-4 px-1 border-b-2 text-sm md:text-base lg:text-lg whitespace-nowrap ${
+              className={`py-2 px-1 border-b-2 text-sm md:text-base lg:text-lg whitespace-nowrap ${
                 activeTab === "reviews"
                   ? "border-seaGreen text-seaGreen"
-                  : "border-transparent text-gray-500 dark:text-gray-400 hover:text-seaGreen hover:border-seaGreen"
-              } font-medium transition-colors duration-200`}
+                  : "border-transparent hover:text-seaGreen hover:border-seaGreen"
+              } font-bold transition-colors duration-200`}
             >
               Reviews
             </button>

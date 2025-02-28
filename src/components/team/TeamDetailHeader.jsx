@@ -15,7 +15,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
         {/* Profile Pic */}
         <div className="lg:col-span-1 flex justify-center">
           <img
-            className="w-48 h-48 rounded-full border-4 border-seaGreen object-cover bg-offWhite"
+            className="w-48 h-48 rounded-full border-4 border-seaGreen dark:border-seaGreen-dark object-cover bg-offWhite"
             src={image || avatar}
             alt={firstName}
           />
@@ -33,7 +33,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
             <div className="flex flex-wrap justify-center lg:justify-start mt-4 gap-2 text-lg">
               {therapistCategories.map((category) => (
                 <span
-                  className="inline-block px-2 py-1 bg-[#E8F5E9] text-seaGreen rounded-full text-sm"
+                  className="inline-block px-2 py-1 bg-[#E8F5E9] dark:bg-offWhite-dark text-seaGreen dark:text-seaGreen-dark rounded-full text-sm"
                   key={category._id}
                 >
                   {category.name}
@@ -51,7 +51,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
                     width: "20px",
                     height: "20px",
                   }}
-                  className="inline-flex justify-center items-center  bg-navy-light "
+                  className="inline-flex justify-center items-center  bg-navy-light dark:bg-offWhite-dark"
                 ></span>
 
                 <span className="text-[1rem] font-semibold">Video Call {/* {t("videoCall")} */}</span>
@@ -65,7 +65,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
                     width: "20px",
                     height: "20px",
                   }}
-                  className="inline-flex justify-center items-center  bg-navy-light "
+                  className="inline-flex justify-center items-center  bg-navy-light dark:bg-offWhite-dark"
                 ></span>
 
                 <span className="text-[1rem] font-semibold">Live Chat{/* {t("liveChat")} */}</span>
