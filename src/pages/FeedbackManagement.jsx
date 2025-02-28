@@ -18,6 +18,22 @@ const FeedbackManagement = () => {
     getAllFeedbacks();
   }, []);
 
+  const displayedFeedbacks =
+    searchTerm.trim() === ""
+      ? pagFeedbacks
+      : pagFeedbacks?.filter((feedback) =>
+          [
+            feedback.therapistId?.firstName,
+            feedback.therapistId?.lastName,
+            feedback.userId?.firstName,
+            feedback.userId?.lastName,
+          ]
+            .filter(Boolean)
+            .some((name) =>
+              name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+
   return (
     <div className="container py-10 mx-auto ">
       <div className="bg-white border rounded-lg shadow-sm">
@@ -36,7 +52,7 @@ const FeedbackManagement = () => {
               <div className="col-span-2 text-right">Date</div>
               <div className="col-span-2 text-right">Actions</div>
             </div>
-            {pagFeedbacks?.map((feedback) => (
+            {displayedFeedbacks?.map((feedback) => (
               <FeedbackRow key={feedback._id} feedback={feedback} />
             ))}
           </div>
