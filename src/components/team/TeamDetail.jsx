@@ -96,7 +96,7 @@ const TeamDetail = () => {
       </div>
       
       {/* Tab Navigation */}
-      <div className="sticky top-[90px] z-10 w-full max-w-6xl h-100 px-8 bg-offWhite dark:bg-background-dark border-b-2 border-gray-200 dark:border-gray-700">
+      <div className="sticky top-[80px] -mt-[1px] z-10 w-full max-w-6xl h-100 px-8 bg-offWhite dark:bg-background-dark border-b-2 border-gray-200 dark:border-gray-700">
         <div className="max-w-6xl mx-auto px-4 overflow-x-auto">
           <div className="flex justify-start items-end space-x-4 md:space-x-8 lg:space-x-16 min-w-max">
             <button 
