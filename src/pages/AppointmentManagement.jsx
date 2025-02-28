@@ -15,6 +15,22 @@ const AppointmentManagement = () => {
     getAllAppointments();
   }, []);
 
+  const displayedAppointments =
+    searchTerm.trim() === ""
+      ? pagAppointments
+      : pagAppointments?.filter((appointment) =>
+          [
+            appointment.therapistId?.firstName,
+            appointment.therapistId?.lastName,
+            appointment.userId?.firstName,
+            appointment.userId?.lastName,
+          ]
+            .filter(Boolean)
+            .some((name) =>
+              name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+
   return (
     <div className="container py-10 mx-auto ">
       <div className="bg-white border rounded-lg shadow-sm">
@@ -33,7 +49,7 @@ const AppointmentManagement = () => {
               <div className="col-span-3 md:text-center">Time</div>
               <div className="col-span-1 text-right">Actions</div>
             </div>
-            {pagAppointments?.map((appointment) => (
+            {displayedAppointments?.map((appointment) => (
               <AppointmentRow key={appointment._id} appointment={appointment} />
             ))}
           </div>
