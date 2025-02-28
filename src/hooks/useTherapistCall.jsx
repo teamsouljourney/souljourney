@@ -71,6 +71,21 @@ const useTherapistCall = () => {
       );
     }
   };
+  //* Create Therapist
+    const createTherapist = async (therapistData) => {
+      dispatch(fetchStart());
+      try {
+        const { data } = await axiosWithToken.post("therapists", therapistData);
+        toastSuccessNotify(
+          "Therapist created successfully! Please check email to verify that account!"
+        );
+      } catch (error) {
+        dispatch(fetchFail());
+        toastErrorNotify(error.response.data.message, "Failed to create therapist.");
+      } finally {
+        getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
+      }
+    };
 
   //* Delete Therapist
     const deleteTherapist = async (id) => {
@@ -104,6 +119,25 @@ const useTherapistCall = () => {
       }
     };
 
+    //* Change Therapist Status
+      const changeTherapistStatus = async (id, isActive) => {
+        dispatch(fetchStart());
+        try {
+          await axiosWithToken.patch(`therapists/${id}/status`);
+          toastSuccessNotify(
+            `Therapist ${isActive ? "disabled" : "activated"} successfully!`
+          );
+        } catch (error) {
+          dispatch(fetchFail());
+          toastErrorNotify(
+            error.response?.data?.message || "Failed to change therapist status."
+          );
+        } finally {
+          getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
+        }
+      };
+    
+
 
   return { 
     getAllTherapists, 
@@ -111,7 +145,9 @@ const useTherapistCall = () => {
     getTherapistTimeTable, 
     getFilterTherapists,
     deleteTherapist,
-    updateTherapist
+    updateTherapist,
+    changeTherapistStatus,
+    createTherapist
   };
 };
 

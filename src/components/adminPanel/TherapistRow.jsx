@@ -5,14 +5,14 @@ import {
   } from "@heroicons/react/24/outline";
   import useTherapistCall from "../../hooks/useTherapistCall";
   import { useDispatch } from "react-redux";
-  import { toggleModal } from "../../features/therapistSlice";
+  import { setNewTherapist, toggleModal } from "../../features/therapistSlice";
   
   const TherapistRow = ({therapist}) => {
     const dispatch = useDispatch();
     const { changeTherapistStatus, deleteTherapist} = useTherapistCall();
   
     const handleUpdateTherapist = (id) => {
-    //   dispatch(setNewUser(therapist));
+      dispatch(setNewTherapist(therapist));
       dispatch(toggleModal(true));
     };
   
