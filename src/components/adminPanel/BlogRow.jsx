@@ -17,7 +17,7 @@ const BlogRow = ({ blog }) => {
       </div>
       <div className="flex flex-col w-full md:w-3/12 md:flex-row md:items-center">
         <span className="text-sm">
-          {blog?.therapistId.firstName + " " + blog?.therapistId.lastName}
+          {blog?.therapistId?.firstName + " " + blog?.therapistId?.lastName}
         </span>
       </div>
       <div className="flex flex-col w-full md:w-2/12 md:flex-row md:items-center">
