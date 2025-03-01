@@ -23,7 +23,7 @@ const AboutDetail = () => {
   ];
 
   return (
-    <div className="space-y-12 px-4 md:px-12 lg:px-20 py-12">
+    <div className="space-y-4 px-4 md:px-12 lg:px-20 py-12">
       <div className="text-center">
         <h1 className="text-3xl md:text-4xl font-bold pb-3">Empowering Minds, Enhancing Lives</h1>
         <img src={Vector1} alt="Vector" className="mx-auto w-full max-w-[500px]" />
@@ -32,7 +32,7 @@ const AboutDetail = () => {
       {content.map((section, index) => (
         <div
           key={index}
-          className={`flex flex-col md:flex-row items-center justify-between py-8 md:py-12 gap-6 md:gap-12 ${
+          className={`flex flex-col md:flex-row items-center justify-between gap-2 md:gap-6 ${
             index % 2 === 1 ? "md:flex-row-reverse" : ""
           }`}
         >
@@ -45,9 +45,11 @@ const AboutDetail = () => {
           </div>
           <div className="md:w-1/2 text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-bold mb-3">{section.title}</h2>
-            <div className="h-[3px] bg-mauve dark:bg-mauve-light my-2 mx-auto md:mx-0 w-128"></div>
-            <p className="opacity-80 text-base md:text-lg leading-relaxed">{section.text}</p>
-          </div>          
+            <div className="h-[3px] bg-[#8F5B8A] my-2 mx-auto md:mx-0 w-128"></div>
+            <p className="opacity-80 text-base lg:text-lg leading-relaxed">{section.text}</p>
+          </div>
+
+          
         </div>
       ))}
     </div>

@@ -26,9 +26,6 @@ const AboutHeroSection = () => {
           Welcome to our platform. Where we connect clients with experienced therapists to provide accessible and professional online therapy sessions. Our mission is to create a safe and supportive environment for your mental well-being.
         </p>
 
-        <button className="bg-[#2E5077] text-white py-2 px-6 rounded-md hover:bg-seaGreen-dark dark:hover:bg-offWhite-dark dark:hover:text-background-dark dark:hover:font-semibold transition-all mt-6">
-          See More
-        </button>
         
       </div>
     </div>
