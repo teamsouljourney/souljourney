@@ -53,11 +53,11 @@ const PricingForm = () => {
 
   return (
     <div>
-    <section className="dark:bg-gray-900 bg-offWhite">
+    <section className="">
   <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
       <div className="mx-auto max-w-screen-md text-center mb-4 lg:mb-6">
-          <h2 className="mb-4 text-center text-3xl md:text-4xl tracking-tight  text-navy dark:text-white">{ t("plansPricing")}</h2>
-          <p className="mb-5 font-light text-navy-light gray-500 sm:text-xl dark:text-gray-400">{ t("plansPricingText")}</p>
+          <h2 className="mb-4 text-center text-3xl md:text-4xl tracking-tight dark:text-white">{ t("plansPricing")}</h2>
+          <p className="mb-5 font-light sm:text-xl">{ t("plansPricingText")}</p>
       </div>
       <div className="flex flex-col sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 mb-4">
         <Button type="type19"
@@ -74,7 +74,7 @@ const PricingForm = () => {
 
       <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
           {/* <!-- Pricing Card --> */}
-          <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-navy bg-white  rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+          <div className="flex flex-col p-6 mx-auto max-w-lg text-center bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-background-darker dark:text-white">
               <h3 className="mb-4 text-2xl font-semibold">Free</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">{ t("freeText")} </p>
               <div className="flex justify-center items-baseline my-8">
