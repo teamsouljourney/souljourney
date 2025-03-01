@@ -4,18 +4,18 @@ import ServicesDetail from "../components/ServicesPage/ServicesDetail"
 
 const Services = () => {
   return (
-    <div className="flex flex-col">
-      {/* About Hero Section: %20 */}
+    <div className="flex flex-col bg-offWhite dark:bg-background-dark text-navy dark:text-offWhite-dark">
+      {/* Services Hero Section: %20 */}
       <div className="w-full h-1/5">
         <ServicesHeroSection />
       </div>
 
-      {/* About Details: %60 */}
+      {/* Services Details: %60 */}
       <div className="w-full h-3/5">
         <ServicesDetail />
       </div>
 
-      {/* About Row: %20 */}
+      {/* Services Row: %20 */}
       <div className="w-full h-1/5">
         {/* <ServicesRow /> */}
       </div>

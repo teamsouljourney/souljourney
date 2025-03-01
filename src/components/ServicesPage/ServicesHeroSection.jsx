@@ -17,9 +17,7 @@ const ServicesHeroSection = () => {
           className="text-lg md:text-xl lg:text-2xl mt-4 px-2 md:px-8 lg:px-20"
           style={{ fontFamily: "'Urbanist', sans-serif" }}
         >
-          At our psychological counseling center, we offer a wide range of services
-          designed to help individuals improve their emotional and mental well-being.
-          Each category is tailored to meet your specific needs and goals.
+          At our psychological counseling center, we offer a wide range of services designed to help individuals improve their emotional and mental well-being. Each category is tailored to meet your specific needs and goals.
         </p>
       </div>
     </div>
