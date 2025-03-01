@@ -6,10 +6,17 @@ const therapistSlice = createSlice({
     therapists: [],
     filteredTherapists: [],
     singleTherapist: null,
+    newTherapist: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: ""
+    },    
     therapistTimeTable: [],
     searchTerm:"",
     loading: false,
     error: false,
+    isModalOpen: false
   },
   reducers: {
     fetchStart: (state) => {
@@ -30,12 +37,25 @@ const therapistSlice = createSlice({
     },
     getFilterTherapistsSuccess: (state, { payload }) => {
       state.filteredTherapists = payload
-      console.log("Data from API:",payload);
       
     },
     setSearchTerm:(state, {payload}) =>{
       state.searchTerm=payload
     },
+    setNewTherapist: (state, { payload }) => {
+      state.newTherapist = { ...state.newTherapist, ...payload };
+    },
+    resetNewTherapist: (state) => {
+      state.newTherapist = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: ""
+      };
+    },
+  toggleModal: (state, { payload }) => {
+    state.isModalOpen = payload;
+  },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
@@ -51,6 +71,9 @@ export const {
   getTherapistTimeTableSuccess,
   getFilterTherapistsSuccess,
   setSearchTerm,
+  toggleModal,
+  setNewTherapist,
+  resetNewTherapist
 } = therapistSlice.actions;
 
 export default therapistSlice.reducer;
