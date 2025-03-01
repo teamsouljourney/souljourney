@@ -7,7 +7,7 @@ import Quiz from "../components/home/Quiz";
 
 const Home = () => {
   return (
-    <div className="bg-offWhite">
+    <div className="bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
       <HeroSection />
       <InfoSection />
       <ProcessSection />
