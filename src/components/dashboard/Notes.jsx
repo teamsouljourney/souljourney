@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import NotesModal from "./NotesModal";
 
-const Notes = ({ currentUser }) => {
+const Notes = ({ therapistId, userId }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const { t } = useTranslation();
+
+  console.log("User ID:", userId);
 
   return (
     <div>
@@ -15,6 +18,7 @@ const Notes = ({ currentUser }) => {
       >
         {t("notes")}
       </button>
+      <NotesModal open={open} onClose={handleClose} userId={userId} />
     </div>
   );
 };
