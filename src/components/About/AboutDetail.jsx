@@ -32,7 +32,7 @@ const AboutDetail = () => {
       {content.map((section, index) => (
         <div
           key={index}
-          className={`flex flex-col md:flex-row items-center justify-between gap-2 md:gap-6 ${
+          className={`flex flex-col md:flex-row items-center justify-between gap-2 md:gap-6 border-b-2 pb-6 border-gray-200 ${
             index % 2 === 1 ? "md:flex-row-reverse" : ""
           }`}
         >

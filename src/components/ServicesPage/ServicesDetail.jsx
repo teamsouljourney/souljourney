@@ -87,7 +87,7 @@ const ServicesDetail = () => {
             />
           </div>
           <div className="lg:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="w-full text-center md:text-left mt-4">
+            <div className="w-full text-center lg:text-left mt-4">
                <h2 className="text-2xl md:text-3xl font-bold ">{section.title}</h2>
             </div>
            
