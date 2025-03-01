@@ -65,9 +65,9 @@ const ServicesDetail = () => {
   ];
 
   return (
-    <div className="space-y-16 px-6 md:px-24 lg:px-48 py-12 md:py-24">
+    <div className="space-y-4 px-4 md:px-12 lg:px-20 py-12 ">
       <div>
-        <h1 className="text-4xl font-bold text-center pb-5">
+        <h1 className="text-3xl md:text-4xl font-bold text-center pb-3">
           Empowering Minds, Enhancing Lives
         </h1>
       </div>
@@ -75,23 +75,10 @@ const ServicesDetail = () => {
       {content.map((section, index) => (
         <div
           key={index}
-          className={`flex flex-col md:flex-row items-center justify-center py-12 px-6 space-y-8 md:space-y-0 md:space-x-8 lg:space-x-16 ${
-            index % 2 === 1 ? "md:flex-row-reverse" : ""
+          className={`flex flex-col lg:flex-row items-center justify-center py-12 px-6 space-y-8 md:space-y-0 md:space-x-8 lg:space-x-16 border-b-2 border-gray-200 ${
+            index % 2 === 1 ? "lg:flex-row-reverse" : ""
           }`}
         >
-          <div className="md:w-1/2 text-center md:text-left">
-            <h2 className="text-3xl font-bold mb-4">{section.title}</h2>
-            <div className="w-128 h-1 bg-[#8F5B8A] my-4 mx-auto md:mx-0"></div>
-            <p className="text-black opacity-80 text-lg px-2 md:px-0">
-              {section.text}
-            </p>
-            <ul className="list-disc list-inside text-lg font-medium text-gray-700 mt-4">
-              {section.list.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          </div>
-
           <div className="w-full md:w-1/2 flex justify-center">
             <img
               src={section.image}
@@ -99,12 +86,30 @@ const ServicesDetail = () => {
               className="w-[300px] h-auto md:w-[400px] rounded-full object-cover shadow-lg"
             />
           </div>
+          <div className="lg:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="w-full text-center lg:text-left mt-4">
+               <h2 className="text-2xl md:text-3xl font-bold ">{section.title}</h2>
+            </div>
+           
+            <div className="w-128 h-1 bg-[#8F5B8A] my-2 mx-auto md:mx-0"></div>
+            <p className="opacity-80 text-md md:text-lg px-2 md:px-0">
+              {section.text}
+            </p>
+            <ul className="list-disc list-inside text-md md:text-lg font-medium text-left mt-4">
+              {section.list.map((item, i) => (
+                <li key={i} className="text-seaGreen-dark dark:text-seaGreen-light"><i>{item}</i></li>
+              ))}
+            </ul>
+          </div>
+          
         </div>
       ))}
-
-      <h2 className="text-4xl font-bold text-center pb-5">
-        Embark on Your Soul’s Journey - Healing Starts Anytime, Anywhere
+      <div className="py-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-center py-5">
+        Embark on Your Soul’s Journey - Healing Starts Anytime, Anywhere...
       </h2>
+      </div>
+      
     </div>
   );
 };

@@ -48,6 +48,7 @@ export default {
         background: {
           DEFAULT: "#F7F7F7", // Background (Main color)
           light: "#F7F7F7", // Light Background
+          lightdark: "#4b5563 ",
           dark: "#374151", // gray-700
           darker: "#1f2937",  // gray-800
         }

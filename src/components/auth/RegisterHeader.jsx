@@ -7,11 +7,12 @@ const RegisterHeader = () => {
   return (
     <Grid xs={12} mb={1}>
       <Typography
-        variant="h4"
+        variant="h5"
         color="primary"
         align="center"
         sx={{
           fontWeight: "600",
+          paddingTop: "",
           fontSize: {
             xs: "1.5rem",
             sm: "2rem",

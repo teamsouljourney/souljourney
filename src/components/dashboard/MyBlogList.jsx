@@ -26,11 +26,12 @@ export default function MyBlogList() {
     getAllBlogs();
   }, []);
 
-  const filteredBlogsByTherapist = blogs.filter(
-    (blog) => blog.therapistId._id === currentUser._id
+  const filteredBlogsByTherapist = blogs?.filter(
+    (blog) => blog?.therapistId?._id === currentUser?._id
   );
 
-  console.log(filteredBlogsByTherapist);
+  if (!currentUser?.isTherapist) return null;
+
   return (
     <Container
       maxWidth="lg"
@@ -78,7 +79,7 @@ export default function MyBlogList() {
       >
         {filteredBlogsByTherapist?.map((item) => (
           <ImageListItem
-            key={item.title}
+            key={item?.title}
             sx={{
               width: "100%",
               height: "100%",
@@ -88,9 +89,9 @@ export default function MyBlogList() {
                 cursor: "pointer",
               },
             }}
-            onClick={() => navigate(`/blogs/${item._id}`)}
+            onClick={() => navigate(`/blogs/${item?._id}`)}
           >
-            <img src={item.image} alt={item.title} loading="lazy" />
+            <img src={item?.image} alt={item?.title} loading="lazy" />
             <ImageListItemBar
               title={
                 <Typography
@@ -104,10 +105,10 @@ export default function MyBlogList() {
                     textOverflow: "ellipsis",
                   }}
                 >
-                  {item.title}
+                  {item?.title}
                 </Typography>
               }
-              subtitle={new Date(item.createdAt).toLocaleDateString("de-DE")}
+              subtitle={new Date(item?.createdAt).toLocaleDateString("de-DE")}
               actionIcon={
                 <IconButton
                   sx={{
@@ -119,10 +120,10 @@ export default function MyBlogList() {
                     position: "relative",
                     zIndex: 10,
                   }}
-                  aria-label={`info about ${item.therapistId.title}`}
+                  aria-label={`info about ${item?.therapistId?.title}`}
                   onClick={(event) => {
                     event.stopPropagation();
-                    navigate(`/profile/write-blog/${item._id}`);
+                    navigate(`/profile/write-blog/${item?._id}`);
                   }}
                 >
                   <EditNoteRoundedIcon />

@@ -2,34 +2,68 @@ import { useState, useRef, useEffect } from "react";
 import LeftSidebar from "../components/chat/LeftSidebar";
 import MainChatArea from "../components/chat/MainChatArea";
 import RightSidebar from "../components/chat/RightSidebar";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import useChatCall from "../hooks/useChatCall";
+import useAppointmentCall from "../hooks/useAppointmentCall";
 
 export default function Chat() {
-  // const [chats, setChats] = useState([]);
   const [isLeftSidebarOpen, setIsLeftSidebarOpen] = useState(false);
   const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
   const [isEmojiPickerOpen, setIsEmojiPickerOpen] = useState(false);
   const rightSidebarRef = useRef(null);
   const emojiPickerRef = useRef(null);
-  // const { chats } = useSelector((state) => state.chats);
-  // const { getAllChats } = useChatCall();
+  const { chats, selectedUser, socket, isConnected } = useSelector(
+    (state) => state.chats
+  );
+  const { getAllChats, initializeSocket } = useChatCall();
+  const { currentUser } = useSelector((state) => state.auth);
+  const { getUserAppointments } = useAppointmentCall();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   getAllChats();
-  // }, []);
+  // Fetch user appointments when component mounts
+  useEffect(() => {
+    if (currentUser?._id) {
+      getUserAppointments(currentUser._id);
+    }
+  }, [currentUser]);
 
-  // console.log(chats);
+  // Initialize socket when component mounts
+  useEffect(() => {
+    if (currentUser?._id && !socket) {
+      initializeSocket();
+    }
+  }, [currentUser, socket]);
+
+  // Define user models based on current user type
+  const userModel = currentUser?.isTherapist ? "Therapist" : "User";
+  const chatWithModel = currentUser?.isTherapist ? "User" : "Therapist";
+
+  useEffect(() => {
+    // let interval;
+
+    if (selectedUser && currentUser?._id) {
+      console.log("Fetching chats for selected user:", selectedUser);
+      // Initially fetch chats once when selectedUser is available
+      getAllChats(currentUser._id, userModel, selectedUser, chatWithModel);
+
+      // Set interval to fetch chats every 15 seconds
+      // interval = setInterval(() => {
+      //   console.log("Fetching chats again for selected user:", selectedUser);
+      //   getAllChats(currentUser._id, userModel, selectedUser, chatWithModel);
+      // }, 15000); // 15000 milliseconds = 15 seconds
+    }
+
+    // Cleanup: Clear the interval when selectedUser is null or the component is unmounted
+    // return () => {
+    //   if (interval) clearInterval(interval);
+    // };
+  }, [selectedUser, currentUser, userModel, chatWithModel]);
 
   const toggleLeftSidebar = () => setIsLeftSidebarOpen(!isLeftSidebarOpen);
   const toggleRightSidebar = () => setIsRightSidebarOpen(!isRightSidebarOpen);
   const toggleEmojiPicker = () => setIsEmojiPickerOpen(!isEmojiPickerOpen);
 
-  const onEmojiClick = (emojiObject) => {
-    // setChats((prevMsg) => prevMsg + emojiObject.emoji);
-    setIsEmojiPickerOpen(false);
-  };
-
+  // Close sidebars when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -59,10 +93,9 @@ export default function Chat() {
         toggleSidebar={toggleLeftSidebar}
       />
       <MainChatArea
-        // chats={chats}
         isEmojiPickerOpen={isEmojiPickerOpen}
+        setIsEmojiPickerOpen={setIsEmojiPickerOpen}
         toggleEmojiPicker={toggleEmojiPicker}
-        onEmojiClick={onEmojiClick}
         emojiPickerRef={emojiPickerRef}
         toggleLeftSidebar={toggleLeftSidebar}
         toggleRightSidebar={toggleRightSidebar}

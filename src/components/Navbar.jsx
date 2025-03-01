@@ -16,6 +16,7 @@ import { useSelector } from "react-redux";
 import useAuthCall from "../hooks/useAuthCall";
 import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
+import SoulJourneyLogo from "../components/SoulJourneyLogo";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -96,15 +97,7 @@ export default function Navbar() {
             </DisclosureButton>
           </div>
           <div className="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
-            <div className="flex items-center">
-              <NavLink to="/">
-                <img
-                  alt="Soul Journey"
-                  src={souljorurney_Logo}
-                  className="h-[100px] min-h-[3rem] min-w-[3rem] w-auto sm:h-[100px] md:h-[120px] object-contain"
-                />
-              </NavLink>
-            </div>
+            <SoulJourneyLogo/>
             <div className="self-center hidden sm:ml-2 sm:block">
               <div className="flex items-center space-x-6 sm:space-x-1">
                 {navigation.map((item) => (
@@ -195,7 +188,7 @@ export default function Navbar() {
                       to="/profile"
                       className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                     >
-                      {t("myProfil")}
+                      {t("myProfile")}
                     </NavLink>
                   </MenuItem>
                   <MenuItem>

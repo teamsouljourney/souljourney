@@ -42,7 +42,10 @@
     "react-toastify": "^11.0.2",
     "redux-persist": "^6.0.0",
     "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
     "stripe": "^17.6.0",
+    "webrtc-adapter": "^9.0.1",
+    "sweetalert2": "^11.17.2",
     "yup": "^1.6.1"
   },
   "devDependencies": {

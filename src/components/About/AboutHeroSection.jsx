@@ -23,15 +23,10 @@ const AboutHeroSection = () => {
             fontFamily: "'Urbanist', sans-serif",
           }}
         >
-          Welcome to our platform. Where we connect clients with experienced
-          therapists to provide accessible and professional online therapy
-          sessions. Our mission is to create a safe and supportive environment
-          for your mental well-being.
+          Welcome to our platform. Where we connect clients with experienced therapists to provide accessible and professional online therapy sessions. Our mission is to create a safe and supportive environment for your mental well-being.
         </p>
 
-        <button className="bg-[#2E5077] text-white py-2 px-6 rounded-md hover:bg-blue-600 transition-all mt-6">
-          See More
-        </button>
+        
       </div>
     </div>
   );

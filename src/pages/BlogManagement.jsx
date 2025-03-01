@@ -18,6 +18,17 @@ const BlogManagement = () => {
     getAllBlogs();
   }, []);
 
+  const displayedBlogs =
+    searchTerm.trim() === ""
+      ? pagBlogs
+      : pagBlogs?.filter((blog) =>
+          [blog.therapistId?.firstName, blog.therapistId?.lastName, blog.title]
+            .filter(Boolean)
+            .some((name) =>
+              name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+
   return (
     <div className="container py-10 mx-auto ">
       <div className="bg-white border rounded-lg shadow-sm">
@@ -43,7 +54,7 @@ const BlogManagement = () => {
               <div className="col-span-2">Created At</div>
               <div className="col-span-2 text-right">Actions</div>
             </div>
-            {pagBlogs?.map((blog) => (
+            {displayedBlogs?.map((blog) => (
               <BlogRow key={blog._id} blog={blog} />
             ))}
           </div>
