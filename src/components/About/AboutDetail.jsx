@@ -44,7 +44,9 @@ const AboutDetail = () => {
             />
           </div>
           <div className="md:w-1/2 text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">{section.title}</h2>
+          <div className="w-full text-center lg:text-left mt-4">
+               <h2 className="text-2xl md:text-3xl font-bold ">{section.title}</h2>
+            </div>
             <div className="h-[3px] bg-[#8F5B8A] my-2 mx-auto md:mx-0 w-128"></div>
             <p className="opacity-80 text-base lg:text-lg leading-relaxed">{section.text}</p>
           </div>

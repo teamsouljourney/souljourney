@@ -101,7 +101,6 @@ const ServicesDetail = () => {
               ))}
             </ul>
           </div>
-
           
         </div>
       ))}
