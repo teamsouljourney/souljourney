@@ -5,25 +5,22 @@ import HomeCard from "./HomeCard";
 import { useSelector } from "react-redux";
 import useBlogCall from "../../hooks/useBlogCall";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const BlogsSection = () => {
   const{blogs}=useSelector((state)=>state.blogs)
   const{getAllBlogs}=useBlogCall();
   // const { id } = useParams();
-  console.log(blogs);
-  const { t } = useTranslation();
-  
- 
+  // console.log(blogs);
+  const { t } = useTranslation(); 
 
-   useEffect(()=>{
+  useEffect(()=>{
     
-      getAllBlogs();
-      console.log("Blogs API cagirildi");
+    getAllBlogs();
+    // console.log("Blogs API cagirildi");
       
-    },[])
-  
+  },[])  
 
   return (
     <>

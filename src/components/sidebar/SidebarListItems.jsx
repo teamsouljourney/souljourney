@@ -8,7 +8,7 @@ const NavLinkto = (to) => `/profile/${to}`;
 const SidebarListItems = () => {
   const { t } = useTranslation();
   const { currentUser } = useSelector((state) => state.auth);
-  console.log(currentUser.isAdmin);
+  // console.log(currentUser.isAdmin);
   let menu = [
     {
       to: NavLinkto(""),
