@@ -4,12 +4,9 @@ import {
   fetchStart,
   fetchFail,
   getAllNotesSuccess,
-  createNoteSuccess,
-  updateNoteSuccess,
-  deleteNoteSuccess,
   getSingleUserNotesSuccess,
 } from "../features/noteSlice";
-import { toastErrorNotify } from "../helper/ToastNotify";
+import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
 const useNoteCall = () => {
   const dispatch = useDispatch();
@@ -44,43 +41,49 @@ const useNoteCall = () => {
     }
   };
 
-  const createNote = async (noteData) => {
+  const postUserNotes = async (noteData) => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosWithToken.post("notes", noteData);
-      dispatch(createNoteSuccess(data));
+      await axiosWithToken.post("notes", noteData);
     } catch (error) {
       dispatch(fetchFail());
-      toastErrorNotify("Not oluştururken hata oluştu.");
+      toastErrorNotify(
+        error.response.data.message,
+        "Failed to post Users's notes!"
+      );
     }
   };
 
-  const updateNote = async (id, noteData) => {
+  const putUserNote = async (id, noteData) => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosWithToken.put(`notes/${id}`, noteData);
-      dispatch(updateNoteSuccess(data));
+      await axiosWithToken.put(`notes/${id}`, noteData);
     } catch (error) {
       dispatch(fetchFail());
-      toastErrorNotify("Not güncellenirken hata oluştu.");
-    }
+      toastErrorNotify(error.response.data.message,
+        "Not güncellenirken hata oluştu.");
+    } 
   };
 
-  const deleteNote = async (id) => {
+  const deleteNote = async (id,userId) => {
     dispatch(fetchStart());
     try {
-      await axiosWithToken.delete(`notes/${id}`);
-      dispatch(deleteNoteSuccess(id));
+      const { data } = await axiosWithToken.delete(`notes/${id}`);
+      toastSuccessNotify(data?.message || "Note deleted successfully!");
     } catch (error) {
       dispatch(fetchFail());
-      toastErrorNotify("Not silinirken hata oluştu.");
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to delete note."
+      );
+    } finally {
+      getSingleUserNotes(userId)
     }
   };
 
   return {
     getAllNotes,
-    createNote,
-    updateNote,
+    postUserNotes,
+    putUserNote,
     deleteNote,
     getSingleUserNotes,
   };
