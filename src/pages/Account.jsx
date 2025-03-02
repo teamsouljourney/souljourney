@@ -8,27 +8,34 @@ import AccountUploadProfilePicture from "../components/auth/AccountUploadProfile
 import useUserCall from "../hooks/useUserCall";
 import { Formik } from "formik";
 import { updateSingleUserSuccess } from "../features/userSlice";
+import useTherapistCall from "../hooks/useTherapistCall";
+import AccountTherapistForm from "../components/auth/AccountTherapistForm";
 
 const Account = () => {
   const dispatch = useDispatch()
   const { t } = useTranslation();
   const { currentUser } = useSelector((state) => state.auth); 
   const { singleUser, loading } = useSelector((state) => state.users); 
+  const { singleTherapist } = useSelector((state) => state.therapists); 
   const {getSingleUser, updateMe, changeMyPassword} = useUserCall()
+  const {getSingleTherapist} = useTherapistCall()
   const schemaPassword = PasswordSchema(t);
 
   const id = currentUser?._id
   const isActive = currentUser?.isActive
-  const IsTherapist = currentUser?.isTherapist
-
-  console.log(IsTherapist);
-  
+  const isTherapist = currentUser?.isTherapist
 
   useEffect(() => {
-    getSingleUser(currentUser?._id);
+    if (isTherapist) {
+      getSingleTherapist(currentUser?._id)
+    } else {
+      getSingleUser(currentUser?._id);
+    }    
   }, []);
 
   console.log(singleUser);
+  console.log(isTherapist);
+  console.log(singleTherapist);
 
   const handleChange = (e) => {
     // console.log(e.target.value);
@@ -63,11 +70,16 @@ const Account = () => {
           {/* Profile Picture Section */}
           <AccountUploadProfilePicture singleUser={singleUser} />
           {/* Personel Info Field */}
-          <AccountForm
+          {!isTherapist ? (
+            <AccountForm
             // userInfo={userInfo}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
           />
+          ) : (
+            <AccountTherapistForm/>
+          )}
+          
         </div>
       </div>
       {/* Change Password Field */}
