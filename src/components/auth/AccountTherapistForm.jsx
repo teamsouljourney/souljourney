@@ -36,8 +36,7 @@ const AccountTherapistForm = () => {
                   onChange={handleChange}
                 />
               </div>
-            </div>
-  
+            </div>  
             <div className="sm:col-span-2">
               <label htmlFor="lastName" className="peer">
                 {t("lastName")}
@@ -54,8 +53,7 @@ const AccountTherapistForm = () => {
                   onChange={handleChange}
                 />
               </div>
-            </div>
-            
+            </div>            
             <div className="sm:col-span-4">
               <label htmlFor="email" className="peer">
                 {t("email")}
@@ -88,14 +86,13 @@ const AccountTherapistForm = () => {
                   autoComplete="category"
                   className="peer w-full"
                   onChange={handleChange}
-                  
+                  disabled
                 />
               </div>
-            </div>
-  
+            </div>  
             <div className="col-span-full">
               <label htmlFor="graduation" className="peer">
-                {t("graduation")}
+                Graduation {/* {t("graduation")} */}
               </label>
               <div className="mt-2">
                 <input
@@ -112,7 +109,7 @@ const AccountTherapistForm = () => {
             </div>
             <div className="col-span-full">
               <label htmlFor="description" className="peer">
-                {t("description")}
+                Description {/* {t("description")} */}
               </label>
               <div className="mt-2">
                 <textarea
@@ -129,7 +126,7 @@ const AccountTherapistForm = () => {
             </div>
             <div className="col-span-full">
               <label htmlFor="experience" className="peer">
-                {t("experience")}
+                Experiences {/* {t("experiences")} */}
               </label>
               <div className="mt-2">
                 <textarea

@@ -38,7 +38,6 @@ const Account = () => {
   console.log(singleTherapist);
 
   const handleChange = (e) => {
-    // console.log(e.target.value);
     dispatch(updateSingleUserSuccess({ [e.target.name]: e.target.value }));
   };
 
