@@ -29,6 +29,8 @@ const PatientList = () => {
     setFilteredAppointments(uniquePatients);
   }, [currentUserAppointments]);
 
+  console.log(currentUserAppointments)
+
   const handleChange = (e) => {
     const searchTerm = e.target.value.toLowerCase();
     setSearchTerm(searchTerm);
@@ -129,16 +131,16 @@ const PatientList = () => {
                         <div>
                           <p className="text-sm md:text-base font-semibold text-navy dark:text-offWhite-light">
                             {userId?.firstName.toUpperCase()}{" "}
-                            {userId.lastName.toUpperCase()}
+                            {userId?.lastName.toUpperCase()}
                           </p>
                           <p className="text-xs md:text-sm text-gray-500 mt-1">
-                            {userId.email}
+                            {userId?.email}
                           </p>
                         </div>
 
                         {/* Time and Status */}
                         <div className="flex flex-col items-center gap-2">
-                          <Notes currentUser={currentUser} />
+                          <Notes currentUser={currentUser} userId={userId}/>
                           <div className="flex items-center gap-2">
                             <div className="rounded-full bg-emerald-500/20 p-1">
                               <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
