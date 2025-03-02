@@ -14,7 +14,7 @@ const Footer = () => {
     return null;
   } else {
     return (
-      <div className="bg-offWhite dark:bg-customBlack-dark w-full bottom-0 z-20 pt-20">
+      <div className="bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark w-full bottom-0 z-20 pt-20">
         <div className="dark:text-offWhite text-navy-dark flex justify-between">
           <ul className="flex flex-col items-center pl-6">
             <li className="whitespace-nowrap">

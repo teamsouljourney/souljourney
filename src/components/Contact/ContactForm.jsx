@@ -34,8 +34,8 @@ const ContactForm = () => {
   return (
     <form ref={form} onSubmit={sendEmail}>
       <div className="mb-6 text-center">
-        <h2 className="mb-2 text-2xl font-bold text-navy">{t("getStarted")}</h2>
-        <p className="text-sm font-semibold text-navy-light dark:text-offWhite">
+        <h2 className="mb-2 text-2xl font-bold text-navy dark:text-offWhite-dark">{t("getStarted")}</h2>
+        <p className="text-sm font-semibold text-navy-light dark:text-offWhite-dark">
           {t("contactFormText")}
         </p>
       </div>
