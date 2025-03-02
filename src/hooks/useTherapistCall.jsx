@@ -10,9 +10,12 @@ import {
 } from "../features/therapistSlice";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import usePaginationCall from "./usePaginationCall";
+import { logoutSuccess } from "../features/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const useTherapistCall = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const axiosWithToken = useAxios();
   const { getDataByPage } = usePaginationCall();
   const { currentPage, itemsPerPage } = useSelector(

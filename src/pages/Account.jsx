@@ -18,7 +18,7 @@ const Account = () => {
   const { singleUser, loading } = useSelector((state) => state.users); 
   const { singleTherapist } = useSelector((state) => state.therapists); 
   const {getSingleUser, updateMe, changeMyPassword} = useUserCall()
-  const {getSingleTherapist} = useTherapistCall()
+  const {getSingleTherapist, changeMyPasswordTherapist} = useTherapistCall()
   const schemaPassword = PasswordSchema(t);
 
   const id = currentUser?._id
@@ -90,7 +90,8 @@ const Account = () => {
         }}
         validationSchema={schemaPassword}
         onSubmit={(values, actions) => {
-          changeMyPassword(id, values);
+          isTherapist ? changeMyPasswordTherapist(id, values) : changeMyPassword(id, values);
+          
           actions.resetForm();
           actions.setSubmitting(false);
         }}
