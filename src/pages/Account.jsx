@@ -19,6 +19,10 @@ const Account = () => {
 
   const id = currentUser?._id
   const isActive = currentUser?.isActive
+  const IsTherapist = currentUser?.isTherapist
+
+  console.log(IsTherapist);
+  
 
   useEffect(() => {
     getSingleUser(currentUser?._id);
@@ -44,7 +48,8 @@ const Account = () => {
     )
   }
   return (
-    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light pl-4 pr-6 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-background-darker mt">
+    <>
+      <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light pl-4 pr-6 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-background-darker mt">
       {/* Update Profile Section */}
       <div className="flex w-full max-w-[576px] flex-col items-start gap-10 border-b-2 border-b-gray-200 dark:border-b-gray-400 mt-10">
         {/* Header */}
@@ -84,6 +89,8 @@ const Account = () => {
       {/* Account Delete Field */}
       <AccountDelete id={id} isActive={isActive} />
     </div>
+    </>
+    
   );
 };
 
