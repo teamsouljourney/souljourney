@@ -119,23 +119,39 @@ const useTherapistCall = () => {
       }
     };
 
-    //* Change Therapist Status
-      const changeTherapistStatus = async (id, isActive) => {
+    //* Update Therapist's own profile 
+      const updateMe = async (id, updatedTherapist) => {
         dispatch(fetchStart());
         try {
-          await axiosWithToken.patch(`therapists/${id}/status`);
-          toastSuccessNotify(
-            `Therapist ${isActive ? "disabled" : "activated"} successfully!`
-          );
+          await axiosWithToken.patch(`therapists/${id}/updateMe`, updatedTherapist);
+          toastSuccessNotify("Your profile updated successfully!");
         } catch (error) {
           dispatch(fetchFail());
           toastErrorNotify(
-            error.response?.data?.message || "Failed to change therapist status."
+            error.response?.data?.message || "Failed to update your profile."
           );
         } finally {
-          getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
+          getSingleTherapist(id)
         }
       };
+
+    //* Change Therapist Status
+    const changeTherapistStatus = async (id, isActive) => {
+      dispatch(fetchStart());
+      try {
+        await axiosWithToken.patch(`therapists/${id}/status`);
+        toastSuccessNotify(
+          `Therapist ${isActive ? "disabled" : "activated"} successfully!`
+        );
+      } catch (error) {
+        dispatch(fetchFail());
+        toastErrorNotify(
+          error.response?.data?.message || "Failed to change therapist status."
+        );
+      } finally {
+        getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
+      }
+    };
     
 
 
@@ -146,6 +162,7 @@ const useTherapistCall = () => {
     getFilterTherapists,
     deleteTherapist,
     updateTherapist,
+    updateMe,
     changeTherapistStatus,
     createTherapist
   };

@@ -76,7 +76,7 @@ const Account = () => {
             handleSubmit={handleSubmit}
           />
           ) : (
-            <AccountTherapistForm/>
+            <AccountTherapistForm singleTherapist={singleTherapist} id={id} />
           )}
           
         </div>
@@ -98,7 +98,10 @@ const Account = () => {
       >
       </Formik>
       {/* Account Delete Field */}
-      <AccountDelete id={id} isActive={isActive} />
+      {!isTherapist && (
+        <AccountDelete id={id} isActive={isActive} />
+      )}
+      
     </div>
     </>
     

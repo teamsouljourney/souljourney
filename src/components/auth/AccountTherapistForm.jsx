@@ -1,19 +1,27 @@
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { updateSingleTherapistSuccess } from "../../features/therapistSlice";
+import useTherapistCall from "../../hooks/useTherapistCall";
 
-const AccountTherapistForm = () => {
+const AccountTherapistForm = ({singleTherapist, id}) => {
+    const dispatch = useDispatch()
     const { t } = useTranslation();
-    const { singleTherapist } = useSelector((state) => state.therapists);
+    // const { singleTherapist } = useSelector((state) => state.therapists);
+    const {updateMe} = useTherapistCall()
+
+    console.log(singleTherapist);
+    // const id = singleTherapist._id
+    console.log(id);
 
     const handleChange = (e) => {
         // console.log(e.target.value);
-        // dispatch(updateSingleUserSuccess({ [e.target.name]: e.target.value }));
-      };
+        dispatch(updateSingleTherapistSuccess({ [e.target.name]: e.target.value }));
+    };    
     
-      const handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        // updateMe(id, singleUser)
-      };
+        updateMe(id, singleTherapist)
+    };      
 
     return (
       <>
@@ -72,10 +80,11 @@ const AccountTherapistForm = () => {
                 />
               </div>
             </div>
-            <div className="sm:col-span-4">
+            {/* <div className="sm:col-span-4">
               <label htmlFor="category" className="peer">
-                 Categories {/* {t("categories")} */}
-              </label>
+                 Categories  */}
+                 {/* {t("categories")} */}
+              {/* </label>
               <div className="mt-2">
                 <input
                   id="category"
@@ -89,7 +98,7 @@ const AccountTherapistForm = () => {
                   disabled
                 />
               </div>
-            </div>  
+            </div>   */}
             <div className="col-span-full">
               <label htmlFor="graduation" className="peer">
                 Graduation {/* {t("graduation")} */}
