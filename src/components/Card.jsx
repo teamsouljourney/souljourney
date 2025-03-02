@@ -51,10 +51,10 @@ const Card = ({ therapist, variant = "default", blog }) => {
           </>
         ) : (
           <>
-            <h2 className="text-xl font-bold mb-2 text-gray-800">
+            <h2 className="text-xl font-bold mb-2 ">
               {blog?.title}
             </h2>
-            <p className="text-gray-600 line-clamp-2">{blog?.content}</p>
+            <p className=" line-clamp-2">{blog?.content}</p>
             <div className="flex items-center gap-1 mt-2">
               <span className="text-sm  font-medium">{t("homeCardDate")}:</span>
               <span className="text-sm ">
@@ -67,13 +67,13 @@ const Card = ({ therapist, variant = "default", blog }) => {
 
       {/* Çizgi ve Buton Alanı */}
       <div className="border-t border-gray-300 mt-auto px-4 py-4 flex justify-between items-center">
-        <FavoriteBorderIcon className="text-gray-600 cursor-pointer hover:text-red-500 transition" />
+        <FavoriteBorderIcon className="text-gray-600 dark:text-offWhite-dark cursor-pointer hover:text-red-500 transition" />
 
         {/* Paylaş Butonu Sadece Bloglar İçin */}
         {blog && (
           <button
             onClick={handleShare}
-            className="flex items-center gap-1 text-gray-600 hover:text-seaGreen transition"
+            className="flex items-center gap-1 text-gray-600 dark:text-offWhite-dark hover:text-seaGreen transition"
           >
             <ShareIcon /> {t('share')}
           </button>

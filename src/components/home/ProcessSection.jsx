@@ -34,12 +34,12 @@ const ProcessSection = () => {
   return (
     <div className="mx-24 px-4 sm:px-6 lg:px-8 flex flex-col justify-between mb-10">
       <div className="text-center mt-10">
-        <h3 className="text-3xl sm:text-5xl leading-normal font-urbanist tracking-tight text-gray-900">
-          {t("howItWorks")} <span className="text-navy">?</span>
+        <h3 className="text-3xl sm:text-5xl leading-normal font-urbanist tracking-tight text-navy dark:text-offWhite-dark">
+          {t("howItWorks")} ?
         </h3>
       </div>
 
-      <div className="mt-20">
+      <div className="mt-20 ">
         <ul className="md:grid md:grid-cols-2 sm:grid-cols-4 md:gap-4 lg:grid-cols-4">
           {processSteps.map((step, index) => (
             <ProcessItem
