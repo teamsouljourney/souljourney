@@ -7,7 +7,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
     const dispatch = useDispatch()
     const { t } = useTranslation();
     // const { singleTherapist } = useSelector((state) => state.therapists);
-    const {updateMe} = useTherapistCall()
+    const {updateMeTherapist} = useTherapistCall()
 
     console.log(singleTherapist);
     // const id = singleTherapist._id
@@ -20,7 +20,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        updateMe(id, singleTherapist)
+        updateMeTherapist(id, singleTherapist)
     };      
 
     return (

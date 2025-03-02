@@ -120,7 +120,7 @@ const useTherapistCall = () => {
     };
 
     //* Update Therapist's own profile 
-      const updateMe = async (id, updatedTherapist) => {
+      const updateMeTherapist = async (id, updatedTherapist) => {
         dispatch(fetchStart());
         try {
           await axiosWithToken.patch(`therapists/${id}/updateMe`, updatedTherapist);
@@ -162,7 +162,7 @@ const useTherapistCall = () => {
     getFilterTherapists,
     deleteTherapist,
     updateTherapist,
-    updateMe,
+    updateMeTherapist,
     changeTherapistStatus,
     createTherapist
   };
