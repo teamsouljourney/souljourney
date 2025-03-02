@@ -29,7 +29,7 @@ const Card = ({ therapist, variant = "default", blog }) => {
   };
 
   return (
-    <div className="max-w-xs w-full bg-white dark:bg-background-dark text-navy dark:text-offWhite-dark rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-105 cursor-pointer flex flex-col p-3">
+    <div className="max-w-xs w-full bg-white dark:bg-background-dark text-navy dark:text-offWhite-dark rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-105 cursor-pointer flex flex-col p-3" onClick={() => navigate(`/therapists/${therapist?._id}`)}>
       {/* Resim Alanı */}
       <div className="relative">
         <img
@@ -43,11 +43,11 @@ const Card = ({ therapist, variant = "default", blog }) => {
       <div className="p-6 flex-grow flex flex-col justify-between">
         {therapist ? (
           <>
-            <h2 className="text-xl font-bold mb-2 text-gray-800">
+            <h2 className="text-xl font-bold mb-2 ">
               {`${therapist?.firstName} ${therapist?.lastName}`}
             </h2>
-            <p className="text-gray-600 mb-2">{therapist?.categoryId?.name}</p>
-            <p className="text-gray-600 line-clamp-2">{therapist?.description}</p>
+            <p className=" mb-2">{therapist?.categoryId?.name}</p>
+            <p className=" line-clamp-2">{therapist?.description}</p>
           </>
         ) : (
           <>
@@ -56,8 +56,8 @@ const Card = ({ therapist, variant = "default", blog }) => {
             </h2>
             <p className="text-gray-600 line-clamp-2">{blog?.content}</p>
             <div className="flex items-center gap-1 mt-2">
-              <span className="text-sm text-gray-700 font-medium">{t("homeCardDate")}:</span>
-              <span className="text-sm text-gray-500">
+              <span className="text-sm  font-medium">{t("homeCardDate")}:</span>
+              <span className="text-sm ">
                 {new Date(blog?.createdAt).toLocaleDateString()}
               </span>
             </div>
@@ -89,7 +89,7 @@ const Card = ({ therapist, variant = "default", blog }) => {
         ) : (
           <Buttons
             type="type7"
-            onClick={() => navigate(`/therapists/${therapist?._id}`)}
+            // onClick={() => navigate(`/therapists/${therapist?._id}`)}
           >
            {t("seeMore")}
           </Buttons>
