@@ -152,6 +152,24 @@ const useTherapistCall = () => {
         getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
       }
     };
+
+    //* Change Therapist's Own Password
+    const changeMyPasswordTherapist = async (id, values) => {
+      dispatch(fetchStart());
+      try {
+        await axiosWithToken.patch(`therapists/${id}changeMyPassword`, values);
+        toastSuccessNotify("Your password has been changed!");
+      } catch (error) {
+        dispatch(fetchFail());
+        toastErrorNotify(
+          error.response?.data?.message || "Failed to change your password."
+        );
+      } finally {
+        await axiosWithToken.get("auth/logout");
+        dispatch(logoutSuccess());
+          navigate("/")
+      }
+    };
     
 
 
@@ -164,7 +182,8 @@ const useTherapistCall = () => {
     updateTherapist,
     updateMeTherapist,
     changeTherapistStatus,
-    createTherapist
+    createTherapist,
+    changeMyPasswordTherapist
   };
 };
 
