@@ -8,7 +8,7 @@ function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   return (
-    <div className="min-h-screen bg-gradient-to-b bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark pt-32">
+    <div className="min-h-screen bg-gradient-to-b bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark pt-20">
       <BlogHeroSection />
       <main className="container mx-auto p-6">
         {selectedBlog ? (
