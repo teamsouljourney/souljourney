@@ -114,17 +114,9 @@ function BlogList() {
               index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
             }`}
           >
-            <div className="md:w-[439px] md:h-[366px] w-[439px] h-[366px]">
-              <img
-                src={blog.image}
-                alt={blog.title}
-                className="w-full h-auto rounded-l-[80%] rounded-r-[80%] object-cover aspect-[439/366]"
-              />
-            </div>
-
             <div className="sm:ml-6 mt-4 sm:mt-0 sm:w-1/2">
               <h2 className="text-xl font-bold mb-2">{blog.title}</h2>
-              <p className="text-gray-700">{blog.content}</p>
+              <p className="">{blog.content}</p>
 
               <div className="flex justify-center">
                 <button
@@ -135,6 +127,16 @@ function BlogList() {
                 </button>
               </div>
             </div>
+            
+            <div className="md:w-[439px] md:h-[366px] w-[439px] h-[366px]">
+              <img
+                src={blog.image}
+                alt={blog.title}
+                className="w-full h-auto rounded-l-[80%] rounded-r-[80%] object-cover aspect-[439/366]"
+              />
+            </div>
+
+            
           </div>
         ))}
       </div>

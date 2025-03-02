@@ -24,27 +24,7 @@ const Register = () => {
         container
         rowSpacing={{ sm: 3 }}
         sx={authMainContainerGridStyle}
-      >
-      {/* <Grid xs={12} 
-      // sx={authFormContainerGridStyle}
-      >
-        <Typography
-          variant="h4"
-          color="primary"
-          align="start"
-          sx={{
-            fontWeight: "600",
-            fontSize: {
-              xs: "1.5rem",
-              sm: "2rem",
-              md: "2rem",
-              lg: "2.5rem",
-            },
-          }}
-        >
-          Navigate your path to inner Harmony...
-        </Typography>
-      </Grid> */}
+      >      
         <Grid
           size={12}
           sx={authFormContainerGridStyle}
@@ -84,7 +64,7 @@ const Register = () => {
             }}
             validationSchema={schemaRegister}
             onSubmit={(values, actions) => {
-              console.log(values);
+              // console.log(values);
               register(values)
               actions.resetForm()
               actions.setSubmitting(false);

@@ -64,7 +64,7 @@ const FAQ = () => {
   return (
     <>
       <div className="relative overflow-hidden isolate bg-custom">
-      <p className="text-3xl sm:text-5xl font-semibold text-base-content font-[Urbanist] text-center mt-16 text-navy">
+      <p className="text-3xl sm:text-5xl font-semibold text-base-content font-[Urbanist] text-center mt-16 text-navy dark:text-offWhite-dark">
               {t("faqTitle")}
             </p>
         <div className="flex flex-col max-w-5xl gap-12 px-8 py-12 mx-auto md:flex-row">

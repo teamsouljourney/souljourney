@@ -22,7 +22,7 @@ const useAuthCall = () => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosPublic.post("auth/signup", userInfo);
-      console.log(data);
+      // console.log(data);
       dispatch(registerSuccess(data));
       toastSuccessNotify(
         "Registration successful! Please check your email to verify your account!"
@@ -42,7 +42,7 @@ const useAuthCall = () => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosPublic.post("auth/login", userInfo);
-      console.log(data);
+      // console.log(data);
       dispatch(loginSuccess(data));
       toastSuccessNotify("You have successfully logged in!");
       navigate("/");
@@ -103,7 +103,7 @@ const useAuthCall = () => {
         `auth/reset-password/${token}`,
         passwords
       );
-      console.log(data);
+      // console.log(data);
       toastSuccessNotify("Password reset successful!");
       navigate("/login");
     } catch (error) {

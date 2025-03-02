@@ -47,12 +47,12 @@ const DashboardCalendar = () => {
   const todayFormatted = today.toISOString().split("T")[0];
 
   const formattedEvents = currentUserAppointments?.map((appointment) => ({
-    id: appointment._id,
+    id: appointment?._id,
     title: currentUser?.isTherapist
-      ? `${appointment.userId.firstName} ${appointment.userId.lastName}`
-      : `${appointment.therapistId.firstName} ${appointment.therapistId.lastName}`,
-    start: appointment.startTime,
-    end: appointment.endTime,
+      ? `${appointment?.userId?.firstName} ${appointment?.userId?.lastName}`
+      : `${appointment?.therapistId?.firstName} ${appointment?.therapistId?.lastName}`,
+    start: appointment?.startTime,
+    end: appointment?.endTime,
   }));
 
   return (

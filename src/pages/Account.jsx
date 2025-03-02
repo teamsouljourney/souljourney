@@ -8,26 +8,36 @@ import AccountUploadProfilePicture from "../components/auth/AccountUploadProfile
 import useUserCall from "../hooks/useUserCall";
 import { Formik } from "formik";
 import { updateSingleUserSuccess } from "../features/userSlice";
+import useTherapistCall from "../hooks/useTherapistCall";
+import AccountTherapistForm from "../components/auth/AccountTherapistForm";
 
 const Account = () => {
   const dispatch = useDispatch()
   const { t } = useTranslation();
   const { currentUser } = useSelector((state) => state.auth); 
   const { singleUser, loading } = useSelector((state) => state.users); 
+  const { singleTherapist } = useSelector((state) => state.therapists); 
   const {getSingleUser, updateMe, changeMyPassword} = useUserCall()
+  const {getSingleTherapist} = useTherapistCall()
   const schemaPassword = PasswordSchema(t);
 
   const id = currentUser?._id
   const isActive = currentUser?.isActive
+  const isTherapist = currentUser?.isTherapist
 
   useEffect(() => {
-    getSingleUser(currentUser?._id);
+    if (isTherapist) {
+      getSingleTherapist(currentUser?._id)
+    } else {
+      getSingleUser(currentUser?._id);
+    }    
   }, []);
 
   console.log(singleUser);
+  console.log(isTherapist);
+  console.log(singleTherapist);
 
   const handleChange = (e) => {
-    // console.log(e.target.value);
     dispatch(updateSingleUserSuccess({ [e.target.name]: e.target.value }));
   };
 
@@ -44,7 +54,8 @@ const Account = () => {
     )
   }
   return (
-    <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light pl-4 pr-6 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-background-darker mt">
+    <>
+      <div className="container max-w-none flex grow shrink-0 basis-0 flex-col items-center gap-4 self-stretch bg-offWhite-light pl-4 pr-6 py-8 shadow-sm text-navy-dark dark:text-offWhite-light dark:bg-background-darker mt">
       {/* Update Profile Section */}
       <div className="flex w-full max-w-[576px] flex-col items-start gap-10 border-b-2 border-b-gray-200 dark:border-b-gray-400 mt-10">
         {/* Header */}
@@ -58,11 +69,16 @@ const Account = () => {
           {/* Profile Picture Section */}
           <AccountUploadProfilePicture singleUser={singleUser} />
           {/* Personel Info Field */}
-          <AccountForm
+          {!isTherapist ? (
+            <AccountForm
             // userInfo={userInfo}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
           />
+          ) : (
+            <AccountTherapistForm singleTherapist={singleTherapist} id={id} />
+          )}
+          
         </div>
       </div>
       {/* Change Password Field */}
@@ -82,8 +98,13 @@ const Account = () => {
       >
       </Formik>
       {/* Account Delete Field */}
-      <AccountDelete id={id} isActive={isActive} />
+      {!isTherapist && (
+        <AccountDelete id={id} isActive={isActive} />
+      )}
+      
     </div>
+    </>
+    
   );
 };
 

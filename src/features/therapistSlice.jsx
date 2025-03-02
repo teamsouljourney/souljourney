@@ -5,7 +5,7 @@ const therapistSlice = createSlice({
   initialState: {
     therapists: [],
     filteredTherapists: [],
-    singleTherapist: null,
+    singleTherapist: {},
     newTherapist: {
       firstName: "",
       lastName: "",
@@ -39,6 +39,11 @@ const therapistSlice = createSlice({
       state.filteredTherapists = payload
       
     },
+    updateSingleTherapistSuccess: (state, {payload}) => {
+      state.loading = false;
+      state.singleTherapist = { ...state.singleUser, ...payload };
+      state.error = false
+    },
     setSearchTerm:(state, {payload}) =>{
       state.searchTerm=payload
     },
@@ -70,6 +75,7 @@ export const {
   getSingleTherapistSuccess,
   getTherapistTimeTableSuccess,
   getFilterTherapistsSuccess,
+  updateSingleTherapistSuccess,
   setSearchTerm,
   toggleModal,
   setNewTherapist,

@@ -75,7 +75,7 @@ function BlogDetail() {
   }
 
   return (
-    <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+    <div className="max-w-screen-xl mx-auto py-32 bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
       <div className="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
         <div className="relative h-80 w-full">
           <img 
@@ -85,7 +85,7 @@ function BlogDetail() {
           />
         </div>
         
-        <div className="relative -mt-16 px-10 pt-5 pb-16 bg-white shadow-lg rounded-lg mx-5 md:mx-10">
+        <div className="relative -mt-16 px-10 pt-5 pb-16 bg-white dark:bg-background-dark text-navy dark:text-offWhite-dark shadow-lg rounded-lg mx-5 md:mx-10">
           <div className="flex items-center gap-2 mb-4">
             {currentBlog.therapistId && (
               <>
@@ -98,7 +98,7 @@ function BlogDetail() {
                   <h3 className="font-semibold">
                     {currentBlog.therapistId.firstName} {currentBlog.therapistId.lastName}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm ">
                     {currentBlog.therapistId.description}
                   </p>
                 </div>
@@ -107,10 +107,10 @@ function BlogDetail() {
           </div>
           
           <h2 className="text-2xl font-bold mb-4">{currentBlog.title}</h2>
-          <p className="text-gray-700 leading-relaxed">{currentBlog.content}</p>
+          <p className=" leading-relaxed">{currentBlog.content}</p>
           
           {currentBlog.categoryId && (
-            <span className="inline-block bg-navy-light text-white px-4 py-1 rounded-full text-sm mt-6">
+            <span className="inline-block  px-4 py-1 rounded-full text-sm mt-6">
               {currentBlog.categoryId.name}
             </span>
           )}

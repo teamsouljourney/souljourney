@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const RegisterHeader = () => {
   const { t } = useTranslation();
   return (
-    <Grid xs={12} mb={1}>
+    <Grid size={12} mb={1}>
       <Typography
         variant="h5"
         color="primary"
