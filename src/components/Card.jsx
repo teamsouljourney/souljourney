@@ -29,7 +29,7 @@ const Card = ({ therapist, variant = "default", blog }) => {
   };
 
   return (
-    <div className="max-w-xs w-full bg-white rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-105 cursor-pointer flex flex-col p-3">
+    <div className="max-w-xs w-full bg-white dark:bg-background-dark text-navy dark:text-offWhite-dark rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-105 cursor-pointer flex flex-col p-3">
       {/* Resim Alanı */}
       <div className="relative">
         <img

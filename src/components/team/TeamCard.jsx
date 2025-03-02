@@ -15,7 +15,7 @@ const TeamCard = () => {
 
   return (
     <div className="flex items-center justify-center py-4">
-      <div className="flex flex-wrap justify-center gap-6 md:gap-10 lg:gap-14">
+      <div className="flex flex-wrap justify-center gap-6 md:gap-10 lg:gap-14 ">
         {cardsToShow.map((therapist) => (
           <Card
             key={therapist._id}

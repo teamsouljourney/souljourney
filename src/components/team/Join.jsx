@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 const Join = () => {
   const { t } = useTranslation();
   return (
-    <div className="flex flex-col sm:flex-row justify-center gap-5 mt-10 px-4 sm:px-8 bg-offWhite py-12">
+    <div className="flex flex-col sm:flex-row justify-center gap-5 mt-10 px-4 sm:px-8 bg-offWhite dark:bg-background-dark text-navy dark:text-offWhite-dark py-12">
       <div className="flex flex-col justify-center items-center sm:items-start sm:w-1/2">
       <h1 className="font-urbanist text-xl sm:text-2xl lg:text-2xl font-bold text-navy mb-4 text-center sm:text-left">
   {t("JOIN")}

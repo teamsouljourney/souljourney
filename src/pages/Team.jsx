@@ -5,7 +5,7 @@ import TeamTabSwitch from "../components/team/TeamTabSwitch";
 
 const Team = () => {
   return (
-    <div className=" bg-offWhite min-h-screen ">
+    <div className="min-h-screen bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
       <HeroSection />
       <TeamTabSwitch/>
       <Join/>
