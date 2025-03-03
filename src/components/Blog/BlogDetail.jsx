@@ -1,5 +1,3 @@
-"use client";
-
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { HiOutlineHeart, HiHeart, HiArrowLeft } from "react-icons/hi";

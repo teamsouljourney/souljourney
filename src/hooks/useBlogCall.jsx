@@ -89,7 +89,45 @@ const useBlogCall = () => {
     }
   };
 
-  return { getAllBlogs, getSingleBlog, createNewBlog, updateBlog, deleteBlog };
+  //* Get Like Info
+  const getLikeInfo = async (id) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosPublic.get(`blogs/${id}/likes`);
+      return data.likes;
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to fetch like info."
+      );
+    }
+  };
+
+  //* Add - Remove Like
+  const postLike = async (id) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.post(`blogs/${id}/likes`);
+      toastSuccessNotify("Like updated successfully!");
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to update like."
+      );
+    } finally {
+      getAllBlogs();
+    }
+  };
+
+  return {
+    getAllBlogs,
+    getSingleBlog,
+    createNewBlog,
+    updateBlog,
+    deleteBlog,
+    getLikeInfo,
+    postLike,
+  };
 };
 
 export default useBlogCall;
