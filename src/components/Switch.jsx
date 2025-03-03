@@ -20,7 +20,7 @@ const Switch = () => {
         type="button"
         title="Toggle dark/light mode"
         onClick={() => setDarkMode(!darkMode)}
-        className="relative p-[8px] text-navy bg-offWhite rounded-full group hover:bg-navy hover:text-offWhite focus:z-10 dark:focus:ring-navy-dark dark:bg-navy focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy dark:text-gray-400 dark:hover:text-offWhite dark:hover:bg-navy-light shadow-lg shadow-mauve-light hover:shadow-6xl hover:shadow-navy-dark"
+        className="relative p-[8px] text-navy bg-offWhite rounded-full group hover:bg-navy hover:text-offWhite focus:z-10 dark:focus:ring-navy-dark dark:bg-navy focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy dark:text-gray-400 dark:hover:text-offWhite dark:hover:bg-navy-light"
       >
         {darkMode ? (
           <SunIcon className="fill-yellow-400 w-2 h-2 sm:w-4 sm:h-4" />
