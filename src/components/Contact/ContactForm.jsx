@@ -52,7 +52,7 @@ const ContactForm = () => {
               id="user_name"
               autoComplete="given-name"
               placeholder={t("namePlaceholder")}
-              className="w-full py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0 focus:outline-none focus:ring focus:ring-navy-light "
+              className="w-full peer "
               name="user_name"
             />
           </div>
@@ -66,7 +66,7 @@ const ContactForm = () => {
               id="user_email"
               autoComplete="email"
               placeholder={t("emailPlaceholder")}
-              className="w-full py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0 focus:outline-none focus:ring focus:ring-navy-light"
+              className="w-full  peer"
               name="user_email"
             />
           </div>
@@ -81,7 +81,7 @@ const ContactForm = () => {
             cols="30"
             rows="5"
             placeholder={t("messagePlaceholder")}
-            className="w-full resize-none h-[8rem] py-2 pl-2 pr-4 mb-2 border border-gray-400 rounded-md shadow-md dark:text-gray-300 sm:mb-0  focus:outline-none focus:ring focus:ring-navy-light"
+            className="w-full textarea-style"
             name="message"
           ></textarea>
         </div>

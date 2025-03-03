@@ -125,6 +125,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
                   type="description"
                   name="description"
                   id="description"
+                  rows={4}
                   value={singleTherapist?.description}
                   placeholder="Enter your description"
                   autoComplete="description"
@@ -142,6 +143,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
                   type="experience"
                   name="experience"
                   id="experience"
+                  rows={4}
                   value={singleTherapist?.experience}
                   placeholder="Enter your experience"
                   autoComplete="experience"

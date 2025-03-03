@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../button/Button";
 import { useTranslation } from "react-i18next";
+import avatar from "../../assets/avatar3.svg";
 
 const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
   const { t } = useTranslation();
@@ -31,12 +32,12 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
             </div>
             {/* Categories */}
             <div className="flex flex-wrap justify-center lg:justify-start mt-4 gap-2 text-lg">
-              {therapistCategories.map((category) => (
+              {therapistCategories?.map((category) => (
                 <span
                   className="inline-block px-2 py-1 bg-[#E8F5E9] dark:bg-offWhite-dark text-seaGreen dark:text-seaGreen-dark rounded-full text-sm"
-                  key={category._id}
+                  key={category?._id}
                 >
-                  {category.name}
+                  {category?.name}
                 </span>
               ))}
             </div>
@@ -83,7 +84,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
             className="capitalize"
             type="type22"
           >
-            work with me {/* {t("workWithMe")} */}
+            {t("createAppointment")}
           </Button>
         </div>
         ) : (
@@ -93,7 +94,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
             className="capitalize"
             type="type22"
           >
-            work with me {/* {t("workWithMe")} */}
+            {t("createAppointment")}
           </Button>
         </div>
         )}
