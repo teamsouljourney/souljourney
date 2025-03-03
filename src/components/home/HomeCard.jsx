@@ -1,8 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { formatDateTime } from "../../helper/dateFormatter";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import { HiOutlineHeart, HiHeart } from "react-icons/hi";
 import ShareIcon from "@mui/icons-material/Share";
 import { useSelector } from "react-redux";
 
@@ -65,9 +64,9 @@ const HomeCard = ({ blog }) => {
       >
         <div className="flex items-center gap-1 text-gray-600 dark:text-offWhite-dark">
           {isLiked ? (
-            <FavoriteIcon className="text-red-500" />
+            <HiHeart className="w-6 h-6 text-red-500" />
           ) : (
-            <FavoriteBorderIcon />
+            <HiOutlineHeart className="w-6 h-6 text-gray-600" />
           )}
           <span className="text-sm">{likeCount}</span>
         </div>
