@@ -5,7 +5,7 @@ const blogSlice = createSlice({
   initialState: {
     blogs: [],
     filteredBlogs: [],
-    singleBlog: null,
+    singleBlog: {},
     loading: false,
     error: false,
   },
@@ -23,9 +23,10 @@ const blogSlice = createSlice({
       state.singleBlog = payload;
     },
     filterBlogs: (state, { payload }) => {
-      state.filteredBlogs = state.blogs.filter((blog) => 
-        blog.title.toLowerCase().includes(payload.toLowerCase()) || 
-        blog.categoryId.toLowerCase().includes(payload.toLowerCase())
+      state.filteredBlogs = state.blogs.filter(
+        (blog) =>
+          blog.title.toLowerCase().includes(payload.toLowerCase()) ||
+          blog.categoryId.toLowerCase().includes(payload.toLowerCase())
       );
     },
     fetchFail: (state) => {
@@ -39,7 +40,8 @@ export const {
   fetchStart,
   fetchFail,
   getAllBlogsSuccess,
-  getSingleBlogSuccess,filterBlogs
+  getSingleBlogSuccess,
+  filterBlogs,
 } = blogSlice.actions;
 
 export default blogSlice.reducer;

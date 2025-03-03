@@ -27,11 +27,7 @@ function Blog() {
             onBack={() => setSelectedBlog(null)}
           />
         ) : (
-          <BlogList
-            handleReadMore={(blog) => setSelectedBlog(blog)}
-            selectedCategory={selectedCategory}
-            onCategoryChange={(category) => setSelectedCategory(category)}
-          />
+          <BlogList />
         )}
       </main>
     </div>
