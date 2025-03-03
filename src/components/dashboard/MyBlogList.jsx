@@ -74,74 +74,84 @@ export default function MyBlogList() {
           {t("myBlogs")}
         </Typography>
       </Box>
-      <ImageList
-        sx={{
-          width: "100%",
-          height: "auto",
-          display: "grid",
-          gridTemplateColumns: {
-            xs: "1fr",
-            md: "repeat(auto-fill, minmax(250px, 1fr))",
-          },
-          gap: 16,
-        }}
-      >
-        {filteredBlogs?.map((item) => (
-          <ImageListItem
-            key={item?.title}
-            sx={{
-              width: "100%",
-              height: "100%",
-              "&:hover": {
-                padding: "2px",
-                transition: "all 0.1s ease-in-out",
-                cursor: "pointer",
-              },
-            }}
-            onClick={() => navigate(`/blogs/${item?._id}`)}
-          >
-            <img src={item?.image} alt={item?.title} loading="lazy" />
-            <ImageListItemBar
-              title={
-                <Typography
-                  sx={{
-                    fontSize: "0.875rem",
-                    fontWeight: 500,
-                    wordBreak: "break-word",
-                    display: "block",
-                    whiteSpace: "normal",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                >
-                  {item?.title}
-                </Typography>
-              }
-              subtitle={new Date(item?.createdAt).toLocaleDateString("de-DE")}
-              actionIcon={
-                <IconButton
-                  sx={{
-                    color: "customColors.darkgreen",
-                    "&:hover": {
-                      color: "customColors.lightgreen",
-                      transform: "scale(1.2)",
-                    },
-                    position: "relative",
-                    zIndex: 10,
-                  }}
-                  aria-label={`info about ${item?.therapistId?.title}`}
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    navigate(`/profile/write-blog/${item?._id}`);
-                  }}
-                >
-                  <EditNoteRoundedIcon />
-                </IconButton>
-              }
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
+      {filteredBlogs?.length > 0 ? (
+        <ImageList
+          sx={{
+            width: "100%",
+            height: "auto",
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr",
+              md: "repeat(auto-fill, minmax(250px, 1fr))",
+            },
+            gap: 16,
+          }}
+        >
+          {filteredBlogs.map((item) => (
+            <ImageListItem
+              key={item?.title || item?._id}
+              sx={{
+                width: "100%",
+                height: "100%",
+                "&:hover": {
+                  padding: "2px",
+                  transition: "all 0.1s ease-in-out",
+                  cursor: "pointer",
+                },
+              }}
+              onClick={() => navigate(`/blogs/${item?._id}`)}
+            >
+              <img src={item?.image} alt={item?.title} loading="lazy" />
+              <ImageListItemBar
+                title={
+                  <Typography
+                    sx={{
+                      fontSize: "0.875rem",
+                      fontWeight: 500,
+                      wordBreak: "break-word",
+                      display: "block",
+                      whiteSpace: "normal",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {item?.title}
+                  </Typography>
+                }
+                subtitle={
+                  item?.createdAt
+                    ? new Date(item.createdAt).toLocaleDateString("de-DE")
+                    : ""
+                }
+                actionIcon={
+                  <IconButton
+                    sx={{
+                      color: "customColors.darkgreen",
+                      "&:hover": {
+                        color: "customColors.lightgreen",
+                        transform: "scale(1.2)",
+                      },
+                      position: "relative",
+                      zIndex: 10,
+                    }}
+                    aria-label={`info about ${item?.therapistId?.title}`}
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      navigate(`/profile/write-blog/${item?._id}`);
+                    }}
+                  >
+                    <EditNoteRoundedIcon />
+                  </IconButton>
+                }
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      ) : (
+        <p className="text-center p-10 text-navy dark:text-offWhite">
+          {t("noBlog")}
+        </p>
+      )}
     </Container>
   );
 }

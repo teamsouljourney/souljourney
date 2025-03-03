@@ -29,8 +29,6 @@ const PatientList = () => {
     setFilteredAppointments(uniquePatients);
   }, [currentUserAppointments]);
 
-  console.log(currentUserAppointments)
-
   const handleChange = (e) => {
     const searchTerm = e.target.value.toLowerCase();
     setSearchTerm(searchTerm);
@@ -64,7 +62,7 @@ const PatientList = () => {
 
   if (currentUser && currentUser.isTherapist === true) {
     return (
-      <div className="w-full lg:w-1/2 p-8">
+      <div className="w-full xl:w-1/2 p-8">
         <div className="w-full relative z-10">
           {/* Header */}
           <div className="flex justify-center px-4 py-2 text-center rounded-xl mb-3 bg-seaGreen-dark">
@@ -140,7 +138,7 @@ const PatientList = () => {
 
                         {/* Time and Status */}
                         <div className="flex flex-col items-center gap-2">
-                          <Notes currentUser={currentUser} userId={userId}/>
+                          <Notes currentUser={currentUser} userId={userId} />
                           <div className="flex items-center gap-2">
                             <div className="rounded-full bg-emerald-500/20 p-1">
                               <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
