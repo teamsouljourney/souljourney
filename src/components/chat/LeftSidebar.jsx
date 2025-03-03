@@ -1,7 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedUser } from "../../features/chatSlice";
+import { useEffect, useState } from "react";
 
 export default function LeftSidebar({ isOpen, toggleSidebar }) {
+  const [filteredAppointments, setFilteredAppointments] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   let { currentUserAppointments } = useSelector((state) => state.appointments);
   const { currentUser } = useSelector((state) => state.auth);
   const { chats, selectedUser } = useSelector((state) => state.chats);
@@ -12,13 +15,57 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
 
   let agenda = [];
 
+  useEffect(() => {
+    // Get unique patients from appointments
+    const uniquePatients = Array.from(
+      new Map(
+        currentUserAppointments.map((appointment) => [
+          appointment.userId._id,
+          appointment,
+        ])
+      ).values()
+    );
+    setFilteredAppointments(uniquePatients);
+  }, [currentUserAppointments]);
+
+  const handleChange = (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    setSearchTerm(searchTerm);
+
+    if (!searchTerm) {
+      // Show all unique patients when search is empty
+      const uniquePatients = Array.from(
+        new Map(
+          currentUserAppointments.map((appointment) => [
+            appointment.userId._id,
+            appointment,
+          ])
+        ).values()
+      );
+      setFilteredAppointments(uniquePatients);
+      return;
+    }
+
+    const uniqueFilteredPatients = Array.from(
+      new Map(
+        currentUserAppointments
+          .filter((appointment) =>
+            appointment.userId.firstName.toLowerCase().startsWith(searchTerm)
+          )
+          .map((appointment) => [appointment.userId._id, appointment])
+      ).values()
+    );
+
+    setFilteredAppointments(uniqueFilteredPatients);
+  };
+
   currentUser.isTherapist == true
-    ? agenda.push(currentUserAppointments.map((user) => user.userId))
+    ? agenda.push(filteredAppointments.map((user) => user.userId))
     : agenda.push(
-        currentUserAppointments.map((therapist) => therapist.therapistId)
+        filteredAppointments.map((therapist) => therapist.therapistId)
       );
 
-  console.log("ajanda", agenda);
+  console.log("ajanda", filteredAppointments);
 
   const handleUserClick = (user) => {
     const userId = user._id;
@@ -30,7 +77,7 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
     <div
       className={`${
         isOpen ? "translate-x-0" : "-translate-x-full"
-      } fixed inset-y-0 left-0 z-30 w-80 bg-offWhite border-r transition-transform duration-300 ease-in-out md:translate-x-0 md:static`}
+      } fixed inset-y-0 left-0 z-30 w-80  border-r transition-transform duration-300 ease-in-out md:translate-x-0 md:static`}
     >
       <div className="p-4 border-b">
         <div className="relative">
@@ -50,7 +97,7 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
           <input
             type="text"
             placeholder="Search messages"
-            className="w-full pl-8 pr-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+            className="w-full pl-8 pr-4 py-2 border rounded-lg"
           />
         </div>
       </div>
@@ -59,7 +106,7 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
 
         {agenda[0].map((item) => (
           <div
-            className="p-4 hover:bg-slate-50 cursor-pointer"
+            className="p-4 hover:bg-offWhite-dark dark:hover:bg-background-lightdark cursor-pointer"
             key={item?._id}
             onClick={() => handleUserClick(item)}
           >
@@ -72,8 +119,8 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
                     className="rounded-full size-6 sm:size-8"
                   />
                 ) : (
-                  <div className="flex items-center justify-center rounded-full size-8 bg-navy-dark">
-                    <span className="text-sm font-medium text-offWhite-light">
+                  <div className="flex items-center justify-center rounded-full size-8">
+                    <span className="text-sm font-medium">
                       {item?.firstName.charAt(0).toUpperCase() +
                         item?.lastName.charAt(0).toUpperCase()}
                     </span>
@@ -82,16 +129,17 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
               </div>
               <div className="flex-1">
                 <div className="flex justify-between">
-                  <p className="font-medium text-navy">
-                    {item?.firstName} {item?.lastName}
+                  <p className="font-medium text-sm">
+                    {item?.firstName.toUpperCase()}{" "}
+                    {item?.lastName.toUpperCase()}
                   </p>
-                  <span className="text-xs text-navy text-right">
+                  <span className="text-xs text-right">
                     {item?.isOnline ? (
                       <div className="flex items-center gap-2">
                         <div className="rounded-full bg-emerald-500/20 p-1">
                           <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                         </div>
-                        <p className="text-xs text-navy">Online</p>
+                        <p className="text-xs">Online</p>
                       </div>
                     ) : (
                       (() => {
@@ -101,7 +149,7 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
 
                         if (date.toDateString() === today.toDateString()) {
                           return (
-                            <span className="text-xs text-navy">
+                            <span className="text-xs">
                               {date.toLocaleString("de-DE", {
                                 hour: "2-digit",
                                 minute: "2-digit",
@@ -110,7 +158,7 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
                           );
                         } else {
                           return (
-                            <span className="text-xs text-navy">
+                            <span className="text-xs">
                               {date.toLocaleString("de-DE", {
                                 year: "numeric",
                                 month: "numeric",
