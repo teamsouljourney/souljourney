@@ -11,11 +11,11 @@ const InfoSection = () => {
         <div className="w-full h-full flex flex-col items-center">
           <section className="w-full relative flex items-center flex-col lg:flex-row">
             <img className="lg:w-1/2 " src={foto} alt="port image" />
-            <div className="lg:absolute lg:left-[40%] md:left-[30%] lg:w-[55%] lg:p-12 sm:p-6 p-4 flex flex-col justify-center bg-offWhite dark:bg-customBlack-dark">
-              <h2 className="text-customBlack-light dark:text-offWhite-light md:text-3xl text-2xl font-bold mb-2">
+            <div className="lg:absolute lg:left-[40%] md:left-[30%] lg:w-[55%] lg:p-12 sm:p-6 p-4 flex flex-col justify-center bg-offWhite">
+              <h2 className="text-customBlack-light md:text-3xl text-2xl font-bold mb-2">
                 Soul Journey
               </h2>
-              <p className="text-customBlack dark:text-offWhite-light text-sm md:text-xs xl:text-sm mb-6 ">
+              <p className="text-customBlack text-sm md:text-xs xl:text-sm mb-6 ">
                 {t("infoText")}
               </p>
               <div>
