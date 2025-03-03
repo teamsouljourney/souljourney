@@ -1,11 +1,15 @@
-import { NavLink } from "react-router-dom";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import ShareIcon from "@mui/icons-material/Share";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { formatDateTime } from "../../helper/dateFormatter";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+import { useSelector } from "react-redux";
 
 const HomeCard = ({ blog }) => {
   const { t } = useTranslation();
+  const { currentUser } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
   const handleShare = async () => {
     const blogUrl = `${window.location.origin}/blogs/${blog._id}`;
@@ -20,12 +24,22 @@ const HomeCard = ({ blog }) => {
         console.error("Share failed:", error);
       }
     } else {
-      alert("Paylaşım özelliği tarayıcınız tarafından desteklenmiyor.");
+      alert("Sharing feature is not supported by your browser.");
     }
   };
 
+  const isLiked = blog?.likes?.includes(currentUser?._id);
+  const likeCount = blog?.likes?.length || 0;
+
+  const handleCardClick = () => {
+    navigate(`/blogs/${blog?._id}`);
+  };
+
   return (
-    <div className="flex flex-col w-full max-w-xs p-3 transition duration-500 bg-white shadow-2xl rounded-xl dark:bg-background-dark text-navy dark:text-offWhite-dark hover:scale-105">
+    <div
+      onClick={handleCardClick}
+      className="flex flex-col w-full max-w-xs p-3 transition duration-500 bg-white shadow-2xl cursor-pointer rounded-xl dark:bg-background-dark text-navy dark:text-offWhite-dark hover:scale-105"
+    >
       <div className="relative w-full h-64">
         <img
           className="object-cover w-full h-full rounded-lg"
@@ -45,8 +59,19 @@ const HomeCard = ({ blog }) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between px-4 py-4 mt-auto border-t border-gray-300">
-        <FavoriteBorderIcon className="text-gray-600 transition dark:text-offWhite-dark hover:text-red-500" />
+      <div
+        className="flex items-center justify-between px-4 py-4 mt-auto border-t border-gray-300"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center gap-1 text-gray-600 dark:text-offWhite-dark">
+          {isLiked ? (
+            <FavoriteIcon className="text-red-500" />
+          ) : (
+            <FavoriteBorderIcon />
+          )}
+          <span className="text-sm">{likeCount}</span>
+        </div>
+
         <button
           onClick={handleShare}
           className="flex items-center gap-1 text-gray-600 transition dark:text-offWhite-dark hover:text-seaGreen"
