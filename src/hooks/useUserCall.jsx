@@ -152,17 +152,16 @@ const useUserCall = () => {
   const changeMyPassword = async (id, values) => {
     dispatch(fetchStart());
     try {
+      navigate("/")
       await axiosWithToken.patch(`users/${id}/changeMyPassword`, values);
       toastSuccessNotify("Your password has been changed!");
+      await axiosWithToken.get("auth/logout");
+      dispatch(logoutSuccess());
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
         error.response?.data?.message || "Failed to change your password."
       );
-    } finally {
-      await axiosWithToken.get("auth/logout");
-      dispatch(logoutSuccess());
-      navigate("/")
     }
   };
 
