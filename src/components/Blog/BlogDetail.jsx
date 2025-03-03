@@ -5,7 +5,7 @@ import useBlogCall from "../../hooks/useBlogCall";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleBlogSuccess } from "../../features/blogSlice";
 
-function BlogDetail() {
+const BlogDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -108,6 +108,6 @@ function BlogDetail() {
       </div>
     </div>
   );
-}
+};
 
 export default BlogDetail;
