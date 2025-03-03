@@ -1,11 +1,15 @@
+"use client";
+
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { HiOutlineHeart, HiHeart, HiArrowLeft } from "react-icons/hi";
 import useBlogCall from "../../hooks/useBlogCall";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getSingleBlogSuccess } from "../../features/blogSlice";
 
 function BlogDetail() {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { singleBlog, loading } = useSelector((state) => state.blogs);
   const { getSingleBlog } = useBlogCall();
@@ -13,6 +17,10 @@ function BlogDetail() {
   useEffect(() => {
     getSingleBlog(id);
   }, [id]);
+
+  useEffect(() => {
+    dispatch(getSingleBlogSuccess({}));
+  }, [navigate]);
 
   if (loading) {
     return (
@@ -28,7 +36,7 @@ function BlogDetail() {
         <div className="relative w-full h-80">
           <img
             className="object-cover w-full h-full"
-            src={singleBlog?.image}
+            src={singleBlog?.image || "/placeholder.svg"}
             alt={singleBlog?.title}
           />
         </div>
@@ -38,7 +46,7 @@ function BlogDetail() {
             {singleBlog?.therapistId && (
               <>
                 <img
-                  src={singleBlog?.therapistId?.image}
+                  src={singleBlog?.therapistId?.image || "/placeholder.svg"}
                   alt={`${singleBlog?.therapistId?.firstName} ${singleBlog?.therapistId?.lastName}`}
                   className="object-cover w-10 h-10 rounded-full"
                 />
@@ -71,10 +79,10 @@ function BlogDetail() {
               // onClick={handleLike}
               className="flex items-center transition-colors duration-200 focus:outline-none"
             >
-              {singleBlog ? (
-                <AiFillHeart className="text-2xl text-red-500" />
+              {singleBlog?.isLiked ? (
+                <HiHeart className="w-6 h-6 text-red-500" />
               ) : (
-                <AiOutlineHeart className="text-2xl hover:text-red-500" />
+                <HiOutlineHeart className="w-6 h-6 hover:text-red-500" />
               )}
             </button>
             <span className="font-medium text-gray-600">Count</span>
@@ -82,8 +90,9 @@ function BlogDetail() {
 
           <button
             onClick={() => navigate("/blogs")}
-            className="px-6 py-2 text-white transition-all rounded bg-navy hover:bg-navy-light"
+            className="flex items-center gap-2 px-6 py-2 text-white transition-all rounded bg-navy hover:bg-navy-light"
           >
+            <HiArrowLeft className="w-4 h-4" />
             Go Back
           </button>
         </div>
