@@ -28,7 +28,7 @@ export default function RightSidebar({ isOpen, sidebarRef }) {
       ref={sidebarRef}
       className={`${
         isOpen ? "translate-x-0" : "translate-x-full"
-      } fixed inset-y-0 right-0 z-30 w-80 bg-white border-l transition-transform duration-300 ease-in-out`}
+      } fixed inset-y-0 right-0 z-30 w-80 bg-offWhite dark:bg-background-dark border-l transition-transform duration-300 ease-in-out`}
     >
       <div className="p-6 text-center border-b">
         <div className="w-28 h-28 rounded-full flex items-center justify-center mx-auto mb-4 object-cover">
@@ -50,19 +50,17 @@ export default function RightSidebar({ isOpen, sidebarRef }) {
         <h3 className="font-semibold text-lg">
           {selectedUserData[0]?.firstName} {selectedUserData[0]?.lastName}
         </h3>
-        <p className="text-sm text-gray-500">
-          {selectedUserData[0]?.profession}
-        </p>
+        <p className="text-sm">{selectedUserData[0]?.profession}</p>
       </div>
 
       <div className="p-6">
-        <h4 className="font-bold mb-4 text-navy">Informations</h4>
+        <h4 className="font-bold mb-4 ">Informations</h4>
         <div className="space-y-4">
-          <p className="w-full px-4 py-2 hover:bg-gray-100 rounded-lg">
-            <b className="text-navy">Email : </b>
+          <p className="w-full px-4 py-2 rounded-lg">
+            <b className="">Email : </b>
             <i>{selectedUserData[0]?.email}</i>
           </p>
-          <p className="w-full px-4 py-2 hover:bg-gray-100 rounded-lg">
+          <p className="w-full px-4 py-2 rounded-lg">
             {selectedUserData[0]?.address} {selectedUserData[0]?.graduation}
           </p>
         </div>

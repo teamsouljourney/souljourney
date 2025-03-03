@@ -164,7 +164,7 @@ export default function MainChatArea({
                 )}
               </div>
               <button className="text-left" onClick={toggleRightSidebar}>
-                <p className="font-medium text-navy dark:text-offWhite">
+                <p className="font-medium  dark:text-offWhite">
                   {selectedUserData[0]?.firstName}{" "}
                   {selectedUserData[0]?.lastName}
                 </p>
@@ -195,7 +195,7 @@ export default function MainChatArea({
       </div>
 
       {!selectedUser && (
-        <div className="text-center mt-12 text-navy dark:text-offWhite">
+        <div className="text-center mt-12  dark:text-offWhite">
           <p>{"Please select a person before starting the chat!"}</p>
         </div>
       )}
@@ -222,7 +222,7 @@ export default function MainChatArea({
               >
                 <div>
                   <div
-                    className={`text-navy-light rounded-3xl p-3 max-w-xs sm:max-w-md ${
+                    className={`-light rounded-3xl p-3 max-w-xs sm:max-w-md ${
                       chat.senderId === currentUser?._id
                         ? "bg-pastelGreen-light rounded-br-none"
                         : "bg-mauve-light/50 rounded-tl-none"
@@ -230,7 +230,13 @@ export default function MainChatArea({
                   >
                     <p className="overflow-auto break-words">{chat?.content}</p>
                   </div>
-                  <span className="text-xs text-gray-500 mt-1 block">
+                  <div
+                    className={`text-xs text-gray-500 mt-1 ${
+                      chat.senderId === currentUser?._id
+                        ? "text-right"
+                        : "text-left"
+                    }`}
+                  >
                     {chat?.createdAt ? (
                       <>
                         {new Date(chat?.createdAt).toLocaleDateString()}
@@ -243,7 +249,7 @@ export default function MainChatArea({
                     ) : (
                       "Sending..."
                     )}
-                  </span>
+                  </div>
                 </div>
               </div>
             ))
@@ -274,16 +280,16 @@ export default function MainChatArea({
       {selectedUser && (
         <form
           onSubmit={handleChats}
-          className="p-4 border-t flex gap-2 relative"
+          className="p-4 border-t flex gap-2 items-center justify-center relative"
         >
           <button
             type="button"
-            className="p-2 hover:bg-offWhite-dark rounded-full"
+            className="p-2 hover:bg-offWhite-dark dark:hover:bg-background-lightdark rounded-full"
             onClick={toggleEmojiPicker}
             disabled={isSending}
           >
             <svg
-              className="w-5 h-5 text-navy"
+              className="w-5 h-5 "
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -296,22 +302,21 @@ export default function MainChatArea({
               />
             </svg>
           </button>
-
-          <input
+          <textarea
             type="text"
+            rows="1"
             placeholder={isSending ? "Sending..." : "Type a message..."}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="flex-1 px-4 py-2 border rounded-full focus:outline-none focus:border-seaGreen-light"
+            className="flex-1 px-4 py-2  resize-none overflow-hidden bg-inherit dark:bg-background-lightdark rounded-xl focus:outline-none focus:border-seaGreen-light"
             disabled={isSending}
           />
-
           <button
             type="submit"
-            className={`p-4 rounded-full ${
+            className={`p-3 rounded-full ${
               isSending || !message.trim()
                 ? "opacity-50 cursor-not-allowed"
-                : "hover:bg-offWhite-light"
+                : "hover:bg-offWhite-dark dark:hover:bg-background-lightdark"
             }`}
             disabled={isSending || !message.trim()}
           >
@@ -322,7 +327,7 @@ export default function MainChatArea({
           {isEmojiPickerOpen && (
             <div
               ref={emojiPickerRef}
-              className="absolute bottom-full left-0 mb-2 z-10"
+              className="absolute bottom-16 left-4 z-50"
             >
               <EmojiPicker onEmojiClick={onEmojiClick} />
             </div>
