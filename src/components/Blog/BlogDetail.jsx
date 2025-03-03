@@ -27,8 +27,6 @@ const BlogDetail = () => {
 
   const isLikedByUser = singleBlog?.likes?.includes(currentUser?._id);
 
-  console.log(singleBlog);
-
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-[400px]">
