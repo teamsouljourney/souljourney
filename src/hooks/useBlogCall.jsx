@@ -108,14 +108,13 @@ const useBlogCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.post(`blogs/${id}/likes`);
-      toastSuccessNotify("Like updated successfully!");
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
         error.response?.data?.message || "Failed to update like."
       );
     } finally {
-      getAllBlogs();
+      getSingleBlog(id);
     }
   };
 

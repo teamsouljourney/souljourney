@@ -9,8 +9,9 @@ function BlogDetail() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { getSingleBlog, postLike } = useBlogCall();
   const { singleBlog, loading } = useSelector((state) => state.blogs);
-  const { getSingleBlog } = useBlogCall();
+  const { currentUser } = useSelector((state) => state.auth);
 
   useEffect(() => {
     getSingleBlog(id);
@@ -19,6 +20,14 @@ function BlogDetail() {
   useEffect(() => {
     dispatch(getSingleBlogSuccess({}));
   }, [navigate]);
+
+  const handleLike = () => {
+    postLike(id);
+  };
+
+  const isLikedByUser = singleBlog?.likes?.includes(currentUser?._id);
+
+  console.log(singleBlog);
 
   if (loading) {
     return (
@@ -74,16 +83,18 @@ function BlogDetail() {
         <div className="flex items-center justify-between px-5 mt-6">
           <div className="flex items-center gap-2">
             <button
-              // onClick={handleLike}
+              onClick={handleLike}
               className="flex items-center transition-colors duration-200 focus:outline-none"
             >
-              {singleBlog?.isLiked ? (
+              {isLikedByUser ? (
                 <HiHeart className="w-6 h-6 text-red-500" />
               ) : (
                 <HiOutlineHeart className="w-6 h-6 hover:text-red-500" />
               )}
             </button>
-            <span className="font-medium text-gray-600">Count</span>
+            <span className="font-medium text-gray-600">
+              {singleBlog?.likes?.length || 0}
+            </span>
           </div>
 
           <button
