@@ -84,7 +84,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
             className="capitalize"
             type="type22"
           >
-            work with me {/* {t("workWithMe")} */}
+            {t("createAppointment")}
           </Button>
         </div>
         ) : (
@@ -94,7 +94,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
             className="capitalize"
             type="type22"
           >
-            work with me {/* {t("workWithMe")} */}
+            {t("createAppointment")}
           </Button>
         </div>
         )}
