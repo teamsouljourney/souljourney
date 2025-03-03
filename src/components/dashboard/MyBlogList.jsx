@@ -30,7 +30,17 @@ export default function MyBlogList() {
     (blog) => blog?.therapistId?._id === currentUser?._id
   );
 
-  if (!currentUser?.isTherapist) return null;
+  const filteredBlogsByUserLike = blogs?.filter((blog) =>
+    blog?.likes.includes(currentUser._id)
+  );
+
+  let filteredBlogs;
+
+  if (!currentUser?.isTherapist) {
+    filteredBlogs = filteredBlogsByUserLike;
+  } else {
+    filteredBlogs = filteredBlogsByTherapist;
+  }
 
   return (
     <Container
@@ -42,7 +52,6 @@ export default function MyBlogList() {
           md: "100%",
           lg: "50%",
         },
-        margin: "auto",
         padding: "2rem",
       }}
     >
@@ -77,7 +86,7 @@ export default function MyBlogList() {
           gap: 16,
         }}
       >
-        {filteredBlogsByTherapist?.map((item) => (
+        {filteredBlogs?.map((item) => (
           <ImageListItem
             key={item?.title}
             sx={{
