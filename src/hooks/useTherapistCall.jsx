@@ -160,7 +160,7 @@ const useTherapistCall = () => {
     const changeMyPasswordTherapist = async (id, values) => {
       dispatch(fetchStart());
       try {
-        await axiosWithToken.patch(`therapists/${id}changeMyPassword`, values);
+        await axiosWithToken.patch(`therapists/${id}/changeMyPassword`, values);
         toastSuccessNotify("Your password has been changed!");
       } catch (error) {
         dispatch(fetchFail());
