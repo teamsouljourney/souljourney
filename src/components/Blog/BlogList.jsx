@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import BlogCard from "./BlogCard";
+import BlogsCard from "./BlogsCard";
 
 function BlogList() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,7 +74,7 @@ function BlogList() {
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {blogs.map((blog, index) => (
-            <BlogCard key={blog._id} blog={blog} index={index} />
+            <BlogsCard key={blog._id} blog={blog} index={index} />
           ))}
         </div>
       </div>

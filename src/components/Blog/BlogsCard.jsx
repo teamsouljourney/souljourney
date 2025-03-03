@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const BlogCard = ({ blog, index }) => {
+const BlogsCard = ({ blog, index }) => {
   const navigate = useNavigate();
   const isEven = index % 2 === 0;
 
@@ -47,4 +47,4 @@ const BlogCard = ({ blog, index }) => {
   );
 };
 
-export default BlogCard;
+export default BlogsCard;
