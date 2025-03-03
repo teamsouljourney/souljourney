@@ -71,10 +71,12 @@ function BlogList() {
         )}
       </div> */}
 
-      <div className="grid grid-cols-1 gap-8 mt-8">
-        {blogs.map((blog, index) => (
-          <BlogCard key={blog._id} blog={blog} index={index} />
-        ))}
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          {blogs.map((blog, index) => (
+            <BlogCard key={blog._id} blog={blog} index={index} />
+          ))}
+        </div>
       </div>
     </div>
   );
