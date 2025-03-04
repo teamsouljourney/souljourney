@@ -64,7 +64,7 @@ const useTherapistCall = () => {
   const getFilterTherapists = async (categoryId) => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosWithToken.get(`therapists?category=${categoryId}`);
+      const { data } = await axiosPublic.get(`therapists?category=${categoryId}`);
       dispatch(getFilterTherapistsSuccess(data?.data));
     } catch (error) {
       dispatch(fetchFail());
