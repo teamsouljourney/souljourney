@@ -5,15 +5,16 @@ import TeamDetailFeedbackCards from "./TeamDetailFeedbackCards";
 import TeamDetailFeedbackForm from "./TeamDetailFeedbackForm";
 import { useTranslation } from "react-i18next";
 
-const TeamDetailBody = ({ singleTherapist, id, currentUser }) => {
+const TeamDetailBody = () => {
   const { t } = useTranslation();
   const { getSingleTherapistFeedbacks, postTherapistFeedback } =
     useFeedbackCall();
   const { singleTherapistFeedbacks, loading, error } = useSelector(
     (state) => state.feedbacks
   );
-//   const { currentUser } = useSelector((state) => state.auth);
-
+  const { singleTherapist } = useSelector((state) => state.therapists);
+  const { currentUser } = useSelector((state) => state.auth);
+  const id = singleTherapist?._id
   // console.log(currentUser);
   const initialFeedback = {
     userId: currentUser?._id,
@@ -121,9 +122,7 @@ const TeamDetailBody = ({ singleTherapist, id, currentUser }) => {
 
           {/* Review/Feedback Cards */}
 
-          <TeamDetailFeedbackCards
-            singleTherapistFeedbacks={singleTherapistFeedbacks}
-          />
+          <TeamDetailFeedbackCards/>
 
           {/* <!-- Add Comment Form --> */}
 

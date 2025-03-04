@@ -144,7 +144,7 @@ const TeamDetail = () => {
       {/* Body */}
       <div className="w-full px-4">
 
-        <TeamDetailBody currentUser={currentUser} singleTherapist={singleTherapist} id={id}/>
+        <TeamDetailBody />
         
       </div>
       {/* GoBack */}

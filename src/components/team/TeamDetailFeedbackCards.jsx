@@ -6,9 +6,11 @@ import Pagination from "../adminPanel/Pagination";
 import { useSelector } from "react-redux";
 import {getTimeAgo} from "../../helper/dateFormatter"
 
-const TeamDetailFeedbackCards = ({ singleTherapistFeedbacks }) => {
+const TeamDetailFeedbackCards = () => {
   const { t } = useTranslation();
   const {pagFeedbacks} = useSelector((state)=>state.pagination)
+  const {singleTherapistFeedbacks} = useSelector((state)=>state.feedbacks)
+
   {
     /* {t("goBack")} */
   }
