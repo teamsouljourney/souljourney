@@ -6,6 +6,7 @@ const blogSlice = createSlice({
     blogs: [],
     filteredBlogs: [],
     singleBlog: {},
+    popularBlogs: [],
     loading: false,
     error: false,
   },
@@ -21,6 +22,14 @@ const blogSlice = createSlice({
     getSingleBlogSuccess: (state, { payload }) => {
       state.loading = false;
       state.singleBlog = payload;
+    },
+    getBlogDataSuccess: (state, { payload }) => {
+      state.loading = false;
+      if (payload.endpoint === "popularBlogs") {
+        state.popularBlogs = payload.data;
+      } else {
+        state.blogs = payload.data;
+      }
     },
     filterBlogs: (state, { payload }) => {
       state.filteredBlogs = state.blogs.filter(
@@ -41,6 +50,7 @@ export const {
   fetchFail,
   getAllBlogsSuccess,
   getSingleBlogSuccess,
+  getBlogDataSuccess,
   filterBlogs,
 } = blogSlice.actions;
 

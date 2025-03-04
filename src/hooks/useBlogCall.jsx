@@ -5,6 +5,7 @@ import {
   fetchFail,
   getAllBlogsSuccess,
   getSingleBlogSuccess,
+  getBlogDataSuccess,
 } from "../features/blogSlice";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import usePaginationCall from "./usePaginationCall";
@@ -17,11 +18,33 @@ const useBlogCall = () => {
     (state) => state.pagination
   );
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+
   const getAllBlogs = async () => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosPublic.get("blogs");
       dispatch(getAllBlogsSuccess(data.data));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to fetch blogs."
+      );
+    }
+  };
+
+  const getBlogData = async (query) => {
+    dispatch(fetchStart());
+    try {
+      const url = query ? `${BASE_URL}blogs?${query}` : `${BASE_URL}blogs`;
+
+      const { data } = await axiosPublic(url);
+
+      if (query && query.includes("sort[countOfVisitors]")) {
+        dispatch(getBlogDataSuccess({ endpoint: "popularBlogs", data }));
+      } else {
+        dispatch(getAllBlogsSuccess(data.data));
+      }
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -120,6 +143,7 @@ const useBlogCall = () => {
 
   return {
     getAllBlogs,
+    getBlogData,
     getSingleBlog,
     createNewBlog,
     updateBlog,
