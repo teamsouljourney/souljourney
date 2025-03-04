@@ -1,4 +1,4 @@
-import useAxios from "./useAxios";
+import useAxios, { axiosPublic } from "./useAxios";
 import { useDispatch } from "react-redux";
 import { toastErrorNotify } from "../helper/ToastNotify";
 import {
@@ -15,7 +15,7 @@ const usePaginationCall = () => {
   const getDataByPage = async (endpoint, slice, limit, page) => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosWithToken.get(
+      const { data } = await axiosPublic.get(
         `${BASE_URL}${endpoint}?limit=${limit}&page=${page}`
       );
       dispatch(getPagDataSuccess({ slice, data: data.data }));

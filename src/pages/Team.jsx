@@ -33,19 +33,6 @@ const Team = () => {
     dispatch(setSearchTerm(value))
   }
 
-  
-
-
-
-  // Filter therapists by search term if provided
-  // const filteredBySearch = searchTerm
-  //   ? displayTherapists.filter(
-  //       (therapist) =>
-  //         therapist.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-  //         therapist.lastName.toLowerCase().includes(searchTerm.toLowerCase()),
-  //     )
-  //   : displayTherapists
-
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">

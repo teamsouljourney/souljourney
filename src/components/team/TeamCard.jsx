@@ -41,9 +41,8 @@ const TeamCard = () => {
               <p className="line-clamp-2">{therapist?.description}</p>
             </div>
 
-            <div className="flex items-center justify-between px-4 py-4 mt-auto border-t border-gray-300">
-              <FavoriteBorderIcon className="text-gray-600 transition dark:text-offWhite-dark hover:text-red-500" />
-
+            <div className="flex items-center justify-center px-4 py-4 mt-auto border-t border-gray-300">
+              
               <NavLink
                 to={`/therapists/${therapist?._id}`}
                 className="py-2 font-bold text-center transition rounded-lg w-28 sm:w-32 text-offWhite bg-seaGreen-dark hover:bg-seaGreen-light"
