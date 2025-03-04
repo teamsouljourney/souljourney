@@ -12,10 +12,14 @@ import { setSearchTerm } from "../features/blogSlice";
 const Blog = () => {
   const dispatch = useDispatch();
   const { getBlogData } = useBlogCall();
-  const { getAllCategories, getFilteredBlogs } = useCategoryCall();
-  const { blogs, loading, searchTerm } = useSelector((state) => state.blogs);
-  const { pagBlogs } = useSelector((state) => state.pagination);
+  const { getAllCategories } = useCategoryCall();
+  const { blogs, loading, searchTerm, filteredBlogs } = useSelector(
+    (state) => state.blogs
+  );
+  // const { pagBlogs } = useSelector((state) => state.pagination);
   const { t } = useTranslation();
+
+  const displayedBlogs = filteredBlogs?.length > 0 ? filteredBlogs : blogs;
 
   useEffect(() => {
     getBlogData();
@@ -56,12 +60,11 @@ const Blog = () => {
       <main className="container px-6 py-16 mx-auto">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            {pagBlogs?.map((blog, index) => (
+            {displayedBlogs?.map((blog, index) => (
               <BlogsCard key={blog._id} blog={blog} index={index} />
             ))}
           </div>
         </div>
-        <Pagination endpoint="blogs" slice="pagBlogs" data={blogs} />
       </main>
     </div>
   );
