@@ -63,7 +63,7 @@ const Blog = () => {
       <main className="container px-6 py-16 mx-auto">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            {displayedBlogs?.map((blog, index) => (
+            {pagFilteredBlogs?.map((blog, index) => (
               <BlogsCard key={blog._id} blog={blog} index={index} />
             ))}
           </div>
