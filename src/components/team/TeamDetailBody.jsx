@@ -14,8 +14,8 @@ const TeamDetailBody = () => {
   );
   const { singleTherapist } = useSelector((state) => state.therapists);
   const { currentUser } = useSelector((state) => state.auth);
-  const id = singleTherapist?._id
-  // console.log(currentUser);
+  const id = singleTherapist && singleTherapist?._id
+  console.log(singleTherapist);
   const initialFeedback = {
     userId: currentUser?._id,
     therapistId: id,
@@ -29,8 +29,10 @@ const TeamDetailBody = () => {
   // console.log(feedback);
 
   useEffect(() => {
-    getSingleTherapistFeedbacks(id);
-  }, [id]);
+    if (singleTherapist) {
+      getSingleTherapistFeedbacks(singleTherapist?._id);
+    }    
+  }, [singleTherapist?._id]);
 
   if (loading) {
     return <div className="text-center text-navy">Loading...</div>;

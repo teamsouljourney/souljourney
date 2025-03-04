@@ -5,7 +5,7 @@ const therapistSlice = createSlice({
   initialState: {
     therapists: [],
     filteredTherapists: [],
-    singleTherapist: {},
+    singleTherapist: null,
     newTherapist: {
       firstName: "",
       lastName: "",

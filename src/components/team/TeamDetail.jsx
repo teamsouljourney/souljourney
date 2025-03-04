@@ -21,6 +21,9 @@ const TeamDetail = () => {
   const [activeTab, setActiveTab] = useState("about");
   const [displayCalendar, setDisplayCalendar] = useState(false);
 
+  console.log(id);
+  
+
   useEffect(() => {
     getSingleTherapist(id);
     getTherapistTimeTable(id);
