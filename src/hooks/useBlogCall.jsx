@@ -41,7 +41,10 @@ const useBlogCall = () => {
       const { data } = await axiosPublic(url);
 
       if (query && query.includes("sort[countOfVisitors]")) {
-        dispatch(getBlogDataSuccess({ endpoint: "popularBlogs", data }));
+        console.log("popularBlogs", data.data);
+        dispatch(
+          getBlogDataSuccess({ endpoint: "popularBlogs", data: data.data })
+        );
       } else {
         dispatch(getAllBlogsSuccess(data.data));
       }

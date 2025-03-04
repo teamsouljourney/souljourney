@@ -6,13 +6,16 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const BlogsSection = () => {
-  const { getAllBlogs } = useBlogCall();
-  const { blogs } = useSelector((state) => state.blogs);
+  const { getBlogData } = useBlogCall();
+  const { popularBlogs } = useSelector((state) => state.blogs);
   const { t } = useTranslation();
 
   useEffect(() => {
-    getAllBlogs();
+    const query = "sort[countOfVisitors]=desc&limit=4";
+    getBlogData(query);
   }, []);
+
+  console.log(popularBlogs);
 
   return (
     <div className="flex flex-col items-center w-full gap-10">
@@ -24,7 +27,7 @@ const BlogsSection = () => {
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 md:gap-10 lg:gap-14">
-        {blogs?.map((blog) => (
+        {popularBlogs?.map((blog) => (
           <HomeCard key={blog._id} blog={blog} />
         ))}
       </div>
