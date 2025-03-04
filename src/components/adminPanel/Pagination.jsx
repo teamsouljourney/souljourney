@@ -4,7 +4,7 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import usePaginationCall from "../../hooks/usePaginationCall";
 import { setPage } from "../../features/paginationSlice";
 
-const Pagination = ({ endpoint, slice, data }) => {
+const Pagination = ({ endpoint, slice, data, query }) => {
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const { getDataByPage } = usePaginationCall();
@@ -21,7 +21,7 @@ const Pagination = ({ endpoint, slice, data }) => {
       setSearchParams({ page: 1 }, { replace: true });
     } else {
       dispatch(setPage(pageFromUrl));
-      getDataByPage(endpoint, slice, itemsPerPage, pageFromUrl);
+      getDataByPage(endpoint, slice, itemsPerPage, pageFromUrl, query);
     }
   }, [searchParams]);
 

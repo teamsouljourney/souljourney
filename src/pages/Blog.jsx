@@ -16,10 +16,13 @@ const Blog = () => {
   const { blogs, loading, searchTerm, filteredBlogs } = useSelector(
     (state) => state.blogs
   );
-  // const { pagBlogs } = useSelector((state) => state.pagination);
+  const { selectedCategory } = useSelector((state) => state.categories);
+  const { pagFilteredBlogs } = useSelector((state) => state.pagination);
   const { t } = useTranslation();
 
   const displayedBlogs = filteredBlogs?.length > 0 ? filteredBlogs : blogs;
+
+  const categoryQuery = selectedCategory ? `category=${selectedCategory}` : "";
 
   useEffect(() => {
     getBlogData();
@@ -65,6 +68,12 @@ const Blog = () => {
             ))}
           </div>
         </div>
+        <Pagination
+          endpoint="blogs"
+          slice="pagFilteredBlogs"
+          data={displayedBlogs}
+          query={categoryQuery}
+        />
       </main>
     </div>
   );
