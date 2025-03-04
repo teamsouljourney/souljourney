@@ -7,13 +7,13 @@ import BlogsCard from "../components/blog/BlogsCard";
 import Pagination from "../components/adminPanel/Pagination";
 
 const Blog = () => {
-  const { getAllBlogs } = useBlogCall();
+  const { getBlogData } = useBlogCall();
   const { getAllCategories } = useCategoryCall();
   const { blogs } = useSelector((state) => state.blogs);
   const { pagBlogs } = useSelector((state) => state.pagination);
 
   useEffect(() => {
-    getAllBlogs();
+    getBlogData();
     getAllCategories();
   }, []);
 

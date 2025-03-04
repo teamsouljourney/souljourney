@@ -37,9 +37,7 @@ const useBlogCall = () => {
     dispatch(fetchStart());
     try {
       const url = query ? `${BASE_URL}blogs?${query}` : `${BASE_URL}blogs`;
-
       const { data } = await axiosPublic(url);
-
       if (query && query.includes("sort[countOfVisitors]")) {
         console.log("popularBlogs", data.data);
         dispatch(
