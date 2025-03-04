@@ -1,127 +1,168 @@
-import { useEffect, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import useCategoryCall from "../hooks/useCategoryCall";
-import useTherapistCall from "../hooks/useTherapistCall";
-import { useDispatch, useSelector } from "react-redux";
-import MoreCategories from "../components/MoreCategories";
-import { setSelectedCategory } from "../features/categorySlice";
-import { setSearchTerm } from "../features/therapistSlice";
-import { useTranslation } from "react-i18next";
 
-const TabSwitch = () => {
-  const { t } = useTranslation();
-  const dispatch = useDispatch();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [selectedCategory, setSelectedCategoryState] = useState(null);
-  const { categories } = useSelector((state) => state.categories);
-  const { therapists, searchTerm } = useSelector((state) => state.therapists);
+import { useEffect, useState } from "react"
+import { FaBars, FaTimes } from "react-icons/fa"
+import { useDispatch, useSelector } from "react-redux"
+import useCategoryCall from "../hooks/useCategoryCall"
+import MoreCategories from "./MoreCategories"
+import { useTranslation } from "react-i18next"
+import { setSelectedCategory } from "../features/categorySlice"
 
-  const { getAllCategories } = useCategoryCall();
-  const { getAllTherapists, getFilterTherapists } = useTherapistCall();
+// /**
+//  * TabSwitch Component - A reusable component for category filtering
+//  * @param {Object} props - Component props
+//  * @param {string} props.itemType - Type of items to display ('therapists' or 'blogs')
+//  * @param {string} props.searchTerm - Current search term
+//  * @param {Function} props.onSearchChange - Function to handle search term changes
+//  * @param {Function} props.onCategoryChange - Function to handle category selection
+//  * @param {string} [props.searchPlaceholder] - Optional custom placeholder for search input
+//  */
+const TabSwitch = ({ itemType, searchTerm, onSearchChange, onCategoryChange, placeholder, onAllDataFetch }) => {
+  const dispatch = useDispatch()
+  const { t } = useTranslation()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const { selectedCategory, categories, loading } = useSelector((state) => state.categories)
+  const { getAllCategories } = useCategoryCall()
 
+
+  // Fetch categories on component mount
   useEffect(() => {
-    getAllCategories();
-    getAllTherapists();
-  }, []);
-
-  useEffect(() => {
-    if (selectedCategory) {
-      getFilterTherapists(selectedCategory);
-    } else {
-      getAllTherapists();
-    }
-  }, [selectedCategory]);
-
-  const handleTabClick = (categoryId) => {
-    setSelectedCategoryState(categoryId === selectedCategory ? null : categoryId);
-    dispatch(setSelectedCategory(categoryId === selectedCategory ? null : categoryId));
-    setMenuOpen(false);
-  };
+    getAllCategories()
+  }, []) 
 
   const handleAllClick = () => {
-    setSelectedCategoryState(null);
-    dispatch(setSelectedCategory(null));
-    setMenuOpen(false);
-  };
+    console.log("hello");
+    
+    dispatch(setSelectedCategory(null))
+    onAllDataFetch() 
+  }
 
+  // Handle category button click
+  const handleCategoryClick = (categoryId) => {
+    dispatch(setSelectedCategory(categoryId))
+    onCategoryChange(categoryId)
+    setMenuOpen(false)
+  }
+
+  // Handle search input change
   const handleSearchChange = (e) => {
-    dispatch(setSearchTerm(e.target.value));
-  };
+    onSearchChange(e.target.value)
+  }
 
+  // Close mobile menu on window resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
-        setMenuOpen(false);
+        setMenuOpen(false)
       }
-    };
+    }
 
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   return (
-    <div className="w-full mt-5 mx-auto">
-      <div className="md:hidden flex justify-end p-3">
-        <button onClick={() => setMenuOpen(!menuOpen)} className="text-2xl p-2 rounded-lg border">
-          {menuOpen ? <FaTimes /> : <FaBars />}
+    <div className="w-full py-4 px-4 mx-auto">
+      {/* Mobile Menu Toggle Button */}
+      <div className="md:hidden flex justify-end mb-4">
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="p-2 rounded-lg border border-navy text-navy hover:bg-navy-light hover:text-white transition-all duration-300"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+        >
+          {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
         </button>
       </div>
 
+      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="absolute bottom-[105px] right-14 w-48 bg-transparent shadow-lg rounded-lg  z-50">
-          <button onClick={handleAllClick} className="block w-full text-left px-3 py-2 hover:bg-gray-100 rounded">
-            {t("all")}
-          </button>
-          {categories.slice(0, 4).map((category) => (
+        <div className="md:hidden absolute right-4 mt-2 w-64 bg-white shadow-lg rounded-lg z-50 border border-gray-200">
+          <div className="p-2 flex flex-col">
             <button
-              key={category._id}
-              className="block w-full text-left px-3 py-2 hover:bg-gray-100 rounded"
-              onClick={() => handleTabClick(category._id)}
+              onClick={handleAllClick}
+              className={`text-left px-4 py-3 rounded-lg mb-1 transition-all duration-300 ${
+                selectedCategory === null ? "bg-navy-light text-white" : "hover:bg-gray-100"
+              }`}
             >
-              {category.name}
+              {t("all")}
             </button>
-          ))}
-          {window.innerWidth >= 768 && <MoreCategories />}
+
+            {categories.map((category) => (
+              <button
+                key={category._id}
+                onClick={() => handleCategoryClick(category._id)}
+                className={`text-left px-4 py-3 rounded-lg mb-1 transition-all duration-300 ${
+                  selectedCategory === category._id ? "bg-navy-light text-white" : "hover:bg-gray-100"
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
         </div>
       )}
 
-      <div className="hidden md:flex justify-center space-x-4">
+      {/* Desktop Category Tabs */}
+      <div className="hidden md:flex flex-wrap justify-center gap-2 mb-6">
         <button
           onClick={handleAllClick}
-          className={`px-4 py-2 font-semibold border-b-4 rounded-lg ${
-            selectedCategory === null ? "bg-navy-light text-white" : "text-black hover:bg-navy-light"
+          className={`px-4 py-2 font-semibold rounded-lg transition-all duration-300 ${
+            selectedCategory === null
+              ? "bg-navy-light text-white shadow-md"
+              : "bg-white text-navy hover:bg-navy-light hover:text-white border border-navy"
           }`}
         >
           {t("all")}
         </button>
+
+        {/* Display first 4 categories */}
         {categories.slice(0, 4).map((category) => (
           <button
             key={category._id}
-            className={`px-4 py-2 font-semibold border-b-4 rounded-lg ${
-              selectedCategory === category._id ? "bg-navy-light text-white" : "text-black hover:bg-navy-light"
+            onClick={() => handleCategoryClick(category._id)}
+            className={`px-4 py-2 font-semibold rounded-lg transition-all duration-300 ${
+              selectedCategory === category._id
+                ? "bg-navy-light text-white shadow-md"
+                : "bg-white text-navy hover:bg-navy-light hover:text-white border border-navy"
             }`}
-            onClick={() => handleTabClick(category._id)}
           >
             {category.name}
           </button>
         ))}
-        <MoreCategories/>
+
+        {/* More Categories dropdown */}
+        {categories.length > 4 && (
+          <MoreCategories
+            categories={categories.slice(4)}
+            selectedCategory={selectedCategory}
+            onCategorySelect={handleCategoryClick}
+          />
+        )}
       </div>
 
-      <div className="flex justify-center items-center mt-6">
-        <input
-          type="text"
-          placeholder={t("searchTherapist")}
-          value={searchTerm}
-          onChange={handleSearchChange}
-          className="rounded-lg border px-2 py-1 w-1/4 sm:w-1/3 md:w-1/3 lg:w-1/3 "
-        />
+      {/* Search Input */}
+      <div className="flex justify-center mt-4">
+        <div className="relative w-full max-w-md">
+          <input
+            type="text"
+            placeholder={placeholder}
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-navy-light transition-all duration-300"
+          />
+          {searchTerm && (
+            <button
+              onClick={() => onSearchChange("")}
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-navy"
+              aria-label="Clear search"
+            >
+              <FaTimes size={16} />
+            </button>
+          )}
+        </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TabSwitch;
+export default TabSwitch
+
