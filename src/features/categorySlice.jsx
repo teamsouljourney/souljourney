@@ -6,7 +6,7 @@ const categorySlice = createSlice({
   initialState: {
     categories: [],
     filteredCategories: [],
-    selectedCategory: "67a47623b6da7c1f2119462e",
+    selectedCategory: null,
     newCategory: {
       name: "",
     },

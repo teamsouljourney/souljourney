@@ -1,56 +1,75 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import useCategoryCall from "../hooks/useCategoryCall";
-import { useTranslation } from "react-i18next";
 
-const MoreCategories = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const { categories } = useSelector((state) => state.categories);
-  const { getAllCategories } = useCategoryCall();
-  const { t } = useTranslation();
+import { useState, useRef, useEffect } from "react"
+import { useTranslation } from "react-i18next"
 
+/**
+ * MoreCategories Component - Dropdown for additional categories
+ * @param {Object} props - Component props
+ * @param {Array} props.categories - List of additional categories
+ * @param {string|null} props.selectedCategory - Currently selected category ID
+ * @param {Function} props.onCategorySelect - Function to handle category selection
+ */
+const MoreCategories = ({ categories, selectedCategory, onCategorySelect }) => {
+  const { t } = useTranslation()
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef(null)
+
+  // Check if any category in the dropdown is selected
+  const isAnyDropdownCategorySelected = categories.some((category) => category._id === selectedCategory)
+
+  // Close dropdown when clicking outside
   useEffect(() => {
-    getAllCategories();
-  }, []);
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false)
+      }
+    }
 
-  const handleTabClick = (category) => {
-    setSelectedCategory(category);
-    setIsMenuOpen(false); 
-  };
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  // Handle category selection
+  const handleCategoryClick = (categoryId) => {
+    onCategorySelect(categoryId)
+    setIsOpen(false)
+  }
 
   return (
-    <div className="relative" tabIndex={0} onBlur={() => setIsMenuOpen(false)}>
-      {/* "More Categories" Butonu */}
+    <div className="relative" ref={dropdownRef}>
       <button
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className={`px-2 py-2 text-black font-semibold border-b-2 hover:bg-seaGreen-light focus:outline-none tab-button transition-all duration-300 ease-in-out  rounded-lg ${
-          isMenuOpen ? "bg-navy-light text-white shadow-lg scale-105" : ""
+        onClick={() => setIsOpen(!isOpen)}
+        className={`px-4 py-2 font-semibold rounded-lg transition-all duration-300 ${
+          isAnyDropdownCategorySelected
+            ? "bg-navy-light text-white shadow-md"
+            : "bg-white text-navy hover:bg-navy-light hover:text-white border border-navy"
         }`}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
       >
         {t("moreCategories")}
       </button>
 
-      {/* Açılan Menü */}
-      {isMenuOpen && (
-        <div className="absolute top-full left-0 bg-white border shadow-md mt-1 w-fit z-10 max-h-60 overflow-y-auto">
-          {categories.slice(5,8).map((category) => (
-            <button
-              key={category._id || category.name}
-              onClick={() => handleTabClick(category.name)}
-              className={`px-4 py-2 text-black hover:bg-navy-light rounded-lg ${
-                selectedCategory === category.name
-                  ? "bg-navy-light text-white shadow-lg scale-105"
-                  : ""
-              }`}
-            >
-              {category.name}
-            </button>
-          ))}
+      {isOpen && (
+        <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden">
+          <div className="py-1 max-h-60 overflow-y-auto">
+            {categories.map((category) => (
+              <button
+                key={category._id}
+                onClick={() => handleCategoryClick(category._id)}
+                className={`w-full text-left px-4 py-2 hover:bg-gray-100 transition-all duration-300 ${
+                  selectedCategory === category._id ? "bg-gray-100 font-medium" : ""
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default MoreCategories;
+export default MoreCategories
+

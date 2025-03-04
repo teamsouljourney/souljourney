@@ -10,9 +10,12 @@ import {
 } from "../features/therapistSlice";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import usePaginationCall from "./usePaginationCall";
+import { logoutSuccess } from "../features/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const useTherapistCall = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const axiosWithToken = useAxios();
   const { getDataByPage } = usePaginationCall();
   const { currentPage, itemsPerPage } = useSelector(
@@ -48,7 +51,7 @@ const useTherapistCall = () => {
   const getTherapistTimeTable = async (id) => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosWithToken.get(`therapist-time-tables/${id}`);
+      const { data } = await axiosPublic.get(`therapist-time-tables/${id}`);
       dispatch(getTherapistTimeTableSuccess(data?.data?.unavailableDates));
     } catch (error) {
       dispatch(fetchFail());
@@ -61,7 +64,7 @@ const useTherapistCall = () => {
   const getFilterTherapists = async (categoryId) => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosWithToken.get(`therapists?category=${categoryId}`);
+      const { data } = await axiosPublic.get(`therapists?category=${categoryId}`);
       dispatch(getFilterTherapistsSuccess(data?.data));
     } catch (error) {
       dispatch(fetchFail());
@@ -157,17 +160,16 @@ const useTherapistCall = () => {
     const changeMyPasswordTherapist = async (id, values) => {
       dispatch(fetchStart());
       try {
-        await axiosWithToken.patch(`therapists/${id}changeMyPassword`, values);
+        navigate("/")
+        await axiosWithToken.patch(`therapists/${id}/changeMyPassword`, values);
         toastSuccessNotify("Your password has been changed!");
+        await axiosWithToken.get("auth/logout");
+        dispatch(logoutSuccess());
       } catch (error) {
         dispatch(fetchFail());
         toastErrorNotify(
           error.response?.data?.message || "Failed to change your password."
         );
-      } finally {
-        await axiosWithToken.get("auth/logout");
-        dispatch(logoutSuccess());
-          navigate("/")
       }
     };
     

@@ -75,7 +75,7 @@ const PricingForm = () => {
       <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
           {/* <!-- Pricing Card --> */}
           <div className="flex flex-col p-6 mx-auto max-w-lg text-center bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-background-darker dark:text-white">
-              <h3 className="mb-4 text-2xl font-semibold">Free</h3>
+              <h3 className="mb-4 text-2xl font-semibold">{ t("free")}</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">{ t("freeText")} </p>
               <div className="flex justify-center items-baseline my-8">
                   <span className="mr-2 text-5xl font-extrabold">€0</span>
@@ -108,8 +108,8 @@ const PricingForm = () => {
               <h3 className="mb-4 text-2xl font-semibold">{ t("premium")}</h3>
               <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">{ t("premiumText")}</p>
               <div className="flex justify-center items-baseline my-8">
-                  <span className="mr-2 text-5xl font-extrabold">{selectedPlan === "Monthly" ? "$90" : "$900"}</span>
-                  <span className="text-gray-500 dark:text-gray-400">{selectedPlan === "Monthly" ?`/${t("month")}` : `/${t("year")}`}</span>
+                  <span className="mr-2 text-5xl font-extrabold">{selectedPlan === "Monthly" ? "€90" : "€900"}</span>
+                  <span className="text-gray-500 dark:text-gray-400">{selectedPlan === "Monthly" ?`/€{t("month")}` : `/€{t("year")}`}</span>
               </div>
               {/* <!-- List --> */}
               <ul role="list" className="mb-24 space-y-4 text-left">
@@ -138,8 +138,8 @@ const PricingForm = () => {
               <h3 className="text-white mb-4 text-2xl font-semibold">{t("ultraPremium")}</h3>
               <p className="font-light sm:text-lg text-white">{t("ultraPremiumText")}</p>
               <div className="flex justify-center items-baseline my-8">
-                  <span className="text-white mr-2 text-5xl font-extrabold">{selectedPlan === "Monthly" ? "$150" : "$1500"}</span>
-                  <span className="text-white dark:text-gray-400">{selectedPlan === "Monthly" ? `/${t("month")}` : `/${t("year")}`}</span>
+                  <span className="text-white mr-2 text-5xl font-extrabold">{selectedPlan === "Monthly" ? "€150" : "€1500"}</span>
+                  <span className="text-white dark:text-gray-400">{selectedPlan === "Monthly" ? `/€{t("month")}` : `/€{t("year")}`}</span>
               </div>
               {/* <!-- List --> */}
               <ul role="list" className="mb-24 space-y-4 text-left">

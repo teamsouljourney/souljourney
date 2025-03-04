@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useTherapistCall from "../../hooks/useTherapistCall";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import AppointmentCalendar from "../calendar/appointmentCalendar";
 import Button from "../button/Button";
 import TeamDetailHeader from "./TeamDetailHeader";
 import TeamDetailBody from "./TeamDetailBody";
 import { useTranslation } from "react-i18next";
+import { getSingleTherapistFeedbacksSuccess } from "../../features/feedbackSlice";
+import { getSingleTherapistSuccess } from "../../features/therapistSlice";
 
 const TeamDetail = () => {
+  const dispatch = useDispatch()
   const { t } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -21,10 +24,18 @@ const TeamDetail = () => {
   const [activeTab, setActiveTab] = useState("about");
   const [displayCalendar, setDisplayCalendar] = useState(false);
 
+  console.log(id);
+  
+
   useEffect(() => {
     getSingleTherapist(id);
     getTherapistTimeTable(id);
   }, [id]);
+
+  useEffect(() => {
+    dispatch(getSingleTherapistSuccess(null))
+    // dispatch(getSingleTherapistFeedbacksSuccess())
+  }, [navigate]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -144,7 +155,7 @@ const TeamDetail = () => {
       {/* Body */}
       <div className="w-full px-4">
 
-        <TeamDetailBody currentUser={currentUser} singleTherapist={singleTherapist} id={id}/>
+        <TeamDetailBody />
         
       </div>
       {/* GoBack */}

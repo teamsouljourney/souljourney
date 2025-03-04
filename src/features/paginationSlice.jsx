@@ -10,6 +10,8 @@ const paginationSlice = createSlice({
     pagAppointments: [],
     pagBlogs: [],
     pagFeedbacks: [],
+    pagFilteredFeedbacks: [],
+    pagFilteredBlogs: [],
     currentPage: 1,
     itemsPerPage: 10,
   },

@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../button/Button";
 import { useTranslation } from "react-i18next";
+import avatar from "../../assets/avatar3.svg";
 
 const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
   const { t } = useTranslation();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { firstName, lastName, email, image, categoryId } = singleTherapist;
 
   const therapistCategories = categoryId;
@@ -31,12 +32,12 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
             </div>
             {/* Categories */}
             <div className="flex flex-wrap justify-center lg:justify-start mt-4 gap-2 text-lg">
-              {therapistCategories.map((category) => (
+              {therapistCategories?.map((category) => (
                 <span
                   className="inline-block px-2 py-1 bg-[#E8F5E9] dark:bg-offWhite-dark text-seaGreen dark:text-seaGreen-dark rounded-full text-sm"
-                  key={category._id}
+                  key={category?._id}
                 >
-                  {category.name}
+                  {category?.name}
                 </span>
               ))}
             </div>
@@ -54,7 +55,9 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
                   className="inline-flex justify-center items-center  bg-navy-light dark:bg-offWhite-dark"
                 ></span>
 
-                <span className="text-[1rem] font-semibold">Video Call {/* {t("videoCall")} */}</span>
+                <span className="text-[1rem] font-semibold">
+                  Video Call {/* {t("videoCall")} */}
+                </span>
               </div>
               <div className="flex flex-row items-center  justify-center gap-2">
                 <span
@@ -68,7 +71,9 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
                   className="inline-flex justify-center items-center  bg-navy-light dark:bg-offWhite-dark"
                 ></span>
 
-                <span className="text-[1rem] font-semibold">Live Chat{/* {t("liveChat")} */}</span>
+                <span className="text-[1rem] font-semibold">
+                  Live Chat{/* {t("liveChat")} */}
+                </span>
               </div>
             </div>
           </div>
@@ -77,27 +82,26 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
         {/* Appointment button */}
 
         {currentUser ? (
-            <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
-          <Button
-            onClick={() => toggleCalendar(true)}
-            className="capitalize"
-            type="type22"
-          >
-            work with me {/* {t("workWithMe")} */}
-          </Button>
-        </div>
+          <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
+            <Button
+              onClick={() => toggleCalendar(true)}
+              className="capitalize"
+              type="type22"
+            >
+              {t("createAppointment")}
+            </Button>
+          </div>
         ) : (
-            <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
-          <Button
-            onClick={() => navigate("/login")}
-            className="capitalize"
-            type="type22"
-          >
-            work with me {/* {t("workWithMe")} */}
-          </Button>
-        </div>
+          <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
+            <Button
+              onClick={() => navigate("/login")}
+              className="capitalize"
+              type="type22"
+            >
+              {t("createAppointment")}
+            </Button>
+          </div>
         )}
-        
       </div>
     </>
   );
