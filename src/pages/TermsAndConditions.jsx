@@ -11,133 +11,133 @@ const TermsAndConditions = () => {
           <SoulJourneyLogo />
         </div>
         
-        <h1 className="text-3xl font-bold text-center text-slate-800 mb-12">Terms and Conditions</h1>
+        <h1 className="text-3xl font-bold text-center text-slate-800 mb-12">{t('termsAndConditions.title')}</h1>
         
         <div className="space-y-8">
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">1. Introduction</h2>
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('termsAndConditions.sections.introduction.title')}</h2>
             <p className="mb-3">
-              Welcome to SoulJourney. These Terms and Conditions govern your use of our platform and services. By accessing or using SoulJourney, you agree to be bound by these Terms. If you disagree with any part of these terms, you may not access the service.
+              {t('termsAndConditions.sections.introduction.content')}
             </p>
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">2. Definitions</h2>
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('termsAndConditions.sections.definitions.title')}</h2>
             <p className="mb-3">
-              <strong>"Platform"</strong> refers to the SoulJourney website and application.
+              {t('termsAndConditions.sections.definitions.platform')}
             </p>
             <p className="mb-3">
-              <strong>"Services"</strong> refers to the therapy and counseling services provided through our platform.
+              {t('termsAndConditions.sections.definitions.services')}
             </p>
             <p className="mb-3">
-              <strong>"Therapist"</strong> refers to licensed mental health professionals registered on our platform.
+              {t('termsAndConditions.sections.definitions.therapist')}
             </p>
             <p className="mb-3">
-              <strong>"Client"</strong> refers to users seeking therapy services through our platform.
-            </p>
-          </section>
-          
-          <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">3. Account Registration</h2>
-            <p className="mb-3">
-              To use our services, you must register for an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.
-            </p>
-            <p className="mb-3">
-              You are responsible for safeguarding your password and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account.
+              {t('termsAndConditions.sections.definitions.client')}
             </p>
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">4. Therapist Qualifications</h2>
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('termsAndConditions.sections.accountRegistration.title')}</h2>
             <p className="mb-3">
-              All therapists on our platform must be licensed professionals. We verify credentials before allowing therapists to offer services, but clients are encouraged to verify a therapist's credentials independently.
+              {t('termsAndConditions.sections.accountRegistration.content1')}
             </p>
             <p className="mb-3">
-              Therapists are independent contractors and not employees of SoulJourney. We do not control the services provided by therapists and are not responsible for their professional advice.
-            </p>
-          </section>
-          
-          <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">5. Payment Terms</h2>
-            <p className="mb-3">
-              Clients agree to pay the fees for services as described on the platform. All payments are processed through our secure payment system.
-            </p>
-            <p className="mb-3">
-              Therapists will receive payment for their services according to our payment schedule, minus applicable platform fees.
-            </p>
-            <p className="mb-3">
-              Refunds may be issued in accordance with our refund policy, which is available on our website.
+              {t('termsAndConditions.sections.accountRegistration.content2')}
             </p>
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">6. Cancellation Policy</h2>
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('termsAndConditions.sections.therapistQualifications.title')}</h2>
             <p className="mb-3">
-              Clients must provide at least 24 hours' notice to cancel a scheduled session. Late cancellations or no-shows may result in a charge of the full session fee.
+              {t('termsAndConditions.sections.therapistQualifications.content1')}
             </p>
             <p className="mb-3">
-              Therapists must provide reasonable notice of cancellation and assist in rescheduling sessions when necessary.
-            </p>
-          </section>
-          
-          <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">7. Confidentiality</h2>
-            <p className="mb-3">
-              We respect the confidentiality of the therapeutic relationship. All communications between clients and therapists are confidential, subject to legal and ethical limitations.
-            </p>
-            <p className="mb-3">
-              Our platform implements security measures to protect your information, but no system is completely secure. Please refer to our Privacy Policy for more information.
+              {t('termsAndConditions.sections.therapistQualifications.content2')}
             </p>
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">8. Limitations of Liability</h2>
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('termsAndConditions.sections.paymentTerms.title')}</h2>
             <p className="mb-3">
-              SoulJourney is not liable for any damages resulting from the use of our platform or services. We do not guarantee the effectiveness of therapy services.
+              {t('termsAndConditions.sections.paymentTerms.content1')}
             </p>
             <p className="mb-3">
-              Our platform is not suitable for emergency situations. If you are experiencing a mental health emergency, please call emergency services or go to your nearest emergency room.
+              {t('termsAndConditions.sections.paymentTerms.content2')}
             </p>
-          </section>
-          
-          <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">9. Intellectual Property</h2>
             <p className="mb-3">
-              All content on the SoulJourney platform, including text, graphics, logos, and software, is the property of SoulJourney and is protected by intellectual property laws.
+              {t('termsAndConditions.sections.paymentTerms.content3')}
             </p>
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">10. Termination</h2>
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('termsAndConditions.sections.cancellationPolicy.title')}</h2>
             <p className="mb-3">
-              We reserve the right to terminate or suspend access to our services immediately, without prior notice or liability, for any reason, including breach of these Terms.
+              {t('termsAndConditions.sections.cancellationPolicy.content1')}
+            </p>
+            <p className="mb-3">
+              {t('termsAndConditions.sections.cancellationPolicy.content2')}
             </p>
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">11. Changes to Terms</h2>
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('termsAndConditions.sections.confidentiality.title')}</h2>
             <p className="mb-3">
-              We reserve the right to modify these terms at any time. We will provide notice of significant changes. Your continued use of the platform after such modifications constitutes your acceptance of the revised terms.
+              {t('termsAndConditions.sections.confidentiality.content1')}
+            </p>
+            <p className="mb-3">
+              {t('termsAndConditions.sections.confidentiality.content2')}
             </p>
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">12. Governing Law</h2>
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('termsAndConditions.sections.limitationsOfLiability.title')}</h2>
             <p className="mb-3">
-              These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law provisions.
+              {t('termsAndConditions.sections.limitationsOfLiability.content1')}
+            </p>
+            <p className="mb-3">
+              {t('termsAndConditions.sections.limitationsOfLiability.content2')}
             </p>
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">13. Contact Us</h2>
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('termsAndConditions.sections.intellectualProperty.title')}</h2>
             <p className="mb-3">
-              If you have any questions about these Terms, please contact us at support@souljourney.com.
+              {t('termsAndConditions.sections.intellectualProperty.content')}
+            </p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('termsAndConditions.sections.termination.title')}</h2>
+            <p className="mb-3">
+              {t('termsAndConditions.sections.termination.content')}
+            </p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('termsAndConditions.sections.changestoTerms.title')}</h2>
+            <p className="mb-3">
+              {t('termsAndConditions.sections.changestoTerms.content')}
+            </p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('termsAndConditions.sections.governingLaw.title')}</h2>
+            <p className="mb-3">
+              {t('termsAndConditions.sections.governingLaw.content')}
+            </p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('termsAndConditions.sections.contactUs.title')}</h2>
+            <p className="mb-3">
+              {t('termsAndConditions.sections.contactUs.content')}
             </p>
           </section>
         </div>
         
         <div className="mt-12 text-center text-sm text-slate-500">
-          <p>Last updated: March 3, 2025</p>
+          <p>{t('termsAndConditions.lastUpdated')}</p>
         </div>
       </div>
     </div>
