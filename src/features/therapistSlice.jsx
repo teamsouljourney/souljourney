@@ -5,7 +5,7 @@ const therapistSlice = createSlice({
   initialState: {
     therapists: [],
     filteredTherapists: [],
-    singleTherapist: {},
+    singleTherapist: null,
     newTherapist: {
       firstName: "",
       lastName: "",
@@ -26,18 +26,22 @@ const therapistSlice = createSlice({
     getAllTherapistsSuccess: (state, { payload }) => {
       state.loading = false;
       state.therapists = payload;
+      state.error = false;
     },
     getSingleTherapistSuccess: (state, { payload }) => {
       state.loading = false;
       state.singleTherapist = payload;
+      state.error = false;
     },
     getTherapistTimeTableSuccess: (state, { payload }) => {
       state.loading = false;
       state.therapistTimeTable = payload;
+      state.error = false;
     },
     getFilterTherapistsSuccess: (state, { payload }) => {
+      state.loading = false
       state.filteredTherapists = payload
-      
+      state.error = false;
     },
     updateSingleTherapistSuccess: (state, {payload}) => {
       state.loading = false;
@@ -45,10 +49,14 @@ const therapistSlice = createSlice({
       state.error = false
     },
     setSearchTerm:(state, {payload}) =>{
+      state.loading = false;
       state.searchTerm=payload
+      state.error = false;
     },
     setNewTherapist: (state, { payload }) => {
+      state.loading = false;
       state.newTherapist = { ...state.newTherapist, ...payload };
+      state.error = false;
     },
     resetNewTherapist: (state) => {
       state.newTherapist = {
@@ -58,9 +66,9 @@ const therapistSlice = createSlice({
         password: ""
       };
     },
-  toggleModal: (state, { payload }) => {
-    state.isModalOpen = payload;
-  },
+    toggleModal: (state, { payload }) => {
+      state.isModalOpen = payload;
+    },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;

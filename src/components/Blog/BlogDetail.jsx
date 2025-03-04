@@ -36,7 +36,7 @@ const BlogDetail = () => {
   }
 
   return (
-    <div className="max-w-screen-xl min-h-screen py-32 mx-auto bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
+    <div className="min-h-screen py-32 mx-auto bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
       <div className="flex flex-col max-w-xl mx-auto overflow-hidden rounded">
         <div className="relative w-full h-80">
           <img
