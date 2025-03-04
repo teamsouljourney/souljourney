@@ -1,11 +1,10 @@
-
-import { useEffect, useState } from "react"
-import { FaBars, FaTimes } from "react-icons/fa"
-import { useDispatch, useSelector } from "react-redux"
-import useCategoryCall from "../hooks/useCategoryCall"
-import MoreCategories from "./MoreCategories"
-import { useTranslation } from "react-i18next"
-import { setSelectedCategory } from "../features/categorySlice"
+import { useEffect, useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import useCategoryCall from "../hooks/useCategoryCall";
+import MoreCategories from "./MoreCategories";
+import { useTranslation } from "react-i18next";
+import { setSelectedCategory } from "../features/categorySlice";
 
 // /**
 //  * TabSwitch Component - A reusable component for category filtering
@@ -16,49 +15,45 @@ import { setSelectedCategory } from "../features/categorySlice"
 //  * @param {Function} props.onCategoryChange - Function to handle category selection
 //  * @param {string} [props.searchPlaceholder] - Optional custom placeholder for search input
 //  */
-const TabSwitch = ({ itemType, searchTerm, onSearchChange, onCategoryChange, placeholder, onAllDataFetch }) => {
-  const dispatch = useDispatch()
-  const { t } = useTranslation()
-  const [menuOpen, setMenuOpen] = useState(false)
-  const { selectedCategory, categories, loading } = useSelector((state) => state.categories)
-  const { getAllCategories } = useCategoryCall()
-
+const TabSwitch = ({
+  itemType,
+  searchTerm,
+  onSearchChange,
+  onCategoryChange,
+  placeholder,
+  onAllDataFetch,
+}) => {
+  const dispatch = useDispatch();
+  const { t } = useTranslation();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { selectedCategory, categories, loading } = useSelector(
+    (state) => state.categories
+  );
+  const { getAllCategories } = useCategoryCall();
 
   // Fetch categories on component mount
   useEffect(() => {
-    getAllCategories()
-  }, []) 
+    getAllCategories();
+  }, []);
 
   const handleAllClick = () => {
     console.log("hello");
-    
-    dispatch(setSelectedCategory(null))
-    onAllDataFetch() 
-  }
+
+    dispatch(setSelectedCategory(null));
+    onAllDataFetch();
+  };
 
   // Handle category button click
   const handleCategoryClick = (categoryId) => {
-    dispatch(setSelectedCategory(categoryId))
-    onCategoryChange(categoryId)
-    setMenuOpen(false)
-  }
+    dispatch(setSelectedCategory(categoryId));
+    onCategoryChange(categoryId);
+    setMenuOpen(false);
+  };
 
   // Handle search input change
   const handleSearchChange = (e) => {
-    onSearchChange(e.target.value)
-  }
-
-  // Close mobile menu on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setMenuOpen(false)
-      }
-    }
-
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+    onSearchChange(e.target.value);
+  };
 
   return (
     <div className="w-full py-4 px-4 mx-auto">
@@ -80,7 +75,9 @@ const TabSwitch = ({ itemType, searchTerm, onSearchChange, onCategoryChange, pla
             <button
               onClick={handleAllClick}
               className={`text-left px-4 py-3 rounded-lg mb-1 transition-all duration-300 ${
-                selectedCategory === null ? "bg-navy-light text-white" : "hover:bg-gray-100"
+                selectedCategory === null
+                  ? "bg-navy-light text-white"
+                  : "hover:bg-gray-100"
               }`}
             >
               {t("all")}
@@ -91,7 +88,9 @@ const TabSwitch = ({ itemType, searchTerm, onSearchChange, onCategoryChange, pla
                 key={category._id}
                 onClick={() => handleCategoryClick(category._id)}
                 className={`text-left px-4 py-3 rounded-lg mb-1 transition-all duration-300 ${
-                  selectedCategory === category._id ? "bg-navy-light text-white" : "hover:bg-gray-100"
+                  selectedCategory === category._id
+                    ? "bg-navy-light text-white"
+                    : "hover:bg-gray-100"
                 }`}
               >
                 {category.name}
@@ -161,8 +160,7 @@ const TabSwitch = ({ itemType, searchTerm, onSearchChange, onCategoryChange, pla
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TabSwitch
-
+export default TabSwitch;

@@ -16,12 +16,23 @@ const TeamCard = () => {
       : therapists
     : therapists;
 
+  const displayedSearchTherapists =
+    searchTerm.trim() === ""
+      ? displayedTherapists
+      : displayedTherapists?.filter((therapist) =>
+          [therapist.userName, therapist.email]
+            .filter(Boolean)
+            .some((name) =>
+              name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+
   return (
     <div className="flex items-center justify-center py-4">
       <div className="flex flex-wrap justify-center gap-6 md:gap-10 lg:gap-14 ">
-        {displayedTherapists.map((therapist) => (
+        {displayedSearchTherapists.map((therapist) => (
           <div
-          key={therapist.id}
+            key={therapist.id}
             className="flex flex-col w-full max-w-xs p-3 overflow-hidden transition duration-500 transform bg-white shadow-2xl cursor-pointer dark:bg-background-dark text-navy dark:text-offWhite-dark rounded-xl hover:scale-105"
             onClick={() => navigate(`/therapists/${therapist?._id}`)}
           >
@@ -42,7 +53,6 @@ const TeamCard = () => {
             </div>
 
             <div className="flex items-center justify-center px-4 py-4 mt-auto border-t border-gray-300">
-              
               <NavLink
                 to={`/therapists/${therapist?._id}`}
                 className="py-2 font-bold text-center transition rounded-lg w-28 sm:w-32 text-offWhite bg-seaGreen-dark hover:bg-seaGreen-light"
