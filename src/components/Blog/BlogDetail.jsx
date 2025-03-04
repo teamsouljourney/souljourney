@@ -69,7 +69,10 @@ const BlogDetail = () => {
           </div>
 
           <h2 className="mb-4 text-2xl font-bold">{singleBlog?.title}</h2>
-          <p className="leading-relaxed ">{singleBlog?.content}</p>
+          <div
+            className="leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: singleBlog?.content || "" }}
+          ></div>
 
           {singleBlog?.categoryId && (
             <span className="inline-block px-4 py-1 mt-6 text-sm rounded-full">
