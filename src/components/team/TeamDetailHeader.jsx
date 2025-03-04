@@ -5,7 +5,7 @@ import avatar from "../../assets/avatar3.svg";
 
 const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
   const { t } = useTranslation();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { firstName, lastName, email, image, categoryId } = singleTherapist;
 
   const therapistCategories = categoryId;
@@ -55,7 +55,9 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
                   className="inline-flex justify-center items-center  bg-navy-light dark:bg-offWhite-dark"
                 ></span>
 
-                <span className="text-[1rem] font-semibold">Video Call {/* {t("videoCall")} */}</span>
+                <span className="text-[1rem] font-semibold">
+                  Video Call {/* {t("videoCall")} */}
+                </span>
               </div>
               <div className="flex flex-row items-center  justify-center gap-2">
                 <span
@@ -69,7 +71,9 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
                   className="inline-flex justify-center items-center  bg-navy-light dark:bg-offWhite-dark"
                 ></span>
 
-                <span className="text-[1rem] font-semibold">Live Chat{/* {t("liveChat")} */}</span>
+                <span className="text-[1rem] font-semibold">
+                  Live Chat{/* {t("liveChat")} */}
+                </span>
               </div>
             </div>
           </div>
@@ -78,27 +82,26 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
         {/* Appointment button */}
 
         {currentUser ? (
-            <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
-          <Button
-            onClick={() => toggleCalendar(true)}
-            className="capitalize"
-            type="type22"
-          >
-            {t("createAppointment")}
-          </Button>
-        </div>
+          <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
+            <Button
+              onClick={() => toggleCalendar(true)}
+              className="capitalize"
+              type="type22"
+            >
+              {t("createAppointment")}
+            </Button>
+          </div>
         ) : (
-            <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
-          <Button
-            onClick={() => navigate("/login")}
-            className="capitalize"
-            type="type22"
-          >
-            {t("createAppointment")}
-          </Button>
-        </div>
+          <div className="lg:col-span-1 flex flex-col justify-center items-center lg:justify-end">
+            <Button
+              onClick={() => navigate("/login")}
+              className="capitalize"
+              type="type22"
+            >
+              {t("createAppointment")}
+            </Button>
+          </div>
         )}
-        
       </div>
     </>
   );
