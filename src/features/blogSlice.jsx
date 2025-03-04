@@ -7,6 +7,7 @@ const blogSlice = createSlice({
     filteredBlogs: [],
     singleBlog: {},
     popularBlogs: [],
+    searchTerm: "",
     loading: false,
     error: false,
   },
@@ -38,6 +39,9 @@ const blogSlice = createSlice({
           blog.categoryId.toLowerCase().includes(payload.toLowerCase())
       );
     },
+    setSearchTerm: (state, { payload }) => {
+      state.searchTerm = payload;
+    },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
@@ -51,6 +55,7 @@ export const {
   getAllBlogsSuccess,
   getSingleBlogSuccess,
   getBlogDataSuccess,
+  setSearchTerm,
   filterBlogs,
 } = blogSlice.actions;
 
