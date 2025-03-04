@@ -38,9 +38,14 @@ const useBlogCall = () => {
     try {
       const url = query ? `${BASE_URL}blogs?${query}` : `${BASE_URL}blogs`;
       const { data } = await axiosPublic(url);
+
       if (query && query.includes("sort[countOfVisitors]")) {
         dispatch(
           getBlogDataSuccess({ endpoint: "popularBlogs", data: data.data })
+        );
+      } else if (query) {
+        dispatch(
+          getBlogDataSuccess({ endpoint: "filteredBlogs", data: data.data })
         );
       } else {
         dispatch(getAllBlogsSuccess(data.data));
