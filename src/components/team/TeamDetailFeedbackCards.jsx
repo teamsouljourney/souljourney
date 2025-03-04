@@ -10,6 +10,8 @@ const TeamDetailFeedbackCards = () => {
   const { t } = useTranslation();
   const {pagFeedbacks} = useSelector((state)=>state.pagination)
   const {singleTherapistFeedbacks} = useSelector((state)=>state.feedbacks)
+  const { singleTherapist } = useSelector((state) => state.therapists);
+  const therapistId = singleTherapist && singleTherapist?._id
 
   {
     /* {t("goBack")} */
@@ -83,7 +85,7 @@ const TeamDetailFeedbackCards = () => {
           </div>
         ))}
       </div>
-      <Pagination endpoint={"feedbacks"} slice={"pagFeedbacks"} data={singleTherapistFeedbacks} />
+      <Pagination endpoint={`feedbacks/therapists/${therapistId}`} slice={"pagFeedbacks"} data={singleTherapistFeedbacks} />
       {/* Modal */}
       {isModalOpen && selectedFeedback && (
 
