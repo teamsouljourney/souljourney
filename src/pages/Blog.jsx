@@ -1,28 +1,37 @@
-import React, { useState } from "react";
-import BlogHeroSection from "../components/Blog/BlogHeroSection";
-import BlogList from "../components/blog/BlogList";
-import BlogDetail from "../components/blog/BlogDetail";
+import { useEffect } from "react";
+import BlogHeroSection from "../components/blog/BlogHeroSection";
+import useBlogCall from "../hooks/useBlogCall";
+import useCategoryCall from "../hooks/useCategoryCall";
+import { useSelector } from "react-redux";
+import BlogsCard from "../components/blog/BlogsCard";
+import Pagination from "../components/adminPanel/Pagination";
 
-function Blog() {
-  const [selectedBlog, setSelectedBlog] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+const Blog = () => {
+  const { getBlogData } = useBlogCall();
+  const { getAllCategories } = useCategoryCall();
+  const { blogs } = useSelector((state) => state.blogs);
+  const { pagBlogs } = useSelector((state) => state.pagination);
+
+  useEffect(() => {
+    getBlogData();
+    getAllCategories();
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark pt-20">
+    <div className="min-h-screen pt-20 bg-gradient-to-b bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
       <BlogHeroSection />
-      <main className="container mx-auto p-6">
-        {selectedBlog ? (
-          <BlogDetail blog={selectedBlog} onBack={() => setSelectedBlog(null)} />
-        ) : (
-          <BlogList
-          handleReadMore={(blog) => setSelectedBlog(blog)}
-            selectedCategory={selectedCategory}
-            onCategoryChange={(category) => setSelectedCategory(category)}
-          />
-        )}
+      <main className="container px-6 py-16 mx-auto">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            {pagBlogs?.map((blog, index) => (
+              <BlogsCard key={blog._id} blog={blog} index={index} />
+            ))}
+          </div>
+        </div>
+        <Pagination endpoint="blogs" slice="pagBlogs" data={blogs} />
       </main>
     </div>
   );
-}
+};
 
 export default Blog;

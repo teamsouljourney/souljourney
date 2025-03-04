@@ -1,146 +1,114 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { useEffect } from "react";
+import { HiOutlineHeart, HiHeart, HiArrowLeft } from "react-icons/hi";
 import useBlogCall from "../../hooks/useBlogCall";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getSingleBlogSuccess } from "../../features/blogSlice";
 
-function BlogDetail() {   
+const BlogDetail = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [likeCount, setLikeCount] = useState(0);
-  const [isLiked, setIsLiked] = useState(false);
-  const [currentBlog, setCurrentBlog] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const { getBlogById } = useBlogCall();
+  const { getSingleBlog, postLike } = useBlogCall();
+  const { singleBlog, loading } = useSelector((state) => state.blogs);
+  const { currentUser } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    const fetchBlogData = async () => {
-      setLoading(true);
-      try {
-        await getBlogById(id);
-        // Local Storage'dan beğeni bilgilerini al
-        const storedLikes = localStorage.getItem(`blog-${id}-likes`);
-        const storedIsLiked = localStorage.getItem(`blog-${id}-isLiked`);
-        if (storedLikes) setLikeCount(parseInt(storedLikes));
-        if (storedIsLiked) setIsLiked(JSON.parse(storedIsLiked));
-      } catch (error) {
-        console.error("Blog yüklenirken hata oluştu:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    getSingleBlog(id);
+  }, [id]);
 
-    fetchBlogData();
-  }, [id, getBlogById]);
-
-  // Redux state'inden blog verisini al ve currentBlog state'ini güncelle
-  const { blogs } = useSelector((state) => state.blogs);
-  
   useEffect(() => {
-    const blog = blogs?.find((blog) => blog._id === id);
-    if (blog) {
-      setCurrentBlog(blog);
-    }
-  }, [blogs, id]);
+    dispatch(getSingleBlogSuccess({}));
+  }, [navigate]);
 
   const handleLike = () => {
-    const newLikeCount = isLiked ? likeCount - 1 : likeCount + 1;
-    setLikeCount(newLikeCount);
-    setIsLiked(!isLiked);
-    
-    localStorage.setItem(`blog-${id}-likes`, newLikeCount.toString());
-    localStorage.setItem(`blog-${id}-isLiked`, (!isLiked).toString());
+    postLike(id);
   };
+
+  const isLikedByUser = singleBlog?.likes?.includes(currentUser?._id);
 
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-[400px]">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-navy"></div>
-      </div>
-    );
-  }
-
-  if (!currentBlog) {
-    return (
-      <div className="text-center text-red-500 p-8">
-        <h1 className="text-xl font-bold mb-4">Blog bulunamadı!</h1>
-        <button
-          onClick={() => navigate("/blogs")}
-          className="mt-4 px-6 py-2 bg-navy text-white rounded hover:bg-navy-light transition-all"
-        >
-          Bloglara Dön
-        </button>
+        <div className="w-12 h-12 border-t-2 border-b-2 rounded-full animate-spin border-navy"></div>
       </div>
     );
   }
 
   return (
-    <div className="max-w-screen-xl mx-auto py-32 bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
-      <div className="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
-        <div className="relative h-80 w-full">
-          <img 
-            className="w-full h-full object-cover" 
-            src={currentBlog.image} 
-            alt={currentBlog.title}
+    <div className="max-w-screen-xl min-h-screen py-32 mx-auto bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
+      <div className="flex flex-col max-w-xl mx-auto overflow-hidden rounded">
+        <div className="relative w-full h-80">
+          <img
+            className="object-cover w-full h-full"
+            src={singleBlog?.image || "/placeholder.svg"}
+            alt={singleBlog?.title}
           />
         </div>
-        
-        <div className="relative -mt-16 px-10 pt-5 pb-16 bg-white dark:bg-background-dark text-navy dark:text-offWhite-dark shadow-lg rounded-lg mx-5 md:mx-10">
+
+        <div className="relative px-10 pt-5 pb-16 mx-5 -mt-16 bg-white rounded-lg shadow-lg dark:bg-background-dark text-navy dark:text-offWhite-dark md:mx-10">
           <div className="flex items-center gap-2 mb-4">
-            {currentBlog.therapistId && (
+            {singleBlog?.therapistId && (
               <>
-                <img 
-                  src={currentBlog.therapistId.image} 
-                  alt={`${currentBlog.therapistId.firstName} ${currentBlog.therapistId.lastName}`}
-                  className="w-10 h-10 rounded-full object-cover"
+                <img
+                  src={singleBlog?.therapistId?.image || "/placeholder.svg"}
+                  alt={`${singleBlog?.therapistId?.firstName} ${singleBlog?.therapistId?.lastName}`}
+                  className="object-cover w-10 h-10 rounded-full"
                 />
                 <div>
                   <h3 className="font-semibold">
-                    {currentBlog.therapistId.firstName} {currentBlog.therapistId.lastName}
+                    {singleBlog?.therapistId?.firstName}{" "}
+                    {singleBlog?.therapistId?.lastName}
                   </h3>
                   <p className="text-sm ">
-                    {currentBlog.therapistId.description}
+                    {singleBlog?.therapistId?.description}
                   </p>
                 </div>
               </>
             )}
           </div>
-          
-          <h2 className="text-2xl font-bold mb-4">{currentBlog.title}</h2>
-          <p className=" leading-relaxed">{currentBlog.content}</p>
-          
-          {currentBlog.categoryId && (
-            <span className="inline-block  px-4 py-1 rounded-full text-sm mt-6">
-              {currentBlog.categoryId.name}
+
+          <h2 className="mb-4 text-2xl font-bold">{singleBlog?.title}</h2>
+          <div
+            className="leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: singleBlog?.content || "" }}
+          ></div>
+
+          {singleBlog?.categoryId && (
+            <span className="inline-block px-4 py-1 mt-6 text-sm rounded-full">
+              {singleBlog?.categoryId?.name}
             </span>
           )}
         </div>
 
-        <div className="flex items-center justify-between mt-6 px-5">
+        <div className="flex items-center justify-between px-5 mt-6">
           <div className="flex items-center gap-2">
             <button
               onClick={handleLike}
-              className="flex items-center focus:outline-none transition-colors duration-200"
+              className="flex items-center transition-colors duration-200 focus:outline-none"
             >
-              {isLiked ? (
-                <AiFillHeart className="text-2xl text-red-500" />
+              {isLikedByUser ? (
+                <HiHeart className="w-6 h-6 text-red-500" />
               ) : (
-                <AiOutlineHeart className="text-2xl hover:text-red-500" />
+                <HiOutlineHeart className="w-6 h-6 hover:text-red-500" />
               )}
             </button>
-            <span className="text-gray-600 font-medium">{likeCount}</span>
+            <span className="font-medium text-gray-600">
+              {singleBlog?.likes?.length || 0}
+            </span>
           </div>
-          
+
           <button
             onClick={() => navigate("/blogs")}
-            className="px-6 py-2 bg-navy text-white rounded hover:bg-navy-light transition-all"
+            className="flex items-center gap-2 px-6 py-2 text-white transition-all rounded bg-navy hover:bg-navy-light"
           >
-            Bloglara Dön
+            <HiArrowLeft className="w-4 h-4" />
+            Go Back
           </button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default BlogDetail;

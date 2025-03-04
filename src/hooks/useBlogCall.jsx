@@ -5,6 +5,7 @@ import {
   fetchFail,
   getAllBlogsSuccess,
   getSingleBlogSuccess,
+  getBlogDataSuccess,
 } from "../features/blogSlice";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import usePaginationCall from "./usePaginationCall";
@@ -17,11 +18,33 @@ const useBlogCall = () => {
     (state) => state.pagination
   );
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+
   const getAllBlogs = async () => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosPublic.get("blogs");
       dispatch(getAllBlogsSuccess(data.data));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to fetch blogs."
+      );
+    }
+  };
+
+  const getBlogData = async (query) => {
+    dispatch(fetchStart());
+    try {
+      const url = query ? `${BASE_URL}blogs?${query}` : `${BASE_URL}blogs`;
+      const { data } = await axiosPublic(url);
+      if (query && query.includes("sort[countOfVisitors]")) {
+        dispatch(
+          getBlogDataSuccess({ endpoint: "popularBlogs", data: data.data })
+        );
+      } else {
+        dispatch(getAllBlogsSuccess(data.data));
+      }
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -89,7 +112,45 @@ const useBlogCall = () => {
     }
   };
 
-  return { getAllBlogs, getSingleBlog, createNewBlog, updateBlog, deleteBlog };
+  //* Get Like Info
+  const getLikeInfo = async (id) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosPublic.get(`blogs/${id}/likes`);
+      return data.likes;
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to fetch like info."
+      );
+    }
+  };
+
+  //* Add - Remove Like
+  const postLike = async (id) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.post(`blogs/${id}/likes`);
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || "Failed to update like."
+      );
+    } finally {
+      getSingleBlog(id);
+    }
+  };
+
+  return {
+    getAllBlogs,
+    getBlogData,
+    getSingleBlog,
+    createNewBlog,
+    updateBlog,
+    deleteBlog,
+    getLikeInfo,
+    postLike,
+  };
 };
 
 export default useBlogCall;
