@@ -21,8 +21,7 @@ const Team = () => {
   }, []) 
 
   // Handle category selection
-  const handleCategoryChange = (categoryId) => {
-    
+  const handleCategoryChange = (categoryId) => {    
     if (categoryId) {
       getFilterTherapists(categoryId)
     } 
