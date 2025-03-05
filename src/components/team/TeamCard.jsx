@@ -11,7 +11,7 @@ const TeamCard = ({therapist}) => {
     <div
       className="flex flex-col w-full max-w-xs  overflow-hidden transition duration-500 transform bg-white shadow-lg dark:bg-background-dark text-navy dark:text-offWhite-dark rounded-xl md:hover:scale-[1.03]"
     >
-      <div className="relative w-full h-52 sm:h-56 md:h-64">
+      <div className="relative w-full h-56 md:h-64">
         <img
           className="object-cover w-full h-full "
           src={therapist?.image}
