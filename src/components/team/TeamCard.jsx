@@ -9,18 +9,18 @@ const TeamCard = ({therapist}) => {
 
   return (
     <div
-      className="flex flex-col w-full max-w-xs p-3 overflow-hidden transition duration-500 transform bg-white shadow-lg dark:bg-background-dark text-navy dark:text-offWhite-dark rounded-xl md:hover:scale-[1.03]"
+      className="flex flex-col w-full max-w-xs  overflow-hidden transition duration-500 transform bg-white shadow-lg dark:bg-background-dark text-navy dark:text-offWhite-dark rounded-xl md:hover:scale-[1.03]"
     >
-      <div className="relative w-full h-48 sm:h-56 md:h-64">
+      <div className="relative w-full h-52 sm:h-56 md:h-64">
         <img
-          className="object-cover w-full h-full rounded-lg"
+          className="object-cover w-full h-full "
           src={therapist?.image}
           alt={`${therapist?.firstName} ${therapist?.lastName}`}
         />
       </div>
 
       <div className="flex flex-col justify-around gap-y-2 flex-grow p-6 cursor-default">
-        <h2 className="mb-2 text-xl font-bold ">
+        <h2 className="mb-2 text-xl lg:text-2xl font-bold">
           {`${therapist?.firstName} ${therapist?.lastName}`}
         </h2>
         <div className="mb-2 text-sm md:text-base font-bold text-seaGreen-dark dark:text-seaGreen-light">
