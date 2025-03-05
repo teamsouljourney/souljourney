@@ -15,7 +15,7 @@ const TeamDetailBody = () => {
   const { singleTherapist } = useSelector((state) => state.therapists);
   const { currentUser } = useSelector((state) => state.auth);
   const id = singleTherapist && singleTherapist?._id
-  console.log(singleTherapist);
+  
   const initialFeedback = {
     userId: currentUser?._id,
     therapistId: id,
