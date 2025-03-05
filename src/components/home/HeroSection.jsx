@@ -1,22 +1,40 @@
 import { NavLink } from "react-router-dom";
-import Video from "../../assets/images/4919748-uhd_4096_2160_25fps.mp4";
+import Video from "../../assets/images/4919748-uhd_4096_2160_25fps.webm";
+import PreloadImage from "../../assets/images/PreloadImage.jpg"
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 const HeroSection = () => {
   const { t } = useTranslation();
   const { currentUser } = useSelector((state) => state.auth);
+
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false)
+
+const handleVideoLoaded = () => {
+  setIsVideoLoaded(true)
+}
+
+
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen text-center text-white">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+      <img 
+      src={PreloadImage}
+      alt="Preload"
+      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isVideoLoaded ? "opacity-0" : "opacity-100"}`} />
         <video
           className="object-cover w-full h-full"
           src={Video}
-          type="video/mp4"
+          type="video/webm"
           autoPlay
           muted
           loop
-        ></video>
+          preload="auto"
+          onLoadedData={handleVideoLoaded}
+          style={{opacity:isVideoLoaded ? 1 : 0}}
+        >
+        </video>
         <div className="absolute inset-0 bg-black pointer-events-none opacity-30"></div>
       </div>
 
