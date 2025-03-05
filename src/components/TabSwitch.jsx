@@ -37,8 +37,6 @@ const TabSwitch = ({
   }, []);
 
   const handleAllClick = () => {
-    console.log("hello");
-
     dispatch(setSelectedCategory(null));
     onAllDataFetch();
   };
