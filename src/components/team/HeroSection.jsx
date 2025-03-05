@@ -15,11 +15,6 @@ const HeroSection = () => {
           opacity: 0.8,
         }}
       >
-        {/* <h1 className="mx-auto max-w-4xl font-display text-5xl font-italic tracking-normal text-offWhite sm:text-5xl font-urbanist"
-    >Soul&Journey
-       
-    </h1> */}
-
         <h1
           className="text-5xl md:text-[80px] font-bold text-white  w-[80%] mx-auto mb-16"
           style={{
@@ -28,7 +23,6 @@ const HeroSection = () => {
         >
           Soul&Journey
         </h1>
-
         <p className="mx-auto max-w-xl text-lg text-offWhite  sm:text-sm md:text-lg lg:text-xl xl:text-xl font-urbanist">
         {t("OurPsychologicalCounselingTeam")}
         </p>

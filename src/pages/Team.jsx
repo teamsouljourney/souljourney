@@ -61,6 +61,7 @@ const Team = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-y-10 bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
+      {/* Hero Section */}
       <div className="w-full h-1/5">
         <HeroSection />
       </div>
