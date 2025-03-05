@@ -2,33 +2,12 @@
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-const TeamCard = ({ displayedSearchTherapists, therapist }) => {
+const TeamCard = ({therapist}) => {
   const { t } = useTranslation();
-  // const { filteredTherapists, therapists, searchTerm } = useSelector(
-  //   (state) => state.therapists
-  // );
-  // const { selectedCategory } = useSelector((state) => state.categories);
 
-  // const displayedTherapists = selectedCategory
-  //   ? filteredTherapists.length > 0
-  //     ? filteredTherapists
-  //     : therapists
-  //   : therapists;
-
-  // const displayedSearchTherapists =
-  //   searchTerm.trim() === ""
-  //     ? displayedTherapists
-  //     : displayedTherapists?.filter((therapist) =>
-  //         [therapist.userName, therapist.email]
-  //           .filter(Boolean)
-  //           .some((name) =>
-  //             name.toLowerCase().includes(searchTerm.toLowerCase())
-  //           )
-  //       );
 
   return (
     <div
-      // key={therapist.id}
       className="flex flex-col w-full max-w-xs p-3 overflow-hidden transition duration-500 transform bg-white shadow-2xl cursor-pointer dark:bg-background-dark text-navy dark:text-offWhite-dark rounded-xl hover:scale-105"
       onClick={() => navigate(`/therapists/${therapist?._id}`)}
     >
