@@ -60,7 +60,7 @@ const Team = () => {
   }
 
   return (
-    <div className="min-h-screen bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
       <HeroSection />
       {/* Category Select Section */}
       <TabSwitch
@@ -73,7 +73,7 @@ const Team = () => {
       />
 
       {/* Therapist Cards Section */}
-      <div className="flex items-center justify-center p-4 border border-red-700">
+      <div className="flex items-center justify-center max-w-screen-2xl p-4 border border-red-700">
         <div className="flex flex-wrap justify-center gap-6 md:gap-10 lg:gap-14 mx-4 border border-red-700">
           {displayedSearchTherapists.map((therapist) => (
             <TeamCard therapist={therapist} key={therapist._id} />
