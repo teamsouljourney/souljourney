@@ -33,6 +33,11 @@ import CategoryManagement from "../pages/CategoryManagement";
 import AppointmentManagement from "../pages/AppointmentManagement";
 import BlogManagement from "../pages/BlogManagement";
 import FeedbackManagement from "../pages/FeedbackManagement";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import TermsAndConditions from "../pages/TermsAndConditions";
+
+
+
 
 const AppRouter = () => {
   return (
@@ -57,6 +62,8 @@ const AppRouter = () => {
         <Route path="/auth/reset-password/:token" element={<ResetPassword />} />
         <Route path="/blogs/:id" element={<BlogDetail />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="/termsandconditions" element={<TermsAndConditions />} />
         {/* Private Area */}
         <Route path="" element={<PrivateRouter />}>
           {/* Privates Routes */}

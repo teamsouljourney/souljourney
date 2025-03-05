@@ -301,5 +301,158 @@
   "myBlogs": "Bloglarım",
   "noPatient": "Randevusu olan hastanız yoktur.",
   "noBlogs": "Henüz blog yazısı yok. Hemen yazmaya başla!",
-  "notes": "Notlar"
+  "notes": "Notlar",
+  
+    "termsAndConditions": {
+      "title": "Şartlar ve Koşullar",
+      "lastUpdated": "Son güncelleme: 3 Mart 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Giriş",
+          "content": "SoulJourney'e hoş geldiniz. Bu Şartlar ve Koşullar, platformumuzun ve hizmetlerimizin kullanımını düzenler. SoulJourney'e erişerek veya kullanarak, bu Şartlara bağlı kalmayı kabul etmiş olursunuz. Bu şartların herhangi bir kısmına katılmıyorsanız, hizmete erişemezsiniz."
+        },
+        "definitions": {
+          "title": "2. Tanımlar",
+          "platform": "\"Platform\", SoulJourney web sitesi ve uygulamasını ifade eder.",
+          "services": "\"Hizmetler\", platformumuz aracılığıyla sağlanan terapi ve danışmanlık hizmetlerini ifade eder.",
+          "therapist": "\"Terapist\", platformumuzda kayıtlı lisanslı ruh sağlığı uzmanlarını ifade eder.",
+          "client": "\"Danışan\", platformumuz aracılığıyla terapi hizmetleri arayan kullanıcıları ifade eder."
+        },
+        "accountRegistration": {
+          "title": "3. Hesap Kaydı",
+          "content1": "Hizmetlerimizi kullanmak için bir hesap oluşturmanız gerekir. Kayıt sırasında doğru, güncel ve eksiksiz bilgiler vermeyi ve bu bilgileri doğru, güncel ve eksiksiz tutmak için güncellemeyi kabul edersiniz.",
+          "content2": "Şifrenizi korumaktan ve hesabınız altında gerçekleşen tüm etkinliklerden siz sorumlusunuz. Hesabınızın yetkisiz kullanımını derhal bize bildirmeyi kabul edersiniz."
+        },
+        "therapistQualifications": {
+          "title": "4. Terapist Nitelikleri",
+          "content1": "Platformumuzdaki tüm terapistler lisanslı profesyoneller olmalıdır. Terapistlerin hizmet sunmasına izin vermeden önce kimlik bilgilerini doğrularız, ancak danışanların terapistin kimlik bilgilerini bağımsız olarak doğrulamaları teşvik edilir.",
+          "content2": "Terapistler bağımsız yüklenicilerdir ve SoulJourney'in çalışanı değildir. Terapistler tarafından sağlanan hizmetleri kontrol etmiyoruz ve profesyonel tavsiyelerinden sorumlu değiliz."
+        },
+        "paymentTerms": {
+          "title": "5. Ödeme Koşulları",
+          "content1": "Danışanlar, platformda açıklandığı şekilde hizmetler için ücretleri ödemeyi kabul eder. Tüm ödemeler güvenli ödeme sistemimiz aracılığıyla işlenir.",
+          "content2": "Terapistler, ödeme takvimine göre hizmetleri için ödeme alacak, geçerli platform ücretleri düşülecektir.",
+          "content3": "İadeler, web sitemizde bulunan iade politikamıza uygun olarak verilebilir."
+        },
+        "cancellationPolicy": {
+          "title": "6. İptal Politikası",
+          "content1": "Danışanlar, planlanmış bir seansı iptal etmek için en az 24 saat önceden bildirimde bulunmalıdır. Geç iptaller veya katılmama durumları, tam seans ücretinin tahsil edilmesine neden olabilir.",
+          "content2": "Terapistler, makul bir iptal bildirimi sağlamalı ve gerektiğinde seansların yeniden planlanmasına yardımcı olmalıdır."
+        },
+        "confidentiality": {
+          "title": "7. Gizlilik",
+          "content1": "Terapötik ilişkinin gizliliğine saygı duyarız. Danışanlar ve terapistler arasındaki tüm iletişimler, yasal ve etik sınırlamalara tabi olarak gizlidir.",
+          "content2": "Platformumuz, bilgilerinizi korumak için güvenlik önlemleri uygular, ancak hiçbir sistem tamamen güvenli değildir. Daha fazla bilgi için lütfen Gizlilik Politikamıza bakın."
+        },
+        "limitationsOfLiability": {
+          "title": "8. Sorumluluk Sınırlamaları",
+          "content1": "SoulJourney, platformumuzun veya hizmetlerimizin kullanımından kaynaklanan herhangi bir zarardan sorumlu değildir. Terapi hizmetlerinin etkinliğini garanti etmiyoruz.",
+          "content2": "Platformumuz acil durumlar için uygun değildir. Bir ruh sağlığı acil durumu yaşıyorsanız, lütfen acil servisler arayın veya en yakın acil servise gidin."
+        },
+        "intellectualProperty": {
+          "title": "9. Fikri Mülkiyet",
+          "content": "SoulJourney platformundaki metin, grafikler, logolar ve yazılım dahil olmak üzere tüm içerikler SoulJourney'in mülkiyetindedir ve fikri mülkiyet yasaları tarafından korunmaktadır."
+        },
+        "termination": {
+          "title": "10. Fesih",
+          "content": "Hizmetlerimize erişimi, önceden bildirimde bulunmaksızın veya sorumluluk olmaksızın, bu Şartların ihlali dahil olmak üzere herhangi bir nedenle derhal feshetme veya askıya alma hakkını saklı tutarız."
+        },
+        "changestoTerms": {
+          "title": "11. Şartlardaki Değişiklikler",
+          "content": "Bu şartları istediğimiz zaman değiştirme hakkını saklı tutarız. Önemli değişiklikler hakkında bildirimde bulunacağız. Bu tür değişikliklerden sonra platformu kullanmaya devam etmeniz, revize edilmiş şartları kabul ettiğiniz anlamına gelir."
+        },
+        "governingLaw": {
+          "title": "12. Geçerli Yasa",
+          "content": "Bu Şartlar, çatışma hükümleri dikkate alınmaksızın [Yargı Yetkiniz] yasalarına göre yönetilecek ve yorumlanacaktır."
+        },
+        "contactUs": {
+          "title": "13. Bize Ulaşın",
+          "content": "Bu Şartlar hakkında herhangi bir sorunuz varsa, lütfen support@souljourney.com adresinden bize ulaşın."
+        }
+      }
+    },
+    "PrivacyPolicy": {
+      "title": "Gizlilik Politikası",
+      "lastUpdated": "Son güncelleme: 3 Mart 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Giriş",
+          "content": "SoulJourney'de gizliliğinizi ciddiye alıyoruz. Bu Gizlilik Politikası, platformumuzu ve hizmetlerimizi kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı, açıkladığımızı ve koruduğumuzu açıklar. Lütfen bu politikayı dikkatlice okuyun. Hizmetimize erişerek veya kullanarak, bu Gizlilik Politikasını okuduğunuzu ve anladığınızı kabul etmiş olursunuz."
+        },
+        "informationWeCollect": {
+          "title": "2. Topladığımız Bilgiler",
+          "personalInfo": "Kişisel Bilgiler: Bir hesap oluşturduğunuzda, adınız, e-posta adresiniz, telefon numaranız ve ödeme bilgileriniz gibi kişisel bilgileri toplarız.",
+          "professionalInfo": "Profesyonel Bilgiler: Terapistler için, profesyonel kimlik bilgileri, lisans bilgileri, eğitim geçmişi ve profesyonel deneyim toplarız.",
+          "healthInfo": "Sağlık Bilgileri: Danışanlar, terapi hizmetlerini kolaylaştırmak için ruh sağlığı geçmişi ve mevcut endişeleri dahil olmak üzere sağlık bilgileri sağlayabilir.",
+          "usageData": "Kullanım Verileri: Erişim süreleri, görüntülenen sayfalar ve kullanılan özellikler dahil olmak üzere platformumuzla nasıl etkileşimde bulunduğunuza dair bilgileri toplarız."
+        },
+        "howWeUseYourInformation": {
+          "title": "3. Bilgilerinizi Nasıl Kullanıyoruz",
+          "content": "Topladığımız bilgileri şunlar için kullanırız:",
+          "items": [
+            "Hizmetlerimizi sağlamak, sürdürmek ve geliştirmek",
+            "Ödemeleri işlemek ve hesapları yönetmek",
+            "Danışanları uygun terapistlerle eşleştirmek",
+            "Hizmetlerimiz hakkında sizinle iletişim kurmak",
+            "Kullanım modellerini ve eğilimleri izlemek ve analiz etmek",
+            "Yetkisiz erişime ve yasal sorumluluğa karşı korumak"
+          ]
+        },
+        "sharingYourInformation": {
+          "title": "4. Bilgilerinizi Paylaşma",
+          "content": "Bilgilerinizi aşağıdaki durumlarda paylaşabiliriz:",
+          "items": [
+            "Danışanlar ve Terapistler Arasında: Terapi hizmetlerinin sağlanması için gerekli bilgiler, eşleşen danışanlar ve terapistler arasında paylaşılır.",
+            "Hizmet Sağlayıcılar: Ödeme işleme ve veri analizi gibi bizim adımıza hizmet sunan üçüncü taraf hizmet sağlayıcılarla bilgi paylaşabiliriz.",
+            "Yasal Gereklilikler: Yasalar gerektirdiğinde veya geçerli yasal süreçlere yanıt olarak bilgileri açıklayabiliriz.",
+            "İş Transferleri: SoulJourney bir birleşme, satın alma veya varlık satışına dahil olursa, bilgileriniz bu işlemin bir parçası olarak aktarılabilir."
+          ]
+        },
+        "dataSecurityAndRetention": {
+          "title": "5. Veri Güvenliği ve Saklama",
+          "content1": "Kişisel bilgilerinizi yetkisiz erişim, açıklama, değiştirme ve imhaya karşı korumak için uygun teknik ve organizasyonel önlemler uyguluyoruz. Ancak, İnternet üzerinden hiçbir iletim yöntemi veya elektronik depolama %100 güvenli değildir ve mutlak güvenliği garanti edemeyiz.",
+          "content2": "Kişisel bilgilerinizi, hizmetlerimizi sağlamak ve bu Gizlilik Politikasında belirtilen amaçları yerine getirmek için gerekli olduğu sürece saklarız, yasalar tarafından daha uzun bir saklama süresi gerekmedikçe veya izin verilmedikçe."
+        },
+        "yourRights": {
+          "title": "6. Haklarınız",
+          "content": "Bulunduğunuz yere bağlı olarak, kişisel bilgilerinizle ilgili belirli haklarınız olabilir, bunlar şunları içerir:",
+          "items": [
+            "Kişisel bilgilerinize erişim hakkı",
+            "Yanlış veya eksik bilgileri düzeltme hakkı",
+            "Kişisel bilgilerinizin silinmesini talep etme hakkı",
+            "Kişisel bilgilerinizin işlenmesini kısıtlama veya itiraz etme hakkı",
+            "Veri taşınabilirliği hakkı"
+          ],
+          "content2": "Bu hakları kullanmak için, lütfen \"Bize Ulaşın\" bölümünde sağlanan bilgileri kullanarak bizimle iletişime geçin."
+        },
+        "cookiesAndTracking": {
+          "title": "7. Çerezler ve İzleme Teknolojileri",
+          "content": "Tarama etkinlikleriniz hakkında bilgi toplamak ve platformumuzdaki deneyiminizi geliştirmek için çerezler ve benzer izleme teknolojileri kullanıyoruz. Çerez tercihlerinizi tarayıcı ayarlarınız aracılığıyla yönetebilirsiniz."
+        },
+        "childrenPrivacy": {
+          "title": "8. Çocukların Gizliliği",
+          "content": "Hizmetlerimiz, ebeveyn izni olmadan 18 yaşın altındaki bireyler için tasarlanmamıştır. 18 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamıyoruz. 18 yaşın altındaki bir çocuktan ebeveyn onayı doğrulaması olmadan kişisel bilgi topladığımızı fark edersek, bu bilgileri kaldırmak için adımlar atacağız."
+        },
+        "internationalDataTransfers": {
+          "title": "9. Uluslararası Veri Transferleri",
+          "content": "Bilgileriniz, ikamet ettiğiniz ülkeden başka ülkelere aktarılabilir ve işlenebilir. Bu ülkeler, ikamet ettiğiniz ülkeden farklı veri koruma yasalarına sahip olabilir. Kişisel bilgilerinizin bu Gizlilik Politikasına uygun olarak korunmasını sağlamak için uygun önlemleri alacağız."
+        },
+        "changes": {
+          "title": "10. Bu Gizlilik Politikasındaki Değişiklikler",
+          "content": "Gizlilik Politikamızı zaman zaman güncelleyebiliriz. Herhangi bir değişikliği, yeni Gizlilik Politikasını bu sayfada yayınlayarak ve \"Son güncelleme\" tarihini güncelleyerek size bildireceğiz. Herhangi bir değişiklik için bu Gizlilik Politikasını periyodik olarak gözden geçirmeniz önerilir."
+        },
+        "contactUs": {
+          "title": "11. Bize Ulaşın",
+          "content": "Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin:",
+          "email": "E-posta: privacy@souljourney.com",
+          "address": "Adres: [Şirket Adresiniz]"
+        }
+      }
+    },
+    "common": {
+      "personalizedSupport": "Her Yolculuk için Kişiselleştirilmiş Destek",
+      "personalizedSupportDescription": "Her seans, özel ihtiyaçlarınıza göre uyarlanmıştır, kişisel ve profesyonel hayatınızda başarılı olmanız için doğru rehberlik ve kaynakları almanızı sağlar."
+    }
+  
+  
 }
