@@ -18,11 +18,11 @@ const TeamCard = ({ therapist }) => {
         />
       </div>
       {/* Card Body */}
-      <div className="flex flex-col justify-around gap-y-2 flex-grow p-6 cursor-default">
-        <h2 className="mb-2 text-xl lg:text-2xl font-bold">
+      <div className="flex flex-col justify-around gap-y-1 flex-grow px-6 py-3 cursor-default">
+        <h2 className="mb-1 text-xl lg:text-2xl font-bold">
           {`${therapist?.firstName} ${therapist?.lastName}`}
         </h2>
-        <div className="mb-2 text-sm md:text-base font-bold text-seaGreen-dark dark:text-seaGreen-light">
+        <div className="mb-1 text-sm md:text-base font-bold text-seaGreen-dark dark:text-seaGreen-light line-clamp-2">
           {therapist?.categoryId?.map((category) => (
             <i key={category._id}>{category.name}</i>
           ))}

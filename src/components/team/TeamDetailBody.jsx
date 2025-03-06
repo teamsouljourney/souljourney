@@ -46,7 +46,7 @@ const TeamDetailBody = () => {
     );
   }
 
-  const { description, graduation, experience } = singleTherapist;
+  const { description, graduation, experience, categoryId } = singleTherapist;
   // console.log(singleTherapist);
   // console.log(categoryId);
   // console.log(singleTherapistFeedbacks);
@@ -71,8 +71,21 @@ const TeamDetailBody = () => {
           <h2 className="text-2xl font-semibold mb-4 ">
             Proffesional experience
           </h2>
-          <div className="">{experience}</div>
-          <div className="">{graduation}</div>
+          <div className="">
+            <p className="text-md mb-2">{experience}</p>
+            <div className="flex flex-wrap justify-start my-4 gap-2 text-lg"> 
+              {/* <strong>Categories: </strong> */}
+              {categoryId?.map((category) => (
+                <span
+                  className="inline-block py-1 px-2 bg-[#E8F5E9] dark:bg-offWhite-dark text-seaGreen-dark dark:text-seaGreen-dark rounded-full text-md"
+                  key={category?._id}
+                >
+                  {category?.name}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className=""><strong>Bachelor's degree: </strong>{graduation}</div>
         </section>
         {/* Services */}
         <section id="services" className="scroll-mt-40 row-span-2 mx-auto pb-3 border-b-2 w-full">
