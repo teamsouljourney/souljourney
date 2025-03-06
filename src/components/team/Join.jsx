@@ -34,21 +34,21 @@ const Join = () => {
           </div>
 
           <div className="flex-grow text-center sm:text-left">
-            <h2 className="font-urbanist text-2xl sm:text-3xl font-bold mb-4 text-navy dark:text-offWhite-dark">
+            <h2 className="font-urbanist text-2xl md:text-3xl font-bold mb-4 text-navy dark:text-offWhite-dark">
               🚀 Join Our Team – Make a Difference!
             </h2>
-            <p className="text-base sm:text-lg mb-6 text-navy/80 dark:text-offWhite-dark/80 max-w-2xl">
+            <p className="text-base md:text-lg mb-6 text-navy/80 dark:text-offWhite-dark/80 max-w-2xl">
               Are you passionate about helping others and making a real impact?
               Join our dynamic and supportive team, where your skills and
               dedication contribute to creating positive change.
             </p>
-            <p className="text-base sm:text-lg mb-6 text-navy/80 dark:text-offWhite-dark/80 max-w-2xl text-left">
+            <p className="text-base md:text-lg mb-6 text-navy/80 dark:text-offWhite-dark/80 max-w-2xl text-left">
               ✨ <strong>Why Join Us?</strong>
               <br />✔ Work with a passionate and professional team
               <br />✔ Make a real difference in people's lives
               <br />✔ Grow and thrive in a supportive environment
             </p>
-            <p className="text-base sm:text-lg mb-6 text-navy/80 dark:text-offWhite-dark/80 max-w-2xl">
+            <p className="text-base md:text-lg mb-6 text-navy/80 dark:text-offWhite-dark/80 max-w-2xl">
               🔹{" "}
               <strong>
                 Your journey starts here! Apply now and be part of something
