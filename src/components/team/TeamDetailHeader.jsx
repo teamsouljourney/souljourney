@@ -6,7 +6,7 @@ import avatar from "../../assets/avatar3.svg";
 const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { firstName, lastName, email, image, categoryId } = singleTherapist;
+  const { firstName, lastName, image, categoryId } = singleTherapist;
 
   const therapistCategories = categoryId;
 

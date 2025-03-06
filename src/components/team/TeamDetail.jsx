@@ -7,7 +7,6 @@ import Button from "../button/Button";
 import TeamDetailHeader from "./TeamDetailHeader";
 import TeamDetailBody from "./TeamDetailBody";
 import { useTranslation } from "react-i18next";
-import { getSingleTherapistFeedbacksSuccess } from "../../features/feedbackSlice";
 import { getSingleTherapistSuccess } from "../../features/therapistSlice";
 
 const TeamDetail = () => {
@@ -63,7 +62,11 @@ const TeamDetail = () => {
   }, [])
 
   if (loading) {
-    return <div className="text-center text-navy">Loading...</div>;
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-seaGreen"></div>
+      </div>
+    );
   }
 
   if (error || !singleTherapist) {
