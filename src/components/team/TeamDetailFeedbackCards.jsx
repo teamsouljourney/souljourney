@@ -13,7 +13,7 @@ const TeamDetailFeedbackCards = () => {
   const { singleTherapist } = useSelector((state) => state.therapists);
   const therapistId = singleTherapist && singleTherapist?._id
   
-    {/* {t("goBack")} */}
+  {/* {t("goBack")} */}
   
   const [selectedFeedback, setSelectedFeedback] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);

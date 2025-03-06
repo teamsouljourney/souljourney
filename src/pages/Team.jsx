@@ -35,7 +35,7 @@ const Team = () => {
   };
 
   const displayedTherapists = selectedCategory
-    ? filteredTherapists.length > 0
+    ? filteredTherapists?.length > 0
       ? filteredTherapists
       : therapists
     : therapists;
@@ -44,7 +44,7 @@ const Team = () => {
     searchTerm.trim() === ""
       ? displayedTherapists
       : displayedTherapists?.filter((therapist) =>
-          [therapist.userName, therapist.email]
+          [therapist?.userName, therapist?.email]
             .filter(Boolean)
             .some((name) =>
               name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -79,7 +79,7 @@ const Team = () => {
       {/* Therapist Cards Section */}
       <div className="w-full max-w-screen-2xl px-4 py-8">
         <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
-          {displayedSearchTherapists.map((therapist) => (
+          {displayedSearchTherapists?.map((therapist) => (
             <TeamCard therapist={therapist} key={therapist._id} />
           ))}
         </div>
