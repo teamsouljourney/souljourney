@@ -12,10 +12,9 @@ const TeamDetailFeedbackCards = () => {
   const {singleTherapistFeedbacks} = useSelector((state)=>state.feedbacks)
   const { singleTherapist } = useSelector((state) => state.therapists);
   const therapistId = singleTherapist && singleTherapist?._id
-
-  {
-    /* {t("goBack")} */
-  }
+  
+  {/* {t("goBack")} */}
+  
   const [selectedFeedback, setSelectedFeedback] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   
@@ -66,7 +65,7 @@ const TeamDetailFeedbackCards = () => {
               <h4 className="leading-relaxed font-semibold line-clamp-1">
                 <i>{feedback?.title}</i>
               </h4>
-              <p className="leading-relaxed line-clamp-4">
+              <p className="text-sm sm:text-base leading-relaxed sm:leading-relaxed mb-4 sm:mb-6 line-clamp-4">
                 {feedback?.comment}
               </p>
             </div>

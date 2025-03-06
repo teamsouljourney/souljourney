@@ -1,6 +1,6 @@
 const BlogHeroSection = () => {
   return (
-    <div className="py-24 text-center dark:bg-background-dark">
+    <div className="py-24 text-center bg-offWhite-dark dark:bg-background-dark">
       <h1 className="text-4xl font-bold">Soul&Journey</h1>
       <p className="max-w-3xl px-4 mx-auto mt-4 text-lg">
         Welcome to our blog, where we explore the diverse and fascinating world
