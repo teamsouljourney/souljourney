@@ -293,7 +293,7 @@
   "cancel": "İptal",
   "noAppointmentsMessage": "Henüz planlanmış randevunuz yok.",
   "bookAppointmentButton": "Randevu Al",
-
+  
   "DASHBOARD": "DASHBOARD",
   "descriptionOfTherapist": "Ruh sağlığı alanında uzmanlaşmış deneyimli psikolog.",
   "patientList": "Hasta Listesi",
@@ -452,7 +452,67 @@
     "common": {
       "personalizedSupport": "Her Yolculuk için Kişiselleştirilmiş Destek",
       "personalizedSupportDescription": "Her seans, özel ihtiyaçlarınıza göre uyarlanmıştır, kişisel ve profesyonel hayatınızda başarılı olmanız için doğru rehberlik ve kaynakları almanızı sağlar."
-    }
+    },
+  "Services": {
+  "heroTitle": "Psikolojik Danışmanlık Hizmetlerimiz",
+  "heroDescription": "Psikolojik danışmanlık merkezimizde, bireylerin duygusal ve zihinsel iyilik hallerini geliştirmelerine yardımcı olmak için tasarlanmış geniş bir hizmet yelpazesi sunuyoruz. Her kategori, sizin özel ihtiyaç ve hedeflerinizi karşılamak için özel olarak hazırlanmıştır.",
   
+  "healthPsychology": {
+    "title": "Sağlık Psikolojisi",
+    "text": "Sağlık psikolojisi, daha sağlıklı alışkanlıklar ve öz farkındalık geliştirerek zihinsel ve fiziksel refahı teşvik etmeye odaklanır. Seanslarımız, stres, kaygı ve diğer ruh sağlığı zorluklarını yönetmek için gereken bilgi ve araçları sağlar. Amacımız, genel sağlığı destekleyen ve sağlığınız hakkında bilinçli kararlar almanıza yardımcı olan bilgilerle sizi güçlendirmektir.",
+    "list": {
+      "item1": "Stres yönetimi teknikleri",
+      "item2": "Duygusal dayanıklılık geliştirme",
+      "item3": "Ruh sağlığı için yaşam tarzı düzenlemeleri",
+      "item4": "Dengeli bir yaşam sürdürme stratejileri"
+    }
+  },
+  
+  "educationalPsychology": {
+    "title": "Eğitim Psikolojisi",
+    "text": "Eğitim psikolojisi, bireylerin eğitim ortamlarında nasıl öğrendiğini ve geliştiğini anlamaya odaklanır. Bu alandaki hizmetlerimiz, öğrenme, motivasyon ve akademik performansla ilgili zorlukları ele alarak öğrencileri, öğretmenleri ve ebeveynleri desteklemeyi amaçlar. İster okul çalışmalarında zorlanan bir öğrenci, ister etkili öğretim stratejileri arayan bir öğretmen, isterse çocuğunuzun eğitim ihtiyaçlarını destekleme konusunda rehberliğe ihtiyaç duyan bir ebeveyn olun, size yardımcı olmak için buradayız.",
+    "list": {
+      "item1": "Öğrenme güçlükleri değerlendirmesi (örn. DEHB, disleksi)",
+      "item2": "Akademik performans geliştirme",
+      "item3": "Motivasyon ve katılım için stratejiler",
+      "item4": "Özel eğitim ihtiyaçları olan öğrenciler için destek",
+      "item5": "Eğitimsel gelişimi desteklemek için ebeveynlik ipuçları"
+    }
+  },
+  
+  "neuropsychology": {
+    "title": "Nöropsikoloji",
+    "text": "Tutkulu terapistlerimiz, bir seferde bir seans olmak üzere anlamlı değişim ve kişisel gelişim elde etmenize yardımcı olmaya kararlıdır. Nöropsikoloji, beyin ve davranış arasındaki ilişkiye odaklanarak, bireylerin nörolojik durumların veya bilişsel bozuklukların günlük yaşamlarını nasıl etkileyebileceğini anlamalarına yardımcı olur. Nöropsikolojik hizmetlerimiz, bilişsel zorluklar, hafıza sorunları ve diğer beyin ile ilgili endişeler yaşayan bireyler için değerlendirmeler, danışmanlık ve destek içerir.",
+    "list": {
+      "item1": "Bilişsel değerlendirmeler",
+      "item2": "Beyin yaralanmaları veya nörolojik bozuklukların yönetimi",
+      "item3": "Hafıza geliştirme teknikleri",
+      "item4": "Nörolojik durumlarla ilgili ruh sağlığı sorunlarını ele alma"
+    }
+  },
+  
+  "marriageTherapy": {
+    "title": "Evlilik ve Aile Terapisi",
+    "text": "Evlilik danışmanlığı, çiftlerin iletişimi geliştirmelerine, çatışmaları çözmelerine ve ilişkilerini güçlendirmelerine yardımcı olmak için tasarlanmıştır. İster ilişkinizde zorluklarla karşılaşıyor olun, ister sadece ortaklığınızı geliştirmek istiyor olun, danışmanlarımız süreç boyunca size destek olmak için burada. Her iki ortağın da endişelerini ifade etmesi ve daha sağlıklı, daha tatmin edici bir evlilik için birlikte çalışması için güvenli bir alan sağlıyoruz.",
+    "list": {
+      "item1": "Etkili iletişim becerileri",
+      "item2": "Çatışma çözme stratejileri",
+      "item3": "Güven ve yakınlık oluşturma",
+      "item4": "Büyük yaşam değişikliklerini birlikte yönetme"
+    }
+  },
+  
+  "onlineTherapy": {
+    "title": "Online Terapi Hizmetleri",
+    "text": "Profesyonel terapiye erişim, online terapi hizmetlerimizle hiç bu kadar kolay olmamıştı. İster evde, ister işte, ister başka bir yerde olun, kendi alanınızın konforunda gizli, etkili danışmanlık alabilirsiniz. Lisanslı terapistlerimiz, zorlukların üstesinden gelmenize, stresi yönetmenize ve ruh sağlığınızı iyileştirmenize yardımcı olmak için gereken desteği sağlamak için burada - nerede olursanız olun.",
+    "list": {
+      "item1": "Video, sohbet veya telefon aracılığıyla uygun ve gizli seanslar",
+      "item2": "Yaşam tarzınıza uygun esnek planlama",
+      "item3": "İnternet bağlantısı olan herhangi bir yerden erişilebilir",
+      "item4": "Açıkça konuşmak ve iyileşmek için güvenli, destekleyici bir ortam"
+    }
+  }
+}
+
   
 }

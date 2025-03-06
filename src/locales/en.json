@@ -451,7 +451,67 @@
     "common": {
       "personalizedSupport": "Personalized Support for Every Journey",
       "personalizedSupportDescription": "Each session is tailored to your specific needs, ensuring that you receive the right guidance and resources to thrive in your personal and professional life."
+    },
+  
+  "Services": {
+  "heroTitle": "Our Psychological Counseling Services",
+  "heroDescription": "At our psychological counseling center, we offer a wide range of services designed to help individuals improve their emotional and mental well-being. Each category is tailored to meet your specific needs and goals.",
+  
+  "healthPsychology": {
+    "title": "Health Psychology",
+    "text": "Health psychology focuses on promoting mental and physical well-being through the development of healthier habits and self-awareness. Our sessions provide the knowledge and tools needed to manage stress, anxiety, and other mental health challenges. We aim to empower you with information that supports overall wellness and helps you make informed decisions about your health.",
+    "list": {
+      "item1": "Stress management techniques",
+      "item2": "Building emotional resilience",
+      "item3": "Lifestyle adjustments for mental health",
+      "item4": "Strategies for maintaining a balanced life"
     }
+  },
   
+  "educationalPsychology": {
+    "title": "Educational Psychology",
+    "text": "Educational psychology is focused on understanding how individuals learn and develop in educational settings. Our services in this area aim to support students, teachers, and parents by addressing challenges related to learning, motivation, and academic performance. Whether you're a student struggling with schoolwork, a teacher seeking effective teaching strategies, or a parent needing guidance on supporting your child's educational needs, we are here to help.",
+    "list": {
+      "item1": "Learning difficulties assessment (e.g., ADHD, dyslexia)",
+      "item2": "Academic performance enhancement",
+      "item3": "Strategies for motivation and engagement",
+      "item4": "Support for students with special educational needs",
+      "item5": "Parenting tips for supporting educational development"
+    }
+  },
   
+  "neuropsychology": {
+    "title": "Neuropsychology",
+    "text": "Our passionate therapists are committed to helping you achieve meaningful change and personal growth, one session at a time. Neuropsychology focuses on the relationship between the brain and behavior, helping individuals understand how neurological conditions or cognitive impairments may affect their daily lives. Our neuropsychological services include assessments, counseling, and support for individuals experiencing cognitive difficulties, memory issues, and other brain-related concerns.",
+    "list": {
+      "item1": "Cognitive assessments",
+      "item2": "Managing brain injuries or neurological disorders",
+      "item3": "Memory enhancement techniques",
+      "item4": "Addressing mental health issues related to neurological conditions"
+    }
+  },
+  
+  "marriageTherapy": {
+    "title": "Marriage and Family Therapy",
+    "text": "Marriage counseling is designed to help couples improve communication, resolve conflicts, and strengthen their relationships. Whether you're facing challenges in your relationship or simply looking to enhance your partnership, our counselors are here to support you through the process. We provide a safe space for both partners to express their concerns and work together toward a healthier, more fulfilling marriage.",
+    "list": {
+      "item1": "Effective communication skills",
+      "item2": "Conflict resolution strategies",
+      "item3": "Building trust and intimacy",
+      "item4": "Navigating major life changes together"
+    }
+  },
+  
+  "onlineTherapy": {
+    "title": "Online Therapy Services",
+    "text": "Accessing professional therapy has never been easier with our online therapy services. Whether you are at home, at work, or anywhere else, you can receive confidential, effective counseling from the comfort of your own space. Our licensed therapists are here to provide you with the support you need to overcome challenges, manage stress, and improve your mental well-being—no matter where you are.",
+    "list": {
+      "item1": "Convenient and confidential sessions via video, chat, or phone",
+      "item2": "Flexible scheduling to fit your lifestyle",
+      "item3": "Accessible from anywhere with an internet connection",
+      "item4": "A safe, supportive environment to talk openly and heal"
+    }
+  }
+}
+
 }
