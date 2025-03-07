@@ -3,20 +3,33 @@ import { useTranslation } from "react-i18next";
 
 const ServicesHeroSection = () => {
   const { t } = useTranslation();
-  
+
   return (
-    <div className="services-hero-section">
-      <div className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center justify-between">
-        <div className="md:w-1/2 mb-8 md:mb-0">
-          <h1 className="text-4xl font-bold mb-6">{t("Services.heroTitle")}</h1>
-          <p className="text-lg mb-8">{t("Services.heroDescription")}</p>
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
-            {t("getStarted")}
-          </button>
-        </div>
-        <div className="md:w-1/2">
-          <img src={Image1} alt="Psychological Services" className="rounded-lg shadow-lg" />
-        </div>
+    <div className="services-hero-container" style={{ 
+      backgroundImage: `url(${Image1})`,
+      position: "relative",
+      width: "100%",
+      height: "400px",
+      backgroundSize: "cover",
+      backgroundPosition: "center"
+    }}>
+      <div className="services-hero-content" style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        textAlign: "center",
+        width: "80%",
+        maxWidth: "800px"
+      }}>
+        <h1 className="services-hero-title" style={{
+          fontSize: "2.5rem",
+          marginBottom: "1rem"
+        }}>{t("Services.heroTitle")}</h1>
+        <p className="services-hero-description" style={{
+          fontSize: "1.2rem",
+          lineHeight: "1.6"
+        }}>{t("Services.heroDescription")}</p>
       </div>
     </div>
   );
