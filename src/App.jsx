@@ -6,6 +6,7 @@ import store from "./app/store";
 import { ToastContainer } from "react-toastify";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor } from "./app/store";
+import CookieConsentComponent from "./components/CookieConsent";
 
 
 
@@ -37,6 +38,7 @@ function App() {
   });
   return (
     <>
+    <CookieConsentComponent/>
       <ThemeProvider theme={theme}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
