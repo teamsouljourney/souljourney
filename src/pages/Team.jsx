@@ -79,13 +79,13 @@ const Team = () => {
       {/* Therapist Cards Section */}
       <div className="w-full max-w-screen-2xl px-4 py-8">
         <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
-          {/* {displayedSearchTherapists?.map((therapist) => ( */}
-          {pagFeedbacks?.map((therapist) => (
+          {/* {pagFeedbacks?.map((therapist) => ( */}
+          {displayedSearchTherapists?.map((therapist) => (
             <TeamCard therapist={therapist} key={therapist._id} />
           ))}
         </div>
       </div>
-      <Pagination endpoint={`therapists`} slice={"pagFeedbacks"} data={displayedSearchTherapists} />
+      {/* <Pagination endpoint={`therapists`} slice={"pagFeedbacks"} data={displayedSearchTherapists} /> */}
       <Join />
     </div>
   );
