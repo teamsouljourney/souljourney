@@ -82,7 +82,7 @@ const PricingForm = ({ getPricingData }) => {
       </div>
 
       {/* Pricing Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-y-6 md:gap-x-1 lg:gap-x-2 xl:gap-x-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 px-12 md:px-0 gap-y-6 md:gap-x-1 lg:gap-x-2 xl:gap-x-8">
         {pricingData.map((plan, index) => (
           <div
             key={index}

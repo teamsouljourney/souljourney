@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import useTherapistCall from "../../hooks/useTherapistCall";
 import { useDispatch, useSelector } from "react-redux";
@@ -68,6 +67,30 @@ const TherapistForm = () => {
             className="w-full px-3 py-2 mt-2 border rounded-md border-navy focus:outline-none focus:ring-mauve-dark focus:border-mauve-dark"
           />
           <input
+            type="text"
+            name="description"
+            placeholder="Description"
+            value={newTherapist.description || ""}
+            onChange={handleInputChange}
+            className="w-full px-3 py-2 mt-2 border rounded-md border-navy focus:outline-none focus:ring-mauve-dark focus:border-mauve-dark"
+          />
+          <input
+            type="text"
+            name="experience"
+            placeholder="Experience"
+            value={newTherapist.experience || ""}
+            onChange={handleInputChange}
+            className="w-full px-3 py-2 mt-2 border rounded-md border-navy focus:outline-none focus:ring-mauve-dark focus:border-mauve-dark"
+          />
+          <input
+            type="text"
+            name="graduation"
+            placeholder="Graduation"
+            value={newTherapist.graduation || ""}
+            onChange={handleInputChange}
+            className="w-full px-3 py-2 mt-2 border rounded-md border-navy focus:outline-none focus:ring-mauve-dark focus:border-mauve-dark"
+          />
+          <input
             id="password"
             name="password"
             type={showPassword ? "text" : "password"}
@@ -101,4 +124,3 @@ const TherapistForm = () => {
 };
 
 export default TherapistForm;
-
