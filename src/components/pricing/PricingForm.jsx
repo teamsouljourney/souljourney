@@ -19,11 +19,11 @@ const PricingForm = ({ getPricingData }) => {
   const handleCheckout = async (priceId) => {
     try {
       const stripe = await loadStripe(
-        "pk_test_51Qs8arP6ONB2IDlqUsU4P0T0kqqXYixzhEvl0xCxlV0cEfKb5BvVMnrx35E1TD3NL35xCljN18TFTDZKcwumyKDv00BTQAKL99",
+        import.meta.env.VITE_STRIPE_PASSWORD,
       )
 
       const response = await axios.post(
-        "http://localhost:8000/checkout",
+       `${import.meta.env.VITE_BASE_URL}checkout`,
         {
           priceId,
         },
@@ -59,6 +59,7 @@ const PricingForm = ({ getPricingData }) => {
       handleCheckout(priceId)
     }
   }
+  
 
   return (
     <section className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
