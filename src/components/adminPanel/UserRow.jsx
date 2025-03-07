@@ -15,6 +15,7 @@ const UserRow = ({ user }) => {
     dispatch(setNewUser(user));
     dispatch(toggleModal(true));
   };
+  console.log(user);
 
   return (
     <div className="flex flex-col items-start py-4 space-y-2 border-b md:flex-row md:items-center md:space-y-0">
