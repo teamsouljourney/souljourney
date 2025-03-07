@@ -1,4 +1,4 @@
-// NotesModal.jsx
+
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import useNoteCall from "../../hooks/useNoteCall";
@@ -18,7 +18,7 @@ const NotesModal = ({ open, onClose, userId, currentUser }) => {
 
   const [note, setNote] = useState(initialNote);
 
-  // Modal açıldığında notları getir
+ 
   useEffect(() => {
     if (open && userId) {
       getSingleUserNotes(userId);
