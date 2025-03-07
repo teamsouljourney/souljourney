@@ -512,6 +512,43 @@
       "item4": "A safe, supportive environment to talk openly and heal"
     }
   }
-}
+},
+
+  "About": {
+    "hero": {
+      "title": "About Us",
+      "description": "Welcome to our platform. Where we connect clients with experienced therapists to provide accessible and professional online therapy sessions. Our mission is to create a safe and supportive environment for your mental well-being."
+    },
+    "detail": {
+      "confidence": {
+        "title": "Building Confidence and Enhancing Mental Well-Being",
+        "text": "Our expert therapists are here to help you navigate life's challenges with confidence and resilience. We provide a supportive environment where your mental health thrives."
+      },
+      "personalized": {
+        "title": "Personalized Support for Every Journey",
+        "text": "Each session is tailored to your specific needs, ensuring that you receive the right guidance and resources to thrive in your personal and professional life."
+      },
+      "strategies": {
+        "title": "Proven Strategies for Growth and Stability",
+        "text": "We utilize evidence-based techniques to support your well-being, fostering growth and stability for a balanced and fulfilling life."
+      }
+    },
+    "row": {
+      "discover": "Discover why our platform is the right choice for your mental well-being",
+      "sessions": {
+        "title": "Personalized Therapy Sessions",
+        "text": "Our sessions are tailored to your unique needs, helping you progress at your own pace. Whether you're addressing immediate challenges or working on long-term goals, we're here to support you every step of the way."
+      },
+      "guidance": {
+        "title": "Expert-Curated Guidance",
+        "text": "Our licensed therapists bring trusted expertise to every session, ensuring you receive high-quality care. With a focus on your well-being, we combine evidence-based practices with personalized insights."
+      },
+      "tools": {
+        "title": "Empowering Tools for Growth",
+        "text": "We provide resources and support that empower both clients and therapists. With tools to track progress, identify needs, and set achievable goals, you'll experience meaningful and measurable growth."
+      }
+    }
+  }
+
 
 }

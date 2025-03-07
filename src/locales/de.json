@@ -513,6 +513,43 @@
       "item4": "Eine sichere, unterstützende Umgebung, um offen zu sprechen und zu heilen"
     }
   }
-}
+},
+
+  "About": {
+    "hero": {
+      "title": "Über Uns",
+      "description": "Willkommen auf unserer Plattform. Hier verbinden wir Klienten mit erfahrenen Therapeuten, um zugängliche und professionelle Online-Therapiesitzungen anzubieten. Unsere Mission ist es, eine sichere und unterstützende Umgebung für Ihr psychisches Wohlbefinden zu schaffen."
+    },
+    "detail": {
+      "confidence": {
+        "title": "Selbstvertrauen aufbauen und das psychische Wohlbefinden verbessern",
+        "text": "Unsere Experten-Therapeuten helfen Ihnen dabei, die Herausforderungen des Lebens mit Selbstvertrauen und Widerstandsfähigkeit zu meistern. Wir bieten eine unterstützende Umgebung, in der Ihre psychische Gesundheit gedeiht."
+      },
+      "personalized": {
+        "title": "Personalisierte Unterstützung für jeden Weg",
+        "text": "Jede Sitzung ist auf Ihre spezifischen Bedürfnisse zugeschnitten und stellt sicher, dass Sie die richtige Anleitung und Ressourcen erhalten, um in Ihrem persönlichen und beruflichen Leben zu gedeihen."
+      },
+      "strategies": {
+        "title": "Bewährte Strategien für Wachstum und Stabilität",
+        "text": "Wir nutzen evidenzbasierte Techniken, um Ihr Wohlbefinden zu unterstützen und fördern Wachstum und Stabilität für ein ausgewogenes und erfülltes Leben."
+      }
+    },
+    "row": {
+      "discover": "Entdecken Sie, warum unsere Plattform die richtige Wahl für Ihr psychisches Wohlbefinden ist",
+      "sessions": {
+        "title": "Personalisierte Therapiesitzungen",
+        "text": "Unsere Sitzungen sind auf Ihre individuellen Bedürfnisse zugeschnitten und helfen Ihnen, in Ihrem eigenen Tempo Fortschritte zu machen. Ob Sie unmittelbare Herausforderungen angehen oder an langfristigen Zielen arbeiten, wir unterstützen Sie bei jedem Schritt."
+      },
+      "guidance": {
+        "title": "Von Experten kuratierte Anleitung",
+        "text": "Unsere lizenzierten Therapeuten bringen vertrauenswürdige Expertise in jede Sitzung ein und stellen sicher, dass Sie hochwertige Betreuung erhalten. Mit dem Fokus auf Ihr Wohlbefinden kombinieren wir evidenzbasierte Praktiken mit personalisierten Erkenntnissen."
+      },
+      "tools": {
+        "title": "Stärkende Werkzeuge für Wachstum",
+        "text": "Wir bieten Ressourcen und Unterstützung, die sowohl Klienten als auch Therapeuten stärken. Mit Werkzeugen zur Verfolgung von Fortschritten, zur Identifizierung von Bedürfnissen und zur Festlegung erreichbarer Ziele werden Sie ein bedeutungsvolles und messbares Wachstum erleben."
+      }
+    }
+  }
+
 
 }

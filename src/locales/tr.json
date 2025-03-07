@@ -512,7 +512,41 @@
       "item4": "Açıkça konuşmak ve iyileşmek için güvenli, destekleyici bir ortam"
     }
   }
-}
+},
+  "About": {
+    "hero": {
+      "title": "Hakkımızda",
+      "description": "Platformumuza hoş geldiniz. Burada danışanları deneyimli terapistlerle buluşturarak erişilebilir ve profesyonel çevrimiçi terapi seansları sunuyoruz. Misyonumuz, ruh sağlığınız için güvenli ve destekleyici bir ortam yaratmaktır."
+    },
+    "detail": {
+      "confidence": {
+        "title": "Özgüven İnşa Etme ve Zihinsel İyi Oluşu Geliştirme",
+        "text": "Uzman terapistlerimiz, hayatın zorluklarıyla özgüven ve dayanıklılıkla başa çıkmanıza yardımcı olmak için burada. Zihinsel sağlığınızın geliştiği destekleyici bir ortam sunuyoruz."
+      },
+      "personalized": {
+        "title": "Her Yolculuk İçin Kişiselleştirilmiş Destek",
+        "text": "Her seans özel ihtiyaçlarınıza göre uyarlanarak, kişisel ve profesyonel hayatınızda başarılı olmanız için doğru rehberlik ve kaynakları almanızı sağlar."
+      },
+      "strategies": {
+        "title": "Büyüme ve İstikrar İçin Kanıtlanmış Stratejiler",
+        "text": "İyi oluşunuzu desteklemek için kanıta dayalı teknikler kullanıyor, dengeli ve tatmin edici bir yaşam için büyüme ve istikrarı teşvik ediyoruz."
+      }
+    },
+    "row": {
+      "discover": "Platformumuzun zihinsel iyi oluşunuz için neden doğru seçim olduğunu keşfedin",
+      "sessions": {
+        "title": "Kişiselleştirilmiş Terapi Seansları",
+        "text": "Seanslarımız benzersiz ihtiyaçlarınıza göre uyarlanmış olup, kendi hızınızda ilerlemenize yardımcı olur. İster anlık zorlukları ele alıyor olun, ister uzun vadeli hedefler üzerinde çalışıyor olun, her adımda yanınızdayız."
+      },
+      "guidance": {
+        "title": "Uzman Rehberliği",
+        "text": "Lisanslı terapistlerimiz her seansa güvenilir uzmanlık getirerek yüksek kaliteli bakım almanızı sağlar. İyi oluşunuza odaklanarak, kanıta dayalı uygulamaları kişiselleştirilmiş içgörülerle birleştiriyoruz."
+      },
+      "tools": {
+        "title": "Büyüme İçin Güçlendirici Araçlar",
+        "text": "Hem danışanları hem de terapistleri güçlendiren kaynaklar ve destek sunuyoruz. İlerlemeyi takip etmek, ihtiyaçları belirlemek ve ulaşılabilir hedefler belirlemek için araçlarla anlamlı ve ölçülebilir bir büyüme yaşayacaksınız."
+      }
+    }
+  }
 
-  
 }
