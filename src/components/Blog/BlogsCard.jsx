@@ -6,7 +6,7 @@ const BlogsCard = ({ blog, index }) => {
 
   return (
     <div
-      className={`flex flex-col-reverse sm:flex-row items-center justify-center py-8 gap-6 w-full`}
+      className={`flex flex-col-reverse sm:flex-row items-center justify-center py-8 gap-6 w-full border-b-2`}
     >
       <div
         className={`w-full sm:w-1/2 flex flex-col h-full ${

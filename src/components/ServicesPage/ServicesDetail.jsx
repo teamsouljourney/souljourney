@@ -83,7 +83,7 @@ const ServicesDetail = () => {
             <img
               src={section.image}
               alt="Therapist Image"
-              className="w-[300px] h-auto md:w-[400px] rounded-full object-cover shadow-lg"
+              className="w-[300px] h-auto md:w-[400px] rounded-full object-cover"
             />
           </div>
           <div className="lg:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">

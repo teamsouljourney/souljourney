@@ -302,5 +302,158 @@
   "myBlogs": "Meine Blogbeiträge",
   "noPatient": "Sie haben keine geplanten Termine.",
   "noBlogs": "Keine Blogbeiträge verfügbar. Fang jetzt an zu schreiben!",
-  "notes": "Notizen"
+  "notes": "Notizen",
+  
+    "termsAndConditions": {
+      "title": "Allgemeine Geschäftsbedingungen",
+      "lastUpdated": "Zuletzt aktualisiert: 3. März 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Einführung",
+          "content": "Willkommen bei SoulJourney. Diese Allgemeinen Geschäftsbedingungen regeln Ihre Nutzung unserer Plattform und Dienstleistungen. Durch den Zugriff auf oder die Nutzung von SoulJourney erklären Sie sich mit diesen Bedingungen einverstanden. Wenn Sie mit einem Teil dieser Bedingungen nicht einverstanden sind, dürfen Sie den Dienst nicht nutzen."
+        },
+        "definitions": {
+          "title": "2. Definitionen",
+          "platform": "\"Plattform\" bezieht sich auf die SoulJourney-Website und -Anwendung.",
+          "services": "\"Dienstleistungen\" bezieht sich auf die Therapie- und Beratungsdienste, die über unsere Plattform angeboten werden.",
+          "therapist": "\"Therapeut\" bezieht sich auf lizenzierte Fachkräfte für psychische Gesundheit, die auf unserer Plattform registriert sind.",
+          "client": "\"Klient\" bezieht sich auf Benutzer, die Therapiedienstleistungen über unsere Plattform suchen."
+        },
+        "accountRegistration": {
+          "title": "3. Kontoregistrierung",
+          "content1": "Um unsere Dienste nutzen zu können, müssen Sie ein Konto registrieren. Sie erklären sich damit einverstanden, während des Registrierungsprozesses genaue, aktuelle und vollständige Informationen anzugeben und diese Informationen zu aktualisieren, um sie genau, aktuell und vollständig zu halten.",
+          "content2": "Sie sind für den Schutz Ihres Passworts und für alle Aktivitäten, die unter Ihrem Konto stattfinden, verantwortlich. Sie erklären sich damit einverstanden, uns unverzüglich über jede unbefugte Nutzung Ihres Kontos zu informieren."
+        },
+        "therapistQualifications": {
+          "title": "4. Therapeutenqualifikationen",
+          "content1": "Alle Therapeuten auf unserer Plattform müssen lizenzierte Fachleute sein. Wir überprüfen die Qualifikationen, bevor wir Therapeuten erlauben, Dienstleistungen anzubieten, aber Klienten werden ermutigt, die Qualifikationen eines Therapeuten unabhängig zu überprüfen.",
+          "content2": "Therapeuten sind unabhängige Auftragnehmer und keine Angestellten von SoulJourney. Wir kontrollieren nicht die von Therapeuten erbrachten Dienstleistungen und sind nicht für deren fachliche Beratung verantwortlich."
+        },
+        "paymentTerms": {
+          "title": "5. Zahlungsbedingungen",
+          "content1": "Klienten erklären sich damit einverstanden, die auf der Plattform beschriebenen Gebühren für Dienstleistungen zu bezahlen. Alle Zahlungen werden über unser sicheres Zahlungssystem abgewickelt.",
+          "content2": "Therapeuten erhalten die Zahlung für ihre Dienstleistungen gemäß unserem Zahlungsplan, abzüglich der geltenden Plattformgebühren.",
+          "content3": "Rückerstattungen können gemäß unserer Rückerstattungsrichtlinie erfolgen, die auf unserer Website verfügbar ist."
+        },
+        "cancellationPolicy": {
+          "title": "6. Stornierungsrichtlinie",
+          "content1": "Klienten müssen mindestens 24 Stunden im Voraus eine Mitteilung machen, um eine geplante Sitzung zu stornieren. Späte Stornierungen oder Nichterscheinen können zu einer Gebühr in Höhe der vollen Sitzungsgebühr führen.",
+          "content2": "Therapeuten müssen eine angemessene Stornierungsmitteilung geben und bei Bedarf bei der Neuplanung von Sitzungen helfen."
+        },
+        "confidentiality": {
+          "title": "7. Vertraulichkeit",
+          "content1": "Wir respektieren die Vertraulichkeit der therapeutischen Beziehung. Alle Kommunikationen zwischen Klienten und Therapeuten sind vertraulich, vorbehaltlich rechtlicher und ethischer Einschränkungen.",
+          "content2": "Unsere Plattform implementiert Sicherheitsmaßnahmen zum Schutz Ihrer Informationen, aber kein System ist vollständig sicher. Bitte beachten Sie unsere Datenschutzrichtlinie für weitere Informationen."
+        },
+        "limitationsOfLiability": {
+          "title": "8. Haftungsbeschränkungen",
+          "content1": "SoulJourney haftet nicht für Schäden, die aus der Nutzung unserer Plattform oder Dienstleistungen resultieren. Wir garantieren nicht die Wirksamkeit von Therapiedienstleistungen.",
+          "content2": "Unsere Plattform ist nicht für Notfallsituationen geeignet. Wenn Sie einen psychischen Gesundheitsnotfall erleben, rufen Sie bitte den Notdienst an oder gehen Sie zur nächsten Notaufnahme."
+        },
+        "intellectualProperty": {
+          "title": "9. Geistiges Eigentum",
+          "content": "Alle Inhalte auf der SoulJourney-Plattform, einschließlich Text, Grafiken, Logos und Software, sind Eigentum von SoulJourney und durch Gesetze zum geistigen Eigentum geschützt."
+        },
+        "termination": {
+          "title": "10. Kündigung",
+          "content": "Wir behalten uns das Recht vor, den Zugang zu unseren Dienstleistungen sofort zu kündigen oder auszusetzen, ohne vorherige Ankündigung oder Haftung, aus irgendeinem Grund, einschließlich Verstoß gegen diese Bedingungen."
+        },
+        "changestoTerms": {
+          "title": "11. Änderungen der Bedingungen",
+          "content": "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern. Wir werden Sie über wesentliche Änderungen informieren. Ihre fortgesetzte Nutzung der Plattform nach solchen Änderungen stellt Ihre Annahme der überarbeiteten Bedingungen dar."
+        },
+        "governingLaw": {
+          "title": "12. Geltendes Recht",
+          "content": "Diese Bedingungen unterliegen den Gesetzen von [Ihre Gerichtsbarkeit] und werden in Übereinstimmung mit diesen ausgelegt, ungeachtet ihrer Kollisionsnormen."
+        },
+        "contactUs": {
+          "title": "13. Kontaktieren Sie uns",
+          "content": "Wenn Sie Fragen zu diesen Bedingungen haben, kontaktieren Sie uns bitte unter support@souljourney.com."
+        }
+      }
+    },
+    "PrivacyPolicy": {
+      "title": "Datenschutzrichtlinie",
+      "lastUpdated": "Zuletzt aktualisiert: 3. März 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Einführung",
+          "content": "Bei SoulJourney nehmen wir Ihre Privatsphäre ernst. Diese Datenschutzrichtlinie erklärt, wie wir Ihre Informationen sammeln, verwenden, offenlegen und schützen, wenn Sie unsere Plattform und Dienstleistungen nutzen. Bitte lesen Sie diese Richtlinie sorgfältig durch. Durch den Zugriff auf oder die Nutzung unseres Dienstes bestätigen Sie, dass Sie diese Datenschutzrichtlinie gelesen und verstanden haben."
+        },
+        "informationWeCollect": {
+          "title": "2. Informationen, die wir sammeln",
+          "personalInfo": "Persönliche Informationen: Wenn Sie ein Konto registrieren, sammeln wir persönliche Informationen wie Ihren Namen, Ihre E-Mail-Adresse, Telefonnummer und Zahlungsinformationen.",
+          "professionalInfo": "Berufliche Informationen: Für Therapeuten sammeln wir berufliche Qualifikationen, Lizenzinformationen, Ausbildungsgeschichte und berufliche Erfahrung.",
+          "healthInfo": "Gesundheitsinformationen: Klienten können Gesundheitsinformationen, einschließlich der Vorgeschichte psychischer Gesundheit und aktueller Anliegen, bereitstellen, um Therapiedienstleistungen zu erleichtern.",
+          "usageData": "Nutzungsdaten: Wir sammeln Informationen darüber, wie Sie mit unserer Plattform interagieren, einschließlich Zugriffszeiten, angesehene Seiten und genutzte Funktionen."
+        },
+        "howWeUseYourInformation": {
+          "title": "3. Wie wir Ihre Informationen verwenden",
+          "content": "Wir verwenden die von uns gesammelten Informationen für:",
+          "items": [
+            "Bereitstellung, Wartung und Verbesserung unserer Dienste",
+            "Verarbeitung von Zahlungen und Verwaltung von Konten",
+            "Zusammenführung von Klienten mit geeigneten Therapeuten",
+            "Kommunikation mit Ihnen über unsere Dienste",
+            "Überwachung und Analyse von Nutzungsmustern und Trends",
+            "Schutz vor unbefugtem Zugriff und rechtlicher Haftung"
+          ]
+        },
+        "sharingYourInformation": {
+          "title": "4. Weitergabe Ihrer Informationen",
+          "content": "Wir können Ihre Informationen unter folgenden Umständen weitergeben:",
+          "items": [
+            "Zwischen Klienten und Therapeuten: Informationen, die für die Bereitstellung von Therapiedienstleistungen notwendig sind, werden zwischen zugeordneten Klienten und Therapeuten geteilt.",
+            "Dienstleister: Wir können Informationen mit Drittanbietern teilen, die Dienstleistungen in unserem Namen erbringen, wie Zahlungsabwicklung und Datenanalyse.",
+            "Gesetzliche Anforderungen: Wir können Informationen offenlegen, wenn dies gesetzlich vorgeschrieben ist oder als Reaktion auf gültige rechtliche Verfahren.",
+            "Geschäftsübertragungen: Wenn SoulJourney an einer Fusion, Übernahme oder einem Verkauf von Vermögenswerten beteiligt ist, können Ihre Informationen als Teil dieser Transaktion übertragen werden."
+          ]
+        },
+        "dataSecurityAndRetention": {
+          "title": "5. Datensicherheit und -aufbewahrung",
+          "content1": "Wir implementieren angemessene technische und organisatorische Maßnahmen zum Schutz Ihrer persönlichen Informationen vor unbefugtem Zugriff, Offenlegung, Änderung und Zerstörung. Jedoch ist keine Methode der Übertragung über das Internet oder der elektronischen Speicherung 100% sicher, und wir können keine absolute Sicherheit garantieren.",
+          "content2": "Wir bewahren Ihre persönlichen Informationen so lange auf, wie es für die Bereitstellung unserer Dienste und die Erfüllung der in dieser Datenschutzrichtlinie dargelegten Zwecke erforderlich ist, es sei denn, ein längerer Aufbewahrungszeitraum ist gesetzlich vorgeschrieben oder erlaubt."
+        },
+        "yourRights": {
+          "title": "6. Ihre Rechte",
+          "content": "Je nach Ihrem Standort haben Sie möglicherweise bestimmte Rechte in Bezug auf Ihre persönlichen Informationen, darunter:",
+          "items": [
+            "Das Recht auf Zugang zu Ihren persönlichen Informationen",
+            "Das Recht, ungenaue oder unvollständige Informationen zu korrigieren",
+            "Das Recht, die Löschung Ihrer persönlichen Informationen zu beantragen",
+            "Das Recht, die Verarbeitung Ihrer persönlichen Informationen einzuschränken oder ihr zu widersprechen",
+            "Das Recht auf Datenübertragbarkeit"
+          ],
+          "content2": "Um diese Rechte auszuüben, kontaktieren Sie uns bitte unter den im Abschnitt \"Kontaktieren Sie uns\" angegebenen Informationen."
+        },
+        "cookiesAndTracking": {
+          "title": "7. Cookies und Tracking-Technologien",
+          "content": "Wir verwenden Cookies und ähnliche Tracking-Technologien, um Informationen über Ihre Browsing-Aktivitäten zu sammeln und Ihre Erfahrung auf unserer Plattform zu verbessern. Sie können Ihre Cookie-Einstellungen über Ihre Browser-Einstellungen verwalten."
+        },
+        "childrenPrivacy": {
+          "title": "8. Datenschutz für Kinder",
+          "content": "Unsere Dienste sind nicht für Personen unter 18 Jahren ohne elterliche Zustimmung bestimmt. Wir sammeln wissentlich keine persönlichen Informationen von Kindern unter 18 Jahren. Wenn wir feststellen, dass wir persönliche Informationen von einem Kind unter 18 Jahren ohne Überprüfung der elterlichen Zustimmung gesammelt haben, werden wir Maßnahmen ergreifen, um diese Informationen zu entfernen."
+        },
+        "internationalDataTransfers": {
+          "title": "9. Internationale Datenübertragungen",
+          "content": "Ihre Informationen können in Länder außerhalb Ihres Wohnsitzlandes übertragen und dort verarbeitet werden. Diese Länder können andere Datenschutzgesetze haben als Ihr Wohnsitzland. Wir werden angemessene Maßnahmen ergreifen, um sicherzustellen, dass Ihre persönlichen Informationen in Übereinstimmung mit dieser Datenschutzrichtlinie geschützt bleiben."
+        },
+        "changes": {
+          "title": "10. Änderungen dieser Datenschutzrichtlinie",
+          "content": "Wir können unsere Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Wir werden Sie über Änderungen informieren, indem wir die neue Datenschutzrichtlinie auf dieser Seite veröffentlichen und das Datum \"Zuletzt aktualisiert\" aktualisieren. Es wird empfohlen, diese Datenschutzrichtlinie regelmäßig auf Änderungen zu überprüfen."
+        },
+        "contactUs": {
+          "title": "11. Kontaktieren Sie uns",
+          "content": "Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte unter:",
+          "email": "E-Mail: privacy@souljourney.com",
+          "address": "Adresse: [Ihre Firmenadresse]"
+        }
+      }
+    },
+    "common": {
+      "personalizedSupport": "Personalisierte Unterstützung für jede Reise",
+      "personalizedSupportDescription": "Jede Sitzung ist auf Ihre spezifischen Bedürfnisse zugeschnitten und stellt sicher, dass Sie die richtige Anleitung und Ressourcen erhalten, um in Ihrem persönlichen und beruflichen Leben zu gedeihen."
+    }
+  
+  
 }

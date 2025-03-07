@@ -300,5 +300,159 @@
   "myBlogs": "My Blogs",
   "noBlogs": "No blog posts available. Start writing now!",
   "notes": "Notes",
-  "noPatient": "You have no scheduled appointments."
+  "noPatient": "You have no scheduled appointments.",
+  
+  
+    "termsAndConditions": {
+      "title": "Terms and Conditions",
+      "lastUpdated": "Last updated: March 3, 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Introduction",
+          "content": "Welcome to SoulJourney. These Terms and Conditions govern your use of our platform and services. By accessing or using SoulJourney, you agree to be bound by these Terms. If you disagree with any part of these terms, you may not access the service."
+        },
+        "definitions": {
+          "title": "2. Definitions",
+          "platform": "\"Platform\" refers to the SoulJourney website and application.",
+          "services": "\"Services\" refers to the therapy and counseling services provided through our platform.",
+          "therapist": "\"Therapist\" refers to licensed mental health professionals registered on our platform.",
+          "client": "\"Client\" refers to users seeking therapy services through our platform."
+        },
+        "accountRegistration": {
+          "title": "3. Account Registration",
+          "content1": "To use our services, you must register for an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.",
+          "content2": "You are responsible for safeguarding your password and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account."
+        },
+        "therapistQualifications": {
+          "title": "4. Therapist Qualifications",
+          "content1": "All therapists on our platform must be licensed professionals. We verify credentials before allowing therapists to offer services, but clients are encouraged to verify a therapist's credentials independently.",
+          "content2": "Therapists are independent contractors and not employees of SoulJourney. We do not control the services provided by therapists and are not responsible for their professional advice."
+        },
+        "paymentTerms": {
+          "title": "5. Payment Terms",
+          "content1": "Clients agree to pay the fees for services as described on the platform. All payments are processed through our secure payment system.",
+          "content2": "Therapists will receive payment for their services according to our payment schedule, minus applicable platform fees.",
+          "content3": "Refunds may be issued in accordance with our refund policy, which is available on our website."
+        },
+        "cancellationPolicy": {
+          "title": "6. Cancellation Policy",
+          "content1": "Clients must provide at least 24 hours' notice to cancel a scheduled session. Late cancellations or no-shows may result in a charge of the full session fee.",
+          "content2": "Therapists must provide reasonable notice of cancellation and assist in rescheduling sessions when necessary."
+        },
+        "confidentiality": {
+          "title": "7. Confidentiality",
+          "content1": "We respect the confidentiality of the therapeutic relationship. All communications between clients and therapists are confidential, subject to legal and ethical limitations.",
+          "content2": "Our platform implements security measures to protect your information, but no system is completely secure. Please refer to our Privacy Policy for more information."
+        },
+        "limitationsOfLiability": {
+          "title": "8. Limitations of Liability",
+          "content1": "SoulJourney is not liable for any damages resulting from the use of our platform or services. We do not guarantee the effectiveness of therapy services.",
+          "content2": "Our platform is not suitable for emergency situations. If you are experiencing a mental health emergency, please call emergency services or go to your nearest emergency room."
+        },
+        "intellectualProperty": {
+          "title": "9. Intellectual Property",
+          "content": "All content on the SoulJourney platform, including text, graphics, logos, and software, is the property of SoulJourney and is protected by intellectual property laws."
+        },
+        "termination": {
+          "title": "10. Termination",
+          "content": "We reserve the right to terminate or suspend access to our services immediately, without prior notice or liability, for any reason, including breach of these Terms."
+        },
+        "changestoTerms": {
+          "title": "11. Changes to Terms",
+          "content": "We reserve the right to modify these terms at any time. We will provide notice of significant changes. Your continued use of the platform after such modifications constitutes your acceptance of the revised terms."
+        },
+        "governingLaw": {
+          "title": "12. Governing Law",
+          "content": "These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law provisions."
+        },
+        "contactUs": {
+          "title": "13. Contact Us",
+          "content": "If you have any questions about these Terms, please contact us at support@souljourney.com."
+        }
+      }
+    },
+    "PrivacyPolicy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: March 3, 2025",
+      "sections": {
+        "introduction": {
+          "title": "1. Introduction",
+          "content": "At SoulJourney, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform and services. Please read this policy carefully. By accessing or using our service, you acknowledge that you have read and understood this Privacy Policy."
+        },
+        "informationWeCollect": {
+          "title": "2. Information We Collect",
+          "personalInfo": "Personal Information: When you register for an account, we collect personal information such as your name, email address, phone number, and payment information.",
+          "professionalInfo": "Professional Information: For therapists, we collect professional credentials, licensing information, education history, and professional experience.",
+          "healthInfo": "Health Information: Clients may provide health information, including mental health history and current concerns, to facilitate therapy services.",
+          "usageData": "Usage Data: We collect information on how you interact with our platform, including access times, pages viewed, and features used."
+        },
+        "howWeUseYourInformation": {
+          "title": "3. How We Use Your Information",
+          "content": "We use the information we collect to:",
+          "items": [
+            "Provide, maintain, and improve our services",
+            "Process payments and manage accounts",
+            "Match clients with appropriate therapists",
+            "Communicate with you about our services",
+            "Monitor and analyze usage patterns and trends",
+            "Protect against unauthorized access and legal liability"
+          ]
+        },
+        "sharingYourInformation": {
+          "title": "4. Sharing Your Information",
+          "content": "We may share your information in the following circumstances:",
+          "items": [
+            "Between Clients and Therapists: Information necessary for the provision of therapy services is shared between matched clients and therapists.",
+            "Service Providers: We may share information with third-party service providers who perform services on our behalf, such as payment processing and data analysis.",
+            "Legal Requirements: We may disclose information if required by law or in response to valid legal processes.",
+            "Business Transfers: If SoulJourney is involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction."
+          ]
+        },
+        "dataSecurityAndRetention": {
+          "title": "5. Data Security and Retention",
+          "content1": "We implement appropriate technical and organizational measures to protect your personal information from unauthorized access, disclosure, alteration, and destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.",
+          "content2": "We retain your personal information for as long as necessary to provide our services and fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law."
+        },
+        "yourRights": {
+          "title": "6. Your Rights",
+          "content": "Depending on your location, you may have certain rights regarding your personal information, including:",
+          "items": [
+            "The right to access your personal information",
+            "The right to correct inaccurate or incomplete information",
+            "The right to request deletion of your personal information",
+            "The right to restrict or object to processing of your personal information",
+            "The right to data portability"
+          ],
+          "content2": "To exercise these rights, please contact us using the information provided in the \"Contact Us\" section."
+        },
+        "cookiesAndTracking": {
+          "title": "7. Cookies and Tracking Technologies",
+          "content": "We use cookies and similar tracking technologies to collect information about your browsing activities and to improve your experience on our platform. You can manage your cookie preferences through your browser settings."
+        },
+        "childrenPrivacy": {
+          "title": "8. Children's Privacy",
+          "content": "Our services are not intended for individuals under the age of 18 without parental consent. We do not knowingly collect personal information from children under 18. If we become aware that we have collected personal information from a child under 18 without verification of parental consent, we will take steps to remove that information."
+        },
+        "internationalDataTransfers": {
+          "title": "9. International Data Transfers",
+          "content": "Your information may be transferred to and processed in countries other than the country in which you reside. These countries may have different data protection laws than your country of residence. We will take appropriate measures to ensure that your personal information remains protected in accordance with this Privacy Policy."
+        },
+        "changes": {
+          "title": "10. Changes to This Privacy Policy",
+          "content": "We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the \"Last updated\" date. You are advised to review this Privacy Policy periodically for any changes."
+        },
+        "contactUs": {
+          "title": "11. Contact Us",
+          "content": "If you have any questions about this Privacy Policy, please contact us at:",
+          "email": "Email: privacy@souljourney.com",
+          "address": "Address: [Your Company Address]"
+        }
+      }
+    },
+    "common": {
+      "personalizedSupport": "Personalized Support for Every Journey",
+      "personalizedSupportDescription": "Each session is tailored to your specific needs, ensuring that you receive the right guidance and resources to thrive in your personal and professional life."
+    }
+  
+  
 }

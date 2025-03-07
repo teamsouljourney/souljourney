@@ -33,6 +33,7 @@
     "i18next-http-backend": "^3.0.2",
     "npm": "^11.0.0",
     "react": "^18.3.1",
+    "react-cookie-consent": "^9.0.0",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.4.0",
     "react-icons": "^5.4.0",
@@ -44,8 +45,8 @@
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
     "stripe": "^17.6.0",
-    "webrtc-adapter": "^9.0.1",
     "sweetalert2": "^11.17.2",
+    "webrtc-adapter": "^9.0.1",
     "yup": "^1.6.1"
   },
   "devDependencies": {

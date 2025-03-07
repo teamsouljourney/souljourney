@@ -1,115 +1,130 @@
-"use client";
-
-import { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import io from "socket.io-client";
 import {
   FaMicrophone,
   FaMicrophoneSlash,
   FaVideo,
   FaVideoSlash,
   FaPhoneSlash,
-  FaCommentAlt,
   FaDesktop,
   FaUser,
 } from "react-icons/fa";
 
-export default function VideoCall() {
-  const [isMuted, setIsMuted] = useState(false);
-  const [isVideoOn, setIsVideoOn] = useState(true);
+const socket = io("http://localhost:8000", {
+  transports: ["websocket"],
+  withCredentials: true,
+});
 
-  const participants = [
-    { id: 1, name: "Brandon Lee", isActive: true },
-    { id: 2, name: "Sarah Miller", isActive: true },
-  ];
+export default function VideoCall() {
+  const [isMuted, setIsMuted] = useState(true);
+  const [isVideoOn, setIsVideoOn] = useState(false);
+  const localVideoRef = useRef(null);
+  const remoteVideoRef = useRef(null);
+  const localStream = useRef(null);
+  const remoteStream = useRef(null);
+  const peerConnection = useRef(null);
+  const screenStream = useRef(null);
+
+  useEffect(() => {
+    navigator.mediaDevices
+      .getUserMedia({ video: true, audio: true })
+      .then((stream) => {
+        localStream.current = stream;
+        stream.getAudioTracks().forEach(track => track.enabled = false);
+        stream.getVideoTracks().forEach(track => track.enabled = false);
+        if (localVideoRef.current) {
+          localVideoRef.current.srcObject = stream;
+        }
+        setupSocket();
+      })
+      .catch((err) => console.error("Error accessing media devices:", err));
+  }, []);
+
+  const setupSocket = () => {
+    socket.emit("join-call", {});
+
+    socket.on("user-joined", async (data) => {
+      const remoteRTCSession = new RTCSessionDescription(data.offer);
+      peerConnection.current = new RTCPeerConnection({
+        iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
+      });
+
+      localStream.current.getTracks().forEach((track) => {
+        peerConnection.current.addTrack(track, localStream.current);
+      });
+
+      await peerConnection.current.setRemoteDescription(remoteRTCSession);
+      const answer = await peerConnection.current.createAnswer();
+      await peerConnection.current.setLocalDescription(answer);
+      socket.emit("answer", { answer });
+    });
+
+    socket.on("answer", async (data) => {
+      const remoteDesc = new RTCSessionDescription(data.answer);
+      await peerConnection.current.setRemoteDescription(remoteDesc);
+    });
+
+    socket.on("candidate", async (data) => {
+      try {
+        await peerConnection.current.addIceCandidate(new RTCIceCandidate(data.candidate));
+      } catch (e) {
+        console.error("Error adding received ICE candidate", e);
+      }
+    });
+
+    socket.on("share-screen", (stream) => {
+      if (remoteVideoRef.current) {
+        remoteVideoRef.current.srcObject = stream;
+      }
+    });
+  };
+
+  const toggleAudio = () => {
+    if (localStream.current) {
+      localStream.current.getAudioTracks().forEach((track) => {
+        track.enabled = !track.enabled;
+      });
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const toggleVideo = () => {
+    if (localStream.current) {
+      localStream.current.getVideoTracks().forEach((track) => {
+        track.enabled = !track.enabled;
+      });
+      setIsVideoOn(!isVideoOn);
+    }
+  };
+
+  const shareScreen = async () => {
+    try {
+      screenStream.current = await navigator.mediaDevices.getDisplayMedia({ video: true });
+      if (localVideoRef.current) {
+        localVideoRef.current.srcObject = screenStream.current;
+      }
+      socket.emit("share-screen", screenStream.current);
+    } catch (err) {
+      console.log("Error sharing screen:", err);
+    }
+  };
 
   return (
-    <div className=" w-full h-full bg-offWhite p-4 md:p-8 pb-32 flex flex-col">
-      <div className="flex-grow  border flex items-center justify-center ">
-        <div className="w-full max-w-lg space-y-4 sm:space-y-8 sm:w-[70%] md:w-[80%] lg:w-[60%] xl:w-[50%]">
-          {participants.map((participant) => (
-            <div
-              key={participant.id}
-              className="relative aspect-video rounded-xl overflow-hidden bg-gray-900 shadow-lg"
-            >
-              {participant.isActive ? (
-                <img
-                  src="/placeholder.svg"
-                  alt=""
-                  className="w-full h-full  object-cover"
-                  width="740"
-                  height="480"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center">
-                  <FaUser className="w-20 h-20 text-gray-500" />
-                </div>
-              )}
-              <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
-                <p className="text-white font-medium">{participant.name}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+    <div className="w-full h-full bg-offWhite p-6 md:p-10 flex flex-col items-center justify-center">
+      <div className="grid grid-cols-2 gap-6 w-full max-w-4xl">
+        <video ref={localVideoRef} autoPlay className="w-full h-72 md:h-96 bg-black rounded-lg shadow-lg" />
+        <video ref={remoteVideoRef} autoPlay className="w-full h-72 md:h-96 bg-black rounded-lg shadow-lg" />
       </div>
-
-      {/* Control Buttons */}
-      <div className=" bottom-0 left-10 right-0 bg-offWhite  shadow-lg py-4">
-        <div className="max-w-3xl mx-auto flex items-center justify-center gap-4">
-          <button
-            onClick={() => setIsMuted(!isMuted)}
-            className="flex flex-col items-center"
-          >
-            <div
-              className={`p-4 rounded-full ${
-                isMuted
-                  ? "bg-red-100 text-red-600"
-                  : "bg-gray-100 hover:bg-gray-200"
-              }`}
-            >
-              {isMuted ? (
-                <FaMicrophoneSlash className="w-6 h-6" />
-              ) : (
-                <FaMicrophone className="w-6 h-6" />
-              )}
-            </div>
-            <span className="mt-2 text-xs">{isMuted ? "Unmute" : "Mute"}</span>
-          </button>
-
-          <button
-            onClick={() => setIsVideoOn(!isVideoOn)}
-            className="flex flex-col items-center"
-          >
-            <div
-              className={`p-4 rounded-full ${
-                !isVideoOn
-                  ? "bg-red-100 text-red-600"
-                  : "bg-gray-100 hover:bg-gray-200"
-              }`}
-            >
-              {isVideoOn ? (
-                <FaVideo className="w-6 h-6" />
-              ) : (
-                <FaVideoSlash className="w-6 h-6" />
-              )}
-            </div>
-            <span className="mt-2 text-xs">
-              {isVideoOn ? "Stop Video" : "Start Video"}
-            </span>
-          </button>
-
-          <button className="flex flex-col items-center">
-            <div className="p-4 rounded-full bg-gray-100 hover:bg-gray-200">
-              <FaCommentAlt className="w-6 h-6" />
-            </div>
-            <span className="mt-2 text-xs">Chat</span>
-          </button>
-
-          <button className="flex flex-col items-center">
-            <div className="p-4 rounded-full bg-red-600 hover:bg-red-700 text-white">
-              <FaPhoneSlash className="w-6 h-6" />
-            </div>
-            <span className="mt-2 text-xs">End Call</span>
-          </button>
-        </div>
+      <div className="flex items-center justify-center gap-6 mt-6">
+        <button onClick={toggleAudio} className="p-4 rounded-full bg-gray-700 hover:bg-gray-600 text-white shadow-lg">
+          {isMuted ? <FaMicrophoneSlash className="w-6 h-6" /> : <FaMicrophone className="w-6 h-6" />}
+        </button>
+        <button onClick={toggleVideo} className="p-4 rounded-full bg-gray-700 hover:bg-gray-600 text-white shadow-lg">
+          {isVideoOn ? <FaVideo className="w-6 h-6" /> : <FaVideoSlash className="w-6 h-6" />}
+        </button>
+        <button onClick={shareScreen} className="p-4 rounded-full bg-green-600 hover:bg-green-500 text-white shadow-lg">
+          Share Screen
+        </button>
       </div>
     </div>
   );
