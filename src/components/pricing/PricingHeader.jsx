@@ -5,9 +5,9 @@ import { useTranslation } from "react-i18next";
 const PricingHeader = () => {
   const { t } = useTranslation();
   return (
-    <div className="mt-20 px-4 pb-4 pt-3 text-center md:px-8  ">
-        <h1  className="mt-8 mb-4 text-4xl font-bold md:text-5xl font-urbanist ">{ t("paymentDetails")}</h1>
-        <p className = "max-w-6xl mx-auto text-base leading-relaxed md:text-2xl">{ t("paymentDetailsText")}</p>
+    <div className="py-24 text-center bg-offWhite-dark dark:bg-background-darker ">
+        <h1  className="text-3xl md:text-4xl lg:text-5xl font-bold">{ t("paymentDetails")}</h1>
+        <p className = "max-w-3xl px-4 mx-auto mt-4 text-lg lg:text-xl">{ t("paymentDetailsText")}</p>
     </div>
   )
 }
