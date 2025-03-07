@@ -87,7 +87,7 @@ export default function Chat() {
   }, []);
 
   return (
-    <div className="flex h-screen bg-white overflow-hidden">
+    <div className="flex h-screen bg-white dark:bg-background-dark overflow-hidden">
       <LeftSidebar
         isOpen={isLeftSidebarOpen}
         toggleSidebar={toggleLeftSidebar}

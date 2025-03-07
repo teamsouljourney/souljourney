@@ -164,7 +164,7 @@ export default function MainChatArea({
                 )}
               </div>
               <button className="text-left" onClick={toggleRightSidebar}>
-                <p className="font-medium  dark:text-offWhite">
+                <p className="font-medium text-navy dark:text-offWhite">
                   {selectedUserData[0]?.firstName}{" "}
                   {selectedUserData[0]?.lastName}
                 </p>
@@ -207,7 +207,7 @@ export default function MainChatArea({
           ref={messagesContainerRef}
         >
           {sortedChats.length === 0 ? (
-            <div className="text-center text-gray-500 my-8">
+            <div className="text-center text-navy dark:text-offWhite my-8">
               No messages yet. Start the conversation!
             </div>
           ) : (
@@ -231,7 +231,7 @@ export default function MainChatArea({
                     <p className="overflow-auto break-words">{chat?.content}</p>
                   </div>
                   <div
-                    className={`text-xs text-gray-500 mt-1 ${
+                    className={`text-xs dark:text-offWhite-dark text-navy mt-1 ${
                       chat.senderId === currentUser?._id
                         ? "text-right"
                         : "text-left"
@@ -320,7 +320,7 @@ export default function MainChatArea({
             }`}
             disabled={isSending || !message.trim()}
           >
-            <BiSend className="text-seaGreen-light text-3xl" />
+            <BiSend className="text-pastelGreen text-3xl" />
           </button>
 
           {/* Emoji Picker */}
