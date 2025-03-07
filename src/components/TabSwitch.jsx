@@ -105,7 +105,7 @@ const TabSwitch = ({
           className={`px-4 py-2 font-semibold rounded-lg transition-all duration-300 ${
             selectedCategory === null
               ? "bg-navy-light text-white shadow-md"
-              : "bg-white text-navy hover:bg-navy-light hover:text-white border border-navy"
+              : "bg-white text-navy hover:bg-navy-light/30 hover:text-white border "
           }`}
         >
           {t("all")}
@@ -119,7 +119,7 @@ const TabSwitch = ({
             className={`px-4 py-2 font-semibold rounded-lg transition-all duration-300 hover:bg-sea ${
               selectedCategory === category._id
                 ? "bg-navy-light text-white shadow-md"
-                : "bg-white text-navy hover:bg-navy-light hover:text-white border border-navy"
+                : "bg-white text-navy hover:bg-navy-light/30 hover:text-white border "
             }`}
           >
             {category.name}
