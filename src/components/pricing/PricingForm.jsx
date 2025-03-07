@@ -1,29 +1,27 @@
-import axios from "axios"
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { loadStripe } from "@stripe/stripe-js"
-import { useSelector } from "react-redux"
-import Button from "../button/Button"
-import { useTranslation } from "react-i18next"
-import { toastErrorNotify } from "../../helper/ToastNotify"
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { loadStripe } from "@stripe/stripe-js";
+import { useSelector } from "react-redux";
+import Button from "../button/Button";
+import { useTranslation } from "react-i18next";
+import { toastErrorNotify } from "../../helper/ToastNotify";
 
 const PricingForm = ({ getPricingData }) => {
-  const { t } = useTranslation()
-  const [selectedPlan, setSelectedPlan] = useState("Monthly")
-  const navigate = useNavigate()
-  const { currentUser } = useSelector((state) => state.auth)
+  const { t } = useTranslation();
+  const [selectedPlan, setSelectedPlan] = useState("Monthly");
+  const navigate = useNavigate();
+  const { currentUser } = useSelector((state) => state.auth);
 
   // Get pricing data with translations
-  const pricingData = getPricingData(t)
+  const pricingData = getPricingData(t);
 
   const handleCheckout = async (priceId) => {
     try {
-      const stripe = await loadStripe(
-        import.meta.env.VITE_STRIPE_PASSWORD,
-      )
+      const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PASSWORD);
 
       const response = await axios.post(
-       `${import.meta.env.VITE_BASE_URL}checkout`,
+        `${import.meta.env.VITE_BASE_URL}checkout`,
         {
           priceId,
         },
@@ -31,35 +29,35 @@ const PricingForm = ({ getPricingData }) => {
           headers: {
             "Content-Type": "application/json",
           },
-        },
-      )
+        }
+      );
 
-      const { sessionId } = response.data
+      const { sessionId } = response.data;
       if (sessionId) {
-        await stripe?.redirectToCheckout({ sessionId })
+        await stripe?.redirectToCheckout({ sessionId });
       }
     } catch (error) {
-      toastErrorNotify(error.response.data.message, "Error during checkout:")
+      toastErrorNotify(error.response.data.message, "Error during checkout:");
     }
-  }
+  };
 
   const handleRedirect = () => {
     if (currentUser) {
-      navigate("/private")
+      navigate("/profile");
     } else {
-      navigate("/login")
+      navigate("/login");
     }
-  }
+  };
 
   const handlePlanAction = (plan) => {
     if (plan.action === "redirect") {
-      handleRedirect()
+      handleRedirect();
     } else if (plan.action === "checkout") {
-      const priceId = selectedPlan === "Monthly" ? plan.priceId.monthly : plan.priceId.yearly
-      handleCheckout(priceId)
+      const priceId =
+        selectedPlan === "Monthly" ? plan.priceId.monthly : plan.priceId.yearly;
+      handleCheckout(priceId);
     }
-  }
-  
+  };
 
   return (
     <section className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
@@ -68,7 +66,9 @@ const PricingForm = ({ getPricingData }) => {
         <h2 className="mb-4 text-center text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold tracking-tight dark:text-white">
           {t("plansPricing")}
         </h2>
-        <p className="text-sm sm:text-base md:text-base lg:text-lg font-light">{t("plansPricingText")}</p>
+        <p className="text-sm sm:text-base md:text-base lg:text-lg font-light">
+          {t("plansPricingText")}
+        </p>
       </div>
 
       {/* Toggle Buttons */}
@@ -101,10 +101,14 @@ const PricingForm = ({ getPricingData }) => {
             {/* Price Section - Fixed Height */}
             <div className="flex justify-center items-baseline py-4 sm:py-5 md:py-6 border-t border-b border-gray-100 dark:border-background h-[80px] md:h-[100px]">
               <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold">
-                {selectedPlan === "Monthly" ? plan.price.monthly : plan.price.yearly}
+                {selectedPlan === "Monthly"
+                  ? plan.price.monthly
+                  : plan.price.yearly}
               </span>
               <span className="ml-1 text-xs sm:text-sm md:text-base lg:text-lg">
-                {selectedPlan === "Monthly" ? `/${t("month")}` : `/${t("year")}`}
+                {selectedPlan === "Monthly"
+                  ? `/${t("month")}`
+                  : `/${t("year")}`}
               </span>
             </div>
 
@@ -128,7 +132,10 @@ const PricingForm = ({ getPricingData }) => {
                     <span
                       className="ml-2 sm:ml-3 text-xs sm:text-sm md:text-sm lg:text-base"
                       dangerouslySetInnerHTML={{
-                        __html: feature.replace(/(\d+x\/|unlimited)/g, '<span class="font-semibold">$1</span>'),
+                        __html: feature.replace(
+                          /(\d+x\/|unlimited)/g,
+                          '<span class="font-semibold">$1</span>'
+                        ),
                       }}
                     />
                   </li>
@@ -150,7 +157,7 @@ const PricingForm = ({ getPricingData }) => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default PricingForm
+export default PricingForm;
