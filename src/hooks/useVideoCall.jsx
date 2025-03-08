@@ -1,11 +1,5 @@
-import React from 'react'
-
 const useVideoCall = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default useVideoCall
+export default useVideoCall;
