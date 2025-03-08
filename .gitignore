@@ -25,3 +25,7 @@ dist-ssr
 
 # Environment files
 .env
+
+# Certificate files
+certs/
+*.pem
