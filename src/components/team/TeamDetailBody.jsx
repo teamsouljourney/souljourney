@@ -5,7 +5,7 @@ import TeamDetailFeedbackCards from "./TeamDetailFeedbackCards";
 import TeamDetailFeedbackForm from "./TeamDetailFeedbackForm";
 import { useTranslation } from "react-i18next";
 
-const TeamDetailBody = () => {
+const TeamDetailBody = ({sectionRefs}) => {
   const { t } = useTranslation();
   const { getSingleTherapistFeedbacks, postTherapistFeedback } =
     useFeedbackCall();
@@ -62,12 +62,12 @@ const TeamDetailBody = () => {
     <>
       <div className="grid grid-cols-1 gap-4 sm:gap-6 mx-auto w-full max-w-6xl p-4 sm:p-6 md:p-8">
         {/* About */}
-        <section id="about" className="scroll-mt-40 row-span-4 mx-auto pb-3 border-b-2 w-full">
+        <section id="about" ref={sectionRefs.current.about}  className="scroll-mt-40 row-span-4 mx-auto pb-3 border-b-2 w-full">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-4">About Me{/* {t("about")} */}</h2>
           <p className="text-sm sm:text-base leading-relaxed sm:leading-relaxed md:leading-relaxed">{description}</p>
         </section>
         {/* Experience */}
-        <section id="experience" className="scroll-mt-[40] row-span-3 mx-auto pb-3 border-b-2 w-full">
+        <section id="experience" ref={sectionRefs.current.experience} className="scroll-mt-[40] row-span-3 mx-auto pb-3 border-b-2 w-full">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-4">
             Proffesional experience
           </h2>
@@ -88,7 +88,7 @@ const TeamDetailBody = () => {
           <div className="text-sm sm:text-base"><strong className="font-semibold">Bachelor's degree: </strong>{graduation}</div>
         </section>
         {/* Services */}
-        <section id="services" className="scroll-mt-40 row-span-2 mx-auto pb-3 border-b-2 w-full">
+        <section id="services" ref={sectionRefs.current.services} className="scroll-mt-40 row-span-2 mx-auto pb-3 border-b-2 w-full">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-4">Services</h2>
           <div className="flex flex-wrap justify-start items-center mt-2 gap-x-4 sm:gap-x-6">
             <div className="flex flex-row items-center justify-center gap-1.5 sm:gap-2">
@@ -122,7 +122,7 @@ const TeamDetailBody = () => {
           </div>
         </section>
         {/* Reviews */}
-        <section id="reviews" className="scroll-mt-40 row-span-2 mx-auto pb-3 w-full">
+        <section id="reviews" ref={sectionRefs.current.reviews} className="scroll-mt-40 row-span-2 mx-auto pb-3 w-full">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-4">Reviews</h2>
 
           <p className="text-sm sm:text-base leading-relaxed sm:leading-relaxed mb-4 sm:mb-6">
