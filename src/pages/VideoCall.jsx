@@ -10,6 +10,8 @@ import {
   FaUser,
   FaChevronDown,
 } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import useVideoCall from "../hooks/useVideoCall";
 
 const socket = io("http://localhost:8000", {
   transports: ["websocket"],
@@ -17,6 +19,11 @@ const socket = io("http://localhost:8000", {
 });
 
 export default function VideoCall() {
+  const { cameras, microphones, selectedCamera, selectedMicrophone } =
+    useSelector((state) => state.video);
+
+  const { getMediaDevices } = useVideoCall();
+
   const [isMuted, setIsMuted] = useState(true);
   const [isVideoOn, setIsVideoOn] = useState(false);
   const localVideoRef = useRef(null);
@@ -26,11 +33,6 @@ export default function VideoCall() {
   const peerConnection = useRef(null);
   const screenStream = useRef(null);
 
-  // Device selection states
-  const [cameras, setCameras] = useState([]);
-  const [microphones, setMicrophones] = useState([]);
-  const [selectedCamera, setSelectedCamera] = useState("");
-  const [selectedMicrophone, setSelectedMicrophone] = useState("");
   const [cameraDropdownOpen, setCameraDropdownOpen] = useState(false);
   const [microphoneDropdownOpen, setMicrophoneDropdownOpen] = useState(false);
 
@@ -40,40 +42,7 @@ export default function VideoCall() {
 
   useEffect(() => {
     // Get available media devices
-    const getMediaDevices = async () => {
-      try {
-        const devices = await navigator.mediaDevices.enumerateDevices();
-
-        // Filter cameras and microphones
-        const cameraDevices = devices
-          .filter((device) => device.kind === "videoinput")
-          .map((device) => ({
-            deviceId: device.deviceId,
-            label: device.label || `Camera ${cameras.length + 1}`,
-          }));
-
-        const microphoneDevices = devices
-          .filter((device) => device.kind === "audioinput")
-          .map((device) => ({
-            deviceId: device.deviceId,
-            label: device.label || `Microphone ${microphones.length + 1}`,
-          }));
-
-        setCameras(cameraDevices);
-        setMicrophones(microphoneDevices);
-
-        // Set default selections
-        if (cameraDevices.length > 0 && !selectedCamera) {
-          setSelectedCamera(cameraDevices[0].deviceId);
-        }
-
-        if (microphoneDevices.length > 0 && !selectedMicrophone) {
-          setSelectedMicrophone(microphoneDevices[0].deviceId);
-        }
-      } catch (error) {
-        console.error("Error getting media devices:", error);
-      }
-    };
+    getMediaDevices();
 
     // Add click outside listener to close dropdowns
     const handleClickOutside = (event) => {

@@ -12,11 +12,23 @@ const videoSlice = createSlice({
     shareScreen: false,
     haveMedia: false, //is there a localStream, has getUserMedia been run
     haveCreatedOffer: false,
+    cameras: [],
+    microphones: [],
+    selectedCamera: "",
+    selectedMicrophone: "",
   },
   reducers: {
     fetchStart: (state) => {
       state.loading = true;
       state.error = false;
+    },
+    setDevices: (state, { payload }) => {
+      if (payload.cameras) state.cameras = payload.cameras;
+      if (payload.microphones) state.microphones = payload.microphones;
+    },
+    setSelectedDevices: (state, { payload }) => {
+      if (payload.camera) state.selectedCamera = payload.camera;
+      if (payload.microphone) state.selectedMicrophone = payload.microphone;
     },
 
     fetchFail: (state) => {
@@ -26,6 +38,7 @@ const videoSlice = createSlice({
   },
 });
 
-export const { fetchStart, fetchFail } = videoSlice.actions;
+export const { fetchStart, fetchFail, setDevices, setSelectedDevices } =
+  videoSlice.actions;
 
 export default videoSlice.reducer;
