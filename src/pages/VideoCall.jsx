@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 import useVideoCall from "../hooks/useVideoCall";
 
 export default function VideoCall() {
-  const { cameras, microphones, isVideoOn } = useSelector(
+  const { cameras, microphones, isVideoOn, isAudioOn } = useSelector(
     (state) => state.video
   );
 
@@ -24,9 +24,8 @@ export default function VideoCall() {
     remoteVideoRef,
     initializeMedia,
     toggleVideo,
+    toggleAudio,
   } = useVideoCall();
-
-  const [isMuted, setIsMuted] = useState(true);
 
   const [cameraDropdownOpen, setCameraDropdownOpen] = useState(false);
   const [microphoneDropdownOpen, setMicrophoneDropdownOpen] = useState(false);
@@ -81,15 +80,6 @@ export default function VideoCall() {
   //     }
   //   });
   // };
-
-  const toggleAudio = () => {
-    if (localStream.current) {
-      localStream.current.getAudioTracks().forEach((track) => {
-        track.enabled = !track.enabled;
-      });
-      setIsMuted(!isMuted);
-    }
-  };
 
   // const shareScreen = async () => {
   //   try {
@@ -232,7 +222,7 @@ export default function VideoCall() {
             onClick={toggleAudio}
             className="p-4 text-white bg-gray-700 rounded-full shadow-lg hover:bg-gray-600"
           >
-            {isMuted ? (
+            {!isAudioOn ? (
               <FaMicrophoneSlash className="w-6 h-6" />
             ) : (
               <FaMicrophone className="w-6 h-6" />

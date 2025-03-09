@@ -6,6 +6,7 @@ import {
   fetchStart,
   setDevices,
   setHaveMedia,
+  setIsAudioOn,
   setIsVideoOn,
   setMediaStatus,
   setSelectedDevices,
@@ -13,7 +14,7 @@ import {
 
 import { toastErrorNotify } from "../helper/ToastNotify";
 
-const socket = io("http://localhost:8000", {
+const socket = io("https://localhost:8000", {
   transports: ["websocket"],
   withCredentials: true,
 });
@@ -26,6 +27,7 @@ const useVideoCall = () => {
     selectedCamera,
     selectedMicrophone,
     isVideoOn,
+    isAudioOn,
   } = useSelector((state) => state.video);
 
   const localStream = useRef(null);
@@ -112,6 +114,15 @@ const useVideoCall = () => {
     }
   };
 
+  const toggleAudio = () => {
+    if (localStream.current) {
+      localStream.current.getAudioTracks().forEach((track) => {
+        track.enabled = !track.enabled;
+      });
+      dispatch(setIsAudioOn(!isAudioOn));
+    }
+  };
+
   return {
     localStream,
     remoteStream,
@@ -120,6 +131,7 @@ const useVideoCall = () => {
     localVideoRef,
     remoteVideoRef,
     toggleVideo,
+    toggleAudio,
     initializeMedia,
     getMediaDevices,
   };

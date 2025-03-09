@@ -10,7 +10,7 @@ import userReducer from "../features/userSlice";
 import paginationReducer from "../features/paginationSlice";
 import chatReducer from "../features/chatSlice";
 import feedbackReducer from "../features/feedbackSlice";
-import videoReducer from "../features/appointmentSlice";
+import videoReducer from "../features/videoSlice";
 
 //*redux-persist
 import {
