@@ -137,7 +137,7 @@ const TeamDetailBody = ({sectionRefs}) => {
 
           <TeamDetailFeedbackCards/>
 
-          {/* <!-- Add Comment Form --> */}
+          {/* <!-- Add Comment Form --> Only for logged in users */}
 
           {currentUser && (
             <TeamDetailFeedbackForm
