@@ -139,7 +139,50 @@
   "PROFILE": "PROFIL",
 
   "SERVICES": "DIENSTLEISTUNGEN",
-
+  
+    "srvServicesHeroTitle": "Unsere Dienstleistungen",
+    "srvServicesHeroDescription": "In unserem psychologischen Beratungszentrum bieten wir ein umfassendes Angebot an Dienstleistungen an, die Einzelpersonen dabei unterstützen, ihr emotionales und mentales Wohlbefinden zu verbessern. Unser Team aus erfahrenen Fachleuten arbeitet eng mit jedem Klienten zusammen, um seine individuellen Herausforderungen zu verstehen und maßgeschneiderte Lösungen anzubieten. Egal, ob Sie mit Stress, Angstzuständen, Beziehungsproblemen zu kämpfen haben oder einfach nur Ihr persönliches Wachstum fördern möchten, wir sind hier, um Sie bei jedem Schritt des Prozesses zu begleiten. Wir setzen uns für die Schaffung einer sicheren, unterstützenden und vorurteilsfreien Umgebung ein, in der Sie Ihre Gefühle offen erkunden und gesündere Bewältigungsstrategien entwickeln können. Jede Dienstleistungskategorie ist sorgfältig auf Ihre spezifischen Bedürfnisse und Ziele zugeschnitten, um sicherzustellen, dass Sie die bestmögliche Unterstützung erhalten. Ihre Reise zu einem ausgeglichenen und erfüllten Leben beginnt hier, mit der Hilfe von mitfühlender und fachkundiger Beratung.",
+    "srvHealthPsychologyTitle": "Gesundheitspsychologie",
+    "srvHealthPsychologyText": "Die Gesundheitspsychologie konzentriert sich auf die Förderung des mentalen und physischen Wohlbefindens durch die Entwicklung gesünderer Gewohnheiten und Selbstwahrnehmung. Unsere Sitzungen vermitteln das Wissen und die Werkzeuge, die zur Bewältigung von Stress, Angstzuständen und anderen psychischen Gesundheitsproblemen erforderlich sind. Wir möchten Sie mit Informationen stärken, die das allgemeine Wohlbefinden unterstützen und Ihnen helfen, fundierte Entscheidungen über Ihre Gesundheit zu treffen.",
+    "srvHealthPsychologyList": [
+      "Stressbewältigungstechniken",
+      "Aufbau emotionaler Resilienz",
+      "Anpassung des Lebensstils für die psychische Gesundheit",
+      "Strategien zur Aufrechterhaltung eines ausgeglichenen Lebens"
+    ],
+    "srvEducationalPsychologyTitle": "Pädagogische Psychologie",
+    "srvEducationalPsychologyText": "Die pädagogische Psychologie konzentriert sich auf das Verständnis, wie Einzelpersonen in Bildungseinrichtungen lernen und sich entwickeln. Unsere Dienstleistungen in diesem Bereich zielen darauf ab, Schüler, Lehrer und Eltern zu unterstützen, indem sie Herausforderungen im Zusammenhang mit Lernen, Motivation und akademischer Leistung angehen. Egal, ob Sie ein Schüler sind, der mit Schulaufgaben zu kämpfen hat, ein Lehrer, der nach effektiven Unterrichtsstrategien sucht, oder ein Elternteil, der Unterstützung bei der Unterstützung der Bildungsbedürfnisse Ihres Kindes benötigt, wir sind hier, um Ihnen zu helfen.",
+    "srvEducationalPsychologyList": [
+      "Beurteilung von Lernschwierigkeiten (z. B. ADHS, Legasthenie)",
+      "Verbesserung der akademischen Leistung",
+      "Strategien für Motivation und Engagement",
+      "Unterstützung von Schülern mit besonderen Bildungsbedürfnissen",
+      "Elterntipps zur Unterstützung der Bildungsentwicklung"
+    ],
+    "srvNeuropsychologyTitle": "Neuropsychologie",
+    "srvNeuropsychologyText": "Unsere leidenschaftlichen Therapeuten engagieren sich dafür, Ihnen zu helfen, sinnvolle Veränderungen und persönliches Wachstum zu erreichen, eine Sitzung nach der anderen. Die Neuropsychologie konzentriert sich auf die Beziehung zwischen Gehirn und Verhalten und hilft Einzelpersonen zu verstehen, wie neurologische Erkrankungen oder kognitive Beeinträchtigungen ihr tägliches Leben beeinträchtigen können. Unsere neuropsychologischen Dienstleistungen umfassen Beurteilungen, Beratung und Unterstützung für Personen mit kognitiven Schwierigkeiten, Gedächtnisproblemen und anderen hirnbezogenen Problemen.",
+    "srvNeuropsychologyList": [
+      "Kognitive Beurteilungen",
+      "Umgang mit Hirnverletzungen oder neurologischen Störungen",
+      "Techniken zur Verbesserung des Gedächtnisses",
+      "Behandlung psychischer Gesundheitsprobleme im Zusammenhang mit neurologischen Erkrankungen"
+    ],
+    "srvMarriageAndFamilyTherapyTitle": "Ehe- und Familientherapie",
+    "srvMarriageAndFamilyTherapyText": "Die Eheberatung soll Paaren helfen, die Kommunikation zu verbessern, Konflikte zu lösen und ihre Beziehungen zu stärken. Egal, ob Sie in Ihrer Beziehung vor Herausforderungen stehen oder einfach nur Ihre Partnerschaft verbessern möchten, unsere Berater sind hier, um Sie durch den Prozess zu begleiten. Wir bieten beiden Partnern einen sicheren Raum, um ihre Bedenken zu äußern und gemeinsam auf eine gesündere, erfüllendere Ehe hinzuarbeiten.",
+    "srvMarriageAndFamilyTherapyList": [
+      "Effektive Kommunikationsfähigkeiten",
+      "Strategien zur Konfliktlösung",
+      "Aufbau von Vertrauen und Intimität",
+      "Gemeinsame Bewältigung großer Veränderungen im Leben"
+    ],
+    "srvOnlineTherapyServicesTitle": "Online-Therapiedienste",
+    "srvOnlineTherapyServicesText": "Der Zugang zu professioneller Therapie war mit unseren Online-Therapiediensten noch nie so einfach. Egal, ob Sie zu Hause, bei der Arbeit oder anderswo sind, Sie können vertrauliche, effektive Beratung bequem von Ihrem eigenen Raum aus erhalten. Unsere lizenzierten Therapeuten sind hier, um Sie bei der Bewältigung von Herausforderungen, der Bewältigung von Stress und der Verbesserung Ihres psychischen Wohlbefindens zu unterstützen – egal wo Sie sich befinden.",
+    "srvOnlineTherapyServicesList": [
+      "Bequeme und vertrauliche Sitzungen per Video, Chat oder Telefon",
+      "Flexible Planung, die sich Ihrem Lebensstil anpasst",
+      "Von überall mit einer Internetverbindung zugänglich",
+      "Eine sichere, unterstützende Umgebung, um offen zu sprechen und zu heilen"
+    ],  
   "PRICING": "PREISE",
   "paymentDetails": "Zahlungsdetails",
   "paymentDetailsText": "Bei Soul Journey bieten wir flexible Preisoptionen, die auf Ihre einzigartigen Bedürfnisse und Ihr Budget abgestimmt sind. Unsere Mission ist es, außergewöhnliche, personalisierte Beratungsdienste anzubieten, die auf Ihre individuelle Reise zugeschnitten sind. Wählen Sie aus unseren drei Plänen unten und machen Sie den ersten Schritt in ein ausgewogenes und erfülltes Leben.",
