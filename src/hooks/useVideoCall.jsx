@@ -6,6 +6,7 @@ import {
   fetchStart,
   setDevices,
   setHaveMedia,
+  setIsVideoOn,
   setMediaStatus,
   setSelectedDevices,
 } from "../features/videoSlice";
@@ -19,13 +20,21 @@ const socket = io("http://localhost:8000", {
 
 const useVideoCall = () => {
   const dispatch = useDispatch();
-  const { cameras, microphones, selectedCamera, selectedMicrophone } =
-    useSelector((state) => state.video);
+  const {
+    cameras,
+    microphones,
+    selectedCamera,
+    selectedMicrophone,
+    isVideoOn,
+  } = useSelector((state) => state.video);
 
   const localStream = useRef(null);
   const remoteStream = useRef(null);
   const peerConnection = useRef(null);
   const screenStream = useRef(null);
+
+  const localVideoRef = useRef(null);
+  const remoteVideoRef = useRef(null);
 
   // Initialize media stream
   const initializeMedia = async () => {
@@ -94,7 +103,23 @@ const useVideoCall = () => {
     }
   };
 
+  const toggleVideo = () => {
+    if (localStream.current) {
+      localStream.current.getVideoTracks().forEach((track) => {
+        track.enabled = !track.enabled;
+      });
+      dispatch(setIsVideoOn(!isVideoOn));
+    }
+  };
+
   return {
+    localStream,
+    remoteStream,
+    peerConnection,
+    screenStream,
+    localVideoRef,
+    remoteVideoRef,
+    toggleVideo,
     initializeMedia,
     getMediaDevices,
   };

@@ -1,103 +1,86 @@
-import React, { useEffect, useRef, useState } from "react";
-import io from "socket.io-client";
+import { useEffect, useRef, useState } from "react";
 import {
   FaMicrophone,
   FaMicrophoneSlash,
   FaVideo,
   FaVideoSlash,
-  FaPhoneSlash,
   FaDesktop,
-  FaUser,
   FaChevronDown,
 } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import useVideoCall from "../hooks/useVideoCall";
 
 export default function VideoCall() {
-  const { cameras, microphones, selectedCamera, selectedMicrophone } =
-    useSelector((state) => state.video);
+  const { cameras, microphones, isVideoOn } = useSelector(
+    (state) => state.video
+  );
 
-  const { initializeMedia, getMediaDevices } = useVideoCall();
+  const {
+    localStream,
+    remoteStream,
+    peerConnection,
+    screenStream,
+    localVideoRef,
+    remoteVideoRef,
+    initializeMedia,
+    toggleVideo,
+  } = useVideoCall();
 
   const [isMuted, setIsMuted] = useState(true);
-  const [isVideoOn, setIsVideoOn] = useState(false);
 
   const [cameraDropdownOpen, setCameraDropdownOpen] = useState(false);
   const [microphoneDropdownOpen, setMicrophoneDropdownOpen] = useState(false);
 
-  // Refs for dropdown click outside detection
   const cameraDropdownRef = useRef(null);
   const microphoneDropdownRef = useRef(null);
 
   useEffect(() => {
-    // Get available media devices
-    getMediaDevices();
-
-    // Add click outside listener to close dropdowns
-    const handleClickOutside = (event) => {
-      if (
-        cameraDropdownRef.current &&
-        !cameraDropdownRef.current.contains(event.target)
-      ) {
-        setCameraDropdownOpen(false);
+    initializeMedia().then((stream) => {
+      if (stream && localVideoRef.current) {
+        localVideoRef.current.srcObject = stream;
       }
-      if (
-        microphoneDropdownRef.current &&
-        !microphoneDropdownRef.current.contains(event.target)
-      ) {
-        setMicrophoneDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    initializeMedia();
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    });
   }, []);
 
-  const setupSocket = () => {
-    socket.emit("join-call", {});
+  // const setupSocket = () => {
+  //   socket.emit("join-call", {});
+  //   socket.on("user-joined", async (data) => {
+  //     const remoteRTCSession = new RTCSessionDescription(data.offer);
+  //     peerConnection.current = new RTCPeerConnection({
+  //       iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
+  //     });
 
-    socket.on("user-joined", async (data) => {
-      const remoteRTCSession = new RTCSessionDescription(data.offer);
-      peerConnection.current = new RTCPeerConnection({
-        iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
-      });
+  //     localStream.current.getTracks().forEach((track) => {
+  //       peerConnection.current.addTrack(track, localStream.current);
+  //     });
 
-      localStream.current.getTracks().forEach((track) => {
-        peerConnection.current.addTrack(track, localStream.current);
-      });
+  //     await peerConnection.current.setRemoteDescription(remoteRTCSession);
+  //     const answer = await peerConnection.current.createAnswer();
+  //     await peerConnection.current.setLocalDescription(answer);
+  //     socket.emit("answer", { answer });
+  //   });
 
-      await peerConnection.current.setRemoteDescription(remoteRTCSession);
-      const answer = await peerConnection.current.createAnswer();
-      await peerConnection.current.setLocalDescription(answer);
-      socket.emit("answer", { answer });
-    });
+  //   socket.on("answer", async (data) => {
+  //     const remoteDesc = new RTCSessionDescription(data.answer);
+  //     await peerConnection.current.setRemoteDescription(remoteDesc);
+  //   });
 
-    socket.on("answer", async (data) => {
-      const remoteDesc = new RTCSessionDescription(data.answer);
-      await peerConnection.current.setRemoteDescription(remoteDesc);
-    });
+  //   socket.on("candidate", async (data) => {
+  //     try {
+  //       await peerConnection.current.addIceCandidate(
+  //         new RTCIceCandidate(data.candidate)
+  //       );
+  //     } catch (e) {
+  //       console.error("Error adding received ICE candidate", e);
+  //     }
+  //   });
 
-    socket.on("candidate", async (data) => {
-      try {
-        await peerConnection.current.addIceCandidate(
-          new RTCIceCandidate(data.candidate)
-        );
-      } catch (e) {
-        console.error("Error adding received ICE candidate", e);
-      }
-    });
-
-    socket.on("share-screen", (stream) => {
-      if (remoteVideoRef.current) {
-        remoteVideoRef.current.srcObject = stream;
-      }
-    });
-  };
+  //   socket.on("share-screen", (stream) => {
+  //     if (remoteVideoRef.current) {
+  //       remoteVideoRef.current.srcObject = stream;
+  //     }
+  //   });
+  // };
 
   const toggleAudio = () => {
     if (localStream.current) {
@@ -108,134 +91,125 @@ export default function VideoCall() {
     }
   };
 
-  const toggleVideo = () => {
-    if (localStream.current) {
-      localStream.current.getVideoTracks().forEach((track) => {
-        track.enabled = !track.enabled;
-      });
-      setIsVideoOn(!isVideoOn);
-    }
-  };
+  // const shareScreen = async () => {
+  //   try {
+  //     screenStream.current = await navigator.mediaDevices.getDisplayMedia({
+  //       video: true,
+  //     });
+  //     if (localVideoRef.current) {
+  //       localVideoRef.current.srcObject = screenStream.current;
+  //     }
+  //     socket.emit("share-screen", screenStream.current);
+  //   } catch (err) {
+  //     console.log("Error sharing screen:", err);
+  //   }
+  // };
 
-  const shareScreen = async () => {
-    try {
-      screenStream.current = await navigator.mediaDevices.getDisplayMedia({
-        video: true,
-      });
-      if (localVideoRef.current) {
-        localVideoRef.current.srcObject = screenStream.current;
-      }
-      socket.emit("share-screen", screenStream.current);
-    } catch (err) {
-      console.log("Error sharing screen:", err);
-    }
-  };
+  // const toggleCameraDropdown = () => setCameraDropdownOpen(!cameraDropdownOpen);
+  // const toggleMicrophoneDropdown = () =>
+  //   setMicrophoneDropdownOpen(!microphoneDropdownOpen);
 
-  const toggleCameraDropdown = () => setCameraDropdownOpen(!cameraDropdownOpen);
-  const toggleMicrophoneDropdown = () =>
-    setMicrophoneDropdownOpen(!microphoneDropdownOpen);
+  // const getSelectedCameraLabel = () => {
+  //   const camera = cameras.find((c) => c.deviceId === selectedCamera);
+  //   return camera ? camera.label : "Select camera";
+  // };
 
-  const getSelectedCameraLabel = () => {
-    const camera = cameras.find((c) => c.deviceId === selectedCamera);
-    return camera ? camera.label : "Select camera";
-  };
+  // const getSelectedMicrophoneLabel = () => {
+  //   const microphone = microphones.find(
+  //     (m) => m.deviceId === selectedMicrophone
+  //   );
+  //   return microphone ? microphone.label : "Select microphone";
+  // };
 
-  const getSelectedMicrophoneLabel = () => {
-    const microphone = microphones.find(
-      (m) => m.deviceId === selectedMicrophone
-    );
-    return microphone ? microphone.label : "Select microphone";
-  };
+  // const changeCamera = async (deviceId) => {
+  //   try {
+  //     if (localStream.current) {
+  //       // Stop current video tracks
+  //       localStream.current.getVideoTracks().forEach((track) => track.stop());
 
-  const changeCamera = async (deviceId) => {
-    try {
-      if (localStream.current) {
-        // Stop current video tracks
-        localStream.current.getVideoTracks().forEach((track) => track.stop());
+  //       // Get new stream with selected camera
+  //       const newStream = await navigator.mediaDevices.getUserMedia({
+  //         video: { deviceId: { exact: deviceId } },
+  //         audio: false,
+  //       });
 
-        // Get new stream with selected camera
-        const newStream = await navigator.mediaDevices.getUserMedia({
-          video: { deviceId: { exact: deviceId } },
-          audio: false,
-        });
+  //       // Replace video track in local stream
+  //       const newVideoTrack = newStream.getVideoTracks()[0];
+  //       const oldVideoTrack = localStream.current.getVideoTracks()[0];
 
-        // Replace video track in local stream
-        const newVideoTrack = newStream.getVideoTracks()[0];
-        const oldVideoTrack = localStream.current.getVideoTracks()[0];
+  //       if (oldVideoTrack) {
+  //         localStream.current.removeTrack(oldVideoTrack);
+  //       }
 
-        if (oldVideoTrack) {
-          localStream.current.removeTrack(oldVideoTrack);
-        }
+  //       localStream.current.addTrack(newVideoTrack);
 
-        localStream.current.addTrack(newVideoTrack);
+  //       // Update peer connection if it exists
+  //       if (peerConnection.current) {
+  //         const senders = peerConnection.current.getSenders();
+  //         const videoSender = senders.find(
+  //           (sender) => sender.track && sender.track.kind === "video"
+  //         );
 
-        // Update peer connection if it exists
-        if (peerConnection.current) {
-          const senders = peerConnection.current.getSenders();
-          const videoSender = senders.find(
-            (sender) => sender.track && sender.track.kind === "video"
-          );
+  //         if (videoSender) {
+  //           videoSender.replaceTrack(newVideoTrack);
+  //         }
+  //       }
 
-          if (videoSender) {
-            videoSender.replaceTrack(newVideoTrack);
-          }
-        }
+  //       // Set track enabled based on current video state
+  //       newVideoTrack.enabled = isVideoOn;
 
-        // Set track enabled based on current video state
-        newVideoTrack.enabled = isVideoOn;
+  //       setSelectedCamera(deviceId);
+  //       setCameraDropdownOpen(false);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error changing camera:", error);
+  //   }
+  // };
 
-        setSelectedCamera(deviceId);
-        setCameraDropdownOpen(false);
-      }
-    } catch (error) {
-      console.error("Error changing camera:", error);
-    }
-  };
+  // const changeMicrophone = async (deviceId) => {
+  //   try {
+  //     if (localStream.current) {
+  //       // Stop current audio tracks
+  //       localStream.current.getAudioTracks().forEach((track) => track.stop());
 
-  const changeMicrophone = async (deviceId) => {
-    try {
-      if (localStream.current) {
-        // Stop current audio tracks
-        localStream.current.getAudioTracks().forEach((track) => track.stop());
+  //       // Get new stream with selected microphone
+  //       const newStream = await navigator.mediaDevices.getUserMedia({
+  //         audio: { deviceId: { exact: deviceId } },
+  //         video: false,
+  //       });
 
-        // Get new stream with selected microphone
-        const newStream = await navigator.mediaDevices.getUserMedia({
-          audio: { deviceId: { exact: deviceId } },
-          video: false,
-        });
+  //       // Replace audio track in local stream
+  //       const newAudioTrack = newStream.getAudioTracks()[0];
+  //       const oldAudioTrack = localStream.current.getAudioTracks()[0];
 
-        // Replace audio track in local stream
-        const newAudioTrack = newStream.getAudioTracks()[0];
-        const oldAudioTrack = localStream.current.getAudioTracks()[0];
+  //       if (oldAudioTrack) {
+  //         localStream.current.removeTrack(oldAudioTrack);
+  //       }
 
-        if (oldAudioTrack) {
-          localStream.current.removeTrack(oldAudioTrack);
-        }
+  //       localStream.current.addTrack(newAudioTrack);
 
-        localStream.current.addTrack(newAudioTrack);
+  //       // Update peer connection if it exists
+  //       if (peerConnection.current) {
+  //         const senders = peerConnection.current.getSenders();
+  //         const audioSender = senders.find(
+  //           (sender) => sender.track && sender.track.kind === "audio"
+  //         );
 
-        // Update peer connection if it exists
-        if (peerConnection.current) {
-          const senders = peerConnection.current.getSenders();
-          const audioSender = senders.find(
-            (sender) => sender.track && sender.track.kind === "audio"
-          );
+  //         if (audioSender) {
+  //           audioSender.replaceTrack(newAudioTrack);
+  //         }
+  //       }
 
-          if (audioSender) {
-            audioSender.replaceTrack(newAudioTrack);
-          }
-        }
+  //       // Set track enabled based on current audio state
+  //       newAudioTrack.enabled = !isMuted;
 
-        // Set track enabled based on current audio state
-        newAudioTrack.enabled = !isMuted;
-
-        setSelectedMicrophone(deviceId);
-        setMicrophoneDropdownOpen(false);
-      }
-    } catch (error) {
-      console.error("Error changing microphone:", error);
-    }
-  };
+  //       setSelectedMicrophone(deviceId);
+  //       setMicrophoneDropdownOpen(false);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error changing microphone:", error);
+  //   }
+  // };
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full p-6 bg-offWhite md:p-10">
@@ -266,7 +240,7 @@ export default function VideoCall() {
           </button>
 
           <button
-            onClick={toggleMicrophoneDropdown}
+            // onClick={toggleMicrophoneDropdown}
             className="flex items-center justify-center w-8 h-8 ml-1 text-white bg-gray-700 rounded-full hover:bg-gray-600"
           >
             <FaChevronDown size={12} />
@@ -275,14 +249,14 @@ export default function VideoCall() {
           {microphoneDropdownOpen && (
             <div className="absolute top-full left-0 mt-2 w-[250px] bg-white rounded-md shadow-lg z-10 border border-gray-200">
               <div className="px-3 py-2 text-sm font-medium border-b border-gray-200">
-                Current: {getSelectedMicrophoneLabel()}
+                {/* Current: {getSelectedMicrophoneLabel()} */}
               </div>
               <div className="max-h-[200px] overflow-y-auto">
                 {microphones.length > 0 ? (
                   microphones.map((microphone) => (
                     <button
                       key={microphone.deviceId}
-                      onClick={() => changeMicrophone(microphone.deviceId)}
+                      // onClick={() => changeMicrophone(microphone.deviceId)}
                       className="w-full px-3 py-2 text-sm text-left hover:bg-gray-100 focus:outline-none"
                     >
                       {microphone.label}
@@ -312,7 +286,7 @@ export default function VideoCall() {
           </button>
 
           <button
-            onClick={toggleCameraDropdown}
+            // onClick={toggleCameraDropdown}
             className="flex items-center justify-center w-8 h-8 ml-1 text-white bg-gray-700 rounded-full hover:bg-gray-600"
           >
             <FaChevronDown size={12} />
@@ -321,14 +295,14 @@ export default function VideoCall() {
           {cameraDropdownOpen && (
             <div className="absolute top-full left-0 mt-2 w-[250px] bg-white rounded-md shadow-lg z-10 border border-gray-200">
               <div className="px-3 py-2 text-sm font-medium border-b border-gray-200">
-                Current: {getSelectedCameraLabel()}
+                {/* Current: {getSelectedCameraLabel()} */}
               </div>
               <div className="max-h-[200px] overflow-y-auto">
                 {cameras.length > 0 ? (
                   cameras.map((camera) => (
                     <button
                       key={camera.deviceId}
-                      onClick={() => changeCamera(camera.deviceId)}
+                      // onClick={() => changeCamera(camera.deviceId)}
                       className="w-full px-3 py-2 text-sm text-left hover:bg-gray-100 focus:outline-none"
                     >
                       {camera.label}
@@ -346,7 +320,7 @@ export default function VideoCall() {
 
         {/* Share screen button */}
         <button
-          onClick={shareScreen}
+          // onClick={shareScreen}
           className="p-4 text-white bg-green-600 rounded-full shadow-lg hover:bg-green-500"
         >
           <FaDesktop className="w-6 h-6" />

@@ -16,6 +16,7 @@ const videoSlice = createSlice({
     microphones: [],
     selectedCamera: "",
     selectedMicrophone: "",
+    isVideoOn: false,
     loading: false,
     error: false,
   },
@@ -39,7 +40,9 @@ const videoSlice = createSlice({
       if (payload.camera) state.selectedCamera = payload.camera;
       if (payload.microphone) state.selectedMicrophone = payload.microphone;
     },
-
+    setIsVideoOn: (state, payload) => {
+      state.isVideoOn = payload;
+    },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
@@ -53,6 +56,7 @@ export const {
   setMediaStatus,
   setHaveMedia,
   setDevices,
+  setIsVideoOn,
   setSelectedDevices,
 } = videoSlice.actions;
 
