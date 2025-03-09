@@ -7,11 +7,8 @@ import { useTranslation } from "react-i18next";
 
 const TeamDetailBody = ({sectionRefs}) => {
   const { t } = useTranslation();
-  const { getSingleTherapistFeedbacks, postTherapistFeedback } =
-    useFeedbackCall();
-  const { singleTherapistFeedbacks, loading, error } = useSelector(
-    (state) => state.feedbacks
-  );
+  const { getSingleTherapistFeedbacks, postTherapistFeedback } = useFeedbackCall();
+  const { singleTherapistFeedbacks, loading, error } = useSelector( (state) => state.feedbacks );
   const { singleTherapist } = useSelector((state) => state.therapists);
   const { currentUser } = useSelector((state) => state.auth);
   const id = singleTherapist && singleTherapist?._id

@@ -1,15 +1,14 @@
-"use client";
-
 import { useEffect, useState, useRef, createRef } from "react";
 
-/**
- * Custom hook for tab navigation with smooth scrolling
- * @param {string[]} sectionIds - Array of section IDs to navigate between
- * @param {Object} options - Configuration options
- * @param {number} options.navbarHeight - Height of the navbar in pixels (default: 120)
- * @param {number} options.tabHeight - Height of the tab navigation in pixels (default: 64)
- * @returns {Object} Navigation controls and refs
- */
+// /**
+//  * Custom hook for tab navigation with smooth scrolling
+//  * @param {string[]} sectionIds - Array of section IDs to navigate between
+//  * @param {Object} options - Configuration options
+//  * @param {number} options.navbarHeight - Height of the navbar in pixels (default: 120)
+//  * @param {number} options.tabHeight - Height of the tab navigation in pixels (default: 64)
+//  * @returns {Object} Navigation controls and refs
+//  */
+
 const useTabNavigation = (sectionIds, options = {}) => {
   // Default options with fallbacks
   const { navbarHeight = 120, tabHeight = 64 } = options;
