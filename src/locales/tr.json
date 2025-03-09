@@ -224,7 +224,36 @@
   "BLOGS": "BLOGLAR",
 
   "ABOUT": "HAKKIMIZDA",
-
+  
+    "AboutHeroSection": {
+      "abt_us":"Hakkımızda",
+      "abt_welcome": "Çevrimiçi terapi seansları için sizi yetenekli ve şefkatli terapistlerle buluşturmayı amaçladığımız platformumuza hoş geldiniz.",
+      "abt_mission": "Misyonumuz, ruh sağlığınızı ön planda tutan güvenli ve destekleyici bir alan yaratmaktır.",
+      "abt_seeking_help": "Yardım aramanın zorlu olabileceğini anlıyoruz, bu nedenle hayatın zorluklarında sizi desteklemek için profesyonel ve yargısız bir ortam sağlamak için buradayız.",
+      "abt_managing": "İster stres, ister kaygı veya kişisel zorluklarla başa çıkıyor olun, ihtiyacınız olan rehberliği bulmanıza yardımcı olmaya kararlıyız.",
+      "abt_platform_offers": "Platformumuz, nerede olursanız olun, ruh sağlığı hizmetinin hem kullanışlı hem de etkili olmasını sağlayan esneklik sunar.",
+      "abt_dedicated": "Terapiyi herkes için erişilebilir kılmaya, iyiliğe doğru yolculuğunuzda büyümeyi ve dayanıklılığı teşvik etmeye kendimizi adadık."
+    },
+    "AboutRow": {
+      "abt_discover": "Platformumuzun ruh sağlığınız için neden doğru seçim olduğunu keşfedin."
+    },
+    "AboutRowContent": {
+      "abt_personalized_therapy_sessions_title": "Kişiselleştirilmiş Terapi Seansları",
+      "abt_personalized_therapy_sessions_text": "Seanslarımız, kendi hızınızda ilerlemenize yardımcı olarak benzersiz ihtiyaçlarınıza göre uyarlanmıştır. İster acil zorlukları ele alıyor, ister uzun vadeli hedefler üzerinde çalışıyor olun, yolun her adımında sizi desteklemek için buradayız.",
+      "abt_expert_curated_guidance_title": "Uzman Tarafından Hazırlanmış Rehberlik",
+      "abt_expert_curated_guidance_text": "Lisanslı terapistlerimiz, her seansa güvenilir uzmanlık getirerek yüksek kaliteli bakım almanızı sağlar. Refahınıza odaklanarak, kanıta dayalı uygulamaları kişiselleştirilmiş içgörülerle birleştiriyoruz.",
+      "abt_empowering_tools_for_growth_title": "Büyüme İçin Güçlendirici Araçlar",
+      "abt_empowering_tools_for_growth_text": "Hem müşterileri hem de terapistleri güçlendiren kaynaklar ve destek sağlıyoruz. İlerlemeyi izleme, ihtiyaçları belirleme ve ulaşılabilir hedefler belirleme araçlarıyla anlamlı ve ölçülebilir bir büyüme deneyimleyeceksiniz."
+    },
+    "AboutDetail": {
+      "abt_building_confidence_title": "Güven İnşa Etme ve Ruh Sağlığını Geliştirme",
+      "abt_building_confidence_text": "Uzman terapistlerimiz, hayatın zorluklarında güven ve dayanıklılıkla yol almanıza yardımcı olmak için buradadır. Ruh sağlığınızın geliştiği destekleyici bir ortam sağlıyoruz. Çeşitli terapötik teknikler aracılığıyla, hayattaki engellerin üstesinden gelmek için ihtiyaç duyduğunuz araçları geliştirmenizi sağlıyoruz. Kişiselleştirilmiş yaklaşımımız büyümeyi ve istikrarı teşvik ederek, refahınızın sorumluluğunu almanızı sağlar. İster stresi yönetiyor, ister travmanın üstesinden geliyor, ister sadece dengeyi buluyor olun, yolun her adımında size yardımcı olmak için buradayız. Birlikte, size yıllarca hizmet edecek daha sağlıklı bir zihniyet geliştirebiliriz. Zihinsel netliğe ve duygusal huzura yolculuk tek bir adımla başlar. Bu süreçte size güvenli ve anlayışlı bir ortamda rehberlik etmemize izin verin. Ruh sağlığı yolculuğunuzda nerede olursanız olun, yanınızda yürümeye kararlıyız. Şefkat ve uzmanlıkla, en iyi halinize gelmenize yardımcı olmak için buradayız.",
+      "abt_personalized_support_title": "Her Yolculuk İçin Kişiselleştirilmiş Destek",
+      "abt_personalized_support_text": "Her seans, kişisel ve profesyonel yaşamınızda gelişmeniz için doğru rehberliği ve kaynakları almanızı sağlayarak özel ihtiyaçlarınıza göre uyarlanmıştır. Hiçbir yolculuğun aynı olmadığını anlıyoruz ve bu nedenle yaklaşımımız son derece kişiselleştirilmiştir. Bire bir seanslardan grup desteğine kadar, sizi bulunduğunuz yerde karşılamak için tasarlanmış bir dizi seçenek sunuyoruz. Birlikte, karşılaştığınız zorlukları keşfedecek, güçlü yönlerinizi belirleyecek ve kendinizi güçlendirici ve ulaşılabilir hissettiren bir yol haritası oluşturacağız. İster ilişki sorunları, kariyer geçişleri veya kişisel gelişim hedefleri üzerinde çalışıyor olun, değişimi kolaylaştırmak için güvenli ve destekleyici bir ortam sağlıyoruz. Terapistlerimiz, öğrendiğiniz stratejilerin hem etkili hem de sürdürülebilir olmasını sağlamak için kanıta dayalı uygulamalar kullanır. Hızınıza saygı duyan bir şekilde sizinle çalışarak, hayatın engellerinde güvenle yol almanıza yardımcı olacağız. Bu sizin yolculuğunuz ve biz yolun her adımında sizinle birlikteyiz.",
+      "abt_proven_strategies_title": "Büyüme ve İstikrar İçin Kanıtlanmış Stratejiler",
+      "abt_proven_strategies_text": "Dengeli ve tatmin edici bir yaşam için büyümeyi ve istikrarı teşvik ederek, refahınızı desteklemek için kanıta dayalı teknikler kullanıyoruz. Terapistlerimiz, mümkün olan en iyi bakımı almanızı sağlayarak ruh sağlığı ve kişisel gelişimdeki en son uygulamalar konusunda eğitimlidir. Farkındalık, bilişsel davranışçı terapi (BDT) ve çözüm odaklı yaklaşımların bir kombinasyonu yoluyla, netlik ve duygusal dengeye ulaşmanıza yardımcı oluyoruz. Bu stratejileri günlük yaşamınıza entegre ederek, hayatın zorluklarıyla esneklik ve zarafetle yüzleşmek için gereken becerileri geliştirmenizi sağlıyoruz. İster kaygı, ister depresyon veya yaşam geçişleriyle uğraşıyor olun, gelişmenize yardımcı olacak araçlar ve içgörüler sağlıyoruz. Ayrıca, seanslar sona erdikten uzun süre sonra ilerlemenizin devam etmesini sağlamak için devam eden destek ve kontroller sunuyoruz. Öğrettiğimiz stratejiler sadece acil sorunları ele almak için değil, uzun vadeli istikrar ve büyüme yaratmak için tasarlanmıştır. Birlikte, tüm potansiyelinizi ortaya çıkaracak ve sizi amaç ve huzur dolu bir yaşam sürmeniz için güçlendireceğiz."
+    },
+  
   "FOOTER": "ALT BÖLÜM",
   "termsAndCondition": "Şartlar ve Koşullar",
   "privacyPolicy": "Gizlilik Politikası",

@@ -222,7 +222,36 @@
   "BLOGS": "BLOGS",
 
   "ABOUT": "ÜBER UNS",
-
+  
+    "AboutHeroSection": {
+      "abt_us":"Über Uns",
+      "abt_welcome": "Willkommen auf unserer Plattform, wo wir Sie mit qualifizierten und mitfühlenden Therapeuten für zugängliche Online-Therapiesitzungen verbinden möchten.",
+      "abt_mission": "Unsere Mission ist es, einen sicheren und unterstützenden Raum zu schaffen, der Ihr psychisches Wohlbefinden priorisiert.",
+      "abt_seeking_help": "Wir verstehen, dass es eine Herausforderung sein kann, Hilfe zu suchen, daher sind wir hier, um Ihnen ein professionelles und vorurteilsfreies Umfeld zu bieten, das Sie bei den Schwierigkeiten des Lebens unterstützt.",
+      "abt_managing": "Egal, ob Sie Stress, Angstzustände oder persönliche Herausforderungen bewältigen, wir sind bestrebt, Ihnen die Unterstützung zu bieten, die Sie benötigen.",
+      "abt_platform_offers": "Unsere Plattform bietet Flexibilität und stellt sicher, dass die psychische Gesundheitsversorgung sowohl bequem als auch effektiv ist, egal wo Sie sich befinden.",
+      "abt_dedicated": "Wir setzen uns dafür ein, Therapie für alle zugänglich zu machen und Wachstum und Resilienz auf Ihrem Weg zum Wohlbefinden zu fördern."
+    },
+    "AboutRow": {
+      "abt_discover": "Entdecken Sie, warum unsere Plattform die richtige Wahl für Ihr psychisches Wohlbefinden ist."
+    },
+    "AboutRowContent": {
+      "abt_personalized_therapy_sessions_title": "Personalisierte Therapiesitzungen",
+      "abt_personalized_therapy_sessions_text": "Unsere Sitzungen sind auf Ihre individuellen Bedürfnisse zugeschnitten und helfen Ihnen, in Ihrem eigenen Tempo Fortschritte zu machen. Egal, ob Sie unmittelbare Herausforderungen angehen oder an langfristigen Zielen arbeiten, wir sind hier, um Sie bei jedem Schritt zu unterstützen.",
+      "abt_expert_curated_guidance_title": "Von Experten kuratierte Beratung",
+      "abt_expert_curated_guidance_text": "Unsere lizenzierten Therapeuten bringen vertrauenswürdige Expertise in jede Sitzung ein und stellen sicher, dass Sie qualitativ hochwertige Betreuung erhalten. Mit einem Fokus auf Ihr Wohlbefinden kombinieren wir evidenzbasierte Praktiken mit personalisierten Erkenntnissen.",
+      "abt_empowering_tools_for_growth_title": "Stärkende Werkzeuge für Wachstum",
+      "abt_empowering_tools_for_growth_text": "Wir bieten Ressourcen und Unterstützung, die sowohl Klienten als auch Therapeuten stärken. Mit Tools zur Verfolgung von Fortschritten, zur Identifizierung von Bedürfnissen und zur Festlegung erreichbarer Ziele werden Sie ein sinnvolles und messbares Wachstum erleben."
+    },
+    "AboutDetail": {
+      "abt_building_confidence_title": "Selbstvertrauen aufbauen und das psychische Wohlbefinden verbessern",
+      "abt_building_confidence_text": "Unsere erfahrenen Therapeuten sind hier, um Ihnen zu helfen, die Herausforderungen des Lebens mit Zuversicht und Widerstandsfähigkeit zu meistern. Wir bieten ein unterstützendes Umfeld, in dem Ihre psychische Gesundheit gedeiht. Durch eine Vielzahl von therapeutischen Techniken stellen wir sicher, dass Sie die Werkzeuge entwickeln, die Sie benötigen, um alle Hindernisse im Leben zu überwinden. Unser personalisierter Ansatz fördert Wachstum und Stabilität und befähigt Sie, die Verantwortung für Ihr Wohlbefinden zu übernehmen. Egal, ob Sie Stress bewältigen, Traumata überwinden oder einfach nur das Gleichgewicht finden, wir sind hier, um Ihnen bei jedem Schritt zu helfen. Gemeinsam können wir eine gesündere Denkweise entwickeln, die Ihnen jahrelang dienen wird. Der Weg zu geistiger Klarheit und emotionalem Frieden beginnt mit einem einzigen Schritt. Lassen Sie sich von uns in einem sicheren und verständnisvollen Umfeld durch diesen Prozess führen. Egal wo Sie sich auf Ihrem Weg zur psychischen Gesundheit befinden, wir sind bestrebt, an Ihrer Seite zu gehen. Mit Mitgefühl und Fachwissen sind wir hier, um Ihnen zu helfen, Ihr bestes Selbst zu werden.",
+      "abt_personalized_support_title": "Personalisierte Unterstützung für jede Reise",
+      "abt_personalized_support_text": "Jede Sitzung ist auf Ihre spezifischen Bedürfnisse zugeschnitten und stellt sicher, dass Sie die richtige Anleitung und Ressourcen erhalten, um in Ihrem persönlichen und beruflichen Leben erfolgreich zu sein. Wir verstehen, dass keine zwei Reisen gleich sind, und deshalb ist unser Ansatz sehr personalisiert. Von Einzelsitzungen bis hin zu Gruppenunterstützung bieten wir eine Reihe von Optionen, die Sie dort abholen, wo Sie sich befinden. Gemeinsam werden wir die Herausforderungen, vor denen Sie stehen, erkunden, Ihre Stärken identifizieren und einen Weg nach vorne entwickeln, der sich ermächtigend und erreichbar anfühlt. Egal, ob Sie an Beziehungsproblemen, Karriereübergängen oder persönlichen Wachstumszielen arbeiten, wir bieten ein sicheres und unterstützendes Umfeld, um Veränderungen zu erleichtern. Unsere Therapeuten verwenden evidenzbasierte Praktiken, um sicherzustellen, dass die Strategien, die Sie lernen, sowohl effektiv als auch nachhaltig sind. Indem wir mit Ihnen auf eine Weise zusammenarbeiten, die Ihr Tempo respektiert, helfen wir Ihnen, die Hindernisse des Lebens mit Zuversicht zu meistern. Dies ist Ihre Reise, und wir sind hier, um Sie bei jedem Schritt zu begleiten.",
+      "abt_proven_strategies_title": "Bewährte Strategien für Wachstum und Stabilität",
+      "abt_proven_strategies_text": "Wir verwenden evidenzbasierte Techniken, um Ihr Wohlbefinden zu unterstützen und Wachstum und Stabilität für ein ausgeglichenes und erfülltes Leben zu fördern. Unsere Therapeuten sind in den neuesten Praktiken der psychischen Gesundheit und persönlichen Entwicklung geschult, um sicherzustellen, dass Sie die bestmögliche Betreuung erhalten. Durch eine Kombination aus Achtsamkeit, kognitiver Verhaltenstherapie (KVT) und lösungsorientierten Ansätzen helfen wir Ihnen, Klarheit und emotionales Gleichgewicht zu erreichen. Indem wir diese Strategien in Ihr tägliches Leben integrieren, stellen wir sicher, dass Sie die Fähigkeiten entwickeln, die Sie benötigen, um den Herausforderungen des Lebens mit Widerstandsfähigkeit und Anmut zu begegnen. Egal, ob Sie mit Angstzuständen, Depressionen oder Lebensübergängen zu kämpfen haben, wir bieten Ihnen Werkzeuge und Einsichten, die Ihnen helfen, erfolgreich zu sein. Wir bieten auch fortlaufende Unterstützung und Check-ins an, um sicherzustellen, dass Ihre Fortschritte auch nach Beendigung der Sitzungen anhalten. Die Strategien, die wir vermitteln, dienen nicht nur dazu, unmittelbare Probleme anzugehen, sondern auch langfristige Stabilität und Wachstum zu schaffen. Gemeinsam werden wir Ihr volles Potenzial freisetzen und Sie befähigen, ein Leben voller Sinn und Frieden zu führen."
+    },
+  
   "FOOTER": "FUSSZEILE",
   "termsAndCondition": "Allgemeine Geschäftsbedingungen",
   "privacyPolicy": "Datenschutzrichtlinie",
