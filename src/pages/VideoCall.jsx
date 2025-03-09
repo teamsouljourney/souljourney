@@ -13,25 +13,14 @@ import {
 import { useSelector } from "react-redux";
 import useVideoCall from "../hooks/useVideoCall";
 
-const socket = io("http://localhost:8000", {
-  transports: ["websocket"],
-  withCredentials: true,
-});
-
 export default function VideoCall() {
   const { cameras, microphones, selectedCamera, selectedMicrophone } =
     useSelector((state) => state.video);
 
-  const { getMediaDevices } = useVideoCall();
+  const { initializeMedia, getMediaDevices } = useVideoCall();
 
   const [isMuted, setIsMuted] = useState(true);
   const [isVideoOn, setIsVideoOn] = useState(false);
-  const localVideoRef = useRef(null);
-  const remoteVideoRef = useRef(null);
-  const localStream = useRef(null);
-  const remoteStream = useRef(null);
-  const peerConnection = useRef(null);
-  const screenStream = useRef(null);
 
   const [cameraDropdownOpen, setCameraDropdownOpen] = useState(false);
   const [microphoneDropdownOpen, setMicrophoneDropdownOpen] = useState(false);
@@ -62,19 +51,7 @@ export default function VideoCall() {
 
     document.addEventListener("mousedown", handleClickOutside);
 
-    navigator.mediaDevices
-      .getUserMedia({ video: true, audio: true })
-      .then((stream) => {
-        localStream.current = stream;
-        stream.getAudioTracks().forEach((track) => (track.enabled = false));
-        stream.getVideoTracks().forEach((track) => (track.enabled = false));
-        if (localVideoRef.current) {
-          localVideoRef.current.srcObject = stream;
-        }
-        setupSocket();
-        getMediaDevices(); // Get devices after permissions are granted
-      })
-      .catch((err) => console.error("Error accessing media devices:", err));
+    initializeMedia();
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);

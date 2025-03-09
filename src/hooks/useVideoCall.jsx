@@ -1,9 +1,12 @@
+import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import io from "socket.io-client";
 import {
   fetchFail,
   fetchStart,
   setDevices,
+  setHaveMedia,
+  setMediaStatus,
   setSelectedDevices,
 } from "../features/videoSlice";
 
@@ -19,6 +22,37 @@ const useVideoCall = () => {
   const { cameras, microphones, selectedCamera, selectedMicrophone } =
     useSelector((state) => state.video);
 
+  const localStream = useRef(null);
+  const remoteStream = useRef(null);
+  const peerConnection = useRef(null);
+  const screenStream = useRef(null);
+
+  // Initialize media stream
+  const initializeMedia = async () => {
+    dispatch(fetchStart());
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: true,
+      });
+
+      localStream.current = stream;
+      stream.getAudioTracks().forEach((track) => (track.enabled = false));
+      stream.getVideoTracks().forEach((track) => (track.enabled = false));
+
+      dispatch(setHaveMedia(true));
+      dispatch(setMediaStatus({ audio: "disabled", video: "disabled" }));
+
+      // Get devices after permissions are granted
+      await getMediaDevices();
+
+      return stream;
+    } catch (err) {
+      dispatch(fetchFail());
+      toastErrorNotify("Error accessing media devices: " + err.message);
+      return null;
+    }
+  };
   // Get available media devices
   const getMediaDevices = async () => {
     dispatch(fetchStart());
@@ -61,6 +95,7 @@ const useVideoCall = () => {
   };
 
   return {
+    initializeMedia,
     getMediaDevices,
   };
 };

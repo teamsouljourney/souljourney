@@ -7,7 +7,7 @@ const videoSlice = createSlice({
     current: "idle", //negotiating, progress, complete
     video: "off", //video feed status: "off" "enabled" "disabled" "complete"
     audio: "off", //audio feed status: "off" "enabled" "disabled" "complete"
-    audioDevice: "default", //enumerate devices, chosen audio input device (we dont care about the output device)
+    audioDevice: "default", //enumerate devices, chosen audio input device
     videoDevice: "default",
     shareScreen: false,
     haveMedia: false, //is there a localStream, has getUserMedia been run
@@ -16,11 +16,20 @@ const videoSlice = createSlice({
     microphones: [],
     selectedCamera: "",
     selectedMicrophone: "",
+    loading: false,
+    error: false,
   },
   reducers: {
     fetchStart: (state) => {
       state.loading = true;
       state.error = false;
+    },
+    setHaveMedia: (state, { payload }) => {
+      state.haveMedia = payload;
+    },
+    setMediaStatus: (state, { payload }) => {
+      if (payload.audio !== undefined) state.audio = payload.audio;
+      if (payload.video !== undefined) state.video = payload.video;
     },
     setDevices: (state, { payload }) => {
       if (payload.cameras) state.cameras = payload.cameras;
@@ -38,7 +47,13 @@ const videoSlice = createSlice({
   },
 });
 
-export const { fetchStart, fetchFail, setDevices, setSelectedDevices } =
-  videoSlice.actions;
+export const {
+  fetchStart,
+  fetchFail,
+  setMediaStatus,
+  setHaveMedia,
+  setDevices,
+  setSelectedDevices,
+} = videoSlice.actions;
 
 export default videoSlice.reducer;
