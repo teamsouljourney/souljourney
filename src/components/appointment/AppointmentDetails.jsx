@@ -26,16 +26,6 @@ const AppointmentDetails = () => {
         {formatDateTime(singleAppointment?.startTime, "time")} -{" "}
         {formatDateTime(singleAppointment?.endTime, "time")}
       </p>
-      {singleAppointment?.videoCallUrl && (
-        <a
-          href={singleAppointment?.videoCallUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block mt-2 text-indigo-600 hover:underline"
-        >
-          {t("joinMeeting")}
-        </a>
-      )}
     </div>
   );
 };
