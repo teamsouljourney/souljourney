@@ -43,12 +43,17 @@ const RegisterForm = ({
   const {signInWithGoogle} = useAuthCall()
   const { t } = useTranslation();
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault()
+      handleSubmit()
+    }
+  }
+
   return (
     <div>
-      <Form>
-        <Box 
-          sx={authFormBoxStyle}
-        >
+      <Form onKeyDown={handleKeyDown}>
+        <Box sx={authFormBoxStyle}>
           <TextField
             name="userName"
             label={t("username")}
