@@ -3,22 +3,23 @@ import Frame2 from "../../assets/AboutImages/Frame2.png";
 import Frame3 from "../../assets/AboutImages/Frame3.png";
 import Vector2 from "../../assets/AboutImages/Vector2.png";
 import RectangeBottom from "../../assets/AboutImages/RectangleBottom.png";
-
+import { useTranslation } from 'react-i18next';
 const AboutRow = () => {
+  const { t } = useTranslation();
   const content = [
     {
-      title: "Personalized Therapy Sessions",
-      text: "Our sessions are tailored to your unique needs, helping you progress at your own pace. Whether you're addressing immediate challenges or working on long-term goals, we're here to support you every step of the way.",
+      title: t('AboutRowContent.abt_personalized_therapy_sessions_title'),
+      text: t('AboutRowContent.abt_personalized_therapy_sessions_text'),
       image: Frame1,
     },
     {
-      title: "Expert-Curated Guidance",
-      text: "Our licensed therapists bring trusted expertise to every session, ensuring you receive high-quality care. With a focus on your well-being, we combine evidence-based practices with personalized insights.",
+      title: t('AboutRowContent.abt_expert_curated_guidance_title'),
+      text: t('AboutRowContent.abt_expert_curated_guidance_text'),
       image: Frame2,
     },
     {
-      title: "Empowering Tools for Growth",
-      text: "We provide resources and support that empower both clients and therapists. With tools to track progress, identify needs, and set achievable goals, you'll experience meaningful and measurable growth.",
+      title: t('AboutRowContent.abt_empowering_tools_for_growth_title'),
+      text: t('AboutRowContent.abt_empowering_tools_for_growth_text'),
       image: Frame3,
     },
   ];
@@ -29,7 +30,7 @@ const AboutRow = () => {
         <div className="text-center">
           <h1 className="text-3xl font-bold pb-2">Why it works</h1>
           <p className="text-lg pb-2 max-w-[900px] mx-auto">
-            Discover why our platform is the right choice for your mental well-being
+          {t('AboutRow.abt_discover')}
           </p>
           <img src={Vector2} alt="Vector1" className="mx-auto" />
         </div>

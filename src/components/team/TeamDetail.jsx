@@ -8,9 +8,10 @@ import TeamDetailHeader from "./TeamDetailHeader";
 import TeamDetailBody from "./TeamDetailBody";
 import { useTranslation } from "react-i18next";
 import { getSingleTherapistSuccess } from "../../features/therapistSlice";
+import useTabNavigation from "../../hooks/useTabNavigation";
 
 const TeamDetail = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { t } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -20,11 +21,14 @@ const TeamDetail = () => {
   );
   const { currentUser } = useSelector((state) => state.auth);
 
-  const [activeTab, setActiveTab] = useState("about");
-  const [displayCalendar, setDisplayCalendar] = useState(false);
+  // Section IDs
+  const sectionIds = ["about", "experience", "services", "reviews"];
 
-  // console.log(id);
-  
+  const { activeTab, scrollToSection, sectionRefs } = useTabNavigation(sectionIds, {
+    navbarHeight: 120,
+    tabHeight: 64,
+  })
+  const [displayCalendar, setDisplayCalendar] = useState(false);
 
   useEffect(() => {
     getSingleTherapist(id);
@@ -32,34 +36,9 @@ const TeamDetail = () => {
   }, [id]);
 
   useEffect(() => {
-    dispatch(getSingleTherapistSuccess(null))
+    dispatch(getSingleTherapistSuccess(null));
     // dispatch(getSingleTherapistFeedbacksSuccess())
   }, [navigate]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["about", "experience", "services", "reviews"]
-      let currentSection = "about"
-      const navbarHeight = 120
-      const tabHeight = 64
-      const totalOffset = navbarHeight + tabHeight
-
-      sections.forEach((sectionId) => {
-        const element = document.getElementById(sectionId)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          if (rect.top <= totalOffset) {
-            currentSection = sectionId
-          }
-        }
-      })
-
-      setActiveTab(currentSection)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   if (loading) {
     return (
@@ -73,23 +52,6 @@ const TeamDetail = () => {
     return <div className="text-center text-mauve">Therapist not found!</div>;
   }
 
-  // console.log(singleTherapist);
-
-  const scrollToSection = (sectionId) => {
-    setActiveTab(sectionId)
-    const element = document.getElementById(sectionId)
-    const navbarHeight = 120 
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 64 // 80px navbar + 64px tab navigation
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      })
-    }
-  }
-
   const toggleCalendar = (show) => {
     setDisplayCalendar(show);
   };
@@ -98,68 +60,43 @@ const TeamDetail = () => {
     if (e.target === e.currentTarget) {
       toggleCalendar(false);
     }
-  };  
+  };
 
   return (
     <div className="container max-w-none min-h-screen flex flex-col justify-center items-center gap-2 py-3 bg-offWhite dark:bg-background-darker text-navy-dark dark:text-offWhite-dark">
       {/* Header */}
       <div className="w-full bg-offWhite-dark dark:bg-background-dark pt-12">
-
-        <TeamDetailHeader singleTherapist={singleTherapist} currentUser={currentUser} toggleCalendar={toggleCalendar} />
-        
+        <TeamDetailHeader
+          singleTherapist={singleTherapist}
+          currentUser={currentUser}
+          toggleCalendar={toggleCalendar}
+        />
       </div>
-      
+
       {/* Tab Navigation */}
       <div className="sticky top-[80px] z-10 w-full max-w-6xl h-100 px-8 py-4 bg-offWhite dark:bg-background-darker border-b-2 border-gray-200 dark:border-gray-700">
         <div className="max-w-6xl mx-auto px-4 overflow-x-auto">
           <div className="flex justify-start items-end space-x-4 md:space-x-8 lg:space-x-16 min-w-max">
-            <button 
-              onClick={() => scrollToSection("about")}
-              className={`py-2 px-1 border-b-2 text-sm md:text-base lg:text-lg whitespace-nowrap ${
-                activeTab === "about"
-                  ? "border-seaGreen text-seaGreen"
-                  : "border-transparent  hover:text-seaGreen hover:border-seaGreen"
-              } font-bold transition-colors duration-200`}
-            >About</button>
-            <button
-              onClick={() => scrollToSection("experience")}
-              className={`py-2 px-1 border-b-2 text-sm md:text-base lg:text-lg whitespace-nowrap ${
-                activeTab === "experience"
-                  ? "border-seaGreen text-seaGreen"
-                  : "border-transparent hover:text-seaGreen hover:border-seaGreen"
-              } font-bold transition-colors duration-200`}
-            >
-              Experience
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className={`py-2 px-1 border-b-2 text-sm md:text-base lg:text-lg whitespace-nowrap ${
-                activeTab === "services"
-                  ? "border-seaGreen text-seaGreen"
-                  : "border-transparent  hover:text-seaGreen hover:border-seaGreen"
-              } font-bold transition-colors duration-200`}
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection("reviews")}
-              className={`py-2 px-1 border-b-2 text-sm md:text-base lg:text-lg whitespace-nowrap ${
-                activeTab === "reviews"
-                  ? "border-seaGreen text-seaGreen"
-                  : "border-transparent hover:text-seaGreen hover:border-seaGreen"
-              } font-bold transition-colors duration-200`}
-            >
-              Reviews
-            </button>
+            {sectionIds.map((sectionId) => (
+              <button
+                key={sectionId}
+                onClick={() => scrollToSection(sectionId)}
+                className={`py-2 px-1 border-b-2 text-sm md:text-base lg:text-lg whitespace-nowrap ${
+                  activeTab === sectionId
+                    ? "border-seaGreen text-seaGreen"
+                    : "border-transparent hover:text-seaGreen hover:border-seaGreen"
+                } font-bold transition-colors duration-200`}
+              >
+                {sectionId.charAt(0).toUpperCase() + sectionId.slice(1)}
+              </button>
+            ))}
           </div>
         </div>
       </div>
 
       {/* Body */}
       <div className="w-full px-4">
-
-        <TeamDetailBody />
-        
+        <TeamDetailBody sectionRefs={sectionRefs} />
       </div>
       {/* GoBack */}
       <div className="p-6 pt-0 mt-8 text-center w-full">
