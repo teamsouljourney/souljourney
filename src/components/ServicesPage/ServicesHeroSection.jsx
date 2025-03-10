@@ -1,6 +1,10 @@
 import Image1 from "../../assets/ServicesPageImages/Image1.png"
+import { useTranslation } from 'react-i18next';
+
 
 const ServicesHeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <div
       className="relative w-full min-h-[60vh] bg-cover bg-center pt-24 pb-12"
@@ -13,7 +17,7 @@ const ServicesHeroSection = () => {
             fontFamily: "'Source Serif Pro', serif",
           }}
         >
-          Our Services
+          {t("srvServicesHeroTitle")}
         </h1>
 
         <p
@@ -23,15 +27,7 @@ const ServicesHeroSection = () => {
             fontSize: "clamp(0.875rem, 0.8rem + 0.5vw, 1.25rem)",
           }}
         >
-          At our psychological counseling center, we offer a comprehensive range of services designed to support
-          individuals in improving their emotional and mental well-being. Our team of experienced professionals works
-          closely with each client to understand their unique challenges and provide personalized solutions. Whether you
-          are dealing with stress, anxiety, relationship issues, or simply looking to enhance your personal growth, we
-          are here to guide you through every step of the process. We are committed to creating a safe, supportive, and
-          non-judgmental environment where you can openly explore your feelings and develop healthier coping strategies.
-          Each category of service is carefully tailored to meet your specific needs and goals, ensuring that you
-          receive the most effective support possible. Your journey toward a balanced and fulfilling life begins here,
-          with the help of compassionate and expert guidance.
+          {t("srvServicesHeroDescription")}
         </p>
       </div>
     </div>

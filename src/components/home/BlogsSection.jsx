@@ -19,7 +19,7 @@ const BlogsSection = () => {
     <div className="flex flex-col items-center w-full gap-10">
       <div className="text-center">
         <h1 className="text-3xl leading-normal tracking-tight mb-7 sm:text-5xl font-urbanist">
-          Our Blogs
+          {t("ourBlogs")}
         </h1>
         <p className="w-[60%] mx-auto font-urbanist">{t("ourBlogsText")}</p>
       </div>
