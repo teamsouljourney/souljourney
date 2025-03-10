@@ -10,7 +10,7 @@ const videoSlice = createSlice({
     audioDevice: "default", //enumerate devices, chosen audio input device
     videoDevice: "default",
     shareScreen: false,
-    haveMedia: false, //is there a localStream, has getUserMedia been run
+    haveMedia: false,
     haveCreatedOffer: false,
     cameras: [],
     microphones: [],
