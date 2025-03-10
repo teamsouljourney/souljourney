@@ -7,6 +7,8 @@ import {
   format,
   isAfter,
   differenceInMinutes,
+  isSameMinute,
+  isAfter as isDateAfter,
 } from "date-fns";
 
 const AppointmentInfo = () => {
@@ -18,6 +20,7 @@ const AppointmentInfo = () => {
   const [timeRemaining, setTimeRemaining] = useState("");
   const [nearestAppointment, setNearestAppointment] = useState(null);
   const [isWithinFiveMinutes, setIsWithinFiveMinutes] = useState(false);
+  const [isAppointmentStarted, setIsAppointmentStarted] = useState(false);
   const isTherapist = currentUser?.isTherapist === true;
 
   useEffect(() => {
@@ -51,6 +54,12 @@ const AppointmentInfo = () => {
         );
         setIsWithinFiveMinutes(minutesUntilAppointment <= 5);
 
+        // Check if appointment has started
+        setIsAppointmentStarted(
+          isDateAfter(now, appointmentTime) ||
+            isSameMinute(now, appointmentTime)
+        );
+
         // If not within five minutes, set a generic message
         if (minutesUntilAppointment > 5) {
           setTimeRemaining(
@@ -61,19 +70,23 @@ const AppointmentInfo = () => {
     }
   }, [currentUserAppointments]);
 
-  // Check every minute if we've reached the five-minute threshold
+  // Check every minute if we've reached the five-minute threshold or if appointment has started
   useEffect(() => {
-    if (!nearestAppointment || isWithinFiveMinutes) return;
+    if (!nearestAppointment) return;
 
     const checkInterval = setInterval(() => {
       const appointmentTime = new Date(nearestAppointment.startTime);
       const now = new Date();
       const minutesUntilAppointment = differenceInMinutes(appointmentTime, now);
 
-      if (minutesUntilAppointment <= 5) {
+      // Update appointment started status
+      const hasStarted =
+        isDateAfter(now, appointmentTime) || isSameMinute(now, appointmentTime);
+      setIsAppointmentStarted(hasStarted);
+
+      if (minutesUntilAppointment <= 5 && !isWithinFiveMinutes) {
         setIsWithinFiveMinutes(true);
-        clearInterval(checkInterval);
-      } else {
+      } else if (!isWithinFiveMinutes) {
         // Update the general time remaining message
         setTimeRemaining(
           formatDistanceToNow(appointmentTime, { addSuffix: true })
@@ -95,6 +108,11 @@ const AppointmentInfo = () => {
       // Calculate time difference
       const diff = appointmentTime.getTime() - now.getTime();
 
+      // Update appointment started status
+      const hasStarted =
+        isDateAfter(now, appointmentTime) || isSameMinute(now, appointmentTime);
+      setIsAppointmentStarted(hasStarted);
+
       if (diff <= 0) {
         setTimeRemaining("Appointment is now!");
         clearInterval(timer);
@@ -114,11 +132,11 @@ const AppointmentInfo = () => {
   if (!nearestAppointment) {
     return (
       <div className="w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-md">
-        <div className="p-6">
-          <h2 className="text-xl font-bold text-gray-800">
+        <div className="p-3">
+          <h2 className="text-lg font-bold text-gray-800">
             No Upcoming Appointments
           </h2>
-          <p className="mt-1 text-gray-500">
+          <p className="text-sm text-gray-500">
             You don't have any upcoming appointments scheduled.
           </p>
         </div>
@@ -137,78 +155,76 @@ const AppointmentInfo = () => {
 
   return (
     <div className="w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-md">
-      <div className="p-6">
-        <div className="flex items-start justify-between mb-4">
-          <div>
-            <h2 className="text-xl font-bold text-gray-800">
-              Your Next Appointment
-            </h2>
+      <div className="p-3 md:p-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-gray-600 bg-gray-200 rounded-full">
+              {personInfo?.profileImage ? (
+                <img
+                  src={personInfo.profileImage || "/placeholder.svg"}
+                  alt={`${personInfo.firstName} ${personInfo.lastName}`}
+                  className="object-cover w-10 h-10 rounded-full"
+                />
+              ) : (
+                <FaUser className="w-5 h-5" />
+              )}
+            </div>
+
+            <div>
+              <h3 className="text-sm font-medium text-gray-800 md:text-base">
+                {`${personInfo?.firstName} ${personInfo?.lastName}`}
+                <span className="ml-2 text-xs text-gray-500">
+                  {isTherapist
+                    ? "Patient"
+                    : personInfo?.specialization || "Therapist"}
+                </span>
+              </h3>
+
+              <div className="flex items-center mt-1 text-xs text-gray-600">
+                <FaCalendarAlt className="w-3 h-3 mr-1" />
+                <span className="mr-3">
+                  {format(appointmentDate, "MMM d, yyyy")}
+                </span>
+                <FaClock className="w-3 h-3 mr-1" />
+                <span>
+                  {format(startTime, "h:mm a")} - {format(endTime, "h:mm a")}
+                </span>
+              </div>
+            </div>
           </div>
+
           <div
-            className={`px-3 py-1 rounded-full text-sm font-medium ${
-              isWithinFiveMinutes
+            className={`px-2 py-1 rounded-full text-xs font-medium ${
+              isAppointmentStarted
+                ? "bg-green-100 text-green-600"
+                : isWithinFiveMinutes
                 ? "bg-red-100 text-red-600"
                 : "bg-gray-100 text-gray-600"
             }`}
           >
-            {timeRemaining}
+            {isAppointmentStarted ? "In Progress" : timeRemaining}
           </div>
         </div>
 
-        <div className="flex items-center gap-4 mb-6">
-          <div className="flex items-center justify-center w-12 h-12 text-gray-600 bg-gray-200 rounded-full">
-            {personInfo?.profileImage ? (
-              <img
-                src={personInfo.profileImage || "/placeholder.svg"}
-                alt={`${personInfo.firstName} ${personInfo.lastName}`}
-                className="object-cover w-12 h-12 rounded-full"
-              />
-            ) : (
-              <FaUser className="w-6 h-6" />
-            )}
-          </div>
-          <div>
-            <h3 className="font-medium text-gray-800">{`${personInfo?.firstName} ${personInfo?.lastName}`}</h3>
-            <p className="text-sm text-gray-500">
-              {isTherapist
-                ? "Patient"
-                : personInfo?.specialization || "Therapist"}
-            </p>
-          </div>
-        </div>
-
-        <div className="mb-6 space-y-2">
-          <div className="flex items-center gap-2">
-            <FaCalendarAlt className="w-4 h-4 text-gray-500" />
-            <span className="text-sm text-gray-700">
-              {format(appointmentDate, "EEEE, MMMM d, yyyy")}
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
-            <FaClock className="w-4 h-4 text-gray-500" />
-            <span className="text-sm text-gray-700">
-              {format(startTime, "h:mm a")} - {format(endTime, "h:mm a")}
-            </span>
-          </div>
-        </div>
-
-        {nearestAppointment.videoCallUrl ? (
+        {nearestAppointment.videoCallUrl && isAppointmentStarted ? (
           <button
-            className="flex items-center justify-center w-full px-4 py-2 text-white transition-colors bg-blue-600 rounded-md hover:bg-blue-700"
             onClick={() =>
               window.open(nearestAppointment.videoCallUrl, "_blank")
             }
+            className="flex items-center justify-center w-full px-4 py-2 mt-3 text-white transition-colors bg-blue-600 rounded-md hover:bg-blue-700"
           >
             <FaVideo className="w-4 h-4 mr-2" />
             Join Video Call
           </button>
         ) : (
           <button
-            className="flex items-center justify-center w-full px-4 py-2 text-gray-500 bg-gray-200 rounded-md cursor-not-allowed"
             disabled
+            className="flex items-center justify-center w-full px-4 py-2 mt-3 text-gray-500 bg-gray-100 rounded-md cursor-not-allowed"
           >
             <FaVideo className="w-4 h-4 mr-2" />
-            Video Call Not Available Yet
+            {nearestAppointment.videoCallUrl
+              ? "Video Call Available at Start Time"
+              : "Video Call Not Available Yet"}
           </button>
         )}
       </div>
