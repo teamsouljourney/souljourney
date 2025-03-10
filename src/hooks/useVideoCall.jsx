@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import io from "socket.io-client";
 import {
@@ -30,6 +30,9 @@ const useVideoCall = () => {
     isAudioOn,
   } = useSelector((state) => state.video);
 
+  const [cameraDropdownOpen, setCameraDropdownOpen] = useState(false);
+  const [microphoneDropdownOpen, setMicrophoneDropdownOpen] = useState(false);
+
   const localStream = useRef(null);
   const remoteStream = useRef(null);
   const peerConnection = useRef(null);
@@ -37,6 +40,9 @@ const useVideoCall = () => {
 
   const localVideoRef = useRef(null);
   const remoteVideoRef = useRef(null);
+
+  const cameraDropdownRef = useRef(null);
+  const microphoneDropdownRef = useRef(null);
 
   // Initialize media stream
   const initializeMedia = async () => {
@@ -64,6 +70,7 @@ const useVideoCall = () => {
       return null;
     }
   };
+
   // Get available media devices
   const getMediaDevices = async () => {
     dispatch(fetchStart());
@@ -123,6 +130,130 @@ const useVideoCall = () => {
     }
   };
 
+  const toggleCameraDropdown = () => setCameraDropdownOpen(!cameraDropdownOpen);
+
+  const toggleMicrophoneDropdown = () =>
+    setMicrophoneDropdownOpen(!microphoneDropdownOpen);
+
+  const getSelectedCameraLabel = () => {
+    const camera = cameras.find((c) => c.deviceId === selectedCamera);
+    return camera ? camera.label : "Select camera";
+  };
+
+  const getSelectedMicrophoneLabel = () => {
+    const microphone = microphones.find(
+      (m) => m.deviceId === selectedMicrophone
+    );
+    return microphone ? microphone.label : "Select microphone";
+  };
+
+  const changeCamera = async (deviceId) => {
+    try {
+      if (localStream.current) {
+        // Stop current video tracks
+        localStream.current.getVideoTracks().forEach((track) => track.stop());
+
+        // Get new stream with selected camera
+        const newStream = await navigator.mediaDevices.getUserMedia({
+          video: { deviceId: { exact: deviceId } },
+          audio: false,
+        });
+
+        // Replace video track in local stream
+        const newVideoTrack = newStream.getVideoTracks()[0];
+        const oldVideoTrack = localStream.current.getVideoTracks()[0];
+
+        if (oldVideoTrack) {
+          localStream.current.removeTrack(oldVideoTrack);
+        }
+
+        localStream.current.addTrack(newVideoTrack);
+
+        // Update peer connection if it exists
+        if (peerConnection.current) {
+          const senders = peerConnection.current.getSenders();
+          const videoSender = senders.find(
+            (sender) => sender.track && sender.track.kind === "video"
+          );
+
+          if (videoSender) {
+            videoSender.replaceTrack(newVideoTrack);
+          }
+        }
+
+        // Set track enabled based on current video state
+        newVideoTrack.enabled = isVideoOn;
+
+        dispatch(setSelectedDevices({ camera: deviceId }));
+        setCameraDropdownOpen(false);
+      }
+    } catch (error) {
+      console.error("Error changing camera:", error);
+      toastErrorNotify("Error changing camera: " + error.message);
+    }
+  };
+
+  const changeMicrophone = async (deviceId) => {
+    try {
+      if (localStream.current) {
+        // Stop current audio tracks
+        localStream.current.getAudioTracks().forEach((track) => track.stop());
+
+        // Get new stream with selected microphone
+        const newStream = await navigator.mediaDevices.getUserMedia({
+          audio: { deviceId: { exact: deviceId } },
+          video: false,
+        });
+
+        // Replace audio track in local stream
+        const newAudioTrack = newStream.getAudioTracks()[0];
+        const oldAudioTrack = localStream.current.getAudioTracks()[0];
+
+        if (oldAudioTrack) {
+          localStream.current.removeTrack(oldAudioTrack);
+        }
+
+        localStream.current.addTrack(newAudioTrack);
+
+        // Update peer connection if it exists
+        if (peerConnection.current) {
+          const senders = peerConnection.current.getSenders();
+          const audioSender = senders.find(
+            (sender) => sender.track && sender.track.kind === "audio"
+          );
+
+          if (audioSender) {
+            audioSender.replaceTrack(newAudioTrack);
+          }
+        }
+
+        // Set track enabled based on current audio state
+        newAudioTrack.enabled = isAudioOn;
+
+        dispatch(setSelectedDevices({ microphone: deviceId }));
+        setMicrophoneDropdownOpen(false);
+      }
+    } catch (error) {
+      console.error("Error changing microphone:", error);
+      toastErrorNotify("Error changing microphone: " + error.message);
+    }
+  };
+
+  const shareScreen = async () => {
+    try {
+      screenStream.current = await navigator.mediaDevices.getDisplayMedia({
+        video: true,
+      });
+      if (localVideoRef.current) {
+        localVideoRef.current.srcObject = screenStream.current;
+      }
+      socket.emit("share-screen", screenStream.current);
+    } catch (err) {
+      console.log("Error sharing screen:", err);
+      toastErrorNotify("Error sharing screen: " + err.message);
+    }
+  };
+
   return {
     localStream,
     remoteStream,
@@ -130,10 +261,21 @@ const useVideoCall = () => {
     screenStream,
     localVideoRef,
     remoteVideoRef,
+    cameraDropdownRef,
+    microphoneDropdownRef,
+    cameraDropdownOpen,
+    microphoneDropdownOpen,
     toggleVideo,
     toggleAudio,
     initializeMedia,
     getMediaDevices,
+    toggleCameraDropdown,
+    toggleMicrophoneDropdown,
+    getSelectedCameraLabel,
+    getSelectedMicrophoneLabel,
+    changeCamera,
+    changeMicrophone,
+    shareScreen,
   };
 };
 
