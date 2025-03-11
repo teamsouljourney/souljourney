@@ -42,7 +42,7 @@ const MoreCategories = ({ categories, selectedCategory, onCategorySelect }) => {
         className={`px-4 py-2 font-semibold rounded-lg transition-all duration-300 ${
           isAnyDropdownCategorySelected
             ? "bg-navy-light text-white shadow-md"
-            : "bg-white text-navy hover:bg-navy-light hover:text-white border border-navy"
+            : "bg-white text-navy hover:bg-navy-light/30 hover:text-white border "
         }`}
         aria-expanded={isOpen}
         aria-haspopup="true"

@@ -11,6 +11,7 @@ import {
 import { deleteUserSuccess } from "../features/userSlice";
 import usePaginationCall from "./usePaginationCall";
 import { logoutSuccess } from "../features/authSlice";
+import { SweetAlertIcons, SweetNotify } from "../helper/SweetNotify";
 
 const useUserCall = () => {
   const dispatch = useDispatch();
@@ -99,7 +100,8 @@ const useUserCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.patch(`users/${id}/updateMe`, updatedUser);
-      toastSuccessNotify("Your profile updated successfully!");
+      // toastSuccessNotify("Your profile updated successfully!");
+      SweetNotify("Your profile updated successfully!", SweetAlertIcons.SUCCESS)
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -133,9 +135,10 @@ const useUserCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.patch(`users/${id}/status`);
-      toastWarnNotify(
-        " Your account is currently inactive. If you'd like to work with us again, please contact the SoulJourney team. We'd be delighted to welcome you back! 😊"
-      );
+      // toastWarnNotify(
+      //   " Your account is currently inactive. If you'd like to work with us again, please contact the SoulJourney team. We'd be delighted to welcome you back! 😊"
+      // );
+      SweetNotify("Your account is currently inactive. If you'd like to work with us again, please contact the SoulJourney team. We'd be delighted to welcome you back! 😊", SweetAlertIcons.WARNING)
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -154,7 +157,8 @@ const useUserCall = () => {
     try {
       navigate("/")
       await axiosWithToken.patch(`users/${id}/changeMyPassword`, values);
-      toastSuccessNotify("Your password has been changed!");
+      // toastSuccessNotify("Your password has been changed!");
+      SweetNotify("Your password has been changed!", SweetAlertIcons.SUCCESS)
       await axiosWithToken.get("auth/logout");
       dispatch(logoutSuccess());
     } catch (error) {

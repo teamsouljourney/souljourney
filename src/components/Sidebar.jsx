@@ -17,19 +17,19 @@ const Sidebar = () => {
         <div className="col-span-1 bg-white h-screen">
           <div className="xs:pb-2 sm:p-2 h-full w-full flex flex-col bg-offWhite-dark dark:bg-gray-700 border-r border-r-gray-200">
             {/* Logo */}
-            <NavLink to="#">
-              <div className="flex flex-col justify-center lg:justify-start items-center gap-1 pb-2 px-0 xs:px-0 md:px-2 lg:px-4 cursor-pointer dark:bg-offWhite dark:xs:rounded-none dark:sm:rounded-md dark:shadow-sm dark:shadow-offWhite-light">
-                <SoulJourneyLogo />
-                <Switch />
-                <div className="w-14 flex justify-center bg-navy/90 rounded-xl m-4 px-0 shadow-lg shadow-navy-light hover:bg-navy/70 hover:shadow-6xl hover:shadow-navy-dark">
-                  <LanguageSelector />
-                </div>
+
+            <div className="flex flex-col justify-center lg:justify-start items-center gap-1 pb-2 px-0 xs:px-0 md:px-2 lg:px-4 dark:bg-offWhite dark:xs:rounded-none dark:sm:rounded-md dark:shadow-sm dark:shadow-offWhite-light">
+              <SoulJourneyLogo />
+              <Switch />
+              <div className="w-14 flex justify-center bg-navy/90 rounded-xl m-4 px-0 hover:bg-navy/70">
+                <LanguageSelector />
               </div>
-            </NavLink>
+            </div>
+
             {/* Sidebar Menu */}
             <div className="px-5 pt-4 hidden lg:block mb-1">
               <div className="flex flex-row items-center">
-                <div className="text-sm font-bold tracking-wide text-seaGreen-dark dark:text-offWhite">
+                <div className="text-sm font-bold tracking-wide text-seaGreen-dark dark:text-offWhite cursor-default">
                   {t("menu")}
                 </div>
               </div>

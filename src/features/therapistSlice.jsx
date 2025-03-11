@@ -10,6 +10,9 @@ const therapistSlice = createSlice({
       firstName: "",
       lastName: "",
       email: "",
+      description:"",
+      experience:"",
+      graduation:"",
       password: ""
     },    
     therapistTimeTable: [],

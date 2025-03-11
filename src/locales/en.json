@@ -139,7 +139,54 @@
   "PROFILE": "PROFILE",
 
   "SERVICES": "SERVICES",
-
+  
+  
+    "srvServicesHeroTitle": "Our Services",
+    "srvServicesHeroDescription": "At our psychological counseling center, we offer a comprehensive range of services designed to support individuals in improving their emotional and mental well-being. Our team of experienced professionals works closely with each client to understand their unique challenges and provide personalized solutions. Whether you are dealing with stress, anxiety, relationship issues, or simply looking to enhance your personal growth, we are here to guide you through every step of the process. We are committed to creating a safe, supportive, and non-judgmental environment where you can openly explore your feelings and develop healthier coping strategies. Each category of service is carefully tailored to meet your specific needs and goals, ensuring that you receive the most effective support possible. Your journey toward a balanced and fulfilling life begins here, with the help of compassionate and expert guidance.",
+    "srvHealthPsychologyTitle": "Health Psychology",
+    "srvHealthPsychologyText": "Health psychology focuses on promoting mental and physical well-being through the development of healthier habits and self-awareness. Our sessions provide the knowledge and tools needed to manage stress, anxiety, and other mental health challenges. We aim to empower you with information that supports overall wellness and helps you make informed decisions about your health.",
+    "srvHealthPsychologyList": [
+      "Stress management techniques",
+      "Building emotional resilience",
+      "Lifestyle adjustments for mental health",
+      "Strategies for maintaining a balanced life"
+    ],
+    "srvEmpoweringMindsEnhancingLives": "Empowering Minds, Enhancing Lives",
+   "srvEmbarkOnYourSoulsJourney": "Embark on Your Soul’s Journey - Healing Starts Anytime, Anywhere...",
+    "srvEducationalPsychologyTitle": "Educational Psychology",
+    "srvEducationalPsychologyText": "Educational psychology is focused on understanding how individuals learn and develop in educational settings. Our services in this area aim to support students, teachers, and parents by addressing challenges related to learning, motivation, and academic performance. Whether you're a student struggling with schoolwork, a teacher seeking effective teaching strategies, or a parent needing guidance on supporting your child's educational needs, we are here to help.",
+    "srvEducationalPsychologyList": [
+      "Learning difficulties assessment (e.g., ADHD, dyslexia)",
+      "Academic performance enhancement",
+      "Strategies for motivation and engagement",
+      "Support for students with special educational needs",
+      "Parenting tips for supporting educational development"
+    ],
+    "srvNeuropsychologyTitle": "Neuropsychology",
+    "srvNeuropsychologyText": "Our passionate therapists are committed to helping you achieve meaningful change and personal growth, one session at a time. Neuropsychology focuses on the relationship between the brain and behavior, helping individuals understand how neurological conditions or cognitive impairments may affect their daily lives. Our neuropsychological services include assessments, counseling, and support for individuals experiencing cognitive difficulties, memory issues, and other brain-related concerns.",
+    "srvNeuropsychologyList": [
+      "Cognitive assessments",
+      "Managing brain injuries or neurological disorders",
+      "Memory enhancement techniques",
+      "Addressing mental health issues related to neurological conditions"
+    ],
+    "srvMarriageAndFamilyTherapyTitle": "Marriage and Family Therapy",
+    "srvMarriageAndFamilyTherapyText": "Marriage counseling is designed to help couples improve communication, resolve conflicts, and strengthen their relationships. Whether you're facing challenges in your relationship or simply looking to enhance your partnership, our counselors are here to support you through the process. We provide a safe space for both partners to express their concerns and work together toward a healthier, more fulfilling marriage.",
+    "srvMarriageAndFamilyTherapyList": [
+      "Effective communication skills",
+      "Conflict resolution strategies",
+      "Building trust and intimacy",
+      "Navigating major life changes together"
+    ],
+    "srvOnlineTherapyServicesTitle": "Online Therapy Services",
+    "srvOnlineTherapyServicesText": "Accessing professional therapy has never been easier with our online therapy services. Whether you are at home, at work, or anywhere else, you can receive confidential, effective counseling from the comfort of your own space. Our licensed therapists are here to provide you with the support you need to overcome challenges, manage stress, and improve your mental well-being—no matter where you are.",
+    "srvOnlineTherapyServicesList": [
+      "Convenient and confidential sessions via video, chat, or phone",
+      "Flexible scheduling to fit your lifestyle",
+      "Accessible from anywhere with an internet connection",
+      "A safe, supportive environment to talk openly and heal"
+    ],
+  
   "PRICING": "PRICING",
   "paymentDetails": "Payment Details",
   "paymentDetailsText": "At Soul Journey, we offer flexible pricing options designed to fit your unique needs and budget. Our mission is to provide exceptional, personalized counseling services and tailored to your individual journey. Choose from our three plans below and take the first step towards a more balanced and fullfilling life.",
@@ -177,7 +224,36 @@
   "BLOGS": "BLOGS",
 
   "ABOUT": "ABOUT",
-
+  
+    "AboutHeroSection": {
+      "abt_us":"About Us",
+      "abt_welcome": "Welcome to our platform, where we aim to connect you with skilled and compassionate therapists for accessible online therapy sessions. Our mission is to create a safe, supportive space prioritizing your mental well-being. We understand that seeking help can be challenging, so we are here to provide a professional and non-judgmental environment to support you through life's struggles. Whether you are managing stress, anxiety, or personal challenges, we are committed to helping you find the guidance you need. Our platform offers flexibility, ensuring that mental health care is both convenient and effective, no matter where you are. We are dedicated to making therapy accessible to everyone, fostering growth and resilience in your journey toward well-being",
+      "abt_mission": "Our mission is to create a safe and supportive space that prioritizes your mental well-being.",
+      "abt_seeking_help": "We understand that seeking help can be challenging, so we are here to provide a professional and non-judgmental environment to support you through life's struggles.",
+      "abt_managing": "Whether you are managing stress, anxiety, or personal challenges, we are committed to helping you find the guidance you need.",
+      "abt_platform_offers": "Our platform offers flexibility, ensuring that mental health care is both convenient and effective, no matter where you are.",
+      "abt_dedicated": "We are dedicated to making therapy accessible to everyone, fostering growth and resilience in your journey toward well-being"
+    },
+    "AboutRow": {
+      "abt_discover": "Discover why our platform is the right choice for your mental well-being"
+    },
+    "AboutRowContent": {
+      "abt_personalized_therapy_sessions_title": "Personalized Therapy Sessions",
+      "abt_personalized_therapy_sessions_text": "Our sessions are tailored to your unique needs, helping you progress at your own pace. Whether you're addressing immediate challenges or working on long-term goals, we're here to support you every step of the way.",
+      "abt_expert_curated_guidance_title": "Expert-Curated Guidance",
+      "abt_expert_curated_guidance_text": "Our licensed therapists bring trusted expertise to every session, ensuring you receive high-quality care. With a focus on your well-being, we combine evidence-based practices with personalized insights.",
+      "abt_empowering_tools_for_growth_title": "Empowering Tools for Growth",
+      "abt_empowering_tools_for_growth_text": "We provide resources and support that empower both clients and therapists. With tools to track progress, identify needs, and set achievable goals, you'll experience meaningful and measurable growth."
+    },
+    "AboutDetail": {
+      "abt_building_confidence_title": "Building Confidence and Enhancing Mental Well-Being",
+      "abt_building_confidence_text": "Our expert therapists are here to help you navigate life’s challenges with confidence and resilience. We provide a supportive environment where your mental health thrives. Through a variety of therapeutic techniques, we ensure that you develop the tools you need to overcome any obstacles in life. Our personalized approach fosters growth and stability, empowering you to take charge of your well-being. Whether it's managing stress, overcoming trauma, or simply finding balance, we are here to help every step of the way. Together, we can cultivate a healthier mindset that will serve you for years to come. The journey to mental clarity and emotional peace starts with a single step. Let us guide you through this process in a safe and understanding environment. No matter where you are in your mental health journey, we are committed to walking beside you. With compassion and expertise, we are here to help you become your best self.",
+      "abt_personalized_support_title": "Personalized Support for Every Journey",
+      "abt_personalized_support_text": "Each session is tailored to your specific needs, ensuring that you receive the right guidance and resources to thrive in your personal and professional life. We understand that no two journeys are the same, and that's why our approach is highly personalized. From one-on-one sessions to group support, we offer a range of options designed to meet you where you are. Together, we'll explore the challenges you face, identify your strengths, and create a path forward that feels empowering and achievable. Whether you’re working through relationship struggles, career transitions, or personal growth goals, we provide a safe and supportive environment to facilitate change. Our therapists use evidence-based practices to ensure that the strategies you learn are both effective and sustainable. By working with you in a way that respects your pace, we'll help you navigate life's obstacles with confidence. This is your journey, and we’re here to walk with you every step of the way.",
+      "abt_proven_strategies_title": "Proven Strategies for Growth and Stability",
+      "abt_proven_strategies_text": "We utilize evidence-based techniques to support your well-being, fostering growth and stability for a balanced and fulfilling life. Our therapists are trained in the latest practices in mental health and personal development, ensuring that you receive the best possible care. Through a combination of mindfulness, cognitive behavioral therapy (CBT), and solution-focused approaches, we help you achieve clarity and emotional balance. By integrating these strategies into your daily life, we ensure that you develop the skills needed to face life’s challenges with resilience and grace. Whether you're dealing with anxiety, depression, or life transitions, we provide tools and insights that help you thrive. We also offer ongoing support and check-ins to ensure that your progress continues long after the sessions have ended. The strategies we teach are designed not just to address immediate issues but to create long-term stability and growth. Together, we'll unlock your full potential and empower you to lead a life filled with purpose and peace."
+    },
+  
   "FOOTER": "FOOTER",
   "termsAndCondition": "Term & Conditions",
   "privacyPolicy": "Privacy Policy",
@@ -453,6 +529,7 @@
       "personalizedSupport": "Personalized Support for Every Journey",
       "personalizedSupportDescription": "Each session is tailored to your specific needs, ensuring that you receive the right guidance and resources to thrive in your personal and professional life."
     }
+
   
   
 }

@@ -139,7 +139,52 @@
   "PROFILE": "PROFIL",
 
   "SERVICES": "DIENSTLEISTUNGEN",
-
+  
+    "srvServicesHeroTitle": "Unsere Dienstleistungen",
+    "srvServicesHeroDescription": "In unserem psychologischen Beratungszentrum bieten wir ein umfassendes Angebot an Dienstleistungen an, die Einzelpersonen dabei unterstützen, ihr emotionales und mentales Wohlbefinden zu verbessern. Unser Team aus erfahrenen Fachleuten arbeitet eng mit jedem Klienten zusammen, um seine individuellen Herausforderungen zu verstehen und maßgeschneiderte Lösungen anzubieten. Egal, ob Sie mit Stress, Angstzuständen, Beziehungsproblemen zu kämpfen haben oder einfach nur Ihr persönliches Wachstum fördern möchten, wir sind hier, um Sie bei jedem Schritt des Prozesses zu begleiten. Wir setzen uns für die Schaffung einer sicheren, unterstützenden und vorurteilsfreien Umgebung ein, in der Sie Ihre Gefühle offen erkunden und gesündere Bewältigungsstrategien entwickeln können. Jede Dienstleistungskategorie ist sorgfältig auf Ihre spezifischen Bedürfnisse und Ziele zugeschnitten, um sicherzustellen, dass Sie die bestmögliche Unterstützung erhalten. Ihre Reise zu einem ausgeglichenen und erfüllten Leben beginnt hier, mit der Hilfe von mitfühlender und fachkundiger Beratung.",
+    "srvEmpoweringMindsEnhancingLives": "Stärkung des Geistes, Verbesserung des Lebens",
+  "srvEmbarkOnYourSoulsJourney": "Begeben Sie sich auf die Reise Ihrer Seele - Heilung beginnt jederzeit, überall...",
+    "srvHealthPsychologyTitle": "Gesundheitspsychologie",
+    "srvHealthPsychologyText": "Die Gesundheitspsychologie konzentriert sich auf die Förderung des mentalen und physischen Wohlbefindens durch die Entwicklung gesünderer Gewohnheiten und Selbstwahrnehmung. Unsere Sitzungen vermitteln das Wissen und die Werkzeuge, die zur Bewältigung von Stress, Angstzuständen und anderen psychischen Gesundheitsproblemen erforderlich sind. Wir möchten Sie mit Informationen stärken, die das allgemeine Wohlbefinden unterstützen und Ihnen helfen, fundierte Entscheidungen über Ihre Gesundheit zu treffen.",
+    "srvHealthPsychologyList": [
+      "Stressbewältigungstechniken",
+      "Aufbau emotionaler Resilienz",
+      "Anpassung des Lebensstils für die psychische Gesundheit",
+      "Strategien zur Aufrechterhaltung eines ausgeglichenen Lebens"
+    ],
+    "srvEducationalPsychologyTitle": "Pädagogische Psychologie",
+    "srvEducationalPsychologyText": "Die pädagogische Psychologie konzentriert sich auf das Verständnis, wie Einzelpersonen in Bildungseinrichtungen lernen und sich entwickeln. Unsere Dienstleistungen in diesem Bereich zielen darauf ab, Schüler, Lehrer und Eltern zu unterstützen, indem sie Herausforderungen im Zusammenhang mit Lernen, Motivation und akademischer Leistung angehen. Egal, ob Sie ein Schüler sind, der mit Schulaufgaben zu kämpfen hat, ein Lehrer, der nach effektiven Unterrichtsstrategien sucht, oder ein Elternteil, der Unterstützung bei der Unterstützung der Bildungsbedürfnisse Ihres Kindes benötigt, wir sind hier, um Ihnen zu helfen.",
+    "srvEducationalPsychologyList": [
+      "Beurteilung von Lernschwierigkeiten (z. B. ADHS, Legasthenie)",
+      "Verbesserung der akademischen Leistung",
+      "Strategien für Motivation und Engagement",
+      "Unterstützung von Schülern mit besonderen Bildungsbedürfnissen",
+      "Elterntipps zur Unterstützung der Bildungsentwicklung"
+    ],
+    "srvNeuropsychologyTitle": "Neuropsychologie",
+    "srvNeuropsychologyText": "Unsere leidenschaftlichen Therapeuten engagieren sich dafür, Ihnen zu helfen, sinnvolle Veränderungen und persönliches Wachstum zu erreichen, eine Sitzung nach der anderen. Die Neuropsychologie konzentriert sich auf die Beziehung zwischen Gehirn und Verhalten und hilft Einzelpersonen zu verstehen, wie neurologische Erkrankungen oder kognitive Beeinträchtigungen ihr tägliches Leben beeinträchtigen können. Unsere neuropsychologischen Dienstleistungen umfassen Beurteilungen, Beratung und Unterstützung für Personen mit kognitiven Schwierigkeiten, Gedächtnisproblemen und anderen hirnbezogenen Problemen.",
+    "srvNeuropsychologyList": [
+      "Kognitive Beurteilungen",
+      "Umgang mit Hirnverletzungen oder neurologischen Störungen",
+      "Techniken zur Verbesserung des Gedächtnisses",
+      "Behandlung psychischer Gesundheitsprobleme im Zusammenhang mit neurologischen Erkrankungen"
+    ],
+    "srvMarriageAndFamilyTherapyTitle": "Ehe- und Familientherapie",
+    "srvMarriageAndFamilyTherapyText": "Die Eheberatung soll Paaren helfen, die Kommunikation zu verbessern, Konflikte zu lösen und ihre Beziehungen zu stärken. Egal, ob Sie in Ihrer Beziehung vor Herausforderungen stehen oder einfach nur Ihre Partnerschaft verbessern möchten, unsere Berater sind hier, um Sie durch den Prozess zu begleiten. Wir bieten beiden Partnern einen sicheren Raum, um ihre Bedenken zu äußern und gemeinsam auf eine gesündere, erfüllendere Ehe hinzuarbeiten.",
+    "srvMarriageAndFamilyTherapyList": [
+      "Effektive Kommunikationsfähigkeiten",
+      "Strategien zur Konfliktlösung",
+      "Aufbau von Vertrauen und Intimität",
+      "Gemeinsame Bewältigung großer Veränderungen im Leben"
+    ],
+    "srvOnlineTherapyServicesTitle": "Online-Therapiedienste",
+    "srvOnlineTherapyServicesText": "Der Zugang zu professioneller Therapie war mit unseren Online-Therapiediensten noch nie so einfach. Egal, ob Sie zu Hause, bei der Arbeit oder anderswo sind, Sie können vertrauliche, effektive Beratung bequem von Ihrem eigenen Raum aus erhalten. Unsere lizenzierten Therapeuten sind hier, um Sie bei der Bewältigung von Herausforderungen, der Bewältigung von Stress und der Verbesserung Ihres psychischen Wohlbefindens zu unterstützen – egal wo Sie sich befinden.",
+    "srvOnlineTherapyServicesList": [
+      "Bequeme und vertrauliche Sitzungen per Video, Chat oder Telefon",
+      "Flexible Planung, die sich Ihrem Lebensstil anpasst",
+      "Von überall mit einer Internetverbindung zugänglich",
+      "Eine sichere, unterstützende Umgebung, um offen zu sprechen und zu heilen"
+    ],  
   "PRICING": "PREISE",
   "paymentDetails": "Zahlungsdetails",
   "paymentDetailsText": "Bei Soul Journey bieten wir flexible Preisoptionen, die auf Ihre einzigartigen Bedürfnisse und Ihr Budget abgestimmt sind. Unsere Mission ist es, außergewöhnliche, personalisierte Beratungsdienste anzubieten, die auf Ihre individuelle Reise zugeschnitten sind. Wählen Sie aus unseren drei Plänen unten und machen Sie den ersten Schritt in ein ausgewogenes und erfülltes Leben.",
@@ -177,7 +222,36 @@
   "BLOGS": "BLOGS",
 
   "ABOUT": "ÜBER UNS",
-
+  
+    "AboutHeroSection": {
+      "abt_us":"Über Uns",
+      "abt_welcome": "Willkommen auf unserer Plattform, auf der wir Sie mit einfühlsamen und erfahrenen Therapeuten für zugängliche Online-Therapiesitzungen verbinden möchten. Unsere Mission ist es, einen sicheren und unterstützenden Raum zu schaffen, der Ihr mentales Wohlbefinden in den Mittelpunkt stellt. Wir verstehen, dass es herausfordernd sein kann, Hilfe zu suchen, und sind daher hier, um Ihnen eine professionelle und wertfreie Umgebung zu bieten, die Sie in schwierigen Lebenssituationen unterstützt. Egal, ob Sie mit Stress, Angst oder persönlichen Herausforderungen zu kämpfen haben – wir sind bestrebt, Ihnen die Unterstützung zu bieten, die Sie benötigen. Unsere Plattform bietet Flexibilität und stellt sicher, dass psychische Gesundheitsversorgung bequem und effektiv ist, unabhängig davon, wo Sie sich befinden. Wir setzen uns dafür ein, Therapie für alle zugänglich zu machen und Wachstum sowie Resilienz auf Ihrem Weg zu mehr Wohlbefinden zu fördern.",
+      "abt_mission": "Unsere Mission ist es, einen sicheren und unterstützenden Raum zu schaffen, der Ihr psychisches Wohlbefinden priorisiert.",
+      "abt_seeking_help": "Wir verstehen, dass es eine Herausforderung sein kann, Hilfe zu suchen, daher sind wir hier, um Ihnen ein professionelles und vorurteilsfreies Umfeld zu bieten, das Sie bei den Schwierigkeiten des Lebens unterstützt.",
+      "abt_managing": "Egal, ob Sie Stress, Angstzustände oder persönliche Herausforderungen bewältigen, wir sind bestrebt, Ihnen die Unterstützung zu bieten, die Sie benötigen.",
+      "abt_platform_offers": "Unsere Plattform bietet Flexibilität und stellt sicher, dass die psychische Gesundheitsversorgung sowohl bequem als auch effektiv ist, egal wo Sie sich befinden.",
+      "abt_dedicated": "Wir setzen uns dafür ein, Therapie für alle zugänglich zu machen und Wachstum und Resilienz auf Ihrem Weg zum Wohlbefinden zu fördern."
+    },
+    "AboutRow": {
+      "abt_discover": "Entdecken Sie, warum unsere Plattform die richtige Wahl für Ihr psychisches Wohlbefinden ist."
+    },
+    "AboutRowContent": {
+      "abt_personalized_therapy_sessions_title": "Personalisierte Therapiesitzungen",
+      "abt_personalized_therapy_sessions_text": "Unsere Sitzungen sind auf Ihre individuellen Bedürfnisse zugeschnitten und helfen Ihnen, in Ihrem eigenen Tempo Fortschritte zu machen. Egal, ob Sie unmittelbare Herausforderungen angehen oder an langfristigen Zielen arbeiten, wir sind hier, um Sie bei jedem Schritt zu unterstützen.",
+      "abt_expert_curated_guidance_title": "Von Experten kuratierte Beratung",
+      "abt_expert_curated_guidance_text": "Unsere lizenzierten Therapeuten bringen vertrauenswürdige Expertise in jede Sitzung ein und stellen sicher, dass Sie qualitativ hochwertige Betreuung erhalten. Mit einem Fokus auf Ihr Wohlbefinden kombinieren wir evidenzbasierte Praktiken mit personalisierten Erkenntnissen.",
+      "abt_empowering_tools_for_growth_title": "Stärkende Werkzeuge für Wachstum",
+      "abt_empowering_tools_for_growth_text": "Wir bieten Ressourcen und Unterstützung, die sowohl Klienten als auch Therapeuten stärken. Mit Tools zur Verfolgung von Fortschritten, zur Identifizierung von Bedürfnissen und zur Festlegung erreichbarer Ziele werden Sie ein sinnvolles und messbares Wachstum erleben."
+    },
+    "AboutDetail": {
+      "abt_building_confidence_title": "Selbstvertrauen aufbauen und das psychische Wohlbefinden verbessern",
+      "abt_building_confidence_text": "Unsere erfahrenen Therapeuten sind hier, um Ihnen zu helfen, die Herausforderungen des Lebens mit Zuversicht und Widerstandsfähigkeit zu meistern. Wir bieten ein unterstützendes Umfeld, in dem Ihre psychische Gesundheit gedeiht. Durch eine Vielzahl von therapeutischen Techniken stellen wir sicher, dass Sie die Werkzeuge entwickeln, die Sie benötigen, um alle Hindernisse im Leben zu überwinden. Unser personalisierter Ansatz fördert Wachstum und Stabilität und befähigt Sie, die Verantwortung für Ihr Wohlbefinden zu übernehmen. Egal, ob Sie Stress bewältigen, Traumata überwinden oder einfach nur das Gleichgewicht finden, wir sind hier, um Ihnen bei jedem Schritt zu helfen. Gemeinsam können wir eine gesündere Denkweise entwickeln, die Ihnen jahrelang dienen wird. Der Weg zu geistiger Klarheit und emotionalem Frieden beginnt mit einem einzigen Schritt. Lassen Sie sich von uns in einem sicheren und verständnisvollen Umfeld durch diesen Prozess führen. Egal wo Sie sich auf Ihrem Weg zur psychischen Gesundheit befinden, wir sind bestrebt, an Ihrer Seite zu gehen. Mit Mitgefühl und Fachwissen sind wir hier, um Ihnen zu helfen, Ihr bestes Selbst zu werden.",
+      "abt_personalized_support_title": "Personalisierte Unterstützung für jede Reise",
+      "abt_personalized_support_text": "Jede Sitzung ist auf Ihre spezifischen Bedürfnisse zugeschnitten und stellt sicher, dass Sie die richtige Anleitung und Ressourcen erhalten, um in Ihrem persönlichen und beruflichen Leben erfolgreich zu sein. Wir verstehen, dass keine zwei Reisen gleich sind, und deshalb ist unser Ansatz sehr personalisiert. Von Einzelsitzungen bis hin zu Gruppenunterstützung bieten wir eine Reihe von Optionen, die Sie dort abholen, wo Sie sich befinden. Gemeinsam werden wir die Herausforderungen, vor denen Sie stehen, erkunden, Ihre Stärken identifizieren und einen Weg nach vorne entwickeln, der sich ermächtigend und erreichbar anfühlt. Egal, ob Sie an Beziehungsproblemen, Karriereübergängen oder persönlichen Wachstumszielen arbeiten, wir bieten ein sicheres und unterstützendes Umfeld, um Veränderungen zu erleichtern. Unsere Therapeuten verwenden evidenzbasierte Praktiken, um sicherzustellen, dass die Strategien, die Sie lernen, sowohl effektiv als auch nachhaltig sind. Indem wir mit Ihnen auf eine Weise zusammenarbeiten, die Ihr Tempo respektiert, helfen wir Ihnen, die Hindernisse des Lebens mit Zuversicht zu meistern. Dies ist Ihre Reise, und wir sind hier, um Sie bei jedem Schritt zu begleiten.",
+      "abt_proven_strategies_title": "Bewährte Strategien für Wachstum und Stabilität",
+      "abt_proven_strategies_text": "Wir verwenden evidenzbasierte Techniken, um Ihr Wohlbefinden zu unterstützen und Wachstum und Stabilität für ein ausgeglichenes und erfülltes Leben zu fördern. Unsere Therapeuten sind in den neuesten Praktiken der psychischen Gesundheit und persönlichen Entwicklung geschult, um sicherzustellen, dass Sie die bestmögliche Betreuung erhalten. Durch eine Kombination aus Achtsamkeit, kognitiver Verhaltenstherapie (KVT) und lösungsorientierten Ansätzen helfen wir Ihnen, Klarheit und emotionales Gleichgewicht zu erreichen. Indem wir diese Strategien in Ihr tägliches Leben integrieren, stellen wir sicher, dass Sie die Fähigkeiten entwickeln, die Sie benötigen, um den Herausforderungen des Lebens mit Widerstandsfähigkeit und Anmut zu begegnen. Egal, ob Sie mit Angstzuständen, Depressionen oder Lebensübergängen zu kämpfen haben, wir bieten Ihnen Werkzeuge und Einsichten, die Ihnen helfen, erfolgreich zu sein. Wir bieten auch fortlaufende Unterstützung und Check-ins an, um sicherzustellen, dass Ihre Fortschritte auch nach Beendigung der Sitzungen anhalten. Die Strategien, die wir vermitteln, dienen nicht nur dazu, unmittelbare Probleme anzugehen, sondern auch langfristige Stabilität und Wachstum zu schaffen. Gemeinsam werden wir Ihr volles Potenzial freisetzen und Sie befähigen, ein Leben voller Sinn und Frieden zu führen."
+    },
+  
   "FOOTER": "FUSSZEILE",
   "termsAndCondition": "Allgemeine Geschäftsbedingungen",
   "privacyPolicy": "Datenschutzrichtlinie",
