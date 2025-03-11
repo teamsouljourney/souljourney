@@ -10,6 +10,8 @@ const chatSlice = createSlice({
     error: false,
     socket: null,
     isConnected: false,
+    onlineUsers: [],
+    userStatuses: {},
   },
   reducers: {
     fetchStart: (state) => {
@@ -45,7 +47,6 @@ const chatSlice = createSlice({
       state.loading = false;
       state.selectedUser = payload;
       state.error = false;
-      console.log("selecteduserPayload", payload);
     },
     fetchFail: (state) => {
       state.loading = false;
@@ -59,16 +60,20 @@ const chatSlice = createSlice({
       state.isConnected = payload;
     },
     receiveMessage: (state, { payload }) => {
-      // Check if this message already exists
       const messageExists = state.chats.some(
         (chat) => chat._id === payload._id
       );
 
       if (!messageExists) {
-        // Add the new message to the chat list
-        state.chats = [...state.chats, payload];
-        console.log("Added new message from socket to state:", payload);
+        state.chats = [...state.chats, state.isConnected, payload];
       }
+    },
+    updateOnlineUsers: (state, action) => {
+      state.onlineUsers = action.payload;
+    },
+    setUserConnected: (state, action) => {
+      const { userId, isOnline } = action.payload;
+      state.userStatuses[userId] = isOnline;
     },
   },
 });
@@ -82,6 +87,8 @@ export const {
   setSocket,
   setSocketConnected,
   receiveMessage,
+  updateOnlineUsers,
+  setUserConnected,
 } = chatSlice.actions;
 
 export default chatSlice.reducer;

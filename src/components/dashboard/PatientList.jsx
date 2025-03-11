@@ -11,6 +11,9 @@ const PatientList = () => {
   let { currentUser } = useSelector((state) => state.auth);
   let { currentUserAppointments } = useSelector((state) => state.appointments);
   const { getUserAppointments } = useAppointmentCall();
+  const { userStatuses } = useSelector((state) => state.chats);
+
+  console.log(userStatuses);
 
   useEffect(() => {
     getUserAppointments(currentUser?._id);

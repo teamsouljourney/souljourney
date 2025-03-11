@@ -10,9 +10,6 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
   const { chats, selectedUser } = useSelector((state) => state.chats);
   const dispatch = useDispatch();
 
-  console.log(chats);
-  console.log(currentUserAppointments);
-
   let agenda = [];
 
   useEffect(() => {
@@ -65,24 +62,21 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
         filteredAppointments.map((therapist) => therapist.therapistId)
       );
 
-  console.log("ajanda", filteredAppointments);
-
   const handleUserClick = (user) => {
     const userId = user._id;
     dispatch(setSelectedUser(userId));
   };
-  console.log(selectedUser);
-  console.log("leftChats", chats);
+
   return (
     <div
       className={`${
         isOpen ? "translate-x-0" : "-translate-x-full"
-      } fixed inset-y-0 left-0 z-30 w-80  border-r transition-transform duration-300 ease-in-out md:translate-x-0 md:static`}
+      } fixed inset-y-0 left-0 z-30 w-80  border-r transition-transform duration-300 ease-in-out md:translate-x-0 md:static text-navy dark:text-offWhite bg-background dark:bg-background-dark`}
     >
       <div className="p-4 border-b">
         <div className="relative">
           <svg
-            className="absolute left-2 top-2.5 h-4 w-4 text-gray-400"
+            className="absolute left-2 top-2.5 h-4 w-4 text-offWhite-dark"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -119,7 +113,7 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
                     className="rounded-full size-6 sm:size-8"
                   />
                 ) : (
-                  <div className="flex items-center justify-center rounded-full size-8">
+                  <div className="flex items-center justify-center rounded-full size-8 bg-navy text-offWhite">
                     <span className="text-sm font-medium">
                       {item?.firstName.charAt(0).toUpperCase() +
                         item?.lastName.charAt(0).toUpperCase()}

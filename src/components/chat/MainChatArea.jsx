@@ -24,6 +24,7 @@ export default function MainChatArea({
   const { createChat, initializeSocket, getAllChats } = useChatCall();
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
+  const [isOnline, setIsOnline] = useState(currentUser?.isOnline);
   const dispatch = useDispatch();
   const messagesContainerRef = useRef(null);
 
@@ -39,6 +40,7 @@ export default function MainChatArea({
       if (socket && !isConnected) {
         console.log("Socket disconnected, attempting to reconnect...");
         socket.connect();
+        setIsOnline(!isOnline);
       }
     }, 5000);
 
@@ -117,10 +119,11 @@ export default function MainChatArea({
       (chat.recieverId === currentUser?._id && chat.senderId === selectedUser)
   );
 
-  // Sort messages by createdAt to ensure they're in chronological order
   const sortedChats = [...currentChatMessages].sort((a, b) => {
     return new Date(a.createdAt || 0) - new Date(b.createdAt || 0);
   });
+
+  console.log(message);
 
   return (
     <div className="flex-1 flex flex-col w-full">
@@ -165,15 +168,8 @@ export default function MainChatArea({
               </div>
               <button className="text-left" onClick={toggleRightSidebar}>
                 <p className="font-medium text-navy dark:text-offWhite">
-                  {selectedUserData[0]?.firstName}{" "}
-                  {selectedUserData[0]?.lastName}
-                </p>
-                <p
-                  className={`text-sm ${
-                    isConnected ? "text-green-500" : "text-gray-500"
-                  }`}
-                >
-                  {isConnected ? "Online" : "Offline"}
+                  {selectedUserData[0]?.firstName.toUpperCase()}{" "}
+                  {selectedUserData[0]?.lastName.toUpperCase()}
                 </p>
               </button>
             </>
@@ -228,7 +224,9 @@ export default function MainChatArea({
                         : "bg-mauve-light/50 rounded-tl-none"
                     }`}
                   >
-                    <p className="overflow-auto break-words">{chat?.content}</p>
+                    <p className="overflow-auto break-words text-navy-light dark:text-offWhite-dark ">
+                      {chat?.content}
+                    </p>
                   </div>
                   <div
                     className={`text-xs dark:text-offWhite-dark text-navy mt-1 ${
@@ -284,7 +282,7 @@ export default function MainChatArea({
         >
           <button
             type="button"
-            className="p-2 hover:bg-offWhite-dark dark:hover:bg-background-lightdark rounded-full"
+            className="p-2 hover:bg-offWhite-dark dark:hover:bg-background-lightdark text-pastelGreen rounded-full"
             onClick={toggleEmojiPicker}
             disabled={isSending}
           >
@@ -308,7 +306,7 @@ export default function MainChatArea({
             placeholder={isSending ? "Sending..." : "Type a message..."}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="flex-1 px-4 py-2  resize-none overflow-hidden bg-inherit dark:bg-background-lightdark rounded-xl focus:outline-none focus:border-seaGreen-light"
+            className="flex-1 px-4 py-2 border-[1px] border-offWhite-dark text-navy dark:text-offWhite  resize-none overflow-hidden bg-inherit dark:bg-background-lightdark rounded-xl focus:outline-none focus:border-seaGreen-light"
             disabled={isSending}
           />
           <button

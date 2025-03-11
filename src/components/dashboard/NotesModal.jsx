@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import useNoteCall from "../../hooks/useNoteCall";
@@ -7,9 +6,8 @@ import { useTranslation } from "react-i18next";
 const NotesModal = ({ open, onClose, userId, currentUser }) => {
   const { t } = useTranslation();
   const { singleUserNotes } = useSelector((state) => state.notes);
-  const { getSingleUserNotes,postUserNotes,deleteNote,putUserNote } = useNoteCall();
-
-  console.log(userId);
+  const { getSingleUserNotes, postUserNotes, deleteNote, putUserNote } =
+    useNoteCall();
 
   const initialNote = {
     userId: userId,
@@ -18,7 +16,6 @@ const NotesModal = ({ open, onClose, userId, currentUser }) => {
 
   const [note, setNote] = useState(initialNote);
 
- 
   useEffect(() => {
     if (open && userId) {
       getSingleUserNotes(userId);
@@ -27,20 +24,19 @@ const NotesModal = ({ open, onClose, userId, currentUser }) => {
 
   const handleChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
-  }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (note._id) {
-      await putUserNote(note._id,note)
+      await putUserNote(note._id, note);
     } else {
-      await postUserNotes(note)
+      await postUserNotes(note);
     }
-   
-    getSingleUserNotes(userId)
-    setNote(initialNote)
-   }
 
+    getSingleUserNotes(userId);
+    setNote(initialNote);
+  };
 
   if (!open) return null;
 
@@ -72,14 +68,20 @@ const NotesModal = ({ open, onClose, userId, currentUser }) => {
               >
                 <p className="text-gray-700 flex-1">{note.content}</p>
                 <div className="flex gap-2 ml-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button onClick={()=>setNote({...note})} className="p-1 hover:bg-gray-200 rounded" >
+                  <button
+                    onClick={() => setNote({ ...note })}
+                    className="p-1 hover:bg-gray-200 rounded"
+                  >
                     <img
                       src="/assets/sidebar/edit.svg"
                       alt="Edit"
                       className="w-4 h-4"
                     />
                   </button>
-                  <button onClick={()=>deleteNote(note._id,userId)} className="p-1 hover:bg-gray-200 rounded">
+                  <button
+                    onClick={() => deleteNote(note._id, userId)}
+                    className="p-1 hover:bg-gray-200 rounded"
+                  >
                     <img
                       src="/assets/sidebar/delete1.svg"
                       alt="Delete"

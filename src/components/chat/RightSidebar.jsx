@@ -6,7 +6,6 @@ export default function RightSidebar({ isOpen, sidebarRef }) {
   const { currentUserAppointments } = useSelector(
     (state) => state.appointments
   );
-  console.log(currentUserAppointments);
 
   const selectedUserData = currentUser?.isTherapist
     ? currentUserAppointments
@@ -21,14 +20,12 @@ export default function RightSidebar({ isOpen, sidebarRef }) {
         )
         .map((user) => user?.therapistId);
 
-  console.log(selectedUserData);
-
   return (
     <div
       ref={sidebarRef}
       className={`${
         isOpen ? "translate-x-0" : "translate-x-full"
-      } fixed inset-y-0 right-0 z-30 w-80 bg-offWhite dark:bg-background-dark border-l transition-transform duration-300 ease-in-out`}
+      } fixed inset-y-0 right-0 z-30 w-80 bg-offWhite dark:bg-background-dark border-l text-navy dark:text-offWhite-dark transition-transform duration-300 ease-in-out`}
     >
       <div className="p-6 text-center border-b">
         <div className="w-28 h-28 rounded-full flex items-center justify-center mx-auto mb-4 object-cover">
@@ -48,7 +45,8 @@ export default function RightSidebar({ isOpen, sidebarRef }) {
           )}
         </div>
         <h3 className="font-semibold text-lg">
-          {selectedUserData[0]?.firstName} {selectedUserData[0]?.lastName}
+          {selectedUserData[0]?.firstName.toUpperCase()}{" "}
+          {selectedUserData[0]?.lastName.toUpperCase()}
         </h3>
         <p className="text-sm">{selectedUserData[0]?.profession}</p>
       </div>
