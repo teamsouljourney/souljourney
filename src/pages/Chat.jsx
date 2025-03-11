@@ -5,6 +5,7 @@ import RightSidebar from "../components/chat/RightSidebar";
 import { useSelector, useDispatch } from "react-redux";
 import useChatCall from "../hooks/useChatCall";
 import useAppointmentCall from "../hooks/useAppointmentCall";
+import useNotificationCall from "../hooks/useNotificationCall";
 
 export default function Chat() {
   const [isLeftSidebarOpen, setIsLeftSidebarOpen] = useState(false);
@@ -16,14 +17,20 @@ export default function Chat() {
     (state) => state.chats
   );
   const { getAllChats, initializeSocket } = useChatCall();
+  const { getNotifications } = useNotificationCall();
   const { currentUser } = useSelector((state) => state.auth);
   const { getUserAppointments } = useAppointmentCall();
   const dispatch = useDispatch();
+
+  // Define user models based on current user type
+  const userModel = currentUser?.isTherapist ? "Therapist" : "User";
+  const chatWithModel = currentUser?.isTherapist ? "User" : "Therapist";
 
   // Fetch user appointments when component mounts
   useEffect(() => {
     if (currentUser?._id) {
       getUserAppointments(currentUser._id);
+      getNotifications(selectedUser, chatWithModel, currentUser._id, userModel);
     }
   }, [currentUser]);
 
@@ -33,10 +40,6 @@ export default function Chat() {
       initializeSocket();
     }
   }, [currentUser, socket]);
-
-  // Define user models based on current user type
-  const userModel = currentUser?.isTherapist ? "Therapist" : "User";
-  const chatWithModel = currentUser?.isTherapist ? "User" : "Therapist";
 
   useEffect(() => {
     // let interval;

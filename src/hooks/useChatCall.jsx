@@ -105,6 +105,7 @@ const useChatCall = () => {
     dispatch,
     socket,
     configureSocketEvents,
+    SOCKET_URL,
   ]);
 
   useEffect(() => {
