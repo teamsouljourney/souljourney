@@ -4,8 +4,11 @@ import { HiOutlineHeart, HiHeart, HiArrowLeft } from "react-icons/hi";
 import useBlogCall from "../../hooks/useBlogCall";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleBlogSuccess } from "../../features/blogSlice";
+import { useTranslation } from 'react-i18next';
+
 
 const BlogDetail = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -103,7 +106,7 @@ const BlogDetail = () => {
             className="flex items-center gap-2 px-6 py-2 text-white transition-all rounded bg-navy hover:bg-navy-light"
           >
             <HiArrowLeft className="w-4 h-4" />
-            Go Back
+            {t("blg_goback")}
           </button>
         </div>
       </div>
