@@ -1,13 +1,19 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import useAppointmentCall from "../../hooks/useAppointmentCall";
+import useVideoCall from "../../hooks/useVideoCall";
 import { useEffect, useState } from "react";
-import { FaCalendarAlt, FaClock, FaVideo, FaUser } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaClock,
+  FaVideo,
+  FaUser,
+  FaPhone,
+} from "react-icons/fa";
 import {
   formatDistanceToNow,
   format,
   isAfter,
-  differenceInMinutes,
-  isSameMinute,
+  isBefore,
   isAfter as isDateAfter,
 } from "date-fns";
 
@@ -16,11 +22,12 @@ const AppointmentInfo = () => {
   const { currentUserAppointments } = useSelector(
     (state) => state.appointments
   );
+  const { callStatus } = useSelector((state) => state.video);
   const { getUserAppointments } = useAppointmentCall();
+  const { initiateCall, acceptCall } = useVideoCall();
   const [timeRemaining, setTimeRemaining] = useState("");
   const [nearestAppointment, setNearestAppointment] = useState(null);
-  const [isWithinFiveMinutes, setIsWithinFiveMinutes] = useState(false);
-  const [isAppointmentStarted, setIsAppointmentStarted] = useState(false);
+  const [isWithinAppointmentTime, setIsWithinAppointmentTime] = useState(false);
   const isTherapist = currentUser?.isTherapist === true;
 
   useEffect(() => {
@@ -31,103 +38,80 @@ const AppointmentInfo = () => {
 
   useEffect(() => {
     if (currentUserAppointments?.length > 0) {
-      // Find the nearest upcoming appointment
+      // Find the nearest upcoming or current appointment
       const now = new Date();
-      const upcomingAppointments = currentUserAppointments.filter(
-        (appointment) => isAfter(new Date(appointment.startTime), now)
+      const currentOrUpcomingAppointments = currentUserAppointments.filter(
+        (appointment) => isAfter(new Date(appointment.endTime), now)
       );
 
       // Sort by date (nearest first)
-      upcomingAppointments.sort(
+      currentOrUpcomingAppointments.sort(
         (a, b) => new Date(a.startTime) - new Date(b.startTime)
       );
 
-      const nearest = upcomingAppointments[0];
+      const nearest = currentOrUpcomingAppointments[0];
       setNearestAppointment(nearest);
 
-      // Check if appointment is within five minutes
       if (nearest) {
-        const appointmentTime = new Date(nearest.startTime);
-        const minutesUntilAppointment = differenceInMinutes(
-          appointmentTime,
-          now
-        );
-        setIsWithinFiveMinutes(minutesUntilAppointment <= 5);
+        const startTime = new Date(nearest.startTime);
+        const endTime = new Date(nearest.endTime);
 
-        // Check if appointment has started
-        setIsAppointmentStarted(
-          isDateAfter(now, appointmentTime) ||
-            isSameMinute(now, appointmentTime)
-        );
+        // Check if current time is within appointment time
+        const isWithinTime = isAfter(now, startTime) && isBefore(now, endTime);
+        setIsWithinAppointmentTime(isWithinTime);
 
-        // If not within five minutes, set a generic message
-        if (minutesUntilAppointment > 5) {
+        // Set time remaining
+        if (isBefore(now, startTime)) {
+          setTimeRemaining(formatDistanceToNow(startTime, { addSuffix: true }));
+        } else if (isWithinTime) {
           setTimeRemaining(
-            formatDistanceToNow(appointmentTime, { addSuffix: true })
+            `Ends ${formatDistanceToNow(endTime, { addSuffix: true })}`
           );
+        } else {
+          setTimeRemaining("Appointment ended");
         }
       }
     }
   }, [currentUserAppointments]);
 
-  // Check every minute if we've reached the five-minute threshold or if appointment has started
+  // Update time remaining every minute
   useEffect(() => {
     if (!nearestAppointment) return;
 
-    const checkInterval = setInterval(() => {
-      const appointmentTime = new Date(nearestAppointment.startTime);
-      const now = new Date();
-      const minutesUntilAppointment = differenceInMinutes(appointmentTime, now);
-
-      // Update appointment started status
-      const hasStarted =
-        isDateAfter(now, appointmentTime) || isSameMinute(now, appointmentTime);
-      setIsAppointmentStarted(hasStarted);
-
-      if (minutesUntilAppointment <= 5 && !isWithinFiveMinutes) {
-        setIsWithinFiveMinutes(true);
-      } else if (!isWithinFiveMinutes) {
-        // Update the general time remaining message
-        setTimeRemaining(
-          formatDistanceToNow(appointmentTime, { addSuffix: true })
-        );
-      }
-    }, 60000); // Check every minute
-
-    return () => clearInterval(checkInterval);
-  }, [nearestAppointment, isWithinFiveMinutes]);
-
-  // Only start the countdown when within five minutes
-  useEffect(() => {
-    if (!nearestAppointment || !isWithinFiveMinutes) return;
-
     const timer = setInterval(() => {
-      const appointmentTime = new Date(nearestAppointment.startTime);
       const now = new Date();
+      const startTime = new Date(nearestAppointment.startTime);
+      const endTime = new Date(nearestAppointment.endTime);
 
-      // Calculate time difference
-      const diff = appointmentTime.getTime() - now.getTime();
+      const isWithinTime = isAfter(now, startTime) && isBefore(now, endTime);
+      setIsWithinAppointmentTime(isWithinTime);
 
-      // Update appointment started status
-      const hasStarted =
-        isDateAfter(now, appointmentTime) || isSameMinute(now, appointmentTime);
-      setIsAppointmentStarted(hasStarted);
-
-      if (diff <= 0) {
-        setTimeRemaining("Appointment is now!");
+      if (isBefore(now, startTime)) {
+        setTimeRemaining(formatDistanceToNow(startTime, { addSuffix: true }));
+      } else if (isWithinTime) {
+        setTimeRemaining(
+          `Ends ${formatDistanceToNow(endTime, { addSuffix: true })}`
+        );
+      } else {
+        setTimeRemaining("Appointment ended");
         clearInterval(timer);
-        return;
       }
-
-      // Calculate minutes and seconds when within five minutes
-      const minutes = Math.floor(diff / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      setTimeRemaining(`${minutes}m ${seconds}s`);
-    }, 1000);
+    }, 60000); // Update every minute
 
     return () => clearInterval(timer);
-  }, [nearestAppointment, isWithinFiveMinutes]);
+  }, [nearestAppointment]);
+
+  const handleInitiateCall = () => {
+    if (nearestAppointment && isTherapist && isWithinAppointmentTime) {
+      initiateCall(nearestAppointment._id, nearestAppointment.userId._id);
+    }
+  };
+
+  const handleAcceptCall = () => {
+    if (nearestAppointment && !isTherapist && isWithinAppointmentTime) {
+      acceptCall(nearestAppointment._id);
+    }
+  };
 
   if (!nearestAppointment) {
     return (
@@ -137,7 +121,7 @@ const AppointmentInfo = () => {
             No Upcoming Appointments
           </h2>
           <p className="text-sm text-gray-500">
-            You don't have any upcoming appointments scheduled.
+            You dont have any upcoming appointments scheduled.
           </p>
         </div>
       </div>
@@ -195,38 +179,65 @@ const AppointmentInfo = () => {
 
           <div
             className={`px-2 py-1 rounded-full text-xs font-medium ${
-              isAppointmentStarted
+              isWithinAppointmentTime
                 ? "bg-green-100 text-green-600"
-                : isWithinFiveMinutes
-                ? "bg-red-100 text-red-600"
                 : "bg-gray-100 text-gray-600"
             }`}
           >
-            {isAppointmentStarted ? "In Progress" : timeRemaining}
+            {timeRemaining}
           </div>
         </div>
 
-        {nearestAppointment.videoCallUrl && isAppointmentStarted ? (
-          <button
-            onClick={() =>
-              window.open(nearestAppointment.videoCallUrl, "_blank")
-            }
-            className="flex items-center justify-center w-full px-4 py-2 mt-3 text-white transition-colors bg-blue-600 rounded-md hover:bg-blue-700"
-          >
-            <FaVideo className="w-4 h-4 mr-2" />
-            Join Video Call
-          </button>
-        ) : (
-          <button
-            disabled
-            className="flex items-center justify-center w-full px-4 py-2 mt-3 text-gray-500 bg-gray-100 rounded-md cursor-not-allowed"
-          >
-            <FaVideo className="w-4 h-4 mr-2" />
-            {nearestAppointment.videoCallUrl
-              ? "Video Call Available at Start Time"
-              : "Video Call Not Available Yet"}
-          </button>
-        )}
+        {/* Call status and action buttons */}
+        <div className="mt-4">
+          {callStatus === "idle" &&
+            isWithinAppointmentTime &&
+            (isTherapist ? (
+              <button
+                onClick={handleInitiateCall}
+                className="flex items-center justify-center w-full px-4 py-2 text-white transition-colors bg-blue-600 rounded-md hover:bg-blue-700"
+              >
+                <FaPhone className="w-4 h-4 mr-2" />
+                Start Call
+              </button>
+            ) : (
+              <div className="text-center text-gray-600">
+                Waiting for therapist to start the call...
+              </div>
+            ))}
+
+          {callStatus === "incoming" &&
+            !isTherapist &&
+            isWithinAppointmentTime && (
+              <button
+                onClick={handleAcceptCall}
+                className="flex items-center justify-center w-full px-4 py-2 text-white transition-colors bg-green-600 rounded-md hover:bg-green-700"
+              >
+                <FaPhone className="w-4 h-4 mr-2" />
+                Accept Call
+              </button>
+            )}
+
+          {callStatus === "outgoing" && isTherapist && (
+            <div className="text-center text-blue-600">Calling patient...</div>
+          )}
+
+          {callStatus === "connected" && (
+            <div className="text-center text-green-600">Call in progress</div>
+          )}
+
+          {!isWithinAppointmentTime && (
+            <button
+              disabled
+              className="flex items-center justify-center w-full px-4 py-2 mt-3 text-gray-500 bg-gray-100 rounded-md cursor-not-allowed"
+            >
+              <FaVideo className="w-4 h-4 mr-2" />
+              {new Date() < startTime
+                ? "Video Call Available at Start Time"
+                : "Appointment Ended"}
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
