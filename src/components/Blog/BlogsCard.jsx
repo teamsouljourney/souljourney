@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const BlogsCard = ({ blog, index }) => {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
   const isEven = index % 2 === 0;
+  
 
   return (
     <div
@@ -27,7 +31,7 @@ const BlogsCard = ({ blog, index }) => {
             onClick={() => navigate(`/blogs/${blog._id}`)}
             className="px-4 py-2 text-white transition-all rounded bg-navy hover:bg-navy-light"
           >
-            Read More
+            {t("readMore")}
           </button>
         </div>
       </div>
