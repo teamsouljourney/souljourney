@@ -97,7 +97,7 @@ export default function Navbar() {
             </DisclosureButton>
           </div>
           <div className="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
-            <SoulJourneyLogo/>
+            <SoulJourneyLogo />
             <div className="self-center hidden sm:ml-2 sm:block">
               <div className="flex items-center space-x-6 sm:space-x-1">
                 {navigation.map((item) => (

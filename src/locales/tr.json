@@ -3,7 +3,7 @@
   "home": "Ana Sayfa",
   "services": "Hizmetler",
   "pricing": "Fiyatlandırma",
-  "team": "Ekip",
+  "team": "Psikologlar",
   "contact": "İletişim",
   "about": "Hakkımızda",
   "language": "Dil",
@@ -139,54 +139,53 @@
   "PROFILE": "PROFIL",
 
   "SERVICES": "HIZMETLER",
-  
-    "srvServicesHeroTitle": "Hizmetlerimiz",
-    "srvServicesHeroDescription": "Psikolojik danışmanlık merkezimizde, bireylerin duygusal ve zihinsel iyilik hallerini geliştirmelerine yardımcı olacak kapsamlı hizmetler sunuyoruz. Deneyimli uzmanlardan oluşan ekibimiz, her danışanın kendine özgü zorluklarını anlamak ve kişiye özel çözümler sunmak için yakından çalışır. İster stres, kaygı, ilişki sorunlarıyla başa çıkıyor olun, ister sadece kişisel gelişiminizi artırmak istiyor olun, sürecin her adımında size rehberlik etmek için buradayız. Duygularınızı açıkça keşfedebileceğiniz ve daha sağlıklı başa çıkma stratejileri geliştirebileceğiniz güvenli, destekleyici ve yargısız bir ortam yaratmaya kararlıyız. Her hizmet kategorisi, özel ihtiyaçlarınızı ve hedeflerinizi karşılayacak şekilde dikkatlice uyarlanmıştır ve mümkün olan en etkili desteği almanızı sağlar. Dengeli ve tatmin edici bir yaşama yolculuğunuz, şefkatli ve uzman rehberliğin yardımıyla burada başlar.",
-    "srvEmpoweringMindsEnhancingLives": "Zihinleri Güçlendirmek, Yaşamları İyileştirmek",
+
+  "srvServicesHeroTitle": "Hizmetlerimiz",
+  "srvServicesHeroDescription": "Psikolojik danışmanlık merkezimizde, bireylerin duygusal ve zihinsel iyilik hallerini geliştirmelerine yardımcı olacak kapsamlı hizmetler sunuyoruz. Deneyimli uzmanlardan oluşan ekibimiz, her danışanın kendine özgü zorluklarını anlamak ve kişiye özel çözümler sunmak için yakından çalışır. İster stres, kaygı, ilişki sorunlarıyla başa çıkıyor olun, ister sadece kişisel gelişiminizi artırmak istiyor olun, sürecin her adımında size rehberlik etmek için buradayız. Duygularınızı açıkça keşfedebileceğiniz ve daha sağlıklı başa çıkma stratejileri geliştirebileceğiniz güvenli, destekleyici ve yargısız bir ortam yaratmaya kararlıyız. Her hizmet kategorisi, özel ihtiyaçlarınızı ve hedeflerinizi karşılayacak şekilde dikkatlice uyarlanmıştır ve mümkün olan en etkili desteği almanızı sağlar. Dengeli ve tatmin edici bir yaşama yolculuğunuz, şefkatli ve uzman rehberliğin yardımıyla burada başlar.",
+  "srvEmpoweringMindsEnhancingLives": "Zihinleri Güçlendirmek, Yaşamları İyileştirmek",
   "srvEmbarkOnYourSoulsJourney": "Ruhunuzun Yolculuğuna Çıkın - İyileşme Her Zaman, Her Yerde Başlar...",
-    "srvHealthPsychologyTitle": "Sağlık Psikolojisi",
-    "srvHealthPsychologyText": "Sağlık psikolojisi, daha sağlıklı alışkanlıkların ve öz farkındalığın geliştirilmesi yoluyla zihinsel ve fiziksel iyilik halini desteklemeye odaklanır. Seanslarımız, stresi, kaygıyı ve diğer zihinsel sağlık sorunlarını yönetmek için gereken bilgi ve araçları sağlar. Genel sağlığı destekleyen ve sağlığınızla ilgili bilinçli kararlar vermenize yardımcı olan bilgilerle sizi güçlendirmeyi amaçlıyoruz.",
-    "srvHealthPsychologyList": [
-      "Stres yönetimi teknikleri",
-      "Duygusal dayanıklılık oluşturma",
-      "Zihinsel sağlık için yaşam tarzı ayarlamaları",
-      "Dengeli bir yaşamı sürdürme stratejileri"
-    ],
-    "srvEducationalPsychologyTitle": "Eğitim Psikolojisi",
-    "srvEducationalPsychologyText": "Eğitim psikolojisi, bireylerin eğitim ortamlarında nasıl öğrendiğini ve geliştiğini anlamaya odaklanır. Bu alandaki hizmetlerimiz, öğrenme, motivasyon ve akademik performansla ilgili zorlukların üstesinden gelerek öğrencileri, öğretmenleri ve ebeveynleri desteklemeyi amaçlamaktadır. İster okul ödevleriyle mücadele eden bir öğrenci, ister etkili öğretim stratejileri arayan bir öğretmen, ister çocuğunuzun eğitim ihtiyaçlarını destekleme konusunda rehberliğe ihtiyaç duyan bir ebeveyn olun, size yardım etmek için buradayız.",
-    "srvEducationalPsychologyList": [
-      "Öğrenme güçlükleri değerlendirmesi (örn. DEHB, disleksi)",
-      "Akademik performans iyileştirme",
-      "Motivasyon ve katılım stratejileri",
-      "Özel eğitim ihtiyacı olan öğrencilere destek",
-      "Eğitim gelişimini desteklemek için ebeveynlik ipuçları"
-    ],
-    "srvNeuropsychologyTitle": "Nöropsikoloji",
-    "srvNeuropsychologyText": "Tutkulu terapistlerimiz, her seansta anlamlı değişim ve kişisel gelişim elde etmenize yardımcı olmaya kendini adamıştır. Nöropsikoloji, beynin ve davranışın ilişkisine odaklanarak, bireylerin nörolojik durumların veya bilişsel bozuklukların günlük yaşamlarını nasıl etkileyebileceğini anlamalarına yardımcı olur. Nöropsikolojik hizmetlerimiz, bilişsel zorluklar, hafıza sorunları ve diğer beyinle ilgili sorunlar yaşayan bireyler için değerlendirmeler, danışmanlık ve destek içerir.",
-    "srvNeuropsychologyList": [
-      "Bilişsel değerlendirmeler",
-      "Beyin hasarlarını veya nörolojik bozuklukları yönetme",
-      "Hafıza geliştirme teknikleri",
-      "Nörolojik durumlarla ilgili zihinsel sağlık sorunlarını ele alma"
-    ],
-    "srvMarriageAndFamilyTherapyTitle": "Evlilik ve Aile Terapisi",
-    "srvMarriageAndFamilyTherapyText": "Evlilik danışmanlığı, çiftlerin iletişimi iyileştirmesine, çatışmaları çözmesine ve ilişkilerini güçlendirmesine yardımcı olmak için tasarlanmıştır. İlişkinizde zorluklarla karşılaşıyor veya sadece ortaklığınızı geliştirmek istiyorsanız, danışmanlarımız bu süreçte sizi desteklemek için buradadır. Her iki partnerin de endişelerini ifade edebileceği ve daha sağlıklı, daha tatmin edici bir evliliğe doğru birlikte çalışabileceği güvenli bir alan sağlıyoruz.",
-    "srvMarriageAndFamilyTherapyList": [
-      "Etkili iletişim becerileri",
-      "Çatışma çözme stratejileri",
-      "Güven ve yakınlık kurma",
-      "Büyük yaşam değişikliklerinde birlikte yol alma"
-    ],
-    "srvOnlineTherapyServicesTitle": "Online Terapi Hizmetleri",
-    "srvOnlineTherapyServicesText": "Çevrimiçi terapi hizmetlerimizle profesyonel terapiye erişmek hiç bu kadar kolay olmamıştı. İster evde, ister işte, ister başka bir yerde olun, kendi alanınızın rahatlığında gizli, etkili danışmanlık alabilirsiniz. Lisanslı terapistlerimiz, zorlukların üstesinden gelmek, stresi yönetmek ve nerede olursanız olun zihinsel sağlığınızı iyileştirmek için ihtiyacınız olan desteği sağlamak için buradadır.",
-    "srvOnlineTherapyServicesList": [
-      "Video, sohbet veya telefon yoluyla uygun ve gizli oturumlar",
-      "Yaşam tarzınıza uyacak esnek planlama",
-      "İnternet bağlantısı olan her yerden erişilebilir",
-      "Açıkça konuşmak ve iyileşmek için güvenli, destekleyici bir ortam"
-    ],
-  
-  
+  "srvHealthPsychologyTitle": "Sağlık Psikolojisi",
+  "srvHealthPsychologyText": "Sağlık psikolojisi, daha sağlıklı alışkanlıkların ve öz farkındalığın geliştirilmesi yoluyla zihinsel ve fiziksel iyilik halini desteklemeye odaklanır. Seanslarımız, stresi, kaygıyı ve diğer zihinsel sağlık sorunlarını yönetmek için gereken bilgi ve araçları sağlar. Genel sağlığı destekleyen ve sağlığınızla ilgili bilinçli kararlar vermenize yardımcı olan bilgilerle sizi güçlendirmeyi amaçlıyoruz.",
+  "srvHealthPsychologyList": [
+    "Stres yönetimi teknikleri",
+    "Duygusal dayanıklılık oluşturma",
+    "Zihinsel sağlık için yaşam tarzı ayarlamaları",
+    "Dengeli bir yaşamı sürdürme stratejileri"
+  ],
+  "srvEducationalPsychologyTitle": "Eğitim Psikolojisi",
+  "srvEducationalPsychologyText": "Eğitim psikolojisi, bireylerin eğitim ortamlarında nasıl öğrendiğini ve geliştiğini anlamaya odaklanır. Bu alandaki hizmetlerimiz, öğrenme, motivasyon ve akademik performansla ilgili zorlukların üstesinden gelerek öğrencileri, öğretmenleri ve ebeveynleri desteklemeyi amaçlamaktadır. İster okul ödevleriyle mücadele eden bir öğrenci, ister etkili öğretim stratejileri arayan bir öğretmen, ister çocuğunuzun eğitim ihtiyaçlarını destekleme konusunda rehberliğe ihtiyaç duyan bir ebeveyn olun, size yardım etmek için buradayız.",
+  "srvEducationalPsychologyList": [
+    "Öğrenme güçlükleri değerlendirmesi (örn. DEHB, disleksi)",
+    "Akademik performans iyileştirme",
+    "Motivasyon ve katılım stratejileri",
+    "Özel eğitim ihtiyacı olan öğrencilere destek",
+    "Eğitim gelişimini desteklemek için ebeveynlik ipuçları"
+  ],
+  "srvNeuropsychologyTitle": "Nöropsikoloji",
+  "srvNeuropsychologyText": "Tutkulu terapistlerimiz, her seansta anlamlı değişim ve kişisel gelişim elde etmenize yardımcı olmaya kendini adamıştır. Nöropsikoloji, beynin ve davranışın ilişkisine odaklanarak, bireylerin nörolojik durumların veya bilişsel bozuklukların günlük yaşamlarını nasıl etkileyebileceğini anlamalarına yardımcı olur. Nöropsikolojik hizmetlerimiz, bilişsel zorluklar, hafıza sorunları ve diğer beyinle ilgili sorunlar yaşayan bireyler için değerlendirmeler, danışmanlık ve destek içerir.",
+  "srvNeuropsychologyList": [
+    "Bilişsel değerlendirmeler",
+    "Beyin hasarlarını veya nörolojik bozuklukları yönetme",
+    "Hafıza geliştirme teknikleri",
+    "Nörolojik durumlarla ilgili zihinsel sağlık sorunlarını ele alma"
+  ],
+  "srvMarriageAndFamilyTherapyTitle": "Evlilik ve Aile Terapisi",
+  "srvMarriageAndFamilyTherapyText": "Evlilik danışmanlığı, çiftlerin iletişimi iyileştirmesine, çatışmaları çözmesine ve ilişkilerini güçlendirmesine yardımcı olmak için tasarlanmıştır. İlişkinizde zorluklarla karşılaşıyor veya sadece ortaklığınızı geliştirmek istiyorsanız, danışmanlarımız bu süreçte sizi desteklemek için buradadır. Her iki partnerin de endişelerini ifade edebileceği ve daha sağlıklı, daha tatmin edici bir evliliğe doğru birlikte çalışabileceği güvenli bir alan sağlıyoruz.",
+  "srvMarriageAndFamilyTherapyList": [
+    "Etkili iletişim becerileri",
+    "Çatışma çözme stratejileri",
+    "Güven ve yakınlık kurma",
+    "Büyük yaşam değişikliklerinde birlikte yol alma"
+  ],
+  "srvOnlineTherapyServicesTitle": "Online Terapi Hizmetleri",
+  "srvOnlineTherapyServicesText": "Çevrimiçi terapi hizmetlerimizle profesyonel terapiye erişmek hiç bu kadar kolay olmamıştı. İster evde, ister işte, ister başka bir yerde olun, kendi alanınızın rahatlığında gizli, etkili danışmanlık alabilirsiniz. Lisanslı terapistlerimiz, zorlukların üstesinden gelmek, stresi yönetmek ve nerede olursanız olun zihinsel sağlığınızı iyileştirmek için ihtiyacınız olan desteği sağlamak için buradadır.",
+  "srvOnlineTherapyServicesList": [
+    "Video, sohbet veya telefon yoluyla uygun ve gizli oturumlar",
+    "Yaşam tarzınıza uyacak esnek planlama",
+    "İnternet bağlantısı olan her yerden erişilebilir",
+    "Açıkça konuşmak ve iyileşmek için güvenli, destekleyici bir ortam"
+  ],
+
   "PRICING": "FİYATLANDIRMA",
   "paymentDetails": "Ödeme Detayları",
   "paymentDetailsText": "Soul Journey olarak, benzersiz ihtiyaçlarınıza ve bütçenize uyacak esnek fiyatlandırma seçenekleri sunuyoruz. Misyonumuz, mükemmel, kişiselleştirilmiş danışmanlık hizmetleri sağlayarak, bireysel yolculuğunuza özel çözümler sunmaktır. Aşağıdaki üç planımızdan birini seçerek daha dengeli ve tatmin edici bir hayata doğru ilk adımı atın.",
@@ -224,36 +223,36 @@
   "BLOGS": "BLOGLAR",
 
   "ABOUT": "HAKKIMIZDA",
-  
-    "AboutHeroSection": {
-      "abt_us":"Hakkımızda",
-      "abt_welcome": "Platformumuza hoş geldiniz! Amacımız, sizi yetenekli ve anlayışlı terapistlerle buluşturarak erişilebilir online terapi seansları sunmaktır. Misyonumuz, zihinsel sağlığınızı ön planda tutan güvenli ve destekleyici bir alan oluşturmaktır. Yardım aramanın zor olabileceğini biliyoruz, bu yüzden sizi yaşamın zorluklarında desteklemek için profesyonel ve yargılayıcı olmayan bir ortam sağlamaya buradayız. İster stres, kaygı veya kişisel zorluklarla mücadele ediyor olun, ihtiyacınız olan rehberliği bulmanıza yardımcı olmaya kararlıyız. Platformumuz esneklik sunarak, nerede olursanız olun ruh sağlığı hizmetlerinin hem pratik hem de etkili olmasını sağlar. Terapinin herkes için erişilebilir olmasını sağlamak ve iyi olma yolculuğunuzda büyüme ve dayanıklılığı teşvik etmek için buradayız.",
-      "abt_mission": "Misyonumuz, ruh sağlığınızı ön planda tutan güvenli ve destekleyici bir alan yaratmaktır.",
-      "abt_seeking_help": "Yardım aramanın zorlu olabileceğini anlıyoruz, bu nedenle hayatın zorluklarında sizi desteklemek için profesyonel ve yargısız bir ortam sağlamak için buradayız.",
-      "abt_managing": "İster stres, ister kaygı veya kişisel zorluklarla başa çıkıyor olun, ihtiyacınız olan rehberliği bulmanıza yardımcı olmaya kararlıyız.",
-      "abt_platform_offers": "Platformumuz, nerede olursanız olun, ruh sağlığı hizmetinin hem kullanışlı hem de etkili olmasını sağlayan esneklik sunar.",
-      "abt_dedicated": "Terapiyi herkes için erişilebilir kılmaya, iyiliğe doğru yolculuğunuzda büyümeyi ve dayanıklılığı teşvik etmeye kendimizi adadık."
-    },
-    "AboutRow": {
-      "abt_discover": "Platformumuzun ruh sağlığınız için neden doğru seçim olduğunu keşfedin."
-    },
-    "AboutRowContent": {
-      "abt_personalized_therapy_sessions_title": "Kişiselleştirilmiş Terapi Seansları",
-      "abt_personalized_therapy_sessions_text": "Seanslarımız, kendi hızınızda ilerlemenize yardımcı olarak benzersiz ihtiyaçlarınıza göre uyarlanmıştır. İster acil zorlukları ele alıyor, ister uzun vadeli hedefler üzerinde çalışıyor olun, yolun her adımında sizi desteklemek için buradayız.",
-      "abt_expert_curated_guidance_title": "Uzman Tarafından Hazırlanmış Rehberlik",
-      "abt_expert_curated_guidance_text": "Lisanslı terapistlerimiz, her seansa güvenilir uzmanlık getirerek yüksek kaliteli bakım almanızı sağlar. Refahınıza odaklanarak, kanıta dayalı uygulamaları kişiselleştirilmiş içgörülerle birleştiriyoruz.",
-      "abt_empowering_tools_for_growth_title": "Büyüme İçin Güçlendirici Araçlar",
-      "abt_empowering_tools_for_growth_text": "Hem müşterileri hem de terapistleri güçlendiren kaynaklar ve destek sağlıyoruz. İlerlemeyi izleme, ihtiyaçları belirleme ve ulaşılabilir hedefler belirleme araçlarıyla anlamlı ve ölçülebilir bir büyüme deneyimleyeceksiniz."
-    },
-    "AboutDetail": {
-      "abt_building_confidence_title": "Güven İnşa Etme ve Ruh Sağlığını Geliştirme",
-      "abt_building_confidence_text": "Uzman terapistlerimiz, hayatın zorluklarında güven ve dayanıklılıkla yol almanıza yardımcı olmak için buradadır. Ruh sağlığınızın geliştiği destekleyici bir ortam sağlıyoruz. Çeşitli terapötik teknikler aracılığıyla, hayattaki engellerin üstesinden gelmek için ihtiyaç duyduğunuz araçları geliştirmenizi sağlıyoruz. Kişiselleştirilmiş yaklaşımımız büyümeyi ve istikrarı teşvik ederek, refahınızın sorumluluğunu almanızı sağlar. İster stresi yönetiyor, ister travmanın üstesinden geliyor, ister sadece dengeyi buluyor olun, yolun her adımında size yardımcı olmak için buradayız. Birlikte, size yıllarca hizmet edecek daha sağlıklı bir zihniyet geliştirebiliriz. Zihinsel netliğe ve duygusal huzura yolculuk tek bir adımla başlar. Bu süreçte size güvenli ve anlayışlı bir ortamda rehberlik etmemize izin verin. Ruh sağlığı yolculuğunuzda nerede olursanız olun, yanınızda yürümeye kararlıyız. Şefkat ve uzmanlıkla, en iyi halinize gelmenize yardımcı olmak için buradayız.",
-      "abt_personalized_support_title": "Her Yolculuk İçin Kişiselleştirilmiş Destek",
-      "abt_personalized_support_text": "Her seans, kişisel ve profesyonel yaşamınızda gelişmeniz için doğru rehberliği ve kaynakları almanızı sağlayarak özel ihtiyaçlarınıza göre uyarlanmıştır. Hiçbir yolculuğun aynı olmadığını anlıyoruz ve bu nedenle yaklaşımımız son derece kişiselleştirilmiştir. Bire bir seanslardan grup desteğine kadar, sizi bulunduğunuz yerde karşılamak için tasarlanmış bir dizi seçenek sunuyoruz. Birlikte, karşılaştığınız zorlukları keşfedecek, güçlü yönlerinizi belirleyecek ve kendinizi güçlendirici ve ulaşılabilir hissettiren bir yol haritası oluşturacağız. İster ilişki sorunları, kariyer geçişleri veya kişisel gelişim hedefleri üzerinde çalışıyor olun, değişimi kolaylaştırmak için güvenli ve destekleyici bir ortam sağlıyoruz. Terapistlerimiz, öğrendiğiniz stratejilerin hem etkili hem de sürdürülebilir olmasını sağlamak için kanıta dayalı uygulamalar kullanır. Hızınıza saygı duyan bir şekilde sizinle çalışarak, hayatın engellerinde güvenle yol almanıza yardımcı olacağız. Bu sizin yolculuğunuz ve biz yolun her adımında sizinle birlikteyiz.",
-      "abt_proven_strategies_title": "Büyüme ve İstikrar İçin Kanıtlanmış Stratejiler",
-      "abt_proven_strategies_text": "Dengeli ve tatmin edici bir yaşam için büyümeyi ve istikrarı teşvik ederek, refahınızı desteklemek için kanıta dayalı teknikler kullanıyoruz. Terapistlerimiz, mümkün olan en iyi bakımı almanızı sağlayarak ruh sağlığı ve kişisel gelişimdeki en son uygulamalar konusunda eğitimlidir. Farkındalık, bilişsel davranışçı terapi (BDT) ve çözüm odaklı yaklaşımların bir kombinasyonu yoluyla, netlik ve duygusal dengeye ulaşmanıza yardımcı oluyoruz. Bu stratejileri günlük yaşamınıza entegre ederek, hayatın zorluklarıyla esneklik ve zarafetle yüzleşmek için gereken becerileri geliştirmenizi sağlıyoruz. İster kaygı, ister depresyon veya yaşam geçişleriyle uğraşıyor olun, gelişmenize yardımcı olacak araçlar ve içgörüler sağlıyoruz. Ayrıca, seanslar sona erdikten uzun süre sonra ilerlemenizin devam etmesini sağlamak için devam eden destek ve kontroller sunuyoruz. Öğrettiğimiz stratejiler sadece acil sorunları ele almak için değil, uzun vadeli istikrar ve büyüme yaratmak için tasarlanmıştır. Birlikte, tüm potansiyelinizi ortaya çıkaracak ve sizi amaç ve huzur dolu bir yaşam sürmeniz için güçlendireceğiz."
-    },
-  
+
+  "AboutHeroSection": {
+    "abt_us": "Hakkımızda",
+    "abt_welcome": "Platformumuza hoş geldiniz! Amacımız, sizi yetenekli ve anlayışlı terapistlerle buluşturarak erişilebilir online terapi seansları sunmaktır. Misyonumuz, zihinsel sağlığınızı ön planda tutan güvenli ve destekleyici bir alan oluşturmaktır. Yardım aramanın zor olabileceğini biliyoruz, bu yüzden sizi yaşamın zorluklarında desteklemek için profesyonel ve yargılayıcı olmayan bir ortam sağlamaya buradayız. İster stres, kaygı veya kişisel zorluklarla mücadele ediyor olun, ihtiyacınız olan rehberliği bulmanıza yardımcı olmaya kararlıyız. Platformumuz esneklik sunarak, nerede olursanız olun ruh sağlığı hizmetlerinin hem pratik hem de etkili olmasını sağlar. Terapinin herkes için erişilebilir olmasını sağlamak ve iyi olma yolculuğunuzda büyüme ve dayanıklılığı teşvik etmek için buradayız.",
+    "abt_mission": "Misyonumuz, ruh sağlığınızı ön planda tutan güvenli ve destekleyici bir alan yaratmaktır.",
+    "abt_seeking_help": "Yardım aramanın zorlu olabileceğini anlıyoruz, bu nedenle hayatın zorluklarında sizi desteklemek için profesyonel ve yargısız bir ortam sağlamak için buradayız.",
+    "abt_managing": "İster stres, ister kaygı veya kişisel zorluklarla başa çıkıyor olun, ihtiyacınız olan rehberliği bulmanıza yardımcı olmaya kararlıyız.",
+    "abt_platform_offers": "Platformumuz, nerede olursanız olun, ruh sağlığı hizmetinin hem kullanışlı hem de etkili olmasını sağlayan esneklik sunar.",
+    "abt_dedicated": "Terapiyi herkes için erişilebilir kılmaya, iyiliğe doğru yolculuğunuzda büyümeyi ve dayanıklılığı teşvik etmeye kendimizi adadık."
+  },
+  "AboutRow": {
+    "abt_discover": "Platformumuzun ruh sağlığınız için neden doğru seçim olduğunu keşfedin."
+  },
+  "AboutRowContent": {
+    "abt_personalized_therapy_sessions_title": "Kişiselleştirilmiş Terapi Seansları",
+    "abt_personalized_therapy_sessions_text": "Seanslarımız, kendi hızınızda ilerlemenize yardımcı olarak benzersiz ihtiyaçlarınıza göre uyarlanmıştır. İster acil zorlukları ele alıyor, ister uzun vadeli hedefler üzerinde çalışıyor olun, yolun her adımında sizi desteklemek için buradayız.",
+    "abt_expert_curated_guidance_title": "Uzman Tarafından Hazırlanmış Rehberlik",
+    "abt_expert_curated_guidance_text": "Lisanslı terapistlerimiz, her seansa güvenilir uzmanlık getirerek yüksek kaliteli bakım almanızı sağlar. Refahınıza odaklanarak, kanıta dayalı uygulamaları kişiselleştirilmiş içgörülerle birleştiriyoruz.",
+    "abt_empowering_tools_for_growth_title": "Büyüme İçin Güçlendirici Araçlar",
+    "abt_empowering_tools_for_growth_text": "Hem müşterileri hem de terapistleri güçlendiren kaynaklar ve destek sağlıyoruz. İlerlemeyi izleme, ihtiyaçları belirleme ve ulaşılabilir hedefler belirleme araçlarıyla anlamlı ve ölçülebilir bir büyüme deneyimleyeceksiniz."
+  },
+  "AboutDetail": {
+    "abt_building_confidence_title": "Güven İnşa Etme ve Ruh Sağlığını Geliştirme",
+    "abt_building_confidence_text": "Uzman terapistlerimiz, hayatın zorluklarında güven ve dayanıklılıkla yol almanıza yardımcı olmak için buradadır. Ruh sağlığınızın geliştiği destekleyici bir ortam sağlıyoruz. Çeşitli terapötik teknikler aracılığıyla, hayattaki engellerin üstesinden gelmek için ihtiyaç duyduğunuz araçları geliştirmenizi sağlıyoruz. Kişiselleştirilmiş yaklaşımımız büyümeyi ve istikrarı teşvik ederek, refahınızın sorumluluğunu almanızı sağlar. İster stresi yönetiyor, ister travmanın üstesinden geliyor, ister sadece dengeyi buluyor olun, yolun her adımında size yardımcı olmak için buradayız. Birlikte, size yıllarca hizmet edecek daha sağlıklı bir zihniyet geliştirebiliriz. Zihinsel netliğe ve duygusal huzura yolculuk tek bir adımla başlar. Bu süreçte size güvenli ve anlayışlı bir ortamda rehberlik etmemize izin verin. Ruh sağlığı yolculuğunuzda nerede olursanız olun, yanınızda yürümeye kararlıyız. Şefkat ve uzmanlıkla, en iyi halinize gelmenize yardımcı olmak için buradayız.",
+    "abt_personalized_support_title": "Her Yolculuk İçin Kişiselleştirilmiş Destek",
+    "abt_personalized_support_text": "Her seans, kişisel ve profesyonel yaşamınızda gelişmeniz için doğru rehberliği ve kaynakları almanızı sağlayarak özel ihtiyaçlarınıza göre uyarlanmıştır. Hiçbir yolculuğun aynı olmadığını anlıyoruz ve bu nedenle yaklaşımımız son derece kişiselleştirilmiştir. Bire bir seanslardan grup desteğine kadar, sizi bulunduğunuz yerde karşılamak için tasarlanmış bir dizi seçenek sunuyoruz. Birlikte, karşılaştığınız zorlukları keşfedecek, güçlü yönlerinizi belirleyecek ve kendinizi güçlendirici ve ulaşılabilir hissettiren bir yol haritası oluşturacağız. İster ilişki sorunları, kariyer geçişleri veya kişisel gelişim hedefleri üzerinde çalışıyor olun, değişimi kolaylaştırmak için güvenli ve destekleyici bir ortam sağlıyoruz. Terapistlerimiz, öğrendiğiniz stratejilerin hem etkili hem de sürdürülebilir olmasını sağlamak için kanıta dayalı uygulamalar kullanır. Hızınıza saygı duyan bir şekilde sizinle çalışarak, hayatın engellerinde güvenle yol almanıza yardımcı olacağız. Bu sizin yolculuğunuz ve biz yolun her adımında sizinle birlikteyiz.",
+    "abt_proven_strategies_title": "Büyüme ve İstikrar İçin Kanıtlanmış Stratejiler",
+    "abt_proven_strategies_text": "Dengeli ve tatmin edici bir yaşam için büyümeyi ve istikrarı teşvik ederek, refahınızı desteklemek için kanıta dayalı teknikler kullanıyoruz. Terapistlerimiz, mümkün olan en iyi bakımı almanızı sağlayarak ruh sağlığı ve kişisel gelişimdeki en son uygulamalar konusunda eğitimlidir. Farkındalık, bilişsel davranışçı terapi (BDT) ve çözüm odaklı yaklaşımların bir kombinasyonu yoluyla, netlik ve duygusal dengeye ulaşmanıza yardımcı oluyoruz. Bu stratejileri günlük yaşamınıza entegre ederek, hayatın zorluklarıyla esneklik ve zarafetle yüzleşmek için gereken becerileri geliştirmenizi sağlıyoruz. İster kaygı, ister depresyon veya yaşam geçişleriyle uğraşıyor olun, gelişmenize yardımcı olacak araçlar ve içgörüler sağlıyoruz. Ayrıca, seanslar sona erdikten uzun süre sonra ilerlemenizin devam etmesini sağlamak için devam eden destek ve kontroller sunuyoruz. Öğrettiğimiz stratejiler sadece acil sorunları ele almak için değil, uzun vadeli istikrar ve büyüme yaratmak için tasarlanmıştır. Birlikte, tüm potansiyelinizi ortaya çıkaracak ve sizi amaç ve huzur dolu bir yaşam sürmeniz için güçlendireceğiz."
+  },
+
   "FOOTER": "ALT BÖLÜM",
   "termsAndCondition": "Şartlar ve Koşullar",
   "privacyPolicy": "Gizlilik Politikası",
@@ -379,157 +378,155 @@
   "noPatient": "Randevusu olan hastanız yoktur.",
   "noBlogs": "Henüz blog yazısı yok. Hemen yazmaya başla!",
   "notes": "Notlar",
-  
-    "termsAndConditions": {
-      "title": "Şartlar ve Koşullar",
-      "lastUpdated": "Son güncelleme: 3 Mart 2025",
-      "sections": {
-        "introduction": {
-          "title": "1. Giriş",
-          "content": "SoulJourney'e hoş geldiniz. Bu Şartlar ve Koşullar, platformumuzun ve hizmetlerimizin kullanımını düzenler. SoulJourney'e erişerek veya kullanarak, bu Şartlara bağlı kalmayı kabul etmiş olursunuz. Bu şartların herhangi bir kısmına katılmıyorsanız, hizmete erişemezsiniz."
-        },
-        "definitions": {
-          "title": "2. Tanımlar",
-          "platform": "\"Platform\", SoulJourney web sitesi ve uygulamasını ifade eder.",
-          "services": "\"Hizmetler\", platformumuz aracılığıyla sağlanan terapi ve danışmanlık hizmetlerini ifade eder.",
-          "therapist": "\"Terapist\", platformumuzda kayıtlı lisanslı ruh sağlığı uzmanlarını ifade eder.",
-          "client": "\"Danışan\", platformumuz aracılığıyla terapi hizmetleri arayan kullanıcıları ifade eder."
-        },
-        "accountRegistration": {
-          "title": "3. Hesap Kaydı",
-          "content1": "Hizmetlerimizi kullanmak için bir hesap oluşturmanız gerekir. Kayıt sırasında doğru, güncel ve eksiksiz bilgiler vermeyi ve bu bilgileri doğru, güncel ve eksiksiz tutmak için güncellemeyi kabul edersiniz.",
-          "content2": "Şifrenizi korumaktan ve hesabınız altında gerçekleşen tüm etkinliklerden siz sorumlusunuz. Hesabınızın yetkisiz kullanımını derhal bize bildirmeyi kabul edersiniz."
-        },
-        "therapistQualifications": {
-          "title": "4. Terapist Nitelikleri",
-          "content1": "Platformumuzdaki tüm terapistler lisanslı profesyoneller olmalıdır. Terapistlerin hizmet sunmasına izin vermeden önce kimlik bilgilerini doğrularız, ancak danışanların terapistin kimlik bilgilerini bağımsız olarak doğrulamaları teşvik edilir.",
-          "content2": "Terapistler bağımsız yüklenicilerdir ve SoulJourney'in çalışanı değildir. Terapistler tarafından sağlanan hizmetleri kontrol etmiyoruz ve profesyonel tavsiyelerinden sorumlu değiliz."
-        },
-        "paymentTerms": {
-          "title": "5. Ödeme Koşulları",
-          "content1": "Danışanlar, platformda açıklandığı şekilde hizmetler için ücretleri ödemeyi kabul eder. Tüm ödemeler güvenli ödeme sistemimiz aracılığıyla işlenir.",
-          "content2": "Terapistler, ödeme takvimine göre hizmetleri için ödeme alacak, geçerli platform ücretleri düşülecektir.",
-          "content3": "İadeler, web sitemizde bulunan iade politikamıza uygun olarak verilebilir."
-        },
-        "cancellationPolicy": {
-          "title": "6. İptal Politikası",
-          "content1": "Danışanlar, planlanmış bir seansı iptal etmek için en az 24 saat önceden bildirimde bulunmalıdır. Geç iptaller veya katılmama durumları, tam seans ücretinin tahsil edilmesine neden olabilir.",
-          "content2": "Terapistler, makul bir iptal bildirimi sağlamalı ve gerektiğinde seansların yeniden planlanmasına yardımcı olmalıdır."
-        },
-        "confidentiality": {
-          "title": "7. Gizlilik",
-          "content1": "Terapötik ilişkinin gizliliğine saygı duyarız. Danışanlar ve terapistler arasındaki tüm iletişimler, yasal ve etik sınırlamalara tabi olarak gizlidir.",
-          "content2": "Platformumuz, bilgilerinizi korumak için güvenlik önlemleri uygular, ancak hiçbir sistem tamamen güvenli değildir. Daha fazla bilgi için lütfen Gizlilik Politikamıza bakın."
-        },
-        "limitationsOfLiability": {
-          "title": "8. Sorumluluk Sınırlamaları",
-          "content1": "SoulJourney, platformumuzun veya hizmetlerimizin kullanımından kaynaklanan herhangi bir zarardan sorumlu değildir. Terapi hizmetlerinin etkinliğini garanti etmiyoruz.",
-          "content2": "Platformumuz acil durumlar için uygun değildir. Bir ruh sağlığı acil durumu yaşıyorsanız, lütfen acil servisler arayın veya en yakın acil servise gidin."
-        },
-        "intellectualProperty": {
-          "title": "9. Fikri Mülkiyet",
-          "content": "SoulJourney platformundaki metin, grafikler, logolar ve yazılım dahil olmak üzere tüm içerikler SoulJourney'in mülkiyetindedir ve fikri mülkiyet yasaları tarafından korunmaktadır."
-        },
-        "termination": {
-          "title": "10. Fesih",
-          "content": "Hizmetlerimize erişimi, önceden bildirimde bulunmaksızın veya sorumluluk olmaksızın, bu Şartların ihlali dahil olmak üzere herhangi bir nedenle derhal feshetme veya askıya alma hakkını saklı tutarız."
-        },
-        "changestoTerms": {
-          "title": "11. Şartlardaki Değişiklikler",
-          "content": "Bu şartları istediğimiz zaman değiştirme hakkını saklı tutarız. Önemli değişiklikler hakkında bildirimde bulunacağız. Bu tür değişikliklerden sonra platformu kullanmaya devam etmeniz, revize edilmiş şartları kabul ettiğiniz anlamına gelir."
-        },
-        "governingLaw": {
-          "title": "12. Geçerli Yasa",
-          "content": "Bu Şartlar, çatışma hükümleri dikkate alınmaksızın [Yargı Yetkiniz] yasalarına göre yönetilecek ve yorumlanacaktır."
-        },
-        "contactUs": {
-          "title": "13. Bize Ulaşın",
-          "content": "Bu Şartlar hakkında herhangi bir sorunuz varsa, lütfen support@souljourney.com adresinden bize ulaşın."
-        }
+
+  "termsAndConditions": {
+    "title": "Şartlar ve Koşullar",
+    "lastUpdated": "Son güncelleme: 3 Mart 2025",
+    "sections": {
+      "introduction": {
+        "title": "1. Giriş",
+        "content": "SoulJourney'e hoş geldiniz. Bu Şartlar ve Koşullar, platformumuzun ve hizmetlerimizin kullanımını düzenler. SoulJourney'e erişerek veya kullanarak, bu Şartlara bağlı kalmayı kabul etmiş olursunuz. Bu şartların herhangi bir kısmına katılmıyorsanız, hizmete erişemezsiniz."
+      },
+      "definitions": {
+        "title": "2. Tanımlar",
+        "platform": "\"Platform\", SoulJourney web sitesi ve uygulamasını ifade eder.",
+        "services": "\"Hizmetler\", platformumuz aracılığıyla sağlanan terapi ve danışmanlık hizmetlerini ifade eder.",
+        "therapist": "\"Terapist\", platformumuzda kayıtlı lisanslı ruh sağlığı uzmanlarını ifade eder.",
+        "client": "\"Danışan\", platformumuz aracılığıyla terapi hizmetleri arayan kullanıcıları ifade eder."
+      },
+      "accountRegistration": {
+        "title": "3. Hesap Kaydı",
+        "content1": "Hizmetlerimizi kullanmak için bir hesap oluşturmanız gerekir. Kayıt sırasında doğru, güncel ve eksiksiz bilgiler vermeyi ve bu bilgileri doğru, güncel ve eksiksiz tutmak için güncellemeyi kabul edersiniz.",
+        "content2": "Şifrenizi korumaktan ve hesabınız altında gerçekleşen tüm etkinliklerden siz sorumlusunuz. Hesabınızın yetkisiz kullanımını derhal bize bildirmeyi kabul edersiniz."
+      },
+      "therapistQualifications": {
+        "title": "4. Terapist Nitelikleri",
+        "content1": "Platformumuzdaki tüm terapistler lisanslı profesyoneller olmalıdır. Terapistlerin hizmet sunmasına izin vermeden önce kimlik bilgilerini doğrularız, ancak danışanların terapistin kimlik bilgilerini bağımsız olarak doğrulamaları teşvik edilir.",
+        "content2": "Terapistler bağımsız yüklenicilerdir ve SoulJourney'in çalışanı değildir. Terapistler tarafından sağlanan hizmetleri kontrol etmiyoruz ve profesyonel tavsiyelerinden sorumlu değiliz."
+      },
+      "paymentTerms": {
+        "title": "5. Ödeme Koşulları",
+        "content1": "Danışanlar, platformda açıklandığı şekilde hizmetler için ücretleri ödemeyi kabul eder. Tüm ödemeler güvenli ödeme sistemimiz aracılığıyla işlenir.",
+        "content2": "Terapistler, ödeme takvimine göre hizmetleri için ödeme alacak, geçerli platform ücretleri düşülecektir.",
+        "content3": "İadeler, web sitemizde bulunan iade politikamıza uygun olarak verilebilir."
+      },
+      "cancellationPolicy": {
+        "title": "6. İptal Politikası",
+        "content1": "Danışanlar, planlanmış bir seansı iptal etmek için en az 24 saat önceden bildirimde bulunmalıdır. Geç iptaller veya katılmama durumları, tam seans ücretinin tahsil edilmesine neden olabilir.",
+        "content2": "Terapistler, makul bir iptal bildirimi sağlamalı ve gerektiğinde seansların yeniden planlanmasına yardımcı olmalıdır."
+      },
+      "confidentiality": {
+        "title": "7. Gizlilik",
+        "content1": "Terapötik ilişkinin gizliliğine saygı duyarız. Danışanlar ve terapistler arasındaki tüm iletişimler, yasal ve etik sınırlamalara tabi olarak gizlidir.",
+        "content2": "Platformumuz, bilgilerinizi korumak için güvenlik önlemleri uygular, ancak hiçbir sistem tamamen güvenli değildir. Daha fazla bilgi için lütfen Gizlilik Politikamıza bakın."
+      },
+      "limitationsOfLiability": {
+        "title": "8. Sorumluluk Sınırlamaları",
+        "content1": "SoulJourney, platformumuzun veya hizmetlerimizin kullanımından kaynaklanan herhangi bir zarardan sorumlu değildir. Terapi hizmetlerinin etkinliğini garanti etmiyoruz.",
+        "content2": "Platformumuz acil durumlar için uygun değildir. Bir ruh sağlığı acil durumu yaşıyorsanız, lütfen acil servisler arayın veya en yakın acil servise gidin."
+      },
+      "intellectualProperty": {
+        "title": "9. Fikri Mülkiyet",
+        "content": "SoulJourney platformundaki metin, grafikler, logolar ve yazılım dahil olmak üzere tüm içerikler SoulJourney'in mülkiyetindedir ve fikri mülkiyet yasaları tarafından korunmaktadır."
+      },
+      "termination": {
+        "title": "10. Fesih",
+        "content": "Hizmetlerimize erişimi, önceden bildirimde bulunmaksızın veya sorumluluk olmaksızın, bu Şartların ihlali dahil olmak üzere herhangi bir nedenle derhal feshetme veya askıya alma hakkını saklı tutarız."
+      },
+      "changestoTerms": {
+        "title": "11. Şartlardaki Değişiklikler",
+        "content": "Bu şartları istediğimiz zaman değiştirme hakkını saklı tutarız. Önemli değişiklikler hakkında bildirimde bulunacağız. Bu tür değişikliklerden sonra platformu kullanmaya devam etmeniz, revize edilmiş şartları kabul ettiğiniz anlamına gelir."
+      },
+      "governingLaw": {
+        "title": "12. Geçerli Yasa",
+        "content": "Bu Şartlar, çatışma hükümleri dikkate alınmaksızın [Yargı Yetkiniz] yasalarına göre yönetilecek ve yorumlanacaktır."
+      },
+      "contactUs": {
+        "title": "13. Bize Ulaşın",
+        "content": "Bu Şartlar hakkında herhangi bir sorunuz varsa, lütfen support@souljourney.com adresinden bize ulaşın."
       }
-    },
-    "PrivacyPolicy": {
-      "title": "Gizlilik Politikası",
-      "lastUpdated": "Son güncelleme: 3 Mart 2025",
-      "sections": {
-        "introduction": {
-          "title": "1. Giriş",
-          "content": "SoulJourney'de gizliliğinizi ciddiye alıyoruz. Bu Gizlilik Politikası, platformumuzu ve hizmetlerimizi kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı, açıkladığımızı ve koruduğumuzu açıklar. Lütfen bu politikayı dikkatlice okuyun. Hizmetimize erişerek veya kullanarak, bu Gizlilik Politikasını okuduğunuzu ve anladığınızı kabul etmiş olursunuz."
-        },
-        "informationWeCollect": {
-          "title": "2. Topladığımız Bilgiler",
-          "personalInfo": "Kişisel Bilgiler: Bir hesap oluşturduğunuzda, adınız, e-posta adresiniz, telefon numaranız ve ödeme bilgileriniz gibi kişisel bilgileri toplarız.",
-          "professionalInfo": "Profesyonel Bilgiler: Terapistler için, profesyonel kimlik bilgileri, lisans bilgileri, eğitim geçmişi ve profesyonel deneyim toplarız.",
-          "healthInfo": "Sağlık Bilgileri: Danışanlar, terapi hizmetlerini kolaylaştırmak için ruh sağlığı geçmişi ve mevcut endişeleri dahil olmak üzere sağlık bilgileri sağlayabilir.",
-          "usageData": "Kullanım Verileri: Erişim süreleri, görüntülenen sayfalar ve kullanılan özellikler dahil olmak üzere platformumuzla nasıl etkileşimde bulunduğunuza dair bilgileri toplarız."
-        },
-        "howWeUseYourInformation": {
-          "title": "3. Bilgilerinizi Nasıl Kullanıyoruz",
-          "content": "Topladığımız bilgileri şunlar için kullanırız:",
-          "items": [
-            "Hizmetlerimizi sağlamak, sürdürmek ve geliştirmek",
-            "Ödemeleri işlemek ve hesapları yönetmek",
-            "Danışanları uygun terapistlerle eşleştirmek",
-            "Hizmetlerimiz hakkında sizinle iletişim kurmak",
-            "Kullanım modellerini ve eğilimleri izlemek ve analiz etmek",
-            "Yetkisiz erişime ve yasal sorumluluğa karşı korumak"
-          ]
-        },
-        "sharingYourInformation": {
-          "title": "4. Bilgilerinizi Paylaşma",
-          "content": "Bilgilerinizi aşağıdaki durumlarda paylaşabiliriz:",
-          "items": [
-            "Danışanlar ve Terapistler Arasında: Terapi hizmetlerinin sağlanması için gerekli bilgiler, eşleşen danışanlar ve terapistler arasında paylaşılır.",
-            "Hizmet Sağlayıcılar: Ödeme işleme ve veri analizi gibi bizim adımıza hizmet sunan üçüncü taraf hizmet sağlayıcılarla bilgi paylaşabiliriz.",
-            "Yasal Gereklilikler: Yasalar gerektirdiğinde veya geçerli yasal süreçlere yanıt olarak bilgileri açıklayabiliriz.",
-            "İş Transferleri: SoulJourney bir birleşme, satın alma veya varlık satışına dahil olursa, bilgileriniz bu işlemin bir parçası olarak aktarılabilir."
-          ]
-        },
-        "dataSecurityAndRetention": {
-          "title": "5. Veri Güvenliği ve Saklama",
-          "content1": "Kişisel bilgilerinizi yetkisiz erişim, açıklama, değiştirme ve imhaya karşı korumak için uygun teknik ve organizasyonel önlemler uyguluyoruz. Ancak, İnternet üzerinden hiçbir iletim yöntemi veya elektronik depolama %100 güvenli değildir ve mutlak güvenliği garanti edemeyiz.",
-          "content2": "Kişisel bilgilerinizi, hizmetlerimizi sağlamak ve bu Gizlilik Politikasında belirtilen amaçları yerine getirmek için gerekli olduğu sürece saklarız, yasalar tarafından daha uzun bir saklama süresi gerekmedikçe veya izin verilmedikçe."
-        },
-        "yourRights": {
-          "title": "6. Haklarınız",
-          "content": "Bulunduğunuz yere bağlı olarak, kişisel bilgilerinizle ilgili belirli haklarınız olabilir, bunlar şunları içerir:",
-          "items": [
-            "Kişisel bilgilerinize erişim hakkı",
-            "Yanlış veya eksik bilgileri düzeltme hakkı",
-            "Kişisel bilgilerinizin silinmesini talep etme hakkı",
-            "Kişisel bilgilerinizin işlenmesini kısıtlama veya itiraz etme hakkı",
-            "Veri taşınabilirliği hakkı"
-          ],
-          "content2": "Bu hakları kullanmak için, lütfen \"Bize Ulaşın\" bölümünde sağlanan bilgileri kullanarak bizimle iletişime geçin."
-        },
-        "cookiesAndTracking": {
-          "title": "7. Çerezler ve İzleme Teknolojileri",
-          "content": "Tarama etkinlikleriniz hakkında bilgi toplamak ve platformumuzdaki deneyiminizi geliştirmek için çerezler ve benzer izleme teknolojileri kullanıyoruz. Çerez tercihlerinizi tarayıcı ayarlarınız aracılığıyla yönetebilirsiniz."
-        },
-        "childrenPrivacy": {
-          "title": "8. Çocukların Gizliliği",
-          "content": "Hizmetlerimiz, ebeveyn izni olmadan 18 yaşın altındaki bireyler için tasarlanmamıştır. 18 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamıyoruz. 18 yaşın altındaki bir çocuktan ebeveyn onayı doğrulaması olmadan kişisel bilgi topladığımızı fark edersek, bu bilgileri kaldırmak için adımlar atacağız."
-        },
-        "internationalDataTransfers": {
-          "title": "9. Uluslararası Veri Transferleri",
-          "content": "Bilgileriniz, ikamet ettiğiniz ülkeden başka ülkelere aktarılabilir ve işlenebilir. Bu ülkeler, ikamet ettiğiniz ülkeden farklı veri koruma yasalarına sahip olabilir. Kişisel bilgilerinizin bu Gizlilik Politikasına uygun olarak korunmasını sağlamak için uygun önlemleri alacağız."
-        },
-        "changes": {
-          "title": "10. Bu Gizlilik Politikasındaki Değişiklikler",
-          "content": "Gizlilik Politikamızı zaman zaman güncelleyebiliriz. Herhangi bir değişikliği, yeni Gizlilik Politikasını bu sayfada yayınlayarak ve \"Son güncelleme\" tarihini güncelleyerek size bildireceğiz. Herhangi bir değişiklik için bu Gizlilik Politikasını periyodik olarak gözden geçirmeniz önerilir."
-        },
-        "contactUs": {
-          "title": "11. Bize Ulaşın",
-          "content": "Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin:",
-          "email": "E-posta: privacy@souljourney.com",
-          "address": "Adres: [Şirket Adresiniz]"
-        }
-      }
-    },
-    "common": {
-      "personalizedSupport": "Her Yolculuk için Kişiselleştirilmiş Destek",
-      "personalizedSupportDescription": "Her seans, özel ihtiyaçlarınıza göre uyarlanmıştır, kişisel ve profesyonel hayatınızda başarılı olmanız için doğru rehberlik ve kaynakları almanızı sağlar."
     }
-  
-  
+  },
+  "PrivacyPolicy": {
+    "title": "Gizlilik Politikası",
+    "lastUpdated": "Son güncelleme: 3 Mart 2025",
+    "sections": {
+      "introduction": {
+        "title": "1. Giriş",
+        "content": "SoulJourney'de gizliliğinizi ciddiye alıyoruz. Bu Gizlilik Politikası, platformumuzu ve hizmetlerimizi kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı, açıkladığımızı ve koruduğumuzu açıklar. Lütfen bu politikayı dikkatlice okuyun. Hizmetimize erişerek veya kullanarak, bu Gizlilik Politikasını okuduğunuzu ve anladığınızı kabul etmiş olursunuz."
+      },
+      "informationWeCollect": {
+        "title": "2. Topladığımız Bilgiler",
+        "personalInfo": "Kişisel Bilgiler: Bir hesap oluşturduğunuzda, adınız, e-posta adresiniz, telefon numaranız ve ödeme bilgileriniz gibi kişisel bilgileri toplarız.",
+        "professionalInfo": "Profesyonel Bilgiler: Terapistler için, profesyonel kimlik bilgileri, lisans bilgileri, eğitim geçmişi ve profesyonel deneyim toplarız.",
+        "healthInfo": "Sağlık Bilgileri: Danışanlar, terapi hizmetlerini kolaylaştırmak için ruh sağlığı geçmişi ve mevcut endişeleri dahil olmak üzere sağlık bilgileri sağlayabilir.",
+        "usageData": "Kullanım Verileri: Erişim süreleri, görüntülenen sayfalar ve kullanılan özellikler dahil olmak üzere platformumuzla nasıl etkileşimde bulunduğunuza dair bilgileri toplarız."
+      },
+      "howWeUseYourInformation": {
+        "title": "3. Bilgilerinizi Nasıl Kullanıyoruz",
+        "content": "Topladığımız bilgileri şunlar için kullanırız:",
+        "items": [
+          "Hizmetlerimizi sağlamak, sürdürmek ve geliştirmek",
+          "Ödemeleri işlemek ve hesapları yönetmek",
+          "Danışanları uygun terapistlerle eşleştirmek",
+          "Hizmetlerimiz hakkında sizinle iletişim kurmak",
+          "Kullanım modellerini ve eğilimleri izlemek ve analiz etmek",
+          "Yetkisiz erişime ve yasal sorumluluğa karşı korumak"
+        ]
+      },
+      "sharingYourInformation": {
+        "title": "4. Bilgilerinizi Paylaşma",
+        "content": "Bilgilerinizi aşağıdaki durumlarda paylaşabiliriz:",
+        "items": [
+          "Danışanlar ve Terapistler Arasında: Terapi hizmetlerinin sağlanması için gerekli bilgiler, eşleşen danışanlar ve terapistler arasında paylaşılır.",
+          "Hizmet Sağlayıcılar: Ödeme işleme ve veri analizi gibi bizim adımıza hizmet sunan üçüncü taraf hizmet sağlayıcılarla bilgi paylaşabiliriz.",
+          "Yasal Gereklilikler: Yasalar gerektirdiğinde veya geçerli yasal süreçlere yanıt olarak bilgileri açıklayabiliriz.",
+          "İş Transferleri: SoulJourney bir birleşme, satın alma veya varlık satışına dahil olursa, bilgileriniz bu işlemin bir parçası olarak aktarılabilir."
+        ]
+      },
+      "dataSecurityAndRetention": {
+        "title": "5. Veri Güvenliği ve Saklama",
+        "content1": "Kişisel bilgilerinizi yetkisiz erişim, açıklama, değiştirme ve imhaya karşı korumak için uygun teknik ve organizasyonel önlemler uyguluyoruz. Ancak, İnternet üzerinden hiçbir iletim yöntemi veya elektronik depolama %100 güvenli değildir ve mutlak güvenliği garanti edemeyiz.",
+        "content2": "Kişisel bilgilerinizi, hizmetlerimizi sağlamak ve bu Gizlilik Politikasında belirtilen amaçları yerine getirmek için gerekli olduğu sürece saklarız, yasalar tarafından daha uzun bir saklama süresi gerekmedikçe veya izin verilmedikçe."
+      },
+      "yourRights": {
+        "title": "6. Haklarınız",
+        "content": "Bulunduğunuz yere bağlı olarak, kişisel bilgilerinizle ilgili belirli haklarınız olabilir, bunlar şunları içerir:",
+        "items": [
+          "Kişisel bilgilerinize erişim hakkı",
+          "Yanlış veya eksik bilgileri düzeltme hakkı",
+          "Kişisel bilgilerinizin silinmesini talep etme hakkı",
+          "Kişisel bilgilerinizin işlenmesini kısıtlama veya itiraz etme hakkı",
+          "Veri taşınabilirliği hakkı"
+        ],
+        "content2": "Bu hakları kullanmak için, lütfen \"Bize Ulaşın\" bölümünde sağlanan bilgileri kullanarak bizimle iletişime geçin."
+      },
+      "cookiesAndTracking": {
+        "title": "7. Çerezler ve İzleme Teknolojileri",
+        "content": "Tarama etkinlikleriniz hakkında bilgi toplamak ve platformumuzdaki deneyiminizi geliştirmek için çerezler ve benzer izleme teknolojileri kullanıyoruz. Çerez tercihlerinizi tarayıcı ayarlarınız aracılığıyla yönetebilirsiniz."
+      },
+      "childrenPrivacy": {
+        "title": "8. Çocukların Gizliliği",
+        "content": "Hizmetlerimiz, ebeveyn izni olmadan 18 yaşın altındaki bireyler için tasarlanmamıştır. 18 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamıyoruz. 18 yaşın altındaki bir çocuktan ebeveyn onayı doğrulaması olmadan kişisel bilgi topladığımızı fark edersek, bu bilgileri kaldırmak için adımlar atacağız."
+      },
+      "internationalDataTransfers": {
+        "title": "9. Uluslararası Veri Transferleri",
+        "content": "Bilgileriniz, ikamet ettiğiniz ülkeden başka ülkelere aktarılabilir ve işlenebilir. Bu ülkeler, ikamet ettiğiniz ülkeden farklı veri koruma yasalarına sahip olabilir. Kişisel bilgilerinizin bu Gizlilik Politikasına uygun olarak korunmasını sağlamak için uygun önlemleri alacağız."
+      },
+      "changes": {
+        "title": "10. Bu Gizlilik Politikasındaki Değişiklikler",
+        "content": "Gizlilik Politikamızı zaman zaman güncelleyebiliriz. Herhangi bir değişikliği, yeni Gizlilik Politikasını bu sayfada yayınlayarak ve \"Son güncelleme\" tarihini güncelleyerek size bildireceğiz. Herhangi bir değişiklik için bu Gizlilik Politikasını periyodik olarak gözden geçirmeniz önerilir."
+      },
+      "contactUs": {
+        "title": "11. Bize Ulaşın",
+        "content": "Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin:",
+        "email": "E-posta: privacy@souljourney.com",
+        "address": "Adres: [Şirket Adresiniz]"
+      }
+    }
+  },
+  "common": {
+    "personalizedSupport": "Her Yolculuk için Kişiselleştirilmiş Destek",
+    "personalizedSupportDescription": "Her seans, özel ihtiyaçlarınıza göre uyarlanmıştır, kişisel ve profesyonel hayatınızda başarılı olmanız için doğru rehberlik ve kaynakları almanızı sağlar."
+  }
 }
