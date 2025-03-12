@@ -51,6 +51,11 @@ const Team = () => {
             )
         );
 
+    console.log(displayedSearchTherapists);
+
+    const categoryQuery = selectedCategory ? `category=${selectedCategory}` : "";
+        
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -81,11 +86,16 @@ const Team = () => {
         <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
           {/* {pagTherapists?.map((therapist) => ( */}
           {displayedSearchTherapists?.map((therapist) => (
-            <TeamCard therapist={therapist} key={therapist._id} />
+            <TeamCard key={therapist._id} therapist={therapist} />
           ))}
         </div>
       </div>
-      {/* <Pagination endpoint={`therapists`} slice={"pagTherapists"} data={displayedSearchTherapists} /> */}
+      <Pagination 
+        endpoint={`therapists`}
+        slice={"pagTherapists"}
+        data={displayedSearchTherapists}
+        query={categoryQuery}
+      />
       <Join />
     </div>
   );

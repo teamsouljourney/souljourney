@@ -9,6 +9,7 @@ import useTherapistCall from "../../hooks/useTherapistCall";
 import { useEffect } from "react";
 import { getSingleAppointmentSuccess } from "../../features/appointmentSlice";
 import { useNavigate } from "react-router-dom";
+import "../../styles/calendar-dark.css"
 
 const DashboardCalendar = () => {
   const dispatch = useDispatch();

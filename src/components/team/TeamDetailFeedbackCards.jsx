@@ -84,7 +84,11 @@ const TeamDetailFeedbackCards = () => {
           </div>
         ))}
       </div>
-      <Pagination endpoint={`feedbacks/therapists/${therapistId}`} slice={"pagFeedbacks"} data={singleTherapistFeedbacks} />
+      <Pagination 
+        endpoint={`feedbacks/therapists/${therapistId}`}
+        slice={"pagFeedbacks"}
+        data={singleTherapistFeedbacks}
+      />
       {/* Modal */}
       {isModalOpen && selectedFeedback && (
 
