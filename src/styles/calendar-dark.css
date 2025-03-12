@@ -62,7 +62,7 @@ html.dark body .fc .fc-daygrid-event-dot {
 
 /*-----------------------------*/
 
-/* Farklı event türleri için farklı renkler (isteğe bağlı) */
+/* Different colors for different event types (optional) */
 html.dark body .fc .fc-event.event-type-1 .fc-event-dot,
 html.dark body .fc .fc-daygrid-event.event-type-1 .fc-daygrid-event-dot {
   background-color: #D798B0 !important; /* pink */
