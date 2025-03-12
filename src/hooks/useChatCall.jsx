@@ -10,6 +10,8 @@ import {
   receiveMessage,
   setSocket,
   setSocketConnected,
+  setUserConnected,
+  updateOnlineUsers,
 } from "../features/chatSlice";
 import { useEffect, useCallback } from "react";
 import io from "socket.io-client";
@@ -22,70 +24,93 @@ const useChatCall = () => {
   const BASE_URL = import.meta.env.VITE_BASE_URL;
   const SOCKET_URL = import.meta.env.VITE_SOCKET_URL;
 
+  // Socket event handler configurations
+  const configureSocketEvents = useCallback(
+    (socket) => {
+      const eventHandlers = {
+        connect: (userId) => {
+          dispatch(setSocketConnected(true));
+          dispatch(setUserConnected({ userId, isOnline: true }));
+        },
+        disconnect: (userId) => {
+          dispatch(setSocketConnected(false));
+          dispatch(setUserConnected({ userId, isOnline: false }));
+        },
+        connect_error: (error) => {
+          console.error("Socket connection error:", error);
+          dispatch(setSocketConnected(false));
+        },
+        receiveMessage: (newMessage) => {
+          console.log("New message received via socket:", newMessage);
+
+          if (newMessage && newMessage.content) {
+            if (!newMessage.createdAt) {
+              newMessage.createdAt = new Date().toISOString();
+            }
+
+            dispatch(receiveMessage(newMessage));
+          } else {
+            console.error("Received invalid message format:", newMessage);
+          }
+        },
+        messageSent: (message) => {
+          console.log("Message sent confirmation received:", message);
+        },
+        userStatusUpdate: (users) => {
+          console.log("Users status updated:", users);
+          dispatch(updateOnlineUsers(users));
+        },
+        userConnected: (userId) => {
+          console.log("User connected:", userId);
+          dispatch(setUserConnected({ userId, isOnline: true }));
+        },
+        userDisconnected: (userId) => {
+          console.log("User disconnected:", userId);
+          dispatch(setUserConnected({ userId, isOnline: false }));
+        },
+      };
+
+      // Attach all event handlers
+      Object.entries(eventHandlers).forEach(([event, handler]) => {
+        socket.on(event, handler);
+      });
+
+      return socket;
+    },
+    [dispatch]
+  );
+
   // Initialize socket connection
   const initializeSocket = useCallback(() => {
     if (!socket && currentUser?._id) {
-      console.log("Initializing socket connection...");
-
-      const newSocket = io(SOCKET_URL, {
+      const socketConfig = {
         query: {
-          userId: currentUser?._id,
+          userId: currentUser._id,
           userModel: currentUser?.isTherapist ? "Therapist" : "User",
         },
         reconnection: true,
         reconnectionAttempts: 5,
         reconnectionDelay: 1000,
-        transports: ["websocket", "polling"], // Try websocket first, fallback to polling
-      });
+        transports: ["websocket", "polling"],
+      };
 
-      newSocket.on("connect", () => {
-        console.log("Socket connected successfully");
-        dispatch(setSocketConnected(true));
-      });
-
-      newSocket.on("disconnect", () => {
-        console.log("Socket disconnected");
-        dispatch(setSocketConnected(false));
-      });
-
-      newSocket.on("connect_error", (error) => {
-        console.error("Socket connection error:", error);
-        dispatch(setSocketConnected(false));
-      });
-
-      // Listen for new messages
-      newSocket.on("receiveMessage", (newMessage) => {
-        console.log("New message received via socket:", newMessage);
-
-        // Make sure the message has the right format before dispatching
-        if (newMessage && newMessage.content) {
-          // Add a timestamp if it doesn't exist
-          if (!newMessage.createdAt) {
-            newMessage.createdAt = new Date().toISOString();
-          }
-
-          dispatch(receiveMessage(newMessage));
-        } else {
-          console.error("Received invalid message format:", newMessage);
-        }
-      });
-
-      // Listen for message sent confirmation
-      newSocket.on("messageSent", (message) => {
-        console.log("Message sent confirmation received:", message);
-      });
-
+      const newSocket = configureSocketEvents(io(SOCKET_URL, socketConfig));
       dispatch(setSocket(newSocket));
       return newSocket;
     }
     return socket;
-  }, [currentUser?._id, currentUser?.isTherapist, dispatch, socket]); // Added currentUser?.isTherapist
+  }, [
+    currentUser?._id,
+    currentUser?.isTherapist,
+    dispatch,
+    socket,
+    configureSocketEvents,
+    SOCKET_URL,
+  ]);
 
-  // Connect to socket when component mounts
   useEffect(() => {
     const socketInstance = initializeSocket();
 
-    // Cleanup function to disconnect socket when component unmounts
     return () => {
       if (socketInstance) {
         console.log("Disconnecting socket on cleanup");
@@ -93,9 +118,9 @@ const useChatCall = () => {
         dispatch(setSocketConnected(false));
       }
     };
-  }, [initializeSocket, dispatch]); // Removed unnecessary dependency
+  }, [initializeSocket, dispatch]);
 
-  // List all chats
+  // API functions
   const getAllChats = async (userId, userModel, chatWithId, chatWithModel) => {
     dispatch(fetchStart());
     try {
@@ -109,11 +134,10 @@ const useChatCall = () => {
     }
   };
 
-  // Create a new chat message
   const createChat = async (messageData) => {
     dispatch(fetchStart());
     try {
-      // Add a temporary ID to identify this message
+      // Create temp message with ID for optimistic updates
       const tempMessage = {
         ...messageData,
         _id: `temp-${Date.now()}`,
@@ -123,7 +147,7 @@ const useChatCall = () => {
       // Optimistically add the message to the UI
       dispatch(createChatSuccess({ data: tempMessage }));
 
-      // Send message through socket first for real-time delivery
+      // Send through socket if connected
       if (socket && isConnected) {
         console.log("Emitting message via socket:", tempMessage);
         socket.emit("sendMessage", tempMessage);
@@ -131,14 +155,14 @@ const useChatCall = () => {
         console.warn("Socket not connected, message will be sent via API only");
       }
 
-      // Then save to database
+      // Save to database
       const { data } = await axiosWithToken.post(
         `${BASE_URL}messages`,
         messageData
       );
       console.log("Message saved to database:", data);
 
-      // Update the temporary message with the real one from the server
+      // Replace temp message with server response
       dispatch(createChatSuccess({ data }));
       return data;
     } catch (error) {

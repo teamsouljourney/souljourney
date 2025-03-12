@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 
 export default function UserCard() {
   const { currentUser } = useSelector((state) => state.auth);
-  console.log(currentUser);
   return (
     <div className="w-full min-h-[200px] bg-gradient-to-bl from-navy-dark to-seaGreen-dark p-6 rounded-xl m-10 flex justify-between items-center">
       <div>

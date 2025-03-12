@@ -10,7 +10,7 @@ import userReducer from "../features/userSlice";
 import paginationReducer from "../features/paginationSlice";
 import chatReducer from "../features/chatSlice";
 import feedbackReducer from "../features/feedbackSlice";
-
+import notificationReducer from "../features/notificationSlice";
 
 //*redux-persist
 import {
@@ -46,8 +46,8 @@ const store = configureStore({
     users: userReducer,
     pagination: paginationReducer,
     chats: chatReducer,
-    feedbacks: feedbackReducer
-
+    feedbacks: feedbackReducer,
+    notifications: notificationReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

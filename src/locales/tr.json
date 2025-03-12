@@ -3,7 +3,7 @@
   "home": "Ana Sayfa",
   "services": "Hizmetler",
   "pricing": "Fiyatlandırma",
-  "team": "Ekip",
+  "team": "Psikologlar",
   "contact": "İletişim",
   "about": "Hakkımızda",
   "language": "Dil",
@@ -133,6 +133,7 @@
   "msg_sent": "Mesaj başarıyla gönderildi!",
   "PROFILE": "PROFIL",
   "SERVICES": "HIZMETLER",
+
   "srvServicesHeroTitle": "Hizmetlerimiz",
   "srvServicesHeroDescription": "Psikolojik danışmanlık merkezimizde, bireylerin duygusal ve zihinsel iyilik hallerini geliştirmelerine yardımcı olacak kapsamlı hizmetler sunuyoruz. Deneyimli uzmanlardan oluşan ekibimiz, her danışanın kendine özgü zorluklarını anlamak ve kişiye özel çözümler sunmak için yakından çalışır. İster stres, kaygı, ilişki sorunlarıyla başa çıkıyor olun, ister sadece kişisel gelişiminizi artırmak istiyor olun, sürecin her adımında size rehberlik etmek için buradayız. Duygularınızı açıkça keşfedebileceğiniz ve daha sağlıklı başa çıkma stratejileri geliştirebileceğiniz güvenli, destekleyici ve yargısız bir ortam yaratmaya kararlıyız. Her hizmet kategorisi, özel ihtiyaçlarınızı ve hedeflerinizi karşılayacak şekilde dikkatlice uyarlanmıştır ve mümkün olan en etkili desteği almanızı sağlar. Dengeli ve tatmin edici bir yaşama yolculuğunuz, şefkatli ve uzman rehberliğin yardımıyla burada başlar.",
   "srvEmpoweringMindsEnhancingLives": "Zihinleri Güçlendirmek, Yaşamları İyileştirmek",
@@ -178,6 +179,7 @@
     "İnternet bağlantısı olan her yerden erişilebilir",
     "Açıkça konuşmak ve iyileşmek için güvenli, destekleyici bir ortam"
   ],
+
   "PRICING": "FİYATLANDIRMA",
   "paymentDetails": "Ödeme Detayları",
   "paymentDetailsText": "Soul Journey olarak, benzersiz ihtiyaçlarınıza ve bütçenize uyacak esnek fiyatlandırma seçenekleri sunuyoruz. Misyonumuz, mükemmel, kişiselleştirilmiş danışmanlık hizmetleri sağlayarak, bireysel yolculuğunuza özel çözümler sunmaktır. Aşağıdaki üç planımızdan birini seçerek daha dengeli ve tatmin edici bir hayata doğru ilk adımı atın.",
@@ -225,6 +227,7 @@
   
 
   "ABOUT": "HAKKIMIZDA",
+
   "AboutHeroSection": {
     "abt_us": "Hakkımızda",
     "abt_welcome": "Platformumuza hoş geldiniz! Amacımız, sizi yetenekli ve anlayışlı terapistlerle buluşturarak erişilebilir online terapi seansları sunmaktır. Misyonumuz, zihinsel sağlığınızı ön planda tutan güvenli ve destekleyici bir alan oluşturmaktır. Yardım aramanın zor olabileceğini biliyoruz, bu yüzden sizi yaşamın zorluklarında desteklemek için profesyonel ve yargılayıcı olmayan bir ortam sağlamaya buradayız. İster stres, kaygı veya kişisel zorluklarla mücadele ediyor olun, ihtiyacınız olan rehberliği bulmanıza yardımcı olmaya kararlıyız. Platformumuz esneklik sunarak, nerede olursanız olun ruh sağlığı hizmetlerinin hem pratik hem de etkili olmasını sağlar. Terapinin herkes için erişilebilir olmasını sağlamak ve iyi olma yolculuğunuzda büyüme ve dayanıklılığı teşvik etmek için buradayız.",
@@ -253,6 +256,7 @@
     "abt_proven_strategies_title": "Büyüme ve İstikrar İçin Kanıtlanmış Stratejiler",
     "abt_proven_strategies_text": "Dengeli ve tatmin edici bir yaşam için büyümeyi ve istikrarı teşvik ederek, refahınızı desteklemek için kanıta dayalı teknikler kullanıyoruz. Terapistlerimiz, mümkün olan en iyi bakımı almanızı sağlayarak ruh sağlığı ve kişisel gelişimdeki en son uygulamalar konusunda eğitimlidir. Farkındalık, bilişsel davranışçı terapi (BDT) ve çözüm odaklı yaklaşımların bir kombinasyonu yoluyla, netlik ve duygusal dengeye ulaşmanıza yardımcı oluyoruz. Bu stratejileri günlük yaşamınıza entegre ederek, hayatın zorluklarıyla esneklik ve zarafetle yüzleşmek için gereken becerileri geliştirmenizi sağlıyoruz. İster kaygı, ister depresyon veya yaşam geçişleriyle uğraşıyor olun, gelişmenize yardımcı olacak araçlar ve içgörüler sağlıyoruz. Ayrıca, seanslar sona erdikten uzun süre sonra ilerlemenizin devam etmesini sağlamak için devam eden destek ve kontroller sunuyoruz. Öğrettiğimiz stratejiler sadece acil sorunları ele almak için değil, uzun vadeli istikrar ve büyüme yaratmak için tasarlanmıştır. Birlikte, tüm potansiyelinizi ortaya çıkaracak ve sizi amaç ve huzur dolu bir yaşam sürmeniz için güçlendireceğiz."
   },
+
   "FOOTER": "ALT BÖLÜM",
   "termsAndCondition": "Şartlar ve Koşullar",
   "privacyPolicy": "Gizlilik Politikası",
@@ -369,6 +373,7 @@
   "noPatient": "Randevusu olan hastanız yoktur.",
   "noBlogs": "Henüz blog yazısı yok. Hemen yazmaya başla!",
   "notes": "Notlar",
+
   "termsAndConditions": {
     "title": "Şartlar ve Koşullar",
     "lastUpdated": "Son güncelleme: 3 Mart 2025",
@@ -519,4 +524,4 @@
     "personalizedSupport": "Her Yolculuk için Kişiselleştirilmiş Destek",
     "personalizedSupportDescription": "Her seans, özel ihtiyaçlarınıza göre uyarlanmıştır, kişisel ve profesyonel hayatınızda başarılı olmanız için doğru rehberlik ve kaynakları almanızı sağlar."
   }
-}
+
