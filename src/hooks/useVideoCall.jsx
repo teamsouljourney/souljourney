@@ -16,7 +16,6 @@ import {
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import { useNavigate } from "react-router-dom";
 
-// Enhanced configuration for ICE servers (STUN/TURN)
 const iceServers = {
   iceServers: [
     { urls: "stun:stun.l.google.com:19302" },
@@ -24,7 +23,7 @@ const iceServers = {
     { urls: "stun:stun2.l.google.com:19302" },
     { urls: "stun:stun3.l.google.com:19302" },
     { urls: "stun:stun4.l.google.com:19302" },
-    // Add more TURN servers for better connectivity
+
     {
       urls: "turn:numb.viagenie.ca",
       username: "webrtc@live.com",
@@ -39,10 +38,8 @@ const iceServers = {
   iceCandidatePoolSize: 10,
 };
 
-// Initialize socket connection - we'll do this inside a useEffect
 let socket = null;
 
-// Global değişkenler - DOM manipülasyonu için
 let remoteStream = null;
 let lastVideoElement = null;
 
@@ -273,7 +270,6 @@ const useVideoCall = () => {
   const resetConnection = async () => {
     console.log("Resetting connection completely");
 
-    // Müzakere durumunu sıfırla
     setIsNegotiating(false);
     clearTimeout(negotiationTimeout);
 
@@ -311,15 +307,12 @@ const useVideoCall = () => {
   const initializeMedia = async () => {
     dispatch(fetchStart());
     try {
-      console.log("Initializing media stream");
-
       // If we already have a stream, stop all tracks
       if (localStream.current) {
-        console.log("Stopping existing local stream tracks");
         localStream.current.getTracks().forEach((track) => track.stop());
       }
 
-      console.log("Requesting user media");
+      // console.log("Requesting user media");
       const stream = await navigator.mediaDevices.getUserMedia({
         video: {
           width: { ideal: 1280 },
@@ -339,12 +332,12 @@ const useVideoCall = () => {
       // Enable tracks by default
       stream.getVideoTracks().forEach((track) => {
         track.enabled = true;
-        console.log("Enabled video track:", track.label);
+        // console.log("Enabled video track:", track.label);
       });
 
       stream.getAudioTracks().forEach((track) => {
         track.enabled = true;
-        console.log("Enabled audio track:", track.label);
+        // console.log("Enabled audio track:", track.label);
       });
 
       // Tüm video elementlerini bul
@@ -392,7 +385,6 @@ const useVideoCall = () => {
 
       return stream;
     } catch (err) {
-      console.error("Error accessing media devices:", err);
       dispatch(fetchFail());
       toastErrorNotify("Error accessing media devices: " + err.message);
       return null;
@@ -407,8 +399,6 @@ const useVideoCall = () => {
         peerConnection.current.close();
       }
 
-      console.log("Creating new peer connection");
-
       // Create new peer connection with advanced options
       peerConnection.current = new RTCPeerConnection({
         ...iceServers,
@@ -422,12 +412,11 @@ const useVideoCall = () => {
 
       // Create a new MediaStream for remote tracks
       remoteStream = new MediaStream();
-      console.log("Created new remote stream");
 
       // Add local tracks to peer connection
       if (localStream.current) {
         localStream.current.getTracks().forEach((track) => {
-          console.log(`Adding local ${track.kind} track to peer connection`);
+          // console.log(`Adding local ${track.kind} track to peer connection`);
           peerConnection.current.addTrack(track, localStream.current);
         });
       } else {
@@ -440,17 +429,13 @@ const useVideoCall = () => {
         }
       }
 
-      // Handle incoming tracks - DOM manipülasyonu kullanarak
       peerConnection.current.ontrack = (event) => {
         console.log("Received remote track:", event.track.kind);
 
-        // Track'i remoteStream'e ekle
         remoteStream.addTrack(event.track);
 
-        // Tüm video elementlerini bul
         const videoElements = document.querySelectorAll("video");
 
-        // Remote video elementini bul (muted olmayan)
         let remoteVideoElement = null;
         for (let i = 0; i < videoElements.length; i++) {
           if (!videoElements[i].muted) {
@@ -460,26 +445,20 @@ const useVideoCall = () => {
         }
 
         if (remoteVideoElement) {
-          console.log("Found remote video element, updating srcObject");
-
           // Video elementini güncelle
           if (remoteVideoElement !== lastVideoElement) {
             lastVideoElement = remoteVideoElement;
 
-            // Önce mevcut srcObject'i temizle
             remoteVideoElement.srcObject = null;
 
-            // Kısa bir gecikme ile yeni stream'i ayarla
             setTimeout(() => {
               remoteVideoElement.srcObject = remoteStream;
 
-              // Video elementini oynatmaya zorla
               const playPromise = remoteVideoElement.play();
               if (playPromise !== undefined) {
                 playPromise.catch((e) => {
                   console.error("Error playing remote video:", e);
 
-                  // Otomatik oynatma politikası hatası durumunda tekrar dene
                   setTimeout(() => {
                     remoteVideoElement.play().catch((err) => {
                       console.error("Second attempt to play failed:", err);
@@ -706,7 +685,6 @@ const useVideoCall = () => {
 
       setIsNegotiating(true);
 
-      // Müzakere zaman aşımı - 10 saniye sonra otomatik olarak sıfırla
       const timeout = setTimeout(() => {
         if (isNegotiating) {
           console.log("Renegotiation timeout - resetting negotiation state");
@@ -738,7 +716,6 @@ const useVideoCall = () => {
       setIsNegotiating(false);
       clearTimeout(negotiationTimeout);
 
-      // If we get an invalid state error, try recreating the connection
       if (error.name === "InvalidStateError") {
         console.log(
           "Invalid state during renegotiation, recreating connection"
@@ -827,9 +804,8 @@ const useVideoCall = () => {
     // Auto-enable camera and mic when initiating a call
     const stream = await initializeMedia();
     if (stream) {
-      console.log("Media initialized for outgoing call");
-      toggleVideo(true); // Force enable video
-      toggleAudio(true); // Force enable audio
+      toggleVideo(true);
+      toggleAudio(true);
 
       // Tüm video elementlerini bul
       const videoElements = document.querySelectorAll("video");
@@ -866,8 +842,8 @@ const useVideoCall = () => {
       const stream = await initializeMedia();
       if (stream) {
         console.log("Media initialized for incoming call");
-        toggleVideo(true); // Force enable video
-        toggleAudio(true); // Force enable audio
+        toggleVideo(true);
+        toggleAudio(true);
 
         // Tüm video elementlerini bul
         const videoElements = document.querySelectorAll("video");
@@ -1075,10 +1051,8 @@ const useVideoCall = () => {
   const changeMicrophone = async (deviceId) => {
     try {
       if (localStream.current) {
-        // Stop current audio tracks
         localStream.current.getAudioTracks().forEach((track) => track.stop());
 
-        // Get new stream with selected microphone
         const newStream = await navigator.mediaDevices.getUserMedia({
           audio: {
             deviceId: { exact: deviceId },
@@ -1088,7 +1062,6 @@ const useVideoCall = () => {
           video: false,
         });
 
-        // Replace audio track in local stream
         const newAudioTrack = newStream.getAudioTracks()[0];
         const oldAudioTrack = localStream.current.getAudioTracks()[0];
 
@@ -1098,7 +1071,6 @@ const useVideoCall = () => {
 
         localStream.current.addTrack(newAudioTrack);
 
-        // Update peer connection if it exists
         if (peerConnection.current) {
           const senders = peerConnection.current.getSenders();
           const audioSender = senders.find(
@@ -1124,12 +1096,10 @@ const useVideoCall = () => {
 
   const shareScreen = async () => {
     try {
-      // If already sharing screen, stop sharing
       if (screenStream.current) {
         screenStream.current.getTracks().forEach((track) => track.stop());
         screenStream.current = null;
 
-        // Replace track in peer connection
         if (peerConnection.current && localStream.current) {
           const senders = peerConnection.current.getSenders();
           const videoSender = senders.find(
