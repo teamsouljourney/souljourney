@@ -420,15 +420,12 @@ const useVideoCall = () => {
         const stream = await initializeMedia(true); // Enable tracks for call
         if (stream) {
           stream.getTracks().forEach((track) => {
-            console.log(`Adding local ${track.kind} track to peer connection`);
             peerConnection.current.addTrack(track, stream);
           });
         }
       }
 
       peerConnection.current.ontrack = (event) => {
-        console.log("Received remote track:", event.track.kind);
-
         remoteStream.addTrack(event.track);
 
         // Find remote video element using data attribute
@@ -440,50 +437,23 @@ const useVideoCall = () => {
           // Update video element
           if (remoteVideoElement !== lastVideoElement) {
             lastVideoElement = remoteVideoElement;
-
             remoteVideoElement.srcObject = null;
 
             setTimeout(() => {
               remoteVideoElement.srcObject = remoteStream;
-
-              const playPromise = remoteVideoElement.play();
-              if (playPromise !== undefined) {
-                playPromise.catch((e) => {
-                  console.error("Error playing remote video:", e);
-
-                  setTimeout(() => {
-                    remoteVideoElement.play().catch((err) => {
-                      console.error("Second attempt to play failed:", err);
-                    });
-                  }, 1000);
-                });
-              }
-
-              console.log(
-                "Remote video playing with tracks:",
-                remoteStream.getTracks().length
-              );
+              remoteVideoElement.play().catch(() => {
+                setTimeout(() => {
+                  remoteVideoElement.play().catch(() => {});
+                }, 1000);
+              });
             }, 100);
-          } else {
-            console.log("Same video element, just updating tracks");
           }
-        } else {
-          console.error("Could not find remote video element");
         }
 
-        // Track ended event
-        event.track.onended = () => {
-          console.log(`Remote ${event.track.kind} track ended`);
-        };
-
-        // Track mute/unmute events
-        event.track.onmute = () => {
-          console.log(`Remote ${event.track.kind} track muted`);
-        };
-
-        event.track.onunmute = () => {
-          console.log(`Remote ${event.track.kind} track unmuted`);
-        };
+        // Track events
+        event.track.onended = () => {};
+        event.track.onmute = () => {};
+        event.track.onunmute = () => {};
       };
 
       // Handle ICE candidates
@@ -500,7 +470,6 @@ const useVideoCall = () => {
       // Connection state changes
       peerConnection.current.onconnectionstatechange = () => {
         const state = peerConnection.current.connectionState;
-        console.log("Connection state changed:", state);
         setPeerConnectionState(state);
 
         if (
@@ -520,12 +489,9 @@ const useVideoCall = () => {
         } else if (state === "connected") {
           toastSuccessNotify("Connected to remote peer");
 
-          // If we don't have remote tracks after connection, try to renegotiate
+          // Check for remote tracks after connection
           setTimeout(() => {
             if (!remoteStream || remoteStream.getTracks().length === 0) {
-              console.log(
-                "No remote tracks after connection, trying to renegotiate"
-              );
               if (!isNegotiating) {
                 renegotiateConnection();
               }
@@ -538,10 +504,7 @@ const useVideoCall = () => {
         const state = peerConnection.current.iceConnectionState;
         setIceConnectionState(state);
 
-        if (state === "connected" || state === "completed") {
-          console.log("ICE connection established");
-        } else if (state === "failed") {
-          console.log("ICE connection failed, trying to restart ICE");
+        if (state === "failed") {
           peerConnection.current.restartIce();
 
           // If ICE fails multiple times, try full renegotiation
@@ -558,7 +521,6 @@ const useVideoCall = () => {
               peerConnection.current &&
               peerConnection.current.iceConnectionState === "disconnected"
             ) {
-              console.log("ICE still disconnected, attempting to restart");
               peerConnection.current.restartIce();
             }
           }, 2000);
@@ -574,19 +536,14 @@ const useVideoCall = () => {
             !peerConnection.current ||
             peerConnection.current.signalingState !== "stable"
           ) {
-            console.log(
-              "Negotiation needed, but skipping because already negotiating or not in stable state"
-            );
             return;
           }
 
-          console.log("Starting negotiation process");
           setIsNegotiating(true);
 
           // Negotiation timeout - automatically reset after 10 seconds
           const timeout = setTimeout(() => {
             if (isNegotiating) {
-              console.log("Negotiation timeout - resetting negotiation state");
               setIsNegotiating(false);
             }
           }, 10000);
@@ -600,7 +557,6 @@ const useVideoCall = () => {
 
           // Check again - is signalingState still stable?
           if (peerConnection.current.signalingState !== "stable") {
-            console.log("Signaling state changed during negotiation, aborting");
             setIsNegotiating(false);
             clearTimeout(timeout);
             return;
@@ -613,17 +569,11 @@ const useVideoCall = () => {
             signal: peerConnection.current.localDescription,
             to: remoteUserId,
           });
-
-          console.log("Offer sent during negotiation");
         } catch (error) {
-          console.error("Error during negotiation:", error);
           setIsNegotiating(false);
           clearTimeout(negotiationTimeout);
 
           if (error.name === "InvalidStateError") {
-            console.log(
-              "Invalid state during negotiation, resetting connection"
-            );
             setTimeout(() => resetConnection(), 1000);
           }
         }
@@ -631,7 +581,6 @@ const useVideoCall = () => {
 
       return peerConnection.current;
     } catch (error) {
-      console.error("Error creating peer connection:", error);
       toastErrorNotify("Error creating connection: " + error.message);
       return null;
     }
