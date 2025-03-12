@@ -7,7 +7,7 @@ const AppointmentDetails = () => {
   const { singleAppointment } = useSelector((state) => state.appointments);
 
   return (
-    <div className="mt-4 space-y-2 text-gray-700">
+    <div className="mt-4 space-y-2">
       <p>
         <strong>{t("client")}:</strong> {singleAppointment?.userId?.firstName}{" "}
         {singleAppointment?.userId?.lastName}
