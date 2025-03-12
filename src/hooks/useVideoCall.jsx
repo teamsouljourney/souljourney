@@ -77,7 +77,6 @@ const useVideoCall = () => {
       });
 
       socket.on("connect_error", (error) => {
-        console.error("Socket connection error:", error);
         toastErrorNotify("Socket connection error. Please check your network.");
       });
 
@@ -150,34 +149,20 @@ const useVideoCall = () => {
 
     // Handle WebRTC signaling
     socket.on("webrtc-signal", async ({ signal, from }) => {
-      console.log(
-        `Received WebRTC signal from ${from}`,
-        signal.type || "ICE candidate"
-      );
-
       if (!peerConnection.current) {
-        console.log("Creating peer connection for incoming signal");
         await createPeerConnection();
       }
 
       try {
         if (signal.type === "offer") {
-          console.log("Processing offer");
-
           // If negotiation is in progress, reset it
           if (isNegotiating) {
-            console.log("Already negotiating, resetting negotiation state");
             clearTimeout(negotiationTimeout);
             setIsNegotiating(false);
           }
 
           // If signaling state is not stable, rollback
           if (peerConnection.current.signalingState !== "stable") {
-            console.log(
-              "Signaling state is not stable:",
-              peerConnection.current.signalingState
-            );
-
             // Rollback only needed if local description exists
             if (
               peerConnection.current.signalingState === "have-local-offer" ||
@@ -209,7 +194,6 @@ const useVideoCall = () => {
           await peerConnection.current.setRemoteDescription(
             new RTCSessionDescription(signal)
           );
-          console.log("Remote description set successfully");
 
           // Negotiation complete, reset isNegotiating
           setIsNegotiating(false);
@@ -218,7 +202,6 @@ const useVideoCall = () => {
           // If still no tracks, reset connection
           setTimeout(() => {
             if (!remoteStream || remoteStream.getTracks().length === 0) {
-              console.log("No tracks after answer, resetting connection");
               resetConnection();
             }
           }, 3000);
@@ -239,7 +222,6 @@ const useVideoCall = () => {
 
         // If we get an invalid state error, try recreating the connection
         if (error.name === "InvalidStateError") {
-          console.log("Invalid state during signaling, recreating connection");
           setTimeout(() => resetConnection(), 1000);
         }
       }
@@ -247,13 +229,11 @@ const useVideoCall = () => {
 
     // Handle call ended
     socket.on("callEnded", ({ appointmentId }) => {
-      console.log(`Call ended for appointment ${appointmentId}`);
       endCall();
     });
 
     // Handle call errors
     socket.on("callError", ({ message }) => {
-      console.error("Call error:", message);
       toastErrorNotify(message);
       dispatch(setCallStatus("idle"));
     });
@@ -588,7 +568,6 @@ const useVideoCall = () => {
 
   // Renegotiate connection if needed
   const renegotiateConnection = async () => {
-    console.log("Renegotiating connection");
     if (!peerConnection.current) {
       console.error("No peer connection to renegotiate");
       await createPeerConnection();
@@ -598,7 +577,6 @@ const useVideoCall = () => {
     try {
       // Prevent multiple negotiations at once
       if (isNegotiating) {
-        console.log("Already negotiating, skipping renegotiation");
         return;
       }
 
@@ -608,17 +586,12 @@ const useVideoCall = () => {
         peerConnection.current.connectionState === "closed" ||
         peerConnection.current.iceConnectionState === "failed"
       ) {
-        console.log("Connection in bad state, recreating peer connection");
         await resetConnection();
         return;
       }
 
       // Check signaling state before creating an offer
       if (peerConnection.current.signalingState !== "stable") {
-        console.log(
-          "Cannot create offer in state:",
-          peerConnection.current.signalingState
-        );
         console.log("Resetting connection to get to stable state");
         await resetConnection();
         return;
@@ -649,8 +622,6 @@ const useVideoCall = () => {
         signal: peerConnection.current.localDescription,
         to: remoteUserId,
       });
-
-      console.log("Sent renegotiation offer");
     } catch (error) {
       console.error("Error renegotiating connection:", error);
       toastErrorNotify("Connection error: " + error.message);
@@ -677,10 +648,6 @@ const useVideoCall = () => {
 
       // Only proceed if in stable state
       if (peerConnection.current.signalingState !== "stable") {
-        console.log(
-          "Cannot create offer in state:",
-          peerConnection.current.signalingState
-        );
         return;
       }
 
@@ -689,7 +656,6 @@ const useVideoCall = () => {
       // Negotiation timeout - automatically reset after 10 seconds
       const timeout = setTimeout(() => {
         if (isNegotiating) {
-          console.log("Offer creation timeout - resetting negotiation state");
           setIsNegotiating(false);
         }
       }, 10000);
@@ -703,7 +669,6 @@ const useVideoCall = () => {
 
       // Check again if signaling state is still stable
       if (peerConnection.current.signalingState !== "stable") {
-        console.log("Signaling state changed during offer creation, aborting");
         setIsNegotiating(false);
         clearTimeout(timeout);
         return;
@@ -723,9 +688,6 @@ const useVideoCall = () => {
       clearTimeout(negotiationTimeout);
 
       if (error.name === "InvalidStateError") {
-        console.log(
-          "Invalid state during offer creation, resetting connection"
-        );
         setTimeout(() => resetConnection(), 1000);
       }
     }
@@ -733,9 +695,6 @@ const useVideoCall = () => {
 
   // Initiate a call
   const initiateCall = async (appointmentId, userId) => {
-    console.log(
-      `Initiating call to ${userId} for appointment ${appointmentId}`
-    );
     setCurrentAppointmentId(appointmentId);
     setRemoteUserId(userId);
     setConnectionAttempts(0);
@@ -773,7 +732,6 @@ const useVideoCall = () => {
   // Accept incoming call
   const acceptCall = async (appointmentId) => {
     try {
-      console.log(`Accepting call for appointment ${appointmentId}`);
       dispatch(setCallStatus("connected"));
       setConnectionAttempts(0);
       setIsNegotiating(false);
@@ -792,7 +750,6 @@ const useVideoCall = () => {
 
         // Set stream to local video element if found
         if (localVideoElement) {
-          console.log("Setting local video for incoming call");
           localVideoElement.srcObject = stream;
           localVideoElement
             .play()
@@ -847,8 +804,8 @@ const useVideoCall = () => {
     clearTimeout(negotiationTimeout);
 
     // Navigate back if needed
-    if (window.location.pathname === "/video-call") {
-      navigate("/dashboard");
+    if (window.location.pathname === "/profile/video-call") {
+      navigate("/profile");
     }
   };
 
@@ -888,7 +845,6 @@ const useVideoCall = () => {
         );
       }
     } catch (error) {
-      console.error("Error getting media devices:", error);
       dispatch(fetchFail());
       toastErrorNotify("Error getting media devices: " + error.message);
     }
@@ -995,7 +951,6 @@ const useVideoCall = () => {
         }
       }
     } catch (error) {
-      console.error("Error changing camera:", error);
       toastErrorNotify("Error changing camera: " + error.message);
     }
   };
@@ -1041,7 +996,6 @@ const useVideoCall = () => {
         setMicrophoneDropdownOpen(false);
       }
     } catch (error) {
-      console.error("Error changing microphone:", error);
       toastErrorNotify("Error changing microphone: " + error.message);
     }
   };
@@ -1132,7 +1086,6 @@ const useVideoCall = () => {
 
       toastSuccessNotify("Screen sharing started");
     } catch (err) {
-      console.error("Error sharing screen:", err);
       toastErrorNotify("Error sharing screen: " + err.message);
     }
   };
