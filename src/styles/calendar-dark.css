@@ -56,8 +56,8 @@ html.dark body .fc .fc-button-primary:not(:disabled):active {
 /* Event dot colors */
 html.dark body .fc .fc-event-dot,
 html.dark body .fc .fc-daygrid-event-dot {
-  background-color: #D798B0 !important; /* pink */
-  border-color: #D798B0 !important; /* pink */
+  background-color: #D798B0; /* pink */
+  border-color: #D798B0; /* pink */
 }
 
 /*-----------------------------*/
