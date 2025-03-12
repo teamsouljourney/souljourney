@@ -23,7 +23,7 @@ export default function MainChatArea({
     (state) => state.appointments
   );
   const { createChat, initializeSocket, getAllChats } = useChatCall();
-  const { createNotification } = useNotificationCall();
+  const { createNotification, getAllNotifications } = useNotificationCall();
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [isOnline, setIsOnline] = useState(currentUser?.isOnline);

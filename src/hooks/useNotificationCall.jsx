@@ -3,22 +3,35 @@ import {
   createNotificationSuccess,
   fetchFail,
   fetchStart,
+  getAllNotificationSuccess,
   getNotificationSuccess,
 } from "../features/notificationSlice";
 import useAxios from "./useAxios";
-import { CleanHands } from "@mui/icons-material";
 
 const useNotificationCall = () => {
   const dispatch = useDispatch();
   const axiosWithToken = useAxios();
   const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-  const getNotifications = async (recieverId, recieverModel) => {
+  const getAllNotifications = async () => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosWithToken.get(`${BASE_URL}notifications`);
+      dispatch(getAllNotificationSuccess(data));
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+      dispatch(fetchFail());
+    }
+  };
+
+  const getNotifications = async (id, recieverId, recieverModel) => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.get(
-        `${BASE_URL}notifications?recieverId=${recieverId}&recieverModel=${recieverModel}`
+        `${BASE_URL}notifications/${id}?recieverId=${recieverId}&recieverModel=${recieverModel}`
       );
+      id;
       dispatch(getNotificationSuccess(data));
       console.log(data);
     } catch (error) {
@@ -54,6 +67,7 @@ const useNotificationCall = () => {
   };
   return {
     getNotifications,
+    getAllNotifications,
     createNotification,
     markAsRead,
   };

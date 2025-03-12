@@ -1,16 +1,39 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BellIcon } from "@heroicons/react/24/outline";
+import { useSelector } from "react-redux";
+import useNotificationCall from "../hooks/useNotificationCall";
 
 const ViewNotifications = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [notificationCount, setNotificationCount] = useState(3);
+  const { notifications } = useSelector((state) => state.notifications);
+  const { getAllNotifications, markAsRead } = useNotificationCall();
+  const { currentUser } = useSelector((state) => state.auth);
+  const [notificationCount, setNotificationCount] = useState(0);
   const dropdownRef = useRef(null);
 
-  const notifications = [
-    { id: 1, message: "Yeni bir mesajınız var", time: "5 dakika önce" },
-    { id: 2, message: "Siparişiniz kargoya verildi", time: "1 saat önce" },
-    { id: 3, message: "Ödemeniz onaylandı", time: "3 saat önce" },
-  ];
+  useEffect(() => {
+    getAllNotifications();
+    setNotificationCount(notificationLength);
+  }, []);
+
+  console.log(notifications);
+
+  const filteredNotifications = notifications.filter(
+    (notify) => notify.recieverId === currentUser._id
+  );
+
+  console.log(filteredNotifications);
+  const notificationLength = filteredNotifications.filter(
+    (notify) => notify.isRead === false
+  ).length;
+
+  console.log(notificationLength);
+
+  // const notifications = [
+  //   { id: 1, message: "Yeni bir mesajınız var", time: "5 dakika önce" },
+  //   { id: 2, message: "Siparişiniz kargoya verildi", time: "1 saat önce" },
+  //   { id: 3, message: "Ödemeniz onaylandı", time: "3 saat önce" },
+  // ];
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -25,8 +48,9 @@ const ViewNotifications = () => {
     };
   }, []);
 
-  const markAsRead = () => {
+  const markRead = () => {
     setNotificationCount(0);
+    markAsRead();
   };
   return (
     <div className="relative" ref={dropdownRef}>
@@ -38,10 +62,11 @@ const ViewNotifications = () => {
         <span className="absolute -inset-1.5" />
         <span className="sr-only">View notifications</span>
         <BellIcon className="h-6 w-6" aria-hidden="true" />
-
-        <span className="absolute -top-1 -right-1 bg-red-500 text-white min-w-4 h-4 flex items-center justify-center rounded-full text-xs">
-          {notificationCount}
-        </span>
+        {notificationCount > 0 && (
+          <span className="absolute -top-1 -right-1 bg-red-500 text-white min-w-4 h-4 flex items-center justify-center rounded-full text-xs">
+            {notificationCount}
+          </span>
+        )}
       </button>
 
       {isOpen && (
@@ -51,7 +76,7 @@ const ViewNotifications = () => {
             <h3 className="text-lg font-medium text-gray-900">Bildirimler</h3>
             {notificationCount > 0 && (
               <button
-                onClick={markAsRead}
+                onClick={markRead}
                 className="text-xs text-blue-500 hover:text-blue-700"
               >
                 Tümünü okundu işaretle
@@ -61,8 +86,8 @@ const ViewNotifications = () => {
 
           {/* Bildirim Listesi */}
           <div className="max-h-[300px] overflow-y-auto">
-            {notifications.length > 0 ? (
-              notifications.map((notification) => (
+            {filteredNotifications.length > 0 ? (
+              filteredNotifications.map((notification) => (
                 <div
                   key={notification.id}
                   className="px-4 py-3 border-b border-gray-200 last:border-b-0 hover:bg-gray-50"
@@ -77,10 +102,10 @@ const ViewNotifications = () => {
                     </div>
                     <div className="ml-3 flex-1">
                       <p className="text-sm font-medium text-gray-900">
-                        {notification.message}
+                        {notification.content}
                       </p>
                       <p className="text-xs text-gray-500 mt-1">
-                        {notification.time}
+                        {notification.createdAt}
                       </p>
                     </div>
                   </div>
