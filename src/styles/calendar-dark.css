@@ -1,0 +1,52 @@
+/* Basic text colors */
+html.dark body .fc {
+    color: #dddcd8 !important; /* offWhite-dark - base color for all text colors */
+  }
+  
+  /* Title and day names */
+  html.dark body .fc .fc-toolbar-title,
+  html.dark body .fc .fc-col-header-cell-cushion {
+    color: #dddcd8 !important;
+  }
+  
+  /* Day Numbers */
+  html.dark body .fc .fc-daygrid-day-number {
+    color: #dddcd8 !important;
+  }
+  
+  /* Event contents */
+  html.dark body .fc .fc-event-title,
+  html.dark body .fc .fc-event-time {
+    color: #dddcd8 !important;
+  }
+  
+  /* Tablo başlıkları (Mon, Tue, Wed vb.) */
+  html.dark body .fc th {
+    color: #dddcd8 !important;
+  }
+  
+  /* Event container color */
+  html.dark body .fc .fc-event {
+    background-color: #8F5B8A !important; /* mauve */
+    border-color: #8F5B8A !important;
+  }
+  
+  /* Text color in event */
+  html.dark body .fc .fc-event * {
+    color: #dddcd8 !important;
+  }
+  
+  /* Buttons */
+  html.dark body .fc .fc-button-primary {
+    background-color: #8F5B8A !important; /* mauve  */
+    border-color: #8F5B8A !important;
+    color: #dddcd8 !important;
+  }
+  
+  /* Active buttons */
+  html.dark body .fc .fc-button-primary:not(:disabled).fc-button-active,
+  html.dark body .fc .fc-button-primary:not(:disabled):active {
+    background-color: #81527c !important; /* mauve-dark  */
+    border-color: #81527c !important;
+    color: #dddcd8 !important;
+  }
