@@ -1,41 +1,39 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  cameras: [],
+  microphones: [],
+  selectedCamera: null,
+  selectedMicrophone: null,
+  isVideoOn: true,
+  isAudioOn: true,
+  haveMedia: false,
+  mediaStatus: {
+    audio: "disabled",
+    video: "disabled",
+  },
+  callStatus: "idle", // idle, outgoing, incoming, connected
+  loading: false,
+  error: null,
+  remoteStream: null,
+};
+
 const videoSlice = createSlice({
   name: "video",
-
-  initialState: {
-    current: "idle", //negotiating, progress, complete
-    video: "off", //video feed status: "off" "enabled" "disabled" "complete"
-    audio: "off", //audio feed status: "off" "enabled" "disabled" "complete"
-    audioDevice: "default", //enumerate devices, chosen audio input device
-    videoDevice: "default",
-    shareScreen: false,
-    haveMedia: false,
-    haveCreatedOffer: false,
-    cameras: [],
-    microphones: [],
-    selectedCamera: "",
-    selectedMicrophone: "",
-    isVideoOn: false,
-    isAudioOn: false,
-    loading: false,
-    error: false,
-  },
+  initialState,
   reducers: {
     fetchStart: (state) => {
       state.loading = true;
-      state.error = false;
+      state.error = null;
     },
-    setHaveMedia: (state, { payload }) => {
-      state.haveMedia = payload;
-    },
-    setMediaStatus: (state, { payload }) => {
-      if (payload.audio !== undefined) state.audio = payload.audio;
-      if (payload.video !== undefined) state.video = payload.video;
+    fetchFail: (state, { payload }) => {
+      state.loading = false;
+      state.error = payload;
     },
     setDevices: (state, { payload }) => {
-      if (payload.cameras) state.cameras = payload.cameras;
-      if (payload.microphones) state.microphones = payload.microphones;
+      state.loading = false;
+      state.cameras = payload.cameras;
+      state.microphones = payload.microphones;
     },
     setSelectedDevices: (state, { payload }) => {
       if (payload.camera) state.selectedCamera = payload.camera;
@@ -47,9 +45,17 @@ const videoSlice = createSlice({
     setIsAudioOn: (state, { payload }) => {
       state.isAudioOn = payload;
     },
-    fetchFail: (state) => {
-      state.loading = false;
-      state.error = true;
+    setHaveMedia: (state, { payload }) => {
+      state.haveMedia = payload;
+    },
+    setMediaStatus: (state, { payload }) => {
+      state.mediaStatus = payload;
+    },
+    setCallStatus: (state, { payload }) => {
+      state.callStatus = payload;
+    },
+    setRemoteStream: (state, { payload }) => {
+      state.remoteStream = payload;
     },
   },
 });
@@ -57,12 +63,14 @@ const videoSlice = createSlice({
 export const {
   fetchStart,
   fetchFail,
-  setMediaStatus,
-  setHaveMedia,
   setDevices,
+  setSelectedDevices,
   setIsVideoOn,
   setIsAudioOn,
-  setSelectedDevices,
+  setHaveMedia,
+  setMediaStatus,
+  setCallStatus,
+  setRemoteStream,
 } = videoSlice.actions;
 
 export default videoSlice.reducer;
