@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useChatCall from "../../hooks/useChatCall";
 import { BiSend } from "react-icons/bi";
+import useNotificationCall from "../../hooks/useNotificationCall";
 
 export default function MainChatArea({
   isEmojiPickerOpen,
@@ -22,6 +23,7 @@ export default function MainChatArea({
     (state) => state.appointments
   );
   const { createChat, initializeSocket, getAllChats } = useChatCall();
+  const { createNotification } = useNotificationCall();
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [isOnline, setIsOnline] = useState(currentUser?.isOnline);
@@ -76,6 +78,15 @@ export default function MainChatArea({
     content: message,
   };
 
+  const notificationData = {
+    recieverId: selectedUser,
+    recieverModel: currentUser?.isTherapist === true ? "User" : "Therapist",
+    notificationType: "message",
+    content: `New message from ${
+      currentUser.firstName + currentUser.lastName
+    }! Check your chat now.`,
+  };
+
   const handleChats = async (e) => {
     e.preventDefault();
     if (!messageData?.content.trim() || !selectedUser) return;
@@ -84,6 +95,7 @@ export default function MainChatArea({
     try {
       await createChat(messageData);
       setMessage("");
+      await createNotification(notificationData);
     } catch (error) {
       console.error("Error sending message:", error);
     } finally {

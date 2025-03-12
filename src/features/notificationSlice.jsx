@@ -15,12 +15,12 @@ const notificationSlice = createSlice({
     },
     getNotificationSuccess: (state, { payload }) => {
       state.loading = false;
-      state.notes = payload.data;
+      state.notifications = payload.data;
       state.error = false;
     },
     createNotificationSuccess: (state, { payload }) => {
       state.loading = false;
-      state.notes.push(payload.data); // Yeni notu ekle
+      state.notes.push(payload.data);
       state.error = false;
     },
     readNotification: (state, { payload }) => {
