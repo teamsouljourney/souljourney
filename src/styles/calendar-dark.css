@@ -1,56 +1,82 @@
 /* Basic text colors */
 html.dark body .fc {
-    color: #dddcd8; /* offWhite-dark - base color for all text colors */
-  }
-  
-  /* Title and day names */
-  html.dark body .fc .fc-toolbar-title,
-  html.dark body .fc .fc-col-header-cell-cushion {
-    color: #dddcd8;
-  }
-  
-  /* Day Numbers */
-  /* html.dark body .fc .fc-daygrid-day-number {
+  color: #dddcd8; /* offWhite-dark - base color for all text colors */
+}
+
+/* Title and day names */
+html.dark body .fc .fc-toolbar-title,
+html.dark body .fc .fc-col-header-cell-cushion {
+  color: #dddcd8;
+}
+
+/* Day Numbers */
+/* html.dark body .fc .fc-daygrid-day-number {
     color: #dddcd8;
   } */
-  
-  /* Event contents */
-  /* html.dark body .fc .fc-event-title,
+
+/* Event contents */
+/* html.dark body .fc .fc-event-title,
   html.dark body .fc .fc-event-time {
     color: #dddcd8;
   } */
-  
-  /* Table headers (Mon, Tue, Wed etc.) */
-  html.dark body .fc th {
-    background-color: #4DA1A9;
-    /* color: #dddcd8 ; */
-  }
-  
-  /* Event container color */
-  html.dark body .fc .fc-event {
-    background-color: #4DA1A9 ; /* Sea Green (Main color) */
-    border-color: #4DA1A9 ;
-    border-radius: 20px;
-  }
-  
-  /* Text color in event */
-  /* html.dark body .fc .fc-event * {
+
+/* Table headers (Mon, Tue, Wed etc.) */
+html.dark body .fc th {
+  background-color: #4da1a9;
+  /* color: #dddcd8 ; */
+}
+
+/* Event container color */
+html.dark body .fc .fc-event {
+  background-color: #4da1a9; /* Sea Green (Main color) */
+  border-color: #4da1a9;
+  border-radius: 20px;
+}
+
+/* Text color in event */
+/* html.dark body .fc .fc-event * {
     color: #dddcd8 ;
   } */
-  
-  /* Buttons */
-  html.dark body .fc .fc-button-primary {
-    background-color: #4DA1A9 ; /* Sea Green (Main color)  */
-    border-color: #4DA1A9 ;
-    color: #dddcd8 ;
-  }
-  
-  /* Active buttons */
-  html.dark body .fc .fc-button-primary:not(:disabled).fc-button-active,
-  html.dark body .fc .fc-button-primary:not(:disabled):active {
-    background-color: #4DA1A9 ; /* Sea Green (Main color)  */
-    border-color: #4DA1A9 ;
-    color: #dddcd8 ;
-  }
 
-  
+/* Buttons */
+html.dark body .fc .fc-button-primary {
+  background-color: #4da1a9; /* Sea Green (Main color)  */
+  border-color: #4da1a9;
+  color: #dddcd8;
+}
+
+/* Active buttons */
+html.dark body .fc .fc-button-primary:not(:disabled).fc-button-active,
+html.dark body .fc .fc-button-primary:not(:disabled):active {
+  background-color: #4da1a9; /* Sea Green (Main color)  */
+  border-color: #4da1a9;
+  color: #dddcd8;
+}
+
+/* Event dot colors */
+html.dark body .fc .fc-event-dot,
+html.dark body .fc .fc-daygrid-event-dot {
+  background-color: #D798B0 !important; /* pink */
+  border-color: #D798B0 !important; /* pink */
+}
+
+/*-----------------------------*/
+
+/* Farklı event türleri için farklı renkler (isteğe bağlı) */
+html.dark body .fc .fc-event.event-type-1 .fc-event-dot,
+html.dark body .fc .fc-daygrid-event.event-type-1 .fc-daygrid-event-dot {
+  background-color: #D798B0 !important; /* pink */
+  border-color: #D798B0 !important;
+}
+
+html.dark body .fc .fc-event.event-type-2 .fc-event-dot,
+html.dark body .fc .fc-daygrid-event.event-type-2 .fc-daygrid-event-dot {
+  background-color: #4DA1A9 !important; /* seaGreen */
+  border-color: #4DA1A9 !important;
+}
+
+html.dark body .fc .fc-event.event-type-3 .fc-event-dot,
+html.dark body .fc .fc-daygrid-event.event-type-3 .fc-daygrid-event-dot {
+  background-color: #79D7B8 !important; /* pastelGreen */
+  border-color: #79D7B8 !important;
+}
