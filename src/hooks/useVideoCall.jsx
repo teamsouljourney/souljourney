@@ -23,6 +23,17 @@ const iceServers = {
     { urls: "stun:stun2.l.google.com:19302" },
     { urls: "stun:stun3.l.google.com:19302" },
     { urls: "stun:stun4.l.google.com:19302" },
+
+    {
+      urls: "turn:numb.viagenie.ca",
+      username: "webrtc@live.com",
+      credential: "muazkh",
+    },
+    {
+      urls: "turn:turn.anyfirewall.com:443?transport=tcp",
+      username: "webrtc",
+      credential: "webrtc",
+    },
   ],
   iceCandidatePoolSize: 10,
 };
@@ -112,7 +123,7 @@ const useVideoCall = () => {
       dispatch(setCallStatus("incoming"));
 
       // Auto-enable camera and mic when receiving a call
-      await initializeMedia();
+      await initializeMedia(true);
       toggleVideo(true); // Force enable video
       toggleAudio(true); // Force enable audio
     });
@@ -126,10 +137,12 @@ const useVideoCall = () => {
 
       // Make sure media is initialized and enabled
       if (!localStream.current) {
-        await initializeMedia();
+        await initializeMedia(true);
+      } else {
+        // Enable tracks if they were disabled
+        toggleVideo(true); // Force enable video
+        toggleAudio(true); // Force enable audio
       }
-      toggleVideo(true); // Force enable video
-      toggleAudio(true); // Force enable audio
 
       await createPeerConnection();
       await createOffer();
@@ -293,7 +306,7 @@ const useVideoCall = () => {
   };
 
   // Initialize media stream
-  const initializeMedia = async () => {
+  const initializeMedia = async (enableTracks = false) => {
     dispatch(fetchStart());
     try {
       // If we already have a stream, stop all tracks
@@ -317,13 +330,13 @@ const useVideoCall = () => {
       console.log("Media stream obtained successfully:", stream.id);
       localStream.current = stream;
 
-      // Enable tracks by default
+      // Set track enabled state based on parameter
       stream.getVideoTracks().forEach((track) => {
-        track.enabled = true;
+        track.enabled = enableTracks;
       });
 
       stream.getAudioTracks().forEach((track) => {
-        track.enabled = true;
+        track.enabled = enableTracks;
       });
 
       // Find WebRTC video elements using data attributes
@@ -354,10 +367,16 @@ const useVideoCall = () => {
         console.warn("Could not find local video element");
       }
 
+      // Update Redux state
       dispatch(setHaveMedia(true));
-      dispatch(setIsVideoOn(true));
-      dispatch(setIsAudioOn(true));
-      dispatch(setMediaStatus({ audio: "enabled", video: "enabled" }));
+      dispatch(setIsVideoOn(enableTracks));
+      dispatch(setIsAudioOn(enableTracks));
+      dispatch(
+        setMediaStatus({
+          audio: enableTracks ? "enabled" : "disabled",
+          video: enableTracks ? "enabled" : "disabled",
+        })
+      );
 
       // Get devices after permissions are granted
       await getMediaDevices();
@@ -398,7 +417,7 @@ const useVideoCall = () => {
           peerConnection.current.addTrack(track, localStream.current);
         });
       } else {
-        const stream = await initializeMedia();
+        const stream = await initializeMedia(true); // Enable tracks for call
         if (stream) {
           stream.getTracks().forEach((track) => {
             console.log(`Adding local ${track.kind} track to peer connection`);
@@ -775,7 +794,7 @@ const useVideoCall = () => {
     dispatch(setCallStatus("outgoing"));
 
     // Auto-enable camera and mic when initiating a call
-    const stream = await initializeMedia();
+    const stream = await initializeMedia(true); // Enable tracks for outgoing call
     if (stream) {
       toggleVideo(true);
       toggleAudio(true);
@@ -811,7 +830,7 @@ const useVideoCall = () => {
       setIsNegotiating(false);
 
       // Make sure media is initialized and enabled
-      const stream = await initializeMedia();
+      const stream = await initializeMedia(true); // Enable tracks for incoming call
       if (stream) {
         console.log("Media initialized for incoming call");
         toggleVideo(true);

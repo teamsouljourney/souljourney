@@ -79,8 +79,8 @@ const VideoCall = () => {
 
     if (!isSupported) return;
 
-    // Initialize media on component mount
-    initializeMedia()
+    // Initialize media on component mount but don't enable tracks
+    initializeMedia(false)
       .then((stream) => {
         if (stream && localVideoRef.current) {
           console.log("Setting local video source with stream:", stream.id);
@@ -135,6 +135,12 @@ const VideoCall = () => {
     return () => clearInterval(checkRemoteVideo);
   }, [callStatus, remoteVideoKey]);
 
+  // Determine if controls should be shown
+  const showControls =
+    callStatus === "connected" ||
+    callStatus === "outgoing" ||
+    callStatus === "incoming";
+
   if (!webRTCSupported) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-offWhite">
@@ -177,13 +183,15 @@ const VideoCall = () => {
               You
             </div>
 
-            {/* Local video refresh button */}
-            <button
-              onClick={refreshLocalVideo}
-              className="absolute px-2 py-1 text-xs text-white bg-black rounded top-3 right-3 bg-opacity-60 hover:bg-opacity-80"
-            >
-              Refresh
-            </button>
+            {/* Local video refresh button - only show during active call */}
+            {showControls && (
+              <button
+                onClick={refreshLocalVideo}
+                className="absolute px-2 py-1 text-xs text-white bg-black rounded top-3 right-3 bg-opacity-60 hover:bg-opacity-80"
+              >
+                Refresh
+              </button>
+            )}
           </div>
 
           {/* Remote Video */}
@@ -220,45 +228,49 @@ const VideoCall = () => {
               </div>
             )}
 
-            {/* Video element recreation button */}
-            <button
-              onClick={recreateVideoElement}
-              className="absolute px-2 py-1 text-xs text-white bg-black rounded top-3 right-3 bg-opacity-60 hover:bg-opacity-80"
-            >
-              Refresh
-            </button>
+            {/* Video element recreation button - only show during active call */}
+            {showControls && (
+              <button
+                onClick={recreateVideoElement}
+                className="absolute px-2 py-1 text-xs text-white bg-black rounded top-3 right-3 bg-opacity-60 hover:bg-opacity-80"
+              >
+                Refresh
+              </button>
+            )}
           </div>
         </div>
 
-        {/* Controls */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
-          {/* Microphone Control */}
-          <MicrophoneControl
-            isAudioOn={isAudioOn}
-            microphones={microphones}
-            microphoneDropdownOpen={microphoneDropdownOpen}
-            microphoneDropdownRef={microphoneDropdownRef}
-            toggleAudio={toggleAudio}
-            toggleMicrophoneDropdown={handleToggleMicrophoneDropdown}
-            getSelectedMicrophoneLabel={getSelectedMicrophoneLabel}
-            changeMicrophone={changeMicrophone}
-          />
+        {/* Controls - only show during active call */}
+        {showControls && (
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
+            {/* Microphone Control */}
+            <MicrophoneControl
+              isAudioOn={isAudioOn}
+              microphones={microphones}
+              microphoneDropdownOpen={microphoneDropdownOpen}
+              microphoneDropdownRef={microphoneDropdownRef}
+              toggleAudio={toggleAudio}
+              toggleMicrophoneDropdown={handleToggleMicrophoneDropdown}
+              getSelectedMicrophoneLabel={getSelectedMicrophoneLabel}
+              changeMicrophone={changeMicrophone}
+            />
 
-          {/* Camera Control */}
-          <CameraControl
-            isVideoOn={isVideoOn}
-            cameras={cameras}
-            cameraDropdownOpen={cameraDropdownOpen}
-            cameraDropdownRef={cameraDropdownRef}
-            toggleVideo={toggleVideo}
-            toggleCameraDropdown={handleToggleCameraDropdown}
-            getSelectedCameraLabel={getSelectedCameraLabel}
-            changeCamera={changeCamera}
-          />
+            {/* Camera Control */}
+            <CameraControl
+              isVideoOn={isVideoOn}
+              cameras={cameras}
+              cameraDropdownOpen={cameraDropdownOpen}
+              cameraDropdownRef={cameraDropdownRef}
+              toggleVideo={toggleVideo}
+              toggleCameraDropdown={handleToggleCameraDropdown}
+              getSelectedCameraLabel={getSelectedCameraLabel}
+              changeCamera={changeCamera}
+            />
 
-          {/* Screen Share Control */}
-          <ScreenShareControl shareScreen={shareScreen} />
-        </div>
+            {/* Screen Share Control */}
+            <ScreenShareControl shareScreen={shareScreen} />
+          </div>
+        )}
       </div>
     </div>
   );
