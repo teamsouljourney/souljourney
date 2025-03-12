@@ -170,13 +170,14 @@ const VideoCall = () => {
               autoPlay
               playsInline
               muted
+              data-webrtc="local"
               className="object-cover w-full bg-black rounded-lg shadow-lg h-72 md:h-96"
             />
             <div className="absolute px-2 py-1 text-xs text-white bg-black rounded bottom-3 left-3 bg-opacity-60">
               You
             </div>
 
-            {/* Local video yenileme butonu */}
+            {/* Local video refresh button */}
             <button
               onClick={refreshLocalVideo}
               className="absolute px-2 py-1 text-xs text-white bg-black rounded top-3 right-3 bg-opacity-60 hover:bg-opacity-80"
@@ -187,13 +188,14 @@ const VideoCall = () => {
 
           {/* Remote Video */}
           <div className="relative" ref={remoteVideoContainerRef}>
-            {/* Video elementini key ile yeniden oluşturuyoruz */}
+            {/* Video element recreated with key */}
             <video
               key={remoteVideoKey}
               ref={remoteVideoRef}
               autoPlay
               playsInline
               muted={false}
+              data-webrtc="remote"
               className="object-cover w-full bg-black rounded-lg shadow-lg h-72 md:h-96"
               style={{
                 transform: "translateZ(0)",
@@ -218,7 +220,7 @@ const VideoCall = () => {
               </div>
             )}
 
-            {/* Video elementini yeniden oluşturma butonu */}
+            {/* Video element recreation button */}
             <button
               onClick={recreateVideoElement}
               className="absolute px-2 py-1 text-xs text-white bg-black rounded top-3 right-3 bg-opacity-60 hover:bg-opacity-80"

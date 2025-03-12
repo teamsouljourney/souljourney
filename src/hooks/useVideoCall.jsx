@@ -162,21 +162,21 @@ const useVideoCall = () => {
         if (signal.type === "offer") {
           console.log("Processing offer");
 
-          // Eğer müzakere devam ediyorsa, önce onu iptal et
+          // If negotiation is in progress, reset it
           if (isNegotiating) {
             console.log("Already negotiating, resetting negotiation state");
             clearTimeout(negotiationTimeout);
             setIsNegotiating(false);
           }
 
-          // Eğer signaling state stable değilse, rollback yap
+          // If signaling state is not stable, rollback
           if (peerConnection.current.signalingState !== "stable") {
             console.log(
               "Signaling state is not stable:",
               peerConnection.current.signalingState
             );
 
-            // Rollback sadece local description varsa gerekli
+            // Rollback only needed if local description exists
             if (
               peerConnection.current.signalingState === "have-local-offer" ||
               peerConnection.current.signalingState === "have-local-pranswer"
@@ -187,16 +187,16 @@ const useVideoCall = () => {
             }
           }
 
-          // Remote description'ı ayarla
+          // Set remote description
           await peerConnection.current.setRemoteDescription(
             new RTCSessionDescription(signal)
           );
 
-          // Cevap oluştur
+          // Create answer
           const answer = await peerConnection.current.createAnswer();
           await peerConnection.current.setLocalDescription(answer);
 
-          // Cevabı gönder
+          // Send answer
           socket.emit("webrtc-signal", {
             appointmentId: currentAppointmentId,
             signal: peerConnection.current.localDescription,
@@ -209,11 +209,11 @@ const useVideoCall = () => {
           );
           console.log("Remote description set successfully");
 
-          // Müzakere tamamlandı, isNegotiating'i sıfırla
+          // Negotiation complete, reset isNegotiating
           setIsNegotiating(false);
           clearTimeout(negotiationTimeout);
 
-          // Eğer hala track yoksa, bağlantıyı yeniden başlat
+          // If still no tracks, reset connection
           setTimeout(() => {
             if (!remoteStream || remoteStream.getTracks().length === 0) {
               console.log("No tracks after answer, resetting connection");
@@ -288,7 +288,7 @@ const useVideoCall = () => {
     // Reset state
     setConnectionAttempts(0);
 
-    // Kısa bir gecikme ile yeni bağlantı oluştur
+    // Short delay before creating new connection
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     // Create new connection
@@ -296,7 +296,7 @@ const useVideoCall = () => {
 
     // Create new offer if we're in connected state
     if (callStatus === "connected") {
-      // Kısa bir gecikme ile teklif oluştur
+      // Short delay before creating offer
       setTimeout(async () => {
         await createOffer();
       }, 500);
@@ -312,7 +312,6 @@ const useVideoCall = () => {
         localStream.current.getTracks().forEach((track) => track.stop());
       }
 
-      // console.log("Requesting user media");
       const stream = await navigator.mediaDevices.getUserMedia({
         video: {
           width: { ideal: 1280 },
@@ -332,39 +331,30 @@ const useVideoCall = () => {
       // Enable tracks by default
       stream.getVideoTracks().forEach((track) => {
         track.enabled = true;
-        // console.log("Enabled video track:", track.label);
       });
 
       stream.getAudioTracks().forEach((track) => {
         track.enabled = true;
-        // console.log("Enabled audio track:", track.label);
       });
 
-      // Tüm video elementlerini bul
-      const videoElements = document.querySelectorAll("video");
+      // Find WebRTC video elements using data attributes
+      const localVideoElement = document.querySelector(
+        'video[data-webrtc="local"]'
+      );
 
-      // Local video elementini bul (muted olan)
-      let localVideoElement = null;
-      for (let i = 0; i < videoElements.length; i++) {
-        if (videoElements[i].muted) {
-          localVideoElement = videoElements[i];
-          break;
-        }
-      }
-
-      // Eğer local video elementi bulunduysa, stream'i ayarla
+      // If local video element is found, set the stream
       if (localVideoElement) {
         console.log("Found local video element, setting srcObject");
         localVideoElement.srcObject = stream;
 
-        // Video elementini oynatmaya zorla
+        // Force play video
         try {
           await localVideoElement.play();
           console.log("Local video playing successfully");
         } catch (e) {
           console.error("Error playing local video:", e);
 
-          // Otomatik oynatma politikası hatası durumunda tekrar dene
+          // Retry on autoplay policy error
           setTimeout(() => {
             localVideoElement.play().catch((err) => {
               console.error("Second attempt to play local video failed:", err);
@@ -416,7 +406,6 @@ const useVideoCall = () => {
       // Add local tracks to peer connection
       if (localStream.current) {
         localStream.current.getTracks().forEach((track) => {
-          // console.log(`Adding local ${track.kind} track to peer connection`);
           peerConnection.current.addTrack(track, localStream.current);
         });
       } else {
@@ -434,18 +423,13 @@ const useVideoCall = () => {
 
         remoteStream.addTrack(event.track);
 
-        const videoElements = document.querySelectorAll("video");
-
-        let remoteVideoElement = null;
-        for (let i = 0; i < videoElements.length; i++) {
-          if (!videoElements[i].muted) {
-            remoteVideoElement = videoElements[i];
-            break;
-          }
-        }
+        // Find remote video element using data attribute
+        const remoteVideoElement = document.querySelector(
+          'video[data-webrtc="remote"]'
+        );
 
         if (remoteVideoElement) {
-          // Video elementini güncelle
+          // Update video element
           if (remoteVideoElement !== lastVideoElement) {
             lastVideoElement = remoteVideoElement;
 
@@ -576,7 +560,7 @@ const useVideoCall = () => {
       // Handle negotiation needed
       peerConnection.current.onnegotiationneeded = async () => {
         try {
-          // Eğer zaten müzakere yapılıyorsa veya bağlantı durumu uygun değilse, işlemi atla
+          // Skip if already negotiating or connection state is not appropriate
           if (
             isNegotiating ||
             !peerConnection.current ||
@@ -591,7 +575,7 @@ const useVideoCall = () => {
           console.log("Starting negotiation process");
           setIsNegotiating(true);
 
-          // Müzakere zaman aşımı - 10 saniye sonra otomatik olarak sıfırla
+          // Negotiation timeout - automatically reset after 10 seconds
           const timeout = setTimeout(() => {
             if (isNegotiating) {
               console.log("Negotiation timeout - resetting negotiation state");
@@ -606,7 +590,7 @@ const useVideoCall = () => {
             offerToReceiveVideo: true,
           });
 
-          // Tekrar kontrol et - signalingState hala stable mi?
+          // Check again - is signalingState still stable?
           if (peerConnection.current.signalingState !== "stable") {
             console.log("Signaling state changed during negotiation, aborting");
             setIsNegotiating(false);
@@ -745,7 +729,7 @@ const useVideoCall = () => {
 
       setIsNegotiating(true);
 
-      // Müzakere zaman aşımı - 10 saniye sonra otomatik olarak sıfırla
+      // Negotiation timeout - automatically reset after 10 seconds
       const timeout = setTimeout(() => {
         if (isNegotiating) {
           console.log("Offer creation timeout - resetting negotiation state");
@@ -807,19 +791,18 @@ const useVideoCall = () => {
       toggleVideo(true);
       toggleAudio(true);
 
-      // Tüm video elementlerini bul
-      const videoElements = document.querySelectorAll("video");
+      // Find local video element using data attribute
+      const localVideoElement = document.querySelector(
+        'video[data-webrtc="local"]'
+      );
 
-      // Local video elementini bul (muted olan)
-      for (let i = 0; i < videoElements.length; i++) {
-        if (videoElements[i].muted) {
-          console.log("Setting local video for outgoing call");
-          videoElements[i].srcObject = stream;
-          videoElements[i]
-            .play()
-            .catch((e) => console.error("Error playing local video:", e));
-          break;
-        }
+      // Set stream to local video element if found
+      if (localVideoElement) {
+        console.log("Setting local video for outgoing call");
+        localVideoElement.srcObject = stream;
+        localVideoElement
+          .play()
+          .catch((e) => console.error("Error playing local video:", e));
       }
     }
 
@@ -845,19 +828,18 @@ const useVideoCall = () => {
         toggleVideo(true);
         toggleAudio(true);
 
-        // Tüm video elementlerini bul
-        const videoElements = document.querySelectorAll("video");
+        // Find local video element using data attribute
+        const localVideoElement = document.querySelector(
+          'video[data-webrtc="local"]'
+        );
 
-        // Local video elementini bul (muted olan)
-        for (let i = 0; i < videoElements.length; i++) {
-          if (videoElements[i].muted) {
-            console.log("Setting local video for incoming call");
-            videoElements[i].srcObject = stream;
-            videoElements[i]
-              .play()
-              .catch((e) => console.error("Error playing local video:", e));
-            break;
-          }
+        // Set stream to local video element if found
+        if (localVideoElement) {
+          console.log("Setting local video for incoming call");
+          localVideoElement.srcObject = stream;
+          localVideoElement
+            .play()
+            .catch((e) => console.error("Error playing local video:", e));
         }
       }
 
@@ -1041,6 +1023,19 @@ const useVideoCall = () => {
 
         dispatch(setSelectedDevices({ camera: deviceId }));
         setCameraDropdownOpen(false);
+
+        // Find local video element and update it
+        const localVideoElement = document.querySelector(
+          'video[data-webrtc="local"]'
+        );
+        if (localVideoElement) {
+          localVideoElement.srcObject = localStream.current;
+          localVideoElement
+            .play()
+            .catch((e) =>
+              console.error("Error playing updated local video:", e)
+            );
+        }
       }
     } catch (error) {
       console.error("Error changing camera:", error);
@@ -1111,6 +1106,14 @@ const useVideoCall = () => {
           }
         }
 
+        // Update local video element
+        const localVideoElement = document.querySelector(
+          'video[data-webrtc="local"]'
+        );
+        if (localVideoElement && localStream.current) {
+          localVideoElement.srcObject = localStream.current;
+        }
+
         toastSuccessNotify("Screen sharing stopped");
         return;
       }
@@ -1122,6 +1125,14 @@ const useVideoCall = () => {
           displaySurface: "monitor",
         },
       });
+
+      // Update local video element to show screen share
+      const localVideoElement = document.querySelector(
+        'video[data-webrtc="local"]'
+      );
+      if (localVideoElement) {
+        localVideoElement.srcObject = screenStream.current;
+      }
 
       // Replace track in peer connection
       if (peerConnection.current) {
@@ -1149,6 +1160,14 @@ const useVideoCall = () => {
           if (videoSender && localStream.current.getVideoTracks().length > 0) {
             videoSender.replaceTrack(localStream.current.getVideoTracks()[0]);
           }
+        }
+
+        // Update local video element
+        const localVideoElement = document.querySelector(
+          'video[data-webrtc="local"]'
+        );
+        if (localVideoElement && localStream.current) {
+          localVideoElement.srcObject = localStream.current;
         }
 
         toastSuccessNotify("Screen sharing stopped");
