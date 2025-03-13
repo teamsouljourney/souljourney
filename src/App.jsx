@@ -39,16 +39,16 @@ const ThemedApp = () => {
           darkgreen: "#459198",
         },
         // Add specific dark mode colors
-        ...(themeMode === "dark" && {
-          background: {
-            default: "#1f2937", // background.darker
-            paper: "#374151", // background.dark
-          },
-          text: {
-            primary: "#F6F4F0", // offWhite.DEFAULT
-            secondary: "#dddcd8", // offWhite.dark
-          },
-        }),
+        // ...(themeMode === "dark" && {
+        //   background: {
+        //     default: "#1f2937", // background.darker
+        //     paper: "#374151", // background.dark
+        //   },
+        //   text: {
+        //     primary: "#F6F4F0", // offWhite.DEFAULT
+        //     secondary: "#dddcd8", // offWhite.dark
+        //   },
+        // }),
       },
       typography: {
         fontFamily: '"Urbanist", serif',
