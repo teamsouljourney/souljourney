@@ -5,7 +5,6 @@ import {
   ImageList,
   ImageListItem,
   ImageListItemBar,
-  ListSubheader,
   Typography,
 } from "@mui/material";
 import EditNoteRoundedIcon from "@mui/icons-material/EditNoteRounded";
@@ -101,7 +100,11 @@ export default function MyBlogList() {
               }}
               onClick={() => navigate(`/blogs/${item?._id}`)}
             >
-              <img src={item?.image} alt={item?.title} loading="lazy" />
+              <img
+                src={item?.image || "/placeholder.svg"}
+                alt={item?.title}
+                loading="lazy"
+              />
               <ImageListItemBar
                 title={
                   <Typography
@@ -124,31 +127,33 @@ export default function MyBlogList() {
                     : ""
                 }
                 actionIcon={
-                  <IconButton
-                    sx={{
-                      color: "customColors.darkgreen",
-                      "&:hover": {
-                        color: "customColors.lightgreen",
-                        transform: "scale(1.2)",
-                      },
-                      position: "relative",
-                      zIndex: 10,
-                    }}
-                    aria-label={`info about ${item?.therapistId?.title}`}
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      navigate(`/profile/write-blog/${item?._id}`);
-                    }}
-                  >
-                    <EditNoteRoundedIcon />
-                  </IconButton>
+                  currentUser?.isTherapist ? (
+                    <IconButton
+                      sx={{
+                        color: "customColors.darkgreen",
+                        "&:hover": {
+                          color: "customColors.lightgreen",
+                          transform: "scale(1.2)",
+                        },
+                        position: "relative",
+                        zIndex: 10,
+                      }}
+                      aria-label={`info about ${item?.therapistId?.title}`}
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        navigate(`/profile/write-blog/${item?._id}`);
+                      }}
+                    >
+                      <EditNoteRoundedIcon />
+                    </IconButton>
+                  ) : null
                 }
               />
             </ImageListItem>
           ))}
         </ImageList>
       ) : (
-        <p className="text-center p-10 text-navy dark:text-offWhite">
+        <p className="p-10 text-center text-navy dark:text-offWhite">
           {t("noBlog")}
         </p>
       )}
