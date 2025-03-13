@@ -114,6 +114,7 @@ const useBlogCall = () => {
       );
     } finally {
       getDataByPage("blogs", "pagBlogs", itemsPerPage, currentPage);
+      getAllBlogs();
     }
   };
 

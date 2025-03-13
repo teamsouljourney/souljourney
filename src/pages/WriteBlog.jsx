@@ -52,6 +52,7 @@ const WriteBlog = () => {
             if (isEditMode && id) {
               updateBlog(id, values);
               navigate("/profile");
+            } else {
               createNewBlog(values);
             }
             actions.resetForm();
