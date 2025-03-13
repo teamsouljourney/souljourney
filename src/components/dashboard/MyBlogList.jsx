@@ -151,9 +151,10 @@ export default function MyBlogList() {
                       <IconButton
                         sx={{
                           color: "customColors.darkgreen",
+                          fontSize: "1.2rem",
                           "&:hover": {
                             color: "customColors.lightgreen",
-                            transform: "scale(1.1)",
+                            transform: "scale(1.05)",
                           },
                           position: "relative",
                           zIndex: 10,
@@ -164,7 +165,7 @@ export default function MyBlogList() {
                           deleteBlog(item?._id);
                         }}
                       >
-                        <DeleteRoundedIcon />
+                        <DeleteRoundedIcon fontSize="inherit" />
                       </IconButton>
                     </div>
                   ) : null
