@@ -121,25 +121,16 @@ export const headerTypographyStyle = (theme) => ({
 });
 
 // Dark mode aware input styles
-// export const inputStyle = (theme) => ({
-//   "& .MuiOutlinedInput-root": {
-//     "& fieldset": {
-//       borderColor: theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.23)" : undefined,
-//     },
-//     "&:hover fieldset": {
-//       borderColor: theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.5)" : undefined,
-//     },
-//     "& input": {
-//       color: theme.palette.mode === "dark" ? "#F6F4F0" : undefined, // Use offWhite in dark mode
-//     }
-//   },
-//   "& .MuiInputLabel-root": {
-//     color: theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.7)" : undefined,
-//   },
-//   "& .MuiIconButton-root": {
-//     color: theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.7)" : undefined,
-//   },
-// });
+export const inputStyle = (theme) => ({
+  ...(theme.palette.mode === "dark" && {
+    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+      borderColor: "#4b5563", // gray-600 from Tailwind
+    },
+    "& .MuiInputLabel-root.Mui-focused": {
+      color: "#F6F4F0", // offWhite-dark from your Tailwind config
+    }
+  })
+});
 
 // Dark mode aware link styles
 export const authLinkStyle = (theme) => ({
