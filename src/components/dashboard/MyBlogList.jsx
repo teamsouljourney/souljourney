@@ -13,6 +13,7 @@ import useBlogCall from "../../hooks/useBlogCall";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { formatDateTime } from "../../helper/dateFormatter";
 
 export default function MyBlogList() {
   const { getAllBlogs } = useBlogCall();
@@ -122,9 +123,7 @@ export default function MyBlogList() {
                   </Typography>
                 }
                 subtitle={
-                  item?.createdAt
-                    ? new Date(item.createdAt).toLocaleDateString("de-DE")
-                    : ""
+                  item?.createdAt ? formatDateTime(item.createdAt, "date") : ""
                 }
                 actionIcon={
                   currentUser?.isTherapist ? (
