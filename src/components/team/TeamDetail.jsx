@@ -21,13 +21,16 @@ const TeamDetail = () => {
   );
   const { currentUser } = useSelector((state) => state.auth);
 
-  // Section IDs
+  // Section IDs for Tab Navigation
   const sectionIds = ["about", "experience", "services", "reviews"];
 
+  // UseTabNavigation Call
   const { activeTab, scrollToSection, sectionRefs } = useTabNavigation(sectionIds, {
     navbarHeight: 120,
     tabHeight: 64,
   })
+
+  // Appointment Calendar Display State
   const [displayCalendar, setDisplayCalendar] = useState(false);
 
   useEffect(() => {

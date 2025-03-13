@@ -10,6 +10,8 @@ import userReducer from "../features/userSlice";
 import paginationReducer from "../features/paginationSlice";
 import chatReducer from "../features/chatSlice";
 import feedbackReducer from "../features/feedbackSlice";
+import notificationReducer from "../features/notificationSlice";
+import videoReducer from "../features/videoSlice";
 import videoReducer from "../features/videoSlice";
 
 //*redux-persist
@@ -47,6 +49,7 @@ const store = configureStore({
     pagination: paginationReducer,
     chats: chatReducer,
     feedbacks: feedbackReducer,
+    notifications: notificationReducer,
     video: videoReducer,
   },
   middleware: (getDefaultMiddleware) =>
