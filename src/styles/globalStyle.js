@@ -110,6 +110,7 @@ export const inputHeightStyle = {
 // Dark mode aware typography styles
 export const headerTypographyStyle = (theme) => ({
   fontWeight: "600",
+  paddingTop: "",
   fontSize: {
     xs: "1.5rem",
     sm: "2rem",
@@ -141,13 +142,13 @@ export const headerTypographyStyle = (theme) => ({
 // });
 
 // Dark mode aware link styles
-// export const authLinkStyle = (theme) => ({
-//   textAlign: "center", 
-//   color: theme.palette.mode === "dark" ? "#F6F4F0" : "#2E5077", // Use offWhite in dark mode
-//   "&:hover": {
-//     textDecoration: "underline",
-//   },
-// });
+export const authLinkStyle = (theme) => ({
+  textAlign: "center", 
+  color: theme.palette.mode === "dark" ? "#dddcd8" : "#2E5077", // Use offWhite in dark mode
+  "&:hover": {
+    textDecoration: "underline",
+  },
+});
 
 
 

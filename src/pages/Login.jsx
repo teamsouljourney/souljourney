@@ -1,4 +1,4 @@
-import { Avatar, Box, Container, Typography } from "@mui/material"
+import { Avatar, Box, Container, Typography, useTheme } from "@mui/material"
 import Grid from '@mui/material/Grid2'
 import bgImage from '../assets/loginRegisterImage/weSupport2.jpg'
 import LoginHeader from "../components/auth/LoginHeader"
@@ -6,13 +6,14 @@ import LockIcon from "@mui/icons-material/Lock";
 import { Formik } from "formik";
 import LoginForm, { loginSchema } from "../components/auth/LoginForm";
 import { Link } from "react-router-dom";
-import { authContainerStyle, authFormContainerGridStyle, authMainContainerGridStyle } from "../styles/globalStyle";
+import { authContainerStyle, authFormContainerGridStyle, authLinkStyle, authMainContainerGridStyle } from "../styles/globalStyle";
 import useAuthCall from "../hooks/useAuthCall";
 import { useTranslation } from "react-i18next";
 
 const Login = () => {
   const {login} = useAuthCall()
   const { t } = useTranslation();
+  const theme = useTheme()
   const schemaLogin = loginSchema(t)
   return (
     <Container
@@ -34,6 +35,7 @@ const Login = () => {
               m: "auto",
               width: 30,
               height: 30,
+              bgcolor: theme.palette.mode === "dark" ? "#dddcd8" : "primary.main",
             }}
           >
             <LockIcon size="30" />
@@ -42,20 +44,19 @@ const Login = () => {
             variant="h5"
             align="center"
             mb={1}
-            color="primary"
             sx={{
               fontSize: {
                 xs: "1rem",
                 sm: "1rem",
                 md: "1.5rem"
-              }
+              },
+              color: theme.palette.mode === "dark" ? "#dddcd8" : "primary.main",
             }}
           >
             {t("login")}
           </Typography>
           <Formik
             initialValues={{
-              // userName: "",
               email: "",
               password: "",
             }}
@@ -70,30 +71,19 @@ const Login = () => {
           >
           </Formik>
           <Box
-             sx={{
-              textAlign: "center", 
-              color: "customColor.darkblue",
-              "&:hover": {
-                textDecoration: "underline",
-              },
-             }}
+            sx={authLinkStyle}
           >
-            <Link to="/register"  style={{color: "#2E5077"}}>
+            <Link to="/register"  style={{color: theme.palette.mode === "dark" ? "#F6F4F0" : "#2E5077"}}>
               {t("dontHaveAccount")} <b>{t("signUp")}</b>
             </Link>
           </Box>
           <Box
             sx={{
-              textAlign: "center",
-              color: "customColor.darkblue",
+              ...authLinkStyle(theme),
               mt: 1,
-              // width: "75%",
-              "&:hover": {
-                textDecoration: "underline",
-              },
             }}
           >
-            <Link to="/forgotPassword" style={{ color: "#2E5077" }}>
+            <Link to="/forgotPassword" style={{ color: theme.palette.mode === "dark" ? "#F6F4F0" : "#2E5077" }}>
               {t("forgotYourPassword")}
             </Link>
           </Box>
