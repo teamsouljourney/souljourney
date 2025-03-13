@@ -8,6 +8,7 @@ import {
   Box,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 
 const PasswordField = ({
   name,
@@ -18,6 +19,7 @@ const PasswordField = ({
   touched,
   errors
 }) => {
+  const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((prev) => !prev);
