@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Formik } from "formik";
 import NewBlogForm, {
@@ -16,6 +16,7 @@ const WriteBlog = () => {
   const { id } = useParams();
   const { singleBlog } = useSelector((state) => state.blogs);
   const { currentUser } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
   const isEditMode = Boolean(id);
 
@@ -50,7 +51,7 @@ const WriteBlog = () => {
           onSubmit={(values, actions) => {
             if (isEditMode && id) {
               updateBlog(id, values);
-            } else {
+              navigate("/profile");
               createNewBlog(values);
             }
             actions.resetForm();
