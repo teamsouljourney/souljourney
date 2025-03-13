@@ -70,7 +70,7 @@ export default function MyBlogList() {
           variant="body"
           sx={{ color: "secondary.main", fontSize: "1.2rem" }}
         >
-          {t("myBlogs")}
+          {currentUser?.isTherapist ? t("myBlogs") : t("likedBlogs")}
         </Typography>
       </Box>
       {filteredBlogs?.length > 0 ? (

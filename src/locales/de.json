@@ -214,25 +214,24 @@
   "educationalPsychology": "Pädagogische Psychologie",
   "moreCategories": "Weitere Kategorien",
   "searchTherapist": "Therapeuten suchen",
-    "joinOurTeamTitle": "🚀 Werden Sie Teil unseres Teams – Bewirken Sie etwas!",
-    "joinOurTeamDescription": "Helfen Sie leidenschaftlich gerne anderen und möchten Sie etwas bewirken? Werden Sie Teil unseres dynamischen und unterstützenden Teams, in dem Ihre Fähigkeiten und Ihr Engagement zu positiven Veränderungen beitragen.",
-    "whyJoinUsTitle": "✨ Warum Sie sich uns anschließen sollten?",
-    "whyJoinUsList": [
-      "✔ Arbeiten Sie mit einem leidenschaftlichen und professionellen Team zusammen",
-      "✔ Bewirken Sie einen echten Unterschied im Leben anderer Menschen",
-      "✔ Wachsen und gedeihen Sie in einem unterstützenden Umfeld"
-    ],
-    "applyNowDescription": "🔹 Ihre Reise beginnt hier! Bewerben Sie sich jetzt und werden Sie Teil von etwas Großem.",
-    "applyNowButton": "Jetzt bewerben",
-  
+  "joinOurTeamTitle": "🚀 Werden Sie Teil unseres Teams – Bewirken Sie etwas!",
+  "joinOurTeamDescription": "Helfen Sie leidenschaftlich gerne anderen und möchten Sie etwas bewirken? Werden Sie Teil unseres dynamischen und unterstützenden Teams, in dem Ihre Fähigkeiten und Ihr Engagement zu positiven Veränderungen beitragen.",
+  "whyJoinUsTitle": "✨ Warum Sie sich uns anschließen sollten?",
+  "whyJoinUsList": [
+    "✔ Arbeiten Sie mit einem leidenschaftlichen und professionellen Team zusammen",
+    "✔ Bewirken Sie einen echten Unterschied im Leben anderer Menschen",
+    "✔ Wachsen und gedeihen Sie in einem unterstützenden Umfeld"
+  ],
+  "applyNowDescription": "🔹 Ihre Reise beginnt hier! Bewerben Sie sich jetzt und werden Sie Teil von etwas Großem.",
+  "applyNowButton": "Jetzt bewerben",
 
   "JOIN": "WERDEN SIE TEIL UNSERES TEAMS",
   "joinOurTeam": "Werden Sie Teil unseres engagierten und professionellen Teams, das sich für das Wohlbefinden anderer einsetzt. Bewerben Sie sich jetzt und helfen Sie mit, einen positiven Unterschied zu machen.",
   "applyNow": "Jetzt bewerben",
 
   "BLOGS": "BLOGS",
-"blg_goback":"Zurück",
-"blogHeroDescription": "Willkommen auf unserem Blog, wo wir die vielfältige und faszinierende Welt der psychologischen Beratung erkunden. Ob Sie sich für das Verständnis der psychischen Gesundheit interessieren, Ratschläge zur persönlichen Entwicklung suchen oder sich über die verschiedenen therapeutischen Ansätze informieren möchten, dieser Blog ist Ihre Quelle für aufschlussreiche Informationen. Wir werden uns mit einer Vielzahl von Themen innerhalb des Fachgebiets befassen, von der klinischen Psychologie bis hin zu Beratungstechniken, und Experteneinblicke geben, wie die Psychologie Einzelpersonen helfen kann, ein gesünderes und erfüllteres Leben zu führen. Begleiten Sie uns auf dieser Reise, um die Kraft des Geistes und die Bedeutung des psychischen Wohlbefindens zu entdecken.",
+  "blg_goback": "Zurück",
+  "blogHeroDescription": "Willkommen auf unserem Blog, wo wir die vielfältige und faszinierende Welt der psychologischen Beratung erkunden. Ob Sie sich für das Verständnis der psychischen Gesundheit interessieren, Ratschläge zur persönlichen Entwicklung suchen oder sich über die verschiedenen therapeutischen Ansätze informieren möchten, dieser Blog ist Ihre Quelle für aufschlussreiche Informationen. Wir werden uns mit einer Vielzahl von Themen innerhalb des Fachgebiets befassen, von der klinischen Psychologie bis hin zu Beratungstechniken, und Experteneinblicke geben, wie die Psychologie Einzelpersonen helfen kann, ein gesünderes und erfüllteres Leben zu führen. Begleiten Sie uns auf dieser Reise, um die Kraft des Geistes und die Bedeutung des psychischen Wohlbefindens zu entdecken.",
   "ABOUT": "ÜBER UNS",
 
   "AboutHeroSection": {
@@ -388,6 +387,7 @@
   "myBlogs": "Meine Blogbeiträge",
   "noPatient": "Sie haben keine geplanten Termine.",
   "noBlogs": "Keine Blogbeiträge verfügbar. Fang jetzt an zu schreiben!",
+  "likedBlogs": "Favorisierte Blogs",
   "notes": "Notizen",
 
   "termsAndConditions": {
