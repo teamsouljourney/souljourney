@@ -22,6 +22,9 @@ const Blog = () => {
 
   const displayedBlogs = filteredBlogs?.length > 0 ? filteredBlogs : blogs;
 
+  const blogsToDisplay =
+    pagFilteredBlogs?.length > 0 ? pagFilteredBlogs : displayedBlogs;
+
   const categoryQuery = selectedCategory ? `category=${selectedCategory}` : "";
 
   useEffect(() => {
@@ -63,7 +66,7 @@ const Blog = () => {
       <main className="container px-6 py-16 mx-auto">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            {pagFilteredBlogs?.map((blog, index) => (
+            {blogsToDisplay?.map((blog, index) => (
               <BlogsCard key={blog._id} blog={blog} index={index} />
             ))}
           </div>
