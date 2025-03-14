@@ -1,7 +1,7 @@
 import { Box, Button, TextField, useTheme } from "@mui/material";
 import { Form } from "formik";
 import * as Yup from "yup"
-import { authButtonBoxStyle, authFormBoxStyle, btnStyle } from "../../styles/globalStyle";
+import { authButtonBoxStyle, authFormBoxStyle, btnStyle, inputStyle } from "../../styles/globalStyle";
 import googleLogo from "../../assets/loginRegisterImage/Google.png";
 import PasswordField from "./PasswordField";
 import useAuthCall from "../../hooks/useAuthCall";
@@ -65,6 +65,7 @@ const RegisterForm = ({
             error={touched.userName && Boolean(errors.userName)}
             helperText={touched.userName && errors.userName}
             required
+            sx={inputStyle}
           />
           <TextField
             name="firstName"
@@ -76,6 +77,7 @@ const RegisterForm = ({
             error={touched.firstName && Boolean(errors.firstName)}
             helperText={touched.firstName && errors.firstName}
             required
+            sx={inputStyle}
           />
           <TextField
             name="lastName"
@@ -87,6 +89,7 @@ const RegisterForm = ({
             error={touched.lastName && Boolean(errors.lastName)}
             helperText={touched.lastName && errors.lastName}
             required
+            sx={inputStyle}
           />
           <TextField
             name="email"
@@ -98,6 +101,7 @@ const RegisterForm = ({
             error={touched.email && Boolean(errors.email)}
             helperText={touched.email && errors.email}
             required
+            sx={inputStyle}
           />
           <PasswordField
             name="password"

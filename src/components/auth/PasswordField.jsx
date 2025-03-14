@@ -6,8 +6,11 @@ import {
   InputAdornment,
   IconButton,
   Box,
+  useTheme,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
+import { inputStyle } from "../../styles/globalStyle";
 
 const PasswordField = ({
   name,
@@ -18,12 +21,30 @@ const PasswordField = ({
   touched,
   errors
 }) => {
+  const { t } = useTranslation();
+  const theme = useTheme()
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((prev) => !prev);
 
   return (
-    <FormControl fullWidth variant="outlined">
+    <FormControl fullWidth variant="outlined"
+      sx={{
+        ...inputStyle(theme),
+        // Additional styles for the icon button container in dark mode
+        ...(theme.palette.mode === "dark" && {
+          "& .MuiInputAdornment-root": {
+            backgroundColor: "transparent",
+          },
+          "& .MuiIconButton-root": {
+            color: "rgba(255, 255, 255, 0.7)",
+            "&:hover": {
+              backgroundColor: "rgba(255, 255, 255, 0.08)",
+            },
+          },
+        }),
+      }}
+    >
       <InputLabel htmlFor={`${name}`}>{label}</InputLabel>
       <OutlinedInput
         id={`${name}`}
