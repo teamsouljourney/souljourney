@@ -161,11 +161,11 @@ const notFoundStyles = {
   heading: {
     fontSize: "36px",
     fontWeight: "bold",
-    color: "#333",
+    // color: "#333",
   },
   text: {
     fontSize: "20px",
-    color: "#555",
+    // color: "#555",
     marginBottom: "20px",
   },
   link: {
