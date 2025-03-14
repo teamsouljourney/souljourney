@@ -33,7 +33,7 @@ const AppointmentManagement = () => {
 
   return (
     <div className="container py-10 mx-auto ">
-      <div className="bg-white border rounded-lg shadow-sm">
+      <div className="bg-white dark:bg-background-lightdark text-navy dark:text-offWhite-darke border rounded-lg shadow-sm">
         <div className="p-6">
           <ListToolbar
             title="Appointment List"
