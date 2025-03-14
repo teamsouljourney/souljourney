@@ -22,8 +22,32 @@ const Blog = () => {
 
   const displayedBlogs = filteredBlogs?.length > 0 ? filteredBlogs : blogs;
 
+  const searchFilteredPagBlogs =
+    searchTerm.trim() === ""
+      ? pagFilteredBlogs
+      : pagFilteredBlogs?.filter((blog) =>
+          [blog.therapistId?.firstName, blog.therapistId?.lastName, blog.title]
+            .filter(Boolean)
+            .some((name) =>
+              name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+
+  const searchFilteredAllBlogs =
+    searchTerm.trim() === ""
+      ? displayedBlogs
+      : displayedBlogs?.filter((blog) =>
+          [blog.therapistId?.firstName, blog.therapistId?.lastName, blog.title]
+            .filter(Boolean)
+            .some((name) =>
+              name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+
   const blogsToDisplay =
-    pagFilteredBlogs?.length > 0 ? pagFilteredBlogs : displayedBlogs;
+    searchFilteredPagBlogs?.length > 0
+      ? searchFilteredPagBlogs
+      : searchFilteredAllBlogs;
 
   const categoryQuery = selectedCategory ? `category=${selectedCategory}` : "";
 
