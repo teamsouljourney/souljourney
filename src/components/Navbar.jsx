@@ -193,7 +193,7 @@ export default function Navbar() {
                   </MenuItem>
                   <MenuItem>
                     <NavLink
-                      to="auth/logout"
+                      to=""
                       className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                       onClick={() => logout()}
                     >
