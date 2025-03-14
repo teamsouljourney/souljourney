@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 const NotFound = () => {
   const { t } = useTranslation();
   return (
-    <div style={notFoundStyles.container}>
+    <div style={notFoundStyles.container} className="bg-offWhite dark:bg-background-dark text-navy dark:text-offWhite-dark">
       <img src={notFound} alt="Not Found" width="500px" style={notFoundStyles.image} />
       <h1 style={notFoundStyles.heading}>  {t("pageNotFound")}</h1>
       <p style={notFoundStyles.text}> {t("textNot")}</p>

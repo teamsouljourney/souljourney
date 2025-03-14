@@ -35,7 +35,7 @@ const FeedbackManagement = () => {
 
   return (
     <div className="container py-10 mx-auto ">
-      <div className="bg-white border rounded-lg shadow-sm">
+      <div className="bg-white dark:bg-background-lightdark text-navy dark:text-offWhite-dark border rounded-lg shadow-sm">
         <div className="p-6">
           <ListToolbar
             title="Feedback List"
@@ -44,7 +44,7 @@ const FeedbackManagement = () => {
             placeholder="Search feedback..."
           />
           <div>
-            <div className="hidden text-sm font-medium text-gray-500 md:grid md:grid-cols-12 md:gap-5">
+            <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen-light md:grid md:grid-cols-12 md:gap-5">
               <div className="col-span-3">Feedback Id</div>
               <div className="col-span-3 md:text-center">Therapist</div>
               <div className="col-span-2">Client</div>
