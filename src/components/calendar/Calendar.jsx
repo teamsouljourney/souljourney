@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setSelectedDate } from "../../features/calendarSlice";
 import { useEffect } from "react";
+import "../../styles/calendar-dark.css"
 
 const Calendar = () => {
   const dispatch = useDispatch();

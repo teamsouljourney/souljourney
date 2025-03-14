@@ -37,8 +37,8 @@ const UserForm = () => {
 
   return (
     <div className="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-      <div className="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
-        <h3 className="text-lg font-medium leading-6 text-navy">
+      <div className="px-4 pt-5 pb-4 bg-white dark:bg-background-dark sm:p-6 sm:pb-4">
+        <h3 className="text-lg font-medium leading-6 text-navy dark:text-offWhite-dark">
           {newUser._id ? "Edit User" : "Add a new User"}
         </h3>
         <div className="mt-2">
@@ -87,7 +87,7 @@ const UserForm = () => {
           />
         </div>
       </div>
-      <div className="px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse">
+      <div className="px-4 py-3 bg-gray-50 dark:bg-background-dark sm:px-6 sm:flex sm:flex-row-reverse">
         <button
           type="button"
           className="inline-flex justify-center w-full px-4 py-2 text-white duration-300 rounded-md bg-seaGreen transtiton hover:bg-navy sm:ml-3 sm:w-auto"

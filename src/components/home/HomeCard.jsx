@@ -49,7 +49,10 @@ const HomeCard = ({ blog }) => {
 
       <div className="flex flex-col flex-grow p-6">
         <h2 className="mb-2 text-xl font-bold">{blog?.title}</h2>
-        <p className="line-clamp-2">{blog?.content}</p>
+        <p
+          className="line-clamp-2"
+          dangerouslySetInnerHTML={{ __html: blog?.content }}
+        ></p>
         <div className="flex items-center gap-1 mt-2">
           <span className="text-sm font-medium">{t("homeCardDate")}:</span>
           <span className="text-sm">

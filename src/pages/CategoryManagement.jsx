@@ -37,7 +37,7 @@ const CategoryManagement = () => {
 
   return (
     <div className="container py-10 mx-auto ">
-      <div className="bg-white border rounded-lg shadow-sm">
+      <div className="bg-white dark:bg-background-lightdark text-navy dark:text-offWhite-dark border rounded-lg shadow-sm">
         <div className="p-6">
           <ListToolbar
             title="Category List"
@@ -55,7 +55,7 @@ const CategoryManagement = () => {
             }
           />
           <div>
-            <div className="hidden text-sm font-medium text-gray-500 md:grid md:grid-cols-12 md:gap-4">
+            <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen md:grid md:grid-cols-12 md:gap-4">
               <div className="col-span-4">Category</div>
               <div className="col-span-4">Created At</div>
               <div className="col-span-4 text-right">Actions</div>

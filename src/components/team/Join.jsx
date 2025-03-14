@@ -30,31 +30,31 @@ const Join = () => {
 
           <div className="flex-grow text-center sm:text-left">
             <h2 className="font-urbanist text-2xl md:text-3xl font-bold mb-4 text-navy dark:text-offWhite-dark">
-              🚀 Join Our Team – Make a Difference!
+              {t('joinOurTeamTitle')}
             </h2>
             <p className="text-base md:text-lg mb-6 text-navy/80 dark:text-offWhite-dark/80 max-w-2xl">
-              Are you passionate about helping others and making a real impact?
-              Join our dynamic and supportive team, where your skills and
-              dedication contribute to creating positive change.
+              {t('joinOurTeamDescription')}
+
             </p>
             <p className="text-base md:text-lg mb-6 text-navy/80 dark:text-offWhite-dark/80 max-w-2xl text-left">
-              ✨ <strong>Why Join Us?</strong>
-              <br />✔ Work with a passionate and professional team
-              <br />✔ Make a real difference in people's lives
-              <br />✔ Grow and thrive in a supportive environment
+              ✨ <strong>        {t('whyJoinUsTitle')}
+              </strong>
+              <br />{t('whyJoinUsList.0')}
+              <br />{t('whyJoinUsList.1')}
+              <br />{t('whyJoinUsList.2')}
             </p>
             <p className="text-base md:text-lg mb-6 text-navy/80 dark:text-offWhite-dark/80 max-w-2xl">
               🔹{" "}
               <strong>
-                Your journey starts here! Apply now and be part of something
-                bigger.
+                {t('applyNowDescription')}
+
               </strong>
             </p>
             <NavLink
               to="/contact"
               className="group inline-flex items-center px-6 py-3 rounded-full text-white bg-gradient-to-r from-seaGreen-dark to-navy transition-all duration-300 hover:shadow-lg transform hover:scale-105 text-sm sm:text-base font-semibold"
             >
-              Apply Now
+              {t('applyNowButton')}
               <span
                 style={{
                   maskImage: `url(/assets/arrow-right.svg)`,

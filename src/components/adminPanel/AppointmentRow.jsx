@@ -18,7 +18,7 @@ const AppointmentRow = ({ appointment }) => {
             ? `${therapistId.firstName} ${therapistId.lastName}`
             : "N/A"}
         </div>
-        <div className="text-sm text-gray-500 md:hidden">{_id || "N/A"}</div>
+        <div className="text-sm text-gray-500 dark:text-offWhite md:hidden">{_id || "N/A"}</div>
       </div>
       <div className="col-span-3">
         <span className="text-sm">
@@ -26,12 +26,12 @@ const AppointmentRow = ({ appointment }) => {
         </span>
       </div>
       <div className="col-span-2">
-        <span className="text-sm text-gray-500">
+        <span className="text-sm text-gray-500 dark:text-offWhite">
           {appointmentDate ? formatDateTime(appointmentDate, "date") : "N/A"}
         </span>
       </div>
       <div className="col-span-3 md:text-center">
-        <span className="text-sm text-gray-500 ">
+        <span className="text-sm text-gray-500 dark:text-offWhite">
           {startTime && endTime
             ? formatDateTime(startTime, "timeRange", endTime)
             : "N/A"}
@@ -41,7 +41,7 @@ const AppointmentRow = ({ appointment }) => {
         <div>
           <button
             onClick={() => deleteAppointmentByAdmin(_id)}
-            className="p-1 rounded hover:bg-gray-100"
+            className="p-1 rounded hover:bg-gray-100 dark:hover:bg-background-dark"
           >
             <TrashIcon className="w-4 h-4" />
           </button>

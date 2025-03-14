@@ -12,7 +12,6 @@
   "myProfile": "Profilim",
   "accountSettings": "Hesap Ayarları",
   "logout": "Çıkış Yap",
-
   "BUTTONS": "BUTTONS",
   "selfTest": "Kendi Testinizi Yapın",
   "getStarted": "Hadi Başlayalım",
@@ -24,7 +23,6 @@
   "restart": "Yeniden başlat",
   "nowFreeRegister": "Şimdi Ücretsiz Kayıt Ol",
   "sendMessage": "Mesaj Gönder",
-
   "HOMEPAGE": "ANA SAYFA",
   "onlineTherapy": "Soul Journey & Online Terapi",
   "infoText": "Soul Journey olarak, şifa ve kişisel gelişim yolculuğunuzda sizi destekleyen online danışmanlık hizmeti sunuyoruz. Profesyonel terapistlerimiz, duygularınızı keşfetmeniz, netlik kazanmanız ve yaşam zorluklarının üstesinden gelmeniz için güvenli ve gizli bir alan sağlar—hem de evinizin konforunda. Neden Soul Journey? Esnek Seanslar: İstediğiniz zaman, istediğiniz yerden terapiye erişin. Kişiselleştirilmiş Destek: Size özel rehberlik sunuyoruz. Güvenli ve Gizli: Gizliliğiniz bizim önceliğimizdir. Bugün yolculuğunuza başlayın—şifa içeride başlar.",
@@ -73,7 +71,6 @@
   "faqAnswerNine": "Tüm terapistlerimiz lisanslı, alanlarında uzman ve geniş deneyime sahiptir.",
   "faqQuestionTen": "Online danışmanlık kimler için uygundur?",
   "faqAnswerTen": "Özellikle zaman veya mekân kısıtlamaları olanlar için, gizlilik ve konfor arayan herkes için uygundur.",
-
   "QUIZ": "QUIZ",
   "question": "Soru",
   "emotionalWell-beingCheck": "Duygusal Sağlık Kontrolü",
@@ -131,13 +128,10 @@
   "score2": "Refahınızın bazı yönlerini düşünmek isteyebilirsiniz.",
   "score3": "Rehberlik için profesyonellerimizden birine ulaşmayı düşünün.",
   "yourScore": "Puanınız",
-
   "welcome": "Uygulamamıza hoş geldiniz!",
   "error_network": "Ağ hatası. Lütfen tekrar deneyin.",
   "msg_sent": "Mesaj başarıyla gönderildi!",
-
   "PROFILE": "PROFIL",
-
   "SERVICES": "HIZMETLER",
 
   "srvServicesHeroTitle": "Hizmetlerimiz",
@@ -205,7 +199,6 @@
   "ultraPremium": "Ultra Premium",
   "ultraPremiumText": "Büyük ölçekli kullanımlar ve genişletilmiş dağıtım hakları için en iyisi.",
   "unlimited": "Sınırsız",
-
   "TEAM": "EKIP",
   "OurPsychologicalCounselingTeam": "Psikolojik danışmanlık ekibimiz, zihinsel sağlığınızı kişiselleştirilmiş bakım ile desteklemeye kendini adamıştır. Danışmanlık ve rehberlik konusundaki geniş uzmanlıklarıyla, profesyonellerimiz duygusal denge yolculuğunuzda size yardımcı olmak için burada.",
   "all": "Tümü",
@@ -215,12 +208,22 @@
   "educationalPsychology": "Eğitim Psikolojisi",
   "moreCategories": "Daha Fazla Kategori",
   "searchTherapist": "Terapist Ara",
-
+  "joinOurTeamTitle": "🚀 Ekibimize Katıl – Fark Yarat!",
+  "joinOurTeamDescription": "Başkalarına yardım etme ve gerçek bir etki yaratma konusunda tutkulu musunuz? Becerilerinizin ve özverinizin olumlu değişim yaratmaya katkıda bulunduğu dinamik ve destekleyici ekibimize katılın.",
+  "whyJoinUsTitle": "✨ Neden Bize Katılmalısınız?",
+  "whyJoinUsList": [
+    "✔ Tutkulu ve profesyonel bir ekiple çalışın",
+    "✔ İnsanların hayatında gerçek bir fark yaratın",
+    "✔ Destekleyici bir ortamda büyüyün ve gelişin"
+  ],
+  "applyNowDescription": "🔹 Yolculuğunuz burada başlıyor! Şimdi başvurun ve daha büyük bir şeyin parçası olun.",
+  "applyNowButton": "Şimdi Başvur",
   "JOIN": "EKİBİMİZE KATILIN",
   "joinOurTeam": "Pozitif bir etki yaratmaya adanmış tutkulu ve profesyonel ekibimize katılın. Anlamlı bir şeyin parçası olmak ve başkalarına refah yolculuklarında yardımcı olmak için şimdi başvurun.",
   "applyNow": "Şimdi Başvur",
-
   "BLOGS": "BLOGLAR",
+  "blg_goback": "Geri Dön",
+  "blogHeroDescription": "Psikolojik danışmanlığın çeşitli ve büyüleyici dünyasını keşfettiğimiz blogumuza hoş geldiniz. İster ruh sağlığını anlamak, ister kişisel gelişim konusunda tavsiye almak, ister çeşitli terapötik yaklaşımlar hakkında bilgi edinmek isteyin, bu blog içgörülü bilgiler için kaynağınızdır. Klinik psikolojiden danışmanlık tekniklerine kadar alan içindeki çok çeşitli konuları derinlemesine inceleyeceğiz ve psikolojinin bireylerin daha sağlıklı, daha tatmin edici yaşamlar sürmelerine nasıl yardımcı olabileceğine dair uzman görüşleri sunacağız. Zihnin gücünü ve ruhsal iyiliğin önemini keşfetmek için bu yolculukta bize katılın.",
 
   "ABOUT": "HAKKIMIZDA",
 
@@ -258,7 +261,6 @@
   "privacyPolicy": "Gizlilik Politikası",
   "contactUs": "Bize Ulaşın",
   "forTherapist": "Terapistler için",
-
   "CONTACT": "İLETİŞİM",
   "getInTouch": "İletişime Geçin",
   "contactText": "Bize ulaşın ve birlikte anlamlı bir yolculuk oluşturalım. Soul Journey olarak, kendinizi keşfetme ve büyüme yolculuğunuzda yanınızdayız.",
@@ -274,14 +276,11 @@
   "messagePlaceholder": "Mesajınızı Yazın ...",
   "messageSentSuccess": "Mesajınız başarıyla gönderildi.",
   "messageSentError": "Mesajınızı gönderirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
-
   "NOTFOUND": "NOTFOUND",
   "pageNotFound": "Sayfa Bulunamadı",
   "textNot": "Aradığınız sayfa mevcut değil.",
   "goHome": "⬅ Ana Sayfaya Dön",
-
   "slogan": "İç huzura giden yolunuzu keşfedin!",
-
   "register": "Kayıt Ol",
   "haveAccount": "Hesabınız var mı?",
   "signin": "Giriş Yap",
@@ -321,7 +320,6 @@
   "passwordLowerCaseMessage": "Şifre en az bir küçük harf içermelidir!",
   "passwordUpperCaseMessage": "Şifre en az bir büyük harf içermelidir!",
   "passwordSpecialCharMessage": "Şifre en az bir özel karakter içermelidir (@$?!%&*)",
-
   "SIDEBAR": "YAN MENÜ",
   "menu": "Menü",
   "dashboard": "Profilim",
@@ -331,7 +329,6 @@
   "videoCall": "Görüntülü Arama",
   "myAccount": "Hesabım",
   "noBlog": "Görüntülenecek blogunuz yok.",
-
   "ACCOUNT": "HESAP",
   "account": "Hesap",
   "updateAccount": "Hesabınızı Güncelleyin",
@@ -341,7 +338,6 @@
   "profession": "Meslek",
   "profile": "Profil",
   "upload": "Yükle",
-
   "WRITEBLOG": "WRITEBLOG",
   "blogTitlePlaceholder": "Blog Başlığı *",
   "selectCategory": "Kategori Seç",
@@ -349,7 +345,6 @@
   "contentPlaceholder": "Blog içeriğinizi buraya yazın...",
   "updateBlog": "Bloğu Güncelle",
   "createNewBlog": "Yeni Blog Oluştur",
-
   "APPOINTMENT CALENDAR": "RANDEVU TAKVİMİ",
   "bookingCalendar": "Rezervasyon Takvimi",
   "createAppointment": "Randevu Oluştur",
@@ -369,7 +364,6 @@
   "cancel": "İptal",
   "noAppointmentsMessage": "Henüz planlanmış randevunuz yok.",
   "bookAppointmentButton": "Randevu Al",
-
   "DASHBOARD": "DASHBOARD",
   "descriptionOfTherapist": "Ruh sağlığı alanında uzmanlaşmış deneyimli psikolog.",
   "patientList": "Hasta Listesi",
@@ -377,6 +371,7 @@
   "myBlogs": "Bloglarım",
   "noPatient": "Randevusu olan hastanız yoktur.",
   "noBlogs": "Henüz blog yazısı yok. Hemen yazmaya başla!",
+  "likedBlogs": "Beğenilen Bloglar",
   "notes": "Notlar",
 
   "termsAndConditions": {

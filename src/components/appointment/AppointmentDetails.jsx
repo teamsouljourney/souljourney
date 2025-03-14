@@ -7,7 +7,7 @@ const AppointmentDetails = () => {
   const { singleAppointment } = useSelector((state) => state.appointments);
 
   return (
-    <div className="mt-4 space-y-2 text-gray-700">
+    <div className="mt-4 space-y-2">
       <p>
         <strong>{t("client")}:</strong> {singleAppointment?.userId?.firstName}{" "}
         {singleAppointment?.userId?.lastName}
@@ -26,16 +26,6 @@ const AppointmentDetails = () => {
         {formatDateTime(singleAppointment?.startTime, "time")} -{" "}
         {formatDateTime(singleAppointment?.endTime, "time")}
       </p>
-      {singleAppointment?.videoCallUrl && (
-        <a
-          href={singleAppointment?.videoCallUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block mt-2 text-indigo-600 hover:underline"
-        >
-          {t("joinMeeting")}
-        </a>
-      )}
     </div>
   );
 };

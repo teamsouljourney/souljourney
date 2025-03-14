@@ -7,7 +7,7 @@ const NoAppointments = () => {
 
   return (
     <div className="mt-8 text-center">
-      <p className="mb-4 text-lg font-semibold text-navy">
+      <p className="mb-4 text-lg font-semibold text-navy dark:text-offWhite-dark">
         {t("noAppointmentsMessage")}
       </p>
       <button

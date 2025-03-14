@@ -32,7 +32,7 @@ const UserRow = ({ user }) => {
         </div>
         <div>
           <div className="font-medium">{user?.userName}</div>
-          <div className="text-sm text-gray-500">{user?.profession}</div>
+          <div className="text-sm text-gray-500 dark:text-gray-400">{user?.profession}</div>
         </div>
       </div>
       <div className="flex flex-col w-full md:w-1/3 md:flex-row md:items-center">
@@ -53,19 +53,19 @@ const UserRow = ({ user }) => {
         <div className="flex gap-2">
           <button
             onClick={() => handleUpdateUser(user._id)}
-            className="p-1 rounded hover:bg-gray-100"
+            className="p-1 rounded hover:bg-gray-100 dark:hover:bg-background-dark"
           >
             <PencilIcon className="w-4 h-4" />
           </button>
           <button
             onClick={() => changeUserStatus(user._id, user.isActive)}
-            className="p-1 rounded hover:bg-gray-100"
+            className="p-1 rounded hover:bg-gray-100 dark:hover:bg-background-dark"
           >
             <LockClosedIcon className="w-4 h-4" />
           </button>
           <button
             onClick={() => deleteUser(user?._id)}
-            className="p-1 rounded hover:bg-gray-100"
+            className="p-1 rounded hover:bg-gray-100 dark:hover:bg-background-dark"
           >
             <TrashIcon className="w-4 h-4" />
           </button>

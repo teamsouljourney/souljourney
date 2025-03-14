@@ -12,6 +12,7 @@ const paginationSlice = createSlice({
     pagFeedbacks: [],
     pagFilteredFeedbacks: [],
     pagFilteredBlogs: [],
+    pagFilteredTherapists: [],
     currentPage: 1,
     itemsPerPage: 10,
   },

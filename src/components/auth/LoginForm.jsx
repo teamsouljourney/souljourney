@@ -1,7 +1,7 @@
 import { Box, Button, TextField, useTheme } from "@mui/material";
 import { Form } from "formik";
 import { object, string } from "yup";
-import { authButtonBoxStyle, authFormBoxStyle, btnStyle } from "../../styles/globalStyle";
+import { authButtonBoxStyle, authFormBoxStyle, btnStyle, inputStyle } from "../../styles/globalStyle";
 import googleLogo from "../../assets/loginRegisterImage/Google.png";
 import PasswordField from "./PasswordField";
 import useAuthCall from "../../hooks/useAuthCall";
@@ -50,6 +50,7 @@ const LoginForm = ({
             error={touched.email && Boolean(errors.email)}
             helperText={touched.email && errors.email}
             required
+            sx={inputStyle}
           />
           <PasswordField
             name="password"

@@ -43,8 +43,8 @@ const TimeSlotSelector = () => {
   };
 
   return (
-    <div className="p-4 mt-4 border rounded bg-offWhite">
-      <h3 className="font-semibold text-mauve text-md">
+    <div className="p-4 mt-4 border rounded bg-offWhite dark:bg-background-dark">
+      <h3 className="font-semibold text-mauve dark:text-offWhite-dark text-md">
         {selectedDate
           ? `${t("selectedDate")}: ${selectedDate}`
           : t("pleaseSelectDate")}

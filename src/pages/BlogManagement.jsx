@@ -31,7 +31,7 @@ const BlogManagement = () => {
 
   return (
     <div className="container py-10 mx-auto ">
-      <div className="bg-white border rounded-lg shadow-sm">
+      <div className="bg-white dark:bg-background-lightdark text-navy dark:text-offWhite-dark border rounded-lg shadow-sm">
         <div className="p-6">
           <ListToolbar
             title="Blog List"
@@ -48,7 +48,7 @@ const BlogManagement = () => {
             }
           />
           <div>
-            <div className="hidden text-sm font-medium text-gray-500 md:grid md:grid-cols-12 md:gap-4">
+            <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen-light md:grid md:grid-cols-12 md:gap-4">
               <div className="col-span-5">Blog Title</div>
               <div className="col-span-3">Author</div>
               <div className="col-span-2">Created At</div>

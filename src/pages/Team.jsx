@@ -12,10 +12,47 @@ import Pagination from "../components/adminPanel/Pagination";
 const Team = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const {pagTherapists} = useSelector((state)=>state.pagination)
-  const { therapists, filteredTherapists, searchTerm, loading } = useSelector((state) => state.therapists);
+  const { pagTherapists } = useSelector((state) => state.pagination);
+  const { therapists, filteredTherapists, searchTerm, loading } = useSelector(
+    (state) => state.therapists
+  );
   const { selectedCategory } = useSelector((state) => state.categories);
   const { getAllTherapists, getFilterTherapists } = useTherapistCall();
+
+  const displayedTherapists = selectedCategory
+    ? filteredTherapists?.length > 0
+      ? filteredTherapists
+      : therapists
+    : therapists;
+
+  const searchFilteredPagTherapists =
+    searchTerm.trim() === ""
+      ? pagTherapists
+      : pagTherapists?.filter((therapist) =>
+          [therapist?.firstName, therapist?.lastName]
+            .filter(Boolean)
+            .some((name) =>
+              name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+
+  const searchFilteredAllTherapists =
+    searchTerm.trim() === ""
+      ? displayedTherapists
+      : displayedTherapists?.filter((therapist) =>
+          [therapist?.firstName, therapist?.lastName]
+            .filter(Boolean)
+            .some((name) =>
+              name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+
+  const therapistsToDisplay =
+    searchFilteredPagTherapists?.length > 0
+      ? searchFilteredPagTherapists
+      : searchFilteredAllTherapists;
+
+  const categoryQuery = selectedCategory ? `category=${selectedCategory}` : "";
 
   // Initial data fetch
   useEffect(() => {
@@ -34,38 +71,21 @@ const Team = () => {
     dispatch(setSearchTerm(value));
   };
 
-  const displayedTherapists = selectedCategory
-    ? (filteredTherapists?.length > 0
-      ? filteredTherapists
-      : therapists)
-    : therapists;
-
-  const displayedSearchTherapists =
-    searchTerm.trim() === ""
-      ? displayedTherapists
-      : displayedTherapists?.filter((therapist) =>
-          [therapist?.userName, therapist?.email]
-            .filter(Boolean)
-            .some((name) =>
-              name.toLowerCase().includes(searchTerm.toLowerCase())
-            )
-        );
-
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-seaGreen"></div>
+        <div className="w-12 h-12 border-t-2 border-b-2 rounded-full animate-spin border-seaGreen"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-y-10 bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
+    <div className="flex flex-col items-center justify-center min-h-screen gap-y-10 bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
       {/* Hero Section */}
       <div className="w-full h-1/5">
         <HeroSection />
       </div>
-      
+
       {/* Category Selection Section */}
       <TabSwitch
         itemType="therapists"
@@ -77,15 +97,19 @@ const Team = () => {
       />
 
       {/* Therapist Cards Section */}
-      <div className="w-full max-w-screen-2xl px-4 py-8">
+      <div className="w-full px-4 py-8 max-w-screen-2xl">
         <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10">
-          {/* {pagTherapists?.map((therapist) => ( */}
-          {displayedSearchTherapists?.map((therapist) => (
-            <TeamCard therapist={therapist} key={therapist._id} />
+          {therapistsToDisplay?.map((therapist) => (
+            <TeamCard key={therapist._id} therapist={therapist} />
           ))}
         </div>
       </div>
-      {/* <Pagination endpoint={`therapists`} slice={"pagTherapists"} data={displayedSearchTherapists} /> */}
+      <Pagination
+        endpoint="therapists"
+        slice="pagTherapists"
+        data={displayedTherapists}
+        query={categoryQuery}
+      />
       <Join />
     </div>
   );
