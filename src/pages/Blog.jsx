@@ -26,7 +26,7 @@ const Blog = () => {
     searchTerm.trim() === ""
       ? pagFilteredBlogs
       : pagFilteredBlogs?.filter((blog) =>
-          [blog.therapistId?.firstName, blog.therapistId?.lastName, blog.title]
+          [blog.title]
             .filter(Boolean)
             .some((name) =>
               name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -37,7 +37,7 @@ const Blog = () => {
     searchTerm.trim() === ""
       ? displayedBlogs
       : displayedBlogs?.filter((blog) =>
-          [blog.therapistId?.firstName, blog.therapistId?.lastName, blog.title]
+          [blog.title]
             .filter(Boolean)
             .some((name) =>
               name.toLowerCase().includes(searchTerm.toLowerCase())
