@@ -5,10 +5,10 @@ import {
   ImageList,
   ImageListItem,
   ImageListItemBar,
-  ListSubheader,
   Typography,
 } from "@mui/material";
 import EditNoteRoundedIcon from "@mui/icons-material/EditNoteRounded";
+import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
 import { useSelector } from "react-redux";
 import useBlogCall from "../../hooks/useBlogCall";
 import { useEffect } from "react";
@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function MyBlogList() {
-  const { getAllBlogs } = useBlogCall();
+  const { getAllBlogs, deleteBlog } = useBlogCall();
   const { blogs } = useSelector((state) => state.blogs);
   const { currentUser } = useSelector((state) => state.auth);
   const navigate = useNavigate();
@@ -71,7 +71,7 @@ export default function MyBlogList() {
           variant="body"
           sx={{ color: "secondary.main", fontSize: "1.2rem" }}
         >
-          {t("myBlogs")}
+          {currentUser?.isTherapist ? t("myBlogs") : t("likedBlogs")}
         </Typography>
       </Box>
       {filteredBlogs?.length > 0 ? (
@@ -101,7 +101,11 @@ export default function MyBlogList() {
               }}
               onClick={() => navigate(`/blogs/${item?._id}`)}
             >
-              <img src={item?.image} alt={item?.title} loading="lazy" />
+              <img
+                src={item?.image || "/placeholder.svg"}
+                alt={item?.title}
+                loading="lazy"
+              />
               <ImageListItemBar
                 title={
                   <Typography
@@ -124,31 +128,54 @@ export default function MyBlogList() {
                     : ""
                 }
                 actionIcon={
-                  <IconButton
-                    sx={{
-                      color: "customColors.darkgreen",
-                      "&:hover": {
-                        color: "customColors.lightgreen",
-                        transform: "scale(1.2)",
-                      },
-                      position: "relative",
-                      zIndex: 10,
-                    }}
-                    aria-label={`info about ${item?.therapistId?.title}`}
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      navigate(`/profile/write-blog/${item?._id}`);
-                    }}
-                  >
-                    <EditNoteRoundedIcon />
-                  </IconButton>
+                  currentUser?.isTherapist ? (
+                    <div className="flex">
+                      <IconButton
+                        sx={{
+                          color: "customColors.darkgreen",
+                          "&:hover": {
+                            color: "customColors.lightgreen",
+                            transform: "scale(1.1)",
+                          },
+                          position: "relative",
+                          zIndex: 10,
+                        }}
+                        aria-label={`edit ${item?.title}`}
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          navigate(`/profile/write-blog/${item?._id}`);
+                        }}
+                      >
+                        <EditNoteRoundedIcon />
+                      </IconButton>
+                      <IconButton
+                        sx={{
+                          color: "customColors.darkgreen",
+                          fontSize: "1.2rem",
+                          "&:hover": {
+                            color: "customColors.lightgreen",
+                            transform: "scale(1.05)",
+                          },
+                          position: "relative",
+                          zIndex: 10,
+                        }}
+                        aria-label={`delete ${item?.title}`}
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          deleteBlog(item?._id);
+                        }}
+                      >
+                        <DeleteRoundedIcon fontSize="inherit" />
+                      </IconButton>
+                    </div>
+                  ) : null
                 }
               />
             </ImageListItem>
           ))}
         </ImageList>
       ) : (
-        <p className="text-center p-10 text-navy dark:text-offWhite">
+        <p className="p-10 text-center text-navy dark:text-offWhite">
           {t("noBlog")}
         </p>
       )}

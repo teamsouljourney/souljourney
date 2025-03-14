@@ -1,12 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const BlogsCard = ({ blog, index }) => {
   const { t } = useTranslation();
-
   const navigate = useNavigate();
   const isEven = index % 2 === 0;
-  
 
   return (
     <div
@@ -19,7 +17,10 @@ const BlogsCard = ({ blog, index }) => {
       >
         <div className="min-h-[120px] flex flex-col text-center sm:text-left">
           <h2 className="mb-3 text-2xl font-bold line-clamp-2">{blog.title}</h2>
-          <p className="text-base text-left line-clamp-4">{blog.content}</p>
+          <p
+            className="text-base text-left line-clamp-4"
+            dangerouslySetInnerHTML={{ __html: blog.content }}
+          ></p>
         </div>
 
         <div

@@ -22,6 +22,33 @@ const Blog = () => {
 
   const displayedBlogs = filteredBlogs?.length > 0 ? filteredBlogs : blogs;
 
+  const searchFilteredPagBlogs =
+    searchTerm.trim() === ""
+      ? pagFilteredBlogs
+      : pagFilteredBlogs?.filter((blog) =>
+          [blog.title]
+            .filter(Boolean)
+            .some((name) =>
+              name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+
+  const searchFilteredAllBlogs =
+    searchTerm.trim() === ""
+      ? displayedBlogs
+      : displayedBlogs?.filter((blog) =>
+          [blog.title]
+            .filter(Boolean)
+            .some((name) =>
+              name.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+
+  const blogsToDisplay =
+    searchFilteredPagBlogs?.length > 0
+      ? searchFilteredPagBlogs
+      : searchFilteredAllBlogs;
+
   const categoryQuery = selectedCategory ? `category=${selectedCategory}` : "";
 
   useEffect(() => {
@@ -63,7 +90,7 @@ const Blog = () => {
       <main className="container px-6 py-16 mx-auto">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            {pagFilteredBlogs?.map((blog, index) => (
+            {blogsToDisplay?.map((blog, index) => (
               <BlogsCard key={blog._id} blog={blog} index={index} />
             ))}
           </div>
