@@ -18,7 +18,7 @@ const CategoryRow = ({ category }) => {
       <div className="flex items-center gap-3 md:w-1/3">
         <div>
           <div className="font-medium">{category?.name}</div>
-          <div className="text-sm text-gray-500">{category?._id}</div>
+          <div className="text-sm text-gray-500 dark:text-gray-400">{category?._id}</div>
         </div>
       </div>
       <div className="flex flex-col w-full md:w-1/3 md:flex-row md:items-center">
@@ -31,13 +31,13 @@ const CategoryRow = ({ category }) => {
         <div className="flex gap-2">
           <button
             onClick={handleUpdateCategory}
-            className="p-1 rounded hover:bg-gray-100"
+            className="p-1 rounded hover:bg-gray-100 dark:hover:bg-background-dark"
           >
             <PencilIcon className="w-4 h-4" />
           </button>
           <button
             onClick={() => deleteCategory(category?._id)}
-            className="p-1 rounded hover:bg-gray-100"
+            className="p-1 rounded hover:bg-gray-100 dark:hover:bg-background-dark"
           >
             <TrashIcon className="w-4 h-4" />
           </button>

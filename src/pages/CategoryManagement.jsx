@@ -55,7 +55,7 @@ const CategoryManagement = () => {
             }
           />
           <div>
-            <div className="hidden text-sm font-medium text-gray-500 md:grid md:grid-cols-12 md:gap-4">
+            <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen md:grid md:grid-cols-12 md:gap-4">
               <div className="col-span-4">Category</div>
               <div className="col-span-4">Created At</div>
               <div className="col-span-4 text-right">Actions</div>
