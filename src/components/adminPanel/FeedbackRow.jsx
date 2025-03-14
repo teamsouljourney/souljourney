@@ -35,20 +35,20 @@ const FeedbackRow = ({ feedback }) => {
         </span>
       </div>
       <div className="col-span-2">
-        <span className="text-sm text-gray-500">
+        <span className="text-sm text-gray-500 dark:text-offWhite">
           {createdAt ? formatDateTime(createdAt, "date") : "N/A"}
         </span>
       </div>
       <div className="flex justify-end col-span-1">
         <button
           onClick={() => handleReadFeedback(_id)}
-          className="p-1 rounded hover:bg-gray-100"
+          className="p-1 rounded hover:bg-gray-100 dark:hover:bg-background-dark"
         >
           <BookOpenIcon className="w-5 h-5" />
         </button>
         <button
           onClick={() => deleteFeedback(_id)}
-          className="p-1 rounded hover:bg-gray-100"
+          className="p-1 rounded hover:bg-gray-100 dark:hover:bg-background-dark"
         >
           <TrashIcon className="w-4 h-4" />
         </button>

@@ -7,7 +7,7 @@ const ListToolbar = ({
 }) => {
   return (
     <div className="flex flex-col gap-4 mb-6 md:flex-row md:items-center md:justify-between">
-      <h2 className="text-lg font-bold text-navy">{title}</h2>
+      <h2 className="text-lg font-bold text-navy dark:text-offWhite">{title}</h2>
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
         {onSearchChange && (
@@ -15,7 +15,7 @@ const ListToolbar = ({
             <input
               type="text"
               placeholder={placeholder}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-navy focus:outline-none"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-navy dark:focus:border-gray-400 focus:outline-none"
               value={searchTerm}
               onChange={(e) => onSearchChange(e.target.value)}
             />
