@@ -21,7 +21,7 @@ const BlogRow = ({ blog }) => {
         </span>
       </div>
       <div className="flex flex-col w-full md:w-2/12 md:flex-row md:items-center">
-        <span className="text-sm text-gray-500">
+        <span className="text-sm text-gray-500 dark:text-offWhite">
           {formatDateTime(blog?.createdAt, "date")}
         </span>
       </div>

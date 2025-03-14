@@ -48,7 +48,7 @@ const BlogManagement = () => {
             }
           />
           <div>
-            <div className="hidden text-sm font-medium text-gray-500 md:grid md:grid-cols-12 md:gap-4">
+            <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen-light md:grid md:grid-cols-12 md:gap-4">
               <div className="col-span-5">Blog Title</div>
               <div className="col-span-3">Author</div>
               <div className="col-span-2">Created At</div>
