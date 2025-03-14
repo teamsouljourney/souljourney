@@ -57,7 +57,7 @@ const TherapistManagement = () => {
             }
           />
           <div className="space-y-4">
-            <div className="hidden text-sm font-medium text-gray-500 md:grid md:grid-cols-12 md:gap-4">
+            <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen md:grid md:grid-cols-12 md:gap-4">
               <div className="col-span-4">Therapist</div>
               <div className="col-span-4">Email</div>
               <div className="col-span-2">Status</div>

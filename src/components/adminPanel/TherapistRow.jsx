@@ -31,7 +31,7 @@ import {
           </div>
           <div>
             <div className="font-medium">{therapist?.firstName + " " + therapist?.lastName}</div>
-            <div className="text-sm text-gray-500">{therapist?.categoryId[0]?.name}</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400">{therapist?.categoryId[0]?.name}</div>
           </div>
         </div>
         <div className="flex flex-col w-full md:w-1/3 md:flex-row md:items-center">
@@ -52,19 +52,19 @@ import {
           <div className="flex gap-2">
             <button
               onClick={() => handleUpdateTherapist(therapist._id)}
-              className="p-1 rounded hover:bg-gray-100"
+              className="p-1 rounded hover:bg-gray-100 dark:hover:bg-background-dark"
             >
               <PencilIcon className="w-4 h-4" />
             </button>
             <button
               onClick={() => changeTherapistStatus(therapist._id, therapist.isActive)}
-              className="p-1 rounded hover:bg-gray-100"
+              className="p-1 rounded hover:bg-gray-100 dark:hover:bg-background-dark"
             >
               <LockClosedIcon className="w-4 h-4" />
             </button>
             <button
               onClick={() => deleteTherapist(therapist?._id)}
-              className="p-1 rounded hover:bg-gray-100"
+              className="p-1 rounded hover:bg-gray-100 dark:hover:bg-background-dark"
             >
               <TrashIcon className="w-4 h-4" />
             </button>
