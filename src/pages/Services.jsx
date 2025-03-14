@@ -11,7 +11,7 @@ const Services = () => {
       </div>
 
       {/* Services Details: %60 */}
-      <div className="w-full max-w-7xl flex justify-center h-3/5">
+      <div className="w-full max-w-screen-2xl flex justify-center h-3/5">
         <ServicesDetail />
       </div>
 
