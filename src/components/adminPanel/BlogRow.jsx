@@ -28,13 +28,13 @@ const BlogRow = ({ blog }) => {
       <div className="flex items-center justify-end w-full space-x-2 md:w-2/12">
         <button
           onClick={() => navigate(`/blogs/${blog?._id}`)}
-          className="p-1 rounded hover:bg-gray-100"
+          className="p-1 rounded hover:bg-gray-100 dark:hover:bg-background-dark"
         >
           <BookOpenIcon className="w-5 h-5" />
         </button>
         <button
           onClick={() => deleteBlog(blog?._id)}
-          className="p-1 rounded hover:bg-gray-100"
+          className="p-1 rounded hover:bg-gray-100 dark:hover:bg-background-dark"
         >
           <TrashIcon className="w-5 h-5" />
         </button>
