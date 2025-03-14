@@ -35,7 +35,7 @@ const FeedbackRow = ({ feedback }) => {
         </span>
       </div>
       <div className="col-span-2">
-        <span className="text-sm text-gray-500">
+        <span className="text-sm text-gray-500 dark:text-offWhite-dark">
           {createdAt ? formatDateTime(createdAt, "date") : "N/A"}
         </span>
       </div>
