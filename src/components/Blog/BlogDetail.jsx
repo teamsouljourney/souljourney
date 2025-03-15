@@ -48,7 +48,7 @@ const BlogDetail = () => {
           />
         </div>
 
-        <div className="relative px-10 pt-5 pb-16 mx-5 -mt-16 bg-white rounded-lg shadow-lg dark:bg-background-dark text-navy dark:text-offWhite-dark md:mx-10">
+        <div className="relative px-10 py-5 mx-5 -mt-16 bg-white rounded-lg shadow-lg dark:bg-background-dark text-navy dark:text-offWhite-dark md:mx-10">
           <div>
             <div className="flex flex-col md:flex-row items-center gap-2 mb-4">
               {singleBlog?.therapistId && (
