@@ -99,7 +99,7 @@ const TeamDetailBody = ({sectionRefs}) => {
                 className="inline-flex justify-center items-center bg-navy-light dark:bg-offWhite-dark sm:w-[18px] sm:h-[18px] md:w-[20px] md:h-[20px]"
               ></span>
 
-              <span className="text-sm sm:text-base md:text-[1rem] font-medium sm:font-semibold">Video Call</span>
+              <span className="text-sm sm:text-base md:text-[1rem] font-medium sm:font-semibold">{t("videoCall")}  {/* Video Call*/}</span>
             </div>
             <div className="flex flex-row items-center justify-center gap-1.5 sm:gap-2">
               <span
@@ -113,7 +113,7 @@ const TeamDetailBody = ({sectionRefs}) => {
                 className="inline-flex justify-center items-center bg-navy-light dark:bg-offWhite-dark sm:w-[18px] sm:h-[18px] md:w-[20px] md:h-[20px]"
               ></span>
 
-              <span className="text-sm sm:text-base md:text-[1rem] font-medium sm:font-semibold">Live Chat</span>
+              <span className="text-sm sm:text-base md:text-[1rem] font-medium sm:font-semibold">{t("liveChat")} {/* Live Chat */}</span>
             </div>
           </div>
         </section>
@@ -122,16 +122,13 @@ const TeamDetailBody = ({sectionRefs}) => {
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-4">Reviews {/* {t("TD-reviews-title")} */}</h2>
 
           <p className="text-sm sm:text-base leading-relaxed sm:leading-relaxed mb-4 sm:mb-6">
-            {/* {t("TD-reviews-info")} */}
-            We deeply value the trust our clients place in our professionals. Every review is a reflection of real experiences, shared by individuals who have found guidance, support, and positive change in their journey. Therapy is a personal and unique process, and we appreciate those who take the time to share their insights. Your feedback not only helps others but also inspires us to continue providing compassionate and effective care.
-            {/* Danışanlarımızın profesyonellerimize duyduğu güveni içtenlikle takdir ediyoruz. Her geri bildirim, rehberlik, destek ve olumlu değişim deneyimlerini yansıtan gerçek hikayelerdir. Terapi, kişisel ve benzersiz bir süreçtir ve deneyimlerini paylaşan herkese minnettarız. Geri bildirimleriniz yalnızca başkalarına yardımcı olmakla kalmaz, aynı zamanda bize şefkatli ve etkili bakım sunma konusunda ilham verir. */}
-            {/* Wir schätzen das Vertrauen, das unsere Klienten in unsere Fachkräfte setzen, sehr. Jede Bewertung spiegelt echte Erfahrungen wider, die von Menschen geteilt werden, die auf ihrem Weg Unterstützung, Orientierung und positive Veränderungen erfahren haben. Therapie ist ein individueller und einzigartiger Prozess, und wir sind dankbar für alle, die ihre Erfahrungen mit uns teilen. Ihr Feedback hilft nicht nur anderen, sondern motiviert uns auch, weiterhin einfühlsame und wirksame Unterstützung zu leisten. */}
+            {t("TD-reviews-info")} 
+            {/*We deeply value the trust our clients place in our professionals. Every review is a reflection of real experiences, shared by individuals who have found guidance, support, and positive change in their journey. Therapy is a personal and unique process, and we appreciate those who take the time to share their insights. Your feedback not only helps others but also inspires us to continue providing compassionate and effective care.*/}
+            
           </p>
           {/* We truly appreciate the wonderful feedback we receive about our professionals. Each review reflects the genuine experiences of those who have worked with them, shared voluntarily by individuals who found value in their journey. Everyone’s therapy experience is unique, and we are grateful for the trust placed in us. */}
           {/* Profesyonellerimiz hakkında aldığımız harika geri bildirimler için gerçekten minnettarız. Her bir yorum, onlarla çalışmış kişilerin gerçek deneyimlerini yansıtmakta olup, yolculuklarından değer bulan bireyler tarafından gönüllü olarak paylaşılmıştır. Herkesin terapi süreci kendine özgüdür ve bize duyulan güven için teşekkür ederiz. */}
           {/* Wir sind sehr dankbar für das wunderbare Feedback, das wir über unsere Fachkräfte erhalten. Jede Bewertung spiegelt die echten Erfahrungen von Menschen wider, die mit ihnen gearbeitet haben und ihren Weg freiwillig teilen. Jede Therapieerfahrung ist einzigartig, und wir schätzen das Vertrauen, das in uns gesetzt wird. */}
-
-
 
           {/* Review/Feedback Cards */}
 

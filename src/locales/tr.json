@@ -199,8 +199,10 @@
   "ultraPremium": "Ultra Premium",
   "ultraPremiumText": "Büyük ölçekli kullanımlar ve genişletilmiş dağıtım hakları için en iyisi.",
   "unlimited": "Sınırsız",
+
   "TEAM": "EKIP",
   "OurPsychologicalCounselingTeam": "Psikolojik danışmanlık ekibimiz, zihinsel sağlığınızı kişiselleştirilmiş bakım ile desteklemeye kendini adamıştır. Danışmanlık ve rehberlik konusundaki geniş uzmanlıklarıyla, profesyonellerimiz duygusal denge yolculuğunuzda size yardımcı olmak için burada.",
+  "therapistNotFound": "Terapist bulunamadı",
   "all": "Tümü",
   "healthPsychology": "Sağlık Psikolojisi",
   "marriageAndFamilyTherapy": "Evlilik ve Aile Terapisi",
@@ -218,6 +220,16 @@
   ],
   "applyNowDescription": "🔹 Yolculuğunuz burada başlıyor! Şimdi başvurun ve daha büyük bir şeyin parçası olun.",
   "applyNowButton": "Şimdi Başvur",
+
+  "TEAMDETAIL": "TAKIM DETAYI",
+  "goBack": "Geri Dön",
+  "liveChat": "Canlı Sohbet",
+  "TD-aboutMe-title": "Hakkımda",
+  "TD-ProExperience-title": "Profesyonel Deneyim",
+  "TD-services-title": "Hizmetler",
+  "TD-reviews-title": "Yorumlar",
+  "TD-reviews-info": "Danışanlarımızın profesyonellerimize duyduğu güveni derinden önemsiyoruz. Her geri bildirim, rehberlik, destek ve olumlu değişim deneyimlerini yansıtan gerçek hikayelerdir. Terapi kişisel ve benzersiz bir süreçtir ve deneyimlerini, içgörülerini paylaşan herkese minnettarız. Geri bildiriminiz sadece başkalarına yardımcı olmakla kalmaz, aynı zamanda şefkatli ve etkili bakım sunmaya devam etmemiz için bize ilham verir.",
+
   "JOIN": "EKİBİMİZE KATILIN",
   "joinOurTeam": "Pozitif bir etki yaratmaya adanmış tutkulu ve profesyonel ekibimize katılın. Anlamlı bir şeyin parçası olmak ve başkalarına refah yolculuklarında yardımcı olmak için şimdi başvurun.",
   "applyNow": "Şimdi Başvur",
