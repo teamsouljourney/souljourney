@@ -34,10 +34,12 @@ import BlogManagement from "../pages/BlogManagement";
 import FeedbackManagement from "../pages/FeedbackManagement";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsAndConditions from "../pages/TermsAndConditions";
+import ScrollToTop from "../components/ScrollToTop";
 
 const AppRouter = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         {/* Public Area */}
