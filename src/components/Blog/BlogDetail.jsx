@@ -116,10 +116,10 @@ const BlogDetail = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-end px-5 mt-6">
+        <div className="flex items-center justify-center px-5 mt-6">
           <button
             onClick={() => navigate("/blogs")}
-            className="flex items-center gap-2 px-6 py-2 text-white transition-all rounded bg-navy hover:bg-navy-light"
+            className="flex items-center gap-2 px-6 py-2 text-white transition-all rounded bg-navy dark:bg-seaGreen-dark hover:bg-navy-light dark:hover:bg-seaGreen"
           >
             <HiArrowLeft className="w-4 h-4" />
             {t("blg_goback")}
