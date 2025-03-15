@@ -1,4 +1,9 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+} from "react-router-dom";
 import PrivateRouter from "./PrivateRouter";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
@@ -65,6 +70,8 @@ const AppRouter = () => {
         {/* Private Area */}
         <Route path="" element={<PrivateRouter />}>
           {/* Privates Routes */}
+
+          {/* User - Therapist Profile */}
           <Route path="/profile" element={<Sidebar />}>
             <Route index element={<Dashboard />} />
             <Route path="account" element={<Account />} />
@@ -73,6 +80,14 @@ const AppRouter = () => {
             <Route path="video-call" element={<VideoCall />} />
             <Route path="write-blog" element={<WriteBlog />} />
             <Route path="write-blog/:id" element={<WriteBlog />} />
+          </Route>
+
+          {/* Admin Panel */}
+          <Route
+            path="/admin"
+            element={<Navigate to="/admin/user-management" />}
+          />
+          <Route path="/admin" element={<Sidebar />}>
             <Route path="user-management" element={<UserManagement />} />
             <Route
               path="therapist-management"
