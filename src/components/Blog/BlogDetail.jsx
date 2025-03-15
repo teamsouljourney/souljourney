@@ -40,8 +40,8 @@ const BlogDetail = () => {
 
   return (
     <div className="min-h-screen py-32 mx-auto bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
-      <div className="flex flex-col max-w-xl mx-auto overflow-hidden rounded">
-        <div className="relative w-full h-80">
+      <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
+        <div className="relative w-full h-80 lg:h-96">
           <img
             className="object-cover w-full h-full"
             src={singleBlog?.image || "/placeholder.svg"}
@@ -59,11 +59,11 @@ const BlogDetail = () => {
                   className="object-cover w-10 h-10 rounded-full"
                 />
                 <div>
-                  <h3 className="font-semibold">
+                  <h3 className="font-semibold md:text-xl">
                     {singleBlog?.therapistId?.firstName}{" "}
                     {singleBlog?.therapistId?.lastName}
                   </h3>
-                  <p className="text-sm ">
+                  <p className="text-sm">
                     {singleBlog?.therapistId?.description}
                   </p>
                 </div>
@@ -71,9 +71,9 @@ const BlogDetail = () => {
             )}
           </div>
 
-          <h2 className="mb-4 text-2xl font-bold">{singleBlog?.title}</h2>
+          <h2 className="mb-4 text-xl md:text-2xl font-bold">{singleBlog?.title}</h2>
           <div
-            className="leading-relaxed"
+            className="leading-relaxed text-base md:text-xl"
             dangerouslySetInnerHTML={{ __html: singleBlog?.content || "" }}
           ></div>
 
