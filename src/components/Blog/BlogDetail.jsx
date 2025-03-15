@@ -87,8 +87,8 @@ const BlogDetail = () => {
           </div>
 
           <div className="flex justify-end items-center gap-2">
-            <div className="flex justify-between gap-x-8">
-              <div className="flex items-center gap-x-2">
+            <div className="flex justify-between gap-x-8 px-4">
+              <div className="flex items-center gap-x-1">
                 <button
                   onClick={handleLike}
                   className="flex items-center transition-colors duration-200 focus:outline-none"
@@ -103,7 +103,7 @@ const BlogDetail = () => {
                   {singleBlog?.likes?.length || 0}
                 </span>
               </div>
-              <div className="flex items-center gap-x-2">
+              <div className="flex items-center gap-x-1">
                 <HiEye className="w-7 h-7 dark:text-seaGreen-dark" />
                 <span className="font-medium text-gray-600 dark:text-gray-300">
                   {singleBlog?.countOfVisitors || 0}
