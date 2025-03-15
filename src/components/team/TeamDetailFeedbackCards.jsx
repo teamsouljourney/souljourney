@@ -13,8 +13,6 @@ const TeamDetailFeedbackCards = () => {
   const { singleTherapist } = useSelector((state) => state.therapists);
   const therapistId = singleTherapist && singleTherapist?._id
   
-  {/* {t("goBack")} */}
-  
   const [selectedFeedback, setSelectedFeedback] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   
@@ -78,7 +76,7 @@ const TeamDetailFeedbackCards = () => {
                 }}
                 className="mt-2 px-2 py-1 text-sm font-semibold bg-gray-50 hover:bg-gray-100 dark:bg-gray-700/50 dark:hover:bg-offWhite-dark text-seaGreen dark:text-seaGreen-light hover:text-seaGreen-dark dark:hover:text-seaGreen-dark border border-gray-200 dark:border-gray-600 rounded-md transition-colors"
               >
-                Read more
+                {/*Read more*/} {t("readMore")}
               </button>
             </div>
           </div>
