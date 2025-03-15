@@ -17,6 +17,7 @@ import useAuthCall from "../hooks/useAuthCall";
 import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
 import SoulJourneyLogo from "../components/SoulJourneyLogo";
+import ViewNotifications from "./ViewNotifications";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -125,16 +126,7 @@ export default function Navbar() {
           <div className="absolute right-0 flex items-center gap-1 pr-2 sm:static sm:inset-auto sm:ml-0 sm:pr-0">
             <LanguageSelector />
             <Switch />
-            {currentUser && (
-              <button
-                type="button"
-                className="relative p-1 rounded-full bg-navy-dark text-offWhite-light hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
-              >
-                <span className="absolute -inset-1.5" />
-                <span className="sr-only">View notifications</span>
-                <BellIcon aria-hidden="true" className="size-4 sm:size-6" />
-              </button>
-            )}
+            {currentUser && <ViewNotifications />}
 
             {!currentUser && (
               <button
@@ -201,7 +193,7 @@ export default function Navbar() {
                   </MenuItem>
                   <MenuItem>
                     <NavLink
-                      to="auth/logout"
+                      to=""
                       className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                       onClick={() => logout()}
                     >
