@@ -242,6 +242,20 @@
   "TD-ratingValue": " von 5",
   "TD-shareComment": "Kommentar teilen",
 
+  "getTimeAgo": "Vergangene Zeit abrufen",
+  "GTA-year": "Jahr",
+  "GTA-years": "Jahre",
+  "GTA-month": "Monat",
+  "GTA-months": "Monate",
+  "GTA-day": "Tag",
+  "GTA-days": "Tage",
+  "GTA-hour": "Stunde",
+  "GTA-hours": "Stunden",
+  "GTA-minute": "Minute",
+  "GTA-minutes": "Minuten",
+  "GTA-justNow": "Gerade eben",
+  "GTA-ago": "vor",
+
 
   "JOIN": "WERDEN SIE TEIL UNSERES TEAMS",
   "joinOurTeam": "Werden Sie Teil unseres engagierten und professionellen Teams, das sich für das Wohlbefinden anderer einsetzt. Bewerben Sie sich jetzt und helfen Sie mit, einen positiven Unterschied zu machen.",

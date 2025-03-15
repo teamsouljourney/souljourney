@@ -247,6 +247,20 @@
   "TD-ratingValue": " out of 5",
   "TD-shareComment": "Share Comment",
 
+  "getTimeAgo": "Get Time Ago",
+  "GTA-year": "year",
+  "GTA-years": "years",
+  "GTA-month": "month",
+  "GTA-months": "months",
+  "GTA-day": "day",
+  "GTA-days": "days",
+  "GTA-hour": "hour",
+  "GTA-hours": "hours",
+  "GTA-minute": "minute",
+  "GTA-minutes": "minutes",
+  "GTA-justNow": "Just now",
+  "GTA-ago": "ago",
+
 
   "BLOGS": "BLOGS",
 

@@ -237,6 +237,20 @@
   "TD-ratingValue": "  /  5",
   "TD-shareComment": "Yorumu Paylaş",
 
+  "getTimeAgo": "Geçen Süre",
+  "GTA-year": "yıl",
+  "GTA-years": "yıl",
+  "GTA-month": "ay",
+  "GTA-months": "ay",
+  "GTA-day": "gün",
+  "GTA-days": "gün",
+  "GTA-hour": "saat",
+  "GTA-hours": "saat",
+  "GTA-minute": "dakika",
+  "GTA-minutes": "dakika",
+  "GTA-justNow": "Az önce",
+  "GTA-ago": "önce",
+
 
 
   "JOIN": "EKİBİMİZE KATILIN",
