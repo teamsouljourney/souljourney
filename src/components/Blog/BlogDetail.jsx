@@ -82,7 +82,7 @@ const BlogDetail = () => {
             ></div>
 
             {singleBlog?.categoryId && (
-              <span className="inline-block px-4 py-1 mt-6 text-sm rounded-full">
+              <span className="inline-block py-2 mt-6 text-sm rounded-full">
                 {singleBlog?.categoryId?.name}
               </span>
             )}
