@@ -52,7 +52,7 @@ const BlogDetail = () => {
 
         <div className="relative px-10 pt-5 pb-16 mx-5 -mt-16 bg-white rounded-lg shadow-lg dark:bg-background-dark text-navy dark:text-offWhite-dark md:mx-10">
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex flex-col md:flex-row items-center gap-2 mb-4">
               {singleBlog?.therapistId && (
                 <>
                   <img
