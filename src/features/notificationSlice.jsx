@@ -1,42 +1,68 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const notificationSlice = createSlice({
-  name: "notifications",
+  name: "notification",
   initialState: {
-    notifications: [],
-    singleNotification: [],
+    notifications: [], // Make sure this is initialized as an empty array
     loading: false,
     error: false,
-    isRead: false,
   },
   reducers: {
     fetchStart: (state) => {
       state.loading = true;
       state.error = false;
     },
-    getAllNotificationSuccess: (state, { payload }) => {
-      state.loading = false;
-      state.notifications = payload.data;
-      state.error = false;
-    },
-    getNotificationSuccess: (state, { payload }) => {
-      state.loading = false;
-      state.singleNotifications = payload.data;
-      state.error = false;
-    },
-    createNotificationSuccess: (state, { payload }) => {
-      state.loading = false;
-      state.notes.push(payload.data);
-      state.error = false;
-    },
-    readNotification: (state, { payload }) => {
-      state.loading = false;
-      state.isRead = payload.data.isRead;
-      state.error = false;
-    },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
+    },
+    getAllNotificationSuccess: (state, { payload }) => {
+      state.loading = false;
+      // Ensure payload is an array and only include unread notifications
+      state.notifications = Array.isArray(payload)
+        ? payload.filter((n) => !n.isRead)
+        : [];
+    },
+    getNotificationSuccess: (state, { payload }) => {
+      state.loading = false;
+      // Ensure payload is an array and only include unread notifications
+      state.notifications = Array.isArray(payload)
+        ? payload.filter((n) => !n.isRead)
+        : [];
+    },
+    createNotificationSuccess: (state, { payload }) => {
+      state.loading = false;
+      // Ensure notifications is an array before attempting to spread it
+      const currentNotifications = Array.isArray(state.notifications)
+        ? state.notifications
+        : [];
+
+      // Check if notification already exists to avoid duplicates
+      const exists = currentNotifications.some((n) => n._id === payload._id);
+      if (!exists && payload) {
+        state.notifications = [...currentNotifications, payload];
+      }
+    },
+    // Add this reducer to handle real-time notifications
+    receiveNewNotification: (state, { payload }) => {
+      // Ensure notifications is an array
+      const currentNotifications = Array.isArray(state.notifications)
+        ? state.notifications
+        : [];
+
+      // Check if notification already exists to avoid duplicates
+      const exists = currentNotifications.some((n) => n._id === payload._id);
+      if (!exists && payload && !payload.isRead) {
+        state.notifications = [...currentNotifications, payload];
+      }
+    },
+    // Add this reducer to remove a notification from state
+    removeNotification: (state, { payload }) => {
+      if (Array.isArray(state.notifications)) {
+        state.notifications = state.notifications.filter(
+          (notification) => notification._id !== payload
+        );
+      }
     },
   },
 });
@@ -44,10 +70,11 @@ const notificationSlice = createSlice({
 export const {
   fetchStart,
   fetchFail,
+  getAllNotificationSuccess,
   getNotificationSuccess,
   createNotificationSuccess,
-  readNotification,
-  getAllNotificationSuccess,
+  receiveNewNotification,
+  removeNotification,
 } = notificationSlice.actions;
 
 export default notificationSlice.reducer;

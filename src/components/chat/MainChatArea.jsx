@@ -2,7 +2,7 @@
 
 import EmojiPicker from "emoji-picker-react";
 import { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import useChatCall from "../../hooks/useChatCall";
 import { BiSend } from "react-icons/bi";
 import useNotificationCall from "../../hooks/useNotificationCall";
@@ -23,14 +23,12 @@ export default function MainChatArea({
     (state) => state.appointments
   );
   const { createChat, initializeSocket, getAllChats } = useChatCall();
-  const { createNotification, getAllNotifications } = useNotificationCall();
+  const { createNotification, isSocketConnected: notificationSocketConnected } =
+    useNotificationCall();
   const [message, setMessage] = useState("");
-  const [isSending, setIsSending] = useState(false);
   const [isOnline, setIsOnline] = useState(currentUser?.isOnline);
-  const dispatch = useDispatch();
   const messagesContainerRef = useRef(null);
 
-  // Make sure socket is initialized and reconnect if needed
   useEffect(() => {
     if (!socket || !isConnected) {
       console.log("Socket not initialized or connected, initializing...");
@@ -68,7 +66,7 @@ export default function MainChatArea({
       messagesContainerRef.current.scrollTop =
         messagesContainerRef.current.scrollHeight;
     }
-  }, [chats]); // Removed messagesContainerRef dependency
+  }, [chats]);
 
   const messageData = {
     senderId: currentUser?._id,
@@ -83,23 +81,34 @@ export default function MainChatArea({
     recieverModel: currentUser?.isTherapist === true ? "User" : "Therapist",
     notificationType: "message",
     content: `New message from ${
-      currentUser.firstName + currentUser.lastName
+      currentUser.firstName + " " + currentUser.lastName
     }! Check your chat now.`,
+    senderInfo: {
+      senderId: currentUser?._id,
+      senderName: currentUser.firstName + " " + currentUser.lastName,
+      senderImage: currentUser.image || null,
+      senderModel: currentUser?.isTherapist === true ? "Therapist" : "User",
+    },
   };
 
   const handleChats = async (e) => {
     e.preventDefault();
     if (!messageData?.content.trim() || !selectedUser) return;
-
-    setIsSending(true);
     try {
-      await createChat(messageData);
+      // First send the chat message
+      const chatResult = await createChat(messageData);
       setMessage("");
-      await createNotification(notificationData);
+
+      // Then create and send the notification
+      try {
+        const notificationResult = await createNotification(notificationData);
+        console.log("Notification created:", notificationResult);
+      } catch (notificationError) {
+        console.error("Error creating notification:", notificationError);
+        // Continue even if notification fails - the message was sent
+      }
     } catch (error) {
       console.error("Error sending message:", error);
-    } finally {
-      setIsSending(false);
     }
   };
 
@@ -134,8 +143,6 @@ export default function MainChatArea({
   const sortedChats = [...currentChatMessages].sort((a, b) => {
     return new Date(a.createdAt || 0) - new Date(b.createdAt || 0);
   });
-
-  console.log(message);
 
   return (
     <div className="flex-1 flex flex-col w-full">
@@ -188,22 +195,35 @@ export default function MainChatArea({
           )}
         </div>
 
-        {/* Connection status indicator */}
-        {socket && (
+        {/* Connection status indicators */}
+        <div className="flex items-center gap-2">
+          {socket && (
+            <div
+              className={`px-2 py-1 rounded-full text-xs ${
+                isConnected
+                  ? "bg-green-100 text-green-600"
+                  : "bg-red-100 text-red-600"
+              }`}
+            >
+              {isConnected ? "Chat Connected" : "Chat Reconnecting..."}
+            </div>
+          )}
           <div
             className={`px-2 py-1 rounded-full text-xs ${
-              isConnected
+              notificationSocketConnected
                 ? "bg-green-100 text-green-600"
                 : "bg-red-100 text-red-600"
             }`}
           >
-            {isConnected ? "Connected" : "Reconnecting..."}
+            {notificationSocketConnected
+              ? "Notifications Connected"
+              : "Notifications Reconnecting..."}
           </div>
-        )}
+        </div>
       </div>
 
       {!selectedUser && (
-        <div className="text-center mt-12  dark:text-offWhite">
+        <div className="text-center mt-12 dark:text-offWhite">
           <p>{"Please select a person before starting the chat!"}</p>
         </div>
       )}
@@ -230,13 +250,13 @@ export default function MainChatArea({
               >
                 <div>
                   <div
-                    className={`-light rounded-3xl p-3 max-w-xs sm:max-w-md ${
+                    className={`rounded-3xl p-3 max-w-xs sm:max-w-md ${
                       chat.senderId === currentUser?._id
                         ? "bg-pastelGreen-light rounded-br-none"
                         : "bg-mauve-light/50 rounded-tl-none"
                     }`}
                   >
-                    <p className="overflow-auto break-words text-navy-light dark:text-offWhite-dark ">
+                    <p className="overflow-auto break-words text-navy-light dark:text-offWhite-dark">
                       {chat?.content}
                     </p>
                   </div>
@@ -264,25 +284,6 @@ export default function MainChatArea({
               </div>
             ))
           )}
-
-          {/* Typing indicator (optional) */}
-          {isSending && (
-            <div className="flex gap-3 mr-auto justify-start">
-              <div className="bg-gray-100 rounded-3xl p-3">
-                <div className="flex space-x-1">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                  <div
-                    className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                    style={{ animationDelay: "0.2s" }}
-                  ></div>
-                  <div
-                    className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                    style={{ animationDelay: "0.4s" }}
-                  ></div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       )}
 
@@ -296,10 +297,9 @@ export default function MainChatArea({
             type="button"
             className="p-2 hover:bg-offWhite-dark dark:hover:bg-background-lightdark text-pastelGreen rounded-full"
             onClick={toggleEmojiPicker}
-            disabled={isSending}
           >
             <svg
-              className="w-5 h-5 "
+              className="w-5 h-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -315,20 +315,19 @@ export default function MainChatArea({
           <textarea
             type="text"
             rows="1"
-            placeholder={isSending ? "Sending..." : "Type a message..."}
+            placeholder={"Type a message..."}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="flex-1 px-4 py-2 border-[1px] border-offWhite-dark text-navy dark:text-offWhite  resize-none overflow-hidden bg-inherit dark:bg-background-lightdark rounded-xl focus:outline-none focus:border-seaGreen-light"
-            disabled={isSending}
+            className="flex-1 px-4 py-2 border-[1px] border-offWhite-dark text-navy dark:text-offWhite resize-none overflow-hidden bg-inherit dark:bg-background-lightdark rounded-xl focus:outline-none focus:border-seaGreen-light"
           />
           <button
             type="submit"
             className={`p-3 rounded-full ${
-              isSending || !message.trim()
+              !message.trim()
                 ? "opacity-50 cursor-not-allowed"
                 : "hover:bg-offWhite-dark dark:hover:bg-background-lightdark"
             }`}
-            disabled={isSending || !message.trim()}
+            disabled={!message.trim()}
           >
             <BiSend className="text-pastelGreen text-3xl" />
           </button>

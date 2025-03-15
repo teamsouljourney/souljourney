@@ -320,6 +320,7 @@
   "passwordLowerCaseMessage": "Şifre en az bir küçük harf içermelidir!",
   "passwordUpperCaseMessage": "Şifre en az bir büyük harf içermelidir!",
   "passwordSpecialCharMessage": "Şifre en az bir özel karakter içermelidir (@$?!%&*)",
+
   "SIDEBAR": "YAN MENÜ",
   "menu": "Menü",
   "dashboard": "Profilim",
@@ -338,6 +339,7 @@
   "profession": "Meslek",
   "profile": "Profil",
   "upload": "Yükle",
+
   "WRITEBLOG": "WRITEBLOG",
   "blogTitlePlaceholder": "Blog Başlığı *",
   "selectCategory": "Kategori Seç",
@@ -345,6 +347,7 @@
   "contentPlaceholder": "Blog içeriğinizi buraya yazın...",
   "updateBlog": "Bloğu Güncelle",
   "createNewBlog": "Yeni Blog Oluştur",
+
   "APPOINTMENT CALENDAR": "RANDEVU TAKVİMİ",
   "bookingCalendar": "Rezervasyon Takvimi",
   "createAppointment": "Randevu Oluştur",
@@ -364,6 +367,7 @@
   "cancel": "İptal",
   "noAppointmentsMessage": "Henüz planlanmış randevunuz yok.",
   "bookAppointmentButton": "Randevu Al",
+
   "DASHBOARD": "DASHBOARD",
   "descriptionOfTherapist": "Ruh sağlığı alanında uzmanlaşmış deneyimli psikolog.",
   "patientList": "Hasta Listesi",
@@ -373,6 +377,11 @@
   "noBlogs": "Henüz blog yazısı yok. Hemen yazmaya başla!",
   "likedBlogs": "Beğenilen Bloglar",
   "notes": "Notlar",
+
+  "NOTIFICATION": "NOTIFICATION",
+  "notifications": "Bildirimler",
+  "noNotification": "Hiç bildiriminiz yok",
+  "markAsRead": "Okundu olarak işaretle",
 
   "termsAndConditions": {
     "title": "Şartlar ve Koşullar",

@@ -390,6 +390,11 @@
   "notes": "Notes",
   "noPatient": "You have no scheduled appointments.",
 
+  "NOTIFICATION": "NOTIFICATION",
+  "notifications": "Notifications",
+  "noNotification": "You have not a notification",
+  "markAsRead": "Mark all as read",
+
   "termsAndConditions": {
     "title": "Terms and Conditions",
     "lastUpdated": "Last updated: March 3, 2025",
