@@ -224,6 +224,8 @@
   "TEAMDETAIL": "TAKIM DETAYI",
   "goBack": "Geri Dön",
   "liveChat": "Canlı Sohbet",
+  "TN-about": "Hakkında",
+  "TN-experience": "Deneyim",
   "TD-aboutMe-title": "Hakkımda",
   "TD-ProExperience-title": "Profesyonel Deneyim",
   "TD-BachelorsDegree": "Lisans Derecesi",
@@ -274,7 +276,8 @@
     "abt_dedicated": "Terapiyi herkes için erişilebilir kılmaya, iyiliğe doğru yolculuğunuzda büyümeyi ve dayanıklılığı teşvik etmeye kendimizi adadık."
   },
   "AboutRow": {
-    "abt_discover": "Platformumuzun ruh sağlığınız için neden doğru seçim olduğunu keşfedin."
+    "abt_discover": "Platformumuzun ruh sağlığınız için neden doğru seçim olduğunu keşfedin.",
+    "abt_whyItWorks": "Neden işe yarıyor"
   },
   "AboutRowContent": {
     "abt_personalized_therapy_sessions_title": "Kişiselleştirilmiş Terapi Seansları",

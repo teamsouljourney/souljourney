@@ -234,6 +234,8 @@
   "TEAMDETAIL": "TEAM DETAIL",
   "goBack": "Go Back",
   "liveChat": "Live Chat",
+  "TN-about": "About",
+  "TN-experience": "Experience",
   "TD-aboutMe-title": "About Me",
   "TD-ProExperience-title": "Proffesional experience",
   "TD-BachelorsDegree": "Bachelor's degree",
@@ -281,7 +283,8 @@
     "abt_dedicated": "We are dedicated to making therapy accessible to everyone, fostering growth and resilience in your journey toward well-being"
   },
   "AboutRow": {
-    "abt_discover": "Discover why our platform is the right choice for your mental well-being"
+    "abt_discover": "Discover why our platform is the right choice for your mental well-being",
+    "abt_whyItWorks": "Why it works"
   },
   "AboutRowContent": {
     "abt_personalized_therapy_sessions_title": "Personalized Therapy Sessions",

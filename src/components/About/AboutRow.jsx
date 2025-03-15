@@ -28,7 +28,7 @@ const AboutRow = () => {
     <div className="w-full flex flex-col items-center space-y-8 px-4 md:px-0">
       <div className="w-full max-w-[1102px] h-auto mx-auto flex flex-col items-center space-y-8">
         <div className="text-center">
-          <h1 className="text-3xl font-bold pb-2">Why it works</h1>
+          <h1 className="text-3xl font-bold pb-2">{t('AboutRow.abt_whyItWorks')}{/*Why it works*/}</h1>
           <p className="text-lg pb-2 max-w-[900px] mx-auto">
           {t('AboutRow.abt_discover')}
           </p>

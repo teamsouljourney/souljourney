@@ -22,7 +22,7 @@ const TeamDetail = () => {
   const { currentUser } = useSelector((state) => state.auth);
 
   // Section IDs for Tab Navigation
-  const sectionIds = ["about", "experience", "services", "reviews"];
+  const sectionIds = [t("TN-about"), t("TN-experience"), t("TD-services-title"), t("TD-reviews-title")];
 
   // UseTabNavigation Call
   const { activeTab, scrollToSection, sectionRefs } = useTabNavigation(sectionIds, {

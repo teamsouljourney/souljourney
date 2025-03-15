@@ -229,6 +229,9 @@
   "TEAMDETAIL": "TEAMDETAILS",
   "goBack": "Zurückgehen",
   "liveChat": "Live-Chat",
+  "TN-about": "Über",
+  "TN-experience": "Erfahrung",
+  "TD-aboutMe": "Über mir",
   "TD-aboutMe-title": "Über mich",
   "TD-ProExperience-title": "Berufserfahrung",
   "TD-BachelorsDegree": "Bachelor-Abschluss",
@@ -278,7 +281,8 @@
     "abt_dedicated": "Wir setzen uns dafür ein, Therapie für alle zugänglich zu machen und Wachstum und Resilienz auf Ihrem Weg zum Wohlbefinden zu fördern."
   },
   "AboutRow": {
-    "abt_discover": "Entdecken Sie, warum unsere Plattform die richtige Wahl für Ihr psychisches Wohlbefinden ist."
+    "abt_discover": "Entdecken Sie, warum unsere Plattform die richtige Wahl für Ihr psychisches Wohlbefinden ist.",
+    "abt_whyItWorks": "Warum es funktioniert"
   },
   "AboutRowContent": {
     "abt_personalized_therapy_sessions_title": "Personalisierte Therapiesitzungen",
