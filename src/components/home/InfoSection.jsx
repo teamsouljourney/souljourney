@@ -15,7 +15,7 @@ const InfoSection = () => {
               <h2 className=" md:text-2xl text-xl font-bold mb-2 pt-6 mt-2">
                 Soul Journey
               </h2>
-              <p className=" text-xs md:text-[0.7rem] mb-4">{t("infoText")}</p>
+              <p className="leading-snug text-md lg:text-xs 2xl:text-sm lg:leading-tight mb-4">{t("infoText")}</p>
               <div className="mb-4">
                 <button className="md:px-6 px-4 py-2 font-semibold text-sm text-offWhite dark:text-offWhite-dark bg-seaGreen rounded-full hover:bg-seaGreen-light transform trasition delay-100">
                   <NavLink to="/register">{t("nowFreeRegister")}
