@@ -207,6 +207,7 @@
 
   "TEAM": "TEAM",
   "OurPsychologicalCounselingTeam": "Unser psychologisches Beratungsteam engagiert sich für Ihre mentale Gesundheit mit individueller Betreuung. Mit vielfältiger Expertise in Beratung und Begleitung stehen Ihnen unsere Fachkräfte auf Ihrem Weg zu emotionalem Gleichgewicht zur Seite.",
+  "therapistNotFound": "Therapeut nicht gefunden",
   "all": "Alle",
   "healthPsychology": "Gesundheitspsychologie",
   "marriageAndFamilyTherapy": "Ehe- und Familientherapie",
@@ -224,6 +225,16 @@
   ],
   "applyNowDescription": "🔹 Ihre Reise beginnt hier! Bewerben Sie sich jetzt und werden Sie Teil von etwas Großem.",
   "applyNowButton": "Jetzt bewerben",
+
+  "TEAMDETAIL": "TEAMDETAILS",
+  "goBack": "Zurückgehen",
+  "liveChat": "Live-Chat",
+  "TD-aboutMe-title": "Über mich",
+  "TD-ProExperience-title": "Berufserfahrung",
+  "TD-services-title": "Dienstleistungen",
+  "TD-reviews-title": "Bewertungen",
+  "TD-reviews-info": "Wir schätzen das Vertrauen, das unsere Klienten in unsere Fachleute setzen, sehr. Jede Bewertung spiegelt echte Erfahrungen wider, geteilt von Menschen, die auf ihrer Reise Unterstützung, Orientierung und positive Veränderungen gefunden haben. Therapie ist ein persönlicher und einzigartiger Prozess, und wir sind dankbar für diejenigen, die ihre Erkenntnisse teilen. Ihr Feedback hilft nicht nur anderen, sondern inspiriert uns auch, weiterhin einfühlsame und wirksame Betreuung zu bieten.",
+
 
   "JOIN": "WERDEN SIE TEIL UNSERES TEAMS",
   "joinOurTeam": "Werden Sie Teil unseres engagierten und professionellen Teams, das sich für das Wohlbefinden anderer einsetzt. Bewerben Sie sich jetzt und helfen Sie mit, einen positiven Unterschied zu machen.",

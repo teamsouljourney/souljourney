@@ -52,7 +52,7 @@ const TeamDetail = () => {
   }
 
   if (error || !singleTherapist) {
-    return <div className="text-center text-mauve">Therapist not found!</div>;
+    return <div className="text-center text-mauve">{t("therapistNotFound")}!</div>;
   }
 
   const toggleCalendar = (show) => {
@@ -104,7 +104,7 @@ const TeamDetail = () => {
       {/* GoBack */}
       <div className="p-6 pt-0 mt-8 text-center w-full">
         <Button onClick={() => navigate("/therapists")} type="type22">
-          Go Back {/* {t("goBack")} */}
+          {t("goBack")}   {/* Go Back  */}
         </Button>
       </div>
       {/* Appointment */}
