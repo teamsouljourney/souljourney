@@ -36,8 +36,6 @@ const BlogDetail = () => {
       </div>
     );
   }
-  console.log(singleBlog);
-  
 
   return (
     <div className="min-h-screen py-32 mx-auto bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
