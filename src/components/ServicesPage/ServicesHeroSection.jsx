@@ -21,7 +21,7 @@ const ServicesHeroSection = () => {
         </h1>
 
         <p
-          className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 px-2 sm:px-4 md:px-12 w-full max-w-[95%] sm:max-w-[90%] mx-auto"
+          className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 px-2 sm:px-4 md:px-12 w-full max-w-4xl mx-auto"
           style={{
             fontFamily: "'Urbanist', sans-serif",
             fontSize: "clamp(0.875rem, 0.8rem + 0.5vw, 1.25rem)",

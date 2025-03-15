@@ -134,7 +134,7 @@ const Quiz = () => {
   };
 
   return (
-    <div className="dark:text-black">
+    <div>
       {/* "Self-Test" Button   */}
       <div className="flex justify-center">
         <button

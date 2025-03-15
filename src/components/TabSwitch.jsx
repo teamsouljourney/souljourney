@@ -59,7 +59,7 @@ const TabSwitch = ({
       <div className="md:hidden flex justify-end mb-4">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="p-2 rounded-lg border border-navy text-navy hover:bg-navy-light hover:text-white transition-all duration-300"
+          className="p-2 rounded-lg border border-navy dark:border-offWhite-dark text-navy dark:text-offWhite-dark hover:bg-navy-light hover:text-white transition-all duration-300"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
           {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
@@ -68,14 +68,14 @@ const TabSwitch = ({
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden absolute right-4 mt-2 w-64 bg-white shadow-lg rounded-lg z-50 border border-gray-200">
+        <div className="md:hidden absolute right-4 mt-2 w-64 bg-white dark:bg-background-lightdark shadow-lg rounded-lg z-50 border border-gray-200">
           <div className="p-2 flex flex-col">
             <button
               onClick={handleAllClick}
               className={`text-left px-4 py-3 rounded-lg mb-1 transition-all duration-300 ${
                 selectedCategory === null
-                  ? "bg-navy-light text-white"
-                  : "hover:bg-gray-100"
+                  ? "bg-navy-light dark:bg-seaGreen-dark text-white"
+                  : "hover:bg-gray-100 dark:hover:bg-gray-500"
               }`}
             >
               {t("all")}
@@ -87,8 +87,8 @@ const TabSwitch = ({
                 onClick={() => handleCategoryClick(category._id)}
                 className={`text-left px-4 py-3 rounded-lg mb-1 transition-all duration-300 ${
                   selectedCategory === category._id
-                    ? "bg-navy-light text-white"
-                    : "hover:bg-gray-100"
+                    ? "bg-navy-light dark:bg-seaGreen-dark text-white"
+                    : "hover:bg-gray-100 dark:hover:bg-gray-500"
                 }`}
               >
                 {category.name}
@@ -104,8 +104,8 @@ const TabSwitch = ({
           onClick={handleAllClick}
           className={`px-4 py-2 font-semibold rounded-lg transition-all duration-300 ${
             selectedCategory === null
-              ? "bg-navy-light text-white shadow-md"
-              : "bg-white text-navy hover:bg-navy-light/30 hover:text-white border "
+              ? "bg-navy-light dark:bg-seaGreen-dark text-white shadow-md"
+              : "bg-white dark:bg-background-lightdark text-navy dark:text-offWhite-dark hover:bg-navy-light/30 dark:hover:bg-gray-500 hover:text-white border dark:border-background-lightdark"
           }`}
         >
           {t("all")}
@@ -118,8 +118,8 @@ const TabSwitch = ({
             onClick={() => handleCategoryClick(category._id)}
             className={`px-4 py-2 font-semibold rounded-lg transition-all duration-300 hover:bg-sea ${
               selectedCategory === category._id
-                ? "bg-navy-light text-white shadow-md"
-                : "bg-white text-navy hover:bg-navy-light/30 hover:text-white border "
+                ? "bg-navy-light dark:bg-seaGreen-dark text-white shadow-md"
+                : "bg-white dark:bg-background-lightdark text-navy dark:text-offWhite-dark hover:bg-navy-light/30 dark:hover:bg-gray-500 hover:text-white border dark:border-background-lightdark"
             }`}
           >
             {category.name}
@@ -144,12 +144,12 @@ const TabSwitch = ({
             placeholder={placeholder}
             value={searchTerm}
             onChange={handleSearchChange}
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-navy-light transition-all duration-300"
+            className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-500 focus:outline-none focus:ring-2 focus:ring-navy-light dark:focus:ring-gray-400 transition-all duration-300"
           />
           {searchTerm && (
             <button
               onClick={() => onSearchChange("")}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-navy"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-navy dark:hover:text-offWhite-dark"
               aria-label="Clear search"
             >
               <FaTimes size={16} />

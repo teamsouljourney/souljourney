@@ -11,7 +11,7 @@ const About = () => {
       </section>
 
       {/* About Details */}
-      <section className="w-full max-w-7xl flex justify-center px-4 md:px-8 lg:px-16 py-8">
+      <section className="w-full max-w-screen-2xl flex justify-center px-4 md:px-8 lg:px-16 py-8">
         <AboutDetail />
       </section>
 
