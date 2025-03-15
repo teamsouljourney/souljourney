@@ -236,6 +236,8 @@
   "TD-rating": "Puanlama",
   "TD-ratingValue": "  /  5",
   "TD-shareComment": "Yorumu Paylaş",
+  "TD-enterTitle": "Başlık Giriniz",
+  "TD-enterComment": "Yorumunuzu Giriniz",
 
   "getTimeAgo": "Geçen Süre",
   "GTA-year": "yıl",

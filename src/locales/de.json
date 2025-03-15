@@ -241,6 +241,8 @@
   "TD-rating": "Bewertung",
   "TD-ratingValue": " von 5",
   "TD-shareComment": "Kommentar teilen",
+  "TD-enterTitle": "Geben Sie Ihren Titel ein",
+  "TD-enterComment": "Geben Sie Ihren Kommentar ein",
 
   "getTimeAgo": "Vergangene Zeit abrufen",
   "GTA-year": "Jahr",

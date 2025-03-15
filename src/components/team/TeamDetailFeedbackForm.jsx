@@ -33,7 +33,7 @@ const TeamDetailFeedbackForm = ({
             id="title"
             name="title"
             value={feedback.title}
-            placeholder="Enter your title"
+            placeholder={t("TD-enterTitle")}
             className="w-full peer shadow-md"
             required
             onChange={handleChange}
@@ -47,7 +47,7 @@ const TeamDetailFeedbackForm = ({
             id="comment"
             name="comment"
             value={feedback.comment}
-            placeholder="Enter your comment"
+            placeholder={t("TD-enterComment")}
             rows="4"
             className="w-full textarea-style shadow-md"
             required
