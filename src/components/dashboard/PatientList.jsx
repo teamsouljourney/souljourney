@@ -142,12 +142,6 @@ const PatientList = () => {
                         {/* Time and Status */}
                         <div className="flex flex-col items-center gap-2">
                           <Notes currentUser={currentUser} userId={userId} />
-                          <div className="flex items-center gap-2">
-                            <div className="rounded-full bg-emerald-500/20 p-1">
-                              <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                            </div>
-                            <p className="text-xs text-gray-500">Online</p>
-                          </div>
                         </div>
                       </div>
                     </div>
