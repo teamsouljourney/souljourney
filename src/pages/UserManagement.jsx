@@ -26,7 +26,7 @@ const UserManagement = () => {
     getAllUsers();
   }, []);
 
-  console.log(pagUsers);
+  // console.log(pagUsers);
 
   const displayedUsers =
     searchTerm.trim() === ""
@@ -44,17 +44,17 @@ const UserManagement = () => {
       <div className="bg-white dark:bg-background-lightdark text-navy dark:text-offWhite-dark border rounded-lg shadow-sm">
         <div className="p-6">
           <ListToolbar
-            title="User List"
+            title={t("AP-userList")}
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
-            placeholder="Search user..."
+            placeholder={t("searchUserPlaceholder")}
             actions={
               <button
                 onClick={() => handleToogleModal(true)}
                 className="px-4 py-2 text-white transition duration-300 rounded-md bg-seaGreen hover:bg-navy"
               >
                 <PlusIcon className="inline-block w-5 h-5 mr-2" />
-                {t("AP-addUserBtn")} {/* Add a new User */}
+                {t("addNewUser")} {/* Add a new User */}
               </button>
             }
           />

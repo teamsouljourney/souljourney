@@ -30,13 +30,13 @@ const TeamDetailBody = ({sectionRefs}) => {
   }, [singleTherapist?._id]);
 
   if (loading) {
-    return <div className="text-center text-navy">Loading...</div>;
+    return <div className="text-center text-navy">{t(loading)}...</div>;
   }
 
   if (error || !singleTherapistFeedbacks) {
     return (
       <div className="text-center text-mauve">
-        Therapist' feedbacks not found!
+        {t(TD-feedbacksNotFound)} {/* Therapist' feedbacks not found! */}
       </div>
     );
   }
@@ -45,6 +45,7 @@ const TeamDetailBody = ({sectionRefs}) => {
   // console.log(singleTherapist);
   // console.log(categoryId);
   // console.log(singleTherapistFeedbacks);
+  // console.log(singleTherapistFeedbacks.length);
   // console.log(feedback);
 
   const handleSubmit = async (e) => {
@@ -132,7 +133,7 @@ const TeamDetailBody = ({sectionRefs}) => {
 
           {/* Review/Feedback Cards */}
 
-          <TeamDetailFeedbackCards/>
+          {singleTherapistFeedbacks.length > 0 && <TeamDetailFeedbackCards/>}          
 
           {/* <!-- Add Comment Form --> Only for logged in users */}
 

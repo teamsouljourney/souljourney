@@ -44,17 +44,17 @@ const TherapistManagement = () => {
       <div className="bg-white dark:bg-background-lightdark text-navy dark:text-offWhite-dark border rounded-lg shadow-sm">
         <div className="p-6">
           <ListToolbar
-            title="Therapist List"
+            title={t("AP-therapistList")}
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
-            placeholder="Search therapist..."
+            placeholder={t("searchTherapistPlaceholder")}
             actions={
               <button
                 onClick={() => handleToogleModal(true)}
                 className="px-4 py-2 text-white transition duration-300 rounded-md bg-seaGreen hover:bg-navy"
               >
                 <PlusIcon className="inline-block w-5 h-5 mr-2" />
-                Add a new Therapist
+                {t("addNewTherapist")} {/* Add a new Therapist */}
               </button>
             }
           />
