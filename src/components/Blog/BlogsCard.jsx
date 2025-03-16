@@ -16,9 +16,9 @@ const BlogsCard = ({ blog, index }) => {
         }`}
       >
         <div className="min-h-[120px] flex flex-col text-center sm:text-left">
-          <h2 className="mb-3 text-2xl font-bold line-clamp-2">{blog.title}</h2>
+          <h2 className="mb-3 text-2xl lg:text-3xl font-bold line-clamp-2">{blog.title}</h2>
           <p
-            className="text-base text-left line-clamp-4"
+            className="text-base lg:text-lg text-left line-clamp-4"
             dangerouslySetInnerHTML={{ __html: blog.content }}
           ></p>
         </div>
@@ -30,7 +30,7 @@ const BlogsCard = ({ blog, index }) => {
         >
           <button
             onClick={() => navigate(`/blogs/${blog._id}`)}
-            className="px-4 py-2 text-white transition-all rounded bg-navy hover:bg-navy-light"
+            className="px-4 py-2 text-white transition-all rounded bg-navy hover:bg-navy-light dark:bg-background-lightdark dark:hover:bg-gray-500"
           >
             {t("readMore")}
           </button>

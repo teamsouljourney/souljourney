@@ -22,18 +22,18 @@ const TeamDetailFeedbackForm = ({
   return (
     <>
       <form className="mt-16 bg-white/30 dark:bg-background-dark p-8 rounded-lg shadow-xl">
-        <h3 className="text-lg font-semibold mb-2">Add a Comment {/* {t("addAComment")} */}</h3>
+        <h3 className="text-lg font-semibold mb-2">{t("TD-addAComment")} {/* Add a Comment */}</h3>
 
         <div className="mb-4">
           <label htmlFor="title" className="peer">
-            Title
+          {t("TD-title")} {/* Title */}
           </label>
           <input
             type="text"
             id="title"
             name="title"
             value={feedback.title}
-            placeholder="Enter your title"
+            placeholder={t("TD-enterTitle")}
             className="w-full peer shadow-md"
             required
             onChange={handleChange}
@@ -41,13 +41,13 @@ const TeamDetailFeedbackForm = ({
         </div>
         <div className="mb-4">
           <label htmlFor="comment" className="peer">
-            Comment
+            {t("TD-comment")} {/* Comment */}
           </label>
           <textarea
             id="comment"
             name="comment"
             value={feedback.comment}
-            placeholder="Enter your comment"
+            placeholder={t("TD-enterComment")}
             rows="4"
             className="w-full textarea-style shadow-md"
             required
@@ -56,7 +56,7 @@ const TeamDetailFeedbackForm = ({
         </div>
         <div className="mb-10">
           <label htmlFor="rating" className="peer">
-            Rating
+            {t("TD-rating")} {/* Rating */}
           </label>
           <div className="flex gap-1">
             {[1, 2, 3, 4, 5].map((star) => (
@@ -76,12 +76,12 @@ const TeamDetailFeedbackForm = ({
               </svg>
             ))}
             <span className="ml-2 text-sm text-gray-500">
-              {hoveredRating || feedback.rating} out of 5
+              {hoveredRating || feedback.rating} {t("TD-ratingValue")} {/* out of 5 */}
             </span>
           </div>
         </div>
         <Button type="type22" className="shadow-lg" onClick={handleSubmit}>
-          Post Comment
+          {t("TD-shareComment")} {/* Post Comment */}
         </Button>
       </form>
     </>

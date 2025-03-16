@@ -199,8 +199,10 @@
   "ultraPremium": "Ultra Premium",
   "ultraPremiumText": "Büyük ölçekli kullanımlar ve genişletilmiş dağıtım hakları için en iyisi.",
   "unlimited": "Sınırsız",
+
   "TEAM": "EKIP",
   "OurPsychologicalCounselingTeam": "Psikolojik danışmanlık ekibimiz, zihinsel sağlığınızı kişiselleştirilmiş bakım ile desteklemeye kendini adamıştır. Danışmanlık ve rehberlik konusundaki geniş uzmanlıklarıyla, profesyonellerimiz duygusal denge yolculuğunuzda size yardımcı olmak için burada.",
+  "therapistNotFound": "Terapist bulunamadı",
   "all": "Tümü",
   "healthPsychology": "Sağlık Psikolojisi",
   "marriageAndFamilyTherapy": "Evlilik ve Aile Terapisi",
@@ -218,12 +220,54 @@
   ],
   "applyNowDescription": "🔹 Yolculuğunuz burada başlıyor! Şimdi başvurun ve daha büyük bir şeyin parçası olun.",
   "applyNowButton": "Şimdi Başvur",
+
+  "TEAMDETAIL": "TAKIM DETAYI",
+  "goBack": "Geri Dön",
+  "liveChat": "Canlı Sohbet",
+  "TN-about": "Hakkında",
+  "TN-experience": "Deneyim",
+  "TD-aboutMe-title": "Hakkımda",
+  "TD-ProExperience-title": "Profesyonel Deneyim",
+  "TD-BachelorsDegree": "Lisans Derecesi",
+  "TD-services-title": "Hizmetler",
+  "TD-reviews-title": "Yorumlar",
+  "TD-reviews-info": "Danışanlarımızın profesyonellerimize duyduğu güveni derinden önemsiyoruz. Her geri bildirim, rehberlik, destek ve olumlu değişim deneyimlerini yansıtan gerçek hikayelerdir. Terapi kişisel ve benzersiz bir süreçtir ve deneyimlerini, içgörülerini paylaşan herkese minnettarız. Geri bildiriminiz sadece başkalarına yardımcı olmakla kalmaz, aynı zamanda şefkatli ve etkili bakım sunmaya devam etmemiz için bize ilham verir.",
+  "TD-addAComment": "Yorum Ekle",
+  "TD-title": "Başlık",
+  "TD-comment": "Yorum",
+  "TD-rating": "Puanlama",
+  "TD-ratingValue": "  /  5",
+  "TD-shareComment": "Yorumu Paylaş",
+  "TD-enterTitle": "Başlık Giriniz",
+  "TD-enterComment": "Yorumunuzu Giriniz",
+
+  "getTimeAgo": "Geçen Süre",
+  "GTA-year": "yıl",
+  "GTA-years": "yıl",
+  "GTA-month": "ay",
+  "GTA-months": "ay",
+  "GTA-day": "gün",
+  "GTA-days": "gün",
+  "GTA-hour": "saat",
+  "GTA-hours": "saat",
+  "GTA-minute": "dakika",
+  "GTA-minutes": "dakika",
+  "GTA-justNow": "Az önce",
+  "GTA-ago": "önce",
+
+  "PAGINATION": "SAYFALAMA",
+  "P-previous": "Önceki",
+  "P-next": "Sonraki",
+
+
+
   "JOIN": "EKİBİMİZE KATILIN",
   "joinOurTeam": "Pozitif bir etki yaratmaya adanmış tutkulu ve profesyonel ekibimize katılın. Anlamlı bir şeyin parçası olmak ve başkalarına refah yolculuklarında yardımcı olmak için şimdi başvurun.",
   "applyNow": "Şimdi Başvur",
   "BLOGS": "BLOGLAR",
   "blg_goback": "Geri Dön",
   "blogHeroDescription": "Psikolojik danışmanlığın çeşitli ve büyüleyici dünyasını keşfettiğimiz blogumuza hoş geldiniz. İster ruh sağlığını anlamak, ister kişisel gelişim konusunda tavsiye almak, ister çeşitli terapötik yaklaşımlar hakkında bilgi edinmek isteyin, bu blog içgörülü bilgiler için kaynağınızdır. Klinik psikolojiden danışmanlık tekniklerine kadar alan içindeki çok çeşitli konuları derinlemesine inceleyeceğiz ve psikolojinin bireylerin daha sağlıklı, daha tatmin edici yaşamlar sürmelerine nasıl yardımcı olabileceğine dair uzman görüşleri sunacağız. Zihnin gücünü ve ruhsal iyiliğin önemini keşfetmek için bu yolculukta bize katılın.",
+  "searchBlogs": "Blog Ara",
 
   "ABOUT": "HAKKIMIZDA",
 
@@ -237,7 +281,8 @@
     "abt_dedicated": "Terapiyi herkes için erişilebilir kılmaya, iyiliğe doğru yolculuğunuzda büyümeyi ve dayanıklılığı teşvik etmeye kendimizi adadık."
   },
   "AboutRow": {
-    "abt_discover": "Platformumuzun ruh sağlığınız için neden doğru seçim olduğunu keşfedin."
+    "abt_discover": "Platformumuzun ruh sağlığınız için neden doğru seçim olduğunu keşfedin.",
+    "abt_whyItWorks": "Neden işe yarıyor"
   },
   "AboutRowContent": {
     "abt_personalized_therapy_sessions_title": "Kişiselleştirilmiş Terapi Seansları",
@@ -261,6 +306,7 @@
   "privacyPolicy": "Gizlilik Politikası",
   "contactUs": "Bize Ulaşın",
   "forTherapist": "Terapistler için",
+
   "CONTACT": "İLETİŞİM",
   "getInTouch": "İletişime Geçin",
   "contactText": "Bize ulaşın ve birlikte anlamlı bir yolculuk oluşturalım. Soul Journey olarak, kendinizi keşfetme ve büyüme yolculuğunuzda yanınızdayız.",
@@ -276,6 +322,7 @@
   "messagePlaceholder": "Mesajınızı Yazın ...",
   "messageSentSuccess": "Mesajınız başarıyla gönderildi.",
   "messageSentError": "Mesajınızı gönderirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+
   "NOTFOUND": "NOTFOUND",
   "pageNotFound": "Sayfa Bulunamadı",
   "textNot": "Aradığınız sayfa mevcut değil.",
@@ -288,12 +335,15 @@
   "firstName": "Ad",
   "lastName": "Soyad",
   "password": "Şifre",
+  "passwordPlaceholder": "Şifreyi girin",
   "currentPassword": "Mevcut Şifre",
   "currentPasswordPlaceHolder": "Mevcut şifreyi girin",
   "newPassword": "Yeni Şifre",
   "newPasswordPlaceHolder": "Yeni şifreyi girin",
+  "retypeNewPassword": "Yeni Şifreyi Onayla",
   "retypeNewPasswordPlaceHolder": "Yeni şifreyi tekrar girin",
   "changePassword": "Şifreyi Değiştir",
+  "changing": "Değişitiriliyor",
   "loading": "Yükleniyor",
   "signUp": "Kaydol",
   "signUpWith": "Şununla kaydol",
@@ -330,6 +380,13 @@
   "videoCall": "Görüntülü Arama",
   "myAccount": "Hesabım",
   "noBlog": "Görüntülenecek blogunuz yok.",
+  "userManagement": "Kullanıcı Yönetimi",
+  "therapistManagement": "Terapist Yönetimi",
+  "categoryManagement": "Kategori Yönetimi",
+  "appointmentManagement": "Randevu Yönetimi",
+  "blogManagement": "Blog Yönetimi",
+  "feedbackManagement": "Geri Bildirim Yönetimi",
+
   "ACCOUNT": "HESAP",
   "account": "Hesap",
   "updateAccount": "Hesabınızı Güncelleyin",
@@ -337,8 +394,30 @@
   "phone": "Telefon",
   "address": "Adres",
   "profession": "Meslek",
+  "graduation": "Eğitim",
+  "description": "Açıklama",
   "profile": "Profil",
   "upload": "Yükle",
+
+  "uploadInfo": "En iyi sonuçlar için 512x512 veya daha büyük bir resim yükleyin.",
+  "accountInfo": "Profilinizi ve kişisel bilgilerinizi burada güncelleyin",
+  "accountPersonelInfo": "Kişisel Bilgiler",
+  "placeholderName": "Adınızı girin",
+  "placeholderLastname": "Soyadınızı girin",
+  "placeholderUsername": "Kullanıcı adınızı girin",
+  "placeholderEmail": "E-postanızı girin",
+  "placeholderPhone": "Telefon numaranızı girin",
+  "placeholderProfession": "Mesleğinizi girin (Öğrenci, Öğretmen.. vb.)",
+  "placeholderAddress": "Adresinizi girin",
+  "placeholderGraduation": "Lisans Derecenizi girin",
+  "placeholderDescription": "Kendiniz hakkında özet girin",
+  "placeholderExperiences": "Deneyiminizi girin",
+  "updateProfile": "Profili güncelle",
+  "dangerZone": "Dikkat/Hesabı Sil",
+  "deleteAccount": "Hesabı sil",
+  "deleteAccountInfo": "Hesabınızı ve tüm içeriğinizi kalıcı olarak kaldırın. Bu işlem geri alınamaz.",
+  "confirmDeleteAccount": "Hesabınızı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+
 
   "WRITEBLOG": "WRITEBLOG",
   "blogTitlePlaceholder": "Blog Başlığı *",
@@ -532,5 +611,23 @@
   "common": {
     "personalizedSupport": "Her Yolculuk için Kişiselleştirilmiş Destek",
     "personalizedSupportDescription": "Her seans, özel ihtiyaçlarınıza göre uyarlanmıştır, kişisel ve profesyonel hayatınızda başarılı olmanız için doğru rehberlik ve kaynakları almanızı sağlar."
-  }
+  },
+
+  "ADMINPANEL": "YÖNETİCİ PANELİ",
+  "AP-addUser": "Yeni bir Kullanıcı Ekle",
+  "AP-user": "Kullanıcı",
+  "AP-therapist": "Terapist",
+  "AP-email": "E-posta",
+  "AP-status": "Durum",
+  "AP-actions": "Eylemler",
+  "AP-editUser": "Kullanıcıyı Düzenle",
+  "AP-close": "Kapat",
+  "updateUser": "Kullanıcıyı Güncelle",
+  "addUser": "Kullanıcı Ekle",
+  "active": "Aktif",
+  "disabled": "Devre Dışı",
+  "editTherapist": "Terapisti Düzenle",
+  "updateTherapist": "Terapisti Güncelle",
+  "addNewTherapist": "Yeni Bir Terapist Ekle",
+  "addTherapist": "Terapist Ekle"
 }

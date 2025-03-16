@@ -24,6 +24,14 @@ const TeamDetail = () => {
   // Section IDs for Tab Navigation
   const sectionIds = ["about", "experience", "services", "reviews"];
 
+  // Translation mapping for display purposes
+  const sectionLabels = {
+    about: t("TN-about"),
+    experience: t("TN-experience"),
+    services: t("TD-services-title"),
+    reviews: t("TD-reviews-title"),
+  }
+
   // UseTabNavigation Call
   const { activeTab, scrollToSection, sectionRefs } = useTabNavigation(sectionIds, {
     navbarHeight: 120,
@@ -52,7 +60,7 @@ const TeamDetail = () => {
   }
 
   if (error || !singleTherapist) {
-    return <div className="text-center text-mauve">Therapist not found!</div>;
+    return <div className="text-center text-mauve">{t("therapistNotFound")}!</div>;
   }
 
   const toggleCalendar = (show) => {
@@ -90,7 +98,7 @@ const TeamDetail = () => {
                     : "border-transparent hover:text-seaGreen hover:border-seaGreen"
                 } font-bold transition-colors duration-200`}
               >
-                {sectionId.charAt(0).toUpperCase() + sectionId.slice(1)}
+                {sectionLabels[sectionId]}
               </button>
             ))}
           </div>
@@ -104,7 +112,7 @@ const TeamDetail = () => {
       {/* GoBack */}
       <div className="p-6 pt-0 mt-8 text-center w-full">
         <Button onClick={() => navigate("/therapists")} type="type22">
-          Go Back {/* {t("goBack")} */}
+          {t("goBack")}   {/* Go Back  */}
         </Button>
       </div>
       {/* Appointment */}

@@ -38,7 +38,7 @@ const AccountChangePasswordForm = ({
         {/* Current Password */}
         <div className="sm:col-span-4 relative mb-4">
           <label htmlFor="currentPassword" className="password-label">
-            Current Password
+          {t("currentPassword")} {/* Current Password */}
           </label>
           <div className="mt-2 relative">
             <input
@@ -46,7 +46,7 @@ const AccountChangePasswordForm = ({
               id="currentPassword"
               name="currentPassword"
               value={values.currentPassword}
-              placeholder="Enter current password"
+              placeholder={t("currentPasswordPlaceHolder")}
               autoComplete="current-password"
               className={`peer min-w-[280px] ${
                 touched.currentPassword && errors.currentPassword
@@ -77,7 +77,7 @@ const AccountChangePasswordForm = ({
         {/* New Password */}
         <div className="sm:col-span-4 relative mb-4">
           <label htmlFor="newPassword" className="password-label">
-            New Password
+            {t("newPassword")} {/* New Password */}
           </label>
           <div className="mt-2 relative">
             <input
@@ -85,7 +85,7 @@ const AccountChangePasswordForm = ({
               id="newPassword"
               name="newPassword"
               value={values.newPassword}
-              placeholder="Enter new password"
+              placeholder={t("newPasswordPlaceHolder")}
               autoComplete="new-password"
               className={`peer min-w-[280px] ${
                 touched.newPassword && errors.newPassword
@@ -115,7 +115,7 @@ const AccountChangePasswordForm = ({
         {/* Retype Password */}
         <div className="sm:col-span-4 relative mb-4">
           <label htmlFor="retypePassword" className="password-label">
-            Re-type New Password
+          {t("retypeNewPassword")} {/* Re-type New Password */}
           </label>
           <div className="mt-2 relative">
             <input
@@ -123,8 +123,8 @@ const AccountChangePasswordForm = ({
               id="retypePassword"
               name="retypePassword"
               value={values.retypePassword}
-              placeholder="Re-type new password"
-              autoComplete="new-password"
+              placeholder={t("retypeNewPasswordPlaceHolder")}
+              autoComplete="retype-password"
               className={`peer min-w-[280px] ${
                 touched.retypePassword && errors.retypePassword
                   ? "border-red-500 focus:border-red-500"
@@ -156,7 +156,7 @@ const AccountChangePasswordForm = ({
             disabled={isSubmitting}
             className="account-btn mb-4 w-1/2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isSubmitting ? "Changing..." : "Change Password"}
+            {isSubmitting ? t("changing") + "..." : t("changePassword")}
           </button>
         </div>
       </Form>

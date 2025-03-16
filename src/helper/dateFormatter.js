@@ -1,7 +1,9 @@
 import { format } from "date-fns";
 import { enUS } from "date-fns/locale";
+import { useTranslation } from "react-i18next";
 
 export const formatDateTime = (date, type, endDate = null) => {
+
   if (!date) return "";
   const parsedDate = new Date(date);
 
@@ -18,6 +20,7 @@ export const formatDateTime = (date, type, endDate = null) => {
 };
 
 export const getTimeAgo = (createdAt) => {
+  const { t } = useTranslation();
   const now = new Date();
   const created = new Date(createdAt);
   const diffInMilliseconds = now - created;
@@ -29,18 +32,16 @@ export const getTimeAgo = (createdAt) => {
   const diffInYears = Math.floor(diffInDays / 365);
 
   if (diffInYears > 0) {
-    return `${diffInYears} ${diffInYears === 1 ? "year" : "years"} ago`;
+    return `${diffInYears} ${diffInYears === 1 ? t("GTA-year") : t("GTA-years")} ${t("GTA-ago")}`;
   } else if (diffInMonths > 0) {
-    return `${diffInMonths} ${diffInMonths === 1 ? "month" : "months"} ago`;
+    return `${diffInMonths} ${diffInMonths === 1 ? t("GTA-month") : t("GTA-months")} ${t("GTA-ago")}`;
   } else if (diffInDays > 0) {
-    return `${diffInDays} ${diffInDays === 1 ? "day" : "days"} ago`;
+    return `${diffInDays} ${diffInDays === 1 ? t("GTA-day") : t("GTA-days")} ${t("GTA-ago")}`;
   } else if (diffInHours > 0) {
-    return `${diffInHours} ${diffInHours === 1 ? "hour" : "hours"} ago`;
+    return `${diffInHours} ${diffInHours === 1 ? t("GTA-hour") : t("GTA-hours")} ${t("GTA-ago")}`;
   } else if (diffInMinutes > 0) {
-    return `${diffInMinutes} ${
-      diffInMinutes === 1 ? "minute" : "minutes"
-    } ago`;
+    return `${diffInMinutes} ${diffInMinutes === 1 ? t("GTA-minute") : t("GTA-minutes")} ${t("GTA-ago")}`;
   } else {
-    return "Just now";
+    return t("GTA-justNow");
   }
 };
