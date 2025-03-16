@@ -20,10 +20,13 @@ const PricingForm = ({ getPricingData }) => {
     try {
       const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PASSWORD);
 
+      const selectedLanguage = localStorage.getItem("language") || "en";
+
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}checkout`,
         {
           priceId,
+          selectedLanguage,
         },
         {
           headers: {
