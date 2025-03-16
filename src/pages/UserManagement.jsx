@@ -26,7 +26,7 @@ const UserManagement = () => {
     getAllUsers();
   }, []);
 
-  console.log(pagUsers);
+  // console.log(pagUsers);
 
   const displayedUsers =
     searchTerm.trim() === ""
