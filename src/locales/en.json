@@ -269,14 +269,12 @@
   "P-previous": "Previous",
   "P-next": "Next",
 
-
-
   "BLOGS": "BLOGS",
 
   "blg_goback": "Go Back",
   "blogHeroDescription": "Welcome to our blog, where we explore the diverse and fascinating world of psychological counseling. Whether you're interested in understanding mental health, seeking advice on personal development, or learning about the various therapeutic approaches, this blog is your resource for insightful information. We will delve into a wide range of topics within the field, from clinical psychology to counseling techniques, and provide expert insights into how psychology can help individuals lead healthier, more fulfilling lives. Join us on this journey to discover the power of the mind and the importance of mental well-being.",
   "searchBlogs": "Search Blogs",
-  
+
   "ABOUT": "ABOUT",
 
   "AboutHeroSection": {
@@ -438,6 +436,7 @@
 
   "APPOINTMENT CALENDAR": "APPOINTMENT CALENDAR",
   "bookingCalendar": "Booking Calendar",
+  "appointmentsTitle": "Appoinments",
   "createAppointment": "Create Appointment",
   "pleaseSelectTimeSlot": "Please select a time slot.",
   "selectedDate": "Selected Date",
@@ -636,7 +635,4 @@
   "updateTherapist": "Update Therapist",
   "addNewTherapist": "Add a new Therapist",
   "addTherapist": "Add Therapist"
-
-
-
 }

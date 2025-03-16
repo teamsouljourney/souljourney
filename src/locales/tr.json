@@ -259,8 +259,6 @@
   "P-previous": "Önceki",
   "P-next": "Sonraki",
 
-
-
   "JOIN": "EKİBİMİZE KATILIN",
   "joinOurTeam": "Pozitif bir etki yaratmaya adanmış tutkulu ve profesyonel ekibimize katılın. Anlamlı bir şeyin parçası olmak ve başkalarına refah yolculuklarında yardımcı olmak için şimdi başvurun.",
   "applyNow": "Şimdi Başvur",
@@ -418,7 +416,6 @@
   "deleteAccountInfo": "Hesabınızı ve tüm içeriğinizi kalıcı olarak kaldırın. Bu işlem geri alınamaz.",
   "confirmDeleteAccount": "Hesabınızı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
 
-
   "WRITEBLOG": "WRITEBLOG",
   "blogTitlePlaceholder": "Blog Başlığı *",
   "selectCategory": "Kategori Seç",
@@ -429,6 +426,7 @@
 
   "APPOINTMENT CALENDAR": "RANDEVU TAKVİMİ",
   "bookingCalendar": "Rezervasyon Takvimi",
+  "appointmentsTitle": "Randevular",
   "createAppointment": "Randevu Oluştur",
   "pleaseSelectTimeSlot": "Lütfen bir zaman dilimi seçin.",
   "selectedDate": "Seçilen Tarih",
