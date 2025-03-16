@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const AccountUploadProfilePicture = ({ singleUser, singleTherapist }) => {
   const { t } = useTranslation();
   const { currentUser } = useSelector((state) => state.auth);
-  console.log(currentUser);
+  // console.log(currentUser);
   const { isTherapist } = currentUser;
 
   return (
@@ -21,9 +21,6 @@ const AccountUploadProfilePicture = ({ singleUser, singleTherapist }) => {
               {singleUser?.firstName} {singleUser?.lastName}
             </i>
           )}
-          <i>
-            {singleUser?.firstName} {singleUser?.lastName}
-          </i>
         </span>
         <div className="flex items-center gap-4">
           <img

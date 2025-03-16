@@ -9,9 +9,9 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
     // const { singleTherapist } = useSelector((state) => state.therapists);
     const {updateMeTherapist} = useTherapistCall()
 
-    console.log(singleTherapist);
+    // console.log(singleTherapist);
     // const id = singleTherapist._id
-    console.log(id);
+    // console.log(id);
 
     const handleChange = (e) => {
         // console.log(e.target.value);
