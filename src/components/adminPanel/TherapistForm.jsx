@@ -6,8 +6,10 @@ import {
   setNewTherapist,
   toggleModal,
 } from "../../features/therapistSlice";
+import { useTranslation } from "react-i18next";
 
 const TherapistForm = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { newTherapist } = useSelector((state) => state.therapists);
   const { createTherapist, updateTherapist } = useTherapistCall();
@@ -39,13 +41,13 @@ const TherapistForm = () => {
     <div className="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
       <div className="px-4 pt-5 pb-4 bg-white dark:bg-background-dark sm:p-6 sm:pb-4">
         <h3 className="text-lg font-medium leading-6 text-navy dark:text-offWhite-dark">
-          {newTherapist._id ? "Edit Therapist" : "Add a new Therapist"}
+          {newTherapist._id ? t("editTherapist") : t("addNewTherapist")}
         </h3>
         <div className="mt-2">
           <input
             type="text"
             name="firstName"
-            placeholder="First Name"
+            placeholder={t("firstName")}
             value={newTherapist.firstName || ""}
             onChange={handleInputChange}
             className="w-full px-3 py-2 mt-2 border rounded-md border-navy focus:outline-none focus:ring-mauve-dark focus:border-mauve-dark"
@@ -53,7 +55,7 @@ const TherapistForm = () => {
           <input
             type="text"
             name="lastName"
-            placeholder="Last Name"
+            placeholder={t("lastName")}
             value={newTherapist.lastName || ""}
             onChange={handleInputChange}
             className="w-full px-3 py-2 mt-2 border rounded-md border-navy focus:outline-none focus:ring-mauve-dark focus:border-mauve-dark"
@@ -61,7 +63,7 @@ const TherapistForm = () => {
           <input
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder={t("email")}
             value={newTherapist.email || ""}
             onChange={handleInputChange}
             className="w-full px-3 py-2 mt-2 border rounded-md border-navy focus:outline-none focus:ring-mauve-dark focus:border-mauve-dark"
@@ -69,7 +71,7 @@ const TherapistForm = () => {
           <input
             type="text"
             name="description"
-            placeholder="Description"
+            placeholder={t("description")}
             value={newTherapist.description || ""}
             onChange={handleInputChange}
             className="w-full px-3 py-2 mt-2 border rounded-md border-navy focus:outline-none focus:ring-mauve-dark focus:border-mauve-dark"
@@ -77,7 +79,7 @@ const TherapistForm = () => {
           <input
             type="text"
             name="experience"
-            placeholder="Experience"
+            placeholder={t("experiences")}
             value={newTherapist.experience || ""}
             onChange={handleInputChange}
             className="w-full px-3 py-2 mt-2 border rounded-md border-navy focus:outline-none focus:ring-mauve-dark focus:border-mauve-dark"
@@ -85,7 +87,7 @@ const TherapistForm = () => {
           <input
             type="text"
             name="graduation"
-            placeholder="Graduation"
+            placeholder={t("graduation")}
             value={newTherapist.graduation || ""}
             onChange={handleInputChange}
             className="w-full px-3 py-2 mt-2 border rounded-md border-navy focus:outline-none focus:ring-mauve-dark focus:border-mauve-dark"
@@ -94,7 +96,7 @@ const TherapistForm = () => {
             id="password"
             name="password"
             type={showPassword ? "text" : "password"}
-            placeholder="Enter password"
+            placeholder={t("passwordPlaceholder")}
             value={newTherapist.password || ""}
             onChange={handleInputChange}
             disabled={!!newTherapist._id}
@@ -109,14 +111,14 @@ const TherapistForm = () => {
           className="inline-flex justify-center w-full px-4 py-2 text-white duration-300 rounded-md bg-seaGreen transtiton hover:bg-navy sm:ml-3 sm:w-auto"
           onClick={handleSubmit}
         >
-          {newTherapist._id ? "Update Therapist" : "Add Therapist"}
+          {newTherapist._id ? t("updateTherapist") : t("addTherapist")}
         </button>
         <button
           type="button"
           className="inline-flex justify-center w-full px-4 py-2 mt-3 text-gray-700 bg-white rounded-md hover:bg-gray-50 sm:mt-0 sm:ml-3 sm:w-auto"
           onClick={handleCloseModal}
         >
-          Close
+          {t("close")} {/* Close */}
         </button>
       </div>
     </div>

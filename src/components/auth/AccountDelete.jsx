@@ -15,17 +15,16 @@ const AccountDelete = ({id, isActive}) => {
   return (
     <>
       <div className="flex w-full max-w-[576px] flex-col items-start gap-6 mt-4">
-        <span className="text-lg font-medium">Danger zone/Delete Account</span>
+        <span className="text-lg font-medium">{t("dangerZone")} {/* Danger zone/Delete Account */}</span>
         <div className="w-full p-4 border-[3px] border-red-700 bg-red-100 dark:bg-red-200/90 dark:border-red-700 rounded-lg">
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
               <h4 className="text-base font-semibold text-red-700 dark:text-red-900">
-                Delete account
-                {/* {t("deleteAccount")} */}
+                {t("deleteAccount")}
+                {/* Delete account */}
               </h4>
               <p className="text-sm text-red-700 dark:text-red-800">
-                Permanently remove your account and all of your content. This
-                action is not reversible.
+                {t("deleteAccountInfo")} {/*Permanently remove your account and all of your content. This action is not reversible.  */}
               </p>
             </div>
             <div className="flex justify-start">
@@ -36,7 +35,8 @@ const AccountDelete = ({id, isActive}) => {
                   //? Modal for delete?
                   if (
                     window.confirm(
-                      "Are you sure you want to delete your account? This action cannot be undone."
+                      t("confirmDeleteAccount")
+                      // "Are you sure you want to delete your account? This action cannot be undone."
                     )
                   ) {
                     //* Delete
@@ -45,7 +45,7 @@ const AccountDelete = ({id, isActive}) => {
                   }
                 }}
               >
-                Delete account
+                {t("deleteAccount")} {/* Delete account */}
               </button>
             </div>
           </div>

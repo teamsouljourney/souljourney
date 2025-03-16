@@ -234,17 +234,48 @@
   "TEAMDETAIL": "TEAM DETAIL",
   "goBack": "Go Back",
   "liveChat": "Live Chat",
+  "TN-about": "About",
+  "TN-experience": "Experience",
   "TD-aboutMe-title": "About Me",
   "TD-ProExperience-title": "Proffesional experience",
+  "TD-BachelorsDegree": "Bachelor's degree",
   "TD-services-title": "Services",
   "TD-reviews-title": "Reviews",
   "TD-reviews-info": "We deeply value the trust our clients place in our professionals. Every review is a reflection of real experiences, shared by individuals who have found guidance, support, and positive change in their journey. Therapy is a personal and unique process, and we appreciate those who take the time to share their insights. Your feedback not only helps others but also inspires us to continue providing compassionate and effective care.",
+  "TD-addAComment": "Add a Comment",
+  "TD-title": "Title",
+  "TD-comment": "Comment",
+  "TD-rating": "Rating",
+  "TD-ratingValue": " out of 5",
+  "TD-shareComment": "Share Comment",
+  "TD-enterTitle": "Enter your title",
+  "TD-enterComment": "Enter your comment",
+
+  "getTimeAgo": "Get Time Ago",
+  "GTA-year": "year",
+  "GTA-years": "years",
+  "GTA-month": "month",
+  "GTA-months": "months",
+  "GTA-day": "day",
+  "GTA-days": "days",
+  "GTA-hour": "hour",
+  "GTA-hours": "hours",
+  "GTA-minute": "minute",
+  "GTA-minutes": "minutes",
+  "GTA-justNow": "Just now",
+  "GTA-ago": "ago",
+
+  "PAGINATION": "PAGINATION",
+  "P-previous": "Previous",
+  "P-next": "Next",
+
 
 
   "BLOGS": "BLOGS",
 
   "blg_goback": "Go Back",
   "blogHeroDescription": "Welcome to our blog, where we explore the diverse and fascinating world of psychological counseling. Whether you're interested in understanding mental health, seeking advice on personal development, or learning about the various therapeutic approaches, this blog is your resource for insightful information. We will delve into a wide range of topics within the field, from clinical psychology to counseling techniques, and provide expert insights into how psychology can help individuals lead healthier, more fulfilling lives. Join us on this journey to discover the power of the mind and the importance of mental well-being.",
+  "searchBlogs": "Search Blogs",
   
   "ABOUT": "ABOUT",
 
@@ -258,7 +289,8 @@
     "abt_dedicated": "We are dedicated to making therapy accessible to everyone, fostering growth and resilience in your journey toward well-being"
   },
   "AboutRow": {
-    "abt_discover": "Discover why our platform is the right choice for your mental well-being"
+    "abt_discover": "Discover why our platform is the right choice for your mental well-being",
+    "abt_whyItWorks": "Why it works"
   },
   "AboutRowContent": {
     "abt_personalized_therapy_sessions_title": "Personalized Therapy Sessions",
@@ -313,12 +345,15 @@
   "firstName": "First Name",
   "lastName": "Last Name",
   "password": "Password",
+  "passwordPlaceholder": "Enter password",
   "currentPassword": "Current Password",
   "currentPasswordPlaceHolder": "Enter current password",
   "newPassword": "New Password",
   "newPasswordPlaceHolder": "Enter new password",
+  "retypeNewPassword": "Confirm New Password",
   "retypeNewPasswordPlaceHolder": "Re-type new password",
   "changePassword": "Change Password",
+  "changing": "Changing",
   "loading": "Loading",
   "signUp": "Sign Up",
   "signUpWith": "Sign up with",
@@ -355,6 +390,12 @@
   "videoCall": "Video Call",
   "myAccount": "My Account",
   "noBlog": "You have no blogs to display.",
+  "userManagement": "User Management",
+  "therapistManagement": "Therapist Management",
+  "categoryManagement": "Category Management",
+  "appointmentManagement": "Appointment Management",
+  "blogManagement": "Blog Management",
+  "feedbackManagement": "Feedback Management",
 
   "ACCOUNT": "ACCOUNT",
   "account": "Account",
@@ -363,8 +404,29 @@
   "phone": "Phone",
   "address": "Address",
   "profession": "Profession",
+  "graduation": "Graduation",
+  "description": "Description",
+  "experiences": "Experiences",
   "profile": "Profile",
   "upload": "Upload",
+  "uploadInfo": "For best results, upload an image 512x512 or larger.",
+  "accountInfo": "Update your profile and personal details here",
+  "accountPersonelInfo": "Personel Information",
+  "placeholderName": "Enter your name",
+  "placeholderLastname": "Enter your last name",
+  "placeholderUsername": "Enter your username",
+  "placeholderEmail": "Enter your email",
+  "placeholderPhone": "Enter your phone",
+  "placeholderProfession": "Enter your profession (Student, Teacher... etc.)",
+  "placeholderAddress": "Enter your address",
+  "placeholderGraduation": "Enter your Bachelor's Degree",
+  "placeholderDescription": "Enter summary about yourself",
+  "placeholderExperiences": "Enter your experience",
+  "updateProfile": "Update Profile",
+  "dangerZone": "Danger zone/Delete Account",
+  "deleteAccount": "Delete account",
+  "deleteAccountInfo": "Permanently remove your account and all of your content. This action is not reversible.",
+  "confirmDeleteAccount": "Are you sure you want to delete your account? This action cannot be undone.",
 
   "WRITEBLOG": "WRITEBLOG",
   "blogTitlePlaceholder": "Blog Title *",
@@ -551,5 +613,25 @@
   "common": {
     "personalizedSupport": "Personalized Support for Every Journey",
     "personalizedSupportDescription": "Each session is tailored to your specific needs, ensuring that you receive the right guidance and resources to thrive in your personal and professional life."
-  }
+  },
+
+  "ADMINPANEL": "ADMIN PANEL",
+  "AP-addUser": "Add a new User",
+  "AP-user": "User",
+  "AP-therapist": "Therapist",
+  "AP-email": "Email",
+  "AP-status": "Status",
+  "AP-actions": "Actions",
+  "AP-editUser": "Edit User",
+  "updateUser": "Update User",
+  "addUser": "Add User",
+  "active": "Active",
+  "disabled": "Disabled",
+  "editTherapist": "Edit Therapist",
+  "updateTherapist": "Update Therapist",
+  "addNewTherapist": "Add a new Therapist",
+  "addTherapist": "Add Therapist"
+
+
+
 }

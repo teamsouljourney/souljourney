@@ -8,8 +8,10 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 import TherapistRow from "../components/adminPanel/TherapistRow";
 import TherapistForm from "../components/adminPanel/TherapistForm";
 import useTherapistCall from "../hooks/useTherapistCall";
+import { useTranslation } from "react-i18next";
 
 const TherapistManagement = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { getAllTherapists } = useTherapistCall();
   const { isModalOpen, therapists } = useSelector((state) => state.therapists);
@@ -58,10 +60,10 @@ const TherapistManagement = () => {
           />
           <div className="space-y-4">
             <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen md:grid md:grid-cols-12 md:gap-4">
-              <div className="col-span-4">Therapist</div>
-              <div className="col-span-4">Email</div>
-              <div className="col-span-2">Status</div>
-              <div className="col-span-2 text-right">Actions</div>
+              <div className="col-span-4">{t("AP-therapist")} {/* Therapist */}</div>
+              <div className="col-span-4">{t("AP-email")} {/* Email */}</div>
+              <div className="col-span-2">{t("AP-status")} {/* Status */}</div>
+              <div className="col-span-2 text-right">{t("AP-actions")} {/* Actions */}</div>
             </div>
             {displayedTherapists?.map((therapist) => (
               <TherapistRow key={therapist._id} therapist={therapist} />

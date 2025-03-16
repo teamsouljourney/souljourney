@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import usePaginationCall from "../../hooks/usePaginationCall";
 import { setPage } from "../../features/paginationSlice";
+import { useTranslation } from "react-i18next";
 
 const Pagination = ({ endpoint, slice, data, query }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const { getDataByPage } = usePaginationCall();
@@ -31,7 +33,7 @@ const Pagination = ({ endpoint, slice, data, query }) => {
       dispatch(setPage(page));
     }
   };
-
+  // {t("OurPsychologicalCounselingTeam")}
   return (
     <div className="flex items-center justify-between px-2 mt-6">
       <div className="text-sm text-gray-500">
@@ -43,7 +45,7 @@ const Pagination = ({ endpoint, slice, data, query }) => {
           disabled={currentPage === 1}
           className="px-3 py-1 text-sm border rounded hover:bg-gray-50 disabled:opacity-50"
         >
-          Previous
+          {t("P-previous")} {/* Previous */}
         </button>
 
         {Array.from({ length: totalPages }, (_, index) => index + 1).map(
@@ -67,7 +69,7 @@ const Pagination = ({ endpoint, slice, data, query }) => {
           disabled={currentPage === totalPages}
           className="px-3 py-1 text-sm border rounded hover:bg-gray-50 disabled:opacity-50"
         >
-          Next
+          {t("P-next")} {/* Next */}
         </button>
       </div>
     </div>

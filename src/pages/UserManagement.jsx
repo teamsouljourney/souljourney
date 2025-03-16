@@ -8,8 +8,10 @@ import AdminModal from "../components/adminPanel/AdminModal";
 import ListToolbar from "../components/adminPanel/ListToolBar";
 import Pagination from "../components/adminPanel/Pagination";
 import { PlusIcon } from "@heroicons/react/24/outline";
+import { useTranslation } from "react-i18next";
 
 const UserManagement = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { getAllUsers } = useUserCall();
   const { isModalOpen, users } = useSelector((state) => state.users);
@@ -52,16 +54,16 @@ const UserManagement = () => {
                 className="px-4 py-2 text-white transition duration-300 rounded-md bg-seaGreen hover:bg-navy"
               >
                 <PlusIcon className="inline-block w-5 h-5 mr-2" />
-                Add a new User
+                {t("AP-addUserBtn")} {/* Add a new User */}
               </button>
             }
           />
           <div className="space-y-4">
             <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen md:grid md:grid-cols-12 md:gap-4">
-              <div className="col-span-4">User</div>
-              <div className="col-span-4">Email</div>
-              <div className="col-span-2">Status</div>
-              <div className="col-span-2 text-right">Actions</div>
+              <div className="col-span-4">{t("AP-user")} {/* User */}</div>
+              <div className="col-span-4">{t("AP-email")} {/* Email */}</div>
+              <div className="col-span-2">{t("AP-status")} {/* Status */}</div>
+              <div className="col-span-2 text-right">{t("AP-actions")} {/* Actions */}</div>
             </div>
             {displayedUsers?.map((user) => (
               <UserRow key={user._id} user={user} />

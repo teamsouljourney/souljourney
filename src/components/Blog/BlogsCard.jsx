@@ -30,7 +30,7 @@ const BlogsCard = ({ blog, index }) => {
         >
           <button
             onClick={() => navigate(`/blogs/${blog._id}`)}
-            className="px-4 py-2 text-white transition-all rounded bg-navy hover:bg-navy-light dark:bg-seaGreen-dark dark:hover:bg-seaGreen"
+            className="px-4 py-2 text-white transition-all rounded bg-navy hover:bg-navy-light dark:bg-background-lightdark dark:hover:bg-gray-500"
           >
             {t("readMore")}
           </button>
