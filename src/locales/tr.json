@@ -606,13 +606,18 @@
   "ADMINPANEL": "YÖNETİCİ PANELİ",
   "AP-addUser": "Yeni bir Kullanıcı Ekle",
   "AP-user": "Kullanıcı",
+  "AP-therapist": "Terapist",
   "AP-email": "E-posta",
   "AP-status": "Durum",
-  "AP-action": "Eylemler",
+  "AP-actions": "Eylemler",
   "AP-editUser": "Kullanıcıyı Düzenle",
   "AP-close": "Kapat",
   "updateUser": "Kullanıcıyı Güncelle",
   "addUser": "Kullanıcı Ekle",
   "active": "Aktif",
-  "disabled": "Devre Dışı"
+  "disabled": "Devre Dışı",
+  "editTherapist": "Terapisti Düzenle",
+  "updateTherapist": "Terapisti Güncelle",
+  "addNewTherapist": "Yeni Bir Terapist Ekle",
+  "addTherapist": "Terapist Ekle"
 }

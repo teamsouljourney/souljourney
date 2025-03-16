@@ -617,14 +617,19 @@
   "ADMINPANEL": "ADMIN PANEL",
   "AP-addUser": "Add a new User",
   "AP-user": "User",
+  "AP-therapist": "Therapist",
   "AP-email": "Email",
   "AP-status": "Status",
-  "AP-action": "Actions",
+  "AP-actions": "Actions",
   "AP-editUser": "Edit User",
   "updateUser": "Update User",
   "addUser": "Add User",
   "active": "Active",
-  "disabled": "Disabled"
+  "disabled": "Disabled",
+  "editTherapist": "Edit Therapist",
+  "updateTherapist": "Update Therapist",
+  "addNewTherapist": "Add a new Therapist",
+  "addTherapist": "Add Therapist"
 
 
 
