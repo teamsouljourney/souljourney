@@ -386,6 +386,12 @@
   "videoCall": "Videoanruf",
   "myAccount": "Mein Konto",
   "noBlog": "Sie haben keine Blogs zum Anzeigen.",
+  "userManagement": "Benutzerverwaltung",
+  "therapistManagement": "Therapeutenverwaltung",
+  "categoryManagement": "Kategorieverwaltung",
+  "appointmentManagement": "Terminverwaltung",
+  "blogManagement": "Blogverwaltung",
+  "feedbackManagement": "Feedbackverwaltung",
 
   "ACCOUNT": "KONTO",
   "account": "Konto",

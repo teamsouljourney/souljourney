@@ -389,6 +389,12 @@
   "videoCall": "Video Call",
   "myAccount": "My Account",
   "noBlog": "You have no blogs to display.",
+  "userManagement": "User Management",
+  "therapistManagement": "Therapist Management",
+  "categoryManagement": "Category Management",
+  "appointmentManagement": "Appointment Management",
+  "blogManagement": "Blog Management",
+  "feedbackManagement": "Feedback Management",
 
   "ACCOUNT": "ACCOUNT",
   "account": "Account",

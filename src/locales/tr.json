@@ -379,6 +379,12 @@
   "videoCall": "Görüntülü Arama",
   "myAccount": "Hesabım",
   "noBlog": "Görüntülenecek blogunuz yok.",
+  "userManagement": "Kullanıcı Yönetimi",
+  "therapistManagement": "Terapist Yönetimi",
+  "categoryManagement": "Kategori Yönetimi",
+  "appointmentManagement": "Randevu Yönetimi",
+  "blogManagement": "Blog Yönetimi",
+  "feedbackManagement": "Geri Bildirim Yönetimi",
 
   "ACCOUNT": "HESAP",
   "account": "Hesap",
