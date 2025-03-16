@@ -22,7 +22,15 @@ const TeamDetail = () => {
   const { currentUser } = useSelector((state) => state.auth);
 
   // Section IDs for Tab Navigation
-  const sectionIds = [t("TN-about"), t("TN-experience"), t("TD-services-title"), t("TD-reviews-title")];
+  const sectionIds = ["about", "experience", "services", "reviews"];
+
+  // Translation mapping for display purposes
+  const sectionLabels = {
+    about: t("TN-about"),
+    experience: t("TN-experience"),
+    services: t("TD-services-title"),
+    reviews: t("TD-reviews-title"),
+  }
 
   // UseTabNavigation Call
   const { activeTab, scrollToSection, sectionRefs } = useTabNavigation(sectionIds, {
@@ -90,7 +98,7 @@ const TeamDetail = () => {
                     : "border-transparent hover:text-seaGreen hover:border-seaGreen"
                 } font-bold transition-colors duration-200`}
               >
-                {sectionId.charAt(0).toUpperCase() + sectionId.slice(1)}
+                {sectionLabels[sectionId]}
               </button>
             ))}
           </div>
