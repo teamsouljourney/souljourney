@@ -2,39 +2,66 @@ import React, { useEffect, useRef, useState } from "react";
 import { BellIcon } from "@heroicons/react/24/outline";
 import { useSelector } from "react-redux";
 import useNotificationCall from "../hooks/useNotificationCall";
+import { formatDistanceToNow } from "date-fns";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const ViewNotifications = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { notifications } = useSelector((state) => state.notifications);
-  const { getAllNotifications, markAsRead } = useNotificationCall();
+  const { notifications, loading } = useSelector(
+    (state) => state.notifications
+  );
+  const {
+    getAllNotifications,
+    markAsRead,
+    joinNotificationRoom,
+    isSocketConnected,
+  } = useNotificationCall();
   const { currentUser } = useSelector((state) => state.auth);
   const [notificationCount, setNotificationCount] = useState(0);
   const dropdownRef = useRef(null);
+  const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
-    getAllNotifications();
-    setNotificationCount(notificationLength);
-  }, []);
+    if (currentUser?._id) {
+      getAllNotifications();
+      joinNotificationRoom(currentUser._id);
+    }
+  }, [currentUser?._id, isSocketConnected]);
 
-  console.log(notifications);
+  // Update notification count when notifications change
+  useEffect(() => {
+    if (Array.isArray(notifications) && currentUser?._id) {
+      const unreadNotifications = notifications.filter(
+        (notify) => notify.recieverId === currentUser._id
+      );
+      setNotificationCount(unreadNotifications.length);
+    } else {
+      setNotificationCount(0);
+    }
+  }, [notifications, currentUser]);
 
-  const filteredNotifications = notifications.filter(
-    (notify) => notify.recieverId === currentUser._id
-  );
+  // Filter notifications for current user
+  const filteredNotifications = React.useMemo(() => {
+    if (Array.isArray(notifications) && currentUser?._id) {
+      return notifications.filter(
+        (notify) => notify.recieverId === currentUser._id
+      );
+    }
+    return [];
+  }, [notifications, currentUser]);
 
-  console.log(filteredNotifications);
-  const notificationLength = filteredNotifications.filter(
-    (notify) => notify.isRead === false
-  ).length;
+  // Format date to relative time
+  const formatNotificationTime = (dateString) => {
+    try {
+      return formatDistanceToNow(new Date(dateString), { addSuffix: true });
+    } catch (error) {
+      return "Just now";
+    }
+  };
 
-  console.log(notificationLength);
-
-  // const notifications = [
-  //   { id: 1, message: "Yeni bir mesajınız var", time: "5 dakika önce" },
-  //   { id: 2, message: "Siparişiniz kargoya verildi", time: "1 saat önce" },
-  //   { id: 3, message: "Ödemeniz onaylandı", time: "3 saat önce" },
-  // ];
-
+  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -48,15 +75,36 @@ const ViewNotifications = () => {
     };
   }, []);
 
-  const markRead = () => {
+  const handleMarkAllAsRead = async () => {
+    // Mark all notifications as read and delete them
+    for (const notification of filteredNotifications) {
+      await markAsRead(notification._id);
+    }
+    // Refresh notifications
+    getAllNotifications();
     setNotificationCount(0);
-    markAsRead();
   };
+
+  // Handle notification click - navigate to chat if it's a message notification
+  const handleNotificationClick = async (notification) => {
+    // Mark notification as read and delete it
+    await markAsRead(notification._id);
+
+    // Check if it's a message notification
+    if (notification.notificationType === "message") {
+      // Close the notification dropdown
+      setIsOpen(false);
+
+      // Navigate to the chat page
+      navigate("/profile/chat");
+    }
+  };
+
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative z-50" ref={dropdownRef}>
       <button
         type="button"
-        className="relative p-1 rounded-full bg-navy text-offWhite hover:text-white hover:bg-navy-dark focus:outline-none focus:ring-2  focus:ring-navy"
+        className="relative p-1 rounded-full bg-navy text-offWhite hover:text-white hover:bg-navy-dark focus:outline-none focus:ring-2 focus:ring-navy"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="absolute -inset-1.5" />
@@ -73,30 +121,45 @@ const ViewNotifications = () => {
         <div className="absolute right-0 mt-2 w-80 bg-white rounded-md shadow-lg z-10">
           {/* Dropdown Header */}
           <div className="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
-            <h3 className="text-lg font-medium text-gray-900">Bildirimler</h3>
+            <h3 className="text-lg font-medium text-gray-900">
+              {t("notifications")}
+            </h3>
             {notificationCount > 0 && (
               <button
-                onClick={markRead}
+                onClick={handleMarkAllAsRead}
                 className="text-xs text-blue-500 hover:text-blue-700"
               >
-                Tümünü okundu işaretle
+                {t("markAsRead")}
               </button>
             )}
           </div>
 
-          {/* Bildirim Listesi */}
+          {/* Notification List */}
           <div className="max-h-[300px] overflow-y-auto">
-            {filteredNotifications.length > 0 ? (
+            {loading ? (
+              <div className="px-4 py-3 text-center text-gray-500">
+                {t("loading")}
+              </div>
+            ) : filteredNotifications.length > 0 ? (
               filteredNotifications.map((notification) => (
                 <div
-                  key={notification.id}
-                  className="px-4 py-3 border-b border-gray-200 last:border-b-0 hover:bg-gray-50"
+                  key={notification._id}
+                  className={`px-4 py-3 border-b border-gray-200 last:border-b-0 hover:bg-gray-50 
+                    ${
+                      notification.notificationType === "message"
+                        ? "bg-blue-50 cursor-pointer"
+                        : "bg-gray-50"
+                    }`}
+                  onClick={() => handleNotificationClick(notification)}
                 >
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1">
                       <span
-                        className={`inline-block h-2 w-2 rounded-full ${
-                          notificationCount > 0 ? "bg-blue-500" : "bg-gray-300"
+                        className={`inline-block h-2 w-2 rounded-full 
+                        ${
+                          notification.notificationType === "message"
+                            ? "bg-blue-500"
+                            : "bg-gray-500"
                         }`}
                       ></span>
                     </div>
@@ -105,7 +168,7 @@ const ViewNotifications = () => {
                         {notification.content}
                       </p>
                       <p className="text-xs text-gray-500 mt-1">
-                        {notification.createdAt}
+                        {formatNotificationTime(notification.createdAt)}
                       </p>
                     </div>
                   </div>
@@ -113,7 +176,7 @@ const ViewNotifications = () => {
               ))
             ) : (
               <div className="px-4 py-3 text-center text-gray-500">
-                Bildiriminiz bulunmuyor
+                {t("noNotification")}
               </div>
             )}
           </div>

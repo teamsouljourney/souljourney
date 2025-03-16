@@ -6,8 +6,10 @@ import {
 import useUserCall from "../../hooks/useUserCall";
 import { useDispatch } from "react-redux";
 import { setNewUser, toggleModal } from "../../features/userSlice";
+import { useTranslation } from "react-i18next";
 
 const UserRow = ({ user }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { changeUserStatus, deleteUser } = useUserCall();
 
@@ -15,7 +17,7 @@ const UserRow = ({ user }) => {
     dispatch(setNewUser(user));
     dispatch(toggleModal(true));
   };
-  console.log(user);
+  // console.log(user);
 
   return (
     <div className="flex flex-col items-start py-4 space-y-2 border-b md:flex-row md:items-center md:space-y-0">
@@ -47,7 +49,7 @@ const UserRow = ({ user }) => {
                 : "bg-red-100 text-red-700"
             }`}
           >
-            {user?.isActive ? "Active" : "Disabled"}
+            {user?.isActive ? t("active") : t("disabled")}
           </span>
         </div>
         <div className="flex gap-2">

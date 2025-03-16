@@ -1,15 +1,26 @@
+import { useSelector } from "react-redux";
 import avatar from "../../assets/avatar3.svg";
 import { useTranslation } from "react-i18next";
 
-const AccountUploadProfilePicture = ({ singleUser }) => {
+const AccountUploadProfilePicture = ({ singleUser, singleTherapist }) => {
   const { t } = useTranslation();
+  const { currentUser } = useSelector((state) => state.auth);
+  // console.log(currentUser);
+  const { isTherapist } = currentUser;
+
   return (
     <>
       <div className="flex w-full flex-col items-start gap-4">
         <span className="text-2xl font-medium">
-          <i>
-            {singleUser?.firstName} {singleUser?.lastName}
-          </i>
+          {isTherapist ? (
+            <i>
+              {singleTherapist?.firstName} {singleTherapist?.lastName}
+            </i>
+          ) : (
+            <i>
+              {singleUser?.firstName} {singleUser?.lastName}
+            </i>
+          )}
         </span>
         <div className="flex items-center gap-4">
           <img
@@ -19,11 +30,11 @@ const AccountUploadProfilePicture = ({ singleUser }) => {
           {/* Upload Profile Image Section */}
           <div className="flex flex-col items-start gap-2">
             <button type="button" className="account-btn">
-              Upload {/* {t("upload")} */}
+              {t("upload")} {/* Upload */}
             </button>
             <span>
-              For best results, upload an image 512x512 or larger.
-              {/* {t("")} */}
+              {t("uploadInfo")}
+              {/* For best results, upload an image 512x512 or larger. */}
             </span>
           </div>
         </div>

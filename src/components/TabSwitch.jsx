@@ -144,7 +144,7 @@ const TabSwitch = ({
             placeholder={placeholder}
             value={searchTerm}
             onChange={handleSearchChange}
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-500 focus:outline-none focus:ring-2 focus:ring-navy-light dark:focus:ring-gray-400 transition-all duration-300"
+            className="w-full px-4 py-2 mt-8 rounded-lg border dark:bg-background-dark dark:hover:bg-gray-600 border-gray-300 dark:border-gray-500 focus:outline-none focus:ring-2 focus:ring-navy-light dark:focus:ring-gray-400 transition-all duration-300"
           />
           {searchTerm && (
             <button

@@ -6,8 +6,10 @@ import {
   import useTherapistCall from "../../hooks/useTherapistCall";
   import { useDispatch } from "react-redux";
   import { setNewTherapist, toggleModal } from "../../features/therapistSlice";
+  import { useTranslation } from "react-i18next";
   
   const TherapistRow = ({therapist}) => {
+    const { t } = useTranslation()
     const dispatch = useDispatch();
     const { changeTherapistStatus, deleteTherapist} = useTherapistCall();
   
@@ -46,7 +48,7 @@ import {
                   : "bg-red-100 text-red-700"
               }`}
             >
-              {therapist?.isActive ? "Active" : "Disabled"}
+              {therapist?.isActive ? t("active") : t("disabled")}
             </span>
           </div>
           <div className="flex gap-2">
