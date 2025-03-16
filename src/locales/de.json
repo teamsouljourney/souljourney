@@ -391,6 +391,8 @@
   "phone": "Telefon",
   "address": "Adresse",
   "profession": "Beruf",
+  "graduation": "Abschluss",
+  "description": "Beschreibung",
   "profile": "Profil",
   "upload": "Hochladen",
   "uploadInfo": "Für beste Ergebnisse laden Sie ein Bild mit der Größe 512 x 512 oder größer hoch.",
@@ -403,6 +405,9 @@
   "placeholderPhone": "Geben Sie Ihre Telefonnummer ein",
   "placeholderProfession": "Geben Sie Ihren Beruf ein (Student, Lehrer usw.)",
   "placeholderAddress": "Geben Sie Ihre Adresse ein",
+  "placeholderGraduation": "Geben Sie Ihren Bachelor-Abschluss ein", 
+  "placeholderDescription": "Geben Sie eine Zusammenfassung Ihrer Person ein", 
+  "placeholderExperiences": "Geben Sie Ihre Berufserfahrung ein",
   "updateProfile": "Profil aktualisieren",
 
   "WRITEBLOG": "WRITEBLOG",

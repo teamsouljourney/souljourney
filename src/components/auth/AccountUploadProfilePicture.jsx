@@ -1,12 +1,26 @@
+import { useSelector } from "react-redux";
 import avatar from "../../assets/avatar3.svg";
 import { useTranslation } from "react-i18next";
 
-const AccountUploadProfilePicture = ({ singleUser }) => {
+const AccountUploadProfilePicture = ({ singleUser, singleTherapist }) => {
   const { t } = useTranslation();
+  const { currentUser } = useSelector((state) => state.auth);
+  console.log(currentUser);
+  const { isTherapist } = currentUser;
+
   return (
     <>
       <div className="flex w-full flex-col items-start gap-4">
         <span className="text-2xl font-medium">
+          {isTherapist ? (
+            <i>
+              {singleTherapist?.firstName} {singleTherapist?.lastName}
+            </i>
+          ) : (
+            <i>
+              {singleUser?.firstName} {singleUser?.lastName}
+            </i>
+          )}
           <i>
             {singleUser?.firstName} {singleUser?.lastName}
           </i>

@@ -382,6 +382,8 @@
   "phone": "Telefon",
   "address": "Adres",
   "profession": "Meslek",
+  "graduation": "Eğitim",
+  "description": "Açıklama",
   "profile": "Profil",
   "upload": "Yükle",
   "uploadInfo": "En iyi sonuçlar için 512x512 veya daha büyük bir resim yükleyin.",
@@ -394,6 +396,9 @@
   "placeholderPhone": "Telefon numaranızı girin",
   "placeholderProfession": "Mesleğinizi girin (Öğrenci, Öğretmen.. vb.)",
   "placeholderAddress": "Adresinizi girin",
+  "placeholderGraduation": "Lisans Derecenizi girin",
+  "placeholderDescription": "Kendiniz hakkında özet girin",
+  "placeholderExperiences": "Deneyiminizi girin",
   "updateProfile": "Profili güncelle",
 
   "WRITEBLOG": "WRITEBLOG",

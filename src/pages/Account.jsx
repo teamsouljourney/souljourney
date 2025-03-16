@@ -65,7 +65,7 @@ const Account = () => {
           <div className="flex w-full flex-col items-start gap-2">
             <span className="text-3xl font-semibold mb-4">{t("profile")}</span>
             {/* Profile Picture Section */}
-            <AccountUploadProfilePicture singleUser={singleUser} />
+            <AccountUploadProfilePicture singleUser={singleUser} singleTherapist={singleTherapist} />
             {/* Personel Info Field */}
             {!isTherapist ? (
               <AccountForm

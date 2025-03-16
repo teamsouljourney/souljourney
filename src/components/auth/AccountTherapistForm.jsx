@@ -26,7 +26,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
     return (
       <>
         <div className="flex flex-col w-full items-start gap-4">
-        <span className="text-lg mt-10 font-medium">Personel Info {/* {t("password")} */}</span>
+        <span className="text-lg mt-10 font-medium">{t("accountPersonelInfo")} {/* Personel Info */}</span>
           <div className="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 w-full max-w-[576px]">
             <div className="sm:col-span-2">
               <label htmlFor="firstName" className="peer">
@@ -38,7 +38,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
                   name="firstName"
                   id="firstName"
                   value={singleTherapist?.firstName}
-                  placeholder="Enter your name"
+                  placeholder={t("placeholderName")}
                   autoComplete="given-name"
                   className="peer w-full"
                   onChange={handleChange}
@@ -55,7 +55,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
                   name="lastName"
                   id="lastName"
                   value={singleTherapist?.lastName}
-                  placeholder="Enter your last name"
+                  placeholder={t("placeholderLastname")}
                   autoComplete="family-name"
                   className="peer w-full"
                   onChange={handleChange}
@@ -72,7 +72,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
                   name="email"
                   type="email"
                   value={singleTherapist?.email}
-                  placeholder="Enter your email"
+                  placeholder={t("placeholderUsername")}
                   autoComplete="email"
                   className="peer w-full bg-gray-50 hover:cursor-not-allowed"
                   // onChange={handleChange}
@@ -101,7 +101,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
             </div>   */}
             <div className="col-span-full">
               <label htmlFor="graduation" className="peer">
-                Graduation {/* {t("graduation")} */}
+                {t("graduation")} {/* Graduation */}
               </label>
               <div className="mt-2">
                 <input
@@ -109,7 +109,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
                   name="graduation"
                   type="text"
                   value={singleTherapist?.graduation}
-                  placeholder="Enter your graduation (Student, Teacher.. ext.)"
+                  placeholder={t("placeholderGraduation")}
                   autoComplete="graduation"
                   className="peer w-full"
                   onChange={handleChange}
@@ -118,7 +118,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
             </div>
             <div className="col-span-full">
               <label htmlFor="description" className="peer">
-                Description {/* {t("description")} */}
+                {t("description")} {/* Description */}
               </label>
               <div className="mt-2">
                 <textarea
@@ -127,7 +127,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
                   id="description"
                   rows={4}
                   value={singleTherapist?.description}
-                  placeholder="Enter your description"
+                  placeholder={t("placeholderDescription")}
                   autoComplete="description"
                   className="textarea-style"
                   onChange={handleChange}
@@ -136,7 +136,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
             </div>
             <div className="col-span-full">
               <label htmlFor="experience" className="peer">
-                Experiences {/* {t("experiences")} */}
+                {t("experiences")} {/* Experiences */}
               </label>
               <div className="mt-2">
                 <textarea
@@ -145,7 +145,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
                   id="experience"
                   rows={4}
                   value={singleTherapist?.experience}
-                  placeholder="Enter your experience"
+                  placeholder={t("placeholderExperiences")}
                   autoComplete="experience"
                   className="textarea-style"
                   onChange={handleChange}
@@ -159,7 +159,7 @@ const AccountTherapistForm = ({singleTherapist, id}) => {
               className="account-btn mb-4 w-1/2"
               onClick={handleSubmit}
             >
-              Update Profile {/* {t("updateProfile")} */}
+              {t("updateProfile")} {/* Update Profile */}
             </button>
           </div>
         </div>
