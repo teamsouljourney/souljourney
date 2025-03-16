@@ -58,7 +58,7 @@ const MoreCategories = ({ categories, selectedCategory, onCategorySelect }) => {
               <button
                 key={category._id}
                 onClick={() => handleCategoryClick(category._id)}
-                className={`w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-400 transition-all duration-300 ${
+                className={`w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 transition-all duration-300 ${
                   selectedCategory === category._id
                     ? "bg-gray-100 dark:bg-gray-500 font-medium"
                     : ""

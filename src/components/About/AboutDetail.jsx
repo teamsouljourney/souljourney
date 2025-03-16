@@ -28,7 +28,7 @@ const AboutDetail = () => {
   return (
     <div className="space-y-4 px-4 md:px-12 lg:px-20 py-12">
       <div className="text-center">
-        <h1 className="text-3xl md:text-4xl font-bold pb-3"> {t("srvEmpoweringMindsEnhancingLives")}</h1>
+        <h1 className="text-3xl md:text-5xl font-bold pb-3"> {t("srvEmpoweringMindsEnhancingLives")}</h1>
         <img src={Vector1} alt="Vector" className="mx-auto w-full max-w-[500px]" />
       </div>
 

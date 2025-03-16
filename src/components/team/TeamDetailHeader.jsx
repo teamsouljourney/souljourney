@@ -33,7 +33,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
             <div className="flex flex-wrap justify-center lg:justify-start mt-3 sm:mt-4 gap-1.5 sm:gap-2">
               {therapistCategories?.map((category) => (
                 <span
-                  className="inline-block px-2 py-0.5 sm:py-1 bg-[#E8F5E9] dark:bg-offWhite-dark text-seaGreen dark:text-seaGreen-dark rounded-full text-xs sm:text-sm"
+                  className="inline-block py-0.5 sm:py-1 px-5 bg-[#dbecdd] dark:bg-offWhite-dark text-seaGreen dark:text-seaGreen-dark rounded-full text-xs sm:text-base"
                   key={category?._id}
                 >
                   {category?.name}
@@ -55,7 +55,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
                 ></span>
 
                 <span className="text-sm sm:text-base md:text-[1rem] font-medium sm:font-semibold">
-                  {t("videoCall")} {/* Video Call*/}
+                  Video Call {/* {t("videoCall")} */}
                 </span>
               </div>
               <div className="flex flex-row items-center justify-center gap-1.5 sm:gap-2">
@@ -71,7 +71,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
                 ></span>
 
                 <span className="text-sm sm:text-base md:text-[1rem] font-medium sm:font-semibold">
-                  {t("liveChat")} {/* Live Chat */}
+                  Live Chat{/* {t("liveChat")} */}
                 </span>
               </div>
             </div>

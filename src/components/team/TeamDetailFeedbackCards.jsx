@@ -74,7 +74,7 @@ const TeamDetailFeedbackCards = () => {
                   setSelectedFeedback(feedback);
                   setIsModalOpen(true);
                 }}
-                className="mt-2 px-2 py-1 text-sm font-semibold bg-gray-50 hover:bg-gray-100 dark:bg-gray-700/50 dark:hover:bg-offWhite-dark text-seaGreen dark:text-seaGreen-light hover:text-seaGreen-dark dark:hover:text-seaGreen-dark border border-gray-200 dark:border-gray-600 rounded-md transition-colors"
+                className="mt-2 px-2 py-1 text-sm font-semibold bg-white hover:bg-seaGreen dark:bg-gray-700/50 dark:hover:bg-seaGreen-dark text-gray-400 dark:text-backgroun-lightdark hover:text-offWhite hover:border-seaGreen  dark:hover:text-offWhite-dark border border-gray-300 dark:border-gray-600 rounded-md transition-colors"
               >
                 {/*Read more*/} {t("readMore")}
               </button>

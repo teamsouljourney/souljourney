@@ -73,10 +73,10 @@ const TeamDetailBody = ({sectionRefs}) => {
               {/* <strong>Categories: </strong> */}
               {categoryId?.map((category) => (
                 <span
-                  className="inline-block py-0.5 sm:py-1 px-2 bg-[#E8F5E9] dark:bg-offWhite-dark text-seaGreen-dark dark:text-seaGreen-dark rounded-full text-xs sm:text-sm"
+                  className="inline-block py-0.5 sm:py-1 px-5 bg-[#dbecdd] dark:bg-offWhite-dark text-seaGreen-dark dark:text-seaGreen-dark rounded-full text-md sm:text-md  "
                   key={category?._id}
                 >
-                  {category?.name}
+                  <strong>{category?.name}</strong>
                 </span>
               ))}
             </div>
