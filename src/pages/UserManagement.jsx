@@ -47,7 +47,7 @@ const UserManagement = () => {
             title="User List"
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
-            placeholder="Search user..."
+            placeholder={t("searchUserPlaceholder")}
             actions={
               <button
                 onClick={() => handleToogleModal(true)}

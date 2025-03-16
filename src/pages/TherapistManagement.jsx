@@ -47,7 +47,7 @@ const TherapistManagement = () => {
             title="Therapist List"
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
-            placeholder="Search therapist..."
+            placeholder={t("searchTherapistPlaceholder")}
             actions={
               <button
                 onClick={() => handleToogleModal(true)}
