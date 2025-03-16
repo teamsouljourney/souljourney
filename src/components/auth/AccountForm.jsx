@@ -7,7 +7,7 @@ const AccountForm = ({ handleChange, handleSubmit }) => {
   return (
     <>
       <div className="flex flex-col w-full items-start gap-4">
-      <span className="text-lg mt-10 font-medium">Personel Info {/* {t("password")} */}</span>
+      <span className="text-lg mt-10 font-medium">{t("accountPersonelInfo")} {/* Personel Info */}</span>
         <div className="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 w-full max-w-[576px]">
           <div className="sm:col-span-2">
             <label htmlFor="firstName" className="peer">
@@ -19,7 +19,7 @@ const AccountForm = ({ handleChange, handleSubmit }) => {
                 name="firstName"
                 id="firstName"
                 value={singleUser?.firstName}
-                placeholder="Enter your name"
+                placeholder={t("placeholderName")}
                 autoComplete="given-name"
                 className="peer w-full"
                 onChange={handleChange}
@@ -37,7 +37,7 @@ const AccountForm = ({ handleChange, handleSubmit }) => {
                 name="lastName"
                 id="lastName"
                 value={singleUser?.lastName}
-                placeholder="Enter your last name"
+                placeholder={t("placeholderLastname")}
                 autoComplete="family-name"
                 className="peer w-full"
                 onChange={handleChange}
@@ -46,7 +46,7 @@ const AccountForm = ({ handleChange, handleSubmit }) => {
           </div>
           <div className="sm:col-span-4">
             <label htmlFor="userName" className="peer">
-              {t("userName")}
+              {t("username")}
             </label>
             <div className="mt-2">
               <input
@@ -54,7 +54,7 @@ const AccountForm = ({ handleChange, handleSubmit }) => {
                 name="userName"
                 type="userName"
                 value={singleUser?.userName}
-                placeholder="Enter your username"
+                placeholder={t("placeholderUsername")}
                 autoComplete="userName"
                 className="peer w-full bg-gray-50 hover:cursor-not-allowed"
                 // onChange={handleChange}
@@ -72,7 +72,7 @@ const AccountForm = ({ handleChange, handleSubmit }) => {
                 name="email"
                 type="email"
                 value={singleUser?.email}
-                placeholder="Enter your email"
+                placeholder={t("placeholderEmail")}
                 autoComplete="email"
                 className="peer w-full bg-gray-50 hover:cursor-not-allowed"
                 // onChange={handleChange}
@@ -93,7 +93,7 @@ const AccountForm = ({ handleChange, handleSubmit }) => {
                 name="phone"
                 type="phone"
                 value={singleUser?.phone}
-                placeholder="Enter your phone"
+                placeholder={t("placeholderPhone")}
                 autoComplete="phone"
                 className="peer w-full"
                 onChange={handleChange}
@@ -110,7 +110,7 @@ const AccountForm = ({ handleChange, handleSubmit }) => {
                 name="profession"
                 type="text"
                 value={singleUser?.profession}
-                placeholder="Enter your profession (Student, Teacher.. ext.)"
+                placeholder={t("placeholderProfession")}
                 autoComplete="profession"
                 className="peer w-full"
                 onChange={handleChange}
@@ -127,7 +127,7 @@ const AccountForm = ({ handleChange, handleSubmit }) => {
                 name="address"
                 id="address"
                 value={singleUser?.address}
-                placeholder="Enter your address"
+                placeholder={t("placeholderAddress")}
                 autoComplete="address"
                 className="textarea-style"
                 onChange={handleChange}
@@ -141,7 +141,7 @@ const AccountForm = ({ handleChange, handleSubmit }) => {
             className="account-btn mb-4 w-1/2"
             onClick={handleSubmit}
           >
-            Update Profile {/* {t("updateProfile")} */}
+            {t("updateProfile")} {/* Update Profile */}
           </button>
         </div>
       </div>

@@ -59,7 +59,7 @@ const Account = () => {
           {/* Header */}
           <div className="flex w-full flex-col items-start gap-2 font-semibold">
             <span className="text-5xl">{t("account")}</span>
-            <span>Update your profile and personal details here</span>
+            <span>{t("accountInfo")} {/* Update your profile and personal details here */}</span>
           </div>
           {/* Profile Section */}
           <div className="flex w-full flex-col items-start gap-2">

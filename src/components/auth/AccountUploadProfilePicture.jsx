@@ -19,11 +19,11 @@ const AccountUploadProfilePicture = ({ singleUser }) => {
           {/* Upload Profile Image Section */}
           <div className="flex flex-col items-start gap-2">
             <button type="button" className="account-btn">
-              Upload {/* {t("upload")} */}
+              {t("upload")} {/* Upload */}
             </button>
             <span>
-              For best results, upload an image 512x512 or larger.
-              {/* {t("")} */}
+              {t("uploadInfo")}
+              {/* For best results, upload an image 512x512 or larger. */}
             </span>
           </div>
         </div>
