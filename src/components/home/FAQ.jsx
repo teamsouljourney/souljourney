@@ -82,6 +82,8 @@ const FAQ = () => {
                 <li
                   className={`group bg-${
                     index % 3 === 0 ? "blue-50" : "green-50"
+                  } dark:bg-${
+                    index % 3 === 0 ? "gray-600" : "green-600"
                   } border border-${
                     index % 3 === 0 ? "blue-200" : "green-200"
                   } p-0 rounded-lg mb-0`}
