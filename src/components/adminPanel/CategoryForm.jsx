@@ -5,8 +5,10 @@ import {
   setNewCategory,
   toggleModal,
 } from "../../features/categorySlice";
+import { useTranslation } from "react-i18next";
 
 const CategoryForm = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { newCategory } = useSelector((state) => state.categories);
   const { createCategory, updateCategory } = useCategoryCall();
@@ -37,13 +39,13 @@ const CategoryForm = () => {
     <div className="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
       <div className="px-4 pt-5 pb-4 bg-white dark:bg-background-dark sm:p-6 sm:pb-4">
         <h3 className="text-lg font-medium leading-6 text-navy dark:text-offWhite-dark">
-          {newCategory._id ? "Edit Category" : "Add a new Category"}
+          {newCategory._id ? t("AP-editCategory") : t("addNewCategory")}
         </h3>
         <div className="mt-2">
           <input
             type="text"
             name="name"
-            placeholder="Name"
+            placeholder={t("name")}
             value={newCategory.name || ""}
             onChange={handleInputChange}
             className="w-full px-3 py-2 mt-2 border rounded-md border-navy focus:outline-none focus:ring-mauve-dark focus:border-mauve-dark"
@@ -56,14 +58,14 @@ const CategoryForm = () => {
           className="inline-flex justify-center w-full px-4 py-2 text-white duration-300 rounded-md bg-seaGreen transtiton hover:bg-navy sm:ml-3 sm:w-auto"
           onClick={handleSubmit}
         >
-          {newCategory._id ? "Update Category" : "Add Category"}
+          {newCategory._id ? t("updateCategory") : t("addCategory")}
         </button>
         <button
           type="button"
           className="inline-flex justify-center w-full px-4 py-2 mt-3 text-gray-700 bg-white rounded-md hover:bg-gray-50 sm:mt-0 sm:ml-3 sm:w-auto"
           onClick={handleCloseModal}
         >
-          Close
+          {t("close")} {/* Close */}
         </button>
       </div>
     </div>

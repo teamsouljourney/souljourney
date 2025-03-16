@@ -13,7 +13,7 @@ const PatientList = () => {
   const { getUserAppointments } = useAppointmentCall();
   const { userStatuses } = useSelector((state) => state.chats);
 
-  console.log(userStatuses);
+  // console.log(userStatuses);
 
   useEffect(() => {
     getUserAppointments(currentUser?._id);

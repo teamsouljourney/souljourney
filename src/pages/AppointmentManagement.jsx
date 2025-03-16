@@ -4,8 +4,10 @@ import ListToolbar from "../components/adminPanel/ListToolBar";
 import Pagination from "../components/adminPanel/Pagination";
 import useAppointmentCall from "../hooks/useAppointmentCall";
 import AppointmentRow from "../components/adminPanel/AppointmentRow";
+import { useTranslation } from "react-i18next";
 
 const AppointmentManagement = () => {
+  const { t } = useTranslation();
   const { getAllAppointments } = useAppointmentCall();
   const { appointments } = useSelector((state) => state.appointments);
   const { pagAppointments } = useSelector((state) => state.pagination);
@@ -36,18 +38,18 @@ const AppointmentManagement = () => {
       <div className="bg-white dark:bg-background-lightdark text-navy dark:text-offWhite-dark border rounded-lg shadow-sm">
         <div className="p-6">
           <ListToolbar
-            title="Appointment List"
+            title={t("AP-appointmentList")}
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
-            placeholder="Search appointment..."
+            placeholder={t("searchAppointmentPlaceholder")}
           />
           <div>
             <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen md:grid md:grid-cols-12 md:gap-4">
-              <div className="col-span-3">Therapist</div>
-              <div className="col-span-3">Client</div>
-              <div className="col-span-2 ">Date</div>
-              <div className="col-span-3 md:text-center">Time</div>
-              <div className="col-span-1 text-right">Actions</div>
+              <div className="col-span-3">{t("AP-therapist")} {/* Therapist */}</div>
+              <div className="col-span-3">{t("AP-client")} {/* Client */}</div>
+              <div className="col-span-2 ">{t("AP-date")} {/* Date */}</div>
+              <div className="col-span-3 md:text-center">{t("AP-time")} {/* Time */}</div>
+              <div className="col-span-1 text-right">{t("AP-actions")} {/* Actions */}</div>
             </div>
             {displayedAppointments?.map((appointment) => (
               <AppointmentRow key={appointment._id} appointment={appointment} />
