@@ -77,7 +77,9 @@ export default function Navbar() {
             window.location.pathname === "/contact" ||
             window.location.pathname === "/forgotPassword" ||
             window.location.pathname.startsWith("/therapists/") ||
-            window.location.pathname.startsWith("/reset-password")) &&
+            window.location.pathname.startsWith("/reset-password") ||
+            window.location.pathname.startsWith("/termsandconditions") ||
+            window.location.pathname.startsWith("/privacypolicy")) &&
           "bg-navy/40 backdrop-blur"
         }`}
       >
