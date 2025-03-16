@@ -463,6 +463,11 @@
   "likedBlogs": "Favorisierte Blogs",
   "notes": "Notizen",
 
+  "NOTIFICATION": "BENACHRICHTIGUNG",
+  "notifications": "Benachrichtigungen",
+  "noNotification": "Sie haben keine Benachrichtigung",
+  "markAsRead": "Als gelesen markieren",
+
   "termsAndConditions": {
     "title": "Allgemeine Geschäftsbedingungen",
     "lastUpdated": "Zuletzt aktualisiert: 3. März 2025",
