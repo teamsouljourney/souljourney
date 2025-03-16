@@ -621,20 +621,32 @@
   },
 
   "ADMINPANEL": "ADMIN-PANEL",
-  "AP-addUser": "Neuen Benutzer hinzufügen",
   "AP-user": "Benutzer",
   "AP-therapist": "Therapeut",
   "AP-email": "E-Mail",
   "AP-status": "Status",
   "AP-actions": "Aktionen",
   "AP-editUser": "Benutzer bearbeiten",
-  "AP-close": "Schließen",
+  "AP-userList": "Benutzerliste",
+  "AP-therapistList": "Therapeutenliste",
+  "AP-categoryList": "Kategorienliste",
+  "AP-appointmentList": "Terminliste",
+  "AP-blogList": "Blogliste",
+  "AP-feedbackList": "Feedbackliste",
   "updateUser": "Benutzer aktualisieren",
   "addUser": "Benutzer hinzufügen",
   "active": "Aktiv",
   "disabled": "Deaktiviert",
   "editTherapist": "Therapeut bearbeiten",
   "updateTherapist": "Therapeut aktualisieren",
+  "addTherapist": "Therapeut hinzufügen",
+  "searchUserPlaceholder": "Benutzer suchen...", "searchTherapistPlaceholder": "Therapeut suchen...", "searchCategoryPlaceholder": "Kategorie suchen...", "searchAppointmentPlaceholder": "Termin suchen...", "searchBlogPlaceholder": "Blog suchen...", 
+  "searchFeedbackPlaceholder": "Feedback suchen...",
+  "addNewUser": "Neuen Benutzer hinzufügen",
   "addNewTherapist": "Neuen Therapeuten hinzufügen",
-  "addTherapist": "Therapeut hinzufügen"
+  "addNewCategory": "Neue Kategorie hinzufügen",
+  "addNewAppointment": "Neuen Termin hinzufügen",
+  "seeAllBlogs": "Alle Blogs anzeigen"
+
+
 }

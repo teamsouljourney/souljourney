@@ -6,8 +6,10 @@ import Pagination from "../components/adminPanel/Pagination";
 import useFeedbackCall from "../hooks/useFeedbackCall";
 import FeedbackRow from "../components/adminPanel/FeedbackRow";
 import FeedbackCard from "../components/adminPanel/FeedbackCard";
+import { useTranslation } from "react-i18next";
 
 const FeedbackManagement = () => {
+  const { t } = useTranslation();
   const { getAllFeedbacks } = useFeedbackCall();
   const { isModalOpen, feedbacks } = useSelector((state) => state.feedbacks);
   const { pagFeedbacks } = useSelector((state) => state.pagination);
@@ -38,10 +40,10 @@ const FeedbackManagement = () => {
       <div className="bg-white dark:bg-background-lightdark text-navy dark:text-offWhite-dark border rounded-lg shadow-sm">
         <div className="p-6">
           <ListToolbar
-            title="Feedback List"
+            title={t("AP-feedbackList")}
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
-            placeholder="Search feedback..."
+            placeholder={t("searchFeedbackPlaceholder")}
           />
           <div>
             <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen-light md:grid md:grid-cols-12 md:gap-5">

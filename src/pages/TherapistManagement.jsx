@@ -44,7 +44,7 @@ const TherapistManagement = () => {
       <div className="bg-white dark:bg-background-lightdark text-navy dark:text-offWhite-dark border rounded-lg shadow-sm">
         <div className="p-6">
           <ListToolbar
-            title="Therapist List"
+            title={t("AP-therapistList")}
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
             placeholder={t("searchTherapistPlaceholder")}

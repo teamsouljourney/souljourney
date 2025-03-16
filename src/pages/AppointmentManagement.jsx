@@ -4,8 +4,10 @@ import ListToolbar from "../components/adminPanel/ListToolBar";
 import Pagination from "../components/adminPanel/Pagination";
 import useAppointmentCall from "../hooks/useAppointmentCall";
 import AppointmentRow from "../components/adminPanel/AppointmentRow";
+import { useTranslation } from "react-i18next";
 
 const AppointmentManagement = () => {
+  const { t } = useTranslation();
   const { getAllAppointments } = useAppointmentCall();
   const { appointments } = useSelector((state) => state.appointments);
   const { pagAppointments } = useSelector((state) => state.pagination);
@@ -36,10 +38,10 @@ const AppointmentManagement = () => {
       <div className="bg-white dark:bg-background-lightdark text-navy dark:text-offWhite-dark border rounded-lg shadow-sm">
         <div className="p-6">
           <ListToolbar
-            title="Appointment List"
+            title={t("AP-appointmentList")}
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
-            placeholder="Search appointment..."
+            placeholder={t("searchAppointmentPlaceholder")}
           />
           <div>
             <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen md:grid md:grid-cols-12 md:gap-4">
