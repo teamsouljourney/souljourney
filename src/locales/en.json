@@ -340,7 +340,7 @@
   "register": "Register",
   "haveAccount": "Already have an account?",
   "signin": "Sign in",
-  "name" : "Name",
+  "name": "Name",
   "username": "Username",
   "firstName": "First Name",
   "lastName": "Last Name",
@@ -664,5 +664,4 @@
   "addNewCategory": "Add a new Category",
   "addNewAppointment": "Add a new Appointment",
   "seeAllBlogs": "See All Blogs"
-  "addTherapist": "Add Therapist"
 }
