@@ -45,6 +45,7 @@ const TeamDetailBody = ({sectionRefs}) => {
   // console.log(singleTherapist);
   // console.log(categoryId);
   // console.log(singleTherapistFeedbacks);
+  // console.log(singleTherapistFeedbacks.length);
   // console.log(feedback);
 
   const handleSubmit = async (e) => {
@@ -132,7 +133,7 @@ const TeamDetailBody = ({sectionRefs}) => {
 
           {/* Review/Feedback Cards */}
 
-          <TeamDetailFeedbackCards/>
+          {singleTherapistFeedbacks.length > 0 && <TeamDetailFeedbackCards/>}          
 
           {/* <!-- Add Comment Form --> Only for logged in users */}
 
