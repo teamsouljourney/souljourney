@@ -30,13 +30,13 @@ const TeamDetailBody = ({sectionRefs}) => {
   }, [singleTherapist?._id]);
 
   if (loading) {
-    return <div className="text-center text-navy">Loading...</div>;
+    return <div className="text-center text-navy">{t(loading)}...</div>;
   }
 
   if (error || !singleTherapistFeedbacks) {
     return (
       <div className="text-center text-mauve">
-        Therapist' feedbacks not found!
+        {t(TD-feedbacksNotFound)} {/* Therapist' feedbacks not found! */}
       </div>
     );
   }
