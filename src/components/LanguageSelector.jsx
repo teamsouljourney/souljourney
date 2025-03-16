@@ -5,13 +5,14 @@ const LanguageSelector = () => {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    console.log("Selected language:", i18n.language); // watch language change onsol
+    // console.log("Selected language:", i18n.language);
   };
 
   return (
     <div className="w-[60px] h-auto">
-      <select value={localStorage.getItem("language")}
-        className="w-full bg-transparent text-offWhite-dark text-sm pl-3 py-2 cursor-pointer"
+      <select
+        value={localStorage.getItem("language")}
+        className="w-full py-2 pl-3 text-sm bg-transparent cursor-pointer text-offWhite-dark"
         onChange={(e) => changeLanguage(e.target.value)}
       >
         <option className="bg-navy/50" value="en">
