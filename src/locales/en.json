@@ -344,6 +344,7 @@
   "firstName": "First Name",
   "lastName": "Last Name",
   "password": "Password",
+  "passwordPlaceholder": "Enter password",
   "currentPassword": "Current Password",
   "currentPasswordPlaceHolder": "Enter current password",
   "newPassword": "New Password",
@@ -605,5 +606,20 @@
   "common": {
     "personalizedSupport": "Personalized Support for Every Journey",
     "personalizedSupportDescription": "Each session is tailored to your specific needs, ensuring that you receive the right guidance and resources to thrive in your personal and professional life."
-  }
+  },
+
+  "ADMINPANEL": "ADMIN PANEL",
+  "AP-addUser": "Add a new User",
+  "AP-user": "User",
+  "AP-email": "Email",
+  "AP-status": "Status",
+  "AP-action": "Actions",
+  "AP-editUser": "Edit User",
+  "updateUser": "Update User",
+  "addUser": "Add User",
+  "active": "Active",
+  "disabled": "Disabled"
+
+
+
 }

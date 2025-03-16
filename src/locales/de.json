@@ -341,6 +341,7 @@
   "firstName": "Vorname",
   "lastName": "Nachname",
   "password": "Passwort",
+  "passwordPlaceholder": "Passwort eingeben",
   "currentPassword": "Aktuelles Passwort",
   "currentPasswordPlaceHolder": "Geben Sie das aktuelle Passwort ein",
   "newPassword": "Neues Passwort",
@@ -603,5 +604,18 @@
   "common": {
     "personalizedSupport": "Personalisierte Unterstützung für jede Reise",
     "personalizedSupportDescription": "Jede Sitzung ist auf Ihre spezifischen Bedürfnisse zugeschnitten und stellt sicher, dass Sie die richtige Anleitung und Ressourcen erhalten, um in Ihrem persönlichen und beruflichen Leben zu gedeihen."
-  }
+  },
+
+  "ADMINPANEL": "ADMIN-PANEL",
+  "AP-addUser": "Neuen Benutzer hinzufügen",
+  "AP-user": "Benutzer",
+  "AP-email": "E-Mail",
+  "AP-status": "Status",
+  "AP-action": "Aktionen",
+  "AP-editUser": "Benutzer bearbeiten",
+  "AP-close": "Schließen",
+  "updateUser": "Benutzer aktualisieren",
+  "addUser": "Benutzer hinzufügen",
+  "active": "Aktiv",
+  "disabled": "Deaktiviert"
 }

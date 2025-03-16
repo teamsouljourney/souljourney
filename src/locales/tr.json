@@ -305,6 +305,7 @@
   "privacyPolicy": "Gizlilik Politikası",
   "contactUs": "Bize Ulaşın",
   "forTherapist": "Terapistler için",
+
   "CONTACT": "İLETİŞİM",
   "getInTouch": "İletişime Geçin",
   "contactText": "Bize ulaşın ve birlikte anlamlı bir yolculuk oluşturalım. Soul Journey olarak, kendinizi keşfetme ve büyüme yolculuğunuzda yanınızdayız.",
@@ -320,6 +321,7 @@
   "messagePlaceholder": "Mesajınızı Yazın ...",
   "messageSentSuccess": "Mesajınız başarıyla gönderildi.",
   "messageSentError": "Mesajınızı gönderirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+
   "NOTFOUND": "NOTFOUND",
   "pageNotFound": "Sayfa Bulunamadı",
   "textNot": "Aradığınız sayfa mevcut değil.",
@@ -332,6 +334,7 @@
   "firstName": "Ad",
   "lastName": "Soyad",
   "password": "Şifre",
+  "passwordPlaceholder": "Şifreyi girin",
   "currentPassword": "Mevcut Şifre",
   "currentPasswordPlaceHolder": "Mevcut şifreyi girin",
   "newPassword": "Yeni Şifre",
@@ -592,5 +595,18 @@
   "common": {
     "personalizedSupport": "Her Yolculuk için Kişiselleştirilmiş Destek",
     "personalizedSupportDescription": "Her seans, özel ihtiyaçlarınıza göre uyarlanmıştır, kişisel ve profesyonel hayatınızda başarılı olmanız için doğru rehberlik ve kaynakları almanızı sağlar."
-  }
+  },
+
+  "ADMINPANEL": "YÖNETİCİ PANELİ",
+  "AP-addUser": "Yeni bir Kullanıcı Ekle",
+  "AP-user": "Kullanıcı",
+  "AP-email": "E-posta",
+  "AP-status": "Durum",
+  "AP-action": "Eylemler",
+  "AP-editUser": "Kullanıcıyı Düzenle",
+  "AP-close": "Kapat",
+  "updateUser": "Kullanıcıyı Güncelle",
+  "addUser": "Kullanıcı Ekle",
+  "active": "Aktif",
+  "disabled": "Devre Dışı"
 }
