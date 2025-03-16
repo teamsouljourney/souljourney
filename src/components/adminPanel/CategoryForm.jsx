@@ -65,7 +65,7 @@ const CategoryForm = () => {
           className="inline-flex justify-center w-full px-4 py-2 mt-3 text-gray-700 bg-white rounded-md hover:bg-gray-50 sm:mt-0 sm:ml-3 sm:w-auto"
           onClick={handleCloseModal}
         >
-          Close
+          {t("close")} {/* Close */}
         </button>
       </div>
     </div>
