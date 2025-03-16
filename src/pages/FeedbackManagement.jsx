@@ -47,11 +47,11 @@ const FeedbackManagement = () => {
           />
           <div>
             <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen-light md:grid md:grid-cols-12 md:gap-5">
-              <div className="col-span-3">Feedback Id</div>
-              <div className="col-span-3 md:text-center">Therapist</div>
-              <div className="col-span-2">Client</div>
-              <div className="col-span-2 text-right">Date</div>
-              <div className="col-span-2 text-right">Actions</div>
+              <div className="col-span-3">{t("AP-feedbackId")} {/* Feedback Id */}</div>
+              <div className="col-span-3 md:text-center">{t("AP-therapist")} {/* Therapist */}</div>
+              <div className="col-span-2">{t("AP-client")} {/* Client */}</div>
+              <div className="col-span-2 text-right">{t("AP-date")} {/* Date */}</div>
+              <div className="col-span-2 text-right">{t("AP-actions")} {/* Actions */}</div>
             </div>
             {displayedFeedbacks?.map((feedback) => (
               <FeedbackRow key={feedback._id} feedback={feedback} />

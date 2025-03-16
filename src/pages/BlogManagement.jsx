@@ -51,10 +51,10 @@ const BlogManagement = () => {
           />
           <div>
             <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen-light md:grid md:grid-cols-12 md:gap-4">
-              <div className="col-span-5">Blog Title</div>
-              <div className="col-span-3">Author</div>
-              <div className="col-span-2">Created At</div>
-              <div className="col-span-2 text-right">Actions</div>
+              <div className="col-span-5">{t("AP-blogTitle")} {/* Blog Title */}</div>
+              <div className="col-span-3">{t("AP-author")} {/* Author */}</div>
+              <div className="col-span-2">{t("AP-createdAt")} {/* Created At */}</div>
+              <div className="col-span-2 text-right">{t("AP-actions")} {/* Actions */}</div>
             </div>
             {displayedBlogs?.map((blog) => (
               <BlogRow key={blog._id} blog={blog} />

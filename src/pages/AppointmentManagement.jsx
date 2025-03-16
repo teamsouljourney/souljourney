@@ -45,11 +45,11 @@ const AppointmentManagement = () => {
           />
           <div>
             <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen md:grid md:grid-cols-12 md:gap-4">
-              <div className="col-span-3">Therapist</div>
-              <div className="col-span-3">Client</div>
-              <div className="col-span-2 ">Date</div>
-              <div className="col-span-3 md:text-center">Time</div>
-              <div className="col-span-1 text-right">Actions</div>
+              <div className="col-span-3">{t("AP-therapist")} {/* Therapist */}</div>
+              <div className="col-span-3">{t("AP-client")} {/* Client */}</div>
+              <div className="col-span-2 ">{t("AP-date")} {/* Date */}</div>
+              <div className="col-span-3 md:text-center">{t("AP-time")} {/* Time */}</div>
+              <div className="col-span-1 text-right">{t("AP-actions")} {/* Actions */}</div>
             </div>
             {displayedAppointments?.map((appointment) => (
               <AppointmentRow key={appointment._id} appointment={appointment} />
