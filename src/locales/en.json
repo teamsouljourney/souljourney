@@ -827,21 +827,21 @@
 
   "videoCallHook": {
     "socketConnectionError": "Socket connection error. Please check your network.",
-    "mediaAccessError": "Error accessing media devices: {error}",
-    "connectionCreationError": "Error creating connection: {error}",
+    "mediaAccessError": "Error accessing media devices",
+    "connectionCreationError": "Error creating connection",
     "connectionFailedAfterAttempts": "Connection failed after multiple attempts",
     "connectedToRemotePeer": "Connected to remote peer",
-    "renegotiationError": "Connection error: {error}",
-    "offerCreationError": "Error creating offer: {error}",
-    "acceptCallError": "Error accepting call: {error}",
-    "mediaDevicesError": "Error getting media devices: {error}",
+    "renegotiationError": "Connection error",
+    "offerCreationError": "Error creating offer.",
+    "acceptCallError": "Error accepting call.",
+    "mediaDevicesError": "Error getting media devices",
     "selectCamera": "Select camera",
     "selectMicrophone": "Select microphone",
-    "changeCameraError": "Error changing camera: {error}",
-    "changeMicrophoneError": "Error changing microphone: {error}",
+    "changeCameraError": "Error changing camera.",
+    "changeMicrophoneError": "Error changing microphone.",
     "screenSharingStopped": "Screen sharing stopped",
     "screenSharingStarted": "Screen sharing started",
-    "screenSharingError": "Error sharing screen: {error}",
+    "screenSharingError": "Error sharing screen.",
     "webRTCNotSupported": "Your browser doesn't support WebRTC. Please use a modern browser like Chrome, Firefox, or Safari."
   }
 }

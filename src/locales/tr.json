@@ -819,21 +819,21 @@
 
   "videoCallHook": {
     "socketConnectionError": "Soket bağlantı hatası. Lütfen ağ bağlantınızı kontrol edin.",
-    "mediaAccessError": "Medya cihazlarına erişim hatası: {error}",
-    "connectionCreationError": "Bağlantı oluşturma hatası: {error}",
+    "mediaAccessError": "Medya cihazlarına erişim hatası",
+    "connectionCreationError": "Bağlantı oluşturma hatası",
     "connectionFailedAfterAttempts": "Birden fazla deneme sonrası bağlantı başarısız oldu",
     "connectedToRemotePeer": "Karşı tarafa bağlandı",
-    "renegotiationError": "Bağlantı hatası: {error}",
-    "offerCreationError": "Teklif oluşturma hatası: {error}",
-    "acceptCallError": "Arama kabul hatası: {error}",
-    "mediaDevicesError": "Medya cihazları alınırken hata: {error}",
+    "renegotiationError": "Bağlantı hatası",
+    "offerCreationError": "Teklif oluşturma hatası",
+    "acceptCallError": "Arama kabul hatası",
+    "mediaDevicesError": "Medya cihazları alınırken hata",
     "selectCamera": "Kamera seç",
     "selectMicrophone": "Mikrofon seç",
-    "changeCameraError": "Kamera değiştirme hatası: {error}",
-    "changeMicrophoneError": "Mikrofon değiştirme hatası: {error}",
+    "changeCameraError": "Kamera değiştirme hatası",
+    "changeMicrophoneError": "Mikrofon değiştirme hatası",
     "screenSharingStopped": "Ekran paylaşımı durduruldu",
     "screenSharingStarted": "Ekran paylaşımı başlatıldı",
-    "screenSharingError": "Ekran paylaşımı hatası: {error}",
+    "screenSharingError": "Ekran paylaşımı hatası",
     "webRTCNotSupported": "Tarayıcınız WebRTC'yi desteklemiyor. Lütfen Chrome, Firefox veya Safari gibi modern bir tarayıcı kullanın."
   }
 }
