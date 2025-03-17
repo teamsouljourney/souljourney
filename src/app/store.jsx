@@ -62,7 +62,6 @@ const store = configureStore({
           PERSIST,
           PURGE,
           REGISTER,
-          // Add your socket-related actions here
           // Chat actions
           "chats/setSocket",
           "chats/setSocketConnected",
