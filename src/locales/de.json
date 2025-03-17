@@ -769,5 +769,25 @@
     "updateNoteFailed": "Fehler beim Aktualisieren der Notiz.",
     "deleteSuccess": "Notiz erfolgreich gelöscht!",
     "deleteFailed": "Fehler beim Löschen der Notiz."
+  },
+
+  "userCall": {
+    "fetchFailed": "Fehler beim Abrufen der Benutzer.",
+    "fetchDetailsFailed": "Fehler beim Abrufen des Benutzers.",
+    "createSuccess": "Benutzer erfolgreich erstellt! Bitte überprüfen Sie die E-Mail, um das Konto zu verifizieren!",
+    "createFailed": "Fehler beim Erstellen des Benutzers.",
+    "updateSuccess": "Benutzer erfolgreich aktualisiert!",
+    "updateFailed": "Fehler beim Aktualisieren des Benutzers.",
+    "deleteSuccess": "Benutzer erfolgreich gelöscht!",
+    "deleteFailed": "Fehler beim Löschen des Benutzers.",
+    "profileUpdateSuccess": "Ihr Profil wurde erfolgreich aktualisiert!",
+    "profileUpdateFailed": "Fehler beim Aktualisieren Ihres Profils.",
+    "userDisabled": "Benutzer erfolgreich deaktiviert!",
+    "userActivated": "Benutzer erfolgreich aktiviert!",
+    "statusChangeFailed": "Fehler beim Ändern des Benutzerstatus.",
+    "accountInactive": "Ihr Konto ist derzeit inaktiv. Wenn Sie wieder mit uns arbeiten möchten, kontaktieren Sie bitte das SoulJourney-Team. Wir würden uns freuen, Sie wieder willkommen zu heißen! 😊",
+    "accountStatusChangeFailed": "Fehler beim Ändern Ihres Kontostatus.",
+    "passwordChangeSuccess": "Ihr Passwort wurde geändert!",
+    "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts."
   }
 }

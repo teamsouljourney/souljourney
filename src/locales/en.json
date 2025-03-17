@@ -769,5 +769,25 @@
     "updateNoteFailed": "Error updating note.",
     "deleteSuccess": "Note deleted successfully!",
     "deleteFailed": "Failed to delete note."
+  },
+
+  "userCall": {
+    "fetchFailed": "Failed to fetch users.",
+    "fetchDetailsFailed": "Failed to fetch the user.",
+    "createSuccess": "User created successfully! Please check email to verify that account!",
+    "createFailed": "Failed to create user.",
+    "updateSuccess": "User updated successfully!",
+    "updateFailed": "Failed to update users.",
+    "deleteSuccess": "User deleted successfully!",
+    "deleteFailed": "Failed to delete users.",
+    "profileUpdateSuccess": "Your profile updated successfully!",
+    "profileUpdateFailed": "Failed to update your profile.",
+    "userDisabled": "User disabled successfully!",
+    "userActivated": "User activated successfully!",
+    "statusChangeFailed": "Failed to change user status.",
+    "accountInactive": "Your account is currently inactive. If you'd like to work with us again, please contact the SoulJourney team. We'd be delighted to welcome you back! 😊",
+    "accountStatusChangeFailed": "Failed to change your account status.",
+    "passwordChangeSuccess": "Your password has been changed!",
+    "passwordChangeFailed": "Failed to change your password."
   }
 }

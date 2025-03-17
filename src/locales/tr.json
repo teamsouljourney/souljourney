@@ -761,5 +761,25 @@
     "updateNoteFailed": "Not güncellenirken hata oluştu.",
     "deleteSuccess": "Not başarıyla silindi!",
     "deleteFailed": "Not silinirken hata oluştu."
+  },
+
+  "userCall": {
+    "fetchFailed": "Kullanıcılar getirilirken hata oluştu.",
+    "fetchDetailsFailed": "Kullanıcı detayları getirilirken hata oluştu.",
+    "createSuccess": "Kullanıcı başarıyla oluşturuldu! Hesabı doğrulamak için lütfen e-postayı kontrol edin!",
+    "createFailed": "Kullanıcı oluşturulurken hata oluştu.",
+    "updateSuccess": "Kullanıcı başarıyla güncellendi!",
+    "updateFailed": "Kullanıcı güncellenirken hata oluştu.",
+    "deleteSuccess": "Kullanıcı başarıyla silindi!",
+    "deleteFailed": "Kullanıcı silinirken hata oluştu.",
+    "profileUpdateSuccess": "Profiliniz başarıyla güncellendi!",
+    "profileUpdateFailed": "Profiliniz güncellenirken hata oluştu.",
+    "userDisabled": "Kullanıcı başarıyla devre dışı bırakıldı!",
+    "userActivated": "Kullanıcı başarıyla aktifleştirildi!",
+    "statusChangeFailed": "Kullanıcı durumu değiştirilirken hata oluştu.",
+    "accountInactive": "Hesabınız şu anda aktif değil. Bizimle tekrar çalışmak isterseniz, lütfen SoulJourney ekibiyle iletişime geçin. Sizi tekrar aramızda görmekten mutluluk duyarız! 😊",
+    "accountStatusChangeFailed": "Hesap durumunuz değiştirilirken hata oluştu.",
+    "passwordChangeSuccess": "Şifreniz değiştirildi!",
+    "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu."
   }
 }
