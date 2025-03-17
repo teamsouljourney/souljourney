@@ -801,5 +801,11 @@
     "statusChangeFailed": "Terapist durumu değiştirilirken hata oluştu.",
     "passwordChangeSuccess": "Şifreniz değiştirildi!",
     "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu."
+  },
+
+  "chatCall": {
+    "fetchFailed": "Sohbet mesajları getirilirken hata oluştu.",
+    "sendFailed": "Mesaj gönderilirken hata oluştu.",
+    "connectionFailed": "Sohbet sunucusuna bağlanırken hata oluştu."
   }
 }

@@ -809,5 +809,11 @@
     "statusChangeFailed": "Failed to change therapist status.",
     "passwordChangeSuccess": "Your password has been changed!",
     "passwordChangeFailed": "Failed to change your password."
+  },
+
+  "chatCall": {
+    "fetchFailed": "Failed to fetch chat messages.",
+    "sendFailed": "Failed to send message.",
+    "connectionFailed": "Failed to connect to chat server."
   }
 }
