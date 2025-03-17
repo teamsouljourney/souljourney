@@ -41,7 +41,7 @@ const UserForm = () => {
     <div className="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
       <div className="px-4 pt-5 pb-4 bg-white dark:bg-background-dark sm:p-6 sm:pb-4">
         <h3 className="text-lg font-medium leading-6 text-navy dark:text-offWhite-dark">
-          {newUser._id ? t("AP-editUser") : t("AP-addUser")}
+          {newUser._id ? t("AP-editUser") : t("addNewUser")}
         </h3>
         <div className="mt-2">
           <input

@@ -15,7 +15,7 @@ const TeamDetailFeedbackCards = () => {
   
   const [selectedFeedback, setSelectedFeedback] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
@@ -37,7 +37,7 @@ const TeamDetailFeedbackCards = () => {
                     {feedback?.userId?.firstName} {feedback?.userId?.lastName}
                   </h3>
                   <p className="text-sm pt-2">
-                    {getTimeAgo(feedback?.createdAt)}
+                    {getTimeAgo(feedback?.createdAt, t)}
                   </p>
                 </div>
               </div>
@@ -82,6 +82,7 @@ const TeamDetailFeedbackCards = () => {
           </div>
         ))}
       </div>
+      
       <Pagination 
         endpoint={`feedbacks/therapists/${therapistId}`}
         slice={"pagFeedbacks"}

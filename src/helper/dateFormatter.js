@@ -1,6 +1,5 @@
 import { format } from "date-fns";
 import { enUS } from "date-fns/locale";
-import { useTranslation } from "react-i18next";
 
 export const formatDateTime = (date, type, endDate = null) => {
 
@@ -19,8 +18,7 @@ export const formatDateTime = (date, type, endDate = null) => {
   return format(parsedDate, "dd MMMM yyyy HH:mm", { locale: enUS });
 };
 
-export const getTimeAgo = (createdAt) => {
-  const { t } = useTranslation();
+export const getTimeAgo = (createdAt, t) => {
   const now = new Date();
   const created = new Date(createdAt);
   const diffInMilliseconds = now - created;

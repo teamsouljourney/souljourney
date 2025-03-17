@@ -8,8 +8,10 @@ import CategoryRow from "../components/adminPanel/CategoryRow";
 import CategoryForm from "../components/adminPanel/CategoryForm";
 import { toggleModal } from "../features/categorySlice";
 import { PlusIcon } from "@heroicons/react/24/outline";
+import { useTranslation } from "react-i18next";
 
 const CategoryManagement = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { getAllCategories } = useCategoryCall();
   const { isModalOpen, categories } = useSelector((state) => state.categories);
@@ -40,25 +42,25 @@ const CategoryManagement = () => {
       <div className="bg-white dark:bg-background-lightdark text-navy dark:text-offWhite-dark border rounded-lg shadow-sm">
         <div className="p-6">
           <ListToolbar
-            title="Category List"
+            title={t("AP-categoryList")}
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
-            placeholder="Search category..."
+            placeholder={t("searchCategoryPlaceholder")}
             actions={
               <button
                 onClick={() => handleToogleModal(true)}
                 className="px-4 py-2 text-white transition duration-300 rounded-md bg-seaGreen hover:bg-navy"
               >
                 <PlusIcon className="inline-block w-5 h-5 mr-2" />
-                Add a new Category
+                {t("addNewCategory")} {/* Add a new Category */}
               </button>
             }
           />
           <div>
             <div className="hidden text-sm font-medium text-gray-500 dark:text-seaGreen md:grid md:grid-cols-12 md:gap-4">
-              <div className="col-span-4">Category</div>
-              <div className="col-span-4">Created At</div>
-              <div className="col-span-4 text-right">Actions</div>
+              <div className="col-span-4">{t("AP-category")} {/* Category */}</div>
+              <div className="col-span-4">{t("AP-createdAt")} {/* Created At */}</div>
+              <div className="col-span-4 text-right">{t("AP-actions")} {/* Actions */}</div>
             </div>
             {displayedCategories?.map((category) => (
               <CategoryRow key={category._id} category={category} />
