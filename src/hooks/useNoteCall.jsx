@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 import useAxios from "./useAxios";
 import {
   fetchStart,
@@ -9,6 +10,7 @@ import {
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
 const useNoteCall = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const axiosWithToken = useAxios();
 
@@ -22,11 +24,13 @@ const useNoteCall = () => {
       console.log("Hata:", error.response?.data);
       dispatch(fetchFail());
       toastErrorNotify(
-        "Notları çekerken hata: " +
-          (error.response?.data?.message || "Bilinmeyen hata")
+        t("noteCall.fetchError") +
+          " " +
+          (error.response?.data?.message || t("noteCall.unknownError"))
       );
     }
   };
+
   const getSingleUserNotes = async (userId) => {
     dispatch(fetchStart());
     try {
@@ -35,8 +39,7 @@ const useNoteCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to fetch Therapist's feedbacks!"
+        error.response.data.message || t("noteCall.fetchUserNotesFailed")
       );
     }
   };
@@ -48,8 +51,7 @@ const useNoteCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to post Users's notes!"
+        error.response.data.message || t("noteCall.postNotesFailed")
       );
     }
   };
@@ -60,23 +62,24 @@ const useNoteCall = () => {
       await axiosWithToken.put(`notes/${id}`, noteData);
     } catch (error) {
       dispatch(fetchFail());
-      toastErrorNotify(error.response.data.message,
-        "Not güncellenirken hata oluştu.");
-    } 
+      toastErrorNotify(
+        error.response.data.message || t("noteCall.updateNoteFailed")
+      );
+    }
   };
 
-  const deleteNote = async (id,userId) => {
+  const deleteNote = async (id, userId) => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.delete(`notes/${id}`);
-      toastSuccessNotify(data?.message || "Note deleted successfully!");
+      toastSuccessNotify(data?.message || t("noteCall.deleteSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to delete note."
+        error.response?.data?.message || t("noteCall.deleteFailed")
       );
     } finally {
-      getSingleUserNotes(userId)
+      getSingleUserNotes(userId);
     }
   };
 

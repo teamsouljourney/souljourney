@@ -751,5 +751,15 @@
     "deleteSuccess": "Geri bildirim başarıyla silindi!",
     "deleteFailed": "Geri bildirim silinirken hata oluştu.",
     "fetchDetailsFailed": "Geri bildirim detayları getirilirken hata oluştu."
+  },
+
+  "noteCall": {
+    "fetchError": "Notları çekerken hata:",
+    "unknownError": "Bilinmeyen hata",
+    "fetchUserNotesFailed": "Kullanıcı notları getirilirken hata oluştu!",
+    "postNotesFailed": "Kullanıcı notları gönderilirken hata oluştu!",
+    "updateNoteFailed": "Not güncellenirken hata oluştu.",
+    "deleteSuccess": "Not başarıyla silindi!",
+    "deleteFailed": "Not silinirken hata oluştu."
   }
 }

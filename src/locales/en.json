@@ -759,5 +759,15 @@
     "deleteSuccess": "Feedback deleted successfully!",
     "deleteFailed": "Failed to delete feedback.",
     "fetchDetailsFailed": "Failed to fetch feedback details."
+  },
+
+  "noteCall": {
+    "fetchError": "Error fetching notes:",
+    "unknownError": "Unknown error",
+    "fetchUserNotesFailed": "Failed to fetch user's notes!",
+    "postNotesFailed": "Failed to post user's notes!",
+    "updateNoteFailed": "Error updating note.",
+    "deleteSuccess": "Note deleted successfully!",
+    "deleteFailed": "Failed to delete note."
   }
 }
