@@ -42,7 +42,7 @@ export default function Chat() {
     // let interval;
 
     if (selectedUser && currentUser?._id) {
-      console.log("Fetching chats for selected user:", selectedUser);
+      // console.log("Fetching chats for selected user:", selectedUser);
       // Initially fetch chats once when selectedUser is available
       getAllChats(currentUser._id, userModel, selectedUser, chatWithModel);
 
@@ -87,7 +87,7 @@ export default function Chat() {
   }, []);
 
   return (
-    <div className="flex h-screen bg-white dark:bg-background-dark overflow-hidden">
+    <div className="flex h-screen overflow-hidden bg-white dark:bg-background-dark">
       <LeftSidebar
         isOpen={isLeftSidebarOpen}
         toggleSidebar={toggleLeftSidebar}
@@ -105,7 +105,7 @@ export default function Chat() {
       {/* Overlay for mobile left sidebar */}
       {isLeftSidebarOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-20 md:hidden"
+          className="fixed inset-0 z-20 bg-black bg-opacity-50 md:hidden"
           onClick={toggleLeftSidebar}
         ></div>
       )}
