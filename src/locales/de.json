@@ -849,5 +849,6 @@
   "AuthSuccess": {
     "errorNotify": "Ungültige Benutzerinformationen empfangen. Bitte melden Sie sich erneut an.",
     "redirect": "Weiterleitung..."
-  }
+  },
+  "CookieConsentComponent": "Unsere Website verwendet Cookies, um Ihr Erlebnis zu verbessern. Sie können akzeptieren oder ablehnen, um fortzufahren."
 }

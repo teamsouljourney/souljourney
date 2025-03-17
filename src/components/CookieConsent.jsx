@@ -25,7 +25,7 @@ const CookieConsentComponent = () => {
       buttonStyle={{ background: "#4CAF50", color: "#fff", fontSize: "14px" }}
       declineButtonStyle={{ background: "#f44336", color: "#fff", fontSize: "14px" }}
     >
-      🍪 Our website uses cookies to improve your experience. You can accept or decline to continue.
+      🍪 {t("CookieConsentComponent")} {/* Our website uses cookies to improve your experience. You can accept or decline to continue. */}
     </CookieConsent>
   );
 };

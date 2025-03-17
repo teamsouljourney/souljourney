@@ -849,5 +849,6 @@
   "AuthSuccess": {
     "errorNotify": "Invalid user information received. Please log in again.",
     "redirect": "Redirecting ..."
-  }
+  },
+  "CookieConsentComponent": "Our website uses cookies to improve your experience. You can accept or decline to continue."
 }
