@@ -731,5 +731,16 @@
     "deleteFailed": "Blog silinirken hata oluştu.",
     "fetchLikesFailed": "Beğeni bilgisi getirilirken hata oluştu.",
     "updateLikeFailed": "Beğeni güncellenirken hata oluştu."
+  },
+
+  "categoryCall": {
+    "fetchFailed": "Kategoriler getirilirken bir hata oluştu.",
+    "fetchDetailsFailed": "Kategori detayları getirilirken bir hata oluştu.",
+    "createSuccess": "Kategori başarıyla oluşturuldu!",
+    "createFailed": "Kategori oluşturulurken hata oluştu.",
+    "updateSuccess": "Kategori başarıyla güncellendi!",
+    "updateFailed": "Kategori güncellenirken hata oluştu.",
+    "deleteSuccess": "Kategori başarıyla silindi!",
+    "deleteFailed": "Kategori silinirken hata oluştu."
   }
 }

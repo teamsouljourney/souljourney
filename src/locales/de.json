@@ -739,5 +739,16 @@
     "deleteFailed": "Fehler beim Löschen des Blogs.",
     "fetchLikesFailed": "Fehler beim Abrufen der Like-Informationen.",
     "updateLikeFailed": "Fehler beim Aktualisieren des Likes."
+  },
+
+  "categoryCall": {
+    "fetchFailed": "Beim Abrufen der Kategorien ist ein Fehler aufgetreten.",
+    "fetchDetailsFailed": "Beim Abrufen der Kategorie ist ein Fehler aufgetreten.",
+    "createSuccess": "Kategorie erfolgreich erstellt!",
+    "createFailed": "Fehler beim Erstellen der Kategorie.",
+    "updateSuccess": "Kategorie erfolgreich aktualisiert!",
+    "updateFailed": "Fehler beim Aktualisieren der Kategorie.",
+    "deleteSuccess": "Kategorie erfolgreich gelöscht!",
+    "deleteFailed": "Fehler beim Löschen der Kategorie."
   }
 }

@@ -739,5 +739,16 @@
     "deleteFailed": "Failed to delete blog.",
     "fetchLikesFailed": "Failed to fetch like info.",
     "updateLikeFailed": "Failed to update like."
+  },
+
+  "categoryCall": {
+    "fetchFailed": "Oops! Something went wrong while fetching categories.",
+    "fetchDetailsFailed": "Oops! Something went wrong while fetching the category.",
+    "createSuccess": "Category created successfully!",
+    "createFailed": "Failed to create category.",
+    "updateSuccess": "Category updated successfully!",
+    "updateFailed": "Failed to update category.",
+    "deleteSuccess": "Category deleted successfully!",
+    "deleteFailed": "Failed to delete category."
   }
 }
