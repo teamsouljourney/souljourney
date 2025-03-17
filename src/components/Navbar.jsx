@@ -58,7 +58,12 @@ export default function Navbar() {
 
   // referrerPolicy = "no-referrer";
 
-  if (window.location.pathname.startsWith("/profile")) return null;
+  if (
+    window.location.pathname.startsWith("/profile") ||
+    window.location.pathname.startsWith("/admin")
+  ) {
+    return null;
+  }
 
   return (
     <Disclosure
@@ -179,7 +184,7 @@ export default function Navbar() {
                   <hr />
                   <MenuItem>
                     <NavLink
-                      to="/profile"
+                      to={currentUser?.isAdmin ? "/admin" : "/profile"}
                       className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                     >
                       {t("myProfile")}

@@ -339,7 +339,7 @@
   "register": "Registrieren",
   "haveAccount": "Haben Sie bereits ein Konto?",
   "signin": "Anmelden",
-  "name" : "Name",
+  "name": "Name",
   "username": "Benutzername",
   "firstName": "Vorname",
   "lastName": "Nachname",
@@ -437,6 +437,7 @@
 
   "APPOINTMENT CALENDAR": "TERMINKALENDER",
   "bookingCalendar": "Buchungskalender",
+  "appointmentsTitle": "Termine",
   "createAppointment": "Termin erstellen",
   "pleaseSelectTimeSlot": "Bitte wählen Sie ein Zeitfenster aus.",
   "selectedDate": "Ausgewähltes Datum",
@@ -656,11 +657,191 @@
   "addCategory": "Kategorie hinzufügen",
   "active": "Aktiv",
   "disabled": "Deaktiviert",
-  "searchUserPlaceholder": "Benutzer suchen...", "searchTherapistPlaceholder": "Therapeut suchen...", "searchCategoryPlaceholder": "Kategorie suchen...", "searchAppointmentPlaceholder": "Termin suchen...", "searchBlogPlaceholder": "Blog suchen...", 
+  "searchUserPlaceholder": "Benutzer suchen...",
+  "searchTherapistPlaceholder": "Therapeut suchen...",
+  "searchCategoryPlaceholder": "Kategorie suchen...",
+  "searchAppointmentPlaceholder": "Termin suchen...",
+  "searchBlogPlaceholder": "Blog suchen...",
   "searchFeedbackPlaceholder": "Feedback suchen...",
   "addNewUser": "Neuen Benutzer hinzufügen",
   "addNewTherapist": "Neuen Therapeuten hinzufügen",
   "addNewCategory": "Neue Kategorie hinzufügen",
   "addNewAppointment": "Neuen Termin hinzufügen",
-  "seeAllBlogs": "Alle Blogs anzeigen"
+  "seeAllBlogs": "Alle Blogs anzeigen",
+
+  "camera": {
+    "current": "Aktuell",
+    "noCamerasFound": "Keine Kameras gefunden"
+  },
+
+  "microphone": {
+    "current": "Aktuell",
+    "noMicrophonesFound": "Keine Mikrofone gefunden"
+  },
+
+  "appointmentInfo": {
+    "noUpcoming": "Keine bevorstehenden Termine",
+    "noScheduled": "Sie haben keine bevorstehenden Termine geplant.",
+    "client": "Klient",
+    "therapist": "Therapeut",
+    "startCall": "Anruf starten",
+    "waitingForTherapist": "Warten auf den Therapeuten, um den Anruf zu starten...",
+    "acceptCall": "Anruf annehmen",
+    "callingPatient": "Patient wird angerufen...",
+    "callInProgress": "Anruf läuft",
+    "videoCallAvailable": "Videoanruf zur Startzeit verfügbar",
+    "appointmentEnded": "Termin beendet"
+  },
+
+  "videoCallPage": {
+    "webRTCNotSupported": "WebRTC wird nicht unterstützt",
+    "browserNotSupported": "Ihr Browser unterstützt die WebRTC-Technologie nicht, die für Videoanrufe erforderlich ist.",
+    "useModernBrowser": "Bitte verwenden Sie einen modernen Browser wie Chrome, Firefox oder Safari.",
+    "you": "Sie",
+    "remote": "Gegenüber",
+    "refresh": "Aktualisieren",
+    "noRemoteVideo": "Kein Remote-Video",
+    "retry": "Wiederholen"
+  },
+
+  "appointmentCall": {
+    "fetchFailed": "Fehler beim Abrufen der Termine.",
+    "fetchDetailsFailed": "Fehler beim Abrufen der Termindetails.",
+    "createSuccess": "Termin erfolgreich erstellt!",
+    "createFailed": "Bei der Terminerstellung ist ein Fehler aufgetreten.",
+    "updateSuccess": "Termin erfolgreich aktualisiert!",
+    "updateFailed": "Fehler beim Aktualisieren des Termins.",
+    "deleteSuccess": "Termin erfolgreich gelöscht!",
+    "deleteFailed": "Fehler beim Löschen des Termins."
+  },
+
+  "authCall": {
+    "registerSuccess": "Registrierung erfolgreich! Bitte überprüfen Sie Ihre E-Mail, um Ihr Konto zu verifizieren!",
+    "registerFailed": "Bei der Registrierung ist ein Fehler aufgetreten",
+    "loginSuccess": "Sie haben sich erfolgreich angemeldet!",
+    "loginFailed": "Bei der Anmeldung ist ein Fehler aufgetreten!",
+    "logoutSuccess": "Sie haben sich erfolgreich abgemeldet!",
+    "logoutFailed": "Bei der Abmeldung ist ein Fehler aufgetreten.",
+    "forgotPasswordSuccess": "Link zum Zurücksetzen des Passworts erfolgreich gesendet!",
+    "forgotPasswordFailed": "Bei der Anfrage zum Zurücksetzen des Passworts ist ein Fehler aufgetreten.",
+    "resetPasswordSuccess": "Passwort erfolgreich zurückgesetzt!",
+    "resetPasswordFailed": "Fehler beim Zurücksetzen des Passworts. Bitte versuchen Sie es erneut."
+  },
+
+  "blogCall": {
+    "fetchFailed": "Fehler beim Abrufen der Blogs.",
+    "fetchDetailsFailed": "Fehler beim Abrufen der Blog-Details.",
+    "createSuccess": "Blog erfolgreich erstellt!",
+    "createFailed": "Fehler beim Erstellen des Blogs.",
+    "updateSuccess": "Blog erfolgreich aktualisiert!",
+    "updateFailed": "Fehler beim Aktualisieren des Blogs.",
+    "deleteSuccess": "Blog erfolgreich gelöscht!",
+    "deleteFailed": "Fehler beim Löschen des Blogs.",
+    "fetchLikesFailed": "Fehler beim Abrufen der Like-Informationen.",
+    "updateLikeFailed": "Fehler beim Aktualisieren des Likes."
+  },
+
+  "categoryCall": {
+    "fetchFailed": "Beim Abrufen der Kategorien ist ein Fehler aufgetreten.",
+    "fetchDetailsFailed": "Beim Abrufen der Kategorie ist ein Fehler aufgetreten.",
+    "createSuccess": "Kategorie erfolgreich erstellt!",
+    "createFailed": "Fehler beim Erstellen der Kategorie.",
+    "updateSuccess": "Kategorie erfolgreich aktualisiert!",
+    "updateFailed": "Fehler beim Aktualisieren der Kategorie.",
+    "deleteSuccess": "Kategorie erfolgreich gelöscht!",
+    "deleteFailed": "Fehler beim Löschen der Kategorie."
+  },
+
+  "feedbackCall": {
+    "fetchAllFailed": "Fehler beim Abrufen aller Feedbacks!",
+    "fetchTherapistFeedbacksFailed": "Fehler beim Abrufen der Therapeuten-Feedbacks!",
+    "postFeedbackFailed": "Fehler beim Posten des Therapeuten-Feedbacks!",
+    "deleteSuccess": "Feedback erfolgreich gelöscht!",
+    "deleteFailed": "Fehler beim Löschen des Feedbacks.",
+    "fetchDetailsFailed": "Fehler beim Abrufen der Feedback-Details."
+  },
+
+  "noteCall": {
+    "fetchError": "Fehler beim Abrufen der Notizen:",
+    "unknownError": "Unbekannter Fehler",
+    "fetchUserNotesFailed": "Fehler beim Abrufen der Benutzernotizen!",
+    "postNotesFailed": "Fehler beim Posten der Benutzernotizen!",
+    "updateNoteFailed": "Fehler beim Aktualisieren der Notiz.",
+    "deleteSuccess": "Notiz erfolgreich gelöscht!",
+    "deleteFailed": "Fehler beim Löschen der Notiz."
+  },
+
+  "userCall": {
+    "fetchFailed": "Fehler beim Abrufen der Benutzer.",
+    "fetchDetailsFailed": "Fehler beim Abrufen des Benutzers.",
+    "createSuccess": "Benutzer erfolgreich erstellt! Bitte überprüfen Sie die E-Mail, um das Konto zu verifizieren!",
+    "createFailed": "Fehler beim Erstellen des Benutzers.",
+    "updateSuccess": "Benutzer erfolgreich aktualisiert!",
+    "updateFailed": "Fehler beim Aktualisieren des Benutzers.",
+    "deleteSuccess": "Benutzer erfolgreich gelöscht!",
+    "deleteFailed": "Fehler beim Löschen des Benutzers.",
+    "profileUpdateSuccess": "Ihr Profil wurde erfolgreich aktualisiert!",
+    "profileUpdateFailed": "Fehler beim Aktualisieren Ihres Profils.",
+    "userDisabled": "Benutzer erfolgreich deaktiviert!",
+    "userActivated": "Benutzer erfolgreich aktiviert!",
+    "statusChangeFailed": "Fehler beim Ändern des Benutzerstatus.",
+    "accountInactive": "Ihr Konto ist derzeit inaktiv. Wenn Sie wieder mit uns arbeiten möchten, kontaktieren Sie bitte das SoulJourney-Team. Wir würden uns freuen, Sie wieder willkommen zu heißen! 😊",
+    "accountStatusChangeFailed": "Fehler beim Ändern Ihres Kontostatus.",
+    "passwordChangeSuccess": "Ihr Passwort wurde geändert!",
+    "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts."
+  },
+
+  "therapistCall": {
+    "fetchFailed": "Fehler beim Abrufen der Therapeuten.",
+    "fetchDetailsFailed": "Fehler beim Abrufen der Therapeutendetails.",
+    "fetchTimeTableFailed": "Fehler beim Abrufen des Therapeuten-Zeitplans.",
+    "fetchFilteredFailed": "Fehler beim Abrufen der gefilterten Therapeuten.",
+    "createSuccess": "Therapeut erfolgreich erstellt! Bitte überprüfen Sie die E-Mail, um das Konto zu verifizieren!",
+    "createFailed": "Fehler beim Erstellen des Therapeuten.",
+    "updateSuccess": "Therapeut erfolgreich aktualisiert!",
+    "updateFailed": "Fehler beim Aktualisieren des Therapeuten.",
+    "deleteSuccess": "Therapeut erfolgreich gelöscht!",
+    "deleteFailed": "Fehler beim Löschen des Therapeuten.",
+    "profileUpdateSuccess": "Ihr Profil wurde erfolgreich aktualisiert!",
+    "profileUpdateFailed": "Fehler beim Aktualisieren Ihres Profils.",
+    "therapistDisabled": "Therapeut erfolgreich deaktiviert!",
+    "therapistActivated": "Therapeut erfolgreich aktiviert!",
+    "statusChangeFailed": "Fehler beim Ändern des Therapeutenstatus.",
+    "passwordChangeSuccess": "Ihr Passwort wurde geändert!",
+    "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts."
+  },
+
+  "chatCall": {
+    "fetchFailed": "Fehler beim Abrufen der Chat-Nachrichten.",
+    "sendFailed": "Fehler beim Senden der Nachricht.",
+    "connectionFailed": "Fehler bei der Verbindung zum Chat-Server."
+  },
+
+  "notificationCall": {
+    "fetchFailed": "Fehler beim Abrufen der Benachrichtigungen.",
+    "fetchSpecificFailed": "Fehler beim Abrufen bestimmter Benachrichtigungen.",
+    "createFailed": "Fehler beim Erstellen der Benachrichtigung.",
+    "markAsReadFailed": "Fehler beim Markieren der Benachrichtigung als gelesen.",
+    "deleteFailed": "Fehler beim Löschen der Benachrichtigung."
+  },
+
+  "videoCallHook": {
+    "socketConnectionError": "Socket-Verbindungsfehler. Bitte überprüfen Sie Ihre Netzwerkverbindung.",
+    "mediaAccessError": "Fehler beim Zugriff auf Mediengeräte",
+    "connectionCreationError": "Fehler beim Erstellen der Verbindung",
+    "connectionFailedAfterAttempts": "Verbindung nach mehreren Versuchen fehlgeschlagen",
+    "connectedToRemotePeer": "Mit dem Gesprächspartner verbunden",
+    "renegotiationError": "Verbindungsfehler",
+    "offerCreationError": "Fehler beim Erstellen des Angebots",
+    "acceptCallError": "Fehler beim Annehmen des Anrufs",
+    "mediaDevicesError": "Fehler beim Abrufen der Mediengeräte",
+    "selectCamera": "Kamera auswählen",
+    "selectMicrophone": "Mikrofon auswählen",
+    "changeCameraError": "Fehler beim Wechseln der Kamera",
+    "changeMicrophoneError": "Fehler beim Wechseln des Mikrofons",
+    "screenSharingStopped": "Bildschirmfreigabe beendet",
+    "screenSharingStarted": "Bildschirmfreigabe gestartet",
+    "screenSharingError": "Fehler bei der Bildschirmfreigabe",
+    "webRTCNotSupported": "Ihr Browser unterstützt WebRTC nicht. Bitte verwenden Sie einen modernen Browser wie Chrome, Firefox oder Safari."
+  }
 }

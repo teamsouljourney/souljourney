@@ -340,7 +340,7 @@
   "register": "Register",
   "haveAccount": "Already have an account?",
   "signin": "Sign in",
-  "name" : "Name",
+  "name": "Name",
   "username": "Username",
   "firstName": "First Name",
   "lastName": "Last Name",
@@ -438,6 +438,7 @@
 
   "APPOINTMENT CALENDAR": "APPOINTMENT CALENDAR",
   "bookingCalendar": "Booking Calendar",
+  "appointmentsTitle": "Appoinments",
   "createAppointment": "Create Appointment",
   "pleaseSelectTimeSlot": "Please select a time slot.",
   "selectedDate": "Selected Date",
@@ -666,5 +667,181 @@
   "addNewTherapist": "Add a new Therapist",
   "addNewCategory": "Add a new Category",
   "addNewAppointment": "Add a new Appointment",
-  "seeAllBlogs": "See All Blogs"
+  "seeAllBlogs": "See All Blogs",
+
+  "camera": {
+    "current": "Current",
+    "noCamerasFound": "No cameras found"
+  },
+
+  "microphone": {
+    "current": "Current",
+    "noMicrophonesFound": "No microphones found"
+  },
+
+  "appointmentInfo": {
+    "noUpcoming": "No Upcoming Appointments",
+    "noScheduled": "You don't have any upcoming appointments scheduled.",
+    "client": "Client",
+    "therapist": "Therapist",
+    "startCall": "Start Call",
+    "waitingForTherapist": "Waiting for therapist to start the call...",
+    "acceptCall": "Accept Call",
+    "callingPatient": "Calling patient...",
+    "callInProgress": "Call in progress",
+    "videoCallAvailable": "Video Call Available at Start Time",
+    "appointmentEnded": "Appointment Ended"
+  },
+
+  "videoCallPage": {
+    "webRTCNotSupported": "WebRTC Not Supported",
+    "browserNotSupported": "Your browser doesn't support WebRTC technology which is required for video calls.",
+    "useModernBrowser": "Please use a modern browser like Chrome, Firefox, or Safari.",
+    "you": "You",
+    "remote": "Remote",
+    "refresh": "Refresh",
+    "noRemoteVideo": "No remote video",
+    "retry": "Retry"
+  },
+
+  "appointmentCall": {
+    "fetchFailed": "Failed to fetch appointments.",
+    "fetchDetailsFailed": "Failed to fetch appointment details.",
+    "createSuccess": "Appointment created successfully!",
+    "createFailed": "Oops! Something went wrong during appointment creation.",
+    "updateSuccess": "Appointment updated successfully!",
+    "updateFailed": "Failed to update appointment.",
+    "deleteSuccess": "Appointment deleted successfully!",
+    "deleteFailed": "Failed to delete appointment."
+  },
+
+  "authCall": {
+    "registerSuccess": "Registration successful! Please check your email to verify your account!",
+    "registerFailed": "Oops! Something went wrong during registration",
+    "loginSuccess": "You have successfully logged in!",
+    "loginFailed": "Oops! Something went wrong during login!",
+    "logoutSuccess": "You have successfully logged out!",
+    "logoutFailed": "Oops! Something went wrong during logout.",
+    "forgotPasswordSuccess": "Password reset link sent successfully!",
+    "forgotPasswordFailed": "Oops! Something went wrong during password reset request.",
+    "resetPasswordSuccess": "Password reset successful!",
+    "resetPasswordFailed": "Failed to reset password. Please try again."
+  },
+
+  "blogCall": {
+    "fetchFailed": "Failed to fetch blogs.",
+    "fetchDetailsFailed": "Failed to fetch blog details.",
+    "createSuccess": "Blog created successfully!",
+    "createFailed": "Failed to create blog.",
+    "updateSuccess": "Blog updated successfully!",
+    "updateFailed": "Failed to update blog.",
+    "deleteSuccess": "Blog deleted successfully!",
+    "deleteFailed": "Failed to delete blog.",
+    "fetchLikesFailed": "Failed to fetch like info.",
+    "updateLikeFailed": "Failed to update like."
+  },
+
+  "categoryCall": {
+    "fetchFailed": "Oops! Something went wrong while fetching categories.",
+    "fetchDetailsFailed": "Oops! Something went wrong while fetching the category.",
+    "createSuccess": "Category created successfully!",
+    "createFailed": "Failed to create category.",
+    "updateSuccess": "Category updated successfully!",
+    "updateFailed": "Failed to update category.",
+    "deleteSuccess": "Category deleted successfully!",
+    "deleteFailed": "Failed to delete category."
+  },
+
+  "feedbackCall": {
+    "fetchAllFailed": "Failed to fetch all feedbacks!",
+    "fetchTherapistFeedbacksFailed": "Failed to fetch Therapist's feedbacks!",
+    "postFeedbackFailed": "Failed to post Therapist's feedbacks!",
+    "deleteSuccess": "Feedback deleted successfully!",
+    "deleteFailed": "Failed to delete feedback.",
+    "fetchDetailsFailed": "Failed to fetch feedback details."
+  },
+
+  "noteCall": {
+    "fetchError": "Error fetching notes:",
+    "unknownError": "Unknown error",
+    "fetchUserNotesFailed": "Failed to fetch user's notes!",
+    "postNotesFailed": "Failed to post user's notes!",
+    "updateNoteFailed": "Error updating note.",
+    "deleteSuccess": "Note deleted successfully!",
+    "deleteFailed": "Failed to delete note."
+  },
+
+  "userCall": {
+    "fetchFailed": "Failed to fetch users.",
+    "fetchDetailsFailed": "Failed to fetch the user.",
+    "createSuccess": "User created successfully! Please check email to verify that account!",
+    "createFailed": "Failed to create user.",
+    "updateSuccess": "User updated successfully!",
+    "updateFailed": "Failed to update users.",
+    "deleteSuccess": "User deleted successfully!",
+    "deleteFailed": "Failed to delete users.",
+    "profileUpdateSuccess": "Your profile updated successfully!",
+    "profileUpdateFailed": "Failed to update your profile.",
+    "userDisabled": "User disabled successfully!",
+    "userActivated": "User activated successfully!",
+    "statusChangeFailed": "Failed to change user status.",
+    "accountInactive": "Your account is currently inactive. If you'd like to work with us again, please contact the SoulJourney team. We'd be delighted to welcome you back! 😊",
+    "accountStatusChangeFailed": "Failed to change your account status.",
+    "passwordChangeSuccess": "Your password has been changed!",
+    "passwordChangeFailed": "Failed to change your password."
+  },
+
+  "therapistCall": {
+    "fetchFailed": "Failed to fetch therapists.",
+    "fetchDetailsFailed": "Failed to fetch therapist details.",
+    "fetchTimeTableFailed": "Failed to fetch therapist time table.",
+    "fetchFilteredFailed": "Failed to fetch filtered therapists.",
+    "createSuccess": "Therapist created successfully! Please check email to verify that account!",
+    "createFailed": "Failed to create therapist.",
+    "updateSuccess": "Therapist updated successfully!",
+    "updateFailed": "Failed to update therapist.",
+    "deleteSuccess": "Therapist deleted successfully!",
+    "deleteFailed": "Failed to delete therapist.",
+    "profileUpdateSuccess": "Your profile updated successfully!",
+    "profileUpdateFailed": "Failed to update your profile.",
+    "therapistDisabled": "Therapist disabled successfully!",
+    "therapistActivated": "Therapist activated successfully!",
+    "statusChangeFailed": "Failed to change therapist status.",
+    "passwordChangeSuccess": "Your password has been changed!",
+    "passwordChangeFailed": "Failed to change your password."
+  },
+
+  "chatCall": {
+    "fetchFailed": "Failed to fetch chat messages.",
+    "sendFailed": "Failed to send message.",
+    "connectionFailed": "Failed to connect to chat server."
+  },
+
+  "notificationCall": {
+    "fetchFailed": "Failed to fetch notifications.",
+    "fetchSpecificFailed": "Failed to fetch specific notifications.",
+    "createFailed": "Failed to create notification.",
+    "markAsReadFailed": "Failed to mark notification as read.",
+    "deleteFailed": "Failed to delete notification."
+  },
+
+  "videoCallHook": {
+    "socketConnectionError": "Socket connection error. Please check your network.",
+    "mediaAccessError": "Error accessing media devices",
+    "connectionCreationError": "Error creating connection",
+    "connectionFailedAfterAttempts": "Connection failed after multiple attempts",
+    "connectedToRemotePeer": "Connected to remote peer",
+    "renegotiationError": "Connection error",
+    "offerCreationError": "Error creating offer.",
+    "acceptCallError": "Error accepting call.",
+    "mediaDevicesError": "Error getting media devices",
+    "selectCamera": "Select camera",
+    "selectMicrophone": "Select microphone",
+    "changeCameraError": "Error changing camera.",
+    "changeMicrophoneError": "Error changing microphone.",
+    "screenSharingStopped": "Screen sharing stopped",
+    "screenSharingStarted": "Screen sharing started",
+    "screenSharingError": "Error sharing screen.",
+    "webRTCNotSupported": "Your browser doesn't support WebRTC. Please use a modern browser like Chrome, Firefox, or Safari."
+  }
 }

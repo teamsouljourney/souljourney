@@ -20,7 +20,7 @@ export default function UserCard() {
             {currentUser.firstName.toUpperCase()}{" "}
             {currentUser.lastName.toUpperCase()}
           </h1>
-          <p className="text-offWhite-dark text-sm w-52 md:w-full mt-6">
+          <p className="mt-6 text-sm text-offWhite-dark w-52 md:w-full">
             {currentUser.description}
           </p>
         </div>
@@ -38,13 +38,13 @@ export default function UserCard() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-6">
+      <div className="container px-4 py-6 mx-auto">
         {/* User Info Section */}
-        <div className="mt-4 bg-seaGreen-light/40 text-navy dark:text-offWhite rounded-lg shadow p-6">
-          <h2 className="text-xl font-bold mb-4">{t("personalInfo")}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="p-6 mt-4 rounded-lg shadow bg-seaGreen-light/40 text-navy dark:text-offWhite">
+          <h2 className="mb-4 text-xl font-bold">{t("personalInfo")}</h2>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div>
-              <p className=" font-semibold text-navy dark:text-offWhite mb-1">
+              <p className="mb-1 font-semibold  text-navy dark:text-offWhite">
                 Email :
               </p>
               <p className="font-medium text-navy dark:text-offWhite/60">
@@ -52,7 +52,7 @@ export default function UserCard() {
               </p>
             </div>
             <div>
-              <p className="font-semibold text-navy dark:text-offWhite mb-1">
+              <p className="mb-1 font-semibold text-navy dark:text-offWhite">
                 {t("dateOfMembership")} :
               </p>
               <p className="font-medium text-navy dark:text-offWhite/60">
@@ -60,7 +60,7 @@ export default function UserCard() {
               </p>
             </div>
             <div>
-              <p className=" font-semibold text-navy dark:text-offWhite mb-1">
+              <p className="mb-1 font-semibold  text-navy dark:text-offWhite">
                 {t("address")} :
               </p>
               <p className="font-medium text-navy dark:text-offWhite/60">
@@ -68,7 +68,7 @@ export default function UserCard() {
               </p>
             </div>
             <div>
-              <p className="font-semibold text-navy dark:text-offWhite mb-1">
+              <p className="mb-1 font-semibold text-navy dark:text-offWhite">
                 {t("memberId")} :
               </p>
               <p className="font-medium text-navy dark:text-offWhite/60">

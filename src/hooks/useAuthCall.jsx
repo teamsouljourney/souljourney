@@ -1,4 +1,5 @@
 import useAxios, { axiosPublic } from "./useAxios";
+import { useTranslation } from "react-i18next";
 import {
   fetchFail,
   fetchStart,
@@ -13,6 +14,7 @@ import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const useAuthCall = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const axiosWithToken = useAxios();
@@ -24,15 +26,12 @@ const useAuthCall = () => {
       const { data } = await axiosPublic.post("auth/signup", userInfo);
       // console.log(data);
       dispatch(registerSuccess(data));
-      toastSuccessNotify(
-        "Registration successful! Please check your email to verify your account!"
-      );
+      toastSuccessNotify(t("authCall.registerSuccess"));
       navigate("/auth/verify-email");
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Oops! Something went wrong during registration"
+        error.response.data.message || t("authCall.registerFailed")
       );
     }
   };
@@ -44,14 +43,13 @@ const useAuthCall = () => {
       const { data } = await axiosPublic.post("auth/login", userInfo);
       // console.log(data);
       dispatch(loginSuccess(data));
-      toastSuccessNotify("You have successfully logged in!");
+      toastSuccessNotify(t("authCall.loginSuccess"));
       navigate("/");
     } catch (error) {
-      // console.log(error);      
+      // console.log(error);
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Oops! Something went wrong during login!"
+        error.response.data.message || t("authCall.loginFailed")
       );
     }
   };
@@ -68,13 +66,12 @@ const useAuthCall = () => {
       navigate("/");
       await axiosWithToken.get("auth/logout");
       dispatch(logoutSuccess());
-      toastSuccessNotify("You have successfully logged out!");
+      toastSuccessNotify(t("authCall.logoutSuccess"));
     } catch (error) {
       console.log(error);
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Oops! Something went wrong during logout."
+        error.response.data.message || t("authCall.logoutFailed")
       );
     }
   };
@@ -84,13 +81,12 @@ const useAuthCall = () => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosPublic.post("auth/forgotPassword", userInfo);
-      toastSuccessNotify("Password reset link sent successfully!");
+      toastSuccessNotify(t("authCall.forgotPasswordSuccess"));
       navigate(`/auth/reset-password/${data.jwtResetToken}`);
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Oops! Something went wrong during password reset request."
+        error.response.data.message || t("authCall.forgotPasswordFailed")
       );
     }
   };
@@ -104,12 +100,11 @@ const useAuthCall = () => {
         passwords
       );
       // console.log(data);
-      toastSuccessNotify("Password reset successful!");
+      toastSuccessNotify(t("authCall.resetPasswordSuccess"));
       navigate("/login");
     } catch (error) {
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to reset password. Please try again."
+        error.response.data.message || t("authCall.resetPasswordFailed")
       );
     }
   };

@@ -1,5 +1,6 @@
 import useAxios, { axiosPublic } from "../hooks/useAxios";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import {
   fetchStart,
   fetchFail,
@@ -14,27 +15,28 @@ import { logoutSuccess } from "../features/authSlice";
 import { useNavigate } from "react-router-dom";
 
 const useTherapistCall = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const axiosWithToken = useAxios();
   const { getDataByPage } = usePaginationCall();
   const { currentPage, itemsPerPage } = useSelector(
     (state) => state.pagination
   );
+
   const getAllTherapists = async () => {
     dispatch(fetchStart());
     try {
-      const {data} = await axiosPublic.get("therapists");
-
+      const { data } = await axiosPublic.get("therapists");
       dispatch(getAllTherapistsSuccess(data.data));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to fetch therapists."
+        error.response.data.message || t("therapistCall.fetchFailed")
       );
     }
   };
+
   const getSingleTherapist = async (id) => {
     dispatch(fetchStart());
     try {
@@ -43,11 +45,11 @@ const useTherapistCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to fetch therapist details."
+        error.response.data.message || t("therapistCall.fetchDetailsFailed")
       );
     }
   };
+
   const getTherapistTimeTable = async (id) => {
     dispatch(fetchStart());
     try {
@@ -56,136 +58,138 @@ const useTherapistCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to fetch therapist time table."
+        error.response.data.message || t("therapistCall.fetchTimeTableFailed")
       );
     }
   };
+
   const getFilterTherapists = async (categoryId) => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosPublic.get(`therapists?category=${categoryId}`);
+      const { data } = await axiosPublic.get(
+        `therapists?category=${categoryId}`
+      );
       dispatch(getFilterTherapistsSuccess(data?.data));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to fetch filtered therapist"
+        error.response.data.message || t("therapistCall.fetchFilteredFailed")
       );
     }
   };
+
   //* Create Therapist
-    const createTherapist = async (therapistData) => {
-      dispatch(fetchStart());
-      try {
-        const { data } = await axiosWithToken.post("therapists", therapistData);
-        toastSuccessNotify(
-          "Therapist created successfully! Please check email to verify that account!"
-        );
-      } catch (error) {
-        dispatch(fetchFail());
-        toastErrorNotify(error.response.data.message, "Failed to create therapist.");
-      } finally {
-        getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
-      }
-    };
+  const createTherapist = async (therapistData) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosWithToken.post("therapists", therapistData);
+      toastSuccessNotify(t("therapistCall.createSuccess"));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response.data.message || t("therapistCall.createFailed")
+      );
+    } finally {
+      getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
+    }
+  };
 
   //* Delete Therapist
-    const deleteTherapist = async (id) => {
-      dispatch(fetchStart());
-      try {
-        await axiosWithToken.delete(`therapists/${id}`);
-        toastSuccessNotify("Therapist deleted successfully!");
-      } catch (error) {
-        dispatch(fetchFail());
-        toastErrorNotify(
-          error.response?.data?.message || "Failed to delete therapists."
-        );
-      } finally {
-        getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
-      }
-    };
-  
-    //* Update Therapist
-    const updateTherapist = async (id, updatedTherapist) => {
-      dispatch(fetchStart());
-      try {
-        await axiosWithToken.patch(`therapists/${id}`, updatedTherapist);
-        toastSuccessNotify("Therapist updated successfully!");
-      } catch (error) {
-        dispatch(fetchFail());
-        toastErrorNotify(
-          error.response?.data?.message || "Failed to update therapists."
-        );
-      } finally {
-        getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
-      }
-    };
+  const deleteTherapist = async (id) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.delete(`therapists/${id}`);
+      toastSuccessNotify(t("therapistCall.deleteSuccess"));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || t("therapistCall.deleteFailed")
+      );
+    } finally {
+      getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
+    }
+  };
 
-    //* Update Therapist's own profile 
-      const updateMeTherapist = async (id, updatedTherapist) => {
-        dispatch(fetchStart());
-        try {
-          await axiosWithToken.patch(`therapists/${id}/updateMe`, updatedTherapist);
-          toastSuccessNotify("Your profile updated successfully!");
-        } catch (error) {
-          dispatch(fetchFail());
-          toastErrorNotify(
-            error.response?.data?.message || "Failed to update your profile."
-          );
-        } finally {
-          getSingleTherapist(id)
-        }
-      };
+  //* Update Therapist
+  const updateTherapist = async (id, updatedTherapist) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.patch(`therapists/${id}`, updatedTherapist);
+      toastSuccessNotify(t("therapistCall.updateSuccess"));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || t("therapistCall.updateFailed")
+      );
+    } finally {
+      getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
+    }
+  };
 
-    //* Change Therapist Status
-    const changeTherapistStatus = async (id, isActive) => {
-      dispatch(fetchStart());
-      try {
-        await axiosWithToken.patch(`therapists/${id}/status`);
-        toastSuccessNotify(
-          `Therapist ${isActive ? "disabled" : "activated"} successfully!`
-        );
-      } catch (error) {
-        dispatch(fetchFail());
-        toastErrorNotify(
-          error.response?.data?.message || "Failed to change therapist status."
-        );
-      } finally {
-        getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
-      }
-    };
+  //* Update Therapist's own profile
+  const updateMeTherapist = async (id, updatedTherapist) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.patch(`therapists/${id}/updateMe`, updatedTherapist);
+      toastSuccessNotify(t("therapistCall.profileUpdateSuccess"));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || t("therapistCall.profileUpdateFailed")
+      );
+    } finally {
+      getSingleTherapist(id);
+    }
+  };
 
-    //* Change Therapist's Own Password
-    const changeMyPasswordTherapist = async (id, values) => {
-      dispatch(fetchStart());
-      try {
-        navigate("/")
-        await axiosWithToken.patch(`therapists/${id}/changeMyPassword`, values);
-        toastSuccessNotify("Your password has been changed!");
-        await axiosWithToken.get("auth/logout");
-        dispatch(logoutSuccess());
-      } catch (error) {
-        dispatch(fetchFail());
-        toastErrorNotify(
-          error.response?.data?.message || "Failed to change your password."
-        );
-      }
-    };
-    
+  //* Change Therapist Status
+  const changeTherapistStatus = async (id, isActive) => {
+    dispatch(fetchStart());
+    try {
+      await axiosWithToken.patch(`therapists/${id}/status`);
+      toastSuccessNotify(
+        isActive
+          ? t("therapistCall.therapistDisabled")
+          : t("therapistCall.therapistActivated")
+      );
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || t("therapistCall.statusChangeFailed")
+      );
+    } finally {
+      getDataByPage("therapists", "pagTherapists", itemsPerPage, currentPage);
+    }
+  };
 
+  //* Change Therapist's Own Password
+  const changeMyPasswordTherapist = async (id, values) => {
+    dispatch(fetchStart());
+    try {
+      navigate("/");
+      await axiosWithToken.patch(`therapists/${id}/changeMyPassword`, values);
+      toastSuccessNotify(t("therapistCall.passwordChangeSuccess"));
+      await axiosWithToken.get("auth/logout");
+      dispatch(logoutSuccess());
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || t("therapistCall.passwordChangeFailed")
+      );
+    }
+  };
 
-  return { 
-    getAllTherapists, 
-    getSingleTherapist, 
-    getTherapistTimeTable, 
+  return {
+    getAllTherapists,
+    getSingleTherapist,
+    getTherapistTimeTable,
     getFilterTherapists,
     deleteTherapist,
     updateTherapist,
     updateMeTherapist,
     changeTherapistStatus,
     createTherapist,
-    changeMyPasswordTherapist
+    changeMyPasswordTherapist,
   };
 };
 

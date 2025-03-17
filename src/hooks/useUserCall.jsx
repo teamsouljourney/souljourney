@@ -1,7 +1,12 @@
 import useAxios from "./useAxios";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { toastErrorNotify, toastSuccessNotify, toastWarnNotify } from "../helper/ToastNotify";
+import { useTranslation } from "react-i18next";
+import {
+  toastErrorNotify,
+  toastSuccessNotify,
+  toastWarnNotify,
+} from "../helper/ToastNotify";
 import {
   fetchStart,
   fetchFail,
@@ -14,6 +19,7 @@ import { logoutSuccess } from "../features/authSlice";
 import { SweetAlertIcons, SweetNotify } from "../helper/SweetNotify";
 
 const useUserCall = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const axiosWithToken = useAxios();
@@ -30,7 +36,9 @@ const useUserCall = () => {
       dispatch(getAllUsersSuccess(data.data));
     } catch (error) {
       dispatch(fetchFail());
-      toastErrorNotify(error.response.data.message, "Failed to fetch users.");
+      toastErrorNotify(
+        error.response.data.message || t("userCall.fetchFailed")
+      );
     }
   };
 
@@ -42,7 +50,9 @@ const useUserCall = () => {
       dispatch(getSingleUserSuccess(data.data));
     } catch (error) {
       dispatch(fetchFail());
-      toastErrorNotify(error.response.data.message, "Failed to fetch the user.");
+      toastErrorNotify(
+        error.response.data.message || t("userCall.fetchDetailsFailed")
+      );
     }
   };
 
@@ -51,12 +61,12 @@ const useUserCall = () => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.post("users", userData);
-      toastSuccessNotify(
-        "User created successfully! Please check email to verify that account!"
-      );
+      toastSuccessNotify(t("userCall.createSuccess"));
     } catch (error) {
       dispatch(fetchFail());
-      toastErrorNotify(error.response.data.message, "Failed to create user.");
+      toastErrorNotify(
+        error.response.data.message || t("userCall.createFailed")
+      );
     } finally {
       getDataByPage("users", "pagUsers", itemsPerPage, currentPage);
     }
@@ -68,11 +78,11 @@ const useUserCall = () => {
     try {
       await axiosWithToken.delete(`users/${id}`);
       dispatch(deleteUserSuccess(id));
-      toastSuccessNotify("User deleted successfully!");
+      toastSuccessNotify(t("userCall.deleteSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to delete users."
+        error.response?.data?.message || t("userCall.deleteFailed")
       );
     } finally {
       getDataByPage("users", "pagUsers", itemsPerPage, currentPage);
@@ -84,31 +94,30 @@ const useUserCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.patch(`users/${id}`, updatedUser);
-      toastSuccessNotify("User updated successfully!");
+      toastSuccessNotify(t("userCall.updateSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to update users."
+        error.response?.data?.message || t("userCall.updateFailed")
       );
     } finally {
       getDataByPage("users", "pagUsers", itemsPerPage, currentPage);
     }
   };
 
-  //* Update User's own profile 
+  //* Update User's own profile
   const updateMe = async (id, updatedUser) => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.patch(`users/${id}/updateMe`, updatedUser);
-      // toastSuccessNotify("Your profile updated successfully!");
-      SweetNotify("Your profile updated successfully!", SweetAlertIcons.SUCCESS)
+      SweetNotify(t("userCall.profileUpdateSuccess"), SweetAlertIcons.SUCCESS);
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to update your profile."
+        error.response?.data?.message || t("userCall.profileUpdateFailed")
       );
     } finally {
-      getSingleUser(id)
+      getSingleUser(id);
     }
   };
 
@@ -118,12 +127,12 @@ const useUserCall = () => {
     try {
       await axiosWithToken.patch(`users/${id}/status`);
       toastSuccessNotify(
-        `User ${isActive ? "disabled" : "activated"} successfully!`
+        isActive ? t("userCall.userDisabled") : t("userCall.userActivated")
       );
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to change user status."
+        error.response?.data?.message || t("userCall.statusChangeFailed")
       );
     } finally {
       getDataByPage("users", "pagUsers", itemsPerPage, currentPage);
@@ -135,19 +144,16 @@ const useUserCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.patch(`users/${id}/status`);
-      // toastWarnNotify(
-      //   " Your account is currently inactive. If you'd like to work with us again, please contact the SoulJourney team. We'd be delighted to welcome you back! 😊"
-      // );
-      SweetNotify("Your account is currently inactive. If you'd like to work with us again, please contact the SoulJourney team. We'd be delighted to welcome you back! 😊", SweetAlertIcons.WARNING)
+      SweetNotify(t("userCall.accountInactive"), SweetAlertIcons.WARNING);
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to change your account status."
+        error.response?.data?.message || t("userCall.accountStatusChangeFailed")
       );
     } finally {
       await axiosWithToken.get("auth/logout");
       dispatch(logoutSuccess());
-      navigate("/")
+      navigate("/");
     }
   };
 
@@ -155,16 +161,15 @@ const useUserCall = () => {
   const changeMyPassword = async (id, values) => {
     dispatch(fetchStart());
     try {
-      navigate("/")
+      navigate("/");
       await axiosWithToken.patch(`users/${id}/changeMyPassword`, values);
-      // toastSuccessNotify("Your password has been changed!");
-      SweetNotify("Your password has been changed!", SweetAlertIcons.SUCCESS)
+      SweetNotify(t("userCall.passwordChangeSuccess"), SweetAlertIcons.SUCCESS);
       await axiosWithToken.get("auth/logout");
       dispatch(logoutSuccess());
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to change your password."
+        error.response?.data?.message || t("userCall.passwordChangeFailed")
       );
     }
   };
@@ -178,7 +183,7 @@ const useUserCall = () => {
     updateMe,
     changeUserStatus,
     changeMyStatus,
-    changeMyPassword
+    changeMyPassword,
   };
 };
 

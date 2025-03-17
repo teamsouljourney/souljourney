@@ -3,9 +3,11 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
 const icon = (name) => `/assets/sidebar/${name}.svg`;
-const NavLinkto = (to) => `/profile/${to}`;
 
 const SidebarListItems = () => {
+  const NavLinkto = (to) =>
+    currentUser?.isAdmin ? `/admin/${to}` : `/profile/${to}`;
+
   const { t } = useTranslation();
   const { currentUser } = useSelector((state) => state.auth);
   // console.log(currentUser.isAdmin);

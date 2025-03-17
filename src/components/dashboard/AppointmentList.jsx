@@ -13,16 +13,16 @@ const AppointmentList = () => {
 
   if (currentUser && currentUser?.isTherapist === false) {
     return (
-      <div className="w-full xl:w-1/2 p-8 ">
+      <div className="w-full p-8 xl:w-1/2 ">
         {/* Header */}
-        <div className="flex justify-center px-4 py-2 text-center rounded-xl mb-3 bg-seaGreen-dark">
+        <div className="flex justify-center px-4 py-2 mb-3 text-center rounded-xl bg-seaGreen-dark">
           <p className="text-lg md:text-xl text-offWhite">
             {t("appointmentList")}
           </p>
         </div>
 
         {currentUserAppointments.length === 0 ? (
-          <p className="text-xs md:text-sm text-gray-500 mt-1">
+          <p className="mt-1 text-xs text-gray-500 md:text-sm">
             {t("noAppointment")}
           </p>
         ) : (
@@ -30,14 +30,14 @@ const AppointmentList = () => {
             {currentUserAppointments?.map((appointment) => (
               <li
                 key={appointment._id}
-                className="flex items-center hover:bg-offWhite dark:hover:bg-navy rounded-md transition-colors duration-200"
+                className="flex items-center transition-colors duration-200 rounded-md hover:bg-offWhite dark:hover:bg-navy"
               >
                 <span className="w-2 h-16 md:h-20 bg-seaGreen-dark rounded-r-md" />
-                <div className="flex flex-1 p-3 md:p-4 gap-3 md:gap-4">
+                <div className="flex flex-1 gap-3 p-3 md:p-4 md:gap-4">
                   {/* Avatar */}
                   <div className="shrink-0">
                     <img
-                      className="h-12 w-12 md:h-14 md:w-14 rounded-full"
+                      className="w-12 h-12 rounded-full md:h-14 md:w-14"
                       src={appointment?.therapistId?.image}
                       alt=""
                     />
@@ -45,27 +45,27 @@ const AppointmentList = () => {
 
                   {/* Therapist Info */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex justify-between items-start">
+                    <div className="flex items-start justify-between">
                       {/* Name and Email */}
                       <div>
-                        <p className="text-sm md:text-base font-semibold text-navy dark:text-offWhite-light">
+                        <p className="text-sm font-semibold md:text-base text-navy dark:text-offWhite-light">
                           {appointment?.therapistId?.firstName.toUpperCase()}{" "}
                           {appointment?.therapistId?.lastName.toUpperCase()}
                         </p>
-                        <p className="text-xs md:text-sm text-gray-500 mt-1">
+                        <p className="mt-1 text-xs text-gray-500 md:text-sm">
                           {appointment?.therapistId?.email}
                         </p>
                       </div>
 
                       {/* Time and Status */}
                       <div className="flex flex-col items-center gap-2">
-                        <p className="text-sm text-navy dark:text-offWhite mt-1">
+                        <p className="mt-1 text-sm text-navy dark:text-offWhite">
                           {format(
                             new Date(appointment.appointmentDate),
                             "dd.MM.yyyy"
                           )}
                         </p>
-                        <span className="px-2 py-1 bg-green-100 text-seaGreen-dark text-xs rounded-full font-semibold">
+                        <span className="px-2 py-1 text-xs font-semibold bg-green-100 rounded-full text-seaGreen-dark">
                           {format(new Date(appointment.startTime), "HH:mm")} -{" "}
                           {format(new Date(appointment.endTime), "HH:mm")}
                         </span>

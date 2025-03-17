@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { FaVideo, FaVideoSlash, FaChevronDown } from "react-icons/fa";
 
 const CameraControl = ({
@@ -10,11 +11,13 @@ const CameraControl = ({
   getSelectedCameraLabel,
   changeCamera,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="relative flex items-center" ref={cameraDropdownRef}>
       <button
         onClick={() => toggleVideo()}
-        className="p-4 text-white transition-colors bg-gray-700 rounded-full shadow-lg hover:bg-gray-600"
+        className="p-4 text-white transition-colors bg-gray-700 rounded-full shadow-lg dark:bg-background-darker hover:bg-gray-600 hover:dark:bg-background-lightdark"
       >
         {isVideoOn ? (
           <FaVideo className="w-6 h-6" />
@@ -25,7 +28,7 @@ const CameraControl = ({
 
       <button
         onClick={toggleCameraDropdown}
-        className="flex items-center justify-center w-8 h-8 ml-1 text-white transition-colors bg-gray-700 rounded-full hover:bg-gray-600"
+        className="flex items-center justify-center w-8 h-8 ml-1 text-white transition-colors bg-gray-700 rounded-full dark:bg-background-darker hover:bg-gray-600 hover:dark:bg-background-lightdark"
       >
         <FaChevronDown size={12} />
       </button>
@@ -33,7 +36,7 @@ const CameraControl = ({
       {cameraDropdownOpen && (
         <div className="absolute top-full left-0 mt-2 w-[250px] bg-white rounded-md shadow-lg z-10 border border-gray-200">
           <div className="px-3 py-2 text-sm font-medium border-b border-gray-200">
-            Current: {getSelectedCameraLabel()}
+            {t("camera.current")}: {getSelectedCameraLabel()}
           </div>
           <div className="max-h-[200px] overflow-y-auto">
             {cameras.length > 0 ? (
@@ -48,7 +51,7 @@ const CameraControl = ({
               ))
             ) : (
               <div className="px-3 py-2 text-sm text-gray-500">
-                No cameras found
+                {t("camera.noCamerasFound")}
               </div>
             )}
           </div>

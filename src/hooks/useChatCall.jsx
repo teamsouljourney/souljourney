@@ -1,6 +1,5 @@
-"use client";
-
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import useAxios from "./useAxios";
 import {
   createChatSuccess,
@@ -15,8 +14,10 @@ import {
 } from "../features/chatSlice";
 import { useEffect, useCallback } from "react";
 import io from "socket.io-client";
+import { toastErrorNotify } from "../helper/ToastNotify";
 
 const useChatCall = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const axiosWithToken = useAxios();
   const { socket, isConnected } = useSelector((state) => state.chats);
@@ -41,8 +42,6 @@ const useChatCall = () => {
           dispatch(setSocketConnected(false));
         },
         receiveMessage: (newMessage) => {
-          console.log("New message received via socket:", newMessage);
-
           if (newMessage && newMessage.content) {
             if (!newMessage.createdAt) {
               newMessage.createdAt = new Date().toISOString();
@@ -54,18 +53,15 @@ const useChatCall = () => {
           }
         },
         messageSent: (message) => {
-          console.log("Message sent confirmation received:", message);
+          // console.log("Message sent confirmation received:", message);
         },
         userStatusUpdate: (users) => {
-          console.log("Users status updated:", users);
           dispatch(updateOnlineUsers(users));
         },
         userConnected: (userId) => {
-          console.log("User connected:", userId);
           dispatch(setUserConnected({ userId, isOnline: true }));
         },
         userDisconnected: (userId) => {
-          console.log("User disconnected:", userId);
           dispatch(setUserConnected({ userId, isOnline: false }));
         },
       };
@@ -113,7 +109,6 @@ const useChatCall = () => {
 
     return () => {
       if (socketInstance) {
-        console.log("Disconnecting socket on cleanup");
         socketInstance.disconnect();
         dispatch(setSocketConnected(false));
       }
@@ -127,10 +122,12 @@ const useChatCall = () => {
       const { data } = await axiosWithToken.get(
         `${BASE_URL}messages?userId=${userId}&userModel=${userModel}&chatWithId=${chatWithId}&chatWithModel=${chatWithModel}`
       );
-      console.log("Fetched chat messages:", data);
       dispatch(getAllChatsSuccess(data));
     } catch (error) {
       dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || t("chatCall.fetchFailed")
+      );
     }
   };
 
@@ -149,7 +146,6 @@ const useChatCall = () => {
 
       // Send through socket if connected
       if (socket && isConnected) {
-        console.log("Emitting message via socket:", tempMessage);
         socket.emit("sendMessage", tempMessage);
       } else {
         console.warn("Socket not connected, message will be sent via API only");
@@ -160,13 +156,15 @@ const useChatCall = () => {
         `${BASE_URL}messages`,
         messageData
       );
-      console.log("Message saved to database:", data);
 
       // Replace temp message with server response
       dispatch(createChatSuccess({ data }));
       return data;
     } catch (error) {
       dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || t("chatCall.sendFailed")
+      );
       throw error;
     }
   };
