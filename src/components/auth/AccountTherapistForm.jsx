@@ -67,18 +67,19 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const categoryIds = singleTherapist?.categoryId?.map((category) => category._id) || []
+    const categoryIds =
+      singleTherapist?.categoryId?.map((category) => category._id) || [];
 
-    const updatedTherapist = {...singleTherapist, categoryId: categoryIds}
+    const updatedTherapist = { ...singleTherapist, categoryId: categoryIds };
 
     console.log(updatedTherapist);
-    
 
     updateMeTherapist(id, updatedTherapist);
   };
 
   // Get selected category names for display
-  const selectedCategoryNames = singleTherapist?.categoryId?.map((cat) => cat.name).join(", ") || ""
+  const selectedCategoryNames =
+    singleTherapist?.categoryId?.map((cat) => cat.name).join(", ") || "";
 
   return (
     <>
@@ -151,21 +152,25 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 <span className="block truncate">
-                  {selectedCategoryNames || t("selectCategories") || "Select categories"}
+                  {selectedCategoryNames ||
+                    t("selectCategories") ||
+                    "Select categories"}
                 </span>
-                <svg
-                  className={`h-5 w-5 text-gray-400 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <span className="inline-flex justify-center items-center ml-1">
+                  <span
+                    style={{
+                      maskImage: `url(/assets/sidebar/dropdownArrow.svg)`,
+                      maskRepeat: "no-repeat",
+                      maskSize: "contain",
+                      width: "16px",
+                      height: "16px",
+                    }}
+                    className={`h-5 w-5 bg-gray-400 transition-transform ${
+                      isDropdownOpen ? "rotate-180" : ""
+                    }`}
+                  ></span>
+                </span>
+                
               </button>
 
               {isDropdownOpen && (
@@ -173,7 +178,9 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
                   {categories.length > 0 ? (
                     categories.map((category) => {
                       // Check if this category is selected
-                      const isSelected = singleTherapist?.categoryId?.some((cat) => cat._id === category._id)
+                      const isSelected = singleTherapist?.categoryId?.some(
+                        (cat) => cat._id === category._id
+                      );
 
                       return (
                         <div
@@ -186,31 +193,35 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
                           <div className="flex items-center">
                             <div
                               className={`mr-2 h-4 w-4 flex items-center justify-center border ${
-                                isSelected ? "bg-indigo-600 border-indigo-600" : "border-gray-300"
+                                isSelected
+                                  ? "bg-indigo-600 border-indigo-600"
+                                  : "border-gray-300"
                               } rounded`}
                             >
                               {isSelected && (
-                                <svg
-                                  className="h-3 w-3 text-white"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="3"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                >
-                                  <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
+                                <span className="inline-flex justify-center items-center">
+                                  <span
+                                    style={{
+                                      maskImage: `url(/assets/sidebar/check.svg)`,
+                                      maskRepeat: "no-repeat",
+                                      maskSize: "contain",
+                                      width: "12px",
+                                      height: "12px",
+                                    }}
+                                    className="bg-white "
+                                  ></span>
+                                </span>
                               )}
                             </div>
                             <span>{category.name}</span>
                           </div>
                         </div>
-                      )
+                      );
                     })
                   ) : (
-                    <div className="px-4 py-2 text-gray-500">{t("noCategories") || "No categories available"}</div>
+                    <div className="px-4 py-2 text-gray-500">
+                      {t("noCategories") || "No categories available"}
+                    </div>
                   )}
                 </div>
               )}
@@ -270,6 +281,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
             </div>
           </div>
         </div>
+        {/* Update Profile Button */}
         <div className="flex w-full flex-col items-start justify-center gap-6 mt-6">
           <button
             type="button"
