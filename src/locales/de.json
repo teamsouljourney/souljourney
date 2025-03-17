@@ -823,5 +823,25 @@
     "createFailed": "Fehler beim Erstellen der Benachrichtigung.",
     "markAsReadFailed": "Fehler beim Markieren der Benachrichtigung als gelesen.",
     "deleteFailed": "Fehler beim Löschen der Benachrichtigung."
+  },
+
+  "videoCallHook": {
+    "socketConnectionError": "Socket-Verbindungsfehler. Bitte überprüfen Sie Ihre Netzwerkverbindung.",
+    "mediaAccessError": "Fehler beim Zugriff auf Mediengeräte: {error}",
+    "connectionCreationError": "Fehler beim Erstellen der Verbindung: {error}",
+    "connectionFailedAfterAttempts": "Verbindung nach mehreren Versuchen fehlgeschlagen",
+    "connectedToRemotePeer": "Mit dem Gesprächspartner verbunden",
+    "renegotiationError": "Verbindungsfehler: {error}",
+    "offerCreationError": "Fehler beim Erstellen des Angebots: {error}",
+    "acceptCallError": "Fehler beim Annehmen des Anrufs: {error}",
+    "mediaDevicesError": "Fehler beim Abrufen der Mediengeräte: {error}",
+    "selectCamera": "Kamera auswählen",
+    "selectMicrophone": "Mikrofon auswählen",
+    "changeCameraError": "Fehler beim Wechseln der Kamera: {error}",
+    "changeMicrophoneError": "Fehler beim Wechseln des Mikrofons: {error}",
+    "screenSharingStopped": "Bildschirmfreigabe beendet",
+    "screenSharingStarted": "Bildschirmfreigabe gestartet",
+    "screenSharingError": "Fehler bei der Bildschirmfreigabe: {error}",
+    "webRTCNotSupported": "Ihr Browser unterstützt WebRTC nicht. Bitte verwenden Sie einen modernen Browser wie Chrome, Firefox oder Safari."
   }
 }
