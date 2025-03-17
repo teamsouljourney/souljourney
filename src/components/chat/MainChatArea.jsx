@@ -29,14 +29,14 @@ export default function MainChatArea({
 
   useEffect(() => {
     if (!socket || !isConnected) {
-      console.log("Socket not initialized or connected, initializing...");
+      // console.log("Socket not initialized or connected, initializing...");
       initializeSocket();
     }
 
     // Check connection status periodically
     const intervalId = setInterval(() => {
       if (socket && !isConnected) {
-        console.log("Socket disconnected, attempting to reconnect...");
+        // console.log("Socket disconnected, attempting to reconnect...");
         socket.connect();
         setIsOnline(!isOnline);
       }
@@ -48,7 +48,7 @@ export default function MainChatArea({
   // Fetch messages when selected user changes
   useEffect(() => {
     if (selectedUser && currentUser) {
-      console.log("Selected user changed, fetching messages...");
+      // console.log("Selected user changed, fetching messages...");
       getAllChats(
         currentUser._id,
         currentUser.isTherapist ? "Therapist" : "User",
