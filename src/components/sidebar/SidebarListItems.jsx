@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import useAuthCall from "../../hooks/useAuthCall";
 
 const icon = (name) => `/assets/sidebar/${name}.svg`;
 
@@ -10,6 +11,8 @@ const SidebarListItems = () => {
 
   const { t } = useTranslation();
   const { currentUser } = useSelector((state) => state.auth);
+
+  const {logout} = useAuthCall()
   // console.log(currentUser.isAdmin);
   let menu = [
     {
@@ -99,13 +102,15 @@ const SidebarListItems = () => {
     <>
       <div className="flex flex-col justify-between flex-grow h-full pt-2 overflow-x-hidden overflow-y-auto">
         <div className="flex flex-col mx-1 space-y-1 lg:mt-1 ">
-          {/* <div className="hidden px-5 pt-4 lg:block">
+        
+          <div className="hidden px-5 pt-4 lg:block">
             <div className="flex flex-row items-center">
               <div className="text-sm font-bold tracking-wide text-seaGreen-dark">
                 {t("menu")}
               </div>
             </div>
-          </div> */}
+          </div>
+          <hr className="hidden lg:block" />
 
           {menu.map((item, index) => (
             <NavLink
@@ -193,7 +198,7 @@ const SidebarListItems = () => {
       </div>
       <hr className="xs:hidden lg:block " />
       {/* Sidebar footer */}
-      {/* <div className="px-1" onClick={()=>logout()}>
+      <div className="px-1" onClick={()=>logout()}>
         <div className="group flex flex-row items-center  justify-center lg:justify-start rounded-md h-12 focus:outline-none pr-1.5 lg:pr-6 font-semibold text-navy-dark dark:text-offWhite-dark hover:text-pink-light cursor-pointer  ">
           <span className="inline-flex items-center justify-center ml-1">
             <span
@@ -211,7 +216,7 @@ const SidebarListItems = () => {
             {t("logout")}
           </span>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
