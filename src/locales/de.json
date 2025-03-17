@@ -691,5 +691,16 @@
     "callInProgress": "Anruf läuft",
     "videoCallAvailable": "Videoanruf zur Startzeit verfügbar",
     "appointmentEnded": "Termin beendet"
+  },
+
+  "videoCallPage": {
+    "webRTCNotSupported": "WebRTC wird nicht unterstützt",
+    "browserNotSupported": "Ihr Browser unterstützt die WebRTC-Technologie nicht, die für Videoanrufe erforderlich ist.",
+    "useModernBrowser": "Bitte verwenden Sie einen modernen Browser wie Chrome, Firefox oder Safari.",
+    "you": "Sie",
+    "remote": "Gegenüber",
+    "refresh": "Aktualisieren",
+    "noRemoteVideo": "Kein Remote-Video",
+    "retry": "Wiederholen"
   }
 }

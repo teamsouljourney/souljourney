@@ -683,5 +683,16 @@
     "callInProgress": "Arama devam ediyor",
     "videoCallAvailable": "Görüntülü Arama Başlangıç Saatinde Kullanılabilir",
     "appointmentEnded": "Randevu Sona Erdi"
+  },
+
+  "videoCallPage": {
+    "webRTCNotSupported": "WebRTC Desteklenmiyor",
+    "browserNotSupported": "Tarayıcınız görüntülü aramalar için gerekli olan WebRTC teknolojisini desteklemiyor.",
+    "useModernBrowser": "Lütfen Chrome, Firefox veya Safari gibi modern bir tarayıcı kullanın.",
+    "you": "Siz",
+    "remote": "Karşı Taraf",
+    "refresh": "Yenile",
+    "noRemoteVideo": "Karşı taraf görüntüsü yok",
+    "retry": "Tekrar Dene"
   }
 }
