@@ -6,6 +6,7 @@ import DashboardCalendar from "../components/appointment/DashboardCalendar";
 import NoAppointments from "../components/appointment/NoAppointments";
 import AppointmentHeader from "../components/appointment/AppointmentHeader";
 import { useTranslation } from "react-i18next";
+import { hasUpcomingAppointments } from "../helper/dateFormatter";
 
 const Appointment = () => {
   const { getUserAppointments } = useAppointmentCall();
@@ -21,9 +22,12 @@ const Appointment = () => {
     }
   }, [currentUser?._id]);
 
+  // Check if there are any upcoming appointments
+  const hasUpcoming = hasUpcomingAppointments(currentUserAppointments);
+
   return (
     <div className="container px-4 py-16 mx-auto">
-      {currentUser?.isTherapist || currentUserAppointments?.length > 0 ? (
+      {currentUser?.isTherapist || hasUpcoming ? (
         <div className="space-y-6">
           <AppointmentHeader />
 

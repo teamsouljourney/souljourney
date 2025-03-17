@@ -1,6 +1,5 @@
 import {
   format,
-  formatDistance,
   isValid,
   parse,
   formatDistanceToNow,
@@ -199,4 +198,28 @@ export const formatAppointmentTimeRange = (startTime, endTime) => {
   if (!isValid(start) || !isValid(end)) return "";
 
   return `${format(start, "h:mm a")} - ${format(end, "h:mm a")}`;
+};
+
+/**
+ * Check if there are any upcoming appointments
+ */
+export const hasUpcomingAppointments = (appointments) => {
+  if (!appointments || appointments.length === 0) return false;
+
+  const now = new Date();
+  return appointments.some((appointment) =>
+    isAfter(new Date(appointment.endTime), now)
+  );
+};
+
+/**
+ * Get all upcoming appointments
+ */
+export const getUpcomingAppointments = (appointments) => {
+  if (!appointments || appointments.length === 0) return [];
+
+  const now = new Date();
+  return appointments
+    .filter((appointment) => isAfter(new Date(appointment.endTime), now))
+    .sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
 };
