@@ -1,15 +1,10 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Switch from "./Switch";
 import SoulJourneyLogo from "./SoulJourneyLogo";
 import SidebarListItems from "./sidebar/SidebarListItems";
-import useAuthCall from "../hooks/useAuthCall";
 import LanguageSelector from "./LanguageSelector";
-import { useTranslation } from "react-i18next";
 
 const Sidebar = () => {
-  const { logout } = useAuthCall();
-  const { t } = useTranslation();
-
   return (
     <>
       <div className=" w-dvw h-screen overflow-hidden min-h-screen grid grid-cols-7 bg-offWhite-light dark:bg-gray-700">
@@ -24,9 +19,7 @@ const Sidebar = () => {
                 <LanguageSelector />
               </div>
             </div>
-            
             <SidebarListItems />
-            
           </div>
         </div>
         {/* View Content */}
