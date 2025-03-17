@@ -157,12 +157,9 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
                       width: "16px",
                       height: "16px",
                     }}
-                    className={`h-5 w-5 bg-gray-400 transition-transform ${
-                      isDropdownOpen ? "rotate-180" : ""
-                    }`}
+                    className={`h-5 w-5 bg-gray-400 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`}
                   ></span>
-                </span>
-                
+                </span>                
               </button>
 
               {isDropdownOpen && (
@@ -170,25 +167,17 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
                   {categories.length > 0 ? (
                     categories.map((category) => {
                       // Check if this category is selected
-                      const isSelected = singleTherapist?.categoryId?.some(
-                        (cat) => cat._id === category._id
-                      );
+                      const isSelected = singleTherapist?.categoryId?.some((cat) => cat._id === category._id);
 
                       return (
                         <div
                           key={category._id}
-                          className={`relative flex cursor-pointer select-none items-center px-4 py-2 ${
-                            isSelected ? "bg-indigo-100" : "hover:bg-gray-100"
-                          }`}
+                          className={`relative flex cursor-pointer select-none items-center px-4 py-2 ${isSelected ? "bg-indigo-100" : "hover:bg-gray-100"}`}
                           onClick={() => handleCategoryToggle(category)}
                         >
                           <div className="flex items-center">
                             <div
-                              className={`mr-2 h-4 w-4 flex items-center justify-center border ${
-                                isSelected
-                                  ? "bg-indigo-600 border-indigo-600"
-                                  : "border-gray-300"
-                              } rounded`}
+                              className={`mr-2 h-4 w-4 flex items-center justify-center border ${isSelected ? "bg-indigo-600 border-indigo-600" : "border-gray-300"} rounded`}
                             >
                               {isSelected && (
                                 <span className="inline-flex justify-center items-center">
@@ -219,6 +208,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
               )}
             </div>
           </div>
+          {/* Graduation/Bachelor's Degree */}
           <div className="col-span-full">
             <label htmlFor="graduation" className="peer">
               {t("graduation")} {/* Graduation */}
@@ -236,6 +226,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
               />
             </div>
           </div>
+          {/* Description/About Me */}
           <div className="col-span-full">
             <label htmlFor="description" className="peer">
               {t("description")} {/* Description */}
@@ -254,6 +245,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
               />
             </div>
           </div>
+          {/* Experiences */}
           <div className="col-span-full">
             <label htmlFor="experience" className="peer">
               {t("experiences")} {/* Experiences */}
