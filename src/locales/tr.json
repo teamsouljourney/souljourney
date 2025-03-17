@@ -781,5 +781,25 @@
     "accountStatusChangeFailed": "Hesap durumunuz değiştirilirken hata oluştu.",
     "passwordChangeSuccess": "Şifreniz değiştirildi!",
     "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu."
+  },
+
+  "therapistCall": {
+    "fetchFailed": "Terapistler getirilirken hata oluştu.",
+    "fetchDetailsFailed": "Terapist detayları getirilirken hata oluştu.",
+    "fetchTimeTableFailed": "Terapist zaman çizelgesi getirilirken hata oluştu.",
+    "fetchFilteredFailed": "Filtrelenmiş terapistler getirilirken hata oluştu.",
+    "createSuccess": "Terapist başarıyla oluşturuldu! Hesabı doğrulamak için lütfen e-postayı kontrol edin!",
+    "createFailed": "Terapist oluşturulurken hata oluştu.",
+    "updateSuccess": "Terapist başarıyla güncellendi!",
+    "updateFailed": "Terapist güncellenirken hata oluştu.",
+    "deleteSuccess": "Terapist başarıyla silindi!",
+    "deleteFailed": "Terapist silinirken hata oluştu.",
+    "profileUpdateSuccess": "Profiliniz başarıyla güncellendi!",
+    "profileUpdateFailed": "Profiliniz güncellenirken hata oluştu.",
+    "therapistDisabled": "Terapist başarıyla devre dışı bırakıldı!",
+    "therapistActivated": "Terapist başarıyla aktifleştirildi!",
+    "statusChangeFailed": "Terapist durumu değiştirilirken hata oluştu.",
+    "passwordChangeSuccess": "Şifreniz değiştirildi!",
+    "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu."
   }
 }

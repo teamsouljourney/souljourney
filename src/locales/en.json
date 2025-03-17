@@ -789,5 +789,25 @@
     "accountStatusChangeFailed": "Failed to change your account status.",
     "passwordChangeSuccess": "Your password has been changed!",
     "passwordChangeFailed": "Failed to change your password."
+  },
+
+  "therapistCall": {
+    "fetchFailed": "Failed to fetch therapists.",
+    "fetchDetailsFailed": "Failed to fetch therapist details.",
+    "fetchTimeTableFailed": "Failed to fetch therapist time table.",
+    "fetchFilteredFailed": "Failed to fetch filtered therapists.",
+    "createSuccess": "Therapist created successfully! Please check email to verify that account!",
+    "createFailed": "Failed to create therapist.",
+    "updateSuccess": "Therapist updated successfully!",
+    "updateFailed": "Failed to update therapist.",
+    "deleteSuccess": "Therapist deleted successfully!",
+    "deleteFailed": "Failed to delete therapist.",
+    "profileUpdateSuccess": "Your profile updated successfully!",
+    "profileUpdateFailed": "Failed to update your profile.",
+    "therapistDisabled": "Therapist disabled successfully!",
+    "therapistActivated": "Therapist activated successfully!",
+    "statusChangeFailed": "Failed to change therapist status.",
+    "passwordChangeSuccess": "Your password has been changed!",
+    "passwordChangeFailed": "Failed to change your password."
   }
 }

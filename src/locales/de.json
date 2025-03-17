@@ -789,5 +789,25 @@
     "accountStatusChangeFailed": "Fehler beim Ändern Ihres Kontostatus.",
     "passwordChangeSuccess": "Ihr Passwort wurde geändert!",
     "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts."
+  },
+
+  "therapistCall": {
+    "fetchFailed": "Fehler beim Abrufen der Therapeuten.",
+    "fetchDetailsFailed": "Fehler beim Abrufen der Therapeutendetails.",
+    "fetchTimeTableFailed": "Fehler beim Abrufen des Therapeuten-Zeitplans.",
+    "fetchFilteredFailed": "Fehler beim Abrufen der gefilterten Therapeuten.",
+    "createSuccess": "Therapeut erfolgreich erstellt! Bitte überprüfen Sie die E-Mail, um das Konto zu verifizieren!",
+    "createFailed": "Fehler beim Erstellen des Therapeuten.",
+    "updateSuccess": "Therapeut erfolgreich aktualisiert!",
+    "updateFailed": "Fehler beim Aktualisieren des Therapeuten.",
+    "deleteSuccess": "Therapeut erfolgreich gelöscht!",
+    "deleteFailed": "Fehler beim Löschen des Therapeuten.",
+    "profileUpdateSuccess": "Ihr Profil wurde erfolgreich aktualisiert!",
+    "profileUpdateFailed": "Fehler beim Aktualisieren Ihres Profils.",
+    "therapistDisabled": "Therapeut erfolgreich deaktiviert!",
+    "therapistActivated": "Therapeut erfolgreich aktiviert!",
+    "statusChangeFailed": "Fehler beim Ändern des Therapeutenstatus.",
+    "passwordChangeSuccess": "Ihr Passwort wurde geändert!",
+    "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts."
   }
 }
