@@ -39,7 +39,7 @@ const VideoCall = () => {
   const microphoneDropdownRef = useRef(null);
 
   const recreateVideoElement = () => {
-    console.log("Recreating video element");
+    // console.log("Recreating video element");
     setRemoteVideoKey((prev) => prev + 1);
   };
 
@@ -85,7 +85,7 @@ const VideoCall = () => {
     initializeMedia(false)
       .then((stream) => {
         if (stream && localVideoRef.current) {
-          console.log("Setting local video source with stream:", stream.id);
+          // console.log("Setting local video source with stream:", stream.id);
           localVideoRef.current.srcObject = stream;
 
           // Force play local video
