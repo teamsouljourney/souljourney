@@ -705,5 +705,18 @@
     "updateFailed": "Randevu güncellenirken hata oluştu.",
     "deleteSuccess": "Randevu başarıyla silindi!",
     "deleteFailed": "Randevu silinirken hata oluştu."
+  },
+
+  "authCall": {
+    "registerSuccess": "Kayıt başarılı! Hesabınızı doğrulamak için lütfen e-postanızı kontrol edin!",
+    "registerFailed": "Kayıt sırasında bir hata oluştu",
+    "loginSuccess": "Başarıyla giriş yaptınız!",
+    "loginFailed": "Giriş sırasında bir hata oluştu!",
+    "logoutSuccess": "Başarıyla çıkış yaptınız!",
+    "logoutFailed": "Çıkış sırasında bir hata oluştu.",
+    "forgotPasswordSuccess": "Şifre sıfırlama bağlantısı başarıyla gönderildi!",
+    "forgotPasswordFailed": "Şifre sıfırlama isteği sırasında bir hata oluştu.",
+    "resetPasswordSuccess": "Şifre sıfırlama başarılı!",
+    "resetPasswordFailed": "Şifre sıfırlanamadı. Lütfen tekrar deneyin."
   }
 }

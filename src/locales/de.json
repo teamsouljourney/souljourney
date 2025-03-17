@@ -713,5 +713,18 @@
     "updateFailed": "Fehler beim Aktualisieren des Termins.",
     "deleteSuccess": "Termin erfolgreich gelöscht!",
     "deleteFailed": "Fehler beim Löschen des Termins."
+  },
+
+  "authCall": {
+    "registerSuccess": "Registrierung erfolgreich! Bitte überprüfen Sie Ihre E-Mail, um Ihr Konto zu verifizieren!",
+    "registerFailed": "Bei der Registrierung ist ein Fehler aufgetreten",
+    "loginSuccess": "Sie haben sich erfolgreich angemeldet!",
+    "loginFailed": "Bei der Anmeldung ist ein Fehler aufgetreten!",
+    "logoutSuccess": "Sie haben sich erfolgreich abgemeldet!",
+    "logoutFailed": "Bei der Abmeldung ist ein Fehler aufgetreten.",
+    "forgotPasswordSuccess": "Link zum Zurücksetzen des Passworts erfolgreich gesendet!",
+    "forgotPasswordFailed": "Bei der Anfrage zum Zurücksetzen des Passworts ist ein Fehler aufgetreten.",
+    "resetPasswordSuccess": "Passwort erfolgreich zurückgesetzt!",
+    "resetPasswordFailed": "Fehler beim Zurücksetzen des Passworts. Bitte versuchen Sie es erneut."
   }
 }

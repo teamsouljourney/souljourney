@@ -713,5 +713,18 @@
     "updateFailed": "Failed to update appointment.",
     "deleteSuccess": "Appointment deleted successfully!",
     "deleteFailed": "Failed to delete appointment."
+  },
+
+  "authCall": {
+    "registerSuccess": "Registration successful! Please check your email to verify your account!",
+    "registerFailed": "Oops! Something went wrong during registration",
+    "loginSuccess": "You have successfully logged in!",
+    "loginFailed": "Oops! Something went wrong during login!",
+    "logoutSuccess": "You have successfully logged out!",
+    "logoutFailed": "Oops! Something went wrong during logout.",
+    "forgotPasswordSuccess": "Password reset link sent successfully!",
+    "forgotPasswordFailed": "Oops! Something went wrong during password reset request.",
+    "resetPasswordSuccess": "Password reset successful!",
+    "resetPasswordFailed": "Failed to reset password. Please try again."
   }
 }
