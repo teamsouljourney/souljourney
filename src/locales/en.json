@@ -750,5 +750,14 @@
     "updateFailed": "Failed to update category.",
     "deleteSuccess": "Category deleted successfully!",
     "deleteFailed": "Failed to delete category."
+  },
+
+  "feedbackCall": {
+    "fetchAllFailed": "Failed to fetch all feedbacks!",
+    "fetchTherapistFeedbacksFailed": "Failed to fetch Therapist's feedbacks!",
+    "postFeedbackFailed": "Failed to post Therapist's feedbacks!",
+    "deleteSuccess": "Feedback deleted successfully!",
+    "deleteFailed": "Failed to delete feedback.",
+    "fetchDetailsFailed": "Failed to fetch feedback details."
   }
 }

@@ -742,5 +742,14 @@
     "updateFailed": "Kategori güncellenirken hata oluştu.",
     "deleteSuccess": "Kategori başarıyla silindi!",
     "deleteFailed": "Kategori silinirken hata oluştu."
+  },
+
+  "feedbackCall": {
+    "fetchAllFailed": "Tüm geri bildirimler getirilirken hata oluştu!",
+    "fetchTherapistFeedbacksFailed": "Terapist geri bildirimleri getirilirken hata oluştu!",
+    "postFeedbackFailed": "Terapist geri bildirimi gönderilirken hata oluştu!",
+    "deleteSuccess": "Geri bildirim başarıyla silindi!",
+    "deleteFailed": "Geri bildirim silinirken hata oluştu.",
+    "fetchDetailsFailed": "Geri bildirim detayları getirilirken hata oluştu."
   }
 }

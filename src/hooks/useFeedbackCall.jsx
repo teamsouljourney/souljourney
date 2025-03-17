@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import {
   fetchFail,
   fetchStart,
@@ -11,6 +12,7 @@ import useAxios, { axiosPublic } from "./useAxios";
 import usePaginationCall from "./usePaginationCall";
 
 const useFeedbackCall = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const axiosWithToken = useAxios();
   const { getDataByPage } = usePaginationCall();
@@ -26,8 +28,7 @@ const useFeedbackCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to fetch all feedbacks!"
+        error.response.data.message || t("feedbackCall.fetchAllFailed")
       );
     }
   };
@@ -42,8 +43,8 @@ const useFeedbackCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to fetch Therapist's feedbacks!"
+        error.response.data.message ||
+          t("feedbackCall.fetchTherapistFeedbacksFailed")
       );
     }
   };
@@ -55,8 +56,7 @@ const useFeedbackCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to post Therapist's feedbacks!"
+        error.response.data.message || t("feedbackCall.postFeedbackFailed")
       );
     }
   };
@@ -66,11 +66,11 @@ const useFeedbackCall = () => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.delete(`feedbacks/${id}`);
-      toastSuccessNotify(data?.message || "Feedback deleted successfully!");
+      toastSuccessNotify(data?.message || t("feedbackCall.deleteSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to delete feedback."
+        error.response?.data?.message || t("feedbackCall.deleteFailed")
       );
     } finally {
       getDataByPage("feedbacks", "pagFeedbacks", itemsPerPage, currentPage);
@@ -86,8 +86,7 @@ const useFeedbackCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to fetch feedback details."
+        error.response.data.message || t("feedbackCall.fetchDetailsFailed")
       );
     }
   };
