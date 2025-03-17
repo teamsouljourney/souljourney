@@ -103,7 +103,7 @@ const AppointmentInfo = () => {
 
   if (!nearestAppointment) {
     return (
-      <div className="w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-md">
+      <div className="w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-background-lightdark dark:text-offWhite-dark">
         <div className="p-3">
           <h2 className="text-lg font-bold text-gray-800">
             No Upcoming Appointments
@@ -126,7 +126,7 @@ const AppointmentInfo = () => {
     : nearestAppointment.therapistId; // Show therapist info if user is patient
 
   return (
-    <div className="w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-md">
+    <div className="w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-background-lightdark dark:text-offWhite-dark">
       <div className="p-3 md:p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
@@ -143,16 +143,16 @@ const AppointmentInfo = () => {
             </div>
 
             <div>
-              <h3 className="text-sm font-medium text-gray-800 md:text-base">
+              <h3 className="text-sm font-medium text-gray-800 dark:text-offWhite-dark md:text-base">
                 {`${personInfo?.firstName} ${personInfo?.lastName}`}
-                <span className="ml-2 text-xs text-gray-500">
+                <span className="ml-2 text-xs text-gray-500 dark:text-offWhite-dark">
                   {isTherapist
-                    ? "Patient"
+                    ? "Client"
                     : personInfo?.specialization || "Therapist"}
                 </span>
               </h3>
 
-              <div className="flex items-center mt-1 text-xs text-gray-600">
+              <div className="flex items-center mt-1 text-xs text-gray-600 dark:text-offWhite-dark">
                 <FaCalendarAlt className="w-3 h-3 mr-1" />
                 <span className="mr-3">
                   {formatDateTime(appointmentDate, "appointmentDate")}
@@ -175,19 +175,19 @@ const AppointmentInfo = () => {
         </div>
 
         {/* Call status and action buttons */}
-        <div className="mt-4">
+        <div className="mt-4 ">
           {callStatus === "idle" &&
             isWithinTime &&
             (isTherapist ? (
               <button
                 onClick={handleInitiateCall}
-                className="flex items-center justify-center w-full px-4 py-2 text-white transition-colors bg-blue-600 rounded-md hover:bg-blue-700"
+                className="flex items-center justify-center w-full px-4 py-2 text-white transition duration-300 rounded-md bg-navy hover:bg-navy-dark"
               >
                 <FaPhone className="w-4 h-4 mr-2" />
                 Start Call
               </button>
             ) : (
-              <div className="text-center text-gray-600">
+              <div className="text-center text-gray-600 dark:text-offWhite-dark">
                 Waiting for therapist to start the call...
               </div>
             ))}
@@ -203,7 +203,9 @@ const AppointmentInfo = () => {
           )}
 
           {callStatus === "outgoing" && isTherapist && (
-            <div className="text-center text-blue-600">Calling patient...</div>
+            <div className="text-center text-navy dark:text-offWhite-dark">
+              Calling patient...
+            </div>
           )}
 
           {callStatus === "connected" && (
