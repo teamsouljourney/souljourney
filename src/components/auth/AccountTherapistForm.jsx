@@ -38,23 +38,18 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
   }, []);
 
   const handleChange = (e) => {
-    // console.log(e.target.value);
     dispatch(updateSingleTherapistSuccess({ [e.target.name]: e.target.value }));
   };
 
   // Handle category selection/deselection
   const handleCategoryToggle = (category) => {
     // Check if category is already selected
-    const isSelected = singleTherapist?.categoryId?.some(
-      (cat) => cat._id === category._id
-    );
+    const isSelected = singleTherapist?.categoryId?.some((cat) => cat._id === category._id );
 
     let updatedCategories;
     if (isSelected) {
       // Remove category if already selected
-      updatedCategories = singleTherapist.categoryId.filter(
-        (cat) => cat._id !== category._id
-      );
+      updatedCategories = singleTherapist.categoryId.filter( (cat) => cat._id !== category._id );
     } else {
       // Add category if not selected
       updatedCategories = [...(singleTherapist.categoryId || []), category];
@@ -67,19 +62,15 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const categoryIds =
-      singleTherapist?.categoryId?.map((category) => category._id) || [];
+    const categoryIds = singleTherapist?.categoryId?.map((category) => category._id) || [];
 
     const updatedTherapist = { ...singleTherapist, categoryId: categoryIds };
-
-    // console.log(updatedTherapist);
 
     updateMeTherapist(id, updatedTherapist);
   };
 
   // Get selected category names for display
-  const selectedCategoryNames =
-    singleTherapist?.categoryId?.map((cat) => cat.name).join(", ") || "";
+  const selectedCategoryNames = singleTherapist?.categoryId?.map((cat) => cat.name).join(", ") || "";
 
   return (
     <>
@@ -88,6 +79,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
           {t("accountPersonelInfo")} {/* Personel Info */}
         </span>
         <div className="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 w-full max-w-[576px]">
+          {/* First Name */}
           <div className="sm:col-span-2">
             <label htmlFor="firstName" className="peer">
               {t("firstName")}
@@ -105,6 +97,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
               />
             </div>
           </div>
+          {/* Last Name */}
           <div className="sm:col-span-2">
             <label htmlFor="lastName" className="peer">
               {t("lastName")}
@@ -122,6 +115,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
               />
             </div>
           </div>
+          {/* Email */}
           <div className="sm:col-span-4">
             <label htmlFor="email" className="peer">
               {t("email")}
@@ -152,9 +146,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 <span className="block truncate">
-                  {selectedCategoryNames ||
-                    t("selectCategories") ||
-                    "Select categories"}
+                  {selectedCategoryNames || t("selectCategories") || "Select categories"}
                 </span>
                 <span className="inline-flex justify-center items-center ml-1">
                   <span
