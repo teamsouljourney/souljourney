@@ -62,7 +62,7 @@ const HomeCard = ({ blog }) => {
       </div>
 
       <div
-        className="flex items-center justify-between px-4 py-4 mt-auto border-t border-gray-300"
+        className="flex items-center justify-between gap-2 px-4 py-4 mt-auto border-t border-gray-300"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center gap-1 text-gray-600 dark:text-offWhite-dark">

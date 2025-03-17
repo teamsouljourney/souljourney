@@ -458,12 +458,16 @@
 
   "DASHBOARD": "DASHBOARD",
   "patientList": "Patients List",
+  "appointmentList": "Your Appointments",
   "searchPatient": "Search Patient...",
   "myBlogs": "My Blogs",
   "noBlogs": "No blog posts available. Start writing now!",
   "likedBlogs": "Liked Blogs",
   "notes": "Notes",
   "noPatient": "You have no scheduled appointments.",
+  "personalInfo": "Personal Informations",
+  "dateOfMembership": "Date Of Membership",
+  "memberId": "Member ID",
 
   "NOTIFICATION": "NOTIFICATION",
   "notifications": "Notifications",
