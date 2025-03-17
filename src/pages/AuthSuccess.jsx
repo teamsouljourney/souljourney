@@ -4,8 +4,10 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import { loginSuccess } from "../features/authSlice";
+import { useTranslation } from "react-i18next";
 
 function AuthSuccess() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -24,7 +26,7 @@ function AuthSuccess() {
 
       if (!parsedData) {
         toastErrorNotify(
-          "Invalid user information received. Please log in again."
+          t("AuthSuccess.errorNotify") // "Invalid user information received. Please log in again."
         );
         navigate("/auth/login");
         return;
@@ -46,7 +48,7 @@ function AuthSuccess() {
         className="w-full bg-center bg-no-repeat bg-contain h-[40vh] md:h-[50vh] sm:h-[60vh]"
         style={{ backgroundImage: `url(${authSuccess})` }}
       ></div>
-      <p className="text-xl font-semibold text-navy-dark">Redirecting ...</p>
+      <p className="text-xl font-semibold text-navy-dark"> {t("AuthSuccess.redirect")} {/* Redirecting ... */}</p>
     </div>
   );
 }

@@ -788,7 +788,7 @@
     "statusChangeFailed": "Failed to change user status.",
     "accountInactive": "Your account is currently inactive. If you'd like to work with us again, please contact the SoulJourney team. We'd be delighted to welcome you back! 😊",
     "accountStatusChangeFailed": "Failed to change your account status.",
-    "passwordChangeSuccess": "Your password has been changed!",
+    "passwordChangeSuccess": "Your password has been changed! Please log in again to access your account.",
     "passwordChangeFailed": "Failed to change your password."
   },
 
@@ -808,7 +808,7 @@
     "therapistDisabled": "Therapist disabled successfully!",
     "therapistActivated": "Therapist activated successfully!",
     "statusChangeFailed": "Failed to change therapist status.",
-    "passwordChangeSuccess": "Your password has been changed!",
+    "passwordChangeSuccess": "Your password has been changed! Please log in again to access your account.",
     "passwordChangeFailed": "Failed to change your password."
   },
 
@@ -844,5 +844,10 @@
     "screenSharingStarted": "Screen sharing started",
     "screenSharingError": "Error sharing screen.",
     "webRTCNotSupported": "Your browser doesn't support WebRTC. Please use a modern browser like Chrome, Firefox, or Safari."
+  },
+  "AuthFail": "Authentication Failed! Redirecting to Homepage...",
+  "AuthSuccess": {
+    "errorNotify": "Invalid user information received. Please log in again.",
+    "redirect": "Redirecting ..."
   }
 }

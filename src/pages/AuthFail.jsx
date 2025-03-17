@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import authFail from "../assets/images/verificationFail.png";
+import { useTranslation } from "react-i18next";
 
 const AuthFail = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,7 +22,7 @@ const AuthFail = () => {
         style={{ backgroundImage: `url(${authFail})` }}
       ></div>
       <p className="text-xl font-semibold text-navy-dark">
-        Authentication Failed! Redirecting to Homepage...
+        {t("AuthFail")} {/* Authentication Failed! Redirecting to Homepage... */}
       </p>
     </div>
   );

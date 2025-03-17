@@ -780,7 +780,7 @@
     "statusChangeFailed": "Kullanıcı durumu değiştirilirken hata oluştu.",
     "accountInactive": "Hesabınız şu anda aktif değil. Bizimle tekrar çalışmak isterseniz, lütfen SoulJourney ekibiyle iletişime geçin. Sizi tekrar aramızda görmekten mutluluk duyarız! 😊",
     "accountStatusChangeFailed": "Hesap durumunuz değiştirilirken hata oluştu.",
-    "passwordChangeSuccess": "Şifreniz değiştirildi!",
+    "passwordChangeSuccess": "Şifreniz değiştirildi! Hesabınıza erişmek için lütfen tekrar giriş yapın.",
     "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu."
   },
 
@@ -800,7 +800,7 @@
     "therapistDisabled": "Terapist başarıyla devre dışı bırakıldı!",
     "therapistActivated": "Terapist başarıyla aktifleştirildi!",
     "statusChangeFailed": "Terapist durumu değiştirilirken hata oluştu.",
-    "passwordChangeSuccess": "Şifreniz değiştirildi!",
+    "passwordChangeSuccess": "Şifreniz değiştirildi! Hesabınıza erişmek için lütfen tekrar giriş yapın.",
     "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu."
   },
 
@@ -836,5 +836,10 @@
     "screenSharingStarted": "Ekran paylaşımı başlatıldı",
     "screenSharingError": "Ekran paylaşımı hatası",
     "webRTCNotSupported": "Tarayıcınız WebRTC'yi desteklemiyor. Lütfen Chrome, Firefox veya Safari gibi modern bir tarayıcı kullanın."
+  },
+  "AuthFail": "Kimlik doğrulama başarısız! Ana sayfaya yönlendiriliyorsunuz...",
+  "AuthSuccess": {
+    "errorNotify": "Geçersiz kullanıcı bilgisi alındı. Lütfen tekrar giriş yapın.",
+    "redirect": "Yönlendiriliyor..."
   }
 }
