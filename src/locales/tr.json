@@ -330,7 +330,7 @@
   "register": "Kayıt Ol",
   "haveAccount": "Hesabınız var mı?",
   "signin": "Giriş Yap",
-  "name" : "Ad",
+  "name": "Ad",
   "username": "Kullanıcı Adı",
   "firstName": "Ad",
   "lastName": "Soyad",
@@ -659,5 +659,10 @@
   "addNewTherapist": "Yeni bir Terapist Ekle",
   "addNewCategory": "Yeni bir Kategori Ekle",
   "addNewAppointment": "Yeni bir Randevu Ekle",
-  "seeAllBlogs": "Tüm Blogları Gör"
+  "seeAllBlogs": "Tüm Blogları Gör",
+
+  "camera": {
+    "current": "Mevcut",
+    "noCamerasFound": "Kamera bulunamadı"
+  }
 }

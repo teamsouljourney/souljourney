@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { FaVideo, FaVideoSlash, FaChevronDown } from "react-icons/fa";
 
 const CameraControl = ({
@@ -10,6 +11,8 @@ const CameraControl = ({
   getSelectedCameraLabel,
   changeCamera,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="relative flex items-center" ref={cameraDropdownRef}>
       <button
@@ -33,7 +36,7 @@ const CameraControl = ({
       {cameraDropdownOpen && (
         <div className="absolute top-full left-0 mt-2 w-[250px] bg-white rounded-md shadow-lg z-10 border border-gray-200">
           <div className="px-3 py-2 text-sm font-medium border-b border-gray-200">
-            Current: {getSelectedCameraLabel()}
+            {t("camera.current")}: {getSelectedCameraLabel()}
           </div>
           <div className="max-h-[200px] overflow-y-auto">
             {cameras.length > 0 ? (
@@ -48,7 +51,7 @@ const CameraControl = ({
               ))
             ) : (
               <div className="px-3 py-2 text-sm text-gray-500">
-                No cameras found
+                {t("camera.noCamerasFound")}
               </div>
             )}
           </div>

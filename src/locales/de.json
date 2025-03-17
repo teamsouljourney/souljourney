@@ -339,7 +339,7 @@
   "register": "Registrieren",
   "haveAccount": "Haben Sie bereits ein Konto?",
   "signin": "Anmelden",
-  "name" : "Name",
+  "name": "Name",
   "username": "Benutzername",
   "firstName": "Vorname",
   "lastName": "Nachname",
@@ -657,11 +657,20 @@
   "addCategory": "Kategorie hinzufügen",
   "active": "Aktiv",
   "disabled": "Deaktiviert",
-  "searchUserPlaceholder": "Benutzer suchen...", "searchTherapistPlaceholder": "Therapeut suchen...", "searchCategoryPlaceholder": "Kategorie suchen...", "searchAppointmentPlaceholder": "Termin suchen...", "searchBlogPlaceholder": "Blog suchen...", 
+  "searchUserPlaceholder": "Benutzer suchen...",
+  "searchTherapistPlaceholder": "Therapeut suchen...",
+  "searchCategoryPlaceholder": "Kategorie suchen...",
+  "searchAppointmentPlaceholder": "Termin suchen...",
+  "searchBlogPlaceholder": "Blog suchen...",
   "searchFeedbackPlaceholder": "Feedback suchen...",
   "addNewUser": "Neuen Benutzer hinzufügen",
   "addNewTherapist": "Neuen Therapeuten hinzufügen",
   "addNewCategory": "Neue Kategorie hinzufügen",
   "addNewAppointment": "Neuen Termin hinzufügen",
-  "seeAllBlogs": "Alle Blogs anzeigen"
+  "seeAllBlogs": "Alle Blogs anzeigen",
+
+  "camera": {
+    "current": "Aktuell",
+    "noCamerasFound": "Keine Kameras gefunden"
+  }
 }

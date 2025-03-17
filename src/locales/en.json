@@ -667,5 +667,10 @@
   "addNewTherapist": "Add a new Therapist",
   "addNewCategory": "Add a new Category",
   "addNewAppointment": "Add a new Appointment",
-  "seeAllBlogs": "See All Blogs"
+  "seeAllBlogs": "See All Blogs",
+
+  "camera": {
+    "current": "Current",
+    "noCamerasFound": "No cameras found"
+  }
 }
