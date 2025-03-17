@@ -13,6 +13,7 @@ import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import usePaginationCall from "./usePaginationCall";
 import { logoutSuccess } from "../features/authSlice";
 import { useNavigate } from "react-router-dom";
+import { SweetAlertIcons, SweetNotify } from "../helper/SweetNotify";
 
 const useTherapistCall = () => {
   const { t } = useTranslation();
@@ -131,7 +132,8 @@ const useTherapistCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.patch(`therapists/${id}/updateMe`, updatedTherapist);
-      toastSuccessNotify(t("therapistCall.profileUpdateSuccess"));
+      SweetNotify(t("therapistCall.profileUpdateSuccess"), SweetAlertIcons.SUCCESS);
+      // toastSuccessNotify(t("therapistCall.profileUpdateSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(

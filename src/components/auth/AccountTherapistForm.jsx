@@ -72,7 +72,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
 
     const updatedTherapist = { ...singleTherapist, categoryId: categoryIds };
 
-    console.log(updatedTherapist);
+    // console.log(updatedTherapist);
 
     updateMeTherapist(id, updatedTherapist);
   };
