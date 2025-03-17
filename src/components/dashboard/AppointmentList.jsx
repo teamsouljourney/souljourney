@@ -10,8 +10,6 @@ const AppointmentList = () => {
   const { currentUserAppointments } = useSelector(
     (state) => state.appointments
   );
-  const navigate = useNavigate();
-  console.log(currentUserAppointments);
 
   if (currentUser && currentUser?.isTherapist === false) {
     return (

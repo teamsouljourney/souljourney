@@ -11,8 +11,7 @@ export default function UserCard() {
   const { currentUserAppointments } = useSelector(
     (state) => state.appointments
   );
-  const navigate = useNavigate();
-  console.log(currentUserAppointments);
+
   return (
     <>
       <div className="w-full min-h-[200px] bg-gradient-to-bl from-navy-dark to-seaGreen-dark p-6 rounded-xl m-10 flex justify-between items-center">
