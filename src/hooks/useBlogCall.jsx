@@ -1,4 +1,5 @@
 import useAxios, { axiosPublic } from "../hooks/useAxios";
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchStart,
@@ -11,6 +12,7 @@ import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import usePaginationCall from "./usePaginationCall";
 
 const useBlogCall = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const axiosWithToken = useAxios();
   const { getDataByPage } = usePaginationCall();
@@ -28,7 +30,7 @@ const useBlogCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to fetch blogs."
+        error.response?.data?.message || t("blogCall.fetchFailed")
       );
     }
   };
@@ -53,7 +55,7 @@ const useBlogCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to fetch blogs."
+        error.response?.data?.message || t("blogCall.fetchFailed")
       );
     }
   };
@@ -66,7 +68,7 @@ const useBlogCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to fetch blog details."
+        error.response?.data?.message || t("blogCall.fetchDetailsFailed")
       );
     }
   };
@@ -75,11 +77,11 @@ const useBlogCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.post("blogs", blogData);
-      toastSuccessNotify("Blog created successfully!");
+      toastSuccessNotify(t("blogCall.createSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to create blog."
+        error.response?.data?.message || t("blogCall.createFailed")
       );
     } finally {
       getAllBlogs();
@@ -90,11 +92,11 @@ const useBlogCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.put(`blogs/${id}`, blogData);
-      toastSuccessNotify("Blog updated successfully!");
+      toastSuccessNotify(t("blogCall.updateSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to update blog."
+        error.response?.data?.message || t("blogCall.updateFailed")
       );
     } finally {
       getAllBlogs();
@@ -106,11 +108,11 @@ const useBlogCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.delete(`blogs/${id}`);
-      toastSuccessNotify("Blog deleted successfully!");
+      toastSuccessNotify(t("blogCall.deleteSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to delete blog.."
+        error.response?.data?.message || t("blogCall.deleteFailed")
       );
     } finally {
       getDataByPage("blogs", "pagBlogs", itemsPerPage, currentPage);
@@ -127,7 +129,7 @@ const useBlogCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to fetch like info."
+        error.response?.data?.message || t("blogCall.fetchLikesFailed")
       );
     }
   };
@@ -140,7 +142,7 @@ const useBlogCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to update like."
+        error.response?.data?.message || t("blogCall.updateLikeFailed")
       );
     } finally {
       getSingleBlog(id);

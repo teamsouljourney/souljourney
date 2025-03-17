@@ -726,5 +726,18 @@
     "forgotPasswordFailed": "Oops! Something went wrong during password reset request.",
     "resetPasswordSuccess": "Password reset successful!",
     "resetPasswordFailed": "Failed to reset password. Please try again."
+  },
+
+  "blogCall": {
+    "fetchFailed": "Failed to fetch blogs.",
+    "fetchDetailsFailed": "Failed to fetch blog details.",
+    "createSuccess": "Blog created successfully!",
+    "createFailed": "Failed to create blog.",
+    "updateSuccess": "Blog updated successfully!",
+    "updateFailed": "Failed to update blog.",
+    "deleteSuccess": "Blog deleted successfully!",
+    "deleteFailed": "Failed to delete blog.",
+    "fetchLikesFailed": "Failed to fetch like info.",
+    "updateLikeFailed": "Failed to update like."
   }
 }

@@ -726,5 +726,18 @@
     "forgotPasswordFailed": "Bei der Anfrage zum Zurücksetzen des Passworts ist ein Fehler aufgetreten.",
     "resetPasswordSuccess": "Passwort erfolgreich zurückgesetzt!",
     "resetPasswordFailed": "Fehler beim Zurücksetzen des Passworts. Bitte versuchen Sie es erneut."
+  },
+
+  "blogCall": {
+    "fetchFailed": "Fehler beim Abrufen der Blogs.",
+    "fetchDetailsFailed": "Fehler beim Abrufen der Blog-Details.",
+    "createSuccess": "Blog erfolgreich erstellt!",
+    "createFailed": "Fehler beim Erstellen des Blogs.",
+    "updateSuccess": "Blog erfolgreich aktualisiert!",
+    "updateFailed": "Fehler beim Aktualisieren des Blogs.",
+    "deleteSuccess": "Blog erfolgreich gelöscht!",
+    "deleteFailed": "Fehler beim Löschen des Blogs.",
+    "fetchLikesFailed": "Fehler beim Abrufen der Like-Informationen.",
+    "updateLikeFailed": "Fehler beim Aktualisieren des Likes."
   }
 }

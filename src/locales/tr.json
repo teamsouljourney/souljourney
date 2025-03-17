@@ -718,5 +718,18 @@
     "forgotPasswordFailed": "Şifre sıfırlama isteği sırasında bir hata oluştu.",
     "resetPasswordSuccess": "Şifre sıfırlama başarılı!",
     "resetPasswordFailed": "Şifre sıfırlanamadı. Lütfen tekrar deneyin."
+  },
+
+  "blogCall": {
+    "fetchFailed": "Bloglar getirilirken hata oluştu.",
+    "fetchDetailsFailed": "Blog detayları getirilirken hata oluştu.",
+    "createSuccess": "Blog başarıyla oluşturuldu!",
+    "createFailed": "Blog oluşturulurken hata oluştu.",
+    "updateSuccess": "Blog başarıyla güncellendi!",
+    "updateFailed": "Blog güncellenirken hata oluştu.",
+    "deleteSuccess": "Blog başarıyla silindi!",
+    "deleteFailed": "Blog silinirken hata oluştu.",
+    "fetchLikesFailed": "Beğeni bilgisi getirilirken hata oluştu.",
+    "updateLikeFailed": "Beğeni güncellenirken hata oluştu."
   }
 }
