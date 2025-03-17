@@ -143,7 +143,7 @@ const VideoCall = () => {
 
   if (!webRTCSupported) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-offWhite">
+      <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-offWhite dark:bg-background-dark">
         <div className="p-6 bg-white rounded-lg shadow-lg">
           <div className="flex items-center mb-4 text-red-600">
             <h2 className="text-xl font-bold">WebRTC Not Supported</h2>
@@ -161,7 +161,7 @@ const VideoCall = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-offWhite">
+    <div className="flex flex-col min-h-screen bg-offWhite dark:bg-background-dark">
       {/* Container for AppointmentInfo with proper spacing */}
       <div className="w-full max-w-4xl px-4 pt-6 pb-2 mx-auto">
         <AppointmentInfo />
