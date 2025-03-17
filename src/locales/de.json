@@ -702,5 +702,16 @@
     "refresh": "Aktualisieren",
     "noRemoteVideo": "Kein Remote-Video",
     "retry": "Wiederholen"
+  },
+
+  "appointmentCall": {
+    "fetchFailed": "Fehler beim Abrufen der Termine.",
+    "fetchDetailsFailed": "Fehler beim Abrufen der Termindetails.",
+    "createSuccess": "Termin erfolgreich erstellt!",
+    "createFailed": "Bei der Terminerstellung ist ein Fehler aufgetreten.",
+    "updateSuccess": "Termin erfolgreich aktualisiert!",
+    "updateFailed": "Fehler beim Aktualisieren des Termins.",
+    "deleteSuccess": "Termin erfolgreich gelöscht!",
+    "deleteFailed": "Fehler beim Löschen des Termins."
   }
 }

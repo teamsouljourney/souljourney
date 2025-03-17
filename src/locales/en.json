@@ -702,5 +702,16 @@
     "refresh": "Refresh",
     "noRemoteVideo": "No remote video",
     "retry": "Retry"
+  },
+
+  "appointmentCall": {
+    "fetchFailed": "Failed to fetch appointments.",
+    "fetchDetailsFailed": "Failed to fetch appointment details.",
+    "createSuccess": "Appointment created successfully!",
+    "createFailed": "Oops! Something went wrong during appointment creation.",
+    "updateSuccess": "Appointment updated successfully!",
+    "updateFailed": "Failed to update appointment.",
+    "deleteSuccess": "Appointment deleted successfully!",
+    "deleteFailed": "Failed to delete appointment."
   }
 }

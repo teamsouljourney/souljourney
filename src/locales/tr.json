@@ -694,5 +694,16 @@
     "refresh": "Yenile",
     "noRemoteVideo": "Karşı taraf görüntüsü yok",
     "retry": "Tekrar Dene"
+  },
+
+  "appointmentCall": {
+    "fetchFailed": "Randevular getirilirken hata oluştu.",
+    "fetchDetailsFailed": "Randevu detayları getirilirken hata oluştu.",
+    "createSuccess": "Randevu başarıyla oluşturuldu!",
+    "createFailed": "Randevu oluşturulurken bir hata oluştu.",
+    "updateSuccess": "Randevu başarıyla güncellendi!",
+    "updateFailed": "Randevu güncellenirken hata oluştu.",
+    "deleteSuccess": "Randevu başarıyla silindi!",
+    "deleteFailed": "Randevu silinirken hata oluştu."
   }
 }
