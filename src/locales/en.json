@@ -677,5 +677,19 @@
   "microphone": {
     "current": "Current",
     "noMicrophonesFound": "No microphones found"
+  },
+
+  "appointmentInfo": {
+    "noUpcoming": "No Upcoming Appointments",
+    "noScheduled": "You don't have any upcoming appointments scheduled.",
+    "client": "Client",
+    "therapist": "Therapist",
+    "startCall": "Start Call",
+    "waitingForTherapist": "Waiting for therapist to start the call...",
+    "acceptCall": "Accept Call",
+    "callingPatient": "Calling patient...",
+    "callInProgress": "Call in progress",
+    "videoCallAvailable": "Video Call Available at Start Time",
+    "appointmentEnded": "Appointment Ended"
   }
 }

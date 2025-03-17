@@ -669,5 +669,19 @@
   "microphone": {
     "current": "Mevcut",
     "noMicrophonesFound": "Mikrofon bulunamadı"
+  },
+
+  "appointmentInfo": {
+    "noUpcoming": "Yaklaşan Randevu Yok",
+    "noScheduled": "Planlanmış yaklaşan randevunuz bulunmamaktadır.",
+    "client": "Danışan",
+    "therapist": "Terapist",
+    "startCall": "Aramayı Başlat",
+    "waitingForTherapist": "Terapistin aramayı başlatması bekleniyor...",
+    "acceptCall": "Aramayı Kabul Et",
+    "callingPatient": "Hasta aranıyor...",
+    "callInProgress": "Arama devam ediyor",
+    "videoCallAvailable": "Görüntülü Arama Başlangıç Saatinde Kullanılabilir",
+    "appointmentEnded": "Randevu Sona Erdi"
   }
 }

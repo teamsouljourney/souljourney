@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import useAppointmentCall from "../../hooks/useAppointmentCall";
 import useVideoCall from "../../hooks/useVideoCall";
 import { useEffect, useState } from "react";
@@ -18,6 +19,7 @@ import {
 } from "../../helper/dateFormatter";
 
 const AppointmentInfo = () => {
+  const { t } = useTranslation();
   const { currentUser } = useSelector((state) => state.auth);
   const { currentUserAppointments } = useSelector(
     (state) => state.appointments
@@ -106,10 +108,10 @@ const AppointmentInfo = () => {
       <div className="w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-background-lightdark dark:text-offWhite-dark">
         <div className="p-3">
           <h2 className="text-lg font-bold text-gray-800">
-            No Upcoming Appointments
+            {t("appointmentInfo.noUpcoming")}
           </h2>
           <p className="text-sm text-gray-500">
-            You dont have any upcoming appointments scheduled.
+            {t("appointmentInfo.noScheduled")}
           </p>
         </div>
       </div>
@@ -147,8 +149,9 @@ const AppointmentInfo = () => {
                 {`${personInfo?.firstName} ${personInfo?.lastName}`}
                 <span className="ml-2 text-xs text-gray-500 dark:text-offWhite-dark">
                   {isTherapist
-                    ? "Client"
-                    : personInfo?.specialization || "Therapist"}
+                    ? t("appointmentInfo.client")
+                    : personInfo?.specialization ||
+                      t("appointmentInfo.therapist")}
                 </span>
               </h3>
 
@@ -184,11 +187,11 @@ const AppointmentInfo = () => {
                 className="flex items-center justify-center w-full px-4 py-2 text-white transition duration-300 rounded-md bg-navy hover:bg-navy-dark"
               >
                 <FaPhone className="w-4 h-4 mr-2" />
-                Start Call
+                {t("appointmentInfo.startCall")}
               </button>
             ) : (
               <div className="text-center text-gray-600 dark:text-offWhite-dark">
-                Waiting for therapist to start the call...
+                {t("appointmentInfo.waitingForTherapist")}
               </div>
             ))}
 
@@ -198,18 +201,20 @@ const AppointmentInfo = () => {
               className="flex items-center justify-center w-full px-4 py-2 text-white transition-colors bg-green-600 rounded-md hover:bg-green-700"
             >
               <FaPhone className="w-4 h-4 mr-2" />
-              Accept Call
+              {t("appointmentInfo.acceptCall")}
             </button>
           )}
 
           {callStatus === "outgoing" && isTherapist && (
             <div className="text-center text-navy dark:text-offWhite-dark">
-              Calling patient...
+              {t("appointmentInfo.callingPatient")}
             </div>
           )}
 
           {callStatus === "connected" && (
-            <div className="text-center text-green-600">Call in progress</div>
+            <div className="text-center text-green-600">
+              {t("appointmentInfo.callInProgress")}
+            </div>
           )}
 
           {!isWithinTime && (
@@ -219,8 +224,8 @@ const AppointmentInfo = () => {
             >
               <FaVideo className="w-4 h-4 mr-2" />
               {new Date() < startTime
-                ? "Video Call Available at Start Time"
-                : "Appointment Ended"}
+                ? t("appointmentInfo.videoCallAvailable")
+                : t("appointmentInfo.appointmentEnded")}
             </button>
           )}
         </div>

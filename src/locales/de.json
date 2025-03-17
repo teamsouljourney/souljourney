@@ -677,5 +677,19 @@
   "microphone": {
     "current": "Aktuell",
     "noMicrophonesFound": "Keine Mikrofone gefunden"
+  },
+
+  "appointmentInfo": {
+    "noUpcoming": "Keine bevorstehenden Termine",
+    "noScheduled": "Sie haben keine bevorstehenden Termine geplant.",
+    "client": "Klient",
+    "therapist": "Therapeut",
+    "startCall": "Anruf starten",
+    "waitingForTherapist": "Warten auf den Therapeuten, um den Anruf zu starten...",
+    "acceptCall": "Anruf annehmen",
+    "callingPatient": "Patient wird angerufen...",
+    "callInProgress": "Anruf läuft",
+    "videoCallAvailable": "Videoanruf zur Startzeit verfügbar",
+    "appointmentEnded": "Termin beendet"
   }
 }
