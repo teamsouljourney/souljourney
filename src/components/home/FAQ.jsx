@@ -64,14 +64,13 @@ const FAQ = () => {
   return (
     <>
       <div className="relative overflow-hidden isolate bg-custom">
-      <p className="text-3xl sm:text-5xl font-semibold text-base-content font-[Urbanist] text-center mt-16 text-navy dark:text-offWhite-dark">
-              {t("faqTitle")}
-            </p>
-        <div className="flex flex-col max-w-5xl gap-12 px-8 py-12 mx-auto md:flex-row">
+        <p className="text-3xl sm:text-5xl font-semibold text-base-content font-[Urbanist] text-center mt-16 text-navy dark:text-offWhite-dark">
+          {t("faqTitle")}
+        </p>
+        <div className="flex flex-col items-start justify-center max-w-5xl gap-12 px-8 py-12 mx-auto md:flex-row">
           <div className="flex flex-col text-center basis-1/2">
-                     
             <div
-              className="h-[26rem] w-full mt-4 bg-center bg-cover rounded-md"
+              className="h-[28rem] w-full bg-center bg-cover rounded-md"
               style={{ backgroundImage: `url(${image})` }}
               aria-hidden="true"
             ></div>
@@ -141,7 +140,7 @@ const FAQ = () => {
                     ? showMoreQuestions
                     : showLessQuestions
                 }
-                className="px-4 py-2 font-bold text-black transition-all duration-300 transform rounded-full bg-gradient-to-l from-offWhite to-seaGreen-light hover:shadow-lg hover:shadow-offWhite-dark"
+                className="px-4 py-2 font-bold text-offWhite transition-all duration-300 transform rounded-full bg-seaGreen hover:shadow-lg hover:shadow-offWhite-dark"
               >
                 {visibleQuestions < faqData.length
                   ? t("seeMore")

@@ -266,7 +266,6 @@
   "P-previous": "Vorheriger",
   "P-next": "Nächster",
 
-
   "JOIN": "WERDEN SIE TEIL UNSERES TEAMS",
   "joinOurTeam": "Werden Sie Teil unseres engagierten und professionellen Teams, das sich für das Wohlbefinden anderer einsetzt. Bewerben Sie sich jetzt und helfen Sie mit, einen positiven Unterschied zu machen.",
   "applyNow": "Jetzt bewerben",
@@ -275,7 +274,7 @@
   "blg_goback": "Zurück",
   "blogHeroDescription": "Willkommen auf unserem Blog, wo wir die vielfältige und faszinierende Welt der psychologischen Beratung erkunden. Ob Sie sich für das Verständnis der psychischen Gesundheit interessieren, Ratschläge zur persönlichen Entwicklung suchen oder sich über die verschiedenen therapeutischen Ansätze informieren möchten, dieser Blog ist Ihre Quelle für aufschlussreiche Informationen. Wir werden uns mit einer Vielzahl von Themen innerhalb des Fachgebiets befassen, von der klinischen Psychologie bis hin zu Beratungstechniken, und Experteneinblicke geben, wie die Psychologie Einzelpersonen helfen kann, ein gesünderes und erfüllteres Leben zu führen. Begleiten Sie uns auf dieser Reise, um die Kraft des Geistes und die Bedeutung des psychischen Wohlbefindens zu entdecken.",
   "searchBlogs": "Blogs durchsuchen",
-  
+
   "ABOUT": "ÜBER UNS",
 
   "AboutHeroSection": {
@@ -419,8 +418,8 @@
   "placeholderPhone": "Geben Sie Ihre Telefonnummer ein",
   "placeholderProfession": "Geben Sie Ihren Beruf ein (Student, Lehrer usw.)",
   "placeholderAddress": "Geben Sie Ihre Adresse ein",
-  "placeholderGraduation": "Geben Sie Ihren Bachelor-Abschluss ein", 
-  "placeholderDescription": "Geben Sie eine Zusammenfassung Ihrer Person ein", 
+  "placeholderGraduation": "Geben Sie Ihren Bachelor-Abschluss ein",
+  "placeholderDescription": "Geben Sie eine Zusammenfassung Ihrer Person ein",
   "placeholderExperiences": "Geben Sie Ihre Berufserfahrung ein",
   "updateProfile": "Profil aktualisieren",
   "dangerZone": "Gefahrenzone/Konto löschen",
@@ -459,12 +458,16 @@
   "DASHBOARD": "DASHBOARD",
   "descriptionOfTherapist": "Erfahrener Psychologe, spezialisiert auf psychische Gesundheit.",
   "patientList": "Patientenliste",
+  "appointmentList": "Ihre Termine",
   "searchPatient": "Suchen nach Patient..",
   "myBlogs": "Meine Blogbeiträge",
   "noPatient": "Sie haben keine geplanten Termine.",
   "noBlogs": "Keine Blogbeiträge verfügbar. Fang jetzt an zu schreiben!",
   "likedBlogs": "Favorisierte Blogs",
   "notes": "Notizen",
+  "personalInfo": "Personal Informationen",
+  "dateOfMembership": "Mitgliedsdatum",
+  "memberId": "Mitglied ID",
 
   "NOTIFICATION": "BENACHRICHTIGUNG",
   "notifications": "Benachrichtigungen",

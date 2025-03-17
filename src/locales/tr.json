@@ -260,8 +260,6 @@
   "P-previous": "Önceki",
   "P-next": "Sonraki",
 
-
-
   "JOIN": "EKİBİMİZE KATILIN",
   "joinOurTeam": "Pozitif bir etki yaratmaya adanmış tutkulu ve profesyonel ekibimize katılın. Anlamlı bir şeyin parçası olmak ve başkalarına refah yolculuklarında yardımcı olmak için şimdi başvurun.",
   "applyNow": "Şimdi Başvur",
@@ -421,7 +419,6 @@
   "deleteAccountInfo": "Hesabınızı ve tüm içeriğinizi kalıcı olarak kaldırın. Bu işlem geri alınamaz.",
   "confirmDeleteAccount": "Hesabınızı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
 
-
   "WRITEBLOG": "WRITEBLOG",
   "blogTitlePlaceholder": "Blog Başlığı *",
   "selectCategory": "Kategori Seç",
@@ -453,12 +450,16 @@
   "DASHBOARD": "DASHBOARD",
   "descriptionOfTherapist": "Ruh sağlığı alanında uzmanlaşmış deneyimli psikolog.",
   "patientList": "Hasta Listesi",
+  "appointmentList": "Randevularınız",
   "searchPatient": "Hasta ara...",
   "myBlogs": "Bloglarım",
   "noPatient": "Randevusu olan hastanız yoktur.",
   "noBlogs": "Henüz blog yazısı yok. Hemen yazmaya başla!",
   "likedBlogs": "Beğenilen Bloglar",
   "notes": "Notlar",
+  "personalInfo": "Kisisel Bilgiler",
+  "dateOfMembership": "Üyelik Tarihi",
+  "memberId": "Üye No",
 
   "NOTIFICATION": "NOTIFICATION",
   "notifications": "Bildirimler",
