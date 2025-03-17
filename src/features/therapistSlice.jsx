@@ -48,7 +48,7 @@ const therapistSlice = createSlice({
     },
     updateSingleTherapistSuccess: (state, {payload}) => {
       state.loading = false;
-      state.singleTherapist = { ...state.singleUser, ...payload };
+      state.singleTherapist = { ...state.singleTherapist, ...payload };
       state.error = false
     },
     setSearchTerm:(state, {payload}) =>{
