@@ -5,24 +5,24 @@ const PrivacyPolicy = () => {
   const { t } = useTranslation();
   
   return (
-    <div className="bg-slate-50 min-h-screen">
-      <div className="max-w-5xl mx-auto px-4 py-16 text-slate-700">
+    <div className="bg-slate-50 dark:bg-background-darker text-navy dark:text-offWhite-dark min-h-screen">
+      <div className="max-w-5xl mx-auto px-4 py-16 ">
         <div className="flex justify-center mb-8">
           <SoulJourneyLogo />
         </div>
         
-        <h1 className="text-3xl font-bold text-center text-slate-800 mb-12">{t('PrivacyPolicy.title')}</h1>
+        <h1 className="text-3xl font-bold text-center  mb-12">{t('PrivacyPolicy.title')}</h1>
         
         <div className="space-y-8">
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.introduction.title')}</h2>
+            <h2 className="text-2xl font-semibold  mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.introduction.title')}</h2>
             <p className="mb-3">
               {t('PrivacyPolicy.sections.introduction.content')}
             </p>
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.informationWeCollect.title')}</h2>
+            <h2 className="text-2xl font-semibold  mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.informationWeCollect.title')}</h2>
             <p className="mb-3">
               {t('PrivacyPolicy.sections.informationWeCollect.personalInfo')}
             </p>
@@ -38,7 +38,7 @@ const PrivacyPolicy = () => {
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.howWeUseYourInformation.title')}</h2>
+            <h2 className="text-2xl font-semibold  mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.howWeUseYourInformation.title')}</h2>
             <p className="mb-3">
               {t('PrivacyPolicy.sections.howWeUseYourInformation.content')}
             </p>
@@ -50,7 +50,7 @@ const PrivacyPolicy = () => {
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.sharingYourInformation.title')}</h2>
+            <h2 className="text-2xl font-semibold  mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.sharingYourInformation.title')}</h2>
             <p className="mb-3">
               {t('PrivacyPolicy.sections.sharingYourInformation.content')}
             </p>
@@ -62,7 +62,7 @@ const PrivacyPolicy = () => {
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.dataSecurityAndRetention.title')}</h2>
+            <h2 className="text-2xl font-semibold  mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.dataSecurityAndRetention.title')}</h2>
             <p className="mb-3">
               {t('PrivacyPolicy.sections.dataSecurityAndRetention.content1')}
             </p>
@@ -72,7 +72,7 @@ const PrivacyPolicy = () => {
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.yourRights.title')}</h2>
+            <h2 className="text-2xl font-semibold  mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.yourRights.title')}</h2>
             <p className="mb-3">
               {t('PrivacyPolicy.sections.yourRights.content')}
             </p>
@@ -87,35 +87,35 @@ const PrivacyPolicy = () => {
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.cookiesAndTracking.title')}</h2>
+            <h2 className="text-2xl font-semibold  mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.cookiesAndTracking.title')}</h2>
             <p className="mb-3">
               {t('PrivacyPolicy.sections.cookiesAndTracking.content')}
             </p>
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.childrenPrivacy.title')}</h2>
+            <h2 className="text-2xl font-semibold  mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.childrenPrivacy.title')}</h2>
             <p className="mb-3">
               {t('PrivacyPolicy.sections.childrenPrivacy.content')}
             </p>
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.internationalDataTransfers.title')}</h2>
+            <h2 className="text-2xl font-semibold  mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.internationalDataTransfers.title')}</h2>
             <p className="mb-3">
               {t('PrivacyPolicy.sections.internationalDataTransfers.content')}
             </p>
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.changes.title')}</h2>
+            <h2 className="text-2xl font-semibold mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.changes.title')}</h2>
             <p className="mb-3">
               {t('PrivacyPolicy.sections.changes.content')}
             </p>
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-slate-800 mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.contactUs.title')}</h2>
+            <h2 className="text-2xl font-semibold  mb-4 border-b border-purple-500 pb-2">{t('PrivacyPolicy.sections.contactUs.title')}</h2>
             <p className="mb-3">
               {t('PrivacyPolicy.sections.contactUs.content')}
             </p>
@@ -128,7 +128,7 @@ const PrivacyPolicy = () => {
           </section>
         </div>
         
-        <div className="mt-12 text-center text-sm text-slate-500">
+        <div className="mt-12 text-center text-sm text-slate-500 dark:text-slate-400">
           <p>{t('PrivacyPolicy.lastUpdated')}</p>
         </div>
       </div>
