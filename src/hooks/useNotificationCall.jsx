@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 import {
   createNotificationSuccess,
   fetchFail,
@@ -11,8 +12,10 @@ import {
 import useAxios from "./useAxios";
 import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
+import { toastErrorNotify } from "../helper/ToastNotify";
 
 const useNotificationCall = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const axiosWithToken = useAxios();
   const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -34,27 +37,27 @@ const useNotificationCall = () => {
 
       // Socket event listeners
       socketRef.current.on("connect", () => {
-        console.log("Notification socket connected:", socketRef.current.id);
+        // console.log("Notification socket connected:", socketRef.current.id);
         setIsSocketConnected(true);
       });
 
       socketRef.current.on("disconnect", () => {
-        console.log("Notification socket disconnected");
+        // console.log("Notification socket disconnected");
         setIsSocketConnected(false);
       });
 
       // Listen for "receiveNotification" event from server
       socketRef.current.on("receiveNotification", (notification) => {
-        console.log("New notification received via socket:", notification);
+        // console.log("New notification received via socket:", notification);
         if (notification && notification._id) {
           dispatch(receiveNewNotification(notification));
         } else {
-          console.error("Received invalid notification format:", notification);
+          // console.error("Received invalid notification format:", notification);
         }
       });
 
       socketRef.current.on("notificationSent", (notification) => {
-        console.log("Notification sent confirmation:", notification);
+        // console.log("Notification sent confirmation:", notification);
       });
     }
 
@@ -73,9 +76,9 @@ const useNotificationCall = () => {
 
     if (socketRef.current && isSocketConnected) {
       socketRef.current.emit("joinNotificationRoom", userId);
-      console.log("Joined notification room for user:", userId);
+      // console.log("Joined notification room for user:", userId);
     } else {
-      console.log("Socket not connected, will try to join room when connected");
+      // console.log("Socket not connected, will try to join room when connected");
       // Try to reconnect if not connected
       if (socketRef.current) {
         socketRef.current.connect();
@@ -83,10 +86,7 @@ const useNotificationCall = () => {
         // Set up a one-time event handler to join room after connection
         socketRef.current.once("connect", () => {
           socketRef.current.emit("joinNotificationRoom", userId);
-          console.log(
-            "Joined notification room after reconnection for user:",
-            userId
-          );
+          // console.log("Joined notification room after reconnection for user:", userId);
         });
       }
     }
@@ -104,8 +104,11 @@ const useNotificationCall = () => {
         : [];
       dispatch(getAllNotificationSuccess(notificationsArray));
     } catch (error) {
-      console.error("Error fetching notifications:", error);
+      // console.error("Error fetching notifications:", error);
       dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || t("notificationCall.fetchFailed")
+      );
     }
   };
 
@@ -123,8 +126,12 @@ const useNotificationCall = () => {
         : [];
       dispatch(getNotificationSuccess(notificationsArray));
     } catch (error) {
-      console.error("Error fetching specific notifications:", error);
+      // console.error("Error fetching specific notifications:", error);
       dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message ||
+          t("notificationCall.fetchSpecificFailed")
+      );
     }
   };
 
@@ -151,8 +158,11 @@ const useNotificationCall = () => {
 
       return notificationResult;
     } catch (error) {
-      console.error("Error creating notification:", error);
+      // console.error("Error creating notification:", error);
       dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || t("notificationCall.createFailed")
+      );
       throw error;
     }
   };
@@ -171,8 +181,11 @@ const useNotificationCall = () => {
 
       return { success: true };
     } catch (error) {
-      console.error("Error marking notification as read:", error);
+      // console.error("Error marking notification as read:", error);
       dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message || t("notificationCall.markAsReadFailed")
+      );
       throw error;
     }
   };
@@ -186,7 +199,10 @@ const useNotificationCall = () => {
 
       return { success: true };
     } catch (error) {
-      console.error("Error deleting notification:", error);
+      // console.error("Error deleting notification:", error);
+      toastErrorNotify(
+        error.response?.data?.message || t("notificationCall.deleteFailed")
+      );
       throw error;
     }
   };

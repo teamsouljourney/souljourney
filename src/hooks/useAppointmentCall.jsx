@@ -1,5 +1,6 @@
 import useAxios from "./useAxios";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import {
   fetchStart,
   fetchFail,
@@ -17,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import usePaginationCall from "./usePaginationCall";
 
 const useAppointmentCall = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const axiosWithToken = useAxios();
@@ -35,8 +37,7 @@ const useAppointmentCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to fetch appointments."
+        error.response.data.message || t("appointmentCall.fetchFailed")
       );
     }
   };
@@ -50,8 +51,7 @@ const useAppointmentCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to fetch appointment details."
+        error.response.data.message || t("appointmentCall.fetchDetailsFailed")
       );
     }
   };
@@ -65,8 +65,7 @@ const useAppointmentCall = () => {
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Failed to fetch appointments."
+        error.response.data.message || t("appointmentCall.fetchFailed")
       );
     }
   };
@@ -82,13 +81,12 @@ const useAppointmentCall = () => {
       dispatch(createAppointmentSuccess(data));
       dispatch(setSelectedSlot(null));
       // dispatch(setSelectedDate(null));
-      toastSuccessNotify("Appointment created successfully!");
+      toastSuccessNotify(t("appointmentCall.createSuccess"));
       navigate("/profile/appointment");
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response.data.message,
-        "Oops! Something went wrong during appointment creation."
+        error.response.data.message || t("appointmentCall.createFailed")
       );
     } finally {
       getTherapistTimeTable(appointmentData.therapistId);
@@ -104,11 +102,11 @@ const useAppointmentCall = () => {
         updatedData
       );
       dispatch(updateAppointmentSuccess(data));
-      toastSuccessNotify("Appointment updated successfully!");
+      toastSuccessNotify(t("appointmentCall.updateSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to update appointment."
+        error.response?.data?.message || t("appointmentCall.updateFailed")
       );
     } finally {
       getUserAppointments(userId);
@@ -122,11 +120,11 @@ const useAppointmentCall = () => {
     try {
       await axiosWithToken.delete(`appointments/${id}`);
       dispatch(deleteAppointmentSuccess(id));
-      toastSuccessNotify("Appointment deleted successfully!");
+      toastSuccessNotify(t("appointmentCall.deleteSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to delete appointment."
+        error.response?.data?.message || t("appointmentCall.deleteFailed")
       );
     } finally {
       getUserAppointments(userId);
@@ -139,11 +137,11 @@ const useAppointmentCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.delete(`appointments/${id}`);
-      toastSuccessNotify("Appointment deleted successfully!");
+      toastSuccessNotify(t("appointmentCall.deleteSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
-        error.response?.data?.message || "Failed to delete appointment."
+        error.response?.data?.message || t("appointmentCall.deleteFailed")
       );
     } finally {
       getDataByPage(

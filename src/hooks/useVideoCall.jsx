@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import io from "socket.io-client";
 import {
   fetchFail,
@@ -44,6 +45,7 @@ let remoteStream = null;
 let lastVideoElement = null;
 
 const useVideoCall = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { currentUser } = useSelector((state) => state.auth);
@@ -77,7 +79,7 @@ const useVideoCall = () => {
       });
 
       socket.on("connect_error", (error) => {
-        toastErrorNotify("Socket connection error. Please check your network.");
+        toastErrorNotify(t("videoCallHook.socketConnectionError"));
       });
 
       // Clean up socket on unmount
@@ -87,9 +89,9 @@ const useVideoCall = () => {
         }
       };
     } catch (error) {
-      console.error("Socket initialization error:", error);
+      // console.error("Socket initialization error:", error);
     }
-  }, [currentUser]);
+  }, [currentUser, t]);
 
   const [cameraDropdownOpen, setCameraDropdownOpen] = useState(false);
   const [microphoneDropdownOpen, setMicrophoneDropdownOpen] = useState(false);
@@ -114,9 +116,7 @@ const useVideoCall = () => {
 
     // Handle incoming call
     socket.on("callUser", async ({ from, appointmentId }) => {
-      console.log(
-        `Incoming call from ${from} for appointment ${appointmentId}`
-      );
+      // console.log(`Incoming call from ${from} for appointment ${appointmentId}`);
       setRemoteUserId(from);
       setCurrentAppointmentId(appointmentId);
       dispatch(setCallStatus("incoming"));
@@ -129,7 +129,7 @@ const useVideoCall = () => {
 
     // Handle call accepted
     socket.on("callAccepted", async ({ appointmentId }) => {
-      console.log(`Call accepted for appointment ${appointmentId}`);
+      // console.log(`Call accepted for appointment ${appointmentId}`);
       dispatch(setCallStatus("connected"));
       setConnectionAttempts(0);
       setIsNegotiating(false);
@@ -190,7 +190,7 @@ const useVideoCall = () => {
             to: from,
           });
         } else if (signal.type === "answer") {
-          console.log("Processing answer");
+          // console.log("Processing answer");
           await peerConnection.current.setRemoteDescription(
             new RTCSessionDescription(signal)
           );
@@ -213,12 +213,12 @@ const useVideoCall = () => {
           } catch (error) {
             // Only throw for non-canceled operations
             if (error.name !== "OperationError") {
-              console.error("Error adding ICE candidate:", error);
+              // console.error("Error adding ICE candidate:", error);
             }
           }
         }
       } catch (error) {
-        console.error("Error handling signal:", error);
+        // console.error("Error handling signal:", error);
 
         // If we get an invalid state error, try recreating the connection
         if (error.name === "InvalidStateError") {
@@ -246,11 +246,11 @@ const useVideoCall = () => {
       socket.off("callEnded");
       socket.off("callError");
     };
-  }, [currentUser, dispatch, isNegotiating]);
+  }, [currentUser, dispatch, isNegotiating, t]);
 
   // Reset connection completely
   const resetConnection = async () => {
-    console.log("Resetting connection completely");
+    // console.log("Resetting connection completely");
 
     setIsNegotiating(false);
     clearTimeout(negotiationTimeout);
@@ -307,7 +307,7 @@ const useVideoCall = () => {
         },
       });
 
-      console.log("Media stream obtained successfully:", stream.id);
+      // console.log("Media stream obtained successfully:", stream.id);
       localStream.current = stream;
 
       // Set track enabled state based on parameter
@@ -326,25 +326,25 @@ const useVideoCall = () => {
 
       // If local video element is found, set the stream
       if (localVideoElement) {
-        console.log("Found local video element, setting srcObject");
+        // console.log("Found local video element, setting srcObject");
         localVideoElement.srcObject = stream;
 
         // Force play video
         try {
           await localVideoElement.play();
-          console.log("Local video playing successfully");
+          // console.log("Local video playing successfully");
         } catch (e) {
-          console.error("Error playing local video:", e);
+          // console.error("Error playing local video:", e);
 
           // Retry on autoplay policy error
           setTimeout(() => {
             localVideoElement.play().catch((err) => {
-              console.error("Second attempt to play local video failed:", err);
+              // console.error("Second attempt to play local video failed:", err);
             });
           }, 1000);
         }
       } else {
-        console.warn("Could not find local video element");
+        // console.warn("Could not find local video element");
       }
 
       // Update Redux state
@@ -364,7 +364,9 @@ const useVideoCall = () => {
       return stream;
     } catch (err) {
       dispatch(fetchFail());
-      toastErrorNotify("Error accessing media devices: " + err.message);
+      toastErrorNotify(
+        t("videoCallHook.mediaAccessError", { error: err.message })
+      );
       return null;
     }
   };
@@ -463,11 +465,11 @@ const useVideoCall = () => {
               setConnectionAttempts((prev) => prev + 1);
             }, 1000);
           } else if (state === "failed") {
-            toastErrorNotify("Connection failed after multiple attempts");
+            toastErrorNotify(t("videoCallHook.connectionFailedAfterAttempts"));
             endCall();
           }
         } else if (state === "connected") {
-          toastSuccessNotify("Connected to remote peer");
+          toastSuccessNotify(t("videoCallHook.connectedToRemotePeer"));
 
           // Check for remote tracks after connection
           setTimeout(() => {
@@ -561,7 +563,9 @@ const useVideoCall = () => {
 
       return peerConnection.current;
     } catch (error) {
-      toastErrorNotify("Error creating connection: " + error.message);
+      toastErrorNotify(
+        t("videoCallHook.connectionCreationError", { error: error.message })
+      );
       return null;
     }
   };
@@ -569,7 +573,7 @@ const useVideoCall = () => {
   // Renegotiate connection if needed
   const renegotiateConnection = async () => {
     if (!peerConnection.current) {
-      console.error("No peer connection to renegotiate");
+      // console.error("No peer connection to renegotiate");
       await createPeerConnection();
       return;
     }
@@ -592,7 +596,7 @@ const useVideoCall = () => {
 
       // Check signaling state before creating an offer
       if (peerConnection.current.signalingState !== "stable") {
-        console.log("Resetting connection to get to stable state");
+        // console.log("Resetting connection to get to stable state");
         await resetConnection();
         return;
       }
@@ -601,7 +605,7 @@ const useVideoCall = () => {
 
       const timeout = setTimeout(() => {
         if (isNegotiating) {
-          console.log("Renegotiation timeout - resetting negotiation state");
+          // console.log("Renegotiation timeout - resetting negotiation state");
           setIsNegotiating(false);
         }
       }, 10000);
@@ -623,15 +627,15 @@ const useVideoCall = () => {
         to: remoteUserId,
       });
     } catch (error) {
-      console.error("Error renegotiating connection:", error);
-      toastErrorNotify("Connection error: " + error.message);
+      // console.error("Error renegotiating connection:", error);
+      toastErrorNotify(
+        t("videoCallHook.renegotiationError", { error: error.message })
+      );
       setIsNegotiating(false);
       clearTimeout(negotiationTimeout);
 
       if (error.name === "InvalidStateError") {
-        console.log(
-          "Invalid state during renegotiation, recreating connection"
-        );
+        // console.log("Invalid state during renegotiation, recreating connection");
         setTimeout(() => resetConnection(), 1000);
       }
     }
@@ -642,7 +646,7 @@ const useVideoCall = () => {
     try {
       // Prevent multiple negotiations at once
       if (isNegotiating) {
-        console.log("Already negotiating, skipping offer creation");
+        // console.log("Already negotiating, skipping offer creation");
         return;
       }
 
@@ -682,8 +686,10 @@ const useVideoCall = () => {
         to: remoteUserId,
       });
     } catch (error) {
-      console.error("Error creating offer:", error);
-      toastErrorNotify("Error creating offer: " + error.message);
+      // console.error("Error creating offer:", error);
+      toastErrorNotify(
+        t("videoCallHook.offerCreationError", { error: error.message })
+      );
       setIsNegotiating(false);
       clearTimeout(negotiationTimeout);
 
@@ -714,11 +720,11 @@ const useVideoCall = () => {
 
       // Set stream to local video element if found
       if (localVideoElement) {
-        console.log("Setting local video for outgoing call");
+        // console.log("Setting local video for outgoing call");
         localVideoElement.srcObject = stream;
-        localVideoElement
-          .play()
-          .catch((e) => console.error("Error playing local video:", e));
+        localVideoElement.play().catch((e) => {
+          /* console.error("Error playing local video:", e) */
+        });
       }
     }
 
@@ -739,7 +745,7 @@ const useVideoCall = () => {
       // Make sure media is initialized and enabled
       const stream = await initializeMedia(true); // Enable tracks for incoming call
       if (stream) {
-        console.log("Media initialized for incoming call");
+        // console.log("Media initialized for incoming call");
         toggleVideo(true);
         toggleAudio(true);
 
@@ -751,9 +757,9 @@ const useVideoCall = () => {
         // Set stream to local video element if found
         if (localVideoElement) {
           localVideoElement.srcObject = stream;
-          localVideoElement
-            .play()
-            .catch((e) => console.error("Error playing local video:", e));
+          localVideoElement.play().catch((e) => {
+            /* console.error("Error playing local video:", e) */
+          });
         }
       }
 
@@ -761,8 +767,10 @@ const useVideoCall = () => {
 
       await createPeerConnection();
     } catch (error) {
-      console.error("Error accepting call:", error);
-      toastErrorNotify("Error accepting call: " + error.message);
+      // console.error("Error accepting call:", error);
+      toastErrorNotify(
+        t("videoCallHook.acceptCallError", { error: error.message })
+      );
     }
   };
 
@@ -846,7 +854,9 @@ const useVideoCall = () => {
       }
     } catch (error) {
       dispatch(fetchFail());
-      toastErrorNotify("Error getting media devices: " + error.message);
+      toastErrorNotify(
+        t("videoCallHook.mediaDevicesError", { error: error.message })
+      );
     }
   };
 
@@ -883,14 +893,14 @@ const useVideoCall = () => {
 
   const getSelectedCameraLabel = () => {
     const camera = cameras.find((c) => c.deviceId === selectedCamera);
-    return camera ? camera.label : "Select camera";
+    return camera ? camera.label : t("videoCallHook.selectCamera");
   };
 
   const getSelectedMicrophoneLabel = () => {
     const microphone = microphones.find(
       (m) => m.deviceId === selectedMicrophone
     );
-    return microphone ? microphone.label : "Select microphone";
+    return microphone ? microphone.label : t("videoCallHook.selectMicrophone");
   };
 
   const changeCamera = async (deviceId) => {
@@ -943,15 +953,15 @@ const useVideoCall = () => {
         );
         if (localVideoElement) {
           localVideoElement.srcObject = localStream.current;
-          localVideoElement
-            .play()
-            .catch((e) =>
-              console.error("Error playing updated local video:", e)
-            );
+          localVideoElement.play().catch((e) => {
+            // console.error("Error playing updated local video:", e)
+          });
         }
       }
     } catch (error) {
-      toastErrorNotify("Error changing camera: " + error.message);
+      toastErrorNotify(
+        t("videoCallHook.changeCameraError", { error: error.message })
+      );
     }
   };
 
@@ -996,7 +1006,9 @@ const useVideoCall = () => {
         setMicrophoneDropdownOpen(false);
       }
     } catch (error) {
-      toastErrorNotify("Error changing microphone: " + error.message);
+      toastErrorNotify(
+        t("videoCallHook.changeMicrophoneError", { error: error.message })
+      );
     }
   };
 
@@ -1025,7 +1037,7 @@ const useVideoCall = () => {
           localVideoElement.srcObject = localStream.current;
         }
 
-        toastSuccessNotify("Screen sharing stopped");
+        toastSuccessNotify(t("videoCallHook.screenSharingStopped"));
         return;
       }
 
@@ -1081,12 +1093,14 @@ const useVideoCall = () => {
           localVideoElement.srcObject = localStream.current;
         }
 
-        toastSuccessNotify("Screen sharing stopped");
+        toastSuccessNotify(t("videoCallHook.screenSharingStopped"));
       };
 
-      toastSuccessNotify("Screen sharing started");
+      toastSuccessNotify(t("videoCallHook.screenSharingStarted"));
     } catch (err) {
-      toastErrorNotify("Error sharing screen: " + err.message);
+      toastErrorNotify(
+        t("videoCallHook.screenSharingError", { error: err.message })
+      );
     }
   };
 
@@ -1098,9 +1112,7 @@ const useVideoCall = () => {
       window.RTCPeerConnection;
 
     if (!isWebRTCSupported) {
-      toastErrorNotify(
-        "Your browser doesn't support WebRTC. Please use a modern browser like Chrome, Firefox, or Safari."
-      );
+      toastErrorNotify(t("videoCallHook.webRTCNotSupported"));
       return false;
     }
 

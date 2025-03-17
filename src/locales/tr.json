@@ -330,7 +330,7 @@
   "register": "Kayıt Ol",
   "haveAccount": "Hesabınız var mı?",
   "signin": "Giriş Yap",
-  "name" : "Ad",
+  "name": "Ad",
   "username": "Kullanıcı Adı",
   "firstName": "Ad",
   "lastName": "Soyad",
@@ -429,6 +429,7 @@
 
   "APPOINTMENT CALENDAR": "RANDEVU TAKVİMİ",
   "bookingCalendar": "Rezervasyon Takvimi",
+  "appointmentsTitle": "Randevular",
   "createAppointment": "Randevu Oluştur",
   "pleaseSelectTimeSlot": "Lütfen bir zaman dilimi seçin.",
   "selectedDate": "Seçilen Tarih",
@@ -658,5 +659,181 @@
   "addNewTherapist": "Yeni bir Terapist Ekle",
   "addNewCategory": "Yeni bir Kategori Ekle",
   "addNewAppointment": "Yeni bir Randevu Ekle",
-  "seeAllBlogs": "Tüm Blogları Gör"
+  "seeAllBlogs": "Tüm Blogları Gör",
+
+  "camera": {
+    "current": "Mevcut",
+    "noCamerasFound": "Kamera bulunamadı"
+  },
+
+  "microphone": {
+    "current": "Mevcut",
+    "noMicrophonesFound": "Mikrofon bulunamadı"
+  },
+
+  "appointmentInfo": {
+    "noUpcoming": "Yaklaşan Randevu Yok",
+    "noScheduled": "Planlanmış yaklaşan randevunuz bulunmamaktadır.",
+    "client": "Danışan",
+    "therapist": "Terapist",
+    "startCall": "Aramayı Başlat",
+    "waitingForTherapist": "Terapistin aramayı başlatması bekleniyor...",
+    "acceptCall": "Aramayı Kabul Et",
+    "callingPatient": "Hasta aranıyor...",
+    "callInProgress": "Arama devam ediyor",
+    "videoCallAvailable": "Görüntülü Arama Başlangıç Saatinde Kullanılabilir",
+    "appointmentEnded": "Randevu Sona Erdi"
+  },
+
+  "videoCallPage": {
+    "webRTCNotSupported": "WebRTC Desteklenmiyor",
+    "browserNotSupported": "Tarayıcınız görüntülü aramalar için gerekli olan WebRTC teknolojisini desteklemiyor.",
+    "useModernBrowser": "Lütfen Chrome, Firefox veya Safari gibi modern bir tarayıcı kullanın.",
+    "you": "Siz",
+    "remote": "Karşı Taraf",
+    "refresh": "Yenile",
+    "noRemoteVideo": "Karşı taraf görüntüsü yok",
+    "retry": "Tekrar Dene"
+  },
+
+  "appointmentCall": {
+    "fetchFailed": "Randevular getirilirken hata oluştu.",
+    "fetchDetailsFailed": "Randevu detayları getirilirken hata oluştu.",
+    "createSuccess": "Randevu başarıyla oluşturuldu!",
+    "createFailed": "Randevu oluşturulurken bir hata oluştu.",
+    "updateSuccess": "Randevu başarıyla güncellendi!",
+    "updateFailed": "Randevu güncellenirken hata oluştu.",
+    "deleteSuccess": "Randevu başarıyla silindi!",
+    "deleteFailed": "Randevu silinirken hata oluştu."
+  },
+
+  "authCall": {
+    "registerSuccess": "Kayıt başarılı! Hesabınızı doğrulamak için lütfen e-postanızı kontrol edin!",
+    "registerFailed": "Kayıt sırasında bir hata oluştu",
+    "loginSuccess": "Başarıyla giriş yaptınız!",
+    "loginFailed": "Giriş sırasında bir hata oluştu!",
+    "logoutSuccess": "Başarıyla çıkış yaptınız!",
+    "logoutFailed": "Çıkış sırasında bir hata oluştu.",
+    "forgotPasswordSuccess": "Şifre sıfırlama bağlantısı başarıyla gönderildi!",
+    "forgotPasswordFailed": "Şifre sıfırlama isteği sırasında bir hata oluştu.",
+    "resetPasswordSuccess": "Şifre sıfırlama başarılı!",
+    "resetPasswordFailed": "Şifre sıfırlanamadı. Lütfen tekrar deneyin."
+  },
+
+  "blogCall": {
+    "fetchFailed": "Bloglar getirilirken hata oluştu.",
+    "fetchDetailsFailed": "Blog detayları getirilirken hata oluştu.",
+    "createSuccess": "Blog başarıyla oluşturuldu!",
+    "createFailed": "Blog oluşturulurken hata oluştu.",
+    "updateSuccess": "Blog başarıyla güncellendi!",
+    "updateFailed": "Blog güncellenirken hata oluştu.",
+    "deleteSuccess": "Blog başarıyla silindi!",
+    "deleteFailed": "Blog silinirken hata oluştu.",
+    "fetchLikesFailed": "Beğeni bilgisi getirilirken hata oluştu.",
+    "updateLikeFailed": "Beğeni güncellenirken hata oluştu."
+  },
+
+  "categoryCall": {
+    "fetchFailed": "Kategoriler getirilirken bir hata oluştu.",
+    "fetchDetailsFailed": "Kategori detayları getirilirken bir hata oluştu.",
+    "createSuccess": "Kategori başarıyla oluşturuldu!",
+    "createFailed": "Kategori oluşturulurken hata oluştu.",
+    "updateSuccess": "Kategori başarıyla güncellendi!",
+    "updateFailed": "Kategori güncellenirken hata oluştu.",
+    "deleteSuccess": "Kategori başarıyla silindi!",
+    "deleteFailed": "Kategori silinirken hata oluştu."
+  },
+
+  "feedbackCall": {
+    "fetchAllFailed": "Tüm geri bildirimler getirilirken hata oluştu!",
+    "fetchTherapistFeedbacksFailed": "Terapist geri bildirimleri getirilirken hata oluştu!",
+    "postFeedbackFailed": "Terapist geri bildirimi gönderilirken hata oluştu!",
+    "deleteSuccess": "Geri bildirim başarıyla silindi!",
+    "deleteFailed": "Geri bildirim silinirken hata oluştu.",
+    "fetchDetailsFailed": "Geri bildirim detayları getirilirken hata oluştu."
+  },
+
+  "noteCall": {
+    "fetchError": "Notları çekerken hata:",
+    "unknownError": "Bilinmeyen hata",
+    "fetchUserNotesFailed": "Kullanıcı notları getirilirken hata oluştu!",
+    "postNotesFailed": "Kullanıcı notları gönderilirken hata oluştu!",
+    "updateNoteFailed": "Not güncellenirken hata oluştu.",
+    "deleteSuccess": "Not başarıyla silindi!",
+    "deleteFailed": "Not silinirken hata oluştu."
+  },
+
+  "userCall": {
+    "fetchFailed": "Kullanıcılar getirilirken hata oluştu.",
+    "fetchDetailsFailed": "Kullanıcı detayları getirilirken hata oluştu.",
+    "createSuccess": "Kullanıcı başarıyla oluşturuldu! Hesabı doğrulamak için lütfen e-postayı kontrol edin!",
+    "createFailed": "Kullanıcı oluşturulurken hata oluştu.",
+    "updateSuccess": "Kullanıcı başarıyla güncellendi!",
+    "updateFailed": "Kullanıcı güncellenirken hata oluştu.",
+    "deleteSuccess": "Kullanıcı başarıyla silindi!",
+    "deleteFailed": "Kullanıcı silinirken hata oluştu.",
+    "profileUpdateSuccess": "Profiliniz başarıyla güncellendi!",
+    "profileUpdateFailed": "Profiliniz güncellenirken hata oluştu.",
+    "userDisabled": "Kullanıcı başarıyla devre dışı bırakıldı!",
+    "userActivated": "Kullanıcı başarıyla aktifleştirildi!",
+    "statusChangeFailed": "Kullanıcı durumu değiştirilirken hata oluştu.",
+    "accountInactive": "Hesabınız şu anda aktif değil. Bizimle tekrar çalışmak isterseniz, lütfen SoulJourney ekibiyle iletişime geçin. Sizi tekrar aramızda görmekten mutluluk duyarız! 😊",
+    "accountStatusChangeFailed": "Hesap durumunuz değiştirilirken hata oluştu.",
+    "passwordChangeSuccess": "Şifreniz değiştirildi!",
+    "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu."
+  },
+
+  "therapistCall": {
+    "fetchFailed": "Terapistler getirilirken hata oluştu.",
+    "fetchDetailsFailed": "Terapist detayları getirilirken hata oluştu.",
+    "fetchTimeTableFailed": "Terapist zaman çizelgesi getirilirken hata oluştu.",
+    "fetchFilteredFailed": "Filtrelenmiş terapistler getirilirken hata oluştu.",
+    "createSuccess": "Terapist başarıyla oluşturuldu! Hesabı doğrulamak için lütfen e-postayı kontrol edin!",
+    "createFailed": "Terapist oluşturulurken hata oluştu.",
+    "updateSuccess": "Terapist başarıyla güncellendi!",
+    "updateFailed": "Terapist güncellenirken hata oluştu.",
+    "deleteSuccess": "Terapist başarıyla silindi!",
+    "deleteFailed": "Terapist silinirken hata oluştu.",
+    "profileUpdateSuccess": "Profiliniz başarıyla güncellendi!",
+    "profileUpdateFailed": "Profiliniz güncellenirken hata oluştu.",
+    "therapistDisabled": "Terapist başarıyla devre dışı bırakıldı!",
+    "therapistActivated": "Terapist başarıyla aktifleştirildi!",
+    "statusChangeFailed": "Terapist durumu değiştirilirken hata oluştu.",
+    "passwordChangeSuccess": "Şifreniz değiştirildi!",
+    "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu."
+  },
+
+  "chatCall": {
+    "fetchFailed": "Sohbet mesajları getirilirken hata oluştu.",
+    "sendFailed": "Mesaj gönderilirken hata oluştu.",
+    "connectionFailed": "Sohbet sunucusuna bağlanırken hata oluştu."
+  },
+
+  "notificationCall": {
+    "fetchFailed": "Bildirimler getirilirken hata oluştu.",
+    "fetchSpecificFailed": "Belirli bildirimler getirilirken hata oluştu.",
+    "createFailed": "Bildirim oluşturulurken hata oluştu.",
+    "markAsReadFailed": "Bildirim okundu olarak işaretlenirken hata oluştu.",
+    "deleteFailed": "Bildirim silinirken hata oluştu."
+  },
+
+  "videoCallHook": {
+    "socketConnectionError": "Soket bağlantı hatası. Lütfen ağ bağlantınızı kontrol edin.",
+    "mediaAccessError": "Medya cihazlarına erişim hatası",
+    "connectionCreationError": "Bağlantı oluşturma hatası",
+    "connectionFailedAfterAttempts": "Birden fazla deneme sonrası bağlantı başarısız oldu",
+    "connectedToRemotePeer": "Karşı tarafa bağlandı",
+    "renegotiationError": "Bağlantı hatası",
+    "offerCreationError": "Teklif oluşturma hatası",
+    "acceptCallError": "Arama kabul hatası",
+    "mediaDevicesError": "Medya cihazları alınırken hata",
+    "selectCamera": "Kamera seç",
+    "selectMicrophone": "Mikrofon seç",
+    "changeCameraError": "Kamera değiştirme hatası",
+    "changeMicrophoneError": "Mikrofon değiştirme hatası",
+    "screenSharingStopped": "Ekran paylaşımı durduruldu",
+    "screenSharingStarted": "Ekran paylaşımı başlatıldı",
+    "screenSharingError": "Ekran paylaşımı hatası",
+    "webRTCNotSupported": "Tarayıcınız WebRTC'yi desteklemiyor. Lütfen Chrome, Firefox veya Safari gibi modern bir tarayıcı kullanın."
+  }
 }

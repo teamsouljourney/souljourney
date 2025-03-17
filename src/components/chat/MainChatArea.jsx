@@ -1,5 +1,3 @@
-"use client";
-
 import EmojiPicker from "emoji-picker-react";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
@@ -102,7 +100,7 @@ export default function MainChatArea({
       // Then create and send the notification
       try {
         const notificationResult = await createNotification(notificationData);
-        console.log("Notification created:", notificationResult);
+        // console.log("Notification created:", notificationResult);
       } catch (notificationError) {
         console.error("Error creating notification:", notificationError);
         // Continue even if notification fails - the message was sent
@@ -145,9 +143,9 @@ export default function MainChatArea({
   });
 
   return (
-    <div className="flex-1 flex flex-col w-full">
+    <div className="flex flex-col flex-1 w-full">
       {/* Chat Header */}
-      <div className="p-4 border-b flex items-center justify-between">
+      <div className="flex items-center justify-between p-4 border-b">
         <div className="flex items-center gap-3">
           <button className="md:hidden" onClick={toggleLeftSidebar}>
             <svg
@@ -167,7 +165,7 @@ export default function MainChatArea({
           {selectedUser && selectedUserData?.[0] && (
             <>
               <div
-                className="w-10 h-10 rounded-full border-2 border-seaGreen-light flex items-center justify-center cursor-pointer"
+                className="flex items-center justify-center w-10 h-10 border-2 rounded-full cursor-pointer border-seaGreen-light"
                 onClick={toggleRightSidebar}
               >
                 {selectedUserData[0]?.image ? (
@@ -223,7 +221,7 @@ export default function MainChatArea({
       </div>
 
       {!selectedUser && (
-        <div className="text-center mt-12 dark:text-offWhite">
+        <div className="mt-12 text-center dark:text-offWhite">
           <p>{"Please select a person before starting the chat!"}</p>
         </div>
       )}
@@ -231,11 +229,11 @@ export default function MainChatArea({
       {/* Messages Area */}
       {selectedUser && (
         <div
-          className="flex-1 overflow-y-auto p-4 space-y-4"
+          className="flex-1 p-4 space-y-4 overflow-y-auto"
           ref={messagesContainerRef}
         >
           {sortedChats.length === 0 ? (
-            <div className="text-center text-navy dark:text-offWhite my-8">
+            <div className="my-8 text-center text-navy dark:text-offWhite">
               No messages yet. Start the conversation!
             </div>
           ) : (
@@ -291,11 +289,11 @@ export default function MainChatArea({
       {selectedUser && (
         <form
           onSubmit={handleChats}
-          className="p-4 border-t flex gap-2 items-center justify-center relative"
+          className="relative flex items-center justify-center gap-2 p-4 border-t"
         >
           <button
             type="button"
-            className="p-2 hover:bg-offWhite-dark dark:hover:bg-background-lightdark text-pastelGreen rounded-full"
+            className="p-2 rounded-full hover:bg-offWhite-dark dark:hover:bg-background-lightdark text-pastelGreen"
             onClick={toggleEmojiPicker}
           >
             <svg
@@ -329,14 +327,14 @@ export default function MainChatArea({
             }`}
             disabled={!message.trim()}
           >
-            <BiSend className="text-pastelGreen text-3xl" />
+            <BiSend className="text-3xl text-pastelGreen" />
           </button>
 
           {/* Emoji Picker */}
           {isEmojiPickerOpen && (
             <div
               ref={emojiPickerRef}
-              className="absolute bottom-16 left-4 z-50"
+              className="absolute z-50 bottom-16 left-4"
             >
               <EmojiPicker onEmojiClick={onEmojiClick} />
             </div>
