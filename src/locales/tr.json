@@ -664,5 +664,10 @@
   "camera": {
     "current": "Mevcut",
     "noCamerasFound": "Kamera bulunamadı"
+  },
+
+  "microphone": {
+    "current": "Mevcut",
+    "noMicrophonesFound": "Mikrofon bulunamadı"
   }
 }

@@ -672,5 +672,10 @@
   "camera": {
     "current": "Current",
     "noCamerasFound": "No cameras found"
+  },
+
+  "microphone": {
+    "current": "Current",
+    "noMicrophonesFound": "No microphones found"
   }
 }
