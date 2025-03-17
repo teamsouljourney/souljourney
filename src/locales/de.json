@@ -815,5 +815,13 @@
     "fetchFailed": "Fehler beim Abrufen der Chat-Nachrichten.",
     "sendFailed": "Fehler beim Senden der Nachricht.",
     "connectionFailed": "Fehler bei der Verbindung zum Chat-Server."
+  },
+
+  "notificationCall": {
+    "fetchFailed": "Fehler beim Abrufen der Benachrichtigungen.",
+    "fetchSpecificFailed": "Fehler beim Abrufen bestimmter Benachrichtigungen.",
+    "createFailed": "Fehler beim Erstellen der Benachrichtigung.",
+    "markAsReadFailed": "Fehler beim Markieren der Benachrichtigung als gelesen.",
+    "deleteFailed": "Fehler beim Löschen der Benachrichtigung."
   }
 }

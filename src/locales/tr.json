@@ -807,5 +807,13 @@
     "fetchFailed": "Sohbet mesajları getirilirken hata oluştu.",
     "sendFailed": "Mesaj gönderilirken hata oluştu.",
     "connectionFailed": "Sohbet sunucusuna bağlanırken hata oluştu."
+  },
+
+  "notificationCall": {
+    "fetchFailed": "Bildirimler getirilirken hata oluştu.",
+    "fetchSpecificFailed": "Belirli bildirimler getirilirken hata oluştu.",
+    "createFailed": "Bildirim oluşturulurken hata oluştu.",
+    "markAsReadFailed": "Bildirim okundu olarak işaretlenirken hata oluştu.",
+    "deleteFailed": "Bildirim silinirken hata oluştu."
   }
 }

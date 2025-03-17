@@ -815,5 +815,13 @@
     "fetchFailed": "Failed to fetch chat messages.",
     "sendFailed": "Failed to send message.",
     "connectionFailed": "Failed to connect to chat server."
+  },
+
+  "notificationCall": {
+    "fetchFailed": "Failed to fetch notifications.",
+    "fetchSpecificFailed": "Failed to fetch specific notifications.",
+    "createFailed": "Failed to create notification.",
+    "markAsReadFailed": "Failed to mark notification as read.",
+    "deleteFailed": "Failed to delete notification."
   }
 }
