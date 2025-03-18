@@ -1,9 +1,12 @@
+// components/AccountUploadProfilePicture.jsx
+
 import { useSelector } from "react-redux";
 import avatar from "../../assets/avatar3.svg";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import useUserCall from "../../hooks/useUserCall";
 import useTherapistCall from "../../hooks/useTherapistCall";
+import { getImageUrl } from "../../helper/getImageUrl";
 
 const AccountUploadProfilePicture = ({ singleUser, singleTherapist }) => {
   const { t } = useTranslation();
@@ -32,19 +35,6 @@ const AccountUploadProfilePicture = ({ singleUser, singleTherapist }) => {
     setIsUploading(false);
   };
 
-  const getImageUrl = (imagePath) => {
-    if (!imagePath) return avatar;
-
-    const cleanPath = imagePath.startsWith("/")
-      ? imagePath.substring(1)
-      : imagePath;
-
-    const baseUrl = import.meta.env.VITE_BASE_URL || "";
-    const baseUrlWithSlash = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
-
-    return `${baseUrlWithSlash}${cleanPath}`;
-  };
-
   return (
     <>
       <div className="flex flex-col items-start w-full gap-4">
@@ -64,8 +54,8 @@ const AccountUploadProfilePicture = ({ singleUser, singleTherapist }) => {
             className="object-cover w-16 h-16 rounded-full border-3 border-navy dark:border-offWhite"
             src={
               isTherapist
-                ? getImageUrl(singleTherapist?.image)
-                : getImageUrl(singleUser?.image)
+                ? getImageUrl(singleTherapist?.image, avatar)
+                : getImageUrl(singleUser?.image, avatar)
             }
             alt="Profile"
           />
