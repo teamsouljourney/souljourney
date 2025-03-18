@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useTherapistCall from "../../hooks/useTherapistCall";
 import { useDispatch, useSelector } from "react-redux";
-import AppointmentCalendar from "../calendar/appointmentCalendar";
+import AppointmentCalendar from "../calendar/AppointmentCalendar";
 import Button from "../button/Button";
 import TeamDetailHeader from "./TeamDetailHeader";
 import TeamDetailBody from "./TeamDetailBody";
