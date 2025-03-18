@@ -1,11 +1,13 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { useTranslation } from "react-i18next";
 
 const Card = ({
   team,
   variant = "default", // "default" veya "detailed"
   onClick,
 }) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
@@ -39,14 +41,14 @@ const Card = ({
             to={`/team/${team.id}`}
             className="w-[50%] text-offWhite font-bold text-center py-2 rounded-lg hover:bg-gradient-to-r bg-seaGreen-dark hover:bg-seaGreen-light"
           >
-            Read More
+            {t("readMore")} {/* Read More */}
           </NavLink>
         ) : (
           <button
             className="w-[50%] bg-gradient-to-r from-navy to-offWhite text-customBlack font-bold py-2 rounded-lg hover:bg-gradient-to-r hover:from-navy-dark hover:to-seaGreen-dark"
             onClick={() => (onClick ? onClick() : navigate(`/team/${team.id}`))}
           >
-            See More
+            {t("seeMore")} {/* See More */}
           </button>
         )}
       </div>

@@ -1,7 +1,9 @@
 import React from "react";
 import CookieConsent, { getCookieConsentValue, resetCookieConsentValue } from "react-cookie-consent";
+import { useTranslation } from "react-i18next";
 
 const CookieConsentComponent = () => {
+  const { t } = useTranslation();
   const handleDecline = () => {
    // Decline if someone reject.
     document.cookie.split(";").forEach((c) => {  // user-cookie-consent-true; -- I'll test 
