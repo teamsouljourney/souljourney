@@ -173,7 +173,8 @@ const useTherapistCall = () => {
     try {
       navigate("/");
       await axiosWithToken.patch(`therapists/${id}/changeMyPassword`, values);
-      toastSuccessNotify(t("therapistCall.passwordChangeSuccess"));
+      SweetNotify(t("therapistCall.passwordChangeSuccess"), SweetAlertIcons.SUCCESS);
+      // toastSuccessNotify(t("therapistCall.passwordChangeSuccess"));
       await axiosWithToken.get("auth/logout");
       dispatch(logoutSuccess());
     } catch (error) {

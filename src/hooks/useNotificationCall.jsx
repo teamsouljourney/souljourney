@@ -9,7 +9,7 @@ import {
   receiveNewNotification,
   removeNotification,
 } from "../features/notificationSlice";
-import useAxios from "./useAxios";
+import useAxios, { axiosPublic } from "./useAxios";
 import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import { toastErrorNotify } from "../helper/ToastNotify";
@@ -95,7 +95,7 @@ const useNotificationCall = () => {
   const getAllNotifications = async () => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosWithToken.get(`${BASE_URL}notifications`);
+      const { data } = await axiosPublic.get(`${BASE_URL}notifications`);
       // Ensure data is an array and filter to only include unread notifications
       const notificationsArray = Array.isArray(data)
         ? data.filter((n) => !n.isRead)

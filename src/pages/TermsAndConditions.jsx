@@ -5,7 +5,7 @@ const TermsAndConditions = () => {
   const { t } = useTranslation();
   
   return (
-    <div className="bg-slate-50 dark:bg-background-darker text-navy dark:text-offWhite-dark min-h-screen">
+    <div className="bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark min-h-screen">
       <div className="max-w-5xl mx-auto px-4 py-16 ">
         <div className="flex justify-center mb-8">
           <SoulJourneyLogo />
