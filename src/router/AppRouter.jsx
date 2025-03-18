@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import PrivateRouter from "./PrivateRouter";
 import Home from "../pages/Home";
-import Contact from "../pages/Contact";
 import Navbar from "../components/Navbar";
 import BlogDetail from "../components/Blog/BlogDetail";
 import Blog from "../pages/Blog";
