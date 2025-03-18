@@ -801,7 +801,9 @@
     "therapistActivated": "Terapist başarıyla aktifleştirildi!",
     "statusChangeFailed": "Terapist durumu değiştirilirken hata oluştu.",
     "passwordChangeSuccess": "Şifreniz değiştirildi! Hesabınıza erişmek için lütfen tekrar giriş yapın.",
-    "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu."
+    "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu.",
+    "profilePictureUploaded": "Profil resmi başarıyla yüklendi!",
+    "profilePictureUploadFailed": "Profil resmi yüklenirken hata oluştu."
   },
 
   "chatCall": {

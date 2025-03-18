@@ -809,7 +809,9 @@
     "therapistActivated": "Therapeut erfolgreich aktiviert!",
     "statusChangeFailed": "Fehler beim Ändern des Therapeutenstatus.",
     "passwordChangeSuccess": "Ihr Passwort wurde geändert! Bitte melden Sie sich erneut an, um auf Ihr Konto zuzugreifen.",
-    "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts."
+    "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts.",
+    "profilePictureUploaded": "Profilbild erfolgreich hochgeladen!",
+    "profilePictureUploadFailed": "Fehler beim Hochladen des Profilbilds."
   },
 
   "chatCall": {
