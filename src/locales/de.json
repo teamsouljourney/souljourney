@@ -874,5 +874,10 @@
     "noMessages": "Noch keine Nachrichten. Starten Sie das Gespräch!",
     "sending": "Senden...",
     "chatInputPlaceholder": "Nachricht eingeben..."
+  },
+
+  "LeftSidebar": {
+    "searchMessagePlaceholder": "Nachrichten suchen",
+    "online": "Online"
   }
 }

@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedUser } from "../../features/chatSlice";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function LeftSidebar({ isOpen, toggleSidebar }) {
+  const { t } = useTranslation();
   const [filteredAppointments, setFilteredAppointments] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const { currentUserAppointments } = useSelector(
@@ -96,7 +98,7 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
             </svg>
             <input
               type="text"
-              placeholder="Search messages"
+              placeholder={t("LeftSidebar.searchMessagePlaceholder")}
               className="w-full pl-8 pr-4 py-2 border rounded-lg"
             />
           </div>
@@ -145,7 +147,7 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
                           <div className="rounded-full bg-emerald-500/20 p-1">
                             <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                           </div>
-                          <p className="text-xs">Online</p>
+                          <p className="text-xs">{t("LeftSidebar.online")}</p>
                         </div>
                       ) : (
                         (() => {

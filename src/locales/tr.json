@@ -866,5 +866,10 @@
     "noMessages": "Henüz mesaj yok. Sohbete başlayın!",
     "sending": "Gönderiliyor...",
     "chatInputPlaceholder": "Bir mesaj yazın..."
+  },
+  
+  "LeftSidebar": {
+    "searchMessagePlaceholder": "Mesajlarda ara",
+    "online": "Çevrimiçi"
   }
 }
