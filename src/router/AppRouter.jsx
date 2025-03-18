@@ -8,8 +8,7 @@ import PrivateRouter from "./PrivateRouter";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Navbar from "../components/Navbar";
-import BlogDetail from "../components/blog/BlogDetail";
-import Blog from "../pages/Blog";
+
 import Team from "../pages/Team";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
