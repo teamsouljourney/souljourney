@@ -15,6 +15,7 @@ const NotesModal = ({ open, onClose, userId, currentUser }) => {
   };
 
   const [note, setNote] = useState(initialNote);
+  const [edit, setEdit] = useState(false);
 
   useEffect(() => {
     if (open && userId) {
@@ -69,7 +70,7 @@ const NotesModal = ({ open, onClose, userId, currentUser }) => {
                 <p className="flex-1 text-gray-700">{note.content}</p>
                 <div className="flex gap-2 ml-4 transition-opacity opacity-0 group-hover:opacity-100">
                   <button
-                    onClick={() => setNote({ ...note })}
+                    onClick={() => {setNote({ ...note }), setEdit(true)}}
                     className="p-1 rounded hover:bg-gray-200"
                   >
                     <img
@@ -119,7 +120,7 @@ const NotesModal = ({ open, onClose, userId, currentUser }) => {
                 className="px-4 py-2 text-white transition-all rounded-lg bg-mauve-light hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={!note.content.trim()}
               >
-                {t("NotesModal.addNote")}
+                {edit ? t("NotesModal.editNote") : t("NotesModal.addNote")}
               </button>
             </div>
           </form>

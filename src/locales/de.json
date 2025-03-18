@@ -860,7 +860,8 @@
     "noNotes": "Sie haben noch keine Notizen hinzugefügt",
     "newNote": "Neue Notiz",
     "newNotePlaceholder": "Geben Sie Ihre Notiz ein",
-    "addNote": "Notiz hinzufügen"
+    "addNote": "Notiz hinzufügen",
+    "editNote": "Notiz bearbeiten"
   },
 
   "informations": "Informationen",

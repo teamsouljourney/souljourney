@@ -852,7 +852,8 @@
     "noNotes": "Henüz bir not eklemediniz",
     "newNote": "Yeni Not",
     "newNotePlaceholder": "Notunuzu girin",
-    "addNote": "Not Ekle"
+    "addNote": "Not Ekle",
+    "editNote": "Notu Düzenle"
   },
 
   "informations": "Bilgiler",
@@ -867,7 +868,7 @@
     "sending": "Gönderiliyor...",
     "chatInputPlaceholder": "Bir mesaj yazın..."
   },
-  
+
   "LeftSidebar": {
     "searchMessagePlaceholder": "Mesajlarda ara",
     "online": "Çevrimiçi"

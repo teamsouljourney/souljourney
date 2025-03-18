@@ -860,7 +860,8 @@
     "noNotes": "You haven’t added any notes yet",
     "newNote": "New Note",
     "newNotePlaceholder": "Enter your note",
-    "addNote": "Add Note"
+    "addNote": "Add Note",
+    "editNote": "Edit Note"
   },
 
   "informations": "Informations",
