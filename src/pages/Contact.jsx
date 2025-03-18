@@ -3,6 +3,7 @@ import ContactHeader from "../components/contact/ContactHeader";
 import ContactImage from "../components/contact/ContactImage";
 import ContactInfo from "../components/contact/ContactInfo";
 
+
 const Contact = () => {
   return (
     <div className="min-h-screen py-36 bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
