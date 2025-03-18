@@ -789,7 +789,9 @@
     "accountInactive": "Your account is currently inactive. If you'd like to work with us again, please contact the SoulJourney team. We'd be delighted to welcome you back! 😊",
     "accountStatusChangeFailed": "Failed to change your account status.",
     "passwordChangeSuccess": "Your password has been changed! Please log in again to access your account.",
-    "passwordChangeFailed": "Failed to change your password."
+    "passwordChangeFailed": "Failed to change your password.",
+    "profilePictureUploaded": "Profile picture uploaded successfully!",
+    "profilePictureUploadFailed": "Failed to upload profile picture."
   },
 
   "therapistCall": {
@@ -809,7 +811,9 @@
     "therapistActivated": "Therapist activated successfully!",
     "statusChangeFailed": "Failed to change therapist status.",
     "passwordChangeSuccess": "Your password has been changed! Please log in again to access your account.",
-    "passwordChangeFailed": "Failed to change your password."
+    "passwordChangeFailed": "Failed to change your password.",
+    "profilePictureUploaded": "Profile picture uploaded successfully!",
+    "profilePictureUploadFailed": "Failed to upload profile picture."
   },
 
   "chatCall": {
@@ -880,5 +884,7 @@
   "LeftSidebar": {
     "searchMessagePlaceholder": "Search messages",
     "online": "Online"
-  }
+  },
+
+  "uploading": "Uploading..."
 }

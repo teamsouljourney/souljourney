@@ -400,7 +400,7 @@
   "profile": "Profil",
   "upload": "Yükle",
   "categories": "Kategoriler",
-  
+
   "uploadInfo": "En iyi sonuçlar için 512x512 veya daha büyük bir resim yükleyin.",
   "accountInfo": "Profilinizi ve kişisel bilgilerinizi burada güncelleyin",
   "accountPersonelInfo": "Kişisel Bilgiler",
@@ -781,7 +781,9 @@
     "accountInactive": "Hesabınız şu anda aktif değil. Bizimle tekrar çalışmak isterseniz, lütfen SoulJourney ekibiyle iletişime geçin. Sizi tekrar aramızda görmekten mutluluk duyarız! 😊",
     "accountStatusChangeFailed": "Hesap durumunuz değiştirilirken hata oluştu.",
     "passwordChangeSuccess": "Şifreniz değiştirildi! Hesabınıza erişmek için lütfen tekrar giriş yapın.",
-    "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu."
+    "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu.",
+    "profilePictureUploaded": "Profil resmi başarıyla yüklendi!",
+    "profilePictureUploadFailed": "Profil resmi yüklenirken hata oluştu."
   },
 
   "therapistCall": {
@@ -801,7 +803,9 @@
     "therapistActivated": "Terapist başarıyla aktifleştirildi!",
     "statusChangeFailed": "Terapist durumu değiştirilirken hata oluştu.",
     "passwordChangeSuccess": "Şifreniz değiştirildi! Hesabınıza erişmek için lütfen tekrar giriş yapın.",
-    "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu."
+    "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu.",
+    "profilePictureUploaded": "Profil resmi başarıyla yüklendi!",
+    "profilePictureUploadFailed": "Profil resmi yüklenirken hata oluştu."
   },
 
   "chatCall": {
@@ -872,5 +876,7 @@
   "LeftSidebar": {
     "searchMessagePlaceholder": "Mesajlarda ara",
     "online": "Çevrimiçi"
-  }
+  },
+
+  "uploading": "Yükleniyor..."
 }

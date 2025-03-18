@@ -132,7 +132,10 @@ const useTherapistCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.patch(`therapists/${id}/updateMe`, updatedTherapist);
-      SweetNotify(t("therapistCall.profileUpdateSuccess"), SweetAlertIcons.SUCCESS);
+      SweetNotify(
+        t("therapistCall.profileUpdateSuccess"),
+        SweetAlertIcons.SUCCESS
+      );
       // toastSuccessNotify(t("therapistCall.profileUpdateSuccess"));
     } catch (error) {
       dispatch(fetchFail());
@@ -182,6 +185,39 @@ const useTherapistCall = () => {
     }
   };
 
+  //* Upload Profile Picture
+  const uploadProfilePictureTherapist = async (id, imageFile) => {
+    dispatch(fetchStart());
+
+    const formData = new FormData();
+    formData.append("image", imageFile);
+
+    let response;
+
+    try {
+      response = await axiosWithToken.post(
+        `therapists/${id}/upload-profile-picture`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      toastSuccessNotify(t("therapistCall.profilePictureUploaded"));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message ||
+          t("therapistCall.profilePictureUploadFailed")
+      );
+    } finally {
+      getSingleTherapist(id);
+    }
+
+    return response;
+  };
+
   return {
     getAllTherapists,
     getSingleTherapist,
@@ -193,6 +229,7 @@ const useTherapistCall = () => {
     changeTherapistStatus,
     createTherapist,
     changeMyPasswordTherapist,
+    uploadProfilePictureTherapist,
   };
 };
 

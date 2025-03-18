@@ -174,6 +174,39 @@ const useUserCall = () => {
     }
   };
 
+  //* Upload Profile Picture
+  const uploadProfilePicture = async (id, imageFile) => {
+    dispatch(fetchStart());
+
+    const formData = new FormData();
+    formData.append("image", imageFile);
+
+    let response;
+
+    try {
+      response = await axiosWithToken.post(
+        `users/${id}/upload-profile-picture`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      toastSuccessNotify(t("userCall.profilePictureUploaded"));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message ||
+          t("userCall.profilePictureUploadFailed")
+      );
+    } finally {
+      getSingleUser(id);
+    }
+
+    return response;
+  };
+
   return {
     getAllUsers,
     getSingleUser,
@@ -184,6 +217,7 @@ const useUserCall = () => {
     changeUserStatus,
     changeMyStatus,
     changeMyPassword,
+    uploadProfilePicture,
   };
 };
 
