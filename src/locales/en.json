@@ -409,6 +409,7 @@
   "experiences": "Experiences",
   "profile": "Profile",
   "upload": "Upload",
+  "categories": "Categories",
   "uploadInfo": "For best results, upload an image 512x512 or larger.",
   "accountInfo": "Update your profile and personal details here",
   "accountPersonelInfo": "Personel Information",
@@ -787,7 +788,7 @@
     "statusChangeFailed": "Failed to change user status.",
     "accountInactive": "Your account is currently inactive. If you'd like to work with us again, please contact the SoulJourney team. We'd be delighted to welcome you back! 😊",
     "accountStatusChangeFailed": "Failed to change your account status.",
-    "passwordChangeSuccess": "Your password has been changed!",
+    "passwordChangeSuccess": "Your password has been changed! Please log in again to access your account.",
     "passwordChangeFailed": "Failed to change your password."
   },
 
@@ -807,7 +808,7 @@
     "therapistDisabled": "Therapist disabled successfully!",
     "therapistActivated": "Therapist activated successfully!",
     "statusChangeFailed": "Failed to change therapist status.",
-    "passwordChangeSuccess": "Your password has been changed!",
+    "passwordChangeSuccess": "Your password has been changed! Please log in again to access your account.",
     "passwordChangeFailed": "Failed to change your password."
   },
 
@@ -843,5 +844,41 @@
     "screenSharingStarted": "Screen sharing started",
     "screenSharingError": "Error sharing screen.",
     "webRTCNotSupported": "Your browser doesn't support WebRTC. Please use a modern browser like Chrome, Firefox, or Safari."
+  },
+
+  "AuthFail": "Authentication Failed! Redirecting to Homepage...",
+
+  "AuthSuccess": {
+    "errorNotify": "Invalid user information received. Please log in again.",
+    "redirect": "Redirecting ..."
+  },
+
+  "CookieConsentComponent": "Our website uses cookies to improve your experience. You can accept or decline to continue.",
+
+  "NotesModal": {
+    "patientNotes": "Patient Notes",
+    "noNotes": "You haven’t added any notes yet",
+    "newNote": "New Note",
+    "newNotePlaceholder": "Enter your note",
+    "addNote": "Add Note",
+    "editNote": "Edit Note"
+  },
+
+  "informations": "Informations",
+
+  "Chat": {
+    "chatConnected": "Chat Connected",
+    "chatConnecting": "Chat Reconnecting...",
+    "notificationsConnected": "Notifications Connected",
+    "notificationsConnecting": "Notifications Reconnecting...",
+    "selectToChat": "Please select a person before starting the chat!",
+    "noMessages": "No messages yet. Start the conversation!",
+    "sending": "Sending...",
+    "chatInputPlaceholder": "Type a message..."
+  },
+
+  "LeftSidebar": {
+    "searchMessagePlaceholder": "Search messages",
+    "online": "Online"
   }
 }

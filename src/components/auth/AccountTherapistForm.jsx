@@ -38,23 +38,18 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
   }, []);
 
   const handleChange = (e) => {
-    // console.log(e.target.value);
     dispatch(updateSingleTherapistSuccess({ [e.target.name]: e.target.value }));
   };
 
   // Handle category selection/deselection
   const handleCategoryToggle = (category) => {
     // Check if category is already selected
-    const isSelected = singleTherapist?.categoryId?.some(
-      (cat) => cat._id === category._id
-    );
+    const isSelected = singleTherapist?.categoryId?.some((cat) => cat._id === category._id );
 
     let updatedCategories;
     if (isSelected) {
       // Remove category if already selected
-      updatedCategories = singleTherapist.categoryId.filter(
-        (cat) => cat._id !== category._id
-      );
+      updatedCategories = singleTherapist.categoryId.filter( (cat) => cat._id !== category._id );
     } else {
       // Add category if not selected
       updatedCategories = [...(singleTherapist.categoryId || []), category];
@@ -67,19 +62,15 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const categoryIds =
-      singleTherapist?.categoryId?.map((category) => category._id) || [];
+    const categoryIds = singleTherapist?.categoryId?.map((category) => category._id) || [];
 
     const updatedTherapist = { ...singleTherapist, categoryId: categoryIds };
-
-    // console.log(updatedTherapist);
 
     updateMeTherapist(id, updatedTherapist);
   };
 
   // Get selected category names for display
-  const selectedCategoryNames =
-    singleTherapist?.categoryId?.map((cat) => cat.name).join(", ") || "";
+  const selectedCategoryNames = singleTherapist?.categoryId?.map((cat) => cat.name).join(", ") || "";
 
   return (
     <>
@@ -88,6 +79,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
           {t("accountPersonelInfo")} {/* Personel Info */}
         </span>
         <div className="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 w-full max-w-[576px]">
+          {/* First Name */}
           <div className="sm:col-span-2">
             <label htmlFor="firstName" className="peer">
               {t("firstName")}
@@ -105,6 +97,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
               />
             </div>
           </div>
+          {/* Last Name */}
           <div className="sm:col-span-2">
             <label htmlFor="lastName" className="peer">
               {t("lastName")}
@@ -122,6 +115,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
               />
             </div>
           </div>
+          {/* Email */}
           <div className="sm:col-span-4">
             <label htmlFor="email" className="peer">
               {t("email")}
@@ -152,9 +146,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 <span className="block truncate">
-                  {selectedCategoryNames ||
-                    t("selectCategories") ||
-                    "Select categories"}
+                  {selectedCategoryNames || t("selectCategories") || "Select categories"}
                 </span>
                 <span className="inline-flex justify-center items-center ml-1">
                   <span
@@ -165,12 +157,9 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
                       width: "16px",
                       height: "16px",
                     }}
-                    className={`h-5 w-5 bg-gray-400 transition-transform ${
-                      isDropdownOpen ? "rotate-180" : ""
-                    }`}
+                    className={`h-5 w-5 bg-gray-400 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`}
                   ></span>
-                </span>
-                
+                </span>                
               </button>
 
               {isDropdownOpen && (
@@ -178,25 +167,17 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
                   {categories.length > 0 ? (
                     categories.map((category) => {
                       // Check if this category is selected
-                      const isSelected = singleTherapist?.categoryId?.some(
-                        (cat) => cat._id === category._id
-                      );
+                      const isSelected = singleTherapist?.categoryId?.some((cat) => cat._id === category._id);
 
                       return (
                         <div
                           key={category._id}
-                          className={`relative flex cursor-pointer select-none items-center px-4 py-2 ${
-                            isSelected ? "bg-indigo-100" : "hover:bg-gray-100"
-                          }`}
+                          className={`relative flex cursor-pointer select-none items-center px-4 py-2 ${isSelected ? "bg-indigo-100" : "hover:bg-gray-100"}`}
                           onClick={() => handleCategoryToggle(category)}
                         >
                           <div className="flex items-center">
                             <div
-                              className={`mr-2 h-4 w-4 flex items-center justify-center border ${
-                                isSelected
-                                  ? "bg-indigo-600 border-indigo-600"
-                                  : "border-gray-300"
-                              } rounded`}
+                              className={`mr-2 h-4 w-4 flex items-center justify-center border ${isSelected ? "bg-indigo-600 border-indigo-600" : "border-gray-300"} rounded`}
                             >
                               {isSelected && (
                                 <span className="inline-flex justify-center items-center">
@@ -227,6 +208,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
               )}
             </div>
           </div>
+          {/* Graduation/Bachelor's Degree */}
           <div className="col-span-full">
             <label htmlFor="graduation" className="peer">
               {t("graduation")} {/* Graduation */}
@@ -244,6 +226,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
               />
             </div>
           </div>
+          {/* Description/About Me */}
           <div className="col-span-full">
             <label htmlFor="description" className="peer">
               {t("description")} {/* Description */}
@@ -262,6 +245,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
               />
             </div>
           </div>
+          {/* Experiences */}
           <div className="col-span-full">
             <label htmlFor="experience" className="peer">
               {t("experiences")} {/* Experiences */}

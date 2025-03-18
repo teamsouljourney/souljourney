@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import useChatCall from "../../hooks/useChatCall";
 import { BiSend } from "react-icons/bi";
 import useNotificationCall from "../../hooks/useNotificationCall";
+import { useTranslation } from "react-i18next";
 
 export default function MainChatArea({
   isEmojiPickerOpen,
@@ -13,6 +14,7 @@ export default function MainChatArea({
   toggleLeftSidebar,
   toggleRightSidebar,
 }) {
+  const { t } = useTranslation();
   const { chats, selectedUser, socket, isConnected } = useSelector(
     (state) => state.chats
   );
@@ -203,7 +205,7 @@ export default function MainChatArea({
                   : "bg-red-100 text-red-600"
               }`}
             >
-              {isConnected ? "Chat Connected" : "Chat Reconnecting..."}
+              {isConnected ? t("Chat.chatConnected") : t("Chat.chatConnecting")}
             </div>
           )}
           <div
@@ -214,15 +216,15 @@ export default function MainChatArea({
             }`}
           >
             {notificationSocketConnected
-              ? "Notifications Connected"
-              : "Notifications Reconnecting..."}
+              ? t("Chat.notificationsConnected")
+              : t("Chat.notificationsConnecting")}
           </div>
         </div>
       </div>
 
       {!selectedUser && (
         <div className="mt-12 text-center dark:text-offWhite">
-          <p>{"Please select a person before starting the chat!"}</p>
+          <p>{t("Chat.selectToChat")} {/* {"Please select a person before starting the chat!"} */}</p>
         </div>
       )}
 
@@ -234,7 +236,7 @@ export default function MainChatArea({
         >
           {sortedChats.length === 0 ? (
             <div className="my-8 text-center text-navy dark:text-offWhite">
-              No messages yet. Start the conversation!
+            {t("Chat.noMessages")} {/* No messages yet. Start the conversation! */}
             </div>
           ) : (
             sortedChats.map((chat) => (
@@ -275,7 +277,7 @@ export default function MainChatArea({
                         })}
                       </>
                     ) : (
-                      "Sending..."
+                      t("Chat.sending") 
                     )}
                   </div>
                 </div>
@@ -313,7 +315,7 @@ export default function MainChatArea({
           <textarea
             type="text"
             rows="1"
-            placeholder={"Type a message..."}
+            placeholder={t("Chat.chatInputPlaceholder")}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             className="flex-1 px-4 py-2 border-[1px] border-offWhite-dark text-navy dark:text-offWhite resize-none overflow-hidden bg-inherit dark:bg-background-lightdark rounded-xl focus:outline-none focus:border-seaGreen-light"

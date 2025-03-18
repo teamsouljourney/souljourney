@@ -399,7 +399,8 @@
   "experiences": "Deneyimler",
   "profile": "Profil",
   "upload": "Yükle",
-
+  "categories": "Kategoriler",
+  
   "uploadInfo": "En iyi sonuçlar için 512x512 veya daha büyük bir resim yükleyin.",
   "accountInfo": "Profilinizi ve kişisel bilgilerinizi burada güncelleyin",
   "accountPersonelInfo": "Kişisel Bilgiler",
@@ -779,7 +780,7 @@
     "statusChangeFailed": "Kullanıcı durumu değiştirilirken hata oluştu.",
     "accountInactive": "Hesabınız şu anda aktif değil. Bizimle tekrar çalışmak isterseniz, lütfen SoulJourney ekibiyle iletişime geçin. Sizi tekrar aramızda görmekten mutluluk duyarız! 😊",
     "accountStatusChangeFailed": "Hesap durumunuz değiştirilirken hata oluştu.",
-    "passwordChangeSuccess": "Şifreniz değiştirildi!",
+    "passwordChangeSuccess": "Şifreniz değiştirildi! Hesabınıza erişmek için lütfen tekrar giriş yapın.",
     "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu."
   },
 
@@ -799,7 +800,7 @@
     "therapistDisabled": "Terapist başarıyla devre dışı bırakıldı!",
     "therapistActivated": "Terapist başarıyla aktifleştirildi!",
     "statusChangeFailed": "Terapist durumu değiştirilirken hata oluştu.",
-    "passwordChangeSuccess": "Şifreniz değiştirildi!",
+    "passwordChangeSuccess": "Şifreniz değiştirildi! Hesabınıza erişmek için lütfen tekrar giriş yapın.",
     "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu."
   },
 
@@ -835,5 +836,41 @@
     "screenSharingStarted": "Ekran paylaşımı başlatıldı",
     "screenSharingError": "Ekran paylaşımı hatası",
     "webRTCNotSupported": "Tarayıcınız WebRTC'yi desteklemiyor. Lütfen Chrome, Firefox veya Safari gibi modern bir tarayıcı kullanın."
+  },
+
+  "AuthFail": "Kimlik doğrulama başarısız! Ana sayfaya yönlendiriliyorsunuz...",
+
+  "AuthSuccess": {
+    "errorNotify": "Geçersiz kullanıcı bilgisi alındı. Lütfen tekrar giriş yapın.",
+    "redirect": "Yönlendiriliyor..."
+  },
+
+  "CookieConsentComponent": "Web sitemiz deneyiminizi iyileştirmek için çerezler kullanır. Devam etmek için kabul edebilir veya reddedebilirsiniz.",
+
+  "NotesModal": {
+    "patientNotes": "Hasta Notları",
+    "noNotes": "Henüz bir not eklemediniz",
+    "newNote": "Yeni Not",
+    "newNotePlaceholder": "Notunuzu girin",
+    "addNote": "Not Ekle",
+    "editNote": "Notu Düzenle"
+  },
+
+  "informations": "Bilgiler",
+
+  "Chat": {
+    "chatConnected": "Sohbet Bağlandı",
+    "chatConnecting": "Sohbet Yeniden Bağlanıyor...",
+    "notificationsConnected": "Bildirimler Bağlandı",
+    "notificationsConnecting": "Bildirimler Yeniden Bağlanıyor...",
+    "selectToChat": "Sohbete başlamadan önce bir kişi seçin!",
+    "noMessages": "Henüz mesaj yok. Sohbete başlayın!",
+    "sending": "Gönderiliyor...",
+    "chatInputPlaceholder": "Bir mesaj yazın..."
+  },
+
+  "LeftSidebar": {
+    "searchMessagePlaceholder": "Mesajlarda ara",
+    "online": "Çevrimiçi"
   }
 }

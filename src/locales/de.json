@@ -408,6 +408,7 @@
   "experiences": "Erfahrungen",
   "profile": "Profil",
   "upload": "Hochladen",
+  "categories": "Kategorien",
   "uploadInfo": "Für beste Ergebnisse laden Sie ein Bild mit der Größe 512 x 512 oder größer hoch.",
   "accountInfo": "Aktualisieren Sie hier Ihr Profil und Ihre persönlichen Daten",
   "accountPersonelInfo": "Persönliche Informationen",
@@ -787,7 +788,7 @@
     "statusChangeFailed": "Fehler beim Ändern des Benutzerstatus.",
     "accountInactive": "Ihr Konto ist derzeit inaktiv. Wenn Sie wieder mit uns arbeiten möchten, kontaktieren Sie bitte das SoulJourney-Team. Wir würden uns freuen, Sie wieder willkommen zu heißen! 😊",
     "accountStatusChangeFailed": "Fehler beim Ändern Ihres Kontostatus.",
-    "passwordChangeSuccess": "Ihr Passwort wurde geändert!",
+    "passwordChangeSuccess": "Ihr Passwort wurde geändert! Bitte melden Sie sich erneut an, um auf Ihr Konto zuzugreifen.",
     "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts."
   },
 
@@ -807,7 +808,7 @@
     "therapistDisabled": "Therapeut erfolgreich deaktiviert!",
     "therapistActivated": "Therapeut erfolgreich aktiviert!",
     "statusChangeFailed": "Fehler beim Ändern des Therapeutenstatus.",
-    "passwordChangeSuccess": "Ihr Passwort wurde geändert!",
+    "passwordChangeSuccess": "Ihr Passwort wurde geändert! Bitte melden Sie sich erneut an, um auf Ihr Konto zuzugreifen.",
     "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts."
   },
 
@@ -843,5 +844,41 @@
     "screenSharingStarted": "Bildschirmfreigabe gestartet",
     "screenSharingError": "Fehler bei der Bildschirmfreigabe",
     "webRTCNotSupported": "Ihr Browser unterstützt WebRTC nicht. Bitte verwenden Sie einen modernen Browser wie Chrome, Firefox oder Safari."
+  },
+
+  "AuthFail": "Authentifizierung fehlgeschlagen! Weiterleitung zur Startseite...",
+
+  "AuthSuccess": {
+    "errorNotify": "Ungültige Benutzerinformationen empfangen. Bitte melden Sie sich erneut an.",
+    "redirect": "Weiterleitung..."
+  },
+
+  "CookieConsentComponent": "Unsere Website verwendet Cookies, um Ihr Erlebnis zu verbessern. Sie können akzeptieren oder ablehnen, um fortzufahren.",
+
+  "NotesModal": {
+    "patientNotes": "Patientennotizen",
+    "noNotes": "Sie haben noch keine Notizen hinzugefügt",
+    "newNote": "Neue Notiz",
+    "newNotePlaceholder": "Geben Sie Ihre Notiz ein",
+    "addNote": "Notiz hinzufügen",
+    "editNote": "Notiz bearbeiten"
+  },
+
+  "informations": "Informationen",
+
+  "Chat": {
+    "chatConnected": "Chat verbunden",
+    "chatConnecting": "Chat wird erneut verbunden...",
+    "notificationsConnected": "Benachrichtigungen verbunden",
+    "notificationsConnecting": "Benachrichtigungen werden erneut verbunden...",
+    "selectToChat": "Bitte wählen Sie eine Person aus, bevor Sie den Chat starten!",
+    "noMessages": "Noch keine Nachrichten. Starten Sie das Gespräch!",
+    "sending": "Senden...",
+    "chatInputPlaceholder": "Nachricht eingeben..."
+  },
+
+  "LeftSidebar": {
+    "searchMessagePlaceholder": "Nachrichten suchen",
+    "online": "Online"
   }
 }

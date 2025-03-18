@@ -1,7 +1,9 @@
 import React from "react";
 import CookieConsent, { getCookieConsentValue, resetCookieConsentValue } from "react-cookie-consent";
+import { useTranslation } from "react-i18next";
 
 const CookieConsentComponent = () => {
+  const { t } = useTranslation();
   const handleDecline = () => {
    // Decline if someone reject.
     document.cookie.split(";").forEach((c) => {  // user-cookie-consent-true; -- I'll test 
@@ -25,7 +27,7 @@ const CookieConsentComponent = () => {
       buttonStyle={{ background: "#4CAF50", color: "#fff", fontSize: "14px" }}
       declineButtonStyle={{ background: "#f44336", color: "#fff", fontSize: "14px" }}
     >
-      🍪 Our website uses cookies to improve your experience. You can accept or decline to continue.
+      🍪 {t("CookieConsentComponent")} {/* Our website uses cookies to improve your experience. You can accept or decline to continue. */}
     </CookieConsent>
   );
 };
