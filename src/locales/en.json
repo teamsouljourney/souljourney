@@ -845,12 +845,16 @@
     "screenSharingError": "Error sharing screen.",
     "webRTCNotSupported": "Your browser doesn't support WebRTC. Please use a modern browser like Chrome, Firefox, or Safari."
   },
+
   "AuthFail": "Authentication Failed! Redirecting to Homepage...",
+
   "AuthSuccess": {
     "errorNotify": "Invalid user information received. Please log in again.",
     "redirect": "Redirecting ..."
   },
+
   "CookieConsentComponent": "Our website uses cookies to improve your experience. You can accept or decline to continue.",
+
   "NotesModal": {
     "patientNotes": "Patient Notes",
     "noNotes": "You haven’t added any notes yet",
@@ -858,5 +862,17 @@
     "newNotePlaceholder": "Enter your note",
     "addNote": "Add Note"
   },
-  "informations": "Informations"
+
+  "informations": "Informations",
+
+  "Chat": {
+    "chatConnected": "Chat Connected",
+    "chatConnecting": "Chat Reconnecting...",
+    "notificationsConnected": "Notifications Connected",
+    "notificationsConnecting": "Notifications Reconnecting...",
+    "selectToChat": "Please select a person before starting the chat!",
+    "noMessages": "No messages yet. Start the conversation!",
+    "sending": "Sending...",
+    "chatInputPlaceholder": "Type a message..."
+  }
 }

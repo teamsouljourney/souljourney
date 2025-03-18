@@ -845,12 +845,16 @@
     "screenSharingError": "Fehler bei der Bildschirmfreigabe",
     "webRTCNotSupported": "Ihr Browser unterstützt WebRTC nicht. Bitte verwenden Sie einen modernen Browser wie Chrome, Firefox oder Safari."
   },
+
   "AuthFail": "Authentifizierung fehlgeschlagen! Weiterleitung zur Startseite...",
+
   "AuthSuccess": {
     "errorNotify": "Ungültige Benutzerinformationen empfangen. Bitte melden Sie sich erneut an.",
     "redirect": "Weiterleitung..."
   },
+
   "CookieConsentComponent": "Unsere Website verwendet Cookies, um Ihr Erlebnis zu verbessern. Sie können akzeptieren oder ablehnen, um fortzufahren.",
+
   "NotesModal": {
     "patientNotes": "Patientennotizen",
     "noNotes": "Sie haben noch keine Notizen hinzugefügt",
@@ -858,5 +862,17 @@
     "newNotePlaceholder": "Geben Sie Ihre Notiz ein",
     "addNote": "Notiz hinzufügen"
   },
-  "informations": "Informationen"
+
+  "informations": "Informationen",
+
+  "Chat": {
+    "chatConnected": "Chat verbunden",
+    "chatConnecting": "Chat wird erneut verbunden...",
+    "notificationsConnected": "Benachrichtigungen verbunden",
+    "notificationsConnecting": "Benachrichtigungen werden erneut verbunden...",
+    "selectToChat": "Bitte wählen Sie eine Person aus, bevor Sie den Chat starten!",
+    "noMessages": "Noch keine Nachrichten. Starten Sie das Gespräch!",
+    "sending": "Senden...",
+    "chatInputPlaceholder": "Nachricht eingeben..."
+  }
 }

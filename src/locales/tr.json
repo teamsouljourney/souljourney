@@ -837,12 +837,16 @@
     "screenSharingError": "Ekran paylaşımı hatası",
     "webRTCNotSupported": "Tarayıcınız WebRTC'yi desteklemiyor. Lütfen Chrome, Firefox veya Safari gibi modern bir tarayıcı kullanın."
   },
+
   "AuthFail": "Kimlik doğrulama başarısız! Ana sayfaya yönlendiriliyorsunuz...",
+
   "AuthSuccess": {
     "errorNotify": "Geçersiz kullanıcı bilgisi alındı. Lütfen tekrar giriş yapın.",
     "redirect": "Yönlendiriliyor..."
   },
+
   "CookieConsentComponent": "Web sitemiz deneyiminizi iyileştirmek için çerezler kullanır. Devam etmek için kabul edebilir veya reddedebilirsiniz.",
+
   "NotesModal": {
     "patientNotes": "Hasta Notları",
     "noNotes": "Henüz bir not eklemediniz",
@@ -850,5 +854,17 @@
     "newNotePlaceholder": "Notunuzu girin",
     "addNote": "Not Ekle"
   },
-  "informations": "Bilgiler"
+
+  "informations": "Bilgiler",
+
+  "Chat": {
+    "chatConnected": "Sohbet Bağlandı",
+    "chatConnecting": "Sohbet Yeniden Bağlanıyor...",
+    "notificationsConnected": "Bildirimler Bağlandı",
+    "notificationsConnecting": "Bildirimler Yeniden Bağlanıyor...",
+    "selectToChat": "Sohbete başlamadan önce bir kişi seçin!",
+    "noMessages": "Henüz mesaj yok. Sohbete başlayın!",
+    "sending": "Gönderiliyor...",
+    "chatInputPlaceholder": "Bir mesaj yazın..."
+  }
 }
