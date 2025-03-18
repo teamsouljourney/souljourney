@@ -400,7 +400,7 @@
   "profile": "Profil",
   "upload": "Yükle",
   "categories": "Kategoriler",
-  
+
   "uploadInfo": "En iyi sonuçlar için 512x512 veya daha büyük bir resim yükleyin.",
   "accountInfo": "Profilinizi ve kişisel bilgilerinizi burada güncelleyin",
   "accountPersonelInfo": "Kişisel Bilgiler",
@@ -872,5 +872,7 @@
   "LeftSidebar": {
     "searchMessagePlaceholder": "Mesajlarda ara",
     "online": "Çevrimiçi"
-  }
+  },
+
+  "uploading": "Yükleniyor..."
 }

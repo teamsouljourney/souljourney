@@ -880,5 +880,7 @@
   "LeftSidebar": {
     "searchMessagePlaceholder": "Nachrichten suchen",
     "online": "Online"
-  }
+  },
+
+  "uploading": "Wird hochgeladen..."
 }
