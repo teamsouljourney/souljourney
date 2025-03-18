@@ -850,5 +850,12 @@
     "errorNotify": "Invalid user information received. Please log in again.",
     "redirect": "Redirecting ..."
   },
-  "CookieConsentComponent": "Our website uses cookies to improve your experience. You can accept or decline to continue."
+  "CookieConsentComponent": "Our website uses cookies to improve your experience. You can accept or decline to continue.",
+  "NotesModal": {
+    "patientNotes": "Patient Notes",
+    "noNotes": "You haven’t added any notes yet",
+    "newNote": "New Note",
+    "newNotePlaceholder": "Enter your note",
+    "addNote": "Add Note"
+  }
 }

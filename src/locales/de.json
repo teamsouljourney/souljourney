@@ -850,5 +850,12 @@
     "errorNotify": "Ungültige Benutzerinformationen empfangen. Bitte melden Sie sich erneut an.",
     "redirect": "Weiterleitung..."
   },
-  "CookieConsentComponent": "Unsere Website verwendet Cookies, um Ihr Erlebnis zu verbessern. Sie können akzeptieren oder ablehnen, um fortzufahren."
+  "CookieConsentComponent": "Unsere Website verwendet Cookies, um Ihr Erlebnis zu verbessern. Sie können akzeptieren oder ablehnen, um fortzufahren.",
+  "NotesModal": {
+    "patientNotes": "Patientennotizen",
+    "noNotes": "Sie haben noch keine Notizen hinzugefügt",
+    "newNote": "Neue Notiz",
+    "newNotePlaceholder": "Geben Sie Ihre Notiz ein",
+    "addNote": "Notiz hinzufügen"
+  }
 }

@@ -842,5 +842,12 @@
     "errorNotify": "Geçersiz kullanıcı bilgisi alındı. Lütfen tekrar giriş yapın.",
     "redirect": "Yönlendiriliyor..."
   },
-  "CookieConsentComponent": "Web sitemiz deneyiminizi iyileştirmek için çerezler kullanır. Devam etmek için kabul edebilir veya reddedebilirsiniz."
+  "CookieConsentComponent": "Web sitemiz deneyiminizi iyileştirmek için çerezler kullanır. Devam etmek için kabul edebilir veya reddedebilirsiniz.",
+  "NotesModal": {
+    "patientNotes": "Hasta Notları",
+    "noNotes": "Henüz bir not eklemediniz",
+    "newNote": "Yeni Not",
+    "newNotePlaceholder": "Notunuzu girin",
+    "addNote": "Not Ekle"
+  }
 }
