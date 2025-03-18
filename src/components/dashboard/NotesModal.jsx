@@ -31,6 +31,7 @@ const NotesModal = ({ open, onClose, userId, currentUser }) => {
     e.preventDefault();
     if (note._id) {
       await putUserNote(note._id, note);
+      setEdit(false)
     } else {
       await postUserNotes(note);
     }
