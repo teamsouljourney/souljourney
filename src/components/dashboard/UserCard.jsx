@@ -1,17 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { format } from "date-fns";
-import AppointmentCancel from "../appointment/AppointmentCancel";
-import AppointmentEdit from "../appointment/AppointmentEdit";
-import { useNavigate } from "react-router-dom";
 
 export default function UserCard() {
   const { currentUser } = useSelector((state) => state.auth);
   const { t } = useTranslation();
-  const { currentUserAppointments } = useSelector(
-    (state) => state.appointments
-  );
-  const navigate = useNavigate();
 
   return (
     <>
@@ -45,8 +38,9 @@ export default function UserCard() {
           <h2 className="mb-4 text-xl font-bold">{t("personalInfo")}</h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div>
-              <p className="mb-1 font-semibold  text-navy dark:text-offWhite">
-                {/* Email */}{t("email")} :
+              <p className="mb-1 font-semibold text-navy dark:text-offWhite">
+                {/* Email */}
+                {t("email")} :
               </p>
               <p className="font-medium text-navy dark:text-offWhite/60">
                 {currentUser?.email}
@@ -61,7 +55,7 @@ export default function UserCard() {
               </p>
             </div>
             <div>
-              <p className="mb-1 font-semibold  text-navy dark:text-offWhite">
+              <p className="mb-1 font-semibold text-navy dark:text-offWhite">
                 {t("address")} :
               </p>
               <p className="font-medium text-navy dark:text-offWhite/60">
