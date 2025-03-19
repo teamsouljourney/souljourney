@@ -8,7 +8,6 @@ import {
   MenuItems,
 } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import souljorurney_Logo from "../assets/souljourney_Logo.png";
 import { NavLink } from "react-router-dom";
 import Switch from "./Switch";
 import { useEffect, useState } from "react";
@@ -28,7 +27,6 @@ export default function Navbar() {
   let { currentUser } = useSelector((state) => state.auth);
   const { logout } = useAuthCall();
   const { t } = useTranslation();
-  // console.log(currentUser);
 
   const navigation = [
     { name: t("home"), href: "/" },
@@ -55,8 +53,6 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  // referrerPolicy = "no-referrer";
 
   if (
     window.location.pathname.startsWith("/profile") ||
