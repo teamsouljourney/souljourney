@@ -23,9 +23,9 @@ const Switch = () => {
         className="relative p-[8px] text-navy bg-offWhite rounded-full group hover:bg-navy hover:text-offWhite focus:z-10 dark:focus:ring-navy-dark dark:bg-navy focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy dark:text-gray-400 dark:hover:text-offWhite dark:hover:bg-navy-light"
       >
         {darkMode ? (
-          <SunIcon className="fill-yellow-400 w-2 h-2 sm:w-4 sm:h-4" />
+          <SunIcon className="w-3 h-3 fill-yellow-400 sm:w-4 sm:h-4" />
         ) : (
-          <MoonIcon className="w-2 h-2 sm:w-4 sm:h-4 fill-navy group-hover:fill-offWhite" />
+          <MoonIcon className="w-3 h-3 sm:w-4 sm:h-4 fill-navy group-hover:fill-offWhite" />
         )}
       </button>
     </div>

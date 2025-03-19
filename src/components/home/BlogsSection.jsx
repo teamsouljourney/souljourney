@@ -24,7 +24,7 @@ const BlogsSection = () => {
         <p className="w-[60%] mx-auto font-urbanist">{t("ourBlogsText")}</p>
       </div>
 
-      <div className="grid grid-cols-1 gap-4  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 px-32">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 md:gap-x-12">
         {popularBlogs?.map((blog) => (
           <HomeCard key={blog._id} blog={blog} />
         ))}
