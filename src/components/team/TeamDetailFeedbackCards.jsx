@@ -5,23 +5,19 @@ import TeamDetailFeedbackCardsModal from "./TeamDetailFeedbackCardsModal";
 import Pagination from "../adminPanel/Pagination";
 import { useSelector } from "react-redux";
 import {getTimeAgo} from "../../helper/dateFormatter"
-import useFeedbackCall from "../../hooks/useFeedbackCall";
 
 const TeamDetailFeedbackCards = () => {
   const { t } = useTranslation();
   const {pagFeedbacks} = useSelector((state)=>state.pagination)
   const {singleTherapistFeedbacks} = useSelector((state)=>state.feedbacks)
-  const {singleFeedback} = useSelector((state)=>state.feedbacks)
   const { singleTherapist } = useSelector((state) => state.therapists);
-
   const therapistId = singleTherapist && singleTherapist?._id
-  const {getSingleFeedback} = useFeedbackCall()
   
+  const [selectedFeedback, setSelectedFeedback] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
-      {/* Card */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         {pagFeedbacks?.map((feedback) => (
           <div
@@ -75,7 +71,7 @@ const TeamDetailFeedbackCards = () => {
             <div className="flex justify-end">
               <button
                 onClick={() => {
-                  getSingleFeedback(feedback._id)
+                  setSelectedFeedback(feedback);
                   setIsModalOpen(true);
                 }}
                 className="mt-2 px-2 py-1 text-sm font-semibold bg-white hover:bg-seaGreen dark:bg-gray-700/50 dark:hover:bg-seaGreen-dark text-gray-400 dark:text-backgroun-lightdark hover:text-offWhite hover:border-seaGreen  dark:hover:text-offWhite-dark border border-gray-300 dark:border-gray-600 rounded-md transition-colors"
@@ -86,15 +82,17 @@ const TeamDetailFeedbackCards = () => {
           </div>
         ))}
       </div>
-      {/* Pagination */}
+      
       <Pagination 
         endpoint={`feedbacks/therapists/${therapistId}`}
         slice={"pagFeedbacks"}
         data={singleTherapistFeedbacks}
       />
       {/* Modal */}
-      {isModalOpen && (
-        <TeamDetailFeedbackCardsModal singleFeedback={singleFeedback} getTimeAgo={getTimeAgo} setIsModalOpen={setIsModalOpen}  />        
+      {isModalOpen && selectedFeedback && (
+
+        <TeamDetailFeedbackCardsModal selectedFeedback={selectedFeedback} getTimeAgo={getTimeAgo} setIsModalOpen={setIsModalOpen} setSelectedFeedback={setSelectedFeedback} />
+        
       )}
     </>
   );
