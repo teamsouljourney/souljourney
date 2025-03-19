@@ -142,7 +142,7 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
             <div className="mt-2 relative" ref={dropdownRef}>
               <button
                 type="button"
-                className="flex w-full justify-between items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="flex w-full justify-between items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-left shadow-sm focus:border-seaGreen-light focus:outline-none focus:ring-1 focus:ring-seaGreen-light"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 <span className="block truncate">
@@ -172,12 +172,12 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
                       return (
                         <div
                           key={category._id}
-                          className={`relative flex cursor-pointer select-none items-center px-4 py-2 ${isSelected ? "bg-indigo-100" : "hover:bg-gray-100"}`}
+                          className={`relative flex cursor-pointer select-none items-center px-4 py-2 ${isSelected ? "bg-seaGreen-light/30" : "hover:bg-gray-100"}`}
                           onClick={() => handleCategoryToggle(category)}
                         >
                           <div className="flex items-center">
                             <div
-                              className={`mr-2 h-4 w-4 flex items-center justify-center border ${isSelected ? "bg-indigo-600 border-indigo-600" : "border-gray-300"} rounded`}
+                              className={`mr-2 h-4 w-4 flex items-center justify-center border ${isSelected ? "bg-seaGreen-dark border-seaGreen-dark" : "border-gray-300"} rounded`}
                             >
                               {isSelected && (
                                 <span className="inline-flex justify-center items-center">
