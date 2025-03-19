@@ -7,46 +7,52 @@ const BlogsCard = ({ blog, index }) => {
   const isEven = index % 2 === 0;
 
   return (
-    <div
-      className={`flex flex-col-reverse sm:flex-row items-center justify-center py-8 gap-6 w-full border-b-2`}
-    >
-      <div
-        className={`w-full sm:w-1/2 flex flex-col h-full ${
-          isEven ? "sm:pr-4 lg:pr-8" : "sm:pl-4 lg:pl-8 sm:order-2"
-        }`}
-      >
-        <div className="min-h-[120px] flex flex-col text-center sm:text-left">
-          <h2 className="mb-3 text-2xl lg:text-3xl font-bold line-clamp-2">{blog.title}</h2>
-          <p
-            className="text-base lg:text-lg text-left line-clamp-4"
-            dangerouslySetInnerHTML={{ __html: blog.content }}
-          ></p>
-        </div>
-
+    <div className="w-full max-w-full px-0 py-8 border-b-2 border-gray-100 dark:border-gray-800">
+      <div className="flex flex-col items-center w-full gap-4 sm:flex-row sm:gap-6">
+        {/* Text Content */}
         <div
-          className={`flex mt-4 justify-end w-full sm:${
-            isEven ? "justify-start" : "justify-end"
+          className={`w-full sm:w-1/2 flex flex-col ${
+            isEven ? "sm:order-1" : "sm:order-2"
           }`}
         >
-          <button
-            onClick={() => navigate(`/blogs/${blog._id}`)}
-            className="px-4 py-2 text-white transition-all rounded bg-navy hover:bg-navy-light dark:bg-background-lightdark dark:hover:bg-gray-500"
-          >
-            {t("readMore")}
-          </button>
-        </div>
-      </div>
+          <div className="flex flex-col mb-6 space-y-4">
+            <h2 className="text-xl font-bold sm:text-2xl lg:text-3xl line-clamp-2">
+              {blog.title}
+            </h2>
+            <div className="h-auto sm:h-[120px] md:h-[150px] overflow-hidden">
+              <p
+                className="text-sm text-gray-700 sm:text-base lg:text-lg dark:text-gray-300"
+                dangerouslySetInnerHTML={{ __html: blog.content }}
+              ></p>
+            </div>
+          </div>
 
-      <div
-        className={`w-full sm:w-1/2 h-[250px] sm:h-[366px] ${
-          isEven ? "sm:pl-4 lg:pl-8 sm:order-2" : "sm:pr-4 lg:pr-8"
-        }`}
-      >
-        <img
-          src={blog.image || "/placeholder.svg"}
-          alt={blog.title}
-          className="w-full h-full rounded-[40px] sm:rounded-l-[80%] sm:rounded-r-[80%] object-cover"
-        />
+          <div
+            className={`flex mt-4 ${isEven ? "justify-start" : "justify-end"}`}
+          >
+            <button
+              onClick={() => navigate(`/blogs/${blog._id}`)}
+              className="px-4 py-2 text-white transition-all rounded-lg bg-navy hover:bg-navy-light dark:bg-background-lightdark dark:hover:bg-gray-500"
+            >
+              {t("readMore")}
+            </button>
+          </div>
+        </div>
+
+        {/* Image */}
+        <div
+          className={`w-full sm:w-1/2 ${
+            isEven ? "sm:order-2" : "sm:order-1"
+          } mb-6 sm:mb-0`}
+        >
+          <div className="aspect-[4/3] w-full h-auto overflow-hidden rounded-2xl sm:rounded-3xl">
+            <img
+              src={blog.image || "/placeholder.svg?height=400&width=600"}
+              alt={blog.title}
+              className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
