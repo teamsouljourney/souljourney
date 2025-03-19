@@ -28,25 +28,32 @@ export default function UserCard() {
   return (
     <div className="w-full max-w-5xl px-4 py-6 mx-auto">
       {/* Top Card - User Profile */}
-      <div className="flex flex-col items-center w-full p-4 mb-4 text-center bg-gradient-to-bl from-navy-dark to-seaGreen-dark rounded-xl sm:flex-row sm:text-left">
-        <div className="flex-1">
-          <h1 className="text-2xl font-semibold sm:text-4xl md:text-5xl text-offWhite">
-            {userData?.firstName?.toUpperCase()}{" "}
-            {userData?.lastName?.toUpperCase()}
-          </h1>
-          <p className="max-w-full mt-2 text-xs sm:text-sm md:text-base text-offWhite-dark">
-            {userData?.description}
-          </p>
-        </div>
-        <div className="mt-4 sm:mt-0 shrink-0">
-          <img
-            src={
-              userData?.image ||
-              "https://cdn-icons-png.flaticon.com/512/1053/1053244.png"
-            }
-            alt="Profile"
-            className="w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[150px] md:h-[150px] rounded-full object-cover"
-          />
+      <div className="w-full p-5 mb-4 bg-gradient-to-bl from-navy-dark to-seaGreen-dark rounded-xl">
+        <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:items-start">
+          {/* User Info */}
+          <div className="flex-1 text-center sm:order-1 lg:text-left">
+            <h1 className="text-2xl font-semibold sm:text-4xl md:text-5xl text-offWhite">
+              {userData?.firstName?.toUpperCase()}{" "}
+              {userData?.lastName?.toUpperCase()}
+            </h1>
+            <div className="mt-3 text-xs sm:text-sm md:text-base text-offWhite-dark">
+              <p className="max-w-full">
+                {userData?.description}
+              </p>
+            </div>
+          </div>
+
+          {/* User Photo */}
+          <div className="order-1 shrink-0 sm:order-2">
+            <img
+              src={
+                userData?.image ||
+                "https://cdn-icons-png.flaticon.com/512/1053/1053244.png"
+              }
+              alt="Profile"
+              className="w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] md:w-[160px] md:h-[160px] rounded-full object-cover"
+            />
+          </div>
         </div>
       </div>
 
