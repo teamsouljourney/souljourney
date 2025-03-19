@@ -111,8 +111,8 @@ export default function Navbar() {
                     className={({ isActive }) =>
                       classNames(
                         isActive
-                          ? "border-b-2 border-seaGreen-light text-offWhite-light"
-                          : "text-offWhite-light hover:border-b-2 hover:border-seaGreen-light hover:text-offWhite-light",
+                          ? "border-b-2 border-seaGreen-light text-offWhite-light  "
+                          : "text-offWhite-light hover:border-b-2 hover:border-seaGreen-light",
                         " whitespace-nowrap px-4 py-2 text-sm font-medium",
                         "lg:px-4 lg:py-2 lg:text-sm",
                         "md:px-3 md:py-1.5 md:text-sm",
@@ -126,7 +126,7 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-          <div className="absolute right-0 flex items-center gap-1 pr-2 sm:static sm:inset-auto sm:ml-0 sm:pr-0">
+          <div className="absolute right-0 flex items-center justify-center gap-1 pr-2 sm:static sm:inset-auto sm:ml-0 sm:pr-0">
             <LanguageSelector />
             <Switch />
             {currentUser && <ViewNotifications />}
