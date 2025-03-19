@@ -27,25 +27,25 @@ export default function UserCard() {
 
   return (
     <>
-      <div className="w-full min-h-[200px] bg-gradient-to-bl from-navy-dark to-seaGreen-dark p-6 rounded-xl m-10 flex justify-between items-center">
-        <div>
-          <h1 className="text-3xl sm:text-5xl text-offWhite">
+      <div className="w-full min-h-[200px] bg-gradient-to-bl from-navy-dark to-seaGreen-dark p-4 sm:p-6 rounded-xl m-4 sm:m-10 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+        <div className="flex-1">
+          <h1 className="text-2xl font-semibold sm:text-4xl md:text-5xl text-offWhite">
             {userData?.firstName?.toUpperCase()}{" "}
             {userData?.lastName?.toUpperCase()}
           </h1>
-          <p className="mt-6 text-sm text-offWhite-dark w-52 md:w-full">
+          <p className="max-w-xs mt-4 text-xs sm:text-sm md:text-base text-offWhite-dark sm:max-w-md md:max-w-full">
             {userData?.description}
           </p>
         </div>
-        <div className="flex">
-          <div className="shrink-1">
+        <div className="flex mt-4 sm:mt-0">
+          <div className="shrink-0">
             <img
               src={
                 userData?.image ||
                 "https://cdn-icons-png.flaticon.com/512/1053/1053244.png"
               }
               alt="Profile"
-              className="sm:w-[150px] sm:h-[150px] min-w-[120px] rounded-full object-cover"
+              className="w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[150px] md:h-[150px] rounded-full object-cover"
             />
           </div>
         </div>
@@ -53,14 +53,16 @@ export default function UserCard() {
 
       <div className="container px-4 py-6 mx-auto">
         {/* User Info Section */}
-        <div className="p-6 mt-4 rounded-lg shadow bg-seaGreen-light/40 text-navy dark:text-offWhite">
-          <h2 className="mb-4 text-xl font-bold">{t("personalInfo")}</h2>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="p-4 mt-4 rounded-lg shadow sm:p-6 bg-seaGreen-light/40 text-navy dark:text-offWhite">
+          <h2 className="mb-4 text-lg font-bold sm:text-xl">
+            {t("personalInfo")}
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
               <p className="mb-1 font-semibold text-navy dark:text-offWhite">
                 {t("email")} :
               </p>
-              <p className="font-medium text-navy dark:text-offWhite/60">
+              <p className="text-sm font-medium sm:text-base text-navy dark:text-offWhite/60">
                 {userData?.email}
               </p>
             </div>
@@ -68,7 +70,7 @@ export default function UserCard() {
               <p className="mb-1 font-semibold text-navy dark:text-offWhite">
                 {t("dateOfMembership")} :
               </p>
-              <p className="font-medium text-navy dark:text-offWhite/60">
+              <p className="text-sm font-medium sm:text-base text-navy dark:text-offWhite/60">
                 {userData?.createdAt
                   ? format(new Date(userData?.createdAt), "dd.MM.yyyy")
                   : "-"}
@@ -78,7 +80,7 @@ export default function UserCard() {
               <p className="mb-1 font-semibold text-navy dark:text-offWhite">
                 {t("address")} :
               </p>
-              <p className="font-medium text-navy dark:text-offWhite/60">
+              <p className="text-sm font-medium sm:text-base text-navy dark:text-offWhite/60">
                 {userData?.address || "-"}
               </p>
             </div>
@@ -86,7 +88,7 @@ export default function UserCard() {
               <p className="mb-1 font-semibold text-navy dark:text-offWhite">
                 {t("memberId")} :
               </p>
-              <p className="font-medium text-navy dark:text-offWhite/60">
+              <p className="text-sm font-medium sm:text-base text-navy dark:text-offWhite/60">
                 {userData?._id}
               </p>
             </div>
