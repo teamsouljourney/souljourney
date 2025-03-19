@@ -24,7 +24,7 @@ const PatientList = () => {
     const uniquePatients = Array.from(
       new Map(
         currentUserAppointments.map((appointment) => [
-          appointment.userId._id,
+          appointment.userId?._id,
           appointment,
         ])
       ).values()
@@ -41,7 +41,7 @@ const PatientList = () => {
       const uniquePatients = Array.from(
         new Map(
           currentUserAppointments.map((appointment) => [
-            appointment.userId._id,
+            appointment.userId?._id,
             appointment,
           ])
         ).values()
@@ -54,21 +54,21 @@ const PatientList = () => {
       new Map(
         currentUserAppointments
           .filter((appointment) =>
-            appointment.userId.firstName.toLowerCase().startsWith(searchTerm)
+            appointment.userId?.firstName.toLowerCase().startsWith(searchTerm)
           )
-          .map((appointment) => [appointment.userId._id, appointment])
+          .map((appointment) => [appointment.userId?._id, appointment])
       ).values()
     );
 
     setFilteredAppointments(uniqueFilteredPatients);
   };
 
-  if (currentUser && currentUser.isTherapist === true) {
+  if (currentUser && currentUser?.isTherapist === true) {
     return (
-      <div className="w-full xl:w-1/2 p-8">
-        <div className="w-full relative z-10">
+      <div className="w-full p-8 xl:w-1/2">
+        <div className="relative z-10 w-full">
           {/* Header */}
-          <div className="flex justify-center px-4 py-2 text-center rounded-xl mb-3 bg-seaGreen-dark">
+          <div className="flex justify-center px-4 py-2 mb-3 text-center rounded-xl bg-seaGreen-dark">
             <p className="text-lg md:text-xl text-offWhite">
               {t("patientList")}
             </p>
@@ -80,7 +80,7 @@ const PatientList = () => {
               <input
                 type="text"
                 name="q"
-                className="w-full h-10 shadow px-4 py-2 rounded-xl border border-seaGreen-dark dark:border-seaGreen-dark dark:text-customBlack-dark"
+                className="w-full h-10 px-4 py-2 border shadow rounded-xl border-seaGreen-dark dark:border-seaGreen-dark dark:text-customBlack-dark"
                 placeholder={t("searchPatient")}
               />
               <button type="submit" className="absolute right-3 top-3">
@@ -104,7 +104,7 @@ const PatientList = () => {
 
           {/* Patient List */}
           {filteredAppointments.length === 0 ? (
-            <p className="text-xs md:text-sm text-gray-500 mt-1">
+            <p className="mt-1 text-xs text-gray-500 md:text-sm">
               {t("noPatient")}
             </p>
           ) : (
@@ -112,29 +112,29 @@ const PatientList = () => {
               {filteredAppointments?.map(({ userId }, index) => (
                 <li
                   key={index}
-                  className="flex items-center hover:bg-offWhite dark:hover:bg-navy rounded-md transition-colors duration-200"
+                  className="flex items-center transition-colors duration-200 rounded-md hover:bg-offWhite dark:hover:bg-navy"
                 >
                   <span className="w-2 h-16 md:h-20 bg-seaGreen-dark rounded-r-md" />
-                  <div className="flex flex-1 p-3 md:p-4 gap-3 md:gap-4">
+                  <div className="flex flex-1 gap-3 p-3 md:p-4 md:gap-4">
                     {/* Avatar */}
                     <div className="shrink-0">
                       <img
-                        className="h-12 w-12 md:h-14 md:w-14 rounded-full"
-                        src={userId.image}
+                        className="w-12 h-12 rounded-full md:h-14 md:w-14"
+                        src={userId?.image}
                         alt=""
                       />
                     </div>
 
                     {/* Patient Info */}
                     <div className="flex-1 min-w-0">
-                      <div className="flex justify-between items-start">
+                      <div className="flex items-start justify-between">
                         {/* Name and Email */}
                         <div>
-                          <p className="text-sm md:text-base font-semibold text-navy dark:text-offWhite-light">
+                          <p className="text-sm font-semibold md:text-base text-navy dark:text-offWhite-light">
                             {userId?.firstName.toUpperCase()}{" "}
                             {userId?.lastName.toUpperCase()}
                           </p>
-                          <p className="text-xs md:text-sm text-gray-500 mt-1">
+                          <p className="mt-1 text-xs text-gray-500 md:text-sm">
                             {userId?.email}
                           </p>
                         </div>
