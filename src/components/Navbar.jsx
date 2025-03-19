@@ -7,7 +7,7 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 import Switch from "./Switch";
 import { useEffect, useState } from "react";
@@ -164,7 +164,7 @@ export default function Navbar() {
                 </MenuButton>
                 <MenuItems
                   transition
-                  className="flex flex-col text-xl w-[11rem]  text-slate-600 bg-navy/40 backdrop-blur p-4 mt-6 rounded-lg absolute right-0"
+                  className="flex flex-col text-xl w-[11rem]  text-slate-600 bg-navy/50 backdrop-blur p-4 mt-6 rounded-lg absolute right-0"
                 >
                   <MenuItem>
                     <span
