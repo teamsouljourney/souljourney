@@ -92,11 +92,11 @@ export default function Navbar() {
               <span className="border sr-only">Open main menu</span>
               <Bars3Icon
                 aria-hidden="true"
-                className="block size-6 group-data-[open]:hidden"
+                className="block size-6 group-data-[open]:hidden dark:text-offWhite"
               />
               <XMarkIcon
                 aria-hidden="true"
-                className="hidden size-6 group-data-[open]:block"
+                className="hidden size-6 group-data-[open]:block dark:text-offWhite"
               />
             </DisclosureButton>
           </div>
