@@ -24,8 +24,8 @@ const CookieConsentComponent = () => {
       onDecline={handleDecline}
       cookieName="user-cookie-consent"
       style={{ background: "#222", color: "#fff", textAlign: "center" }}
-      buttonStyle={{ background: "#4CAF50", color: "#fff", fontSize: "14px" }}
-      declineButtonStyle={{ background: "#f44336", color: "#fff", fontSize: "14px" }}
+      buttonStyle={{ background: "#459198", color: "#fff", fontSize: "14px", borderRadius: "10px" }}
+      declineButtonStyle={{ background: "#9a6b96", color: "#fff", fontSize: "14px", borderRadius: "10px" }}
     >
       🍪 {t("CookieConsentComponent")} {/* Our website uses cookies to improve your experience. You can accept or decline to continue. */}
     </CookieConsent>
