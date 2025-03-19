@@ -15,8 +15,8 @@
   "BUTTONS": "BUTTONS",
   "selfTest": "Kendi Testinizi Yapın",
   "getStarted": "Hadi Başlayalım",
-  "seeMore": "Daha Fazla Gör",
-  "readMore": "Daha Fazla Oku",
+  "seeMore": "Tümünü Gör",
+  "readMore": "Devamını Oku",
   "share": "Paylaş",
   "seeLess": "Daha Az Gör",
   "close": "Kapat",
@@ -135,7 +135,7 @@
   "SERVICES": "HIZMETLER",
 
   "srvServicesHeroTitle": "Hizmetlerimiz",
-  "srvServicesHeroDescription": "Psikolojik danışmanlık merkezimizde, bireylerin duygusal ve zihinsel iyilik hallerini geliştirmelerine yardımcı olacak kapsamlı hizmetler sunuyoruz. Deneyimli uzmanlardan oluşan ekibimiz, her danışanın kendine özgü zorluklarını anlamak ve kişiye özel çözümler sunmak için yakından çalışır. İster stres, kaygı, ilişki sorunlarıyla başa çıkıyor olun, ister sadece kişisel gelişiminizi artırmak istiyor olun, sürecin her adımında size rehberlik etmek için buradayız. Duygularınızı açıkça keşfedebileceğiniz ve daha sağlıklı başa çıkma stratejileri geliştirebileceğiniz güvenli, destekleyici ve yargısız bir ortam yaratmaya kararlıyız. Her hizmet kategorisi, özel ihtiyaçlarınızı ve hedeflerinizi karşılayacak şekilde dikkatlice uyarlanmıştır ve mümkün olan en etkili desteği almanızı sağlar. Dengeli ve tatmin edici bir yaşama yolculuğunuz, şefkatli ve uzman rehberliğin yardımıyla burada başlar.",
+  "srvServicesHeroDescription": "Psikolojik danışmanlık merkezimizde, bireylerin duygusal ve zihinsel iyilik hallerini destekleyen hizmetler sunuyoruz. Deneyimli ekibimiz, stres, kaygı ve ilişki sorunları gibi konularda kişiye özel rehberlik sağlar. Güvenli ve destekleyici bir ortamda, kişisel gelişiminizi ve sağlıklı başa çıkma stratejilerini geliştirmenize yardımcı oluyoruz.",
   "srvEmpoweringMindsEnhancingLives": "Zihinleri Güçlendirmek, Yaşamları İyileştirmek",
   "srvEmbarkOnYourSoulsJourney": "Ruhunuzun Yolculuğuna Çıkın - İyileşme Her Zaman, Her Yerde Başlar...",
   "srvHealthPsychologyTitle": "Sağlık Psikolojisi",
@@ -265,14 +265,14 @@
   "applyNow": "Şimdi Başvur",
   "BLOGS": "BLOGLAR",
   "blg_goback": "Geri Dön",
-  "blogHeroDescription": "Psikolojik danışmanlığın çeşitli ve büyüleyici dünyasını keşfettiğimiz blogumuza hoş geldiniz. İster ruh sağlığını anlamak, ister kişisel gelişim konusunda tavsiye almak, ister çeşitli terapötik yaklaşımlar hakkında bilgi edinmek isteyin, bu blog içgörülü bilgiler için kaynağınızdır. Klinik psikolojiden danışmanlık tekniklerine kadar alan içindeki çok çeşitli konuları derinlemesine inceleyeceğiz ve psikolojinin bireylerin daha sağlıklı, daha tatmin edici yaşamlar sürmelerine nasıl yardımcı olabileceğine dair uzman görüşleri sunacağız. Zihnin gücünü ve ruhsal iyiliğin önemini keşfetmek için bu yolculukta bize katılın.",
+  "blogHeroDescription": "Psikolojik danışmanlığın büyüleyici dünyasını keşfettiğimiz blogumuza hoş geldiniz. Ruh sağlığı, kişisel gelişim ve terapötik yaklaşımlar üzerine içgörüler sunarak, psikolojinin bireylerin daha sağlıklı ve tatmin edici yaşamlar sürmelerine nasıl yardımcı olduğunu inceliyoruz. Zihnin gücünü ve ruhsal iyiliğin önemini keşfetmek için bize katılın.",
   "searchBlogs": "Blog Ara",
 
   "ABOUT": "HAKKIMIZDA",
 
   "AboutHeroSection": {
     "abt_us": "Hakkımızda",
-    "abt_welcome": "Platformumuza hoş geldiniz! Amacımız, sizi yetenekli ve anlayışlı terapistlerle buluşturarak erişilebilir online terapi seansları sunmaktır. Misyonumuz, zihinsel sağlığınızı ön planda tutan güvenli ve destekleyici bir alan oluşturmaktır. Yardım aramanın zor olabileceğini biliyoruz, bu yüzden sizi yaşamın zorluklarında desteklemek için profesyonel ve yargılayıcı olmayan bir ortam sağlamaya buradayız. İster stres, kaygı veya kişisel zorluklarla mücadele ediyor olun, ihtiyacınız olan rehberliği bulmanıza yardımcı olmaya kararlıyız. Platformumuz esneklik sunarak, nerede olursanız olun ruh sağlığı hizmetlerinin hem pratik hem de etkili olmasını sağlar. Terapinin herkes için erişilebilir olmasını sağlamak ve iyi olma yolculuğunuzda büyüme ve dayanıklılığı teşvik etmek için buradayız.",
+    "abt_welcome": "Platformumuza hoş geldiniz! Amacımız, sizi yetenekli terapistlerle buluşturarak güvenli ve erişilebilir online terapi sunmaktır. Stres, kaygı veya kişisel zorluklarla başa çıkarken ihtiyacınız olan rehberliği sağlamaya kararlıyız. Nerede olursanız olun, ruh sağlığı hizmetlerini pratik ve etkili hale getirmek için buradayız.",
     "abt_mission": "Misyonumuz, ruh sağlığınızı ön planda tutan güvenli ve destekleyici bir alan yaratmaktır.",
     "abt_seeking_help": "Yardım aramanın zorlu olabileceğini anlıyoruz, bu nedenle hayatın zorluklarında sizi desteklemek için profesyonel ve yargısız bir ortam sağlamak için buradayız.",
     "abt_managing": "İster stres, ister kaygı veya kişisel zorluklarla başa çıkıyor olun, ihtiyacınız olan rehberliği bulmanıza yardımcı olmaya kararlıyız.",
