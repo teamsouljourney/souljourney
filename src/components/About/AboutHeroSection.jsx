@@ -5,7 +5,7 @@ const AboutHeroSection = () => {
   const { t } = useTranslation();
   return (
     <div
-      className="w-full min-h-[55vh] bg-cover bg-center pt-36"
+      className="w-full min-h-[55vh] bg-cover bg-center pt-36 pb-12"
       style={{ backgroundImage: `url(${AboutHeroSectionBackground})` }}
     >
       <div className="text-center text-offWhite">
