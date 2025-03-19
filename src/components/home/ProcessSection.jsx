@@ -6,7 +6,7 @@ import Foto3 from "../../assets/images/pexels-karolina-grabowska-4467687.jpg";
 import Foto4 from "../../assets/images/pexels-cottonbro-4065876.jpg";
 
 const ProcessSection = () => {
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
 
   const processSteps = [
     {
@@ -32,15 +32,15 @@ const ProcessSection = () => {
   ];
 
   return (
-    <div className="mx-24 px-4 sm:px-6 lg:px-8 flex flex-col justify-between mb-10">
-      <div className="text-center mt-10">
-        <h3 className="text-3xl sm:text-5xl leading-normal font-urbanist tracking-tight text-navy dark:text-offWhite-dark">
+    <div className="flex flex-col justify-between px-4 mx-4 mb-10 sm:mx-8 md:mx-12 lg:mx-24 sm:px-6 lg:px-8">
+      <div className="mt-10 text-center ">
+        <h3 className="text-3xl leading-normal tracking-tight sm:text-5xl font-urbanist text-navy dark:text-offWhite-dark">
           {t("howItWorks")} ?
         </h3>
       </div>
 
-      <div className="mt-20 ">
-        <ul className="md:grid md:grid-cols-2 sm:grid-cols-4 md:gap-4 lg:grid-cols-4">
+      <div className="mt-10 sm:mt-20">
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 md:gap-6">
           {processSteps.map((step, index) => (
             <ProcessItem
               key={index}
