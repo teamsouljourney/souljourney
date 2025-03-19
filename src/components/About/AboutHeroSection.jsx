@@ -5,10 +5,10 @@ const AboutHeroSection = () => {
   const { t } = useTranslation();
   return (
     <div
-      className="relative w-full min-h-[50vh] bg-cover bg-center py-24 "
+      className="w-full min-h-[55vh] bg-cover bg-center pt-36"
       style={{ backgroundImage: `url(${AboutHeroSectionBackground})` }}
     >
-      <div className="relative z-10 flex flex-col items-center justify-center h-full p-4 text-center text-white md:p-8">
+      <div className="text-center text-offWhite">
         <h1 className="text-3xl font-bold md:text-4xl lg:text-6xl">
           {t("AboutHeroSection.abt_us")}
         </h1>
