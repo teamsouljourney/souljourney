@@ -149,7 +149,7 @@ const TabSwitch = ({
           {searchTerm && (
             <button
               onClick={() => onSearchChange("")}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-navy dark:hover:text-offWhite-dark"
+              className="absolute right-3 top-[calc(50%+16px)] transform -translate-y-1/2 text-gray-500 hover:text-navy dark:hover:text-offWhite-dark"
               aria-label="Clear search"
             >
               <FaTimes size={16} />
