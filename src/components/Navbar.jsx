@@ -143,7 +143,7 @@ export default function Navbar() {
             {/* Profile dropdown */}
             {currentUser && (
               <Menu as="div" className="relative mr-4">
-                {/* MenuButton içindeki avatar kısmı */}
+                {/*  Avatar in MenuButton  */}
                 <MenuButton className="relative flex text-sm rounded-full shadow-lg shadow-mauve-light bg-offWhite-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy hover:shadow-3xl hover:shadow-navy-dark">
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">Open user menu</span>
@@ -209,13 +209,14 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      {/* Hamburger Menu */}
       <DisclosurePanel className="sm:hidden">
         <div className="z-40 px-2 pt-2 pb-3 space-y-1 bg-navy/40 backdrop-blur text-navy-dark">
           {navigation.map((item) => (
             <NavLink to={item.href} key={item.name}>
               <DisclosureButton
                 aria-current={item.current ? "page" : undefined}
-                className="block px-3 py-2 text-base font-medium cursor-pointer hover:border-b-[1px] hover:border-seaGreen-light"
+                className="block px-3 py-2 text-base text-offWhite font-medium cursor-pointer hover:border-b-[1px] hover:border-seaGreen-light"
               >
                 {item.name}
               </DisclosureButton>
