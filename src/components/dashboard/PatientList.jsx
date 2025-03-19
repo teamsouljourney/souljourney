@@ -17,7 +17,7 @@ const PatientList = () => {
     if (currentUser?._id) {
       getUserAppointments(currentUser._id)
     }
-  }, [currentUser, getUserAppointments])
+  }, [currentUser])
 
   useEffect(() => {
     // Get unique patients from appointments
