@@ -8,6 +8,7 @@ import {
   getSingleUserNotesSuccess,
 } from "../features/noteSlice";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
+import { SweetAlertIcons, SweetConfirm, SweetNotify } from "../helper/SweetNotify";
 
 const useNoteCall = () => {
   const { t } = useTranslation();
@@ -48,6 +49,7 @@ const useNoteCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.post("notes", noteData);
+      SweetNotify(t("noteCall.createSuccess"), SweetAlertIcons.SUCCESS);
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -60,6 +62,7 @@ const useNoteCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.put(`notes/${id}`, noteData);
+      SweetNotify(t("noteCall.updateSuccess"), SweetAlertIcons.SUCCESS);
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -69,6 +72,14 @@ const useNoteCall = () => {
   };
 
   const deleteNote = async (id, userId) => {
+    const isConfirmed = await SweetConfirm(
+      t("noteCall.confirmDeleteNoteTitle"),
+      t("noteCall.confirmDeleteNoteText"),
+      SweetAlertIcons.WARNING,
+      t("yes"),
+      t("cancel")
+    );
+    if (!isConfirmed) return; //if cancelled function stops
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.delete(`notes/${id}`);

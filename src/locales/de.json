@@ -781,7 +781,11 @@
     "postNotesFailed": "Fehler beim Posten der Benutzernotizen!",
     "updateNoteFailed": "Fehler beim Aktualisieren der Notiz.",
     "deleteSuccess": "Notiz erfolgreich gelöscht!",
-    "deleteFailed": "Fehler beim Löschen der Notiz."
+    "deleteFailed": "Fehler beim Löschen der Notiz.",
+    "createSuccess": "Notiz erfolgreich erstellt!",
+    "updateSuccess": "Notiz erfolgreich aktualisiert!",
+    "confirmDeleteNoteTitle": "Sind Sie sicher?",
+    "confirmDeleteNoteText": "Diese Aktion kann nicht rückgängig gemacht werden. Die Notiz wird gelöscht."
   },
 
   "userCall": {

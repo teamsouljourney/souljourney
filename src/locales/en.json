@@ -781,7 +781,11 @@
     "postNotesFailed": "Failed to post user's notes!",
     "updateNoteFailed": "Error updating note.",
     "deleteSuccess": "Note deleted successfully!",
-    "deleteFailed": "Failed to delete note."
+    "deleteFailed": "Failed to delete note.",
+    "createSuccess": "Note created successfully!",
+    "updateSuccess": "Note updated successfully!",
+    "confirmDeleteNoteTitle": "Are you sure?",
+    "confirmDeleteNoteText": "This action cannot be undone, note will be deleted."
   },
 
   "userCall": {

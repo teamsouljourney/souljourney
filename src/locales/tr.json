@@ -774,7 +774,11 @@
     "postNotesFailed": "Kullanıcı notları gönderilirken hata oluştu!",
     "updateNoteFailed": "Not güncellenirken hata oluştu.",
     "deleteSuccess": "Not başarıyla silindi!",
-    "deleteFailed": "Not silinirken hata oluştu."
+    "deleteFailed": "Not silinirken hata oluştu.",
+    "createSuccess": "Not başarıyla oluşturuldu!",
+    "updateSuccess": "Not başarıyla güncellendi!",
+    "confirmDeleteNoteTitle": "Emin misiniz?",
+    "confirmDeleteNoteText": "Bu eylem geri alınamaz, not silinecek."
   },
 
   "userCall": {
