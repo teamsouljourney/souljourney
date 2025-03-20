@@ -9,6 +9,7 @@ import {
 } from "../features/categorySlice";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import usePaginationCall from "./usePaginationCall";
+import { SweetAlertIcons, SweetConfirm, SweetNotify } from "../helper/SweetNotify";
 
 const useCategoryCall = () => {
   const { t } = useTranslation();
@@ -77,7 +78,8 @@ const useCategoryCall = () => {
     try {
       await axiosWithToken.delete(`categories/${id}`);
       // dispatch(deleteCategorySuccess(id));
-      toastSuccessNotify(t("categoryCall.deleteSuccess"));
+      SweetNotify(t("categoryCall.deleteSuccess"), SweetAlertIcons.SUCCESS);
+      // toastSuccessNotify(t("categoryCall.deleteSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
