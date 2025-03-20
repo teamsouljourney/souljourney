@@ -16,7 +16,7 @@ import {
 import { deleteUserSuccess } from "../features/userSlice";
 import usePaginationCall from "./usePaginationCall";
 import { logoutSuccess } from "../features/authSlice";
-import { SweetAlertIcons, SweetNotify } from "../helper/SweetNotify";
+import { SweetAlertIcons, SweetConfirm, SweetNotify } from "../helper/SweetNotify";
 
 const useUserCall = () => {
   const { t } = useTranslation();
@@ -74,6 +74,14 @@ const useUserCall = () => {
 
   //* Delete User
   const deleteUser = async (id) => {
+    const isConfirmed = await SweetConfirm(
+      t("userCall.confirmDeleteAccountTitle"),
+      t("userCall.confirmDeleteAccountText"),
+      SweetAlertIcons.WARNING,
+      t("yes"),
+      t("cancel")
+    );
+    if (!isConfirmed) return; //if cancelled function stops
     dispatch(fetchStart());
     try {
       await axiosWithToken.delete(`users/${id}`);
@@ -140,20 +148,27 @@ const useUserCall = () => {
   };
 
   //* Change User's Own Status
-  const changeMyStatus = async (id, isActive) => {
+  const changeMyStatus = async (id) => {
+    const isConfirmed = await SweetConfirm(
+      t("confirmDeleteAccountTitle"),
+      t("confirmDeleteAccountText"),
+      SweetAlertIcons.WARNING,
+      t("yes"),
+      t("cancel")
+    );
+    if (!isConfirmed) return; //if cancelled function stops
     dispatch(fetchStart());
     try {
+      navigate("/");
       await axiosWithToken.patch(`users/${id}/status`);
       SweetNotify(t("userCall.accountInactive"), SweetAlertIcons.WARNING);
+      await axiosWithToken.get("auth/logout");
+      dispatch(logoutSuccess());
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
         error.response?.data?.message || t("userCall.accountStatusChangeFailed")
       );
-    } finally {
-      await axiosWithToken.get("auth/logout");
-      dispatch(logoutSuccess());
-      navigate("/");
     }
   };
 
@@ -193,7 +208,8 @@ const useUserCall = () => {
           },
         }
       );
-      toastSuccessNotify(t("userCall.profilePictureUploaded"));
+      SweetNotify(t("userCall.profilePictureUploaded"), SweetAlertIcons.SUCCESS)
+      // toastSuccessNotify(t("userCall.profilePictureUploaded"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(

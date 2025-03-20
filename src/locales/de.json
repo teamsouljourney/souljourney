@@ -24,6 +24,7 @@
   "restart": "Neustart",
   "nowFreeRegister": "Jetzt kostenlos registrieren",
   "sendMessage": "Nachricht senden",
+  "yes": "Ja",
 
   "HOMEPAGE": "STARTSEITE",
   "onlineTherapy": "Soul Journey & Online Therapie",
@@ -426,7 +427,8 @@
   "dangerZone": "Gefahrenzone/Konto löschen",
   "deleteAccount": "Konto löschen",
   "deleteAccountInfo": "Konto und alle Inhalte dauerhaft löschen. Diese Aktion kann nicht rückgängig gemacht werden.",
-  "confirmDeleteAccount": "Möchten Sie Ihr Konto wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+  "confirmDeleteAccountTitle": "Möchten Sie Ihr Konto wirklich löschen?",
+  "confirmDeleteAccountText": "Diese Aktion kann nicht rückgängig gemacht werden. Ihr Konto wird deaktiviert.",
 
   "WRITEBLOG": "WRITEBLOG",
   "blogTitlePlaceholder": "Blog-Titel *",
@@ -791,7 +793,9 @@
     "passwordChangeSuccess": "Ihr Passwort wurde geändert! Bitte melden Sie sich erneut an, um auf Ihr Konto zuzugreifen.",
     "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts.",
     "profilePictureUploaded": "Profilbild erfolgreich hochgeladen!",
-    "profilePictureUploadFailed": "Fehler beim Hochladen des Profilbilds."
+    "profilePictureUploadFailed": "Fehler beim Hochladen des Profilbilds.",
+    "confirmDeleteAccountTitle": "Sind Sie sicher?",
+    "confirmDeleteAccountText": "Diese Aktion kann nicht rückgängig gemacht werden. Das Konto dieses Benutzers wird gelöscht."
   },
 
   "therapistCall": {

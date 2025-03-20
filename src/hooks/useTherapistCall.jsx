@@ -97,6 +97,14 @@ const useTherapistCall = () => {
 
   //* Delete Therapist
   const deleteTherapist = async (id) => {
+    const isConfirmed = await SweetConfirm(
+      t("userCall.confirmDeleteAccountTitle"),
+      t("userCall.confirmDeleteAccountText"),
+      SweetAlertIcons.WARNING,
+      t("yes"),
+      t("cancel")
+    );
+    if (!isConfirmed) return; //if cancelled function stops
     dispatch(fetchStart());
     try {
       await axiosWithToken.delete(`therapists/${id}`);
@@ -173,7 +181,10 @@ const useTherapistCall = () => {
     try {
       navigate("/");
       await axiosWithToken.patch(`therapists/${id}/changeMyPassword`, values);
-      SweetNotify(t("therapistCall.passwordChangeSuccess"), SweetAlertIcons.SUCCESS);
+      SweetNotify(
+        t("therapistCall.passwordChangeSuccess"),
+        SweetAlertIcons.SUCCESS
+      );
       // toastSuccessNotify(t("therapistCall.passwordChangeSuccess"));
       await axiosWithToken.get("auth/logout");
       dispatch(logoutSuccess());
@@ -204,7 +215,11 @@ const useTherapistCall = () => {
           },
         }
       );
-      toastSuccessNotify(t("therapistCall.profilePictureUploaded"));
+      SweetNotify(
+        t("therapistCall.profilePictureUploadSuccess"),
+        SweetAlertIcons.SUCCESS
+      );
+      // toastSuccessNotify(t("therapistCall.profilePictureUploaded"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
