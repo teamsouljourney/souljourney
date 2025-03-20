@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import useUserCall from "../../hooks/useUserCall";
 import useTherapistCall from "../../hooks/useTherapistCall";
-import { getImageUrl } from "../../helper/getImageUrl";
 
 const AccountUploadProfilePicture = ({ singleUser, singleTherapist }) => {
   const { t } = useTranslation();
@@ -54,8 +53,8 @@ const AccountUploadProfilePicture = ({ singleUser, singleTherapist }) => {
             className="object-cover w-16 h-16 rounded-full border-3 border-navy dark:border-offWhite"
             src={
               isTherapist
-                ? getImageUrl(singleTherapist?.image, avatar)
-                : getImageUrl(singleUser?.image, avatar)
+                ? singleTherapist?.image || avatar
+                : singleUser?.image || avatar
             }
             alt="Profile"
           />
