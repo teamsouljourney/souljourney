@@ -715,7 +715,10 @@
     "updateSuccess": "Appointment updated successfully!",
     "updateFailed": "Failed to update appointment.",
     "deleteSuccess": "Appointment deleted successfully!",
-    "deleteFailed": "Failed to delete appointment."
+    "deleteFailed": "Failed to delete appointment.",
+    "confirmDeleteAppointmentTitle": "Are you sure?",
+    "confirmDeleteAppointmentText": "This action will cancel your appointment.",
+    "confirmDeleteAppointmentByAdminText": "This action will cancel user's appointment."
   },
 
   "authCall": {

@@ -715,7 +715,10 @@
     "updateSuccess": "Termin erfolgreich aktualisiert!",
     "updateFailed": "Fehler beim Aktualisieren des Termins.",
     "deleteSuccess": "Termin erfolgreich gelöscht!",
-    "deleteFailed": "Fehler beim Löschen des Termins."
+    "deleteFailed": "Fehler beim Löschen des Termins.",
+    "confirmDeleteAppointmentTitle": "Sind Sie sicher?",
+    "confirmDeleteAppointmentText": "Diese Aktion storniert Ihren Termin.",
+    "confirmDeleteAppointmentByAdminText": "Diese Aktion storniert den Termin des Benutzers."
   },
 
   "authCall": {
