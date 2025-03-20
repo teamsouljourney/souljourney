@@ -91,7 +91,7 @@ export default function Navbar() {
         <div className="relative flex items-center justify-around h-20">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
-            <DisclosureButton className="relative inline-flex items-center justify-center p-2 rounded-md group focus:outline-none focus:ring-2 focus:ring-inset ">
+            <DisclosureButton className="relative inline-flex items-center justify-center p-2 rounded-md group focus:outline-none focus:ring-2 focus:ring-inset text-navy dark:text-offWhite-dark">
               <span className="absolute -inset-0.5" />
               <span className="border sr-only">Open main menu</span>
               <Bars3Icon
@@ -168,7 +168,7 @@ export default function Navbar() {
                 </MenuButton>
                 <MenuItems
                   transition
-                  className="flex flex-col text-xl w-[11rem]  text-slate-600 bg-navy/40 backdrop-blur p-4 mt-6 rounded-lg absolute right-0"
+                  className="flex flex-col text-xl w-[11rem]  text-slate-600 bg-navy/40 dark:bg-customBlack/50 backdrop-blur p-4 mt-6 rounded-lg absolute right-0"
                 >
                   <MenuItem>
                     <span
@@ -214,7 +214,7 @@ export default function Navbar() {
         </div>
       </div>
       <DisclosurePanel className="sm:hidden">
-        <div className="z-40 px-2 pt-2 pb-3 space-y-1 bg-navy/40 backdrop-blur text-navy-dark">
+        <div className="z-40 px-2 pt-2 pb-3 space-y-1 bg-navy/40 backdrop-blur text-offWhite-dark">
           {navigation.map((item) => (
             <NavLink to={item.href} key={item.name}>
               <DisclosureButton
