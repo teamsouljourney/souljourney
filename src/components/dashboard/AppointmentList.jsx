@@ -10,7 +10,6 @@ const AppointmentList = () => {
   const { currentUserAppointments } = useSelector(
     (state) => state.appointments
   );
-  const navigate = useNavigate();
 
   if (currentUser && currentUser?.isTherapist === false) {
     return (
@@ -24,7 +23,7 @@ const AppointmentList = () => {
 
         {currentUserAppointments.length === 0 ? (
           <p className="mt-1 text-xs text-gray-500 md:text-sm">
-            {t("noAppointment")}
+            {t("noPatient")}
           </p>
         ) : (
           <ul className="mt-8 divide-y divide-offWhite-dark dark:divide-gray-700">

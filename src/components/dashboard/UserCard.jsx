@@ -37,9 +37,7 @@ export default function UserCard() {
               {userData?.lastName?.toUpperCase()}
             </h1>
             <div className="mt-3 text-xs sm:text-sm md:text-base text-offWhite-dark">
-              <p className="max-w-full">
-                {userData?.description}
-              </p>
+              <p className="max-w-full">{userData?.description}</p>
             </div>
           </div>
 
@@ -101,4 +99,4 @@ export default function UserCard() {
       </div>
     </div>
   );
-} 
+}
