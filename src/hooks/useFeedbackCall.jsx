@@ -10,6 +10,7 @@ import {
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import useAxios, { axiosPublic } from "./useAxios";
 import usePaginationCall from "./usePaginationCall";
+import { SweetAlertIcons, SweetConfirm, SweetNotify } from "../helper/SweetNotify";
 
 const useFeedbackCall = () => {
   const { t } = useTranslation();
@@ -53,6 +54,10 @@ const useFeedbackCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.post("feedbacks", info);
+      SweetNotify(
+        t("feedbackCall.postFeedbackSuccess"),
+        SweetAlertIcons.SUCCESS
+      );
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -63,9 +68,18 @@ const useFeedbackCall = () => {
 
   //* Delete feedback
   const deleteFeedback = async (id, userId) => {
+    const isConfirmed = await SweetConfirm(
+      t("feedbackCall.confirmDeleteFeedbackTitle"),
+      t("feedbackCall.confirmDeleteFeedbackText"),
+      SweetAlertIcons.WARNING,
+      t("yes"),
+      t("cancel")
+    );
+    if (!isConfirmed) return; //if cancelled function stops
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.delete(`feedbacks/${id}`);
+      SweetNotify(t("feedbackCall.deleteSuccess"), SweetAlertIcons.WARNING);
       toastSuccessNotify(data?.message || t("feedbackCall.deleteSuccess"));
     } catch (error) {
       dispatch(fetchFail());
