@@ -83,7 +83,8 @@ const useNoteCall = () => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.delete(`notes/${id}`);
-      toastSuccessNotify(data?.message || t("noteCall.deleteSuccess"));
+      SweetNotify(t("noteCall.deleteSuccess"), SweetAlertIcons.WARNING);
+      // toastSuccessNotify(data?.message || t("noteCall.deleteSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
