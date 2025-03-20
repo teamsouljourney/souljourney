@@ -737,7 +737,9 @@
     "deleteSuccess": "Blog başarıyla silindi!",
     "deleteFailed": "Blog silinirken hata oluştu.",
     "fetchLikesFailed": "Beğeni bilgisi getirilirken hata oluştu.",
-    "updateLikeFailed": "Beğeni güncellenirken hata oluştu."
+    "updateLikeFailed": "Beğeni güncellenirken hata oluştu.",
+    "confirmDeleteBlogTitle": "Emin misiniz?",
+    "confirmDeleteBlogText": "Bu eylem geri alınamaz, blog silinecek."
   },
 
   "categoryCall": {

@@ -744,7 +744,9 @@
     "deleteSuccess": "Blog erfolgreich gelöscht!",
     "deleteFailed": "Fehler beim Löschen des Blogs.",
     "fetchLikesFailed": "Fehler beim Abrufen der Like-Informationen.",
-    "updateLikeFailed": "Fehler beim Aktualisieren des Likes."
+    "updateLikeFailed": "Fehler beim Aktualisieren des Likes.",
+    "confirmDeleteBlogTitle": "Sind Sie sicher?",
+    "confirmDeleteBlogText": "Diese Aktion kann nicht rückgängig gemacht werden. Der Blog wird gelöscht."
   },
 
   "categoryCall": {

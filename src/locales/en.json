@@ -744,7 +744,9 @@
     "deleteSuccess": "Blog deleted successfully!",
     "deleteFailed": "Failed to delete blog.",
     "fetchLikesFailed": "Failed to fetch like info.",
-    "updateLikeFailed": "Failed to update like."
+    "updateLikeFailed": "Failed to update like.",
+    "confirmDeleteBlogTitle": "Are you sure?",
+    "confirmDeleteBlogText": "This action cannot be undone, blog will be deleted."
   },
 
   "categoryCall": {
