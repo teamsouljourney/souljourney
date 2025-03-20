@@ -761,10 +761,13 @@
   "feedbackCall": {
     "fetchAllFailed": "Fehler beim Abrufen aller Feedbacks!",
     "fetchTherapistFeedbacksFailed": "Fehler beim Abrufen der Therapeuten-Feedbacks!",
+    "postFeedbackSuccess": "Das Posten des Therapeuten-Feedbacks war erfolgreich!",
     "postFeedbackFailed": "Fehler beim Posten des Therapeuten-Feedbacks!",
     "deleteSuccess": "Feedback erfolgreich gelöscht!",
     "deleteFailed": "Fehler beim Löschen des Feedbacks.",
-    "fetchDetailsFailed": "Fehler beim Abrufen der Feedback-Details."
+    "fetchDetailsFailed": "Fehler beim Abrufen der Feedback-Details.",
+    "confirmDeleteFeedbackTitle": "Sind Sie sicher?",
+    "confirmDeleteFeedbackText": "Diese Aktion kann nicht rückgängig gemacht werden. Das Feedback wird gelöscht."
   },
 
   "noteCall": {

@@ -13,7 +13,7 @@ import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import usePaginationCall from "./usePaginationCall";
 import { logoutSuccess } from "../features/authSlice";
 import { useNavigate } from "react-router-dom";
-import { SweetAlertIcons, SweetNotify } from "../helper/SweetNotify";
+import { SweetAlertIcons, SweetConfirm, SweetNotify } from "../helper/SweetNotify";
 
 const useTherapistCall = () => {
   const { t } = useTranslation();

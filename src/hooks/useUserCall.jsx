@@ -86,7 +86,8 @@ const useUserCall = () => {
     try {
       await axiosWithToken.delete(`users/${id}`);
       dispatch(deleteUserSuccess(id));
-      toastSuccessNotify(t("userCall.deleteSuccess"));
+      SweetNotify(t("userCall.deleteSuccess"), SweetAlertIcons.SUCCESS);
+      // toastSuccessNotify(t("userCall.deleteSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(

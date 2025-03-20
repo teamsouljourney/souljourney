@@ -754,10 +754,13 @@
   "feedbackCall": {
     "fetchAllFailed": "Tüm geri bildirimler getirilirken hata oluştu!",
     "fetchTherapistFeedbacksFailed": "Terapist geri bildirimleri getirilirken hata oluştu!",
+    "postFeedbackSuccess": "Terapistin geri bildirimleri başarıyla oluşturuldu!",
     "postFeedbackFailed": "Terapist geri bildirimi gönderilirken hata oluştu!",
     "deleteSuccess": "Geri bildirim başarıyla silindi!",
     "deleteFailed": "Geri bildirim silinirken hata oluştu.",
-    "fetchDetailsFailed": "Geri bildirim detayları getirilirken hata oluştu."
+    "fetchDetailsFailed": "Geri bildirim detayları getirilirken hata oluştu.",
+    "confirmDeleteFeedbackTitle": "Emin misiniz?",
+    "confirmDeleteFeedbackText": "Bu eylem geri alınamaz, geri bildirim silinecek."
   },
 
   "noteCall": {
