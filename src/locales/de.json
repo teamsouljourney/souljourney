@@ -755,7 +755,9 @@
     "updateSuccess": "Kategorie erfolgreich aktualisiert!",
     "updateFailed": "Fehler beim Aktualisieren der Kategorie.",
     "deleteSuccess": "Kategorie erfolgreich gelöscht!",
-    "deleteFailed": "Fehler beim Löschen der Kategorie."
+    "deleteFailed": "Fehler beim Löschen der Kategorie.",
+    "confirmDeleteCategoryTitle": "Sind Sie sicher?",
+    "confirmDeleteCategoryText": "Diese Aktion kann nicht rückgängig gemacht werden. Die Kategorie wird gelöscht."
   },
 
   "feedbackCall": {

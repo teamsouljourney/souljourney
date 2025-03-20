@@ -748,7 +748,9 @@
     "updateSuccess": "Kategori başarıyla güncellendi!",
     "updateFailed": "Kategori güncellenirken hata oluştu.",
     "deleteSuccess": "Kategori başarıyla silindi!",
-    "deleteFailed": "Kategori silinirken hata oluştu."
+    "deleteFailed": "Kategori silinirken hata oluştu.",
+    "confirmDeleteCategoryTitle": "Emin misiniz?",
+    "confirmDeleteCategoryText": "Bu eylem geri alınamaz, kategori silinecek."
   },
 
   "feedbackCall": {

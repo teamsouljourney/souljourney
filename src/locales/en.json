@@ -755,7 +755,9 @@
     "updateSuccess": "Category updated successfully!",
     "updateFailed": "Failed to update category.",
     "deleteSuccess": "Category deleted successfully!",
-    "deleteFailed": "Failed to delete category."
+    "deleteFailed": "Failed to delete category.",
+    "confirmDeleteCategoryTitle": "Are you sure?",
+    "confirmDeleteCategoryText": "This action cannot be undone, category will be deleted."
   },
 
   "feedbackCall": {

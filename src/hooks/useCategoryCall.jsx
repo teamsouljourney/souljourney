@@ -65,6 +65,14 @@ const useCategoryCall = () => {
 
   //* Delete Category
   const deleteCategory = async (id) => {
+    const isConfirmed = await SweetConfirm(
+      t("categoryCall.confirmDeleteCategoryTitle"),
+      t("categoryCall.confirmDeleteCategoryText"),
+      SweetAlertIcons.WARNING,
+      t("yes"),
+      t("cancel")
+    );
+    if (!isConfirmed) return; //if cancelled function stops
     dispatch(fetchStart());
     try {
       await axiosWithToken.delete(`categories/${id}`);
