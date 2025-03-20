@@ -17,6 +17,8 @@ import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
 import SoulJourneyLogo from "../components/SoulJourneyLogo";
 import ViewNotifications from "./ViewNotifications";
+import useUserCall from "../hooks/useUserCall";
+import useTherapistCall from "../hooks/useTherapistCall";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -26,7 +28,23 @@ export default function Navbar() {
   const [showBackground, setShowBackground] = useState(false);
   let { currentUser } = useSelector((state) => state.auth);
   const { logout } = useAuthCall();
+  const { getSingleUser } = useUserCall();
+  const { getSingleTherapist } = useTherapistCall();
+  const { singleTherapist } = useSelector((state) => state.therapists);
+  const { singleUser } = useSelector((state) => state.users);
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (currentUser?._id) {
+      if (currentUser.isTherapist) {
+        getSingleTherapist(currentUser._id);
+      } else {
+        getSingleUser(currentUser._id);
+      }
+    }
+  }, [currentUser._id]);
+
+  const userData = currentUser.isTherapist ? singleTherapist : singleUser;
 
   const navigation = [
     { name: t("home"), href: "/" },
@@ -147,17 +165,17 @@ export default function Navbar() {
                 <MenuButton className="relative flex text-sm rounded-full shadow-lg shadow-mauve-light bg-offWhite-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy hover:shadow-3xl hover:shadow-navy-dark">
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">Open user menu</span>
-                  {currentUser?.image ? (
+                  {userData?.image ? (
                     <img
                       alt=""
-                      src={currentUser.image}
+                      src={userData.image}
                       className="rounded-full size-6 sm:size-8"
                     />
                   ) : (
                     <div className="flex items-center justify-center rounded-full size-8 bg-navy-dark">
                       <span className="text-sm font-medium text-offWhite-light">
-                        {currentUser?.firstName.charAt(0).toUpperCase() +
-                          currentUser?.lastName.charAt(0).toUpperCase()}
+                        {userData?.firstName.charAt(0).toUpperCase() +
+                          userData?.lastName.charAt(0).toUpperCase()}
                       </span>
                     </div>
                   )}
@@ -172,8 +190,8 @@ export default function Navbar() {
                       className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                     >
                       <h5 className="">
-                        {currentUser?.firstName.toUpperCase()}{" "}
-                        {currentUser?.lastName.toUpperCase()}
+                        {userData?.firstName.toUpperCase()}{" "}
+                        {userData?.lastName.toUpperCase()}
                       </h5>
                     </span>
                   </MenuItem>

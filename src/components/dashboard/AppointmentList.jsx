@@ -2,7 +2,6 @@ import { format } from "date-fns";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 const AppointmentList = () => {
   const { currentUser } = useSelector((state) => state.auth);
@@ -22,7 +21,7 @@ const AppointmentList = () => {
         </div>
 
         {currentUserAppointments.length === 0 ? (
-          <p className="mt-1 text-xs text-gray-500 md:text-sm">
+          <p className="mt-1 text-xs text-navy dark:text-offWhite-dark md:text-lg text-center p-10">
             {t("noPatient")}
           </p>
         ) : (
