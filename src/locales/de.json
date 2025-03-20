@@ -817,7 +817,9 @@
     "passwordChangeSuccess": "Ihr Passwort wurde geändert! Bitte melden Sie sich erneut an, um auf Ihr Konto zuzugreifen.",
     "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts.",
     "profilePictureUploaded": "Profilbild erfolgreich hochgeladen!",
-    "profilePictureUploadFailed": "Fehler beim Hochladen des Profilbilds."
+    "profilePictureUploadFailed": "Fehler beim Hochladen des Profilbilds.",
+    "confirmDeleteAccountTitle": "Sind Sie sicher?",
+    "confirmDeleteAccountText": "Diese Aktion kann nicht rückgängig gemacht werden. Das Konto dieses Therapeuten wird gelöscht."
   },
 
   "chatCall": {

@@ -98,8 +98,8 @@ const useTherapistCall = () => {
   //* Delete Therapist
   const deleteTherapist = async (id) => {
     const isConfirmed = await SweetConfirm(
-      t("userCall.confirmDeleteAccountTitle"),
-      t("userCall.confirmDeleteAccountText"),
+      t("therapistCall.confirmDeleteAccountTitle"),
+      t("therapistCall.confirmDeleteAccountText"),
       SweetAlertIcons.WARNING,
       t("yes"),
       t("cancel")

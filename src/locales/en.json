@@ -817,7 +817,9 @@
     "passwordChangeSuccess": "Your password has been changed! Please log in again to access your account.",
     "passwordChangeFailed": "Failed to change your password.",
     "profilePictureUploaded": "Profile picture uploaded successfully!",
-    "profilePictureUploadFailed": "Failed to upload profile picture."
+    "profilePictureUploadFailed": "Failed to upload profile picture.",
+    "confirmDeleteAccountTitle": "Are you sure?",
+    "confirmDeleteAccountText": "This action cannot be undone, this therapist's account will be deleted."
   },
 
   "chatCall": {

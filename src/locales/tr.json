@@ -810,7 +810,9 @@
     "passwordChangeSuccess": "Şifreniz değiştirildi! Hesabınıza erişmek için lütfen tekrar giriş yapın.",
     "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu.",
     "profilePictureUploaded": "Profil resmi başarıyla yüklendi!",
-    "profilePictureUploadFailed": "Profil resmi yüklenirken hata oluştu."
+    "profilePictureUploadFailed": "Profil resmi yüklenirken hata oluştu.",
+    "confirmDeleteAccountTitle": "Emin misiniz?",
+    "confirmDeleteAccountText": "Bu eylem geri alınamaz, bu terapistin hesabı silinecek."
   },
 
   "chatCall": {
