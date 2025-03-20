@@ -141,7 +141,7 @@
   "SERVICES": "DIENSTLEISTUNGEN",
 
   "srvServicesHeroTitle": "Unsere Dienstleistungen",
-  "srvServicesHeroDescription": "In unserem psychologischen Beratungszentrum bieten wir ein umfassendes Angebot an Dienstleistungen an, die Einzelpersonen dabei unterstützen, ihr emotionales und mentales Wohlbefinden zu verbessern. Unser Team aus erfahrenen Fachleuten arbeitet eng mit jedem Klienten zusammen, um seine individuellen Herausforderungen zu verstehen und maßgeschneiderte Lösungen anzubieten. Egal, ob Sie mit Stress, Angstzuständen, Beziehungsproblemen zu kämpfen haben oder einfach nur Ihr persönliches Wachstum fördern möchten, wir sind hier, um Sie bei jedem Schritt des Prozesses zu begleiten. Wir setzen uns für die Schaffung einer sicheren, unterstützenden und vorurteilsfreien Umgebung ein, in der Sie Ihre Gefühle offen erkunden und gesündere Bewältigungsstrategien entwickeln können. Jede Dienstleistungskategorie ist sorgfältig auf Ihre spezifischen Bedürfnisse und Ziele zugeschnitten, um sicherzustellen, dass Sie die bestmögliche Unterstützung erhalten. Ihre Reise zu einem ausgeglichenen und erfüllten Leben beginnt hier, mit der Hilfe von mitfühlender und fachkundiger Beratung.",
+  "srvServicesHeroDescription": "In unserem psychologischen Beratungszentrum bieten wir Dienstleistungen zur Unterstützung des emotionalen und mentalen Wohlbefindens an. Unser erfahrenes Team bietet individuelle Beratung zu Stress, Angst und Beziehungsproblemen. In einer sicheren und unterstützenden Umgebung helfen wir Ihnen, persönliches Wachstum zu fördern und gesunde Bewältigungsstrategien zu entwickeln.",
   "srvEmpoweringMindsEnhancingLives": "Stärkung des Geistes, Verbesserung des Lebens",
   "srvEmbarkOnYourSoulsJourney": "Begeben Sie sich auf die Reise Ihrer Seele - Heilung beginnt jederzeit, überall...",
   "srvHealthPsychologyTitle": "Gesundheitspsychologie",
@@ -272,14 +272,14 @@
 
   "BLOGS": "BLOGS",
   "blg_goback": "Zurück",
-  "blogHeroDescription": "Willkommen auf unserem Blog, wo wir die vielfältige und faszinierende Welt der psychologischen Beratung erkunden. Ob Sie sich für das Verständnis der psychischen Gesundheit interessieren, Ratschläge zur persönlichen Entwicklung suchen oder sich über die verschiedenen therapeutischen Ansätze informieren möchten, dieser Blog ist Ihre Quelle für aufschlussreiche Informationen. Wir werden uns mit einer Vielzahl von Themen innerhalb des Fachgebiets befassen, von der klinischen Psychologie bis hin zu Beratungstechniken, und Experteneinblicke geben, wie die Psychologie Einzelpersonen helfen kann, ein gesünderes und erfüllteres Leben zu führen. Begleiten Sie uns auf dieser Reise, um die Kraft des Geistes und die Bedeutung des psychischen Wohlbefindens zu entdecken.",
+  "blogHeroDescription": "Willkommen in unserem Blog, in dem wir die faszinierende Welt der psychologischen Beratung erkunden. Wir bieten Einblicke in psychische Gesundheit, persönliche Entwicklung und therapeutische Ansätze und zeigen, wie die Psychologie Menschen zu einem gesünderen und erfüllteren Leben verhilft. Begleiten Sie uns auf dieser Reise, um die Kraft des Geistes und die Bedeutung des Wohlbefindens zu entdecken.",
   "searchBlogs": "Blogs durchsuchen",
 
   "ABOUT": "ÜBER UNS",
 
   "AboutHeroSection": {
     "abt_us": "Über Uns",
-    "abt_welcome": "Willkommen auf unserer Plattform, auf der wir Sie mit einfühlsamen und erfahrenen Therapeuten für zugängliche Online-Therapiesitzungen verbinden möchten. Unsere Mission ist es, einen sicheren und unterstützenden Raum zu schaffen, der Ihr mentales Wohlbefinden in den Mittelpunkt stellt. Wir verstehen, dass es herausfordernd sein kann, Hilfe zu suchen, und sind daher hier, um Ihnen eine professionelle und wertfreie Umgebung zu bieten, die Sie in schwierigen Lebenssituationen unterstützt. Egal, ob Sie mit Stress, Angst oder persönlichen Herausforderungen zu kämpfen haben – wir sind bestrebt, Ihnen die Unterstützung zu bieten, die Sie benötigen. Unsere Plattform bietet Flexibilität und stellt sicher, dass psychische Gesundheitsversorgung bequem und effektiv ist, unabhängig davon, wo Sie sich befinden. Wir setzen uns dafür ein, Therapie für alle zugänglich zu machen und Wachstum sowie Resilienz auf Ihrem Weg zu mehr Wohlbefinden zu fördern.",
+    "abt_welcome": "Willkommen auf unserer Plattform! Unser Ziel ist es, Sie mit erfahrenen Therapeuten zu verbinden und eine sichere, zugängliche Online-Therapie anzubieten. Ob Stress, Angst oder persönliche Herausforderungen – wir sind hier, um Ihnen die notwendige Unterstützung zu bieten. Egal, wo Sie sind, wir machen psychologische Hilfe praktisch und effektiv.",
     "abt_mission": "Unsere Mission ist es, einen sicheren und unterstützenden Raum zu schaffen, der Ihr psychisches Wohlbefinden priorisiert.",
     "abt_seeking_help": "Wir verstehen, dass es eine Herausforderung sein kann, Hilfe zu suchen, daher sind wir hier, um Ihnen ein professionelles und vorurteilsfreies Umfeld zu bieten, das Sie bei den Schwierigkeiten des Lebens unterstützt.",
     "abt_managing": "Egal, ob Sie Stress, Angstzustände oder persönliche Herausforderungen bewältigen, wir sind bestrebt, Ihnen die Unterstützung zu bieten, die Sie benötigen.",
@@ -408,6 +408,7 @@
   "experiences": "Erfahrungen",
   "profile": "Profil",
   "upload": "Hochladen",
+  "categories": "Kategorien",
   "uploadInfo": "Für beste Ergebnisse laden Sie ein Bild mit der Größe 512 x 512 oder größer hoch.",
   "accountInfo": "Aktualisieren Sie hier Ihr Profil und Ihre persönlichen Daten",
   "accountPersonelInfo": "Persönliche Informationen",
@@ -787,8 +788,10 @@
     "statusChangeFailed": "Fehler beim Ändern des Benutzerstatus.",
     "accountInactive": "Ihr Konto ist derzeit inaktiv. Wenn Sie wieder mit uns arbeiten möchten, kontaktieren Sie bitte das SoulJourney-Team. Wir würden uns freuen, Sie wieder willkommen zu heißen! 😊",
     "accountStatusChangeFailed": "Fehler beim Ändern Ihres Kontostatus.",
-    "passwordChangeSuccess": "Ihr Passwort wurde geändert!",
-    "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts."
+    "passwordChangeSuccess": "Ihr Passwort wurde geändert! Bitte melden Sie sich erneut an, um auf Ihr Konto zuzugreifen.",
+    "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts.",
+    "profilePictureUploaded": "Profilbild erfolgreich hochgeladen!",
+    "profilePictureUploadFailed": "Fehler beim Hochladen des Profilbilds."
   },
 
   "therapistCall": {
@@ -807,8 +810,10 @@
     "therapistDisabled": "Therapeut erfolgreich deaktiviert!",
     "therapistActivated": "Therapeut erfolgreich aktiviert!",
     "statusChangeFailed": "Fehler beim Ändern des Therapeutenstatus.",
-    "passwordChangeSuccess": "Ihr Passwort wurde geändert!",
-    "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts."
+    "passwordChangeSuccess": "Ihr Passwort wurde geändert! Bitte melden Sie sich erneut an, um auf Ihr Konto zuzugreifen.",
+    "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts.",
+    "profilePictureUploaded": "Profilbild erfolgreich hochgeladen!",
+    "profilePictureUploadFailed": "Fehler beim Hochladen des Profilbilds."
   },
 
   "chatCall": {
@@ -843,5 +848,43 @@
     "screenSharingStarted": "Bildschirmfreigabe gestartet",
     "screenSharingError": "Fehler bei der Bildschirmfreigabe",
     "webRTCNotSupported": "Ihr Browser unterstützt WebRTC nicht. Bitte verwenden Sie einen modernen Browser wie Chrome, Firefox oder Safari."
-  }
+  },
+
+  "AuthFail": "Authentifizierung fehlgeschlagen! Weiterleitung zur Startseite...",
+
+  "AuthSuccess": {
+    "errorNotify": "Ungültige Benutzerinformationen empfangen. Bitte melden Sie sich erneut an.",
+    "redirect": "Weiterleitung..."
+  },
+
+  "CookieConsentComponent": "Unsere Website verwendet Cookies, um Ihr Erlebnis zu verbessern. Sie können akzeptieren oder ablehnen, um fortzufahren.",
+
+  "NotesModal": {
+    "patientNotes": "Patientennotizen",
+    "noNotes": "Sie haben noch keine Notizen hinzugefügt",
+    "newNote": "Neue Notiz",
+    "newNotePlaceholder": "Geben Sie Ihre Notiz ein",
+    "addNote": "Notiz hinzufügen",
+    "editNote": "Notiz bearbeiten"
+  },
+
+  "informations": "Informationen",
+
+  "Chat": {
+    "chatConnected": "Chat verbunden",
+    "chatConnecting": "Chat wird erneut verbunden...",
+    "notificationsConnected": "Benachrichtigungen verbunden",
+    "notificationsConnecting": "Benachrichtigungen werden erneut verbunden...",
+    "selectToChat": "Bitte wählen Sie eine Person aus, bevor Sie den Chat starten!",
+    "noMessages": "Noch keine Nachrichten. Starten Sie das Gespräch!",
+    "sending": "Senden...",
+    "chatInputPlaceholder": "Nachricht eingeben..."
+  },
+
+  "LeftSidebar": {
+    "searchMessagePlaceholder": "Nachrichten suchen",
+    "online": "Online"
+  },
+
+  "uploading": "Wird hochgeladen..."
 }

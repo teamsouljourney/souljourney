@@ -19,7 +19,7 @@ const Notes = ({ currentUser, userId }) => {
       <NotesModal
         open={open}
         onClose={handleClose}
-        userId={userId._id}
+        userId={userId?._id}
         currentUser={currentUser}
       />
     </div>

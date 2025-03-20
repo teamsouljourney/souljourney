@@ -7,8 +7,7 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import souljorurney_Logo from "../assets/souljourney_Logo.png";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 import Switch from "./Switch";
 import { useEffect, useState } from "react";
@@ -28,7 +27,6 @@ export default function Navbar() {
   let { currentUser } = useSelector((state) => state.auth);
   const { logout } = useAuthCall();
   const { t } = useTranslation();
-  // console.log(currentUser);
 
   const navigation = [
     { name: t("home"), href: "/" },
@@ -55,8 +53,6 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  // referrerPolicy = "no-referrer";
 
   if (
     window.location.pathname.startsWith("/profile") ||
@@ -96,11 +92,11 @@ export default function Navbar() {
               <span className="border sr-only">Open main menu</span>
               <Bars3Icon
                 aria-hidden="true"
-                className="block size-6 group-data-[open]:hidden"
+                className="block size-6 group-data-[open]:hidden dark:text-offWhite"
               />
               <XMarkIcon
                 aria-hidden="true"
-                className="hidden size-6 group-data-[open]:block"
+                className="hidden size-6 group-data-[open]:block dark:text-offWhite"
               />
             </DisclosureButton>
           </div>
@@ -115,8 +111,8 @@ export default function Navbar() {
                     className={({ isActive }) =>
                       classNames(
                         isActive
-                          ? "border-b-2 border-seaGreen-light text-offWhite-light"
-                          : "text-offWhite-light hover:border-b-2 hover:border-seaGreen-light hover:text-offWhite-light",
+                          ? "border-b-2 border-seaGreen-light text-offWhite-light  "
+                          : "text-offWhite-light hover:border-b-2 hover:border-seaGreen-light",
                         " whitespace-nowrap px-4 py-2 text-sm font-medium",
                         "lg:px-4 lg:py-2 lg:text-sm",
                         "md:px-3 md:py-1.5 md:text-sm",
@@ -130,7 +126,7 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-          <div className="absolute right-0 flex items-center gap-1 pr-2 sm:static sm:inset-auto sm:ml-0 sm:pr-0">
+          <div className="absolute right-0 flex items-center justify-center gap-1 pr-2 sm:static sm:inset-auto sm:ml-0 sm:pr-0">
             <LanguageSelector />
             <Switch />
             {currentUser && <ViewNotifications />}
@@ -147,7 +143,7 @@ export default function Navbar() {
             {/* Profile dropdown */}
             {currentUser && (
               <Menu as="div" className="relative mr-4">
-                {/* MenuButton içindeki avatar kısmı */}
+                {/*  Avatar in MenuButton  */}
                 <MenuButton className="relative flex text-sm rounded-full shadow-lg shadow-mauve-light bg-offWhite-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy hover:shadow-3xl hover:shadow-navy-dark">
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">Open user menu</span>
@@ -213,13 +209,14 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      {/* Hamburger Menu */}
       <DisclosurePanel className="sm:hidden">
         <div className="z-40 px-2 pt-2 pb-3 space-y-1 bg-navy/40 backdrop-blur text-offWhite-dark">
           {navigation.map((item) => (
             <NavLink to={item.href} key={item.name}>
               <DisclosureButton
                 aria-current={item.current ? "page" : undefined}
-                className="block px-3 py-2 text-base font-medium cursor-pointer hover:border-b-[1px] hover:border-seaGreen-light"
+                className="block px-3 py-2 text-base text-offWhite font-medium cursor-pointer hover:border-b-[1px] hover:border-seaGreen-light"
               >
                 {item.name}
               </DisclosureButton>

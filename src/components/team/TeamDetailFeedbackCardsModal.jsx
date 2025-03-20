@@ -1,6 +1,8 @@
 import avatar from "../../assets/avatar.png";
+import { useTranslation } from "react-i18next";
 
 const TeamDetailFeedbackCardsModal = ({selectedFeedback, getTimeAgo, setIsModalOpen, setSelectedFeedback}) => {
+  const { t } = useTranslation();
   return (
     <>
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -19,7 +21,7 @@ const TeamDetailFeedbackCardsModal = ({selectedFeedback, getTimeAgo, setIsModalO
                   {selectedFeedback?.userId?.lastName}
                 </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  {getTimeAgo(selectedFeedback?.createdAt)}
+                {selectedFeedback?.createdAt && getTimeAgo(selectedFeedback?.createdAt, t)}
                 </p>
               </div>
             </div>
@@ -57,7 +59,7 @@ const TeamDetailFeedbackCardsModal = ({selectedFeedback, getTimeAgo, setIsModalO
               }}
               className="px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-md transition-colors"
             >
-              Close
+              {t("close")}
             </button>
           </div>
         </div>

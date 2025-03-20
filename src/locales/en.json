@@ -141,7 +141,7 @@
   "SERVICES": "SERVICES",
 
   "srvServicesHeroTitle": "Our Services",
-  "srvServicesHeroDescription": "At our psychological counseling center, we offer a comprehensive range of services designed to support individuals in improving their emotional and mental well-being. Our team of experienced professionals works closely with each client to understand their unique challenges and provide personalized solutions. Whether you are dealing with stress, anxiety, relationship issues, or simply looking to enhance your personal growth, we are here to guide you through every step of the process. We are committed to creating a safe, supportive, and non-judgmental environment where you can openly explore your feelings and develop healthier coping strategies. Each category of service is carefully tailored to meet your specific needs and goals, ensuring that you receive the most effective support possible. Your journey toward a balanced and fulfilling life begins here, with the help of compassionate and expert guidance.",
+  "srvServicesHeroDescription": "Psikolojik danışmanlık merkezimizde, bireylerin duygusal ve zihinsel iyilik hallerini destekleyen hizmetler sunuyoruz. Deneyimli ekibimiz, stres, kaygı ve ilişki sorunları gibi konularda kişiye özel rehberlik sağlar. Güvenli ve destekleyici bir ortamda, kişisel gelişiminizi ve sağlıklı başa çıkma stratejilerini geliştirmenize yardımcı oluyoruz.",
   "srvHealthPsychologyTitle": "Health Psychology",
   "srvHealthPsychologyText": "Health psychology focuses on promoting mental and physical well-being through the development of healthier habits and self-awareness. Our sessions provide the knowledge and tools needed to manage stress, anxiety, and other mental health challenges. We aim to empower you with information that supports overall wellness and helps you make informed decisions about your health.",
   "srvHealthPsychologyList": [
@@ -273,14 +273,14 @@
   "BLOGS": "BLOGS",
 
   "blg_goback": "Go Back",
-  "blogHeroDescription": "Welcome to our blog, where we explore the diverse and fascinating world of psychological counseling. Whether you're interested in understanding mental health, seeking advice on personal development, or learning about the various therapeutic approaches, this blog is your resource for insightful information. We will delve into a wide range of topics within the field, from clinical psychology to counseling techniques, and provide expert insights into how psychology can help individuals lead healthier, more fulfilling lives. Join us on this journey to discover the power of the mind and the importance of mental well-being.",
+  "blogHeroDescription": "Welcome to our blog, where we explore the fascinating world of psychological counseling. We provide insights into mental health, personal growth, and therapeutic approaches, examining how psychology helps individuals lead healthier, more fulfilling lives. Join us on this journey to discover the power of the mind and the importance of well-being.",
   "searchBlogs": "Search Blogs",
 
   "ABOUT": "ABOUT",
 
   "AboutHeroSection": {
     "abt_us": "About Us",
-    "abt_welcome": "Welcome to our platform, where we aim to connect you with skilled and compassionate therapists for accessible online therapy sessions. Our mission is to create a safe, supportive space prioritizing your mental well-being. We understand that seeking help can be challenging, so we are here to provide a professional and non-judgmental environment to support you through life's struggles. Whether you are managing stress, anxiety, or personal challenges, we are committed to helping you find the guidance you need. Our platform offers flexibility, ensuring that mental health care is both convenient and effective, no matter where you are. We are dedicated to making therapy accessible to everyone, fostering growth and resilience in your journey toward well-being",
+    "abt_welcome": "Welcome to our platform! Our goal is to connect you with skilled therapists and provide safe, accessible online therapy. Whether you're dealing with stress, anxiety, or personal challenges, we're committed to offering the guidance you need. No matter where you are, we make mental health services practical and effective.",
     "abt_mission": "Our mission is to create a safe and supportive space that prioritizes your mental well-being.",
     "abt_seeking_help": "We understand that seeking help can be challenging, so we are here to provide a professional and non-judgmental environment to support you through life's struggles.",
     "abt_managing": "Whether you are managing stress, anxiety, or personal challenges, we are committed to helping you find the guidance you need.",
@@ -409,6 +409,7 @@
   "experiences": "Experiences",
   "profile": "Profile",
   "upload": "Upload",
+  "categories": "Categories",
   "uploadInfo": "For best results, upload an image 512x512 or larger.",
   "accountInfo": "Update your profile and personal details here",
   "accountPersonelInfo": "Personel Information",
@@ -787,8 +788,10 @@
     "statusChangeFailed": "Failed to change user status.",
     "accountInactive": "Your account is currently inactive. If you'd like to work with us again, please contact the SoulJourney team. We'd be delighted to welcome you back! 😊",
     "accountStatusChangeFailed": "Failed to change your account status.",
-    "passwordChangeSuccess": "Your password has been changed!",
-    "passwordChangeFailed": "Failed to change your password."
+    "passwordChangeSuccess": "Your password has been changed! Please log in again to access your account.",
+    "passwordChangeFailed": "Failed to change your password.",
+    "profilePictureUploaded": "Profile picture uploaded successfully!",
+    "profilePictureUploadFailed": "Failed to upload profile picture."
   },
 
   "therapistCall": {
@@ -807,8 +810,10 @@
     "therapistDisabled": "Therapist disabled successfully!",
     "therapistActivated": "Therapist activated successfully!",
     "statusChangeFailed": "Failed to change therapist status.",
-    "passwordChangeSuccess": "Your password has been changed!",
-    "passwordChangeFailed": "Failed to change your password."
+    "passwordChangeSuccess": "Your password has been changed! Please log in again to access your account.",
+    "passwordChangeFailed": "Failed to change your password.",
+    "profilePictureUploaded": "Profile picture uploaded successfully!",
+    "profilePictureUploadFailed": "Failed to upload profile picture."
   },
 
   "chatCall": {
@@ -843,5 +848,43 @@
     "screenSharingStarted": "Screen sharing started",
     "screenSharingError": "Error sharing screen.",
     "webRTCNotSupported": "Your browser doesn't support WebRTC. Please use a modern browser like Chrome, Firefox, or Safari."
-  }
+  },
+
+  "AuthFail": "Authentication Failed! Redirecting to Homepage...",
+
+  "AuthSuccess": {
+    "errorNotify": "Invalid user information received. Please log in again.",
+    "redirect": "Redirecting ..."
+  },
+
+  "CookieConsentComponent": "Our website uses cookies to improve your experience. You can accept or decline to continue.",
+
+  "NotesModal": {
+    "patientNotes": "Patient Notes",
+    "noNotes": "You haven’t added any notes yet",
+    "newNote": "New Note",
+    "newNotePlaceholder": "Enter your note",
+    "addNote": "Add Note",
+    "editNote": "Edit Note"
+  },
+
+  "informations": "Informations",
+
+  "Chat": {
+    "chatConnected": "Chat Connected",
+    "chatConnecting": "Chat Reconnecting...",
+    "notificationsConnected": "Notifications Connected",
+    "notificationsConnecting": "Notifications Reconnecting...",
+    "selectToChat": "Please select a person before starting the chat!",
+    "noMessages": "No messages yet. Start the conversation!",
+    "sending": "Sending...",
+    "chatInputPlaceholder": "Type a message..."
+  },
+
+  "LeftSidebar": {
+    "searchMessagePlaceholder": "Search messages",
+    "online": "Online"
+  },
+
+  "uploading": "Uploading..."
 }

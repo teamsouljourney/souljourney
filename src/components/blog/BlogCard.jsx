@@ -16,9 +16,11 @@ const BlogsCard = ({ blog, index }) => {
         }`}
       >
         <div className="min-h-[120px] flex flex-col text-center sm:text-left">
-          <h2 className="mb-3 text-2xl lg:text-3xl font-bold line-clamp-2">{blog.title}</h2>
+          <h2 className="mb-3 text-2xl font-bold lg:text-3xl line-clamp-2">
+            {blog.title}
+          </h2>
           <p
-            className="text-base lg:text-lg text-left line-clamp-4"
+            className="text-base text-left lg:text-lg line-clamp-4"
             dangerouslySetInnerHTML={{ __html: blog.content }}
           ></p>
         </div>

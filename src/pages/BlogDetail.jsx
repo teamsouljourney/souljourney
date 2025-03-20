@@ -1,10 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { HiOutlineHeart, HiHeart, HiArrowLeft, HiEye } from "react-icons/hi";
-import useBlogCall from "../../hooks/useBlogCall";
 import { useDispatch, useSelector } from "react-redux";
-import { getSingleBlogSuccess } from "../../features/blogSlice";
 import { useTranslation } from "react-i18next";
+import { getSingleBlogSuccess } from "../features/blogSlice";
+import useBlogCall from "../hooks/useBlogCall";
 
 const BlogDetail = () => {
   const { t } = useTranslation();

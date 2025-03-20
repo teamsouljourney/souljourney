@@ -1,16 +1,42 @@
+// components/AccountUploadProfilePicture.jsx
+
 import { useSelector } from "react-redux";
 import avatar from "../../assets/avatar3.svg";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import useUserCall from "../../hooks/useUserCall";
+import useTherapistCall from "../../hooks/useTherapistCall";
 
 const AccountUploadProfilePicture = ({ singleUser, singleTherapist }) => {
   const { t } = useTranslation();
+  const { uploadProfilePicture } = useUserCall();
+  const { uploadProfilePictureTherapist } = useTherapistCall();
+
   const { currentUser } = useSelector((state) => state.auth);
-  // console.log(currentUser);
+  const [isUploading, setIsUploading] = useState(false);
+
   const { isTherapist } = currentUser;
+
+  const id = isTherapist ? singleTherapist?._id : singleUser?._id;
+
+  const handleFileUpload = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    setIsUploading(true);
+
+    if (isTherapist) {
+      await uploadProfilePictureTherapist(id, file);
+    } else {
+      await uploadProfilePicture(id, file);
+    }
+
+    setIsUploading(false);
+  };
 
   return (
     <>
-      <div className="flex w-full flex-col items-start gap-4">
+      <div className="flex flex-col items-start w-full gap-4">
         <span className="text-2xl font-medium">
           {isTherapist ? (
             <i>
@@ -24,14 +50,27 @@ const AccountUploadProfilePicture = ({ singleUser, singleTherapist }) => {
         </span>
         <div className="flex items-center gap-4">
           <img
-            className="h-16 w-16 rounded-full border-3 border-navy dark:border-offWhite  object-cover "
-            src={singleUser?.image || avatar}
+            className="object-cover w-16 h-16 rounded-full border-3 border-navy dark:border-offWhite"
+            src={
+              isTherapist
+                ? singleTherapist?.image || avatar
+                : singleUser?.image || avatar
+            }
+            alt="Profile"
           />
           {/* Upload Profile Image Section */}
           <div className="flex flex-col items-start gap-2">
-            <button type="button" className="account-btn">
-              {t("upload")} {/* Upload */}
-            </button>
+            <label className="account-btn" htmlFor="profile-image-upload">
+              {isUploading ? t("uploading") : t("upload")}
+            </label>
+            <input
+              type="file"
+              id="profile-image-upload"
+              accept="image/*"
+              onChange={handleFileUpload}
+              className="hidden"
+              disabled={isUploading}
+            />
             <span>
               {t("uploadInfo")}
               {/* For best results, upload an image 512x512 or larger. */}

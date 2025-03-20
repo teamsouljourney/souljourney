@@ -54,13 +54,39 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        // Ignore Redux Persist actions
+        ignoredActions: [
+          FLUSH,
+          REHYDRATE,
+          PAUSE,
+          PERSIST,
+          PURGE,
+          REGISTER,
+          // Chat actions
+          "chats/setSocket",
+          "chats/setSocketConnected",
+          "chats/setUserConnected",
+          "chats/receiveMessage",
+          "chats/updateOnlineUsers",
+          // Notification actions
+          "notifications/receiveNewNotification",
+          // Video actions
+          "video/setDevices",
+          "video/setHaveMedia",
+          "video/setIsAudioOn",
+          "video/setIsVideoOn",
+          "video/setMediaStatus",
+          "video/setSelectedDevices",
+          "video/setCallStatus",
+        ],
+        // Ignore specific paths in  state that might contain non-serializable values
+        ignoredPaths: ["chats.socket"],
       },
     }),
   //devTools: process.env.NODE_ENV !== "production",
 });
 
 //! redux-persist
-export let persistor = persistStore(store);
+export const persistor = persistStore(store);
 
 export default store;

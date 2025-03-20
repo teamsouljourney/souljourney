@@ -36,7 +36,7 @@ const TeamDetailBody = ({sectionRefs}) => {
   if (error || !singleTherapistFeedbacks) {
     return (
       <div className="text-center text-mauve">
-        {t(TD-feedbacksNotFound)} {/* Therapist' feedbacks not found! */}
+        {t("TD-feedbacksNotFound")} {/* Therapist' feedbacks not found! */}
       </div>
     );
   }

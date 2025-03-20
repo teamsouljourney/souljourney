@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 export default function RightSidebar({ isOpen, sidebarRef }) {
+  const { t } = useTranslation();
   const { selectedUser } = useSelector((state) => state.chats);
   const { currentUser } = useSelector((state) => state.auth);
   const { currentUserAppointments } = useSelector(
@@ -52,10 +54,10 @@ export default function RightSidebar({ isOpen, sidebarRef }) {
       </div>
 
       <div className="p-6">
-        <h4 className="font-bold mb-4 ">Informations</h4>
+        <h4 className="font-bold mb-4 ">{/* Informations */} {t("informations")}</h4>
         <div className="space-y-4">
           <p className="w-full px-4 py-2 rounded-lg">
-            <b className="">Email : </b>
+            <b className="">{/* Email */} {t("email")} : </b>
             <i>{selectedUserData[0]?.email}</i>
           </p>
           <p className="w-full px-4 py-2 rounded-lg">

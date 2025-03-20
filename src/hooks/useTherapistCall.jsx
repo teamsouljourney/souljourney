@@ -13,6 +13,7 @@ import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import usePaginationCall from "./usePaginationCall";
 import { logoutSuccess } from "../features/authSlice";
 import { useNavigate } from "react-router-dom";
+import { SweetAlertIcons, SweetNotify } from "../helper/SweetNotify";
 
 const useTherapistCall = () => {
   const { t } = useTranslation();
@@ -131,7 +132,11 @@ const useTherapistCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.patch(`therapists/${id}/updateMe`, updatedTherapist);
-      toastSuccessNotify(t("therapistCall.profileUpdateSuccess"));
+      SweetNotify(
+        t("therapistCall.profileUpdateSuccess"),
+        SweetAlertIcons.SUCCESS
+      );
+      // toastSuccessNotify(t("therapistCall.profileUpdateSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -168,7 +173,8 @@ const useTherapistCall = () => {
     try {
       navigate("/");
       await axiosWithToken.patch(`therapists/${id}/changeMyPassword`, values);
-      toastSuccessNotify(t("therapistCall.passwordChangeSuccess"));
+      SweetNotify(t("therapistCall.passwordChangeSuccess"), SweetAlertIcons.SUCCESS);
+      // toastSuccessNotify(t("therapistCall.passwordChangeSuccess"));
       await axiosWithToken.get("auth/logout");
       dispatch(logoutSuccess());
     } catch (error) {
@@ -177,6 +183,39 @@ const useTherapistCall = () => {
         error.response?.data?.message || t("therapistCall.passwordChangeFailed")
       );
     }
+  };
+
+  //* Upload Profile Picture
+  const uploadProfilePictureTherapist = async (id, imageFile) => {
+    dispatch(fetchStart());
+
+    const formData = new FormData();
+    formData.append("image", imageFile);
+
+    let response;
+
+    try {
+      response = await axiosWithToken.post(
+        `therapists/${id}/upload-profile-picture`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      toastSuccessNotify(t("therapistCall.profilePictureUploaded"));
+    } catch (error) {
+      dispatch(fetchFail());
+      toastErrorNotify(
+        error.response?.data?.message ||
+          t("therapistCall.profilePictureUploadFailed")
+      );
+    } finally {
+      getSingleTherapist(id);
+    }
+
+    return response;
   };
 
   return {
@@ -190,6 +229,7 @@ const useTherapistCall = () => {
     changeTherapistStatus,
     createTherapist,
     changeMyPasswordTherapist,
+    uploadProfilePictureTherapist,
   };
 };
 

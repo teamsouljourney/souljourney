@@ -3,11 +3,11 @@ import BlogHeroSection from "../components/blog/BlogHeroSection";
 import useBlogCall from "../hooks/useBlogCall";
 import useCategoryCall from "../hooks/useCategoryCall";
 import { useDispatch, useSelector } from "react-redux";
-import BlogsCard from "../components/blog/BlogsCard";
 import Pagination from "../components/adminPanel/Pagination";
 import TabSwitch from "../components/TabSwitch";
 import { useTranslation } from "react-i18next";
 import { setSearchTerm } from "../features/blogSlice";
+import BlogsCard from "../components/blog/BlogCard";
 
 const Blog = () => {
   const dispatch = useDispatch();
