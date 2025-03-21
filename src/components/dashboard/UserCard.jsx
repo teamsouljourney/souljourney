@@ -26,7 +26,7 @@ export default function UserCard() {
   const userData = currentUser.isTherapist ? singleTherapist : singleUser;
 
   return (
-    <div className="w-full max-w-5xl px-4 py-6 mx-auto">
+    <div className="w-full px-4 py-6 mx-auto">
       {/* Top Card - User Profile */}
       <div className="w-full p-5 mb-4 bg-gradient-to-bl from-navy-dark to-seaGreen-dark rounded-xl">
         <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:items-start">
@@ -79,14 +79,26 @@ export default function UserCard() {
                 : "-"}
             </p>
           </div>
-          <div>
-            <p className="mb-1 font-semibold text-navy dark:text-offWhite">
-              {t("address")} :
-            </p>
-            <p className="text-sm font-medium sm:text-base text-navy dark:text-offWhite/60">
-              {userData?.address || "-"}
-            </p>
-          </div>
+          {currentUser?.isTherapist ? (
+            <div>
+              <p className="mb-1 font-semibold text-navy dark:text-offWhite">
+                {t("experience")} :
+              </p>
+              <p className="text-sm font-medium sm:text-base text-navy dark:text-offWhite/60">
+                {userData?.experience || "-"}
+              </p>
+            </div>
+          ) : (
+            <div>
+              <p className="mb-1 font-semibold text-navy dark:text-offWhite">
+                {t("address")} :
+              </p>
+              <p className="text-sm font-medium sm:text-base text-navy dark:text-offWhite/60">
+                {userData?.address || "-"}
+              </p>
+            </div>
+          )}
+
           <div>
             <p className="mb-1 font-semibold text-navy dark:text-offWhite">
               {t("memberId")} :

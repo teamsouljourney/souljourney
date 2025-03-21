@@ -8,7 +8,7 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
   const { t } = useTranslation();
   const [filteredAppointments, setFilteredAppointments] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const { currentUserAppointments } = useSelector(
+  const { currentUserAppointments = [] } = useSelector(
     (state) => state.appointments
   );
   const { currentUser } = useSelector((state) => state.auth);
@@ -16,62 +16,81 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // Get unique appointments based on user type
-    const uniqueAppointments = Array.from(
-      new Map(
-        currentUserAppointments.map((appointment) => [
-          currentUser.isTherapist
-            ? appointment.userId._id
-            : appointment.therapistId._id,
-          appointment,
-        ])
-      ).values()
-    );
-    setFilteredAppointments(uniqueAppointments);
-  }, [currentUserAppointments, currentUser.isTherapist]);
+    if (!currentUserAppointments || !currentUser) return;
 
-  const handleChange = (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    setSearchTerm(searchTerm);
-
-    if (!searchTerm) {
+    try {
+      // Get unique appointments based on user type
       const uniqueAppointments = Array.from(
         new Map(
-          currentUserAppointments.map((appointment) => [
-            currentUser.isTherapist
-              ? appointment.userId._id
-              : appointment.therapistId._id,
+          currentUserAppointments?.map((appointment) => [
+            currentUser?.isTherapist
+              ? appointment?.userId?._id
+              : appointment?.therapistId?._id,
             appointment,
           ])
         ).values()
       );
       setFilteredAppointments(uniqueAppointments);
+    } catch (error) {
+      console.error("Error processing appointments:", error);
+      setFilteredAppointments([]);
+    }
+  }, [currentUserAppointments, currentUser]);
+
+  const handleChange = (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    setSearchTerm(searchTerm);
+
+    if (!searchTerm || !currentUserAppointments || !currentUser) {
+      // Reset to all appointments
+      try {
+        const uniqueAppointments = Array.from(
+          new Map(
+            currentUserAppointments?.map((appointment) => [
+              currentUser?.isTherapist
+                ? appointment?.userId?._id
+                : appointment?.therapistId?._id,
+              appointment,
+            ])
+          ).values()
+        );
+        setFilteredAppointments(uniqueAppointments);
+      } catch (error) {
+        console.error("Error resetting appointments:", error);
+        setFilteredAppointments([]);
+      }
       return;
     }
 
-    const filteredByName = currentUserAppointments.filter((appointment) => {
-      const contactPerson = currentUser.isTherapist
-        ? appointment.userId
-        : appointment.therapistId;
-      return contactPerson.firstName.toLowerCase().startsWith(searchTerm);
-    });
+    try {
+      const filteredByName = currentUserAppointments.filter((appointment) => {
+        const contactPerson = currentUser?.isTherapist
+          ? appointment?.userId
+          : appointment?.therapistId;
+        return contactPerson?.firstName?.toLowerCase().startsWith(searchTerm);
+      });
 
-    const uniqueFilteredContacts = Array.from(
-      new Map(
-        filteredByName.map((appointment) => [
-          currentUser.isTherapist
-            ? appointment.userId._id
-            : appointment.therapistId._id,
-          appointment,
-        ])
-      ).values()
-    );
+      const uniqueFilteredContacts = Array.from(
+        new Map(
+          filteredByName.map((appointment) => [
+            currentUser?.isTherapist
+              ? appointment?.userId?._id
+              : appointment?.therapistId?._id,
+            appointment,
+          ])
+        ).values()
+      );
 
-    setFilteredAppointments(uniqueFilteredContacts);
+      setFilteredAppointments(uniqueFilteredContacts);
+    } catch (error) {
+      console.error("Error filtering appointments:", error);
+      setFilteredAppointments([]);
+    }
   };
 
   const handleUserClick = (contactPerson) => {
-    const contactId = contactPerson._id;
+    if (!contactPerson) return;
+    const contactId = contactPerson?._id;
     dispatch(setSelectedUser(contactId));
   };
 
@@ -109,42 +128,30 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
         {/* Chat List */}
         {filteredAppointments.map((appointment) => {
           // Determine the correct contact person based on user type
-          const contactPerson = currentUser.isTherapist
-            ? appointment.userId
-            : appointment.therapistId;
+          const contactPerson = currentUser?.isTherapist
+            ? appointment?.userId
+            : appointment?.therapistId;
+
+          if (!contactPerson) return null;
 
           return (
             <div
               className="p-4 hover:bg-offWhite-dark dark:hover:bg-background-lightdark cursor-pointer"
-              key={contactPerson._id}
+              key={`${contactPerson?._id || "unknown"}-${
+                appointment?._id || "unknown"
+              }`}
               onClick={() => handleUserClick(contactPerson)}
             >
               <div className="flex items-center gap-3">
-                {/* <div className="w-10 h-10 rounded-full border-2 border-seaGreen-light flex items-center justify-center">
-                  {contactPerson?.image ? (
-                    <img
-                      alt=""
-                      src={contactPerson.image}
-                      className="rounded-full size-6 sm:size-8 object-cover overflow-hidden"
-                    />
-                  ) : (
-                    <div className="flex items-center justify-center rounded-full size-8 bg-navy text-offWhite">
-                      <span className="text-sm font-medium">
-                        {contactPerson.firstName.charAt(0).toUpperCase() +
-                          contactPerson.lastName.charAt(0).toUpperCase()}
-                      </span>
-                    </div>
-                  )}
-                </div> */}
                 <UserAvatar userData={contactPerson} />
                 <div className="flex-1">
                   <div className="flex justify-between">
                     <p className="font-medium text-sm">
-                      {contactPerson.firstName.toUpperCase()}{" "}
-                      {contactPerson.lastName.toUpperCase()}
+                      {contactPerson?.firstName?.toUpperCase() || ""}{" "}
+                      {contactPerson?.lastName?.toUpperCase() || ""}
                     </p>
                     <span className="text-xs text-right">
-                      {contactPerson.isOnline ? (
+                      {contactPerson?.isOnline ? (
                         <div className="flex items-center gap-2">
                           <div className="rounded-full bg-emerald-500/20 p-1">
                             <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
@@ -153,29 +160,37 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
                         </div>
                       ) : (
                         (() => {
-                          const date = new Date(contactPerson.lastSeen);
-                          const today = new Date();
-                          today.setHours(0, 0, 0, 0);
+                          try {
+                            if (!contactPerson?.lastSeen)
+                              return <span className="text-xs">-</span>;
 
-                          if (date.toDateString() === today.toDateString()) {
-                            return (
-                              <span className="text-xs">
-                                {date.toLocaleString("de-DE", {
-                                  hour: "2-digit",
-                                  minute: "2-digit",
-                                })}
-                              </span>
-                            );
-                          } else {
-                            return (
-                              <span className="text-xs">
-                                {date.toLocaleString("de-DE", {
-                                  year: "numeric",
-                                  month: "numeric",
-                                  day: "numeric",
-                                })}
-                              </span>
-                            );
+                            const date = new Date(contactPerson.lastSeen);
+                            const today = new Date();
+                            today.setHours(0, 0, 0, 0);
+
+                            if (date.toDateString() === today.toDateString()) {
+                              return (
+                                <span className="text-xs">
+                                  {date.toLocaleString("de-DE", {
+                                    hour: "2-digit",
+                                    minute: "2-digit",
+                                  })}
+                                </span>
+                              );
+                            } else {
+                              return (
+                                <span className="text-xs">
+                                  {date.toLocaleString("de-DE", {
+                                    year: "numeric",
+                                    month: "numeric",
+                                    day: "numeric",
+                                  })}
+                                </span>
+                              );
+                            }
+                          } catch (error) {
+                            console.error("Error formatting date:", error);
+                            return <span className="text-xs">-</span>;
                           }
                         })()
                       )}

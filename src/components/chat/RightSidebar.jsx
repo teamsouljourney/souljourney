@@ -40,8 +40,10 @@ export default function RightSidebar({ isOpen, sidebarRef }) {
           ) : (
             <div className="flex items-center justify-center rounded-full size-20 bg-navy-dark">
               <span className="text-sm font-medium text-offWhite-light">
-                {selectedUserData[0]?.firstName.charAt(0).toUpperCase() +
-                  selectedUserData[0]?.lastName.charAt(0).toUpperCase()}
+                {(selectedUserData[0]?.firstName?.charAt(0)?.toUpperCase() ||
+                  "") +
+                  (selectedUserData[0]?.lastName?.charAt(0)?.toUpperCase() ||
+                    "")}
               </span>
             </div>
           )}
