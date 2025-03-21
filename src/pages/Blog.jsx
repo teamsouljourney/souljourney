@@ -75,7 +75,7 @@ const Blog = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20 bg-gradient-to-b bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
+    <div className="min-h-screen bg-gradient-to-b bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
       <BlogHeroSection />
 
       <TabSwitch
