@@ -67,7 +67,9 @@ const Footer = () => {
             <ul className="mt-2 flex">
               <li>
                 <NavLink
-                  to="#"
+                  to="https://github.com/teamsouljourney"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-navy-dark hover:text-mauve-dark dark:hover:text-seaGreen-light dark:text-mauve-dark"
                 >
                   <svg
@@ -86,7 +88,9 @@ const Footer = () => {
               </li>
               <li>
                 <NavLink
-                  to="#"
+                  to="https://github.com/teamsouljourney"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-navy-dark hover:text-mauve-dark dark:hover:text-seaGreen-light dark:text-mauve-dark"
                 >
                   <svg
@@ -105,7 +109,9 @@ const Footer = () => {
               </li>
               <li>
                 <NavLink
-                  to="#"
+                  to="https://github.com/teamsouljourney"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-navy-dark hover:text-mauve-dark dark:hover:text-seaGreen-light dark:text-mauve-dark"
                 >
                   <svg
@@ -120,7 +126,9 @@ const Footer = () => {
               </li>
               <li>
                 <NavLink
-                  to="#"
+                  to="https://github.com/teamsouljourney"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-navy-dark hover:text-mauve-dark dark:hover:text-seaGreen-light dark:text-mauve-dark"
                 >
                   <svg
@@ -139,7 +147,9 @@ const Footer = () => {
               </li>
               <li>
                 <NavLink
-                  to="#"
+                  to="https://github.com/teamsouljourney"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-navy-dark hover:text-mauve-dark dark:hover:text-seaGreen-light dark:text-mauve-dark"
                 >
                   <svg
