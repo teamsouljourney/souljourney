@@ -1,6 +1,7 @@
 // import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import avatar from "../../assets/avatar3.svg";
 
 const TeamCard = ({ therapist }) => {
   const { t } = useTranslation();
@@ -11,7 +12,7 @@ const TeamCard = ({ therapist }) => {
       <div className="relative w-full h-56 md:h-64">
         <img
           className="object-cover w-full h-full "
-          src={therapist?.image}
+          src={therapist?.image || avatar}
           alt={`${therapist?.firstName} ${therapist?.lastName}`}
         />
       </div>
