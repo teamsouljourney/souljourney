@@ -26,7 +26,7 @@ export default function UserCard() {
   const userData = currentUser.isTherapist ? singleTherapist : singleUser;
 
   return (
-    <div className="w-full max-w-5xl px-4 py-6 mx-auto">
+    <div className="w-full px-4 py-6 mx-auto">
       {/* Top Card - User Profile */}
       <div className="w-full p-5 mb-4 bg-gradient-to-bl from-navy-dark to-seaGreen-dark rounded-xl">
         <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:items-start">
