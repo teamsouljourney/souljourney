@@ -30,12 +30,12 @@ export default function RightSidebar({ isOpen, sidebarRef }) {
       } fixed inset-y-0 right-0 z-30 w-80 bg-offWhite dark:bg-background-dark border-l text-navy dark:text-offWhite-dark transition-transform duration-300 ease-in-out`}
     >
       <div className="p-6 text-center border-b">
-        <div className="w-28 h-28 rounded-full flex items-center justify-center mx-auto mb-4 object-cover">
+        <div className="w-40 h-40 rounded-full flex items-center justify-center mx-auto mb-4 object-cover">
           {selectedUserData[0]?.image ? (
             <img
               alt=""
               src={selectedUserData[0]?.image || "/placeholder.svg"}
-              className="rounded-full size-28"
+              className="rounded-xl w-full h-full object-cover overflow-hidden"
             />
           ) : (
             <div className="flex items-center justify-center rounded-full size-20 bg-navy-dark">
@@ -54,10 +54,14 @@ export default function RightSidebar({ isOpen, sidebarRef }) {
       </div>
 
       <div className="p-6">
-        <h4 className="font-bold mb-4 ">{/* Informations */} {t("informations")}</h4>
+        <h4 className="font-bold mb-4 ">
+          {/* Informations */} {t("informations")}
+        </h4>
         <div className="space-y-4">
           <p className="w-full px-4 py-2 rounded-lg">
-            <b className="">{/* Email */} {t("email")} : </b>
+            <b className="">
+              {/* Email */} {t("email")} :{" "}
+            </b>
             <i>{selectedUserData[0]?.email}</i>
           </p>
           <p className="w-full px-4 py-2 rounded-lg">

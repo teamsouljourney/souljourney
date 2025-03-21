@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSelectedUser } from "../../features/chatSlice";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import UserAvatar from "./UserAvatar";
 
 export default function LeftSidebar({ isOpen, toggleSidebar }) {
   const { t } = useTranslation();
@@ -119,12 +120,12 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
               onClick={() => handleUserClick(contactPerson)}
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full border-2 border-seaGreen-light flex items-center justify-center">
+                {/* <div className="w-10 h-10 rounded-full border-2 border-seaGreen-light flex items-center justify-center">
                   {contactPerson?.image ? (
                     <img
                       alt=""
                       src={contactPerson.image}
-                      className="rounded-full size-6 sm:size-8"
+                      className="rounded-full size-6 sm:size-8 object-cover overflow-hidden"
                     />
                   ) : (
                     <div className="flex items-center justify-center rounded-full size-8 bg-navy text-offWhite">
@@ -134,7 +135,8 @@ export default function LeftSidebar({ isOpen, toggleSidebar }) {
                       </span>
                     </div>
                   )}
-                </div>
+                </div> */}
+                <UserAvatar userData={contactPerson} />
                 <div className="flex-1">
                   <div className="flex justify-between">
                     <p className="font-medium text-sm">

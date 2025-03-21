@@ -5,6 +5,7 @@ import useChatCall from "../../hooks/useChatCall";
 import { BiSend } from "react-icons/bi";
 import useNotificationCall from "../../hooks/useNotificationCall";
 import { useTranslation } from "react-i18next";
+import UserAvatar from "./UserAvatar";
 
 export default function MainChatArea({
   isEmojiPickerOpen,
@@ -166,7 +167,7 @@ export default function MainChatArea({
           </button>
           {selectedUser && selectedUserData?.[0] && (
             <>
-              <div
+              {/* <div
                 className="flex items-center justify-center w-10 h-10 border-2 rounded-full cursor-pointer border-seaGreen-light"
                 onClick={toggleRightSidebar}
               >
@@ -174,7 +175,7 @@ export default function MainChatArea({
                   <img
                     alt=""
                     src={selectedUserData[0]?.image || "/placeholder.svg"}
-                    className="rounded-full size-8"
+                    className="rounded-full size-8 object-cover overflow-hidden"
                   />
                 ) : (
                   <div className="flex items-center justify-center rounded-full size-8 bg-navy-dark">
@@ -184,7 +185,11 @@ export default function MainChatArea({
                     </span>
                   </div>
                 )}
-              </div>
+              </div> */}
+              <UserAvatar
+                userData={selectedUserData[0]}
+                toggleRightSidebar={toggleRightSidebar}
+              />
               <button className="text-left" onClick={toggleRightSidebar}>
                 <p className="font-medium text-navy dark:text-offWhite">
                   {selectedUserData[0]?.firstName.toUpperCase()}{" "}
@@ -224,7 +229,10 @@ export default function MainChatArea({
 
       {!selectedUser && (
         <div className="mt-12 text-center dark:text-offWhite">
-          <p>{t("Chat.selectToChat")} {/* {"Please select a person before starting the chat!"} */}</p>
+          <p>
+            {t("Chat.selectToChat")}{" "}
+            {/* {"Please select a person before starting the chat!"} */}
+          </p>
         </div>
       )}
 
@@ -236,7 +244,8 @@ export default function MainChatArea({
         >
           {sortedChats.length === 0 ? (
             <div className="my-8 text-center text-navy dark:text-offWhite">
-            {t("Chat.noMessages")} {/* No messages yet. Start the conversation! */}
+              {t("Chat.noMessages")}{" "}
+              {/* No messages yet. Start the conversation! */}
             </div>
           ) : (
             sortedChats.map((chat) => (
@@ -277,7 +286,7 @@ export default function MainChatArea({
                         })}
                       </>
                     ) : (
-                      t("Chat.sending") 
+                      t("Chat.sending")
                     )}
                   </div>
                 </div>
