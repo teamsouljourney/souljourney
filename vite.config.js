@@ -15,5 +15,13 @@ export default defineConfig(({ mode }) => {
           },
         }
       : {},
+    build: {
+      rollupOptions: {
+        input: {
+          main: "index.html",
+          robots: "public/robots.txt",
+        },
+      },
+    },
   };
 });
