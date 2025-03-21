@@ -42,11 +42,6 @@ const TeamDetailBody = ({sectionRefs}) => {
   }
 
   const { description, graduation, experience, categoryId } = singleTherapist;
-  // console.log(singleTherapist);
-  // console.log(categoryId);
-  // console.log(singleTherapistFeedbacks);
-  // console.log(singleTherapistFeedbacks.length);
-  // console.log(feedback);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -125,7 +120,6 @@ const TeamDetailBody = ({sectionRefs}) => {
           <p className="text-sm sm:text-base leading-relaxed sm:leading-relaxed mb-4 sm:mb-6">
             {t("TD-reviews-info")} 
             {/*We deeply value the trust our clients place in our professionals. Every review is a reflection of real experiences, shared by individuals who have found guidance, support, and positive change in their journey. Therapy is a personal and unique process, and we appreciate those who take the time to share their insights. Your feedback not only helps others but also inspires us to continue providing compassionate and effective care.*/}
-            
           </p>
           {/* We truly appreciate the wonderful feedback we receive about our professionals. Each review reflects the genuine experiences of those who have worked with them, shared voluntarily by individuals who found value in their journey. Everyone’s therapy experience is unique, and we are grateful for the trust placed in us. */}
           {/* Profesyonellerimiz hakkında aldığımız harika geri bildirimler için gerçekten minnettarız. Her bir yorum, onlarla çalışmış kişilerin gerçek deneyimlerini yansıtmakta olup, yolculuklarından değer bulan bireyler tarafından gönüllü olarak paylaşılmıştır. Herkesin terapi süreci kendine özgüdür ve bize duyulan güven için teşekkür ederiz. */}
@@ -136,7 +130,6 @@ const TeamDetailBody = ({sectionRefs}) => {
           {singleTherapistFeedbacks.length > 0 && <TeamDetailFeedbackCards/>}          
 
           {/* <!-- Add Comment Form --> Only for logged in users */}
-
           {currentUser && (
             <TeamDetailFeedbackForm
               id={id}
