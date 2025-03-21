@@ -1,3 +1,4 @@
+import { Suspense, lazy } from "react";
 import {
   Navigate,
   Route,
@@ -5,111 +6,127 @@ import {
   Routes,
 } from "react-router-dom";
 import PrivateRouter from "./PrivateRouter";
-import Home from "../pages/Home";
-import Contact from "../pages/Contact";
 import Navbar from "../components/Navbar";
-import BlogDetail from "../pages/BlogDetail";
-import Blog from "../pages/Blog";
-import Team from "../pages/Team";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
 import Footer from "../components/Footer";
-import VerifyEmail from "../pages/VerifyEmail";
-import Pricing from "../pages/Pricing";
-import ForgotPassword from "../pages/ForgotPassword";
-import ResetPassword from "../pages/ResetPassword";
-import TeamDetail from "../components/team/TeamDetail";
-import About from "../pages/About";
-import Services from "../pages/Services";
-import AuthSuccess from "../pages/AuthSuccess";
-import AuthFail from "../pages/AuthFail";
-import Account from "../pages/Account";
-import Chat from "../pages/Chat";
-import VideoCall from "../pages/VideoCall";
-import WriteBlog from "../pages/WriteBlog";
-import Dashboard from "../pages/Dashboard";
-import Sidebar from "../components/Sidebar";
-import Appointment from "../pages/Appointment";
-import NotFound from "../pages/NotFound";
-import UserManagement from "../pages/UserManagement";
-import TherapistManagement from "../pages/TherapistManagement";
-import CategoryManagement from "../pages/CategoryManagement";
-import AppointmentManagement from "../pages/AppointmentManagement";
-import BlogManagement from "../pages/BlogManagement";
-import FeedbackManagement from "../pages/FeedbackManagement";
-import PrivacyPolicy from "../pages/PrivacyPolicy";
-import TermsAndConditions from "../pages/TermsAndConditions";
 import ScrollToTop from "../components/ScrollToTop";
+import Sidebar from "../components/Sidebar";
+
+// Lazy load components
+const Home = lazy(() => import("../pages/Home"));
+const Contact = lazy(() => import("../pages/Contact"));
+const BlogDetail = lazy(() => import("../pages/BlogDetail"));
+const Blog = lazy(() => import("../pages/Blog"));
+const Team = lazy(() => import("../pages/Team"));
+const Login = lazy(() => import("../pages/Login"));
+const Register = lazy(() => import("../pages/Register"));
+const VerifyEmail = lazy(() => import("../pages/VerifyEmail"));
+const Pricing = lazy(() => import("../pages/Pricing"));
+const ForgotPassword = lazy(() => import("../pages/ForgotPassword"));
+const ResetPassword = lazy(() => import("../pages/ResetPassword"));
+const TeamDetail = lazy(() => import("../components/team/TeamDetail"));
+const About = lazy(() => import("../pages/About"));
+const Services = lazy(() => import("../pages/Services"));
+const AuthSuccess = lazy(() => import("../pages/AuthSuccess"));
+const AuthFail = lazy(() => import("../pages/AuthFail"));
+const Account = lazy(() => import("../pages/Account"));
+const Chat = lazy(() => import("../pages/Chat"));
+const VideoCall = lazy(() => import("../pages/VideoCall"));
+const WriteBlog = lazy(() => import("../pages/WriteBlog"));
+const Dashboard = lazy(() => import("../pages/Dashboard"));
+const Appointment = lazy(() => import("../pages/Appointment"));
+const NotFound = lazy(() => import("../pages/NotFound"));
+const UserManagement = lazy(() => import("../pages/UserManagement"));
+const TherapistManagement = lazy(() => import("../pages/TherapistManagement"));
+const CategoryManagement = lazy(() => import("../pages/CategoryManagement"));
+const AppointmentManagement = lazy(() =>
+  import("../pages/AppointmentManagement")
+);
+const BlogManagement = lazy(() => import("../pages/BlogManagement"));
+const FeedbackManagement = lazy(() => import("../pages/FeedbackManagement"));
+const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
+const TermsAndConditions = lazy(() => import("../pages/TermsAndConditions"));
+
+// Loading fallback component
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-screen">
+    <div className="w-12 h-12 border-t-2 border-b-2 rounded-full animate-spin border-seaGreen"></div>
+  </div>
+);
 
 const AppRouter = () => {
   return (
     <Router>
       <ScrollToTop />
       <Navbar />
-      <Routes>
-        {/* Public Area */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/blogs" element={<Blog />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/auth/verify-email" element={<VerifyEmail />} />
-        <Route path="auth/success" element={<AuthSuccess />} />
-        <Route path="auth/fail" element={<AuthFail />} />
-        <Route path="/therapists" element={<Team />} />
-        <Route path="/therapists/:id" element={<TeamDetail />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/forgotPassword" element={<ForgotPassword />} />
-        <Route path="/auth/reset-password/:token" element={<ResetPassword />} />
-        <Route path="/blogs/:id" element={<BlogDetail />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-        <Route path="/termsandconditions" element={<TermsAndConditions />} />
-        {/* Private Area */}
-        <Route path="" element={<PrivateRouter />}>
-          {/* Privates Routes */}
-
-          {/* User - Therapist Profile */}
-          <Route path="/profile" element={<Sidebar />}>
-            <Route index element={<Dashboard />} />
-            <Route path="account" element={<Account />} />
-            <Route path="appointment" element={<Appointment />} />
-            <Route path="chat" element={<Chat />} />
-            <Route path="video-call" element={<VideoCall />} />
-            <Route path="write-blog" element={<WriteBlog />} />
-            <Route path="write-blog/:id" element={<WriteBlog />} />
-          </Route>
-
-          {/* Admin Panel */}
+      <Suspense fallback={<LoadingFallback />}>
+        <Routes>
+          {/* Public Area */}
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blogs" element={<Blog />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/auth/verify-email" element={<VerifyEmail />} />
+          <Route path="auth/success" element={<AuthSuccess />} />
+          <Route path="auth/fail" element={<AuthFail />} />
+          <Route path="/therapists" element={<Team />} />
+          <Route path="/therapists/:id" element={<TeamDetail />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/forgotPassword" element={<ForgotPassword />} />
           <Route
-            path="/admin"
-            element={<Navigate to="/admin/user-management" />}
+            path="/auth/reset-password/:token"
+            element={<ResetPassword />}
           />
-          <Route path="/admin" element={<Sidebar />}>
-            <Route path="user-management" element={<UserManagement />} />
-            <Route
-              path="therapist-management"
-              element={<TherapistManagement />}
-            />
-            <Route
-              path="category-management"
-              element={<CategoryManagement />}
-            />
-            <Route
-              path="appointment-management"
-              element={<AppointmentManagement />}
-            />
-            <Route path="blog-management" element={<BlogManagement />} />
-            <Route
-              path="feedback-management"
-              element={<FeedbackManagement />}
-            />
-          </Route>
-        </Route>
-      </Routes>
+          <Route path="/blogs/:id" element={<BlogDetail />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/termsandconditions" element={<TermsAndConditions />} />
 
+          {/* Private Area */}
+          <Route path="" element={<PrivateRouter />}>
+            {/* Privates Routes */}
+
+            {/* User - Therapist Profile */}
+            <Route path="/profile" element={<Sidebar />}>
+              <Route index element={<Dashboard />} />
+              <Route path="account" element={<Account />} />
+              <Route path="appointment" element={<Appointment />} />
+              <Route path="chat" element={<Chat />} />
+              <Route path="video-call" element={<VideoCall />} />
+              <Route path="write-blog" element={<WriteBlog />} />
+              <Route path="write-blog/:id" element={<WriteBlog />} />
+            </Route>
+
+            {/* Admin Panel */}
+            <Route
+              path="/admin"
+              element={<Navigate to="/admin/user-management" />}
+            />
+            <Route path="/admin" element={<Sidebar />}>
+              <Route path="user-management" element={<UserManagement />} />
+              <Route
+                path="therapist-management"
+                element={<TherapistManagement />}
+              />
+              <Route
+                path="category-management"
+                element={<CategoryManagement />}
+              />
+              <Route
+                path="appointment-management"
+                element={<AppointmentManagement />}
+              />
+              <Route path="blog-management" element={<BlogManagement />} />
+              <Route
+                path="feedback-management"
+                element={<FeedbackManagement />}
+              />
+            </Route>
+          </Route>
+        </Routes>
+      </Suspense>
       <Footer />
     </Router>
   );
