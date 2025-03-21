@@ -11,11 +11,6 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
   const { updateMeTherapist } = useTherapistCall();
   const { getAllCategories } = useCategoryCall();
 
-  // const { singleTherapist } = useSelector((state) => state.therapists);
-  // console.log(singleTherapist);
-  // const id = singleTherapist._id
-  // console.log(id);
-
   const { categories } = useSelector((state) => state.categories);
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -54,8 +49,6 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
       // Add category if not selected
       updatedCategories = [...(singleTherapist.categoryId || []), category];
     }
-
-    // Update Redux state with new categories
     dispatch(updateSingleTherapistSuccess({ categoryId: updatedCategories }));
   };
 
@@ -129,7 +122,6 @@ const AccountTherapistForm = ({ singleTherapist, id }) => {
                 placeholder={t("placeholderUsername")}
                 autoComplete="email"
                 className="peer w-full bg-gray-50 hover:cursor-not-allowed"
-                // onChange={handleChange}
                 disabled
               />
             </div>

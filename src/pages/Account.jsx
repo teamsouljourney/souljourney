@@ -69,7 +69,6 @@ const Account = () => {
             {/* Personel Info Field */}
             {!isTherapist ? (
               <AccountForm
-                // userInfo={userInfo}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
               />

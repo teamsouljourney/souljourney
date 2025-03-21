@@ -60,7 +60,6 @@ const AccountForm = ({ handleChange, handleSubmit }) => {
               placeholder={t("placeholderUsername")}
               autoComplete="userName"
               className="peer w-full bg-gray-50 hover:cursor-not-allowed"
-              // onChange={handleChange}
               disabled
             />
           </div>
@@ -79,7 +78,6 @@ const AccountForm = ({ handleChange, handleSubmit }) => {
               placeholder={t("placeholderEmail")}
               autoComplete="email"
               className="peer w-full bg-gray-50 hover:cursor-not-allowed"
-              // onChange={handleChange}
               disabled
             />
           </div>
