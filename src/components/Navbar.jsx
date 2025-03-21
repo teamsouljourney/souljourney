@@ -36,15 +36,15 @@ export default function Navbar() {
 
   useEffect(() => {
     if (currentUser?._id) {
-      if (currentUser.isTherapist) {
+      if (currentUser?.isTherapist) {
         getSingleTherapist(currentUser._id);
       } else {
         getSingleUser(currentUser._id);
       }
     }
-  }, [currentUser._id]);
+  }, [currentUser?._id]);
 
-  const userData = currentUser.isTherapist ? singleTherapist : singleUser;
+  const userData = currentUser?.isTherapist ? singleTherapist : singleUser;
 
   const navigation = [
     { name: t("home"), href: "/" },
@@ -174,8 +174,8 @@ export default function Navbar() {
                   ) : (
                     <div className="flex items-center justify-center rounded-full size-8 bg-navy-dark">
                       <span className="text-sm font-medium text-offWhite-light">
-                        {userData?.firstName.charAt(0).toUpperCase() +
-                          userData?.lastName.charAt(0).toUpperCase()}
+                        {userData?.firstName?.charAt(0).toUpperCase() +
+                          userData?.lastName?.charAt(0).toUpperCase()}
                       </span>
                     </div>
                   )}
@@ -190,8 +190,8 @@ export default function Navbar() {
                       className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                     >
                       <h5 className="">
-                        {userData?.firstName.toUpperCase()}{" "}
-                        {userData?.lastName.toUpperCase()}
+                        {userData?.firstName?.toUpperCase()}{" "}
+                        {userData?.lastName?.toUpperCase()}
                       </h5>
                     </span>
                   </MenuItem>
