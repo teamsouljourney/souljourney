@@ -77,11 +77,9 @@ const getPricingData = (t) => {
 
 const Pricing = () => {
   return (
-    <div className="min-h-screen pt-20 bg-offWhite dark:bg-background-dark text-navy dark:text-offWhite-dark">
-          <PricingHeader />
-        <div className=" ">
-          <PricingForm getPricingData={getPricingData} />
-        </div>
+    <div className="min-h-screen  bg-offWhite dark:bg-background-dark text-navy dark:text-offWhite-dark">
+      <PricingHeader />
+      <PricingForm getPricingData={getPricingData} />
     </div>
   );
 };

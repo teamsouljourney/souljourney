@@ -23,6 +23,8 @@
   "restart": "Yeniden başlat",
   "nowFreeRegister": "Şimdi Ücretsiz Kayıt Ol",
   "sendMessage": "Mesaj Gönder",
+  "yes": "Evet",
+
   "HOMEPAGE": "ANA SAYFA",
   "onlineTherapy": "Soul Journey & Online Terapi",
   "infoText": "Soul Journey olarak, şifa ve kişisel gelişim yolculuğunuzda sizi destekleyen online danışmanlık hizmeti sunuyoruz. Profesyonel terapistlerimiz, duygularınızı keşfetmeniz, netlik kazanmanız ve yaşam zorluklarının üstesinden gelmeniz için güvenli ve gizli bir alan sağlar—hem de evinizin konforunda. Neden Soul Journey? Esnek Seanslar: İstediğiniz zaman, istediğiniz yerden terapiye erişin. Kişiselleştirilmiş Destek: Size özel rehberlik sunuyoruz. Güvenli ve Gizli: Gizliliğiniz bizim önceliğimizdir. Bugün yolculuğunuza başlayın—şifa içeride başlar.",
@@ -418,7 +420,8 @@
   "dangerZone": "Dikkat/Hesabı Sil",
   "deleteAccount": "Hesabı sil",
   "deleteAccountInfo": "Hesabınızı ve tüm içeriğinizi kalıcı olarak kaldırın. Bu işlem geri alınamaz.",
-  "confirmDeleteAccount": "Hesabınızı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+  "confirmDeleteAccountTitle": "Hesabınızı silmek istediğinizden emin misiniz?",
+  "confirmDeleteAccountText": "Bu işlem geri alınamaz, hesabınız devre dışı bırakılacak.",
 
   "WRITEBLOG": "WRITEBLOG",
   "blogTitlePlaceholder": "Blog Başlığı *",
@@ -704,8 +707,11 @@
     "createFailed": "Randevu oluşturulurken bir hata oluştu.",
     "updateSuccess": "Randevu başarıyla güncellendi!",
     "updateFailed": "Randevu güncellenirken hata oluştu.",
-    "deleteSuccess": "Randevu başarıyla silindi!",
-    "deleteFailed": "Randevu silinirken hata oluştu."
+    "deleteSuccess": "Randevu iptal edildi!",
+    "deleteFailed": "Randevu silinirken hata oluştu.",
+    "confirmDeleteAppointmentTitle": "Emin misiniz?",
+    "confirmDeleteAppointmentText": "Bu eylem randevunuzu iptal edecektir.",
+    "confirmDeleteAppointmentByAdminText": "Bu eylem kullanıcının randevusunu iptal edecektir."
   },
 
   "authCall": {
@@ -731,7 +737,9 @@
     "deleteSuccess": "Blog başarıyla silindi!",
     "deleteFailed": "Blog silinirken hata oluştu.",
     "fetchLikesFailed": "Beğeni bilgisi getirilirken hata oluştu.",
-    "updateLikeFailed": "Beğeni güncellenirken hata oluştu."
+    "updateLikeFailed": "Beğeni güncellenirken hata oluştu.",
+    "confirmDeleteBlogTitle": "Emin misiniz?",
+    "confirmDeleteBlogText": "Bu eylem geri alınamaz, blog silinecek."
   },
 
   "categoryCall": {
@@ -742,16 +750,21 @@
     "updateSuccess": "Kategori başarıyla güncellendi!",
     "updateFailed": "Kategori güncellenirken hata oluştu.",
     "deleteSuccess": "Kategori başarıyla silindi!",
-    "deleteFailed": "Kategori silinirken hata oluştu."
+    "deleteFailed": "Kategori silinirken hata oluştu.",
+    "confirmDeleteCategoryTitle": "Emin misiniz?",
+    "confirmDeleteCategoryText": "Bu eylem geri alınamaz, kategori silinecek."
   },
 
   "feedbackCall": {
     "fetchAllFailed": "Tüm geri bildirimler getirilirken hata oluştu!",
     "fetchTherapistFeedbacksFailed": "Terapist geri bildirimleri getirilirken hata oluştu!",
+    "postFeedbackSuccess": "Terapistin geri bildirimleri başarıyla oluşturuldu!",
     "postFeedbackFailed": "Terapist geri bildirimi gönderilirken hata oluştu!",
     "deleteSuccess": "Geri bildirim başarıyla silindi!",
     "deleteFailed": "Geri bildirim silinirken hata oluştu.",
-    "fetchDetailsFailed": "Geri bildirim detayları getirilirken hata oluştu."
+    "fetchDetailsFailed": "Geri bildirim detayları getirilirken hata oluştu.",
+    "confirmDeleteFeedbackTitle": "Emin misiniz?",
+    "confirmDeleteFeedbackText": "Bu eylem geri alınamaz, geri bildirim silinecek."
   },
 
   "noteCall": {
@@ -761,7 +774,11 @@
     "postNotesFailed": "Kullanıcı notları gönderilirken hata oluştu!",
     "updateNoteFailed": "Not güncellenirken hata oluştu.",
     "deleteSuccess": "Not başarıyla silindi!",
-    "deleteFailed": "Not silinirken hata oluştu."
+    "deleteFailed": "Not silinirken hata oluştu.",
+    "createSuccess": "Not başarıyla oluşturuldu!",
+    "updateSuccess": "Not başarıyla güncellendi!",
+    "confirmDeleteNoteTitle": "Emin misiniz?",
+    "confirmDeleteNoteText": "Bu eylem geri alınamaz, not silinecek."
   },
 
   "userCall": {
@@ -783,7 +800,9 @@
     "passwordChangeSuccess": "Şifreniz değiştirildi! Hesabınıza erişmek için lütfen tekrar giriş yapın.",
     "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu.",
     "profilePictureUploaded": "Profil resmi başarıyla yüklendi!",
-    "profilePictureUploadFailed": "Profil resmi yüklenirken hata oluştu."
+    "profilePictureUploadFailed": "Profil resmi yüklenirken hata oluştu.",
+    "confirmDeleteAccountTitle": "Emin misiniz?",
+    "confirmDeleteAccountText": "Bu eylem geri alınamaz, bu kullanıcının hesabı silinecektir."
   },
 
   "therapistCall": {
@@ -805,7 +824,9 @@
     "passwordChangeSuccess": "Şifreniz değiştirildi! Hesabınıza erişmek için lütfen tekrar giriş yapın.",
     "passwordChangeFailed": "Şifreniz değiştirilirken hata oluştu.",
     "profilePictureUploaded": "Profil resmi başarıyla yüklendi!",
-    "profilePictureUploadFailed": "Profil resmi yüklenirken hata oluştu."
+    "profilePictureUploadFailed": "Profil resmi yüklenirken hata oluştu.",
+    "confirmDeleteAccountTitle": "Emin misiniz?",
+    "confirmDeleteAccountText": "Bu eylem geri alınamaz, bu terapistin hesabı silinecek."
   },
 
   "chatCall": {

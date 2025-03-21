@@ -80,7 +80,7 @@ const Team = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen gap-y-10 bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
+    <div className="flex flex-col items-center justify-center min-h-screen gap-y-4 md:gap-y-10 bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
       {/* Hero Section */}
       <div className="w-full h-1/5">
         <HeroSection />

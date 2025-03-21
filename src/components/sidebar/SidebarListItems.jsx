@@ -152,7 +152,8 @@ const SidebarListItems = () => {
             </NavLink>
           ))}
         </div>
-        {!currentUser?.isAdmin && (
+        {/* Added MyAccout section to AdminPanel */}
+        {/* {!currentUser?.isAdmin && ( */}
           <div className="flex flex-col mx-1 mb-2 space-y-1 lg:mt-1 ">
             <NavLink
               className={({ isActive }) =>
@@ -192,7 +193,7 @@ const SidebarListItems = () => {
               )}
             </NavLink>
           </div>
-        )}
+        {/* )} */}
       </div>
       <hr className="xs:hidden lg:block " />
       {/* Sidebar footer */}

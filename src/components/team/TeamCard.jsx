@@ -5,8 +5,6 @@ import { useTranslation } from "react-i18next";
 const TeamCard = ({ therapist }) => {
   const { t } = useTranslation();
 
-  // console.log(therapist);
-
   return (
     <div className="flex flex-col w-full max-w-xs  overflow-hidden transition duration-500 transform bg-white shadow-lg dark:bg-background-dark text-navy dark:text-offWhite-dark rounded-xl md:hover:scale-[1.03]">
       {/* Card Header Image */}

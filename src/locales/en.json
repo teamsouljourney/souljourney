@@ -24,6 +24,7 @@
   "restart": "Restart",
   "nowFreeRegister": "Now Free Register",
   "sendMessage": "Send Message",
+  "yes": "Yes",
 
   "HOMEPAGE": "HOMEPAGE",
   "onlineTherapy": "Soul Journey & Online Therapy",
@@ -427,7 +428,8 @@
   "dangerZone": "Danger zone/Delete Account",
   "deleteAccount": "Delete account",
   "deleteAccountInfo": "Permanently remove your account and all of your content. This action is not reversible.",
-  "confirmDeleteAccount": "Are you sure you want to delete your account? This action cannot be undone.",
+  "confirmDeleteAccountTitle": "Are you sure you want to delete your account?",
+  "confirmDeleteAccountText": "This action cannot be undone, your account will be deactivated.",
 
   "WRITEBLOG": "WRITEBLOG",
   "blogTitlePlaceholder": "Blog Title *",
@@ -712,8 +714,11 @@
     "createFailed": "Oops! Something went wrong during appointment creation.",
     "updateSuccess": "Appointment updated successfully!",
     "updateFailed": "Failed to update appointment.",
-    "deleteSuccess": "Appointment deleted successfully!",
-    "deleteFailed": "Failed to delete appointment."
+    "deleteSuccess": "Appointment cancelled successfully!",
+    "deleteFailed": "Failed to delete appointment.",
+    "confirmDeleteAppointmentTitle": "Are you sure?",
+    "confirmDeleteAppointmentText": "This action will cancel your appointment.",
+    "confirmDeleteAppointmentByAdminText": "This action will cancel user's appointment."
   },
 
   "authCall": {
@@ -739,7 +744,9 @@
     "deleteSuccess": "Blog deleted successfully!",
     "deleteFailed": "Failed to delete blog.",
     "fetchLikesFailed": "Failed to fetch like info.",
-    "updateLikeFailed": "Failed to update like."
+    "updateLikeFailed": "Failed to update like.",
+    "confirmDeleteBlogTitle": "Are you sure?",
+    "confirmDeleteBlogText": "This action cannot be undone, blog will be deleted."
   },
 
   "categoryCall": {
@@ -750,16 +757,21 @@
     "updateSuccess": "Category updated successfully!",
     "updateFailed": "Failed to update category.",
     "deleteSuccess": "Category deleted successfully!",
-    "deleteFailed": "Failed to delete category."
+    "deleteFailed": "Failed to delete category.",
+    "confirmDeleteCategoryTitle": "Are you sure?",
+    "confirmDeleteCategoryText": "This action cannot be undone, category will be deleted."
   },
 
   "feedbackCall": {
     "fetchAllFailed": "Failed to fetch all feedbacks!",
     "fetchTherapistFeedbacksFailed": "Failed to fetch Therapist's feedbacks!",
+    "postFeedbackSuccess": "Success to post Therapist's feedbacks!",
     "postFeedbackFailed": "Failed to post Therapist's feedbacks!",
     "deleteSuccess": "Feedback deleted successfully!",
     "deleteFailed": "Failed to delete feedback.",
-    "fetchDetailsFailed": "Failed to fetch feedback details."
+    "fetchDetailsFailed": "Failed to fetch feedback details.",
+    "confirmDeleteFeedbackTitle": "Are you sure?",
+    "confirmDeleteFeedbackText": "This action cannot be undone, feedback will be deleted."
   },
 
   "noteCall": {
@@ -769,7 +781,11 @@
     "postNotesFailed": "Failed to post user's notes!",
     "updateNoteFailed": "Error updating note.",
     "deleteSuccess": "Note deleted successfully!",
-    "deleteFailed": "Failed to delete note."
+    "deleteFailed": "Failed to delete note.",
+    "createSuccess": "Note created successfully!",
+    "updateSuccess": "Note updated successfully!",
+    "confirmDeleteNoteTitle": "Are you sure?",
+    "confirmDeleteNoteText": "This action cannot be undone, note will be deleted."
   },
 
   "userCall": {
@@ -791,7 +807,9 @@
     "passwordChangeSuccess": "Your password has been changed! Please log in again to access your account.",
     "passwordChangeFailed": "Failed to change your password.",
     "profilePictureUploaded": "Profile picture uploaded successfully!",
-    "profilePictureUploadFailed": "Failed to upload profile picture."
+    "profilePictureUploadFailed": "Failed to upload profile picture.",
+    "confirmDeleteAccountTitle": "Are you sure?",
+    "confirmDeleteAccountText": "This action cannot be undone, this user's account will be deleted."
   },
 
   "therapistCall": {
@@ -813,7 +831,9 @@
     "passwordChangeSuccess": "Your password has been changed! Please log in again to access your account.",
     "passwordChangeFailed": "Failed to change your password.",
     "profilePictureUploaded": "Profile picture uploaded successfully!",
-    "profilePictureUploadFailed": "Failed to upload profile picture."
+    "profilePictureUploadFailed": "Failed to upload profile picture.",
+    "confirmDeleteAccountTitle": "Are you sure?",
+    "confirmDeleteAccountText": "This action cannot be undone, this therapist's account will be deleted."
   },
 
   "chatCall": {

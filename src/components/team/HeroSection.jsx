@@ -5,7 +5,7 @@ const HeroSection = () => {
   const { t } = useTranslation();
   return (
     <div
-      className="min-h-[55vh] pt-36 pb-12 w-full bg-bottom bg-cover opacity-80"
+      className="min-h-[45vh] lg:min-h-[55vh] pt-36 pb-12 w-full bg-bottom bg-cover opacity-80"
       style={{
         backgroundImage: `url(${heroFoto})`,
       }}
