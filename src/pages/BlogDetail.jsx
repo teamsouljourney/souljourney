@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { getSingleBlogSuccess } from "../features/blogSlice";
 import useBlogCall from "../hooks/useBlogCall";
+import { toastWarnNotify } from "../helper/ToastNotify";
 
 const BlogDetail = () => {
   const { t } = useTranslation();
@@ -24,7 +25,11 @@ const BlogDetail = () => {
   }, [navigate]);
 
   const handleLike = () => {
-    postLike(id);
+    if (!currentUser) {
+      toastWarnNotify("Please login to like this blog.");
+    } else {
+      postLike(id);
+    }
   };
 
   const isLikedByUser = singleBlog?.likes?.includes(currentUser?._id);
@@ -50,7 +55,7 @@ const BlogDetail = () => {
 
         <div className="relative px-10 py-5 mx-5 -mt-16 bg-white rounded-lg shadow-lg dark:bg-background-dark text-navy dark:text-offWhite-dark md:mx-10">
           <div>
-            <div className="flex flex-col md:flex-row items-center gap-2 mb-4">
+            <div className="flex flex-col items-center gap-2 mb-4 md:flex-row">
               {singleBlog?.therapistId && (
                 <>
                   <img
@@ -71,11 +76,11 @@ const BlogDetail = () => {
               )}
             </div>
 
-            <h2 className="mb-4 text-xl md:text-2xl font-bold">
+            <h2 className="mb-4 text-xl font-bold md:text-2xl">
               {singleBlog?.title}
             </h2>
             <div
-              className="leading-relaxed text-base md:text-xl"
+              className="text-base leading-relaxed md:text-xl"
               dangerouslySetInnerHTML={{ __html: singleBlog?.content || "" }}
             ></div>
 
@@ -86,15 +91,15 @@ const BlogDetail = () => {
             )}
           </div>
 
-          <div className="flex justify-end items-center gap-2">
-            <div className="flex justify-between gap-x-8 px-4">
+          <div className="flex items-center justify-end gap-2">
+            <div className="flex justify-between px-4 gap-x-8">
               <div className="flex items-center gap-x-1">
                 <button
                   onClick={handleLike}
                   className="flex items-center transition-colors duration-200 focus:outline-none"
                 >
                   {isLikedByUser ? (
-                    <HiHeart className="w-7 h-7 text-red-500" />
+                    <HiHeart className="text-red-500 w-7 h-7" />
                   ) : (
                     <HiOutlineHeart className="w-6 h-6 hover:text-red-500" />
                   )}
@@ -109,7 +114,6 @@ const BlogDetail = () => {
                   {singleBlog?.countOfVisitors || 0}
                 </span>
               </div>
-              
             </div>
           </div>
         </div>
