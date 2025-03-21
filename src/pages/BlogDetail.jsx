@@ -26,7 +26,7 @@ const BlogDetail = () => {
 
   const handleLike = () => {
     if (!currentUser) {
-      toastWarnNotify("Please login to like this blog.");
+      toastWarnNotify(t("likeLoginWarning"));
     } else {
       postLike(id);
     }
