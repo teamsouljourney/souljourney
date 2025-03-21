@@ -6,6 +6,9 @@ https://www.souljourney-onlinetherapy.com/
 
 ## Project Gif
 
+![Soul_Journey](https://github.com/user-attachments/assets/838b6e7a-2c74-42f7-839d-45d88966c34d)
+
+
 ## Project Overview
 
 SoulJourney is a comprehensive full-stack mental health platform designed to connect users with therapists, facilitate appointment scheduling, provide secure video calls, enable messaging, and share mental health resources through blogs. The platform aims to make mental health services more accessible while providing a user-friendly experience for both clients and therapists.
