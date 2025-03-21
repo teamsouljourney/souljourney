@@ -714,7 +714,7 @@
     "createFailed": "Oops! Something went wrong during appointment creation.",
     "updateSuccess": "Appointment updated successfully!",
     "updateFailed": "Failed to update appointment.",
-    "deleteSuccess": "Appointment deleted successfully!",
+    "deleteSuccess": "Appointment cancelled successfully!",
     "deleteFailed": "Failed to delete appointment.",
     "confirmDeleteAppointmentTitle": "Are you sure?",
     "confirmDeleteAppointmentText": "This action will cancel your appointment.",

@@ -216,7 +216,7 @@ const useTherapistCall = () => {
         }
       );
       SweetNotify(
-        t("therapistCall.profilePictureUploadSuccess"),
+        t("therapistCall.profilePictureUploaded"),
         SweetAlertIcons.SUCCESS
       );
       // toastSuccessNotify(t("therapistCall.profilePictureUploaded"));

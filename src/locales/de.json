@@ -714,7 +714,7 @@
     "createFailed": "Bei der Terminerstellung ist ein Fehler aufgetreten.",
     "updateSuccess": "Termin erfolgreich aktualisiert!",
     "updateFailed": "Fehler beim Aktualisieren des Termins.",
-    "deleteSuccess": "Termin erfolgreich gelöscht!",
+    "deleteSuccess": "Termin erfolgreich abgesagt!",
     "deleteFailed": "Fehler beim Löschen des Termins.",
     "confirmDeleteAppointmentTitle": "Sind Sie sicher?",
     "confirmDeleteAppointmentText": "Diese Aktion storniert Ihren Termin.",

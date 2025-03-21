@@ -707,7 +707,7 @@
     "createFailed": "Randevu oluşturulurken bir hata oluştu.",
     "updateSuccess": "Randevu başarıyla güncellendi!",
     "updateFailed": "Randevu güncellenirken hata oluştu.",
-    "deleteSuccess": "Randevu başarıyla silindi!",
+    "deleteSuccess": "Randevu iptal edildi!",
     "deleteFailed": "Randevu silinirken hata oluştu.",
     "confirmDeleteAppointmentTitle": "Emin misiniz?",
     "confirmDeleteAppointmentText": "Bu eylem randevunuzu iptal edecektir.",

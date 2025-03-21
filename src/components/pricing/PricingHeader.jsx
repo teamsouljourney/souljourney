@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 const PricingHeader = () => {
   const { t } = useTranslation();
   return (
-    <div className="py-24 text-center bg-offWhite-dark dark:bg-background-darker ">
+    <div className="min-h-[45vh] lg:min-h-[50vh] pt-36 pb-12 text-center bg-offWhite-dark dark:bg-background-darker ">
       <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
         {t("paymentDetails")}
       </h1>

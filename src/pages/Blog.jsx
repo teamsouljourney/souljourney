@@ -75,8 +75,10 @@ const Blog = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20 bg-gradient-to-b bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
-      <BlogHeroSection />
+    <div className="flex flex-col items-center justify-center min-h-screen gap-y-4 md:gap-y-10 bg-gradient-to-b bg-offWhite dark:bg-background-darker text-navy dark:text-offWhite-dark">
+      <div className="w-full h-1/5">
+        <BlogHeroSection />
+      </div>      
 
       <TabSwitch
         itemType="blogs"
@@ -87,7 +89,7 @@ const Blog = () => {
         placeholder={t("searchBlogs")}
       />
 
-      <main className="container px-6 py-16 mx-auto">
+      <main className="container px-6 py-4 mx-auto">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             {blogsToDisplay?.map((blog, index) => (
