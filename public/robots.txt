@@ -1,0 +1,26 @@
+# Allow all bots to crawl the entire site except the admin and user-related pages
+User-agent: *
+Disallow: /admin/
+Disallow: /profile/
+Disallow: /write-blog/
+Disallow: /write-blog/*
+
+# Allow Googlebot to crawl everything
+User-agent: Googlebot
+Disallow: 
+
+# Block specific bots from accessing private and sensitive areas
+User-agent: BadBot
+Disallow: /
+
+# Allow specific sections for crawlers
+Allow: /contact
+Allow: /about
+Allow: /services
+Allow: /blogs
+Allow: /therapists
+Allow: /pricing
+Allow: /termsandconditions
+Allow: /privacypolicy
+
+
