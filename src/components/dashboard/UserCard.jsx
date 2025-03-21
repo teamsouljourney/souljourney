@@ -79,14 +79,26 @@ export default function UserCard() {
                 : "-"}
             </p>
           </div>
-          <div>
-            <p className="mb-1 font-semibold text-navy dark:text-offWhite">
-              {t("address")} :
-            </p>
-            <p className="text-sm font-medium sm:text-base text-navy dark:text-offWhite/60">
-              {userData?.address || "-"}
-            </p>
-          </div>
+          {currentUser?.isTherapist ? (
+            <div>
+              <p className="mb-1 font-semibold text-navy dark:text-offWhite">
+                {t("experience")} :
+              </p>
+              <p className="text-sm font-medium sm:text-base text-navy dark:text-offWhite/60">
+                {userData?.experience || "-"}
+              </p>
+            </div>
+          ) : (
+            <div>
+              <p className="mb-1 font-semibold text-navy dark:text-offWhite">
+                {t("address")} :
+              </p>
+              <p className="text-sm font-medium sm:text-base text-navy dark:text-offWhite/60">
+                {userData?.address || "-"}
+              </p>
+            </div>
+          )}
+
           <div>
             <p className="mb-1 font-semibold text-navy dark:text-offWhite">
               {t("memberId")} :
