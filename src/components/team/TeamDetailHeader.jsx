@@ -55,7 +55,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
                 ></span>
 
                 <span className="text-sm sm:text-base md:text-[1rem] font-medium sm:font-semibold">
-                  Video Call {/* {t("videoCall")} */}
+                  {t("videoCall")} {/* Video Call */}
                 </span>
               </div>
               <div className="flex flex-row items-center justify-center gap-1.5 sm:gap-2">
@@ -71,7 +71,7 @@ const TeamDetailHeader = ({ singleTherapist, currentUser, toggleCalendar }) => {
                 ></span>
 
                 <span className="text-sm sm:text-base md:text-[1rem] font-medium sm:font-semibold">
-                  Live Chat{/* {t("liveChat")} */}
+                  {t("liveChat")}{/* Live Chat */}
                 </span>
               </div>
             </div>

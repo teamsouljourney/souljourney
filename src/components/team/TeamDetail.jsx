@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useTherapistCall from "../../hooks/useTherapistCall";
 import { useDispatch, useSelector } from "react-redux";
-import AppointmentCalendar from "../calendar/appointmentCalendar";
+import AppointmentCalendar from "../calendar/AppointmentCalendar";
 import Button from "../button/Button";
 import TeamDetailHeader from "./TeamDetailHeader";
 import TeamDetailBody from "./TeamDetailBody";
@@ -16,9 +16,7 @@ const TeamDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { getSingleTherapist, getTherapistTimeTable } = useTherapistCall();
-  const { singleTherapist, loading, error } = useSelector(
-    (state) => state.therapists
-  );
+  const { singleTherapist, loading, error } = useSelector((state) => state.therapists);
   const { currentUser } = useSelector((state) => state.auth);
 
   // Section IDs for Tab Navigation
@@ -48,7 +46,6 @@ const TeamDetail = () => {
 
   useEffect(() => {
     dispatch(getSingleTherapistSuccess(null));
-    // dispatch(getSingleTherapistFeedbacksSuccess())
   }, [navigate]);
 
   if (loading) {
@@ -83,7 +80,6 @@ const TeamDetail = () => {
           toggleCalendar={toggleCalendar}
         />
       </div>
-
       {/* Tab Navigation */}
       <div className="sticky top-[80px] z-10 w-full max-w-6xl h-100 px-8 py-4 bg-offWhite dark:bg-background-darker border-b-2 border-gray-200 dark:border-gray-700">
         <div className="max-w-6xl mx-auto px-4 overflow-x-auto">
@@ -104,7 +100,6 @@ const TeamDetail = () => {
           </div>
         </div>
       </div>
-
       {/* Body */}
       <div className="w-full px-4">
         <TeamDetailBody sectionRefs={sectionRefs} />

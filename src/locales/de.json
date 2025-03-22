@@ -24,6 +24,7 @@
   "restart": "Neustart",
   "nowFreeRegister": "Jetzt kostenlos registrieren",
   "sendMessage": "Nachricht senden",
+  "yes": "Ja",
 
   "HOMEPAGE": "STARTSEITE",
   "onlineTherapy": "Soul Journey & Online Therapie",
@@ -141,7 +142,7 @@
   "SERVICES": "DIENSTLEISTUNGEN",
 
   "srvServicesHeroTitle": "Unsere Dienstleistungen",
-  "srvServicesHeroDescription": "In unserem psychologischen Beratungszentrum bieten wir Dienstleistungen zur Unterstützung des emotionalen und mentalen Wohlbefindens an. Unser erfahrenes Team bietet individuelle Beratung zu Stress, Angst und Beziehungsproblemen. In einer sicheren und unterstützenden Umgebung helfen wir Ihnen, persönliches Wachstum zu fördern und gesunde Bewältigungsstrategien zu entwickeln.",
+  "srvServicesHeroDescription": "In einer sicheren und unterstützenden Umgebung helfen wir Ihnen, sich selbst zu entdecken, persönliches Wachstum zu fördern und gesunde Bewältigungsstrategien zu entwickeln. Unser erfahrenes Team bietet Ihnen individuelle Unterstützung bei Stress, Angst und Beziehungsproblemen.",
   "srvEmpoweringMindsEnhancingLives": "Stärkung des Geistes, Verbesserung des Lebens",
   "srvEmbarkOnYourSoulsJourney": "Begeben Sie sich auf die Reise Ihrer Seele - Heilung beginnt jederzeit, überall...",
   "srvHealthPsychologyTitle": "Gesundheitspsychologie",
@@ -274,6 +275,7 @@
   "blg_goback": "Zurück",
   "blogHeroDescription": "Willkommen in unserem Blog, in dem wir die faszinierende Welt der psychologischen Beratung erkunden. Wir bieten Einblicke in psychische Gesundheit, persönliche Entwicklung und therapeutische Ansätze und zeigen, wie die Psychologie Menschen zu einem gesünderen und erfüllteren Leben verhilft. Begleiten Sie uns auf dieser Reise, um die Kraft des Geistes und die Bedeutung des Wohlbefindens zu entdecken.",
   "searchBlogs": "Blogs durchsuchen",
+  "likeLoginWarning": "Bitte melden Sie sich an, um diesem Blog ein „Gefällt mir“ zu geben.",
 
   "ABOUT": "ÜBER UNS",
 
@@ -426,7 +428,8 @@
   "dangerZone": "Gefahrenzone/Konto löschen",
   "deleteAccount": "Konto löschen",
   "deleteAccountInfo": "Konto und alle Inhalte dauerhaft löschen. Diese Aktion kann nicht rückgängig gemacht werden.",
-  "confirmDeleteAccount": "Möchten Sie Ihr Konto wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+  "confirmDeleteAccountTitle": "Möchten Sie Ihr Konto wirklich löschen?",
+  "confirmDeleteAccountText": "Diese Aktion kann nicht rückgängig gemacht werden. Ihr Konto wird deaktiviert.",
 
   "WRITEBLOG": "WRITEBLOG",
   "blogTitlePlaceholder": "Blog-Titel *",
@@ -470,6 +473,7 @@
   "personalInfo": "Personal Informationen",
   "dateOfMembership": "Mitgliedsdatum",
   "memberId": "Mitglied ID",
+  "experience": "Erfahrung",
 
   "NOTIFICATION": "BENACHRICHTIGUNG",
   "notifications": "Benachrichtigungen",
@@ -712,8 +716,11 @@
     "createFailed": "Bei der Terminerstellung ist ein Fehler aufgetreten.",
     "updateSuccess": "Termin erfolgreich aktualisiert!",
     "updateFailed": "Fehler beim Aktualisieren des Termins.",
-    "deleteSuccess": "Termin erfolgreich gelöscht!",
-    "deleteFailed": "Fehler beim Löschen des Termins."
+    "deleteSuccess": "Termin erfolgreich abgesagt!",
+    "deleteFailed": "Fehler beim Löschen des Termins.",
+    "confirmDeleteAppointmentTitle": "Sind Sie sicher?",
+    "confirmDeleteAppointmentText": "Diese Aktion storniert Ihren Termin.",
+    "confirmDeleteAppointmentByAdminText": "Diese Aktion storniert den Termin des Benutzers."
   },
 
   "authCall": {
@@ -739,7 +746,9 @@
     "deleteSuccess": "Blog erfolgreich gelöscht!",
     "deleteFailed": "Fehler beim Löschen des Blogs.",
     "fetchLikesFailed": "Fehler beim Abrufen der Like-Informationen.",
-    "updateLikeFailed": "Fehler beim Aktualisieren des Likes."
+    "updateLikeFailed": "Fehler beim Aktualisieren des Likes.",
+    "confirmDeleteBlogTitle": "Sind Sie sicher?",
+    "confirmDeleteBlogText": "Diese Aktion kann nicht rückgängig gemacht werden. Der Blog wird gelöscht."
   },
 
   "categoryCall": {
@@ -750,16 +759,21 @@
     "updateSuccess": "Kategorie erfolgreich aktualisiert!",
     "updateFailed": "Fehler beim Aktualisieren der Kategorie.",
     "deleteSuccess": "Kategorie erfolgreich gelöscht!",
-    "deleteFailed": "Fehler beim Löschen der Kategorie."
+    "deleteFailed": "Fehler beim Löschen der Kategorie.",
+    "confirmDeleteCategoryTitle": "Sind Sie sicher?",
+    "confirmDeleteCategoryText": "Diese Aktion kann nicht rückgängig gemacht werden. Die Kategorie wird gelöscht."
   },
 
   "feedbackCall": {
     "fetchAllFailed": "Fehler beim Abrufen aller Feedbacks!",
     "fetchTherapistFeedbacksFailed": "Fehler beim Abrufen der Therapeuten-Feedbacks!",
+    "postFeedbackSuccess": "Das Posten des Therapeuten-Feedbacks war erfolgreich!",
     "postFeedbackFailed": "Fehler beim Posten des Therapeuten-Feedbacks!",
     "deleteSuccess": "Feedback erfolgreich gelöscht!",
     "deleteFailed": "Fehler beim Löschen des Feedbacks.",
-    "fetchDetailsFailed": "Fehler beim Abrufen der Feedback-Details."
+    "fetchDetailsFailed": "Fehler beim Abrufen der Feedback-Details.",
+    "confirmDeleteFeedbackTitle": "Sind Sie sicher?",
+    "confirmDeleteFeedbackText": "Diese Aktion kann nicht rückgängig gemacht werden. Das Feedback wird gelöscht."
   },
 
   "noteCall": {
@@ -769,7 +783,11 @@
     "postNotesFailed": "Fehler beim Posten der Benutzernotizen!",
     "updateNoteFailed": "Fehler beim Aktualisieren der Notiz.",
     "deleteSuccess": "Notiz erfolgreich gelöscht!",
-    "deleteFailed": "Fehler beim Löschen der Notiz."
+    "deleteFailed": "Fehler beim Löschen der Notiz.",
+    "createSuccess": "Notiz erfolgreich erstellt!",
+    "updateSuccess": "Notiz erfolgreich aktualisiert!",
+    "confirmDeleteNoteTitle": "Sind Sie sicher?",
+    "confirmDeleteNoteText": "Diese Aktion kann nicht rückgängig gemacht werden. Die Notiz wird gelöscht."
   },
 
   "userCall": {
@@ -791,7 +809,9 @@
     "passwordChangeSuccess": "Ihr Passwort wurde geändert! Bitte melden Sie sich erneut an, um auf Ihr Konto zuzugreifen.",
     "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts.",
     "profilePictureUploaded": "Profilbild erfolgreich hochgeladen!",
-    "profilePictureUploadFailed": "Fehler beim Hochladen des Profilbilds."
+    "profilePictureUploadFailed": "Fehler beim Hochladen des Profilbilds.",
+    "confirmDeleteAccountTitle": "Sind Sie sicher?",
+    "confirmDeleteAccountText": "Diese Aktion kann nicht rückgängig gemacht werden. Das Konto dieses Benutzers wird gelöscht."
   },
 
   "therapistCall": {
@@ -813,7 +833,9 @@
     "passwordChangeSuccess": "Ihr Passwort wurde geändert! Bitte melden Sie sich erneut an, um auf Ihr Konto zuzugreifen.",
     "passwordChangeFailed": "Fehler beim Ändern Ihres Passworts.",
     "profilePictureUploaded": "Profilbild erfolgreich hochgeladen!",
-    "profilePictureUploadFailed": "Fehler beim Hochladen des Profilbilds."
+    "profilePictureUploadFailed": "Fehler beim Hochladen des Profilbilds.",
+    "confirmDeleteAccountTitle": "Sind Sie sicher?",
+    "confirmDeleteAccountText": "Diese Aktion kann nicht rückgängig gemacht werden. Das Konto dieses Therapeuten wird gelöscht."
   },
 
   "chatCall": {

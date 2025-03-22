@@ -1,24 +1,24 @@
 import { useState } from "react";
-import avatar from "../../assets/avatar.png";
+import avatar from "../../assets/avatar3.svg";
 import { useTranslation } from "react-i18next";
 import TeamDetailFeedbackCardsModal from "./TeamDetailFeedbackCardsModal";
 import Pagination from "../adminPanel/Pagination";
 import { useSelector } from "react-redux";
-import {getTimeAgo} from "../../helper/dateFormatter"
+import { getTimeAgo } from "../../helper/dateFormatter";
 
 const TeamDetailFeedbackCards = () => {
   const { t } = useTranslation();
-  const {pagFeedbacks} = useSelector((state)=>state.pagination)
-  const {singleTherapistFeedbacks} = useSelector((state)=>state.feedbacks)
+  const { pagFeedbacks } = useSelector((state) => state.pagination);
+  const { singleTherapistFeedbacks } = useSelector((state) => state.feedbacks);
   const { singleTherapist } = useSelector((state) => state.therapists);
-  const therapistId = singleTherapist && singleTherapist?._id
-  
+  const therapistId = singleTherapist && singleTherapist?._id;
+
   const [selectedFeedback, setSelectedFeedback] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      <div className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3">
         {pagFeedbacks?.map((feedback) => (
           <div
             key={feedback?._id}
@@ -30,13 +30,13 @@ const TeamDetailFeedbackCards = () => {
                 <img
                   src={feedback?.userId?.image || avatar}
                   alt={feedback?.userId?.userName}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-seaGreen bg-inherit"
+                  className="object-cover w-12 h-12 border-2 rounded-full border-seaGreen bg-inherit"
                 />
                 <div>
                   <h3 className="font-semibold leading-tight">
                     {feedback?.userId?.firstName} {feedback?.userId?.lastName}
                   </h3>
-                  <p className="text-sm pt-2">
+                  <p className="pt-2 text-sm">
                     {getTimeAgo(feedback?.createdAt, t)}
                   </p>
                 </div>
@@ -60,10 +60,10 @@ const TeamDetailFeedbackCards = () => {
             </div>
             {/* Card Body */}
             <div className="flex-1">
-              <h4 className="leading-relaxed font-semibold line-clamp-1">
+              <h4 className="font-semibold leading-relaxed line-clamp-1">
                 <i>{feedback?.title}</i>
               </h4>
-              <p className="text-sm sm:text-base leading-relaxed sm:leading-relaxed mb-4 sm:mb-6 line-clamp-4">
+              <p className="mb-4 text-sm leading-relaxed sm:text-base sm:leading-relaxed sm:mb-6 line-clamp-4">
                 {feedback?.comment}
               </p>
             </div>
@@ -74,7 +74,7 @@ const TeamDetailFeedbackCards = () => {
                   setSelectedFeedback(feedback);
                   setIsModalOpen(true);
                 }}
-                className="mt-2 px-2 py-1 text-sm font-semibold bg-white hover:bg-seaGreen dark:bg-gray-700/50 dark:hover:bg-seaGreen-dark text-gray-400 dark:text-backgroun-lightdark hover:text-offWhite hover:border-seaGreen  dark:hover:text-offWhite-dark border border-gray-300 dark:border-gray-600 rounded-md transition-colors"
+                className="px-2 py-1 mt-2 text-sm font-semibold text-gray-400 transition-colors bg-white border border-gray-300 rounded-md hover:bg-seaGreen dark:bg-gray-700/50 dark:hover:bg-seaGreen-dark dark:text-backgroun-lightdark hover:text-offWhite hover:border-seaGreen dark:hover:text-offWhite-dark dark:border-gray-600"
               >
                 {/*Read more*/} {t("readMore")}
               </button>
@@ -82,17 +82,20 @@ const TeamDetailFeedbackCards = () => {
           </div>
         ))}
       </div>
-      
-      <Pagination 
+
+      <Pagination
         endpoint={`feedbacks/therapists/${therapistId}`}
         slice={"pagFeedbacks"}
         data={singleTherapistFeedbacks}
       />
       {/* Modal */}
       {isModalOpen && selectedFeedback && (
-
-        <TeamDetailFeedbackCardsModal selectedFeedback={selectedFeedback} getTimeAgo={getTimeAgo} setIsModalOpen={setIsModalOpen} setSelectedFeedback={setSelectedFeedback} />
-        
+        <TeamDetailFeedbackCardsModal
+          selectedFeedback={selectedFeedback}
+          getTimeAgo={getTimeAgo}
+          setIsModalOpen={setIsModalOpen}
+          setSelectedFeedback={setSelectedFeedback}
+        />
       )}
     </>
   );

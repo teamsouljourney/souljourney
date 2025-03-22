@@ -8,14 +8,10 @@ const TeamDetailFeedbackForm = ({
   feedback,
   setFeedback,
 }) => {
-  // console.log("therapistID:", id);
   const { t } = useTranslation();
-
   const [hoveredRating, setHoveredRating] = useState(0);
 
   const handleChange = (e) => {
-    console.log(e.target.value);
-
     setFeedback({ ...feedback, [e.target.name]: e.target.value });
   };
 
@@ -23,7 +19,7 @@ const TeamDetailFeedbackForm = ({
     <>
       <form className="mt-16 bg-white/30 dark:bg-background-dark p-8 rounded-lg shadow-xl">
         <h3 className="text-lg font-semibold mb-2">{t("TD-addAComment")} {/* Add a Comment */}</h3>
-
+        {/* Feedback Title */}
         <div className="mb-4">
           <label htmlFor="title" className="peer">
           {t("TD-title")} {/* Title */}
@@ -39,6 +35,7 @@ const TeamDetailFeedbackForm = ({
             onChange={handleChange}
           />
         </div>
+        {/* Feedback Comment */}
         <div className="mb-4">
           <label htmlFor="comment" className="peer">
             {t("TD-comment")} {/* Comment */}
@@ -54,6 +51,7 @@ const TeamDetailFeedbackForm = ({
             onChange={handleChange}
           ></textarea>
         </div>
+        {/* Feedback Rating */}
         <div className="mb-10">
           <label htmlFor="rating" className="peer">
             {t("TD-rating")} {/* Rating */}

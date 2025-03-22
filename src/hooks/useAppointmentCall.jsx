@@ -16,6 +16,7 @@ import { setSelectedSlot } from "../features/calendarSlice";
 import useTherapistCall from "./useTherapistCall";
 import { useNavigate } from "react-router-dom";
 import usePaginationCall from "./usePaginationCall";
+import { SweetAlertIcons, SweetConfirm, SweetNotify } from "../helper/SweetNotify";
 
 const useAppointmentCall = () => {
   const { t } = useTranslation();
@@ -81,7 +82,8 @@ const useAppointmentCall = () => {
       dispatch(createAppointmentSuccess(data));
       dispatch(setSelectedSlot(null));
       // dispatch(setSelectedDate(null));
-      toastSuccessNotify(t("appointmentCall.createSuccess"));
+      SweetNotify(t("appointmentCall.createSuccess"), SweetAlertIcons.SUCCESS);
+      // toastSuccessNotify(t("appointmentCall.createSuccess"));
       navigate("/profile/appointment");
     } catch (error) {
       dispatch(fetchFail());
@@ -102,7 +104,8 @@ const useAppointmentCall = () => {
         updatedData
       );
       dispatch(updateAppointmentSuccess(data));
-      toastSuccessNotify(t("appointmentCall.updateSuccess"));
+      SweetNotify(t("appointmentCall.updateSuccess"), SweetAlertIcons.SUCCESS);
+      // toastSuccessNotify(t("appointmentCall.updateSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -116,11 +119,20 @@ const useAppointmentCall = () => {
 
   //* Delete appointment
   const deleteAppointment = async (id, userId) => {
+    const isConfirmed = await SweetConfirm(
+      t("appointmentCall.confirmDeleteAppointmentTitle"),
+      t("appointmentCall.confirmDeleteAppointmentText"),
+      SweetAlertIcons.WARNING,
+      t("yes"),
+      t("cancel")
+    );
+    if (!isConfirmed) return; //if cancelled function stops
     dispatch(fetchStart());
     try {
       await axiosWithToken.delete(`appointments/${id}`);
       dispatch(deleteAppointmentSuccess(id));
-      toastSuccessNotify(t("appointmentCall.deleteSuccess"));
+      SweetNotify(t("appointmentCall.deleteSuccess"), SweetAlertIcons.WARNING);
+      // toastSuccessNotify(t("appointmentCall.deleteSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -134,10 +146,19 @@ const useAppointmentCall = () => {
 
   //* Delete appointment by Admin
   const deleteAppointmentByAdmin = async (id) => {
+    const isConfirmed = await SweetConfirm(
+      t("appointmentCall.confirmDeleteAppointmentTitle"),
+      t("appointmentCall.confirmDeleteAppointmentByAdminText"),
+      SweetAlertIcons.WARNING,
+      t("yes"),
+      t("cancel")
+    );
+    if (!isConfirmed) return; //if cancelled function stops
     dispatch(fetchStart());
     try {
       await axiosWithToken.delete(`appointments/${id}`);
-      toastSuccessNotify(t("appointmentCall.deleteSuccess"));
+      SweetNotify(t("appointmentCall.deleteSuccess"), SweetAlertIcons.WARNING);
+      // toastSuccessNotify(t("appointmentCall.deleteSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(

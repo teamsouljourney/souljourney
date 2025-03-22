@@ -1,9 +1,16 @@
-import avatar from "../../assets/avatar.png";
+import avatar from "../../assets/avatar3.svg";
+import { useTranslation } from "react-i18next";
 
-const TeamDetailFeedbackCardsModal = ({selectedFeedback, getTimeAgo, setIsModalOpen, setSelectedFeedback}) => {
+const TeamDetailFeedbackCardsModal = ({
+  selectedFeedback,
+  getTimeAgo,
+  setIsModalOpen,
+  setSelectedFeedback,
+}) => {
+  const { t } = useTranslation();
   return (
     <>
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
         <div className="bg-white dark:bg-background-dark rounded-lg p-6 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
           {/* Modal Header */}
           <div className="flex items-center justify-between mb-6">
@@ -11,7 +18,7 @@ const TeamDetailFeedbackCardsModal = ({selectedFeedback, getTimeAgo, setIsModalO
               <img
                 src={selectedFeedback?.userId?.image || avatar}
                 alt={selectedFeedback?.userId?.userName}
-                className="w-16 h-16 rounded-full object-cover border-2 border-seaGreen bg-inherit"
+                className="object-cover w-16 h-16 border-2 rounded-full border-seaGreen bg-inherit"
               />
               <div>
                 <h3 className="text-xl font-semibold leading-tight">
@@ -19,7 +26,8 @@ const TeamDetailFeedbackCardsModal = ({selectedFeedback, getTimeAgo, setIsModalO
                   {selectedFeedback?.userId?.lastName}
                 </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  {getTimeAgo(selectedFeedback?.createdAt)}
+                  {selectedFeedback?.createdAt &&
+                    getTimeAgo(selectedFeedback?.createdAt, t)}
                 </p>
               </div>
             </div>
@@ -44,20 +52,20 @@ const TeamDetailFeedbackCardsModal = ({selectedFeedback, getTimeAgo, setIsModalO
             <h4 className="text-xl font-semibold">
               <i>{selectedFeedback?.title}</i>
             </h4>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="leading-relaxed text-gray-700 dark:text-gray-300">
               {selectedFeedback?.comment}
             </p>
           </div>
           {/* Modal Footer */}
-          <div className="mt-6 flex justify-end">
+          <div className="flex justify-end mt-6">
             <button
               onClick={() => {
                 setIsModalOpen(false);
                 setSelectedFeedback(null);
               }}
-              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-md transition-colors"
+              className="px-4 py-2 transition-colors bg-gray-100 rounded-md hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600"
             >
-              Close
+              {t("close")}
             </button>
           </div>
         </div>

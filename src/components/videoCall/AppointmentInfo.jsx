@@ -105,12 +105,12 @@ const AppointmentInfo = () => {
 
   if (!nearestAppointment) {
     return (
-      <div className="w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-background-lightdark dark:text-offWhite-dark">
+      <div className="w-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-background-lightdark ">
         <div className="p-3">
-          <h2 className="text-lg font-bold text-gray-800">
+          <h2 className="text-lg font-bold text-navy-dark dark:text-offWhite-light">
             {t("appointmentInfo.noUpcoming")}
           </h2>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-navy dark:text-offWhite-dark">
             {t("appointmentInfo.noScheduled")}
           </p>
         </div>

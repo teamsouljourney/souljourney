@@ -54,9 +54,9 @@ const TabSwitch = ({
   };
 
   return (
-    <div className="w-full py-4 px-4 mx-auto">
+    <div className="w-full py-2 px-4 mx-auto">
       {/* Mobile Menu Toggle Button */}
-      <div className="md:hidden flex justify-end mb-4">
+      <div className="md:hidden flex justify-end">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="p-2 rounded-lg border border-navy dark:border-offWhite-dark text-navy dark:text-offWhite-dark hover:bg-navy-light hover:text-white transition-all duration-300"
@@ -68,7 +68,7 @@ const TabSwitch = ({
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden absolute right-4 mt-2 w-64 bg-white dark:bg-background-lightdark shadow-lg rounded-lg z-50 border border-gray-200">
+        <div className="md:hidden absolute right-4 mt-1 w-64 bg-white dark:bg-background-lightdark shadow-lg rounded-lg z-50 border border-gray-200">
           <div className="p-2 flex flex-col">
             <button
               onClick={handleAllClick}
@@ -137,19 +137,19 @@ const TabSwitch = ({
       </div>
 
       {/* Search Input */}
-      <div className="flex justify-center mt-4">
+      <div className="flex justify-center mt-2">
         <div className="relative w-full max-w-md">
           <input
             type="text"
             placeholder={placeholder}
             value={searchTerm}
             onChange={handleSearchChange}
-            className="w-full px-4 py-2 mt-8 rounded-lg border dark:bg-background-dark dark:hover:bg-gray-600 border-gray-300 dark:border-gray-500 focus:outline-none focus:ring-2 focus:ring-navy-light dark:focus:ring-gray-400 transition-all duration-300"
+            className="w-full px-4 py-2 mt-4 md:mt-6 rounded-lg border dark:bg-background-dark dark:hover:bg-gray-600 border-gray-300 dark:border-gray-500 focus:outline-none focus:ring-2 focus:ring-navy-light dark:focus:ring-gray-400 transition-all duration-300"
           />
           {searchTerm && (
             <button
               onClick={() => onSearchChange("")}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-navy dark:hover:text-offWhite-dark"
+              className="absolute right-3 top-[calc(50%+8px)] md:top-[calc(50%+10px)] transform -translate-y-1/2 text-gray-500 hover:text-navy dark:hover:text-offWhite-dark"
               aria-label="Clear search"
             >
               <FaTimes size={16} />

@@ -42,21 +42,8 @@ export default function Chat() {
     // let interval;
 
     if (selectedUser && currentUser?._id) {
-      // console.log("Fetching chats for selected user:", selectedUser);
-      // Initially fetch chats once when selectedUser is available
       getAllChats(currentUser._id, userModel, selectedUser, chatWithModel);
-
-      // Set interval to fetch chats every 15 seconds
-      // interval = setInterval(() => {
-      //   console.log("Fetching chats again for selected user:", selectedUser);
-      //   getAllChats(currentUser._id, userModel, selectedUser, chatWithModel);
-      // }, 15000); // 15000 milliseconds = 15 seconds
     }
-
-    // Cleanup: Clear the interval when selectedUser is null or the component is unmounted
-    // return () => {
-    //   if (interval) clearInterval(interval);
-    // };
   }, [selectedUser, currentUser, userModel, chatWithModel]);
 
   const toggleLeftSidebar = () => setIsLeftSidebarOpen(!isLeftSidebarOpen);

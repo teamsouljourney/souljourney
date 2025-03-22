@@ -1,9 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import avatar from "../../assets/avatar.png";
+import avatar from "../../assets/avatar3.svg";
 import { getTimeAgo } from "../../helper/dateFormatter";
 import { toggleModal } from "../../features/feedbackSlice";
+import { useTranslation } from "react-i18next";
 
 const FeedbackCard = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { singleFeedback } = useSelector((state) => state.feedbacks);
 
@@ -29,7 +31,7 @@ const FeedbackCard = () => {
                     {singleFeedback?.userId?.lastName}
                   </h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
-                    {getTimeAgo(singleFeedback?.createdAt)}
+                    {getTimeAgo(singleFeedback?.createdAt, t)}
                   </p>
                 </div>
               </div>

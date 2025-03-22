@@ -12,9 +12,7 @@ const AppointmentCancel = () => {
   const { singleAppointment } = useSelector((state) => state.appointments);
 
   const handleCancel = () => {
-    if (window.confirm(t("cancelConfirmation"))) {
-      deleteAppointment(singleAppointment._id, currentUser._id);
-    }
+    deleteAppointment(singleAppointment._id, currentUser._id);
   };
 
   return (

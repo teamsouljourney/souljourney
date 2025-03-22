@@ -10,6 +10,7 @@ import {
 } from "../features/blogSlice";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 import usePaginationCall from "./usePaginationCall";
+import { SweetAlertIcons, SweetConfirm, SweetNotify } from "../helper/SweetNotify";
 
 const useBlogCall = () => {
   const { t } = useTranslation();
@@ -77,7 +78,8 @@ const useBlogCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.post("blogs", blogData);
-      toastSuccessNotify(t("blogCall.createSuccess"));
+      SweetNotify(t("blogCall.createSuccess"), SweetAlertIcons.SUCCESS);
+      // toastSuccessNotify(t("blogCall.createSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -92,7 +94,8 @@ const useBlogCall = () => {
     dispatch(fetchStart());
     try {
       await axiosWithToken.put(`blogs/${id}`, blogData);
-      toastSuccessNotify(t("blogCall.updateSuccess"));
+      SweetNotify(t("blogCall.updateSuccess"), SweetAlertIcons.SUCCESS);
+      // toastSuccessNotify(t("blogCall.updateSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(
@@ -105,10 +108,19 @@ const useBlogCall = () => {
 
   //* Delete Blog
   const deleteBlog = async (id) => {
+    const isConfirmed = await SweetConfirm(
+      t("blogCall.confirmDeleteBlogTitle"),
+      t("blogCall.confirmDeleteBlogText"),
+      SweetAlertIcons.WARNING,
+      t("yes"),
+      t("cancel")
+    );
+    if (!isConfirmed) return; //if cancelled function stops
     dispatch(fetchStart());
     try {
       await axiosWithToken.delete(`blogs/${id}`);
-      toastSuccessNotify(t("blogCall.deleteSuccess"));
+      SweetNotify(t("blogCall.deleteSuccess"), SweetAlertIcons.WARNING);
+      // toastSuccessNotify(t("blogCall.deleteSuccess"));
     } catch (error) {
       dispatch(fetchFail());
       toastErrorNotify(

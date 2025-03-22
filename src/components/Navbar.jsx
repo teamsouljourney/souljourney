@@ -7,8 +7,7 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import souljorurney_Logo from "../assets/souljourney_Logo.png";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 import Switch from "./Switch";
 import { useEffect, useState } from "react";
@@ -18,6 +17,8 @@ import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
 import SoulJourneyLogo from "../components/SoulJourneyLogo";
 import ViewNotifications from "./ViewNotifications";
+import useUserCall from "../hooks/useUserCall";
+import useTherapistCall from "../hooks/useTherapistCall";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -27,8 +28,23 @@ export default function Navbar() {
   const [showBackground, setShowBackground] = useState(false);
   let { currentUser } = useSelector((state) => state.auth);
   const { logout } = useAuthCall();
+  const { getSingleUser } = useUserCall();
+  const { getSingleTherapist } = useTherapistCall();
+  const { singleTherapist } = useSelector((state) => state.therapists);
+  const { singleUser } = useSelector((state) => state.users);
   const { t } = useTranslation();
-  // console.log(currentUser);
+
+  useEffect(() => {
+    if (currentUser?._id) {
+      if (currentUser?.isTherapist) {
+        getSingleTherapist(currentUser._id);
+      } else {
+        getSingleUser(currentUser._id);
+      }
+    }
+  }, [currentUser?._id]);
+
+  const userData = currentUser?.isTherapist ? singleTherapist : singleUser;
 
   const navigation = [
     { name: t("home"), href: "/" },
@@ -55,8 +71,6 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  // referrerPolicy = "no-referrer";
 
   if (
     window.location.pathname.startsWith("/profile") ||
@@ -91,16 +105,16 @@ export default function Navbar() {
         <div className="relative flex items-center justify-around h-20">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
-            <DisclosureButton className="relative inline-flex items-center justify-center p-2 rounded-md group focus:outline-none focus:ring-2 focus:ring-inset ">
+            <DisclosureButton className="relative inline-flex items-center justify-center p-2 rounded-md group focus:outline-none focus:ring-2 focus:ring-inset text-navy dark:text-offWhite-dark">
               <span className="absolute -inset-0.5" />
               <span className="border sr-only">Open main menu</span>
               <Bars3Icon
                 aria-hidden="true"
-                className="block size-6 group-data-[open]:hidden"
+                className="block size-6 group-data-[open]:hidden dark:text-offWhite"
               />
               <XMarkIcon
                 aria-hidden="true"
-                className="hidden size-6 group-data-[open]:block"
+                className="hidden size-6 group-data-[open]:block dark:text-offWhite"
               />
             </DisclosureButton>
           </div>
@@ -115,8 +129,8 @@ export default function Navbar() {
                     className={({ isActive }) =>
                       classNames(
                         isActive
-                          ? "border-b-2 border-seaGreen-light text-offWhite-light"
-                          : "text-offWhite-light hover:border-b-2 hover:border-seaGreen-light hover:text-offWhite-light",
+                          ? "border-b-2 border-seaGreen-light text-offWhite-light  "
+                          : "text-offWhite-light hover:border-b-2 hover:border-seaGreen-light",
                         " whitespace-nowrap px-4 py-2 text-sm font-medium",
                         "lg:px-4 lg:py-2 lg:text-sm",
                         "md:px-3 md:py-1.5 md:text-sm",
@@ -130,7 +144,7 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-          <div className="absolute right-0 flex items-center gap-1 pr-2 sm:static sm:inset-auto sm:ml-0 sm:pr-0">
+          <div className="absolute right-0 flex items-center justify-center gap-1 pr-2 sm:static sm:inset-auto sm:ml-0 sm:pr-0">
             <LanguageSelector />
             <Switch />
             {currentUser && <ViewNotifications />}
@@ -147,28 +161,28 @@ export default function Navbar() {
             {/* Profile dropdown */}
             {currentUser && (
               <Menu as="div" className="relative mr-4">
-                {/* MenuButton içindeki avatar kısmı */}
+                {/*  Avatar in MenuButton  */}
                 <MenuButton className="relative flex text-sm rounded-full shadow-lg shadow-mauve-light bg-offWhite-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy hover:shadow-3xl hover:shadow-navy-dark">
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">Open user menu</span>
-                  {currentUser?.image ? (
+                  {userData?.image ? (
                     <img
                       alt=""
-                      src={currentUser.image}
+                      src={userData.image}
                       className="rounded-full size-6 sm:size-8"
                     />
                   ) : (
                     <div className="flex items-center justify-center rounded-full size-8 bg-navy-dark">
                       <span className="text-sm font-medium text-offWhite-light">
-                        {currentUser?.firstName.charAt(0).toUpperCase() +
-                          currentUser?.lastName.charAt(0).toUpperCase()}
+                        {userData?.firstName?.charAt(0).toUpperCase() +
+                          userData?.lastName?.charAt(0).toUpperCase()}
                       </span>
                     </div>
                   )}
                 </MenuButton>
                 <MenuItems
                   transition
-                  className="flex flex-col text-xl w-[11rem]  text-slate-600 bg-navy/40 backdrop-blur p-4 mt-6 rounded-lg absolute right-0"
+                  className="flex flex-col text-xl w-[11rem]  text-slate-600 bg-navy/40 dark:bg-customBlack/50 backdrop-blur p-4 mt-6 rounded-lg absolute right-0"
                 >
                   <MenuItem>
                     <span
@@ -176,8 +190,8 @@ export default function Navbar() {
                       className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
                     >
                       <h5 className="">
-                        {currentUser?.firstName.toUpperCase()}{" "}
-                        {currentUser?.lastName.toUpperCase()}
+                        {userData?.firstName?.toUpperCase()}{" "}
+                        {userData?.lastName?.toUpperCase()}
                       </h5>
                     </span>
                   </MenuItem>
@@ -213,13 +227,14 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      {/* Hamburger Menu */}
       <DisclosurePanel className="sm:hidden">
-        <div className="z-40 px-2 pt-2 pb-3 space-y-1 bg-navy/40 backdrop-blur text-navy-dark">
+        <div className="z-40 px-2 pt-2 pb-3 space-y-1 bg-navy/40 backdrop-blur text-offWhite-dark">
           {navigation.map((item) => (
             <NavLink to={item.href} key={item.name}>
               <DisclosureButton
                 aria-current={item.current ? "page" : undefined}
-                className="block px-3 py-2 text-base font-medium cursor-pointer hover:border-b-[1px] hover:border-seaGreen-light"
+                className="block px-3 py-2 text-base text-offWhite font-medium cursor-pointer hover:border-b-[1px] hover:border-seaGreen-light"
               >
                 {item.name}
               </DisclosureButton>
