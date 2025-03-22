@@ -24,10 +24,12 @@ const BlogsSection = () => {
         <p className="w-[60%] mx-auto font-urbanist">{t("ourBlogsText")}</p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 md:gap-x-12">
-        {popularBlogs?.map((blog) => (
-          <HomeCard key={blog._id} blog={blog} />
-        ))}
+      <div className="px-4 sm:px-8 md:px-16 py-5">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 md:gap-x-12">
+          {popularBlogs?.map((blog) => (
+            <HomeCard key={blog._id} blog={blog} />
+          ))}
+        </div>
       </div>
 
       <div className="w-1/2 text-center">

@@ -35,6 +35,7 @@ const HomeCard = ({ blog }) => {
   };
 
   return (
+    
     <div
       onClick={handleCardClick}
       className="flex flex-col w-full max-w-xs p-3 transition duration-500 bg-white shadow-2xl cursor-pointer rounded-xl dark:bg-background-dark text-navy dark:text-offWhite-dark hover:scale-105"
