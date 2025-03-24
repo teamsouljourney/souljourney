@@ -149,7 +149,10 @@ export default function Navbar() {
             <Switch />
             {currentUser && <ViewNotifications />}
 
-            {!currentUser && (
+            {(!currentUser ||
+              !userData ||
+              !userData.firstName ||
+              !userData.lastName) && (
               <button
                 type="button"
                 className="relative px-2 py-2 text-sm rounded-md whitespace-nowrap sm:px-3 sm:py-1 xs:px-2 xs:text-xs text-offWhite-light bg-mauve-dark hover:text-offWhite-light hover:bg-mauve-light hover:shadow-3xl hover:shadow-navy-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy"
@@ -159,71 +162,74 @@ export default function Navbar() {
             )}
 
             {/* Profile dropdown */}
-            {currentUser && (
-              <Menu as="div" className="relative mr-4">
-                {/*  Avatar in MenuButton  */}
-                <MenuButton className="relative flex text-sm rounded-full shadow-lg shadow-mauve-light bg-offWhite-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy hover:shadow-3xl hover:shadow-navy-dark">
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">Open user menu</span>
-                  {userData?.image ? (
-                    <img
-                      alt=""
-                      src={userData.image}
-                      className="rounded-full size-6 sm:size-8"
-                    />
-                  ) : (
-                    <div className="flex items-center justify-center rounded-full size-8 bg-navy-dark">
-                      <span className="text-sm font-medium text-offWhite-light">
-                        {userData?.firstName?.charAt(0).toUpperCase() +
-                          userData?.lastName?.charAt(0).toUpperCase()}
+            {currentUser &&
+              userData &&
+              userData.firstName &&
+              userData.lastName && (
+                <Menu as="div" className="relative mr-4">
+                  {/*  Avatar in MenuButton  */}
+                  <MenuButton className="relative flex text-sm rounded-full shadow-lg shadow-mauve-light bg-offWhite-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy hover:shadow-3xl hover:shadow-navy-dark">
+                    <span className="absolute -inset-1.5" />
+                    <span className="sr-only">Open user menu</span>
+                    {userData?.image ? (
+                      <img
+                        alt=""
+                        src={userData.image}
+                        className="rounded-full size-6 sm:size-8"
+                      />
+                    ) : (
+                      <div className="flex items-center justify-center rounded-full size-8 bg-navy-dark">
+                        <span className="text-sm font-medium text-offWhite-light">
+                          {userData?.firstName?.charAt(0).toUpperCase() +
+                            userData?.lastName?.charAt(0).toUpperCase()}
+                        </span>
+                      </div>
+                    )}
+                  </MenuButton>
+                  <MenuItems
+                    transition
+                    className="flex flex-col text-xl w-[11rem]  text-slate-600 bg-navy/40 dark:bg-customBlack/50 backdrop-blur p-4 mt-6 rounded-lg absolute right-0"
+                  >
+                    <MenuItem>
+                      <span
+                        to="#"
+                        className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
+                      >
+                        <h5 className="">
+                          {userData?.firstName?.toUpperCase()}{" "}
+                          {userData?.lastName?.toUpperCase()}
+                        </h5>
                       </span>
-                    </div>
-                  )}
-                </MenuButton>
-                <MenuItems
-                  transition
-                  className="flex flex-col text-xl w-[11rem]  text-slate-600 bg-navy/40 dark:bg-customBlack/50 backdrop-blur p-4 mt-6 rounded-lg absolute right-0"
-                >
-                  <MenuItem>
-                    <span
-                      to="#"
-                      className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
-                    >
-                      <h5 className="">
-                        {userData?.firstName?.toUpperCase()}{" "}
-                        {userData?.lastName?.toUpperCase()}
-                      </h5>
-                    </span>
-                  </MenuItem>
-                  <hr />
-                  <MenuItem>
-                    <NavLink
-                      to={currentUser?.isAdmin ? "/admin" : "/profile"}
-                      className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
-                    >
-                      {t("myProfile")}
-                    </NavLink>
-                  </MenuItem>
-                  <MenuItem>
-                    <NavLink
-                      to="/profile/account"
-                      className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
-                    >
-                      {t("accountSettings")}
-                    </NavLink>
-                  </MenuItem>
-                  <MenuItem>
-                    <NavLink
-                      to=""
-                      className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
-                      onClick={() => logout()}
-                    >
-                      {t("logout")}
-                    </NavLink>
-                  </MenuItem>
-                </MenuItems>
-              </Menu>
-            )}
+                    </MenuItem>
+                    <hr />
+                    <MenuItem>
+                      <NavLink
+                        to={currentUser?.isAdmin ? "/admin" : "/profile"}
+                        className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
+                      >
+                        {t("myProfile")}
+                      </NavLink>
+                    </MenuItem>
+                    <MenuItem>
+                      <NavLink
+                        to="/profile/account"
+                        className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
+                      >
+                        {t("accountSettings")}
+                      </NavLink>
+                    </MenuItem>
+                    <MenuItem>
+                      <NavLink
+                        to=""
+                        className="block px-4 py-1 text-sm fw-bold text-offWhite-dark dark:text-offWhite-light data-[focus]:text-offWhite-light dark:data-[focus]:text-offWhite-dark data-[focus]:outline-none"
+                        onClick={() => logout()}
+                      >
+                        {t("logout")}
+                      </NavLink>
+                    </MenuItem>
+                  </MenuItems>
+                </Menu>
+              )}
           </div>
         </div>
       </div>

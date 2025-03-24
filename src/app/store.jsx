@@ -12,6 +12,7 @@ import chatReducer from "../features/chatSlice";
 import feedbackReducer from "../features/feedbackSlice";
 import notificationReducer from "../features/notificationSlice";
 import videoReducer from "../features/videoSlice";
+import storageSession from "redux-persist/lib/storage/session";
 
 //*redux-persist
 import {
@@ -29,7 +30,7 @@ import storage from "redux-persist/lib/storage";
 //*redux-persist
 const persistConfig = {
   key: "root",
-  storage,
+  storage: storageSession,
 };
 
 const persistedReducer = persistReducer(persistConfig, authReducer);
