@@ -44,7 +44,7 @@ const ContactForm = () => {
         <div className="mx-0 mb-1 sm:mb-4">
           <div className="mx-0 mb-1 sm:mb-4">
             <label
-              htmlFor="name"
+              htmlFor="user_name"
               className="pb-1 text-xs tracking-wider uppercase"
             ></label>
             <input
@@ -58,7 +58,7 @@ const ContactForm = () => {
           </div>
           <div className="mx-0 mb-1 sm:mb-4">
             <label
-              htmlFor="email"
+              htmlFor="user_email"
               className="pb-1 text-xs tracking-wider uppercase"
             ></label>
             <input
