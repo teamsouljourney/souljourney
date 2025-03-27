@@ -138,6 +138,7 @@ const SidebarListItems = () => {
                       className={`inline-flex justify-center items-center mx-3.5 bg-navy-dark dark:bg-offWhite-dark group-hover:bg-seaGreen-dark dark:group-hover:bg-seaGreen-light ${
                         isActive ? "bg-seaGreen-dark" : ""
                       }`}
+                      title={item.name}
                     ></span>
                   </span>
                   <span
@@ -180,6 +181,7 @@ const SidebarListItems = () => {
                       className={`inline-flex justify-center items-center mx-3.5 bg-navy-dark dark:bg-offWhite-dark group-hover:bg-seaGreen-dark dark:group-hover:bg-seaGreen-light ${
                         isActive ? "bg-seaGreen-dark" : ""
                       }`}
+                      title={t("myAccount")}
                     ></span>
                   </span>
                   <span
@@ -209,6 +211,7 @@ const SidebarListItems = () => {
                 height: "20px",
               }}
               className="inline-flex justify-center items-center mx-3.5 bg-red-400 group-hover:bg-red-400 dark:bg-pink-light"
+              title={t("logout")}
             ></span>
           </span>
           <span className="hidden ml-2 text-sm tracking-wide capitalize truncate text-navy-dark group-hover:text-red-400 dark:text-offWhite-dark lg:block">
