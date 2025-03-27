@@ -5,7 +5,7 @@ const blogSlice = createSlice({
   initialState: {
     blogs: [],
     filteredBlogs: [],
-    singleBlog: {},
+    singleBlog: null,
     popularBlogs: [],
     searchTerm: "",
     loading: false,
