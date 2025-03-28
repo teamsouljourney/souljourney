@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useTherapistCall from "../../hooks/useTherapistCall";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import AppointmentCalendar from "../calendar/AppointmentCalendar";
 import Button from "../button/Button";
 import TeamDetailHeader from "./TeamDetailHeader";
 import TeamDetailBody from "./TeamDetailBody";
 import { useTranslation } from "react-i18next";
-import { getSingleTherapistSuccess } from "../../features/therapistSlice";
+// import { getSingleTherapistSuccess } from "../../features/therapistSlice";
 import useTabNavigation from "../../hooks/useTabNavigation";
 
 const TeamDetail = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const { t } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -44,13 +44,13 @@ const TeamDetail = () => {
     getTherapistTimeTable(id);
   }, [id]);
 
-  useEffect(() => {
-    dispatch(getSingleTherapistSuccess(null));
-  }, [navigate]);
+  // useEffect(() => {
+  //   dispatch(getSingleTherapistSuccess(null));
+  // }, [navigate]);
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-screen bg-offWhite dark:bg-background-darker">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-seaGreen"></div>
       </div>
     );
@@ -78,6 +78,7 @@ const TeamDetail = () => {
           singleTherapist={singleTherapist}
           currentUser={currentUser}
           toggleCalendar={toggleCalendar}
+          loading={loading}
         />
       </div>
       {/* Tab Navigation */}

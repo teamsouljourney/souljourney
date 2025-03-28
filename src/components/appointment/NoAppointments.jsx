@@ -1,9 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const NoAppointments = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { loading } = useSelector((state) => state.appointments);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-offWhite dark:bg-background-darker">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-seaGreen"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="mt-8 text-center">
