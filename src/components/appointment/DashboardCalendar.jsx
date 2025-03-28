@@ -19,10 +19,8 @@ const DashboardCalendar = () => {
   const { getTherapistTimeTable } = useTherapistCall();
 
   const { currentUser } = useSelector((state) => state.auth);
-  const { singleAppointment } = useSelector((state) => state.appointments);
-  const { currentUserAppointments } = useSelector(
-    (state) => state.appointments
-  );
+  const { singleAppointment, currentUserAppointments, loading } = useSelector((state) => state.appointments);
+  
 
   const handleEventClick = (info) => {
     getSingleAppointment(info.event?._def.publicId);
@@ -55,6 +53,14 @@ const DashboardCalendar = () => {
     start: appointment?.startTime,
     end: appointment?.endTime,
   }));
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-offWhite dark:bg-background-darker">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-seaGreen"></div>
+      </div>
+    );
+  }
 
   return (
     <FullCalendar

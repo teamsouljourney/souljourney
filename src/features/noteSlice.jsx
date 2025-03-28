@@ -26,7 +26,7 @@ const noteSlice = createSlice({
     },
     createNoteSuccess: (state, { payload }) => {
       state.loading = false;
-      state.notes.push(payload.data); // Yeni notu ekle
+      state.notes.push(payload.data); // Add new note
       state.error = false;
     },
     fetchFail: (state) => {

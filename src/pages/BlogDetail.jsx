@@ -1,16 +1,16 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { HiOutlineHeart, HiHeart, HiArrowLeft, HiEye } from "react-icons/hi";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { getSingleBlogSuccess } from "../features/blogSlice";
+// import { getSingleBlogSuccess } from "../features/blogSlice";
 import useBlogCall from "../hooks/useBlogCall";
 import { toastWarnNotify } from "../helper/ToastNotify";
 
 const BlogDetail = () => {
   const { t } = useTranslation();
   const { id } = useParams();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
   const { getSingleBlog, postLike } = useBlogCall();
   const { singleBlog, loading } = useSelector((state) => state.blogs);
@@ -20,9 +20,9 @@ const BlogDetail = () => {
     getSingleBlog(id);
   }, [id]);
 
-  useEffect(() => {
-    dispatch(getSingleBlogSuccess({}));
-  }, [navigate]);
+  // useEffect(() => {
+  //   dispatch(getSingleBlogSuccess(null));
+  // }, [navigate]);
 
   const handleLike = () => {
     if (!currentUser) {
@@ -36,7 +36,7 @@ const BlogDetail = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-[400px]">
+      <div className="flex justify-center items-center min-h-screen bg-offWhite dark:bg-background-darker">
         <div className="w-12 h-12 border-t-2 border-b-2 rounded-full animate-spin border-navy"></div>
       </div>
     );
